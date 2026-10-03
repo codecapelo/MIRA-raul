@@ -1,0 +1,125 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_010",
+  "source_sha256": "e7c0a06004d4c8d100b4059a202300939b09055c4a636a58c127b9fd69e36d62",
+  "published_final_diagnosis": {
+    "label": "Primary abdominal ectopic pregnancy with bleeding left upper abdominal implantation",
+    "codes": [],
+    "source_locators": [
+      "Case report, pp. 2–3"
+    ]
+  },
+  "diagnostic_differential_from_source": [
+    "Tubal ectopic pregnancy",
+    "Hemorrhagic ovarian cyst",
+    "Splenic or gastrointestinal lesion",
+    "Gastroenteritis"
+  ],
+  "source_treatment": [
+    {
+      "description": "Urgent diagnostic laparoscopy and excision of ectopic lesion with partial omentectomy",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "description": "Postoperative hCG monitoring",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    }
+  ],
+  "source_disposition": {
+    "category": "surgery",
+    "outcome": "Discharged postoperative day 5; hCG normalized within one month.",
+    "source_locators": [
+      "Case report, pp. 2–3"
+    ]
+  },
+  "key_guideline_decisions": [
+    {
+      "guideline_ref": "rcog_ectopic_2016",
+      "status": "candidate_for_adjudication",
+      "note": "See docs/guideline_sources.yaml; applicability and alternative care require clinician review."
+    }
+  ],
+  "distractors": [
+    "Pain is in left upper abdomen and adnexa appear normal; early episode was labelled gastroenteritis."
+  ],
+  "critical_safety_points": [
+    "Pregnancy test is essential in reproductive-age patient with abdominal pain.",
+    "No intrauterine pregnancy with hCG around 10,130 IU/L requires urgent ectopic pregnancy evaluation.",
+    "Hemorrhage and vascular implantation favor surgical planning with bleeding preparedness."
+  ],
+  "fact_provenance": [
+    {
+      "fact_id": "hpi_001",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "hpi_002",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "pmh_003",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_005",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "lab_006",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "imaging_007",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "imaging_008",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_010",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    }
+  ],
+  "source_uncertainties": [
+    "Unspecified dose, timing or normal findings were not inferred.",
+    "Published management is descriptive and requires separate normative review."
+  ],
+  "clinician_signoff": {
+    "reviewer_id": null,
+    "signed_at": null,
+    "status": "pending"
+  }
+}

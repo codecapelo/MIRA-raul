@@ -1,0 +1,270 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_008",
+  "index_patient": "single_reported_patient",
+  "language": "en",
+  "setting": "emergency_department",
+  "time_zero": "first_clinical_contact",
+  "initial": {
+    "age_years": 23,
+    "sex_recorded": "male",
+    "chief_complaint": "Acute interscapular pain followed by progressive bilateral leg weakness and bowel/bladder incontinence."
+  },
+  "facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "topic_codes": [
+        "onset"
+      ],
+      "value": "Nonradiating interscapular pain began two days before presentation; leg weakness progressed to inability to stand, with perineal sensory loss and bowel/bladder incontinence.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "onset"
+        ]
+      }
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "topic_codes": [
+        "negatives"
+      ],
+      "value": "No trauma, heavy lifting, fever, recent vaccination, chronic illness, known anticoagulant or other prior medication use.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "negatives"
+        ]
+      }
+    },
+    {
+      "fact_id": "physical_exam_003",
+      "domain": "physical_exam",
+      "topic_codes": [
+        "neurologic"
+      ],
+      "value": "Alert, GCS 15; leg strength 0/5, arm strength 5/5, absent perianal sensation, preserved bulbocavernosus reflex.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_physical_exam",
+        "match_codes": [
+          "neurologic"
+        ]
+      }
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "domain": "physical_exam",
+      "topic_codes": [
+        "vitals"
+      ],
+      "value": "Vital signs described as stable; no numerical values reported.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_physical_exam",
+        "match_codes": [
+          "vitals"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_005",
+      "domain": "lab",
+      "topic_codes": [
+        "cbc"
+      ],
+      "value": "WBC 13,000/µL with 85% neutrophils; platelets 250,000/µL.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "cbc"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_006",
+      "domain": "lab",
+      "topic_codes": [
+        "coagulation"
+      ],
+      "value": "PT 12 s, INR 1.0, aPTT 30 s, fibrinogen 300 mg/dL.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "coagulation"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_007",
+      "domain": "imaging",
+      "topic_codes": [
+        "brain_mri"
+      ],
+      "value": "Brain and brainstem MRI normal.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "brain_mri"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_008",
+      "domain": "imaging",
+      "topic_codes": [
+        "spine_mri"
+      ],
+      "value": "Cervicothoracic spine MRI: epidural hematoma compressing the cord and posterior thecal sac from C6 to T2; no traumatic or structural lesion described.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "spine_mri"
+        ]
+      }
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "domain": "procedure_result",
+      "topic_codes": [
+        "hematoma_evacuation"
+      ],
+      "value": "Emergency hemilaminotomy/laminotomy with epidural hematoma evacuation.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_procedure",
+        "match_codes": [
+          "hematoma_evacuation"
+        ]
+      }
+    }
+  ],
+  "catalog": {
+    "history_topics": [
+      "cardiac",
+      "catheter",
+      "current",
+      "drug_reaction",
+      "history",
+      "infection",
+      "medical",
+      "negatives",
+      "oncology",
+      "onset",
+      "pregnancy",
+      "procedure",
+      "recent_therapy",
+      "renal",
+      "smoking",
+      "symptoms",
+      "urologic"
+    ],
+    "physical_regions": [
+      "abdomen",
+      "abdomen_pelvis",
+      "cardiovascular",
+      "general",
+      "hemodynamics",
+      "neurologic",
+      "postoperative",
+      "respiratory",
+      "skin",
+      "skin_eye",
+      "vitals"
+    ],
+    "lab_tests": [
+      "adrenal_hormones",
+      "blood_film",
+      "blood_panel",
+      "cbc",
+      "chemistry",
+      "coagulation",
+      "d_dimer",
+      "dat",
+      "hemoglobin",
+      "hemolysis",
+      "inflammation",
+      "inflammation_followup",
+      "lactate",
+      "metabolic",
+      "nt_probnp",
+      "pleural_fluid",
+      "pregnancy_test",
+      "troponin",
+      "tspot"
+    ],
+    "imaging_studies": [
+      "abdominal_xray",
+      "adrenal_ct",
+      "adrenal_ultrasound",
+      "brain_mri",
+      "cardiac_mri",
+      "chest_xray",
+      "coronary_angiography",
+      "coronary_ct",
+      "ct_abdomen",
+      "ct_chest",
+      "ctpa",
+      "pelvic_ultrasound",
+      "pet",
+      "spine_mri",
+      "thoracic_ultrasound"
+    ],
+    "microbiology_tests": [
+      "adrenal_tb_pcr",
+      "blood_cultures",
+      "drain_culture",
+      "pleural_culture",
+      "urine_culture"
+    ],
+    "ecg_or_tests": [
+      "ecg",
+      "echo",
+      "electrophysiology",
+      "intravascular_imaging",
+      "research_cfdna",
+      "rhc",
+      "tee",
+      "tumor_genetics"
+    ],
+    "procedures": [
+      "adrenal_biopsy",
+      "device_exploration",
+      "ebus_biopsy",
+      "hematoma_evacuation",
+      "laparoscopy",
+      "laparotomy",
+      "pathology",
+      "pericardiocentesis",
+      "pleural_biopsy",
+      "resection",
+      "thoracentesis"
+    ],
+    "medications": []
+  },
+  "temporal_events": [],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ],
+  "catalog_version": "v1_shared_all_cases"
+}

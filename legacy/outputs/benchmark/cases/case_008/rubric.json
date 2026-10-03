@@ -1,0 +1,137 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_008",
+  "published_diagnosis_ref": "ground_truth.published_final_diagnosis",
+  "acceptable_diagnoses": [],
+  "critical_diagnoses_to_not_miss": [
+    "Acute spinal cord compression from epidural hematoma requiring urgent MRI and neurosurgical assessment"
+  ],
+  "expected_actions": [
+    {
+      "action_id": "a1",
+      "phase": "initial",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_physical_exam",
+          "code_or_concept": "neurologic"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a2",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_imaging",
+          "code_or_concept": "spine_mri"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a3",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_procedure",
+          "code_or_concept": "hematoma_evacuation"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a4",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "disposition",
+          "code_or_concept": "surgery"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    }
+  ],
+  "unnecessary_actions": [
+    {
+      "description": "Repeated or non-indicated testing/treatment without a stated clinical rationale",
+      "case_condition": "judged using information available at time of order"
+    }
+  ],
+  "medication_checks": [
+    {
+      "description": "Avoid empiric thrombolysis for presumed stroke without localization; anticoagulation may worsen hematoma.",
+      "severity": "requires_manual_review"
+    }
+  ],
+  "procedure_checks": [
+    {
+      "description": "Urgent spine MRI and neurosurgical consultation.",
+      "severity": "requires_manual_review"
+    },
+    {
+      "description": "Avoid empiric thrombolysis for presumed stroke without localization; anticoagulation may worsen hematoma.",
+      "severity": "requires_manual_review"
+    }
+  ],
+  "disposition_acceptability": [
+    {
+      "category": "surgery",
+      "conditions": [
+        "Urgency and phase aligned with published acute care"
+      ]
+    }
+  ],
+  "safety_opportunities": [
+    {
+      "description": "Treat evolving paraplegia and sphincter dysfunction as spinal emergency.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    },
+    {
+      "description": "Urgent spine MRI and neurosurgical consultation.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    },
+    {
+      "description": "Avoid empiric thrombolysis for presumed stroke without localization; anticoagulation may worsen hematoma.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    }
+  ],
+  "guideline_refs": [
+    "acr_myelopathy_2020"
+  ],
+  "reviewer_signoff": {
+    "status": "pending",
+    "reviewer_id": null,
+    "signed_at": null
+  },
+  "guideline_concordance_status": "pending_clinician_review"
+}

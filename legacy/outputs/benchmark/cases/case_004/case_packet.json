@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_004",
+  "index_patient": "single_reported_patient",
+  "language": "en",
+  "setting": "emergency_department",
+  "time_zero": "return_to_ed_days_after_initial_thoracentesis",
+  "initial": {
+    "age_years": 63,
+    "sex_recorded": "female",
+    "chief_complaint": "Recurrent dyspnea days after drainage of a right pleural effusion."
+  },
+  "facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "topic_codes": [
+        "onset"
+      ],
+      "value": "Two weeks of dyspnea and cough, briefly improved after an initial thoracentesis removed 1.5 L of milky right pleural fluid; recurrent dyspnea led to an ED return days later. No recent trauma or thoracic surgery.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "onset"
+        ]
+      }
+    },
+    {
+      "fact_id": "pmh_002",
+      "domain": "pmh",
+      "topic_codes": [
+        "smoking"
+      ],
+      "value": "45 pack-year smoking history.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "smoking"
+        ]
+      }
+    },
+    {
+      "fact_id": "physical_exam_003",
+      "domain": "physical_exam",
+      "topic_codes": [
+        "respiratory"
+      ],
+      "value": "At the initial ED visit, tachypnea without hypoxemia and reduced right-sided breath sounds were reported; repeat-visit examination details were not supplied.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_physical_exam",
+        "match_codes": [
+          "respiratory"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_004",
+      "domain": "imaging",
+      "topic_codes": [
+        "chest_xray"
+      ],
+      "value": "Imaging at ED return showed recurrent right pleural effusion.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "chest_xray"
+        ]
+      }
+    },
+    {
+      "fact_id": "procedure_result_005",
+      "domain": "procedure_result",
+      "topic_codes": [
+        "thoracentesis"
+      ],
+      "value": "Repeat thoracentesis on ED return removed 1.2 L of fluid with characteristics similar to the initial milky effusion.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_procedure",
+        "match_codes": [
+          "thoracentesis"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_006",
+      "domain": "lab",
+      "topic_codes": [
+        "pleural_fluid"
+      ],
+      "value": "Initial thoracentesis pleural fluid (available as prior record): triglycerides 434 mg/dL, cholesterol 154 mg/dL, 82% lymphocytes, pH 7.48, protein 2.4 g/dL, LDH 83 U/L; cytology without malignant cells.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "pleural_fluid"
+        ]
+      }
+    },
+    {
+      "fact_id": "microbiology_007",
+      "domain": "microbiology",
+      "topic_codes": [
+        "pleural_culture"
+      ],
+      "value": "Initial thoracentesis pleural fluid: Gram stain and culture negative.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_microbiology",
+        "match_codes": [
+          "pleural_culture"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_008",
+      "domain": "imaging",
+      "topic_codes": [
+        "ct_chest"
+      ],
+      "value": "CT: bilateral hilar and mediastinal adenopathy, severe right-middle-lobe bronchial narrowing, partial atelectasis and infiltrates.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "ct_chest"
+        ]
+      }
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "domain": "procedure_result",
+      "topic_codes": [
+        "ebus_biopsy"
+      ],
+      "value": "Bronchoscopy with endobronchial ultrasound guided biopsy established extensive-stage small cell lung carcinoma.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_procedure",
+        "match_codes": [
+          "ebus_biopsy"
+        ]
+      }
+    },
+    {
+      "fact_id": "microbiology_010",
+      "domain": "microbiology",
+      "topic_codes": [
+        "blood_cultures"
+      ],
+      "value": "Much later, during febrile deterioration, blood cultures grew Pseudomonas aeruginosa.",
+      "status": "reported",
+      "available_at": "followup",
+      "release_rule": {
+        "tool": "request_microbiology",
+        "match_codes": [
+          "blood_cultures"
+        ]
+      }
+    }
+  ],
+  "catalog": {
+    "history_topics": [
+      "cardiac",
+      "catheter",
+      "current",
+      "drug_reaction",
+      "history",
+      "infection",
+      "medical",
+      "negatives",
+      "oncology",
+      "onset",
+      "pregnancy",
+      "procedure",
+      "recent_therapy",
+      "renal",
+      "smoking",
+      "symptoms",
+      "urologic"
+    ],
+    "physical_regions": [
+      "abdomen",
+      "abdomen_pelvis",
+      "cardiovascular",
+      "general",
+      "hemodynamics",
+      "neurologic",
+      "postoperative",
+      "respiratory",
+      "skin",
+      "skin_eye",
+      "vitals"
+    ],
+    "lab_tests": [
+      "adrenal_hormones",
+      "blood_film",
+      "blood_panel",
+      "cbc",
+      "chemistry",
+      "coagulation",
+      "d_dimer",
+      "dat",
+      "hemoglobin",
+      "hemolysis",
+      "inflammation",
+      "inflammation_followup",
+      "lactate",
+      "metabolic",
+      "nt_probnp",
+      "pleural_fluid",
+      "pregnancy_test",
+      "troponin",
+      "tspot"
+    ],
+    "imaging_studies": [
+      "abdominal_xray",
+      "adrenal_ct",
+      "adrenal_ultrasound",
+      "brain_mri",
+      "cardiac_mri",
+      "chest_xray",
+      "coronary_angiography",
+      "coronary_ct",
+      "ct_abdomen",
+      "ct_chest",
+      "ctpa",
+      "pelvic_ultrasound",
+      "pet",
+      "spine_mri",
+      "thoracic_ultrasound"
+    ],
+    "microbiology_tests": [
+      "adrenal_tb_pcr",
+      "blood_cultures",
+      "drain_culture",
+      "pleural_culture",
+      "urine_culture"
+    ],
+    "ecg_or_tests": [
+      "ecg",
+      "echo",
+      "electrophysiology",
+      "intravascular_imaging",
+      "research_cfdna",
+      "rhc",
+      "tee",
+      "tumor_genetics"
+    ],
+    "procedures": [
+      "adrenal_biopsy",
+      "device_exploration",
+      "ebus_biopsy",
+      "hematoma_evacuation",
+      "laparoscopy",
+      "laparotomy",
+      "pathology",
+      "pericardiocentesis",
+      "pleural_biopsy",
+      "resection",
+      "thoracentesis"
+    ],
+    "medications": []
+  },
+  "temporal_events": [],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ],
+  "catalog_version": "v1_shared_all_cases"
+}

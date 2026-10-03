@@ -1,0 +1,211 @@
+{
+  "corpus_version": "mvp10_v3_2026-09-26",
+  "frozen_at_utc": "2026-09-26T00:27:47.336891+00:00",
+  "files": [
+    {
+      "path": "cases/case_001/case_packet.json",
+      "sha256": "f93a92049247463978d5c8736d008a9d7978a396f5510fe3db72e08807a1a245"
+    },
+    {
+      "path": "cases/case_001/ground_truth.json",
+      "sha256": "2a80dde363d5c97786b9a1a423adce428b44ad95e58c53fa9849535df6341e4b"
+    },
+    {
+      "path": "cases/case_001/rubric.json",
+      "sha256": "e58f44f4bc7ec82d2a6793027860d004a9db5785527d278296b07fc35501c6b7"
+    },
+    {
+      "path": "cases/case_001/source.pdf",
+      "sha256": "2d77401170e241b4b75e60c233dd3d37dcc474949b0e1e17e68f6fdbfc73d5e8"
+    },
+    {
+      "path": "cases/case_001/source_metadata.yaml",
+      "sha256": "9f53e165937e12cf356ae467b831f2b701e4364a87f8c0057af98bbf8140e9da"
+    },
+    {
+      "path": "cases/case_002/case_packet.json",
+      "sha256": "47460946199b1bf67dedd094512a14f20ee520180da8bebfa74addfd3d40d7f1"
+    },
+    {
+      "path": "cases/case_002/ground_truth.json",
+      "sha256": "da7bf8de444bd11d1c4a0c38cf075f29ffe7d03af1e225560139758d8e0bae27"
+    },
+    {
+      "path": "cases/case_002/rubric.json",
+      "sha256": "926ac2cdb59df4c962ee7a102be6f994e54c130e999a1ddc1716fefc649b1fcd"
+    },
+    {
+      "path": "cases/case_002/source.pdf",
+      "sha256": "21523f7a83638db5b4056e153fd73f727da541b8599f6bb8f3e7a0ddf9fe2bf9"
+    },
+    {
+      "path": "cases/case_002/source_metadata.yaml",
+      "sha256": "955ed6e8338219457f47f4627c1a66f7aaa9a33556616e21f0306777017d88b8"
+    },
+    {
+      "path": "cases/case_003/case_packet.json",
+      "sha256": "28911a473132aaf4b3215d10f63dcbf84099c70d426506d185f10dbd0a5020a3"
+    },
+    {
+      "path": "cases/case_003/ground_truth.json",
+      "sha256": "6614d0efb809a7997bb99c4aedeac478c2d5f0d44f34d766a4f49f9100ecdb6d"
+    },
+    {
+      "path": "cases/case_003/rubric.json",
+      "sha256": "1898014a94c0eaeac83fe7e37bf49c7425b15068bbaac37ba0ba726dd3948d9b"
+    },
+    {
+      "path": "cases/case_003/source.pdf",
+      "sha256": "0d0586082ebde45b92c57c79023ce1c58d1e81606448916376cc0801c76a488f"
+    },
+    {
+      "path": "cases/case_003/source_metadata.yaml",
+      "sha256": "71e4afff9e023e1e9c0bd5d1fefe29e15cff1d02e43f3d60bca276ad3b41e60b"
+    },
+    {
+      "path": "cases/case_004/case_packet.json",
+      "sha256": "dcb2b5a26c53620752756e0fc4970afe3c7b2aff37176821fc7763bbda494118"
+    },
+    {
+      "path": "cases/case_004/ground_truth.json",
+      "sha256": "6b22d61f40081a97b87f8b2e92674d0e406f04687abe98040b1289c808ebf63b"
+    },
+    {
+      "path": "cases/case_004/rubric.json",
+      "sha256": "6c5bd65c55d5b8d4ab2b5892e7d2db389c87bd330e4019574b5c6bfcbfaf4579"
+    },
+    {
+      "path": "cases/case_004/source.pdf",
+      "sha256": "acbe808bacc3648afcd11f9d3d31909f00db775ac01e8b2e245fc298555b43fb"
+    },
+    {
+      "path": "cases/case_004/source_metadata.yaml",
+      "sha256": "94664d11665c8ccf192f9b6a70b92f1021586c55de11d550ab62a4a6524746d6"
+    },
+    {
+      "path": "cases/case_005/case_packet.json",
+      "sha256": "9c74dd4600b7b9ea15fe1df111674e7357b3ff842dc9be7b848b7752b46d5828"
+    },
+    {
+      "path": "cases/case_005/ground_truth.json",
+      "sha256": "393369ddace563b7c5b5ab61a678e4c214a58e8c8214b9acc6e953c6d2116c75"
+    },
+    {
+      "path": "cases/case_005/rubric.json",
+      "sha256": "8f122fa5c559994d45ccc5152eec2bc90076f7be032bdf2133d3363d9f09a492"
+    },
+    {
+      "path": "cases/case_005/source.pdf",
+      "sha256": "7d2f73cd7ec9b01ea923baad0e35a434d516f0c163e03e79fd284edc7c0589c6"
+    },
+    {
+      "path": "cases/case_005/source_metadata.yaml",
+      "sha256": "cf8892e62cd30a90844de6411adc9107e65922e18fc4c0172b2cbf519067b38d"
+    },
+    {
+      "path": "cases/case_006/case_packet.json",
+      "sha256": "d102512430929774950531f48cec9907b37f4870c638f283cf8a0283486772a3"
+    },
+    {
+      "path": "cases/case_006/ground_truth.json",
+      "sha256": "2f7c329e5837e304e977fdea6684e1171fb4a16cecf344aee8363fe1662930f8"
+    },
+    {
+      "path": "cases/case_006/rubric.json",
+      "sha256": "93921126f4467a99602c132592abd695a4591edb1b90433538539284c51ce230"
+    },
+    {
+      "path": "cases/case_006/source.pdf",
+      "sha256": "c44320de6506861de16eae39b9850cf0037a6918f560930fca846d7191a73575"
+    },
+    {
+      "path": "cases/case_006/source_metadata.yaml",
+      "sha256": "e524e1a5f636a43d31be4e5c1198d2c00cd92681eb052f4501460e2107583983"
+    },
+    {
+      "path": "cases/case_007/case_packet.json",
+      "sha256": "13d4b6ce14ebabe386a6360eed99b3ca0b7fd71cf4d978b51e9a3773bbec19a9"
+    },
+    {
+      "path": "cases/case_007/ground_truth.json",
+      "sha256": "f8ee43b8b2b850da54c0d51e4a7ab7a07ce4f5fe77ab8d10b0adee21556911d1"
+    },
+    {
+      "path": "cases/case_007/rubric.json",
+      "sha256": "de51c66463cc615e34e9db499fa083455601947a592f1266a0bd793f56c5d763"
+    },
+    {
+      "path": "cases/case_007/source.pdf",
+      "sha256": "379696de974dd62ef2d1c5d25a8593bde8310bc53f28abe4717a0e39a905b9c2"
+    },
+    {
+      "path": "cases/case_007/source_metadata.yaml",
+      "sha256": "5c6f048ddbf89583a0cbffc6283c596509a0cac9f3d76b77ccae1155b4c2d44f"
+    },
+    {
+      "path": "cases/case_008/case_packet.json",
+      "sha256": "9545db225601ac154a316a92f81375c276b2001d0fc3428e65b18d7d02af52ee"
+    },
+    {
+      "path": "cases/case_008/ground_truth.json",
+      "sha256": "b5053f2f41b802c96cf33d9efb54a3cbb9359c943bef3a9ce06e3c60e51bcaef"
+    },
+    {
+      "path": "cases/case_008/rubric.json",
+      "sha256": "b485ec202bdbe627aa7baa29aa63c0ce6295b87c5a73213979f2acc85d76256c"
+    },
+    {
+      "path": "cases/case_008/source.pdf",
+      "sha256": "7e1722266e418610714f6d418e2d22cc2a0970393ee056a1e3aca96b58eb5681"
+    },
+    {
+      "path": "cases/case_008/source_metadata.yaml",
+      "sha256": "47549d7cd434282d716dcad7f2f58f8c494b592c9bb287c488464523c6bfe1a1"
+    },
+    {
+      "path": "cases/case_009/case_packet.json",
+      "sha256": "64015276fe6bae571c51cff060ee12a62a57b0bd15914ec0b1dacd5aab41db0d"
+    },
+    {
+      "path": "cases/case_009/ground_truth.json",
+      "sha256": "1263e67362ac2a86686ac6af1aafa3990a8eb611cc7c7b8ee575c858aab4d539"
+    },
+    {
+      "path": "cases/case_009/rubric.json",
+      "sha256": "c7e4ad6f3cb4bcc6f6b430e551c3b37649a2941c3d65cd205dea2c92c4c6a0c2"
+    },
+    {
+      "path": "cases/case_009/source.pdf",
+      "sha256": "6da7ff2ac3dd3295762fba7a78571f2eb01eb9c8e0d45a6da7cb27731cea5eca"
+    },
+    {
+      "path": "cases/case_009/source_metadata.yaml",
+      "sha256": "a6ec07cddfdf5af267d2ce8eace7a3130d9dc12fdefea48fd70ad2bbe4e7af82"
+    },
+    {
+      "path": "cases/case_010/case_packet.json",
+      "sha256": "2a7533237493d8f6a19922512f8ad31f9db7825f5619348e3da3ebec16069cc3"
+    },
+    {
+      "path": "cases/case_010/ground_truth.json",
+      "sha256": "3689e57bc14046b65d53d15b12afd1fff4dc21c482a676658c2f85506bb05acb"
+    },
+    {
+      "path": "cases/case_010/rubric.json",
+      "sha256": "b22f1a1fd18ab82b17e10c16e59435d53d951aa2b92677b040008a72412912dc"
+    },
+    {
+      "path": "cases/case_010/source.pdf",
+      "sha256": "e7c0a06004d4c8d100b4059a202300939b09055c4a636a58c127b9fd69e36d62"
+    },
+    {
+      "path": "cases/case_010/source_metadata.yaml",
+      "sha256": "fd6237a4b5d4764cb9a0bc98e748c8d5f89ec59037bbf6879a931d22a8f1ea0e"
+    }
+  ],
+  "case_count": 10,
+  "review_status": "editorial_draft_pending_physician_signoff",
+  "catalog_version": "v1_shared_all_cases",
+  "reason_for_revision": "case_003 source describes early 30s, not exact age 32; preserved age band without inventing exact age.",
+  "revision_note": "Clinical PDF audit corrected units, temporal gates, source dispositions, CT spoiler and phase-specific rubrics; see docs/corpus_audit.md."
+}

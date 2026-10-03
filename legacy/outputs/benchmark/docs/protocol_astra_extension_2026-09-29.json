@@ -1,0 +1,72 @@
+{
+  "extension_version": "mvp10_extension_astra_2026-09-29",
+  "corpus_version": "mvp10_v3_2026-09-26",
+  "base_protocol_version": "mvp10_closedbook_v5_2026-09-26",
+  "frozen_at_utc": "2026-09-29T20:59:00.767447+00:00",
+  "base_protocol_manifest_sha256": "5ddd276e469f104aa7c417e529e4d55f677360b98bc91adc8cc733ff3fe9c19f",
+  "results_directory": "results/extension_astra_2026-09-29",
+  "case_order": [
+    "case_001",
+    "case_002",
+    "case_003",
+    "case_004",
+    "case_005",
+    "case_006",
+    "case_007",
+    "case_008",
+    "case_009",
+    "case_010"
+  ],
+  "repetitions": 3,
+  "max_actions": 40,
+  "max_model_turns": 60,
+  "max_wall_seconds": 3600,
+  "repeated_unproductive_call_limit": 3,
+  "models": {
+    "gpt-6-astra": {
+      "provider": "openai",
+      "effort": "high",
+      "progress_path": "results/extension_astra_2026-09-29/summaries/astra_progress.jsonl",
+      "adapter": "providers/openai_astra.py",
+      "cli_version": "0.158.0-alpha.2.1",
+      "identity_evidence": "requested_and_inference_accepted_not_observed",
+      "model_observed": null,
+      "access_verified": true,
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6-astra"
+    }
+  },
+  "pricing": {
+    "gpt-6-astra": {
+      "verified": true,
+      "as_of": "2026-09-29",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "input_per_million": 10.0,
+      "cached_input_per_million": 1.0,
+      "cache_write_input_per_million": 12.5,
+      "output_per_million": 50.0,
+      "input_includes_cached": true,
+      "output_includes_reasoning": true,
+      "long_context_threshold": 272000,
+      "currency": "USD",
+      "basis": "hypothetical_API_Standard_not_subscription_charge"
+    }
+  },
+  "files": [
+    {
+      "path": "runner/run_astra_extension.py",
+      "sha256": "0151d8597ad7090d202ee2d3871df953813361bdbea428a6d56508550f14e248"
+    },
+    {
+      "path": "providers/openai_astra.py",
+      "sha256": "b6533a026a889aae21ea9ae90668745dee98a0ac65e888129989ba8e7b998306"
+    }
+  ],
+  "diagnostic_wrapper": {
+    "path": "scripts/run_astra_with_provider_diagnostics.py",
+    "sha256": "0c38ece9ab81735e0874f197bd4e9e3c2c39378cdc9df72008d4895e8be14474",
+    "not_part_of_clinical_runtime": true
+  },
+  "change_scope": "Add Astra only on 2026-09-29. Do not restart Luna/Terra. No changes to frozen corpus, physician prompt, EHR, tools, base runner, clinical stopping, or evaluation rules.",
+  "clinical_review": "pending",
+  "reset_credit_policy": "no_agent_redemption"
+}

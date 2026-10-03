@@ -1,0 +1,334 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_001",
+  "index_patient": "single_reported_patient",
+  "language": "en",
+  "setting": "inpatient",
+  "time_zero": "first_clinical_contact",
+  "initial": {
+    "age_years": 65,
+    "sex_recorded": "male",
+    "chief_complaint": "New chest pain during inpatient treatment for bloodstream infection."
+  },
+  "facts": [
+    {
+      "fact_id": "pmh_001",
+      "domain": "pmh",
+      "topic_codes": [
+        "renal"
+      ],
+      "value": "Hemodialysis for diabetic nephropathy; end-stage renal disease.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "renal"
+        ]
+      }
+    },
+    {
+      "fact_id": "pmh_002",
+      "domain": "pmh",
+      "topic_codes": [
+        "cardiac"
+      ],
+      "value": "Prior leadless pacemaker and drug-eluting stent in the left anterior descending artery for stable angina.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "cardiac"
+        ]
+      }
+    },
+    {
+      "fact_id": "hpi_003",
+      "domain": "hpi",
+      "topic_codes": [
+        "infection"
+      ],
+      "value": "Methicillin-resistant Staphylococcus aureus bacteremia complicated by infective endocarditis; receiving intravenous antibiotics.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "infection"
+        ]
+      }
+    },
+    {
+      "fact_id": "hpi_004",
+      "domain": "hpi",
+      "topic_codes": [
+        "onset"
+      ],
+      "value": "Chest pain developed during treatment for the bloodstream infection.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "onset"
+        ]
+      }
+    },
+    {
+      "fact_id": "physical_exam_005",
+      "domain": "physical_exam",
+      "topic_codes": [
+        "hemodynamics"
+      ],
+      "value": "Rapid hemodynamic deterioration with cardiogenic shock.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_physical_exam",
+        "match_codes": [
+          "hemodynamics"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_006",
+      "domain": "lab",
+      "topic_codes": [
+        "inflammation"
+      ],
+      "value": "High inflammatory response; exact analyte values were not reported.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "inflammation"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_007",
+      "domain": "lab",
+      "topic_codes": [
+        "coagulation"
+      ],
+      "value": "Disseminated intravascular coagulation was reported; exact values were not provided.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "coagulation"
+        ]
+      }
+    },
+    {
+      "fact_id": "ecg_008",
+      "domain": "ecg",
+      "topic_codes": [
+        "echo"
+      ],
+      "value": "Echocardiography showed new left-ventricular wall-motion abnormalities and pericardial effusion, then tamponade.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_ecg_or_test",
+        "match_codes": [
+          "echo"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_009",
+      "domain": "imaging",
+      "topic_codes": [
+        "coronary_angiography"
+      ],
+      "value": "After emergency pericardiocentesis, coronary angiography showed disruption of the prior stent and rapidly enlarging coronary pseudoaneurysm.",
+      "status": "reported",
+      "available_at": "after_procedure:pericardiocentesis",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "coronary_angiography"
+        ]
+      }
+    },
+    {
+      "fact_id": "ecg_010",
+      "domain": "ecg",
+      "topic_codes": [
+        "intravascular_imaging"
+      ],
+      "value": "Optical coherence tomography and intravascular ultrasound showed loss of the arterial wall three-layer structure, consistent with pseudoaneurysm.",
+      "status": "reported",
+      "available_at": "after_procedure:pericardiocentesis",
+      "release_rule": {
+        "tool": "request_ecg_or_test",
+        "match_codes": [
+          "intravascular_imaging"
+        ]
+      }
+    },
+    {
+      "fact_id": "procedure_result_011",
+      "domain": "procedure_result",
+      "topic_codes": [
+        "pericardiocentesis"
+      ],
+      "value": "Emergency pericardiocentesis yielded yellowish, turbid pericardial fluid.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_procedure",
+        "match_codes": [
+          "pericardiocentesis"
+        ]
+      }
+    },
+    {
+      "fact_id": "procedure_result_012",
+      "domain": "procedure_result",
+      "topic_codes": [
+        "device_exploration"
+      ],
+      "value": "Surgical exploration of the leadless pacemaker revealed vegetation.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_procedure",
+        "match_codes": [
+          "device_exploration"
+        ]
+      }
+    },
+    {
+      "fact_id": "microbiology_013",
+      "domain": "microbiology",
+      "topic_codes": [
+        "blood_cultures"
+      ],
+      "value": "MRSA bacteremia was documented; exact culture sampling time and antimicrobial susceptibility details were not reported.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_microbiology",
+        "match_codes": [
+          "blood_cultures"
+        ]
+      }
+    }
+  ],
+  "catalog": {
+    "history_topics": [
+      "cardiac",
+      "catheter",
+      "current",
+      "drug_reaction",
+      "history",
+      "infection",
+      "medical",
+      "negatives",
+      "oncology",
+      "onset",
+      "pregnancy",
+      "procedure",
+      "recent_therapy",
+      "renal",
+      "smoking",
+      "symptoms",
+      "urologic"
+    ],
+    "physical_regions": [
+      "abdomen",
+      "abdomen_pelvis",
+      "cardiovascular",
+      "general",
+      "hemodynamics",
+      "neurologic",
+      "postoperative",
+      "respiratory",
+      "skin",
+      "skin_eye",
+      "vitals"
+    ],
+    "lab_tests": [
+      "adrenal_hormones",
+      "blood_film",
+      "blood_panel",
+      "cbc",
+      "chemistry",
+      "coagulation",
+      "d_dimer",
+      "dat",
+      "hemoglobin",
+      "hemolysis",
+      "inflammation",
+      "inflammation_followup",
+      "lactate",
+      "metabolic",
+      "nt_probnp",
+      "pleural_fluid",
+      "pregnancy_test",
+      "troponin",
+      "tspot"
+    ],
+    "imaging_studies": [
+      "abdominal_xray",
+      "adrenal_ct",
+      "adrenal_ultrasound",
+      "brain_mri",
+      "cardiac_mri",
+      "chest_xray",
+      "coronary_angiography",
+      "coronary_ct",
+      "ct_abdomen",
+      "ct_chest",
+      "ctpa",
+      "pelvic_ultrasound",
+      "pet",
+      "spine_mri",
+      "thoracic_ultrasound"
+    ],
+    "microbiology_tests": [
+      "adrenal_tb_pcr",
+      "blood_cultures",
+      "drain_culture",
+      "pleural_culture",
+      "urine_culture"
+    ],
+    "ecg_or_tests": [
+      "ecg",
+      "echo",
+      "electrophysiology",
+      "intravascular_imaging",
+      "research_cfdna",
+      "rhc",
+      "tee",
+      "tumor_genetics"
+    ],
+    "procedures": [
+      "adrenal_biopsy",
+      "device_exploration",
+      "ebus_biopsy",
+      "hematoma_evacuation",
+      "laparoscopy",
+      "laparotomy",
+      "pathology",
+      "pericardiocentesis",
+      "pleural_biopsy",
+      "resection",
+      "thoracentesis"
+    ],
+    "medications": []
+  },
+  "temporal_events": [],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ],
+  "catalog_version": "v1_shared_all_cases"
+}

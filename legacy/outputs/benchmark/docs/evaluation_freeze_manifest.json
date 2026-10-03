@@ -1,0 +1,36 @@
+{
+  "evaluation_version": "evaluation-v2",
+  "frozen_at_utc": "2026-09-26T06:52:18.517182+00:00",
+  "corpus_version": "mvp10_v3_2026-09-26",
+  "protocol_version": "mvp10_closedbook_v5_2026-09-26",
+  "files": [
+    {
+      "path": "evaluation/metrics.py",
+      "sha256": "c9975c7ca126de8b1eb8fa7a3bdaa33cd48f755cdc803498e04c2639514e1172"
+    },
+    {
+      "path": "evaluation/diagnosis_concepts.py",
+      "sha256": "3660ebcbe6212616fac78fdd4f210f4f1393216fc3b3b7a6a8e9058c3337e15b"
+    },
+    {
+      "path": "evaluation/diagnosis_aliases.json",
+      "sha256": "b2da153cd8d65df6658f45e715b0287cc4956a040bf62fbb8ddeb09d261df9fc"
+    },
+    {
+      "path": "evaluation/validate.py",
+      "sha256": "e94dace330cfd77c1b8211e75a82bf84ca1789a33393fc5e8f6613c989adebfc"
+    },
+    {
+      "path": "evaluation/analyze_panel.py",
+      "sha256": "d7460bdacc69be6fb3aa738c5d21d12188ba0179a69c7cd304faa575dbe2248b"
+    },
+    {
+      "path": "evaluation/prepare_review.py",
+      "sha256": "7a8ffa01cf9885576b71937a75c73b3824ef017945858967680658c74a3afe57"
+    },
+    {
+      "path": "evaluation/adjudication.md",
+      "sha256": "f59926c9a725c81f512e43c0fd8cf295da73bc59359d00d445f484ba912bd97f"
+    }
+  ]
+}

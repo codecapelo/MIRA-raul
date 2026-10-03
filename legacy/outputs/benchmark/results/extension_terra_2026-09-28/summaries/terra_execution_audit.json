@@ -1,0 +1,413 @@
+{
+  "schema_version": "1.0.0",
+  "audited_at_utc": "2026-09-28T20:44:57.728314Z",
+  "extension_version": "mvp10_extension_terra_2026-09-28",
+  "corpus_version": "mvp10_v3_2026-09-26",
+  "protocol_version": "mvp10_closedbook_v5_2026-09-26",
+  "manifest_verification": "pass",
+  "manifest_path": "docs/protocol_terra_extension_2026-09-28.json",
+  "manifest_sha256": "3847354a7e94513ecb76369489c6b6114cfec4d2d0f26b49038ed0f773d5b4f3",
+  "frozen_files": [
+    {
+      "path": "runner/run_terra_extension.py",
+      "sha256": "9cefa5d59392938e1e0528b7782bfc908ebc7f179d278d676f7c3fd4b67536b9"
+    },
+    {
+      "path": "providers/openai_terra.py",
+      "sha256": "ffce9225043e62527cd2b121a357afd415daaf27afd346c87189f169b64d503e"
+    }
+  ],
+  "terminal_panel": {
+    "expected_runs": 30,
+    "terminal_traces": 30,
+    "unique_case_repetition_combinations": 30,
+    "cases": 10,
+    "repetitions_per_case": 3,
+    "completed": 30,
+    "stopping_reason_counts": {
+      "completed": 30
+    },
+    "progress_index_matches_raw": true
+  },
+  "identity": {
+    "model_requested": "gpt-5.6-terra",
+    "effort_requested": "high",
+    "model_observed": null,
+    "evidence_level": "requested_and_inference_accepted_not_observed",
+    "responses_audited": 305,
+    "all_requested_model_match": true,
+    "all_requested_effort_high": true,
+    "transport_counts": {
+      "codex_chatgpt_subscription_cli_json_action": 305
+    }
+  },
+  "terminal_usage": {
+    "reported_usage_events": 305,
+    "input_tokens": 4929392,
+    "cached_input_tokens": 4295680,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 75997,
+    "reasoning_output_tokens": 50011,
+    "uncached_nonwrite_input_tokens": 633712,
+    "long_context_turns": 0,
+    "usage_events_missing_input_or_output": 0,
+    "equivalent_API_standard_cost_usd": 3.038524
+  },
+  "failed_prefix_usage": {
+    "reported_usage_events": 35,
+    "input_tokens": 561896,
+    "cached_input_tokens": 512256,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 9604,
+    "reasoning_output_tokens": 6728,
+    "uncached_nonwrite_input_tokens": 49640,
+    "long_context_turns": 0,
+    "usage_events_missing_input_or_output": 0,
+    "equivalent_API_standard_cost_usd": 0.316979
+  },
+  "pricing": {
+    "verified": true,
+    "as_of": "2026-09-28",
+    "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+    "input_per_million": 2.0,
+    "cached_input_per_million": 0.2,
+    "cache_write_input_per_million": 2.5,
+    "cache_write_rate_source": "official page says 1.25x uncached input rate; 1.25 * USD2 = USD2.50/M",
+    "output_per_million": 12.0,
+    "input_includes_cached": true,
+    "output_includes_reasoning": true,
+    "long_context_threshold": 272000,
+    "currency": "USD",
+    "basis": "hypothetical_API_Standard_not_subscription_charge"
+  },
+  "cost_scope": {
+    "basis": "hypothetical_API_Standard_not_subscription_charge",
+    "input_includes_cached_and_cache_write": true,
+    "output_includes_reasoning": true,
+    "failed_last_call_usage_unavailable": 5,
+    "probes_and_cli_preflights_included": false,
+    "no_API_inference": true,
+    "reset_credit_consumed_by_executor": false
+  },
+  "operational": {
+    "failed_attempts": 5,
+    "attempts_total": 35,
+    "failed_attempts_preserved": true,
+    "terminal_combinations_repeated": false,
+    "failed_exception_class_counts": {
+      "OpenAIAccountError": 4,
+      "TimeoutExpired": 1
+    },
+    "sidecar_exception_categories": {
+      "arguments_json_invalid": 1
+    },
+    "previous_generic_errors_cause": "indeterminate_not_retroactively_classified",
+    "actions_total": 305,
+    "model_turns_total": 305,
+    "invalid_model_outputs_total": 0,
+    "tool_result_status_counts": {
+      "ok": 228,
+      "not_available_in_source": 75,
+      "blocked": 2
+    }
+  },
+  "latency_seconds": {
+    "runs_total": 4881.538,
+    "run_mean": 162.718,
+    "run_median": 128.23,
+    "run_p95_nearest_rank": 412.598,
+    "run_max": 431.514,
+    "model_call_mean": 15.967,
+    "model_call_p95_nearest_rank": 28.345
+  },
+  "review_state": "pending",
+  "clinical_accuracy_calculated": false,
+  "sidecar": {
+    "path": "results/provider_diagnostics_2026-09-28/gpt-5.6-terra.jsonl",
+    "wrapper_sha256": "8830e5c2d23d93f04768620d40e0a90595d4949d9d9ed7f0e1e8604cf6475751",
+    "first_start_utc": "2026-09-28T19:47:19.969821Z",
+    "logs_only_utc_model_class_category": true
+  },
+  "trace_evidence": [
+    {
+      "path": "results/extension_terra_2026-09-28/raw/0b7b28e8-ffac-4dff-a6d8-ccf8cbe29d84.jsonl",
+      "sha256": "9dc5f0775aa3751efcb01c174575febe82228e81a2345d2a5fbddc235498e26c",
+      "run_id": "0b7b28e8-ffac-4dff-a6d8-ccf8cbe29d84",
+      "case_id": "case_001",
+      "repetition": 3,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/0f05e6cb-7f1d-4d57-9b29-7292d010944f.jsonl",
+      "sha256": "4ecfcd4c5d3579896736463bf3cc93e7f2beae792e7f2bbca3759cca889905a5",
+      "run_id": "0f05e6cb-7f1d-4d57-9b29-7292d010944f",
+      "case_id": "case_002",
+      "repetition": 1,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/1004ca0a-ceda-443e-8717-4d7305ef1047.jsonl",
+      "sha256": "39f3632f3cf307f8a9c2d214502d029fb6a622f77872c8b05b88b2965225ce1b",
+      "run_id": "1004ca0a-ceda-443e-8717-4d7305ef1047",
+      "case_id": "case_010",
+      "repetition": 1,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/10920fb8-9b36-4da1-bdbf-7c6de97a07d6.jsonl",
+      "sha256": "ad96ab5ae2c779df240d654e3f8f94b4ba8a98410eb5b8f32c069388f3f7d68c",
+      "run_id": "10920fb8-9b36-4da1-bdbf-7c6de97a07d6",
+      "case_id": "case_007",
+      "repetition": 3,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/15327adf-5491-4b67-a190-cfe8763be5fb.jsonl",
+      "sha256": "2784c253ffafefc1b4abc8f0980b43eaa4da9903237dd0b93e5c1fea4f9e3539",
+      "run_id": "15327adf-5491-4b67-a190-cfe8763be5fb",
+      "case_id": "case_004",
+      "repetition": 3,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/17342811-4e64-4943-9ed3-c87abbe2a5cb.jsonl",
+      "sha256": "921db4a55746f73d7895a7ee28cf49e9e17ddc22fa8e0d25ff935dea576dbc3a",
+      "run_id": "17342811-4e64-4943-9ed3-c87abbe2a5cb",
+      "case_id": "case_005",
+      "repetition": 3,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/21ebf373-6a40-40c8-8c33-2f3172f2ee60.jsonl",
+      "sha256": "b7e6085670f17d729d5e24135ca2b6652a2ecb0928958d3ddf2136471d7c4ecc",
+      "run_id": "21ebf373-6a40-40c8-8c33-2f3172f2ee60",
+      "case_id": "case_005",
+      "repetition": 2,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/32d4b0ad-8f0f-48a6-8059-271f7290f92b.jsonl",
+      "sha256": "f456bed20f0d71cd690009778d14a1e7ecfdd253076ac356738f0a575b94e0cf",
+      "run_id": "32d4b0ad-8f0f-48a6-8059-271f7290f92b",
+      "case_id": "case_009",
+      "repetition": 3,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/3e713a05-3909-4d36-b3f3-3832d77f1974.jsonl",
+      "sha256": "6e26faca0274b49527dc51bc2df7a87f14242bcb5dbd4bcbd3efa86785c5d52a",
+      "run_id": "3e713a05-3909-4d36-b3f3-3832d77f1974",
+      "case_id": "case_002",
+      "repetition": 2,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/3fc47d04-5e81-4561-9196-5ca1d7b928ac.jsonl",
+      "sha256": "fb24d9f15a7dc0e9dccd6f5a40825efab680aefb82e726edca12203dd1e8a334",
+      "run_id": "3fc47d04-5e81-4561-9196-5ca1d7b928ac",
+      "case_id": "case_004",
+      "repetition": 2,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/547386a2-2acf-4971-8ce9-1130a2181359.jsonl",
+      "sha256": "e5a9d844634714810c3a1640a1efedf418990fa5e2f16ccb1ec363483bff5e19",
+      "run_id": "547386a2-2acf-4971-8ce9-1130a2181359",
+      "case_id": "case_006",
+      "repetition": 3,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/63799037-f547-4497-84eb-33306b4e6ec8.jsonl",
+      "sha256": "714ff977fc0331405ce14c17b4dbb35ee4fe50eea49d812debdf95c2da5ed07b",
+      "run_id": "63799037-f547-4497-84eb-33306b4e6ec8",
+      "case_id": "case_006",
+      "repetition": 1,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/6a9e1c62-fa63-4111-9573-baeb3cb02b2b.jsonl",
+      "sha256": "ea3c484e532701d6daed9573c14686e4fb4052d23201602e44ff89b6dc78b537",
+      "run_id": "6a9e1c62-fa63-4111-9573-baeb3cb02b2b",
+      "case_id": "case_008",
+      "repetition": 2,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/735d331b-1c48-4e9e-b74a-d06ed40a75ae.jsonl",
+      "sha256": "3358e331e5f0181bc258aa986396775db24a98117775c8c8ee9426dca072cd56",
+      "run_id": "735d331b-1c48-4e9e-b74a-d06ed40a75ae",
+      "case_id": "case_005",
+      "repetition": 1,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/7ee74c08-6468-47e2-a1ed-4cd1d8a5192e.jsonl",
+      "sha256": "073ea4c79bfae66d5d62b1d038c5563c51db72e62f5c2c8dd57994eb6ca8c12c",
+      "run_id": "7ee74c08-6468-47e2-a1ed-4cd1d8a5192e",
+      "case_id": "case_003",
+      "repetition": 2,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/7f2a2512-767b-4ace-94dc-fb89aa102784.jsonl",
+      "sha256": "f76b33882c716713cae0f63ec435b4d54e68a22eb1d3ddaec3ec7f1a00b0014a",
+      "run_id": "7f2a2512-767b-4ace-94dc-fb89aa102784",
+      "case_id": "case_007",
+      "repetition": 1,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/84fbc723-3e19-4dd3-9fda-43210e9ddddb.jsonl",
+      "sha256": "d3a666854a792c801292676363e3b41c8cc332877a5ab6b81eeaeaca409c378a",
+      "run_id": "84fbc723-3e19-4dd3-9fda-43210e9ddddb",
+      "case_id": "case_010",
+      "repetition": 3,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/8cb985b8-03c7-4642-bb91-b1959d7d94fd.jsonl",
+      "sha256": "c4556d7255451b462844646033c67e7674784e8a8905fd0110016f3e2853e943",
+      "run_id": "8cb985b8-03c7-4642-bb91-b1959d7d94fd",
+      "case_id": "case_001",
+      "repetition": 1,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/94ee5af0-52db-4847-bb5e-8cdc052a32cf.jsonl",
+      "sha256": "e23121118ca1ddbb2a474a90928f43382eeadfdc981162a3239f5624ff87e041",
+      "run_id": "94ee5af0-52db-4847-bb5e-8cdc052a32cf",
+      "case_id": "case_004",
+      "repetition": 1,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/9794040c-dc21-410c-8ef3-72b1266b3fe2.jsonl",
+      "sha256": "d5b68e1e366f3d23323055406fafc874f228d10be7902258fbe3c7868a186a39",
+      "run_id": "9794040c-dc21-410c-8ef3-72b1266b3fe2",
+      "case_id": "case_003",
+      "repetition": 1,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/9fff6cb8-0c60-43d1-9861-fe886991c2e1.jsonl",
+      "sha256": "314551afcfa9726cb1eccd3aca376803062069826f72edb20a0a905cc7b7f720",
+      "run_id": "9fff6cb8-0c60-43d1-9861-fe886991c2e1",
+      "case_id": "case_001",
+      "repetition": 2,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/c5114be6-03cc-4a59-9f5b-ee17cb25e469.jsonl",
+      "sha256": "b2c618b4bebee2dd95218e27d34bfac5208eca1e95b4ef2baf1f8df079611f27",
+      "run_id": "c5114be6-03cc-4a59-9f5b-ee17cb25e469",
+      "case_id": "case_002",
+      "repetition": 3,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/caf64549-0738-4be7-bce1-a093d90f7dc2.jsonl",
+      "sha256": "85cdd5610428ce33b4f76e9333ab56dc6704f5f6dadcf11f037df6d0c61240c5",
+      "run_id": "caf64549-0738-4be7-bce1-a093d90f7dc2",
+      "case_id": "case_009",
+      "repetition": 1,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/d07d241a-e950-4928-987a-732432488c4c.jsonl",
+      "sha256": "4ab628d483738de4e0b62f1bd92b6d4ad1d64ec0cc0a8d72ed23b87374549483",
+      "run_id": "d07d241a-e950-4928-987a-732432488c4c",
+      "case_id": "case_003",
+      "repetition": 3,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/d1798417-3ce8-41cd-9b03-c0e6a439472b.jsonl",
+      "sha256": "0a694b55e07c0a21f4d71207beeeeafab3fb00e502df3765cdd16f5a2d68b340",
+      "run_id": "d1798417-3ce8-41cd-9b03-c0e6a439472b",
+      "case_id": "case_007",
+      "repetition": 2,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/db2bd88d-7036-4e6b-8b56-1a944c32b812.jsonl",
+      "sha256": "b623f305ca47b92b91dc3b49702a5f2a3de3fd1ffa973ad4ddb8916e22fd85cf",
+      "run_id": "db2bd88d-7036-4e6b-8b56-1a944c32b812",
+      "case_id": "case_008",
+      "repetition": 1,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/e3721e9a-5a26-4da3-b1e4-c04123034dfb.jsonl",
+      "sha256": "e5a5716af084b6dfceb494d475a5e2ea281a5e0ccfa88a197257f74c85c00387",
+      "run_id": "e3721e9a-5a26-4da3-b1e4-c04123034dfb",
+      "case_id": "case_006",
+      "repetition": 2,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/e7e38db9-a2f0-45fc-9c0e-48c6c72fdb10.jsonl",
+      "sha256": "daee57660b6f54062d41c52b3c8442d3acf673976c2c14591f0a6aaceebb0fb0",
+      "run_id": "e7e38db9-a2f0-45fc-9c0e-48c6c72fdb10",
+      "case_id": "case_010",
+      "repetition": 2,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/eb65d205-b811-4de9-9054-5dfd16aa41fc.jsonl",
+      "sha256": "aff03bee7790f9fc3573225f0c7ee06cef3108b7cacfb0d95ecc44ab25965bcd",
+      "run_id": "eb65d205-b811-4de9-9054-5dfd16aa41fc",
+      "case_id": "case_008",
+      "repetition": 3,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/raw/ecadf93c-88e9-443b-9037-41c623b26e12.jsonl",
+      "sha256": "78458af4a79ae6ad54c591e5e31f15ea7ab2aa54741402b6eb6c9db5bfc20e4a",
+      "run_id": "ecadf93c-88e9-443b-9037-41c623b26e12",
+      "case_id": "case_009",
+      "repetition": 2,
+      "stopping_reason": "completed"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/incomplete/1727002e-8af1-46ae-92bc-d90faaf181b5.jsonl",
+      "sha256": "cea4f78531ae465d686b9ef123d84a50ac1ab45b1b2692ede075f9d7673adde5",
+      "run_id": "1727002e-8af1-46ae-92bc-d90faaf181b5",
+      "case_id": "case_006",
+      "repetition": 2,
+      "stopping_reason": "provider_or_runner_error"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/incomplete/27eed42e-0ed1-40c2-b866-51a1bafcfc06.jsonl",
+      "sha256": "3d0fa97caa6695206b3d50fc79e9f3ac091d07452e0aad3837f44348e4d183db",
+      "run_id": "27eed42e-0ed1-40c2-b866-51a1bafcfc06",
+      "case_id": "case_003",
+      "repetition": 2,
+      "stopping_reason": "provider_or_runner_error"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/incomplete/958a7393-2b4f-414b-a8c0-fc6b5d53c5bf.jsonl",
+      "sha256": "936ead6b720ea829aca601363a845b998565028c56c95745f17cf1a248e61ea9",
+      "run_id": "958a7393-2b4f-414b-a8c0-fc6b5d53c5bf",
+      "case_id": "case_002",
+      "repetition": 3,
+      "stopping_reason": "provider_or_runner_error"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/incomplete/a0ed1f21-4b61-4e43-91bc-d8f8f76cb09c.jsonl",
+      "sha256": "aaad7b518e81d024f27d958d4a15e117e25fff5979f3e601409145922b44e99f",
+      "run_id": "a0ed1f21-4b61-4e43-91bc-d8f8f76cb09c",
+      "case_id": "case_004",
+      "repetition": 1,
+      "stopping_reason": "provider_or_runner_error"
+    },
+    {
+      "path": "results/extension_terra_2026-09-28/incomplete/f3afa428-4acc-4357-a21f-fefb7d37b134.jsonl",
+      "sha256": "76f0d9993c5d96d52ca34f648efc42c484000f2361534641ab0cdae33e35576e",
+      "run_id": "f3afa428-4acc-4357-a21f-fefb7d37b134",
+      "case_id": "case_004",
+      "repetition": 3,
+      "stopping_reason": "provider_or_runner_error"
+    }
+  ]
+}

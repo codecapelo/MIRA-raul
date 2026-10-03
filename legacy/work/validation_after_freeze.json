@@ -1,0 +1,102 @@
+[
+  {
+    "case_id": "case_001",
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "clinician signoff: pending",
+      "rubric signoff: pending",
+      "semantic spoiler and clinical fidelity review still required"
+    ]
+  },
+  {
+    "case_id": "case_002",
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "clinician signoff: pending",
+      "rubric signoff: pending",
+      "semantic spoiler and clinical fidelity review still required"
+    ]
+  },
+  {
+    "case_id": "case_003",
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "clinician signoff: pending",
+      "rubric signoff: pending",
+      "semantic spoiler and clinical fidelity review still required"
+    ]
+  },
+  {
+    "case_id": "case_004",
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "clinician signoff: pending",
+      "rubric signoff: pending",
+      "semantic spoiler and clinical fidelity review still required"
+    ]
+  },
+  {
+    "case_id": "case_005",
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "clinician signoff: pending",
+      "rubric signoff: pending",
+      "semantic spoiler and clinical fidelity review still required"
+    ]
+  },
+  {
+    "case_id": "case_006",
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "clinician signoff: pending",
+      "rubric signoff: pending",
+      "semantic spoiler and clinical fidelity review still required"
+    ]
+  },
+  {
+    "case_id": "case_007",
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "clinician signoff: pending",
+      "rubric signoff: pending",
+      "semantic spoiler and clinical fidelity review still required"
+    ]
+  },
+  {
+    "case_id": "case_008",
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "clinician signoff: pending",
+      "rubric signoff: pending",
+      "semantic spoiler and clinical fidelity review still required"
+    ]
+  },
+  {
+    "case_id": "case_009",
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "clinician signoff: pending",
+      "rubric signoff: pending",
+      "semantic spoiler and clinical fidelity review still required"
+    ]
+  },
+  {
+    "case_id": "case_010",
+    "valid": true,
+    "errors": [],
+    "warnings": [
+      "clinician signoff: pending",
+      "rubric signoff: pending",
+      "semantic spoiler and clinical fidelity review still required"
+    ]
+  }
+]

@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_006",
+  "index_patient": "single_reported_patient",
+  "language": "en",
+  "setting": "hospital_presentation_unit_unspecified",
+  "time_zero": "first_clinical_contact",
+  "initial": {
+    "age_years": 38,
+    "sex_recorded": "female",
+    "chief_complaint": "Bilateral adrenal nodules found on examination, with biochemical concern for adrenal insufficiency."
+  },
+  "facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "topic_codes": [
+        "symptoms"
+      ],
+      "value": "Mild pigmentation over finger joints and knees; no fever, night sweats or cough.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "symptoms"
+        ]
+      }
+    },
+    {
+      "fact_id": "pmh_002",
+      "domain": "pmh",
+      "topic_codes": [
+        "history"
+      ],
+      "value": "Remote hospitalization for a chest opacity five years earlier without TB diagnosis or treatment; no glucocorticoid use or family hereditary disease history.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "history"
+        ]
+      }
+    },
+    {
+      "fact_id": "physical_exam_003",
+      "domain": "physical_exam",
+      "topic_codes": [
+        "skin"
+      ],
+      "value": "Mild pigmentation of hand interphalangeal joints and knees.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_physical_exam",
+        "match_codes": [
+          "skin"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_004",
+      "domain": "lab",
+      "topic_codes": [
+        "adrenal_hormones"
+      ],
+      "value": "Earlier ACTH 577.10 ng/L and cortisol 161.00 nmol/L; admission ACTH 365.80 ng/L and cortisol 139.00 nmol/L.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "adrenal_hormones"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_005",
+      "domain": "lab",
+      "topic_codes": [
+        "metabolic"
+      ],
+      "value": "Low fasting glucose and sodium were described, without numerical values.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "metabolic"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_006",
+      "domain": "lab",
+      "topic_codes": [
+        "tspot"
+      ],
+      "value": "T-SPOT.TB positive.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "tspot"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_007",
+      "domain": "imaging",
+      "topic_codes": [
+        "adrenal_ct"
+      ],
+      "value": "CT: bilateral adrenal nodules with calcification; old tuberculosis lesions in lungs and pleura.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "adrenal_ct"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_008",
+      "domain": "imaging",
+      "topic_codes": [
+        "adrenal_ultrasound"
+      ],
+      "value": "Bilateral hypoechoic adrenal nodules with calcifications; largest left lesion about 2.7 × 2.2 cm; low-intensity enhancement.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "adrenal_ultrasound"
+        ]
+      }
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "domain": "procedure_result",
+      "topic_codes": [
+        "adrenal_biopsy"
+      ],
+      "value": "Ultrasound-guided left adrenal biopsy: necrotizing granulomatous inflammation. Acid-fast and silver stains negative.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_procedure",
+        "match_codes": [
+          "adrenal_biopsy"
+        ]
+      }
+    },
+    {
+      "fact_id": "microbiology_010",
+      "domain": "microbiology",
+      "topic_codes": [
+        "adrenal_tb_pcr"
+      ],
+      "value": "Mycobacterium tuberculosis qPCR detected DNA in adrenal biopsy tissue.",
+      "status": "reported",
+      "available_at": "after_procedure:adrenal_biopsy",
+      "release_rule": {
+        "tool": "request_microbiology",
+        "match_codes": [
+          "adrenal_tb_pcr"
+        ]
+      }
+    }
+  ],
+  "catalog": {
+    "history_topics": [
+      "cardiac",
+      "catheter",
+      "current",
+      "drug_reaction",
+      "history",
+      "infection",
+      "medical",
+      "negatives",
+      "oncology",
+      "onset",
+      "pregnancy",
+      "procedure",
+      "recent_therapy",
+      "renal",
+      "smoking",
+      "symptoms",
+      "urologic"
+    ],
+    "physical_regions": [
+      "abdomen",
+      "abdomen_pelvis",
+      "cardiovascular",
+      "general",
+      "hemodynamics",
+      "neurologic",
+      "postoperative",
+      "respiratory",
+      "skin",
+      "skin_eye",
+      "vitals"
+    ],
+    "lab_tests": [
+      "adrenal_hormones",
+      "blood_film",
+      "blood_panel",
+      "cbc",
+      "chemistry",
+      "coagulation",
+      "d_dimer",
+      "dat",
+      "hemoglobin",
+      "hemolysis",
+      "inflammation",
+      "inflammation_followup",
+      "lactate",
+      "metabolic",
+      "nt_probnp",
+      "pleural_fluid",
+      "pregnancy_test",
+      "troponin",
+      "tspot"
+    ],
+    "imaging_studies": [
+      "abdominal_xray",
+      "adrenal_ct",
+      "adrenal_ultrasound",
+      "brain_mri",
+      "cardiac_mri",
+      "chest_xray",
+      "coronary_angiography",
+      "coronary_ct",
+      "ct_abdomen",
+      "ct_chest",
+      "ctpa",
+      "pelvic_ultrasound",
+      "pet",
+      "spine_mri",
+      "thoracic_ultrasound"
+    ],
+    "microbiology_tests": [
+      "adrenal_tb_pcr",
+      "blood_cultures",
+      "drain_culture",
+      "pleural_culture",
+      "urine_culture"
+    ],
+    "ecg_or_tests": [
+      "ecg",
+      "echo",
+      "electrophysiology",
+      "intravascular_imaging",
+      "research_cfdna",
+      "rhc",
+      "tee",
+      "tumor_genetics"
+    ],
+    "procedures": [
+      "adrenal_biopsy",
+      "device_exploration",
+      "ebus_biopsy",
+      "hematoma_evacuation",
+      "laparoscopy",
+      "laparotomy",
+      "pathology",
+      "pericardiocentesis",
+      "pleural_biopsy",
+      "resection",
+      "thoracentesis"
+    ],
+    "medications": []
+  },
+  "temporal_events": [],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ],
+  "catalog_version": "v1_shared_all_cases"
+}

@@ -1,0 +1,259 @@
+    Clinical Case Report                                                                                               Medicine                                           ®
+
+
+
+
+Abdominal ectopic pregnancy – misdiagnosed
+upper abdominal pain
+A case report
+Hong Xu, MBBSa, Xiaohong Xie, MBBSa, Caihong Wu, MBBSb,*
+
+
+
+    Abstract
+    Rationale: Ectopic pregnancy (EP) with implantation in the upper abdomen is exceptionally rare. It represents a challenging
+    clinical scenario with very limited evidence confined to case reports. It seriously endangers maternal health and early diagnosis
+    and treatment can significantly improve patient prognosis.
+    Patient concerns: We report a 25-year-old woman who was diagnosed several days ago with gastroenteritis was referred
+    to our department because of worsened upper left abdominal pain. Contrast computerized tomography scan revealed a mass
+    measuring ~46 mm × 40 mm × 56 mm in the upper left abdomen and her serum human chorionic gonadotropin level was
+    10,130.28 IU/L. EP was highly suspected on admission.
+    Diagnoses: Abdominal EP was confirmed by intraoperative findings and postoperative pathology.
+    Interventions: The patient underwent laparoscopic surgery which went smoothly after admission. An gastrointestinal surgeon
+    was involved during the surgery and the excision of the EP lesion along with partial omentum was performed.
+    Outcomes: The patient was discharged 5 days later after operation without complications. The serum human chorionic
+    gonadotropin level declined to normal within 1 month follow-up.
+    Lessons: This case illustrates that although ultrasound is considered the first-line method for diagnosing EP, abdominal lesions
+    with undefined nature detected by computerized tomography should also be pay attention to, especially for women of childbearing
+    age presenting with gastrointestinal symptoms other than typical ones such as lower abdominal pain or vaginal bleeding. Close
+    monitoring and timely management are pivotal to improve patient prognosis.
+    Abbreviations: AEP = abdominal ectopic pregnancy, CT = computerized tomography, EP = ectopic pregnancy, HCG = human
+    chorionic gonadotropin, MRI = magnetic resonance imaging, TVUS = transvaginal ultrasound.
+    Keywords: abdominal ectopic pregnancy, case report, laparoscopic surgery, surgical management
+
+
+
+1. Introduction                                                                       with upper left abdominal pain accompanied by intermittent
+                                                                                      nausea and vomiting, abdominal ectopic pregnancy (AEP)
+An ectopic pregnancy (EP) is defined as the developing prod-                          was highly suspected by computerized tomography (CT)
+ucts of conception implant outside the endometrial cavity                             images and elevated serum human chorionic gonadotropin
+with tubal EP accounting for almost 95% of all.[1] The abdom-                         (HCG) level, the patient underwent diagnostic laparoscopy
+inal cavity is a rare site of ectopic implantation, occurring                         at last and discharged without complications. An AEP was
+in approximately 1% of EP, especially for primary ones.[2,3]                          diagnosed by surgical and pathological findings. Rapid and
+Management of such rare conditions is challenging because                             accurate diagnosis pre-operatively is critical for improving
+they often induce organ perforation and life-threatening                              the prognosis of a child bearing woman with an abdominal
+maternal hemorrhage.[4] Herein, we report a case of a 25-year-                        pregnancy.
+old female who was transferred to our emergency department
+
+
+
+
+This research was supported by the 2024 Academy-level Research Initiation Fund        Ludang Road, Wujiang District, Suzhou City 215200, Jiangsu Province, China
+Approval Contract of Suzhou Ninth People’s Hospital (Grant No. YK202415).             (e-mail: wch13522@163.com).
+The authors have no conflicts of interest to disclose.                                Copyright © 2026 the Author(s). Published by Wolters Kluwer Health, Inc.
+All data generated or analyzed during this study are included in this published       This is an open access article distributed under the Creative Commons
+article (and its supplementary information files).                                    Attribution License 4.0 (CCBY), which permits unrestricted use, distribution, and
+                                                                                      reproduction in any medium, provided the original work is properly cited.
+This study was approved by the Clinical Medical Research Ethics Committee of
+the Suzhou Ninth People’s Hospital (No. KYLW2025-056-01).                             How to cite this article: Xu H, Xie X, Wu C. Abdominal ectopic pregnancy
+                                                                                      – misdiagnosed upper abdominal pain: A case report. Medicine
+a
+ Department of Gynecology, Suzhou Ninth People’s Hospital, Suzhou Ninth               2026;105:17(e48484).
+Hospital Affiliated to Soochow University, Suzhou, China, b Department of
+Surgery, Suzhou Ninth People’s Hospital, Suzhou Ninth Hospital Affiliated to          Received: 24 October 2025 / Received in ﬁnal form: 7 April 2026 / Accepted: 8
+Soochow University, Suzhou, China.                                                    April 2026
+
+* Correspondence: Caihong Wu, Department of Surgery, Suzhou Ninth People’s            http://dx.doi.org/10.1097/MD.0000000000048484
+Hospital, Suzhou Ninth Hospital Affiliated to Soochow University, No. 2666,
+
+                                                                                  1
+Xu et al. • Medicine (2026) 105:17Medicine
+
+
+2. Case report                                                                findings were as follows: about 300 mL of hemoperitoneum
+A 25-year-old woman (gravida 1, parity 0) at approximately                    was noted in the abdominopelvic cavity, a hematoma was
+5 weeks of pregnancy was referred to our emergency depart-                    visualized between the inferior border of the spleen and the
+ment on April 7, 2025 due to pain in the upper left side of her               descending colon, enveloped by the greater omentum with
+abdomen along with intermittent vomiting and nausea. The                      active bleeding. After aspiration of hemoperitoneal fluid, a
+female had a regular 28 to 30 days menstrual cycle and her                    lesion measuring 6 cm × 4 cm × 5 cm was identified where the
+last menstrual period was on March 3rd. On March 30th, the                    products of conception were detected (Figs. 3 and 4). All other
+patient visited the local community hospital due to mild left                 pelvic organs including uterus and bilateral ovaries and tubes
+upper abdominal pain. A non-contrast CT scan revealed a mass                  appeared grossly normal in appearance. An gastrointestinal
+with undetermined nature in the left upper abdomen, measur-                   surgeon was involved during the surgery and the excision of
+ing ~21 mm × 19 mm × 10 mm (Fig. 1). Because of the unavail-                  the EP lesion along with partial omentum was performed. An
+ability of contrast CT, the hospital was unable to perform                    AEP was confirmed by pathology finally (Fig. 5). The patient
+further examination on the patient. She was initially diagnosed               had an uneventful recovery and discharged 5 days after sur-
+with gastroenteritis and treated with anti-inflammatory, acid-                gery. Her serum HCG level declined to normal rang (<5 IU/L)
+suppressing, and antispasmodic medications for 1 week, but her                within 1 month follow-up. The entire diagnostic and thera-
+pain did not alleviate.                                                       peutic process and the change in HCG are summarized below
+   On April 6th, the patient self-tested positive for urinary preg-           (Figs. 6 and 7).
+nancy due to amenorrhea. She experienced worsened left upper
+abdominal pain on the next day, accompanied by nausea and
+vomiting. She was transferred to our hospital and an emergency                3. Discussion
+ultrasound was conducted: no gestational sac was visualized                   EP is a term used to describe any implantation of a fertilized
+within the uterine cavity, endometrial thickness measured 8 mm,               ovum outside the uterine cavity and an AEPis an embryo that
+no abnormalities were detected in the bilateral adnexal regions.              implants on any structure within the peritoneal cavity.[1,5] The
+A much more larger mass at the same location measuring ~46                    most ectopic pregnancies occur in the fallopian tube (about
+mm × 40 mm × 56 mm, which was surrounded by blood vessels                     95.5%), 1.3% arise in abdominal locations.[3] It is reported that
+was revealed via contrast CT (Fig. 2). Considering the patient’s              the mortality rate of AEP is 7.7 times higher than that of tubal
+medical history, she was admitted to the gynecology department                ones.[6] Early diagnosis is difficult to establish as women may
+for further assessment with primary consideration of EP.                      present asymptomatically and there is often lack of sufficient
+   The initial vital signs were stable on admission: systolic                 evidence to distinguish it from a tubal pregnancy, Chen et al
+and diastolic blood pressure were 107 mm Hg and 77 mm Hg,                     reviewed 17 cases of abdominal pregnancy which showed only
+respectively. The initial pulse rate was 89 beats per minute                  29.41% (5/17) of patients were diagnosed before surgery, and
+and temperature was 36.7°C. Clinical examination identified                   the other 70.59% (12/17) were misdiagnosed with tubal preg-
+left upper abdominal pain with localized tenderness. No ten-                  nancy or unexplained intra-abdominal hemorrhage.[7] Ruptured
+derness, guarding or rigidity was noted in the lower abdomen.                 EPs are the leading cause of maternal death within the first tri-
+she had normal external female genitalia and no active vaginal                mester of pregnancy and account for approximately 5% to 10%
+bleeding; the cervix was closed. Upon bimanual examination                    of all pregnancy-related deaths[1]
+there were no cervical motion tenderness and palpable adnexal                    AEP is classified into 2 types: either primary (the blastocyst
+mass. Blood tests showed the serum HCG level was 10,130.28                    is directly implanted on the surface of the peritoneum or the
+IU/L. She conceived naturally this time and had no history                    viscera of the abdominal cavity in the early stages of pregnancy)
+of pelvic inflammatory disease. She also denied history of                    or secondary (the embryo falls from the fallopian tube into the
+chronic medical or surgical illnesses and reported no tobacco                 abdominal cavity).[8] Cases which meet the following criteria are
+or alcohol consumption. Since magnetic resonance imaging                      defined as primary ones: tubes and ovaries with normal appear-
+(MRI) requires an appointment at our hospital and the patient                 ance, no evidence of an utero-peritoneal fistula, products con-
+could not afford the cost at a private facility. A diagnostic                 ception only exist in the abdominal cavity and early enough in
+laparoscopy was performed under general anesthesia upon                       gestation to eliminate the possibility of secondary implantation
+admission to confirm the suspicion of an EP, intraoperative                   after the primary nidation of the tube.[9] In our case, the patient
+                                                                              initially visited the hospital on day 28 of her cycle due to upper
+
+
+
+
+                                                                              Figure 2. Contrast CT (arterial phase) showing the lesion at the same loca-
+Figure 1. Non-contrast CT showing the lesion in the left upper abdomen        tion measuring ~46 mm × 40 mm × 56 mm, it was surrounded by blood ves-
+~21 mm × 19 mm × 10 mm (white arrow indicated the lesion and ☆indicated       sels (white arrow indicated the lesion; yellow arrow indicated the spleen; red
+the left kidney). CT = computerized tomography.                               arrow indicated the left kidney). CT = computerized tomography.
+
+
+                                                                          2
+Xu et al. • Medicine (2026) 105:17www.md-journal.com
+
+
+
+
+Figure 3. Intraoperative finding showing a lesion measuring 6 cm × 4 cm
+× 5 cm was identified where the products of conception were detected (white
+arrow).
+
+
+
+
+                                                                                   Figure 6. Timeline of the entire diagnostic and therapeutic process.
+
+
+                                                                                   abdominal pain, and a solitary lesion in the left upper abdo-
+                                                                                   men was observed at that time via CT. During the surgery, no
+Figure 4. During the surgery we can see the edge of the spleen (white arrow)       abnormalities were observed in the uterus and bilateral adnexal
+after removing the lesion.                                                         regions and she was confirmed to have an EP at 5 weeks of
+                                                                                   gestation. According to the above information, the patient was
+                                                                                   considered to have a primary AEP.
+                                                                                      Compared with tubal pregnancies, vaginal bleeding is less
+                                                                                   common in AEP,[10] resulting in further delay in the diagnosis
+                                                                                   of AEP. As in our case, not until the patient had a history
+                                                                                   of amenorrhea and a positive urinary pregnancy test did we
+                                                                                   consider the diagnosis of an EP. Lack of specific symptoms
+                                                                                   makes diagnosis and management challenging. Additionally,
+                                                                                   risk factors associated with EP mentioned below should be
+                                                                                   keep in mind: age >35 years; cigarette smoking; documented
+                                                                                   fallopian tube pathology; infertility; pelvic inflammatory dis-
+                                                                                   ease; pregnancy while IUD in place; previous EP; previous fal-
+                                                                                   lopian tube surgery; the use of ART.[4,11] A careful inquiry into
+                                                                                   the history of a patient is of great importance for the diagnosis
+                                                                                   of EP.
+                                                                                      Current diagnostic standard for EP includes transvaginal
+                                                                                   ultrasound combined with serum HCG monitoring. There
+                                                                                   is high suspicion for EP when serum HCG level of a patient
+                                                                                   is >2000 IU/L with no sign of intrauterine pregnancy.[1,4]
+                                                                                   Ultrasound, especially transvaginal ultrasound, remains the
+                                                                                   first-line protocol for diagnosing EP[10] MRI can be a useful
+                                                                                   diagnostic adjunct in advanced abdominal pregnancy and can
+Figure 5. Microscopic findings using hematoxylin and eosin (HE) staining,
+                                                                                   help to plan the surgical approach.[12] In our case, since MRI
+We identified the villous tissue on the image. HE = hematoxylin and eosin.         was not available, we performed contrast CT as an alternative
+                                                                                   method which pointed toward AEP. For women of reproductive
+
+                                                                               3
+Xu et al. • Medicine (2026) 105:17Medicine
+
+
+
+
+Figure 7. The change in HCG during the process. HCG = human chorionic gonadotropin.
+
+
+age, HCG detection is essential if the patient complained of                communication should be made with the patient before surgery,
+abnormal vaginal bleeding in case of misdiagnosis of EP.                    and the gestational sac implantation site should be evaluated
+However, with the application of ART, which increases the inci-             through various examinations to improve diagnostic accuracy.
+dence of EP,[13] there were exceptional cases where patients with           Lack of experience of the radiographer and the patient’s initial
+very low level of HCG were diagnosed with AEP,[14-16] therefore,            presentation with upper abdominal pain made early diagnosis
+even if a woman’s HCG level is within normal range, there is                tougher. Management of complicated EPs requires a multidis-
+a certain possibility of an AEP when the patient has symptoms               ciplinary team involving experienced obstetricians, diagnostic
+such as abdominal pain or vaginal bleeding especially she con-              radiologists and general surgeons to reduce surgical risks and
+ceived through ART.                                                         prevent adverse maternal outcomes.
+   The management options for EPs are usually divided into 3
+categories: expectant, medical and surgical. As far as our knowl-
+edge extends, there exists no standardized therapeutic protocol             Author contributions
+for AEP. Although there were selected patients who recovered                Data curation: Hong Xu.
+well by MTX treatment,[17] surgical resection was considered                Funding acquisition: Hong Xu.
+to be the standard treatment for abdominal pregnancy and                    Investigation: Xiaohong Xie, Caihong Wu.
+laparoscopic removal is an optimized approach compared to                   Resources: Hong Xu, Xiaohong Xie, Caihong Wu.
+laparotomy for treatment of early abdominal pregnancy.[4,12]                Supervision: Caihong Wu.
+However, if there is uncontrollable massive bleeding, conversion            Writing – original draft: Hong Xu.
+to laparotomy should be required to prevent maternal death. In              Writing – review & editing: Xiaohong Xie, Caihong Wu.
+this case, expectant and medical therapy was not recommended
+since active bleeding existed in the abdominal cavity, we com-
+pletely resected the lesion under laparoscopy, but if the serum             References
+level of HCG were not to decline to normal postoperatively, it
+                                                                             [1] Houser M, Kandalaft N, Khati NJ. Ectopic pregnancy: a resident’s
+would be necessary to use MTX to eradicate remaining tropho-
+                                                                                 guide to imaging findings and diagnostic pitfalls. Emerg Radiol.
+blastic cells.                                                                   2022;29:161–72.
+   At present, it is believed that abdominal pregnancy is the only           [2] Dunphy L, Boyle S, Cassim N, Swaminathan A. Abdominal ectopic
+type of EP that can advance beyond 20 weeks of gestational                       pregnancy. BMJ Case Rep. 2023;16:e252960.
+age.[2] At late gestations, surgery is the main treatment, the key           [3] Kang OJ, Koh JH, Yoo JE, et al. Ruptured hemorrhagic ectopic preg-
+issue is how to manage the placenta. It may lead to exacer-                      nancy implanted in the diaphragm: a rare case report and brief litera-
+bated bleeding if proper control of the vascular supply cannot                   ture review. Diagnostics (Basel). 2021;11:2342.
+be achieved. In some cases, clinicians use vascular embolization             [4] Mullany K, Minneci M, Monjazeb R, Coiado OC. Overview of ectopic
+to minimize intraoperative bleeding and completely remove the                    pregnancy diagnosis, management, and innovation. Womens Health
+                                                                                 (Lond). 2023;19:17455057231160349.
+placenta; other treatment methods include leaving the placenta
+                                                                             [5] Chong KY, de Waard L, Oza M, et al. Ectopic pregnancy. Nat Rev Dis
+in situ and waiting for absorption either naturally or by use                    Primers. 2024;10:94.
+of MTX; besides, partial removal of the placenta and surgical                [6] Ishikawa Y, Nakanishi K, Tsumura A, Murakami K, Nishiwaki K.
+excision of the remaining part 12 days postoperatively was also                  Early abdominal wall ectopic pregnancy treated with laparoscopic
+reported.[2,7,18,19] In conclusion, disposal of the placenta requires            surgery: a case report and literature review. J Obstet Gynaecol Res.
+more evidence-based medicine and a good separation technique                     2023;49:2544–8.
+and adequate vascular management should be performed.                        [7] Chen Y, Peng P, Li C, et al. Abdominal pregnancy: a case report and
+                                                                                 review of 17 cases. Arch Gynecol Obstet. 2023;307:263–74.
+                                                                             [8] Zheng X, Zhou Y, Sun Z, Yan T, Yang Y, Wang R. Abdominal pregnancy
+4. Conclusion                                                                    secondary to uterine horn pregnancy: a case report. BMC Pregnancy
+                                                                                 Childbirth. 2023;23:412.
+This report describes the manifestation, diagnosis, and treat-               [9] Studdiford WE. Primary peritoneal pregnancy. Am J Obstet Gynecol.
+ment of a rare clinical condition. For this case, sufficient                     1942;44:487–91.
+
+                                                                        4
+Xu et al. • Medicine (2026) 105:17www.md-journal.com
+
+
+[10] Tegene D, Nesha S, Gizaw B, Befikadu T. Laparotomy for                        [15] Irani M, Elias RT, Pereira N, Gunnala V, Rosenwaks Z. Abdominal
+     advanced abdominal ectopic pregnancy. Case Rep Obstet Gynecol.                     ectopic pregnancy with undetectable serum β-human chorionic gonad-
+     2022;2022:3177810.                                                                 otropin 9 days following blastocyst transfer. J Obstet Gynaecol Res.
+[11] Hendriks E, Rosenberg R, Prine L. Ectopic pregnancy: diagnosis and                 2016;42:1886–8.
+     management. Am Fam Physician. 2020;101:599–606.                               [16] Yanaihara A, Ohgi S, Motomura K, et al. An abdominal ectopic preg-
+[12] Elson CJ, Salim R, Potdar N, Chetty M, Ross JA, Kirk EJ.                           nancy following a frozen-thawed ART cycle: a case report and review
+     Diagnosis and management of ectopic pregnancy. BJOG.                               of the literature. BMC Pregnancy Childbirth. 2017;17:108.
+     2016;123:e15–55.                                                              [17] Beck MH, Sehouli J, Leppig JA, Knitter S, Pratschke J, Krenzien F.
+[13] Yoder N, Tal R, Martin JR. Abdominal ectopic pregnancy after in vitro              Multimodal management of ectopic hepatic pregnancy: a systematic
+     fertilization and single embryo transfer: a case report and systematic             review of the literature. Arch Gynecol Obstet. 2024;310:2345–53.
+     review. Reprod Biol Endocrinol. 2016;14:69.                                   [18] Wu Q, Bai S, Han L, Song L. Secondary mid-term abdominal preg-
+[14] Li Y, Geng J, He Q, et al. Abdominal ectopic pregnancy following a fro-            nancy: a case report. Medicine (Baltim). 2025;104:e43281.
+     zen embryo transfer cycle: a case report. BMC Pregnancy Childbirth.           [19] Gorincour G, Boukerrou M. Abdominal ectopic pregnancy. N Engl J
+     2021;21:707.                                                                       Med. 2023;389:e51.
+
+
+
+
+                                                                               5
+

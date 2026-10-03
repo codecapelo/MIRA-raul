@@ -1,0 +1,85 @@
+{
+  "extension_version": "mvp10_extension_sol61_2026-09-29",
+  "corpus_version": "mvp10_v3_2026-09-26",
+  "base_protocol_version": "mvp10_closedbook_v5_2026-09-26",
+  "frozen_at_utc": "2026-09-29T23:18:46.276277+00:00",
+  "base_protocol_manifest_sha256": "5ddd276e469f104aa7c417e529e4d55f677360b98bc91adc8cc733ff3fe9c19f",
+  "results_directory": "results/extension_sol61_2026-09-29",
+  "case_order": [
+    "case_001",
+    "case_002",
+    "case_003",
+    "case_004",
+    "case_005",
+    "case_006",
+    "case_007",
+    "case_008",
+    "case_009",
+    "case_010"
+  ],
+  "repetitions": 3,
+  "max_actions": 40,
+  "max_model_turns": 60,
+  "max_wall_seconds": 3600,
+  "repeated_unproductive_call_limit": 3,
+  "models": {
+    "gpt-6.1-sol": {
+      "provider": "openai",
+      "effort": "high",
+      "progress_path": "results/extension_sol61_2026-09-29/summaries/sol61_progress.jsonl",
+      "adapter": "providers/openai_sol61.py",
+      "cli_version": "0.159.1",
+      "cli_path": "/opt/homebrew/bin/codex",
+      "identity_evidence": "requested_and_inference_accepted_not_observed",
+      "model_observed": null,
+      "access_verified_low": true,
+      "access_verified_high": true,
+      "source_url": "https://help-lb.openai.com/en/articles/20001275-chatgpt-work-and-codex"
+    }
+  },
+  "pricing": {
+    "gpt-6.1-sol": {
+      "verified": true,
+      "as_of": "2026-09-29",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "input_per_million": 2.0,
+      "cached_input_per_million": 0.1,
+      "cache_write_input_per_million": 2.5,
+      "output_per_million": 10.0,
+      "input_includes_cached": true,
+      "output_includes_reasoning": true,
+      "long_context_threshold": 272000,
+      "currency": "USD",
+      "basis": "hypothetical_API_Standard_not_subscription_charge"
+    }
+  },
+  "files": [
+    {
+      "path": "runner/run_sol61_extension.py",
+      "sha256": "35ae176a027ecf2ffb71154e5e7088d08b721d8002bb2b1fe167d1ca511fe38d"
+    },
+    {
+      "path": "providers/openai_sol61.py",
+      "sha256": "5c287d8bb2ec86bf43ee7355a68350e3a9f99be137dbb855f80fe8b8e2c85939"
+    }
+  ],
+  "diagnostic_wrapper": {
+    "path": "scripts/run_sol61_with_provider_diagnostics.py",
+    "sha256": "34a12c7a6ed0bcd58e82e4946bcca6e56f78b3a46d754b259d8a1b2ccf7a5346",
+    "not_part_of_clinical_runtime": true
+  },
+  "change_scope": "Add Sol6.1 only on 2026-09-29, subject to high structured preflight. Do not restart Luna/Terra or alter frozen corpus, physician prompt, EHR, tools, base runner, stopping, scorer.",
+  "clinical_review": "pending",
+  "reset_credit_policy": "no_agent_redemption",
+  "api_pricing_state": "official_model_page_verified_2026-09-29",
+  "model_high_supported_documented": true,
+  "high_structured_preflight": {
+    "verified_at_utc": "2026-09-29T23:18:46.276277+00:00",
+    "tool_transport": "json_emulated",
+    "synthetic_action": "ping",
+    "cli_exit": 0,
+    "usage_input_tokens": 14599,
+    "usage_output_tokens": 54,
+    "clinical_panel_included": false
+  }
+}

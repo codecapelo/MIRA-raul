@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_009",
+  "source_sha256": "6da7ff2ac3dd3295762fba7a78571f2eb01eb9c8e0d45a6da7cb27731cea5eca",
+  "published_final_diagnosis": {
+    "label": "Migrated plastic biliary stent impacted in Meckel diverticulum causing diverticulitis and adjacent ileal perforation",
+    "codes": [],
+    "source_locators": [
+      "Case presentation, pp. 1–2"
+    ]
+  },
+  "diagnostic_differential_from_source": [
+    "Adhesive small bowel obstruction",
+    "Bowel ischemia",
+    "Perforated peptic ulcer",
+    "Other foreign-body perforation"
+  ],
+  "source_treatment": [
+    {
+      "description": "Urgent surgical exploration",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    },
+    {
+      "description": "Segmental small-bowel resection and primary anastomosis",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    },
+    {
+      "description": "Postoperative ventilatory support",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    }
+  ],
+  "source_disposition": {
+    "category": "ICU",
+    "outcome": "ICU intubation; COPD-related respiratory failure; extubated after day 13; discharged postoperative day 40.",
+    "source_locators": [
+      "Case presentation, pp. 1–2"
+    ]
+  },
+  "key_guideline_decisions": [
+    {
+      "guideline_ref": "asge_choledocholithiasis_2019",
+      "status": "candidate_for_adjudication",
+      "note": "See docs/guideline_sources.yaml; applicability and alternative care require clinician review."
+    }
+  ],
+  "distractors": [
+    "Mechanical bowel obstruction may seem adhesive until prior stent and CT foreign body are linked."
+  ],
+  "critical_safety_points": [
+    "Peritoneal signs and obstruction demand urgent surgical assessment.",
+    "Prior biliary stent history materially changes interpretation of linear CT foreign body.",
+    "Consider anticoagulation and COPD risk during perioperative planning; source does not specify drug regimen."
+  ],
+  "fact_provenance": [
+    {
+      "fact_id": "hpi_001",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "pmh_002",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "pmh_003",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "imaging_005",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "imaging_006",
+      "source_locators": [
+        "PDF pp. 1–2, preoperative CT description in case presentation"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_007",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_008",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    }
+  ],
+  "source_uncertainties": [
+    "Unspecified dose, timing or normal findings were not inferred.",
+    "Published management is descriptive and requires separate normative review.",
+    "The CT case-presentation description identified a foreign body; the migrated biliary stent identity was established intraoperatively. After surgery the patient was transferred intubated to ICU."
+  ],
+  "clinician_signoff": {
+    "reviewer_id": null,
+    "signed_at": null,
+    "status": "pending"
+  }
+}

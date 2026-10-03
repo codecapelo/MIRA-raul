@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_007",
+  "published_diagnosis_ref": "ground_truth.published_final_diagnosis",
+  "acceptable_diagnoses": [],
+  "critical_diagnoses_to_not_miss": [
+    "Severe immune-mediated hemolytic anemia with hemodynamic or tissue hypoxia risk"
+  ],
+  "expected_actions": [
+    {
+      "action_id": "a1",
+      "phase": "initial",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_lab",
+          "code_or_concept": "hemoglobin"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a2",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_lab",
+          "code_or_concept": "hemolysis"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a3",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_lab",
+          "code_or_concept": "dat"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a4",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "prescribe_medication",
+          "code_or_concept": "steroids"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a5",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_procedure",
+          "code_or_concept": "transfusion"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a6",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "disposition",
+          "code_or_concept": "ward"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    }
+  ],
+  "unnecessary_actions": [
+    {
+      "description": "Repeated or non-indicated testing/treatment without a stated clinical rationale",
+      "case_condition": "judged using information available at time of order"
+    }
+  ],
+  "medication_checks": [
+    {
+      "description": "Stop immune checkpoint therapy in life-threatening immune-mediated toxicity.",
+      "severity": "requires_manual_review"
+    }
+  ],
+  "procedure_checks": [],
+  "disposition_acceptability": [
+    {
+      "category": "ward",
+      "conditions": [
+        "Urgency and phase aligned with published acute care"
+      ]
+    }
+  ],
+  "safety_opportunities": [
+    {
+      "description": "Severe symptomatic anemia requires urgent assessment and transfusion strategy.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    },
+    {
+      "description": "Stop immune checkpoint therapy in life-threatening immune-mediated toxicity.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    },
+    {
+      "description": "Compatibility testing may be complicated by panreactive autoantibody.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    }
+  ],
+  "guideline_refs": [
+    "sitc_ici_irAE_2021"
+  ],
+  "reviewer_signoff": {
+    "status": "pending",
+    "reviewer_id": null,
+    "signed_at": null
+  },
+  "guideline_concordance_status": "pending_clinician_review"
+}

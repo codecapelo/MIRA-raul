@@ -1,0 +1,13 @@
+[project]
+name = "mira-2026-frontier-benchmark"
+version = "0.1.0"
+description = "Closed-book clinical case benchmark with a deterministic EHR sandbox"
+requires-python = ">=3.9"
+dependencies = []
+
+[tool.mira-benchmark]
+corpus-version = "mvp10_v3_2026-09-26"
+protocol-version = "mvp10_closedbook_v5_2026-09-26"
+cases = 10
+repetitions = 3
+external-clis = ["ollama", "codex", "claude"]

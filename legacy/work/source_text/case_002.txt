@@ -1,0 +1,383 @@
+JACC: CASE REPORTS                                                                                                          VOL. 30, NO. 18, 2025
+
+ª 2025 THE AUTHORS. PUBLISHED BY ELSEVIER ON BEHALF OF THE AMERICAN
+
+COLLEGE OF CARDIOLOGY FOUNDATION. THIS IS AN OPEN ACCESS ARTICLE UNDER
+
+THE CC BY-NC-ND LICENSE (http://creativecommons.org/licenses/by-nc-nd/4.0/).
+
+
+
+
+HEART FAILURE AND CARDIOMYOPATHIES
+
+CLINICAL CASE
+
+
+
+
+Isolated Atrial Myocarditis With
+Atrial Standstill
+Christopher Mann, MD,a Robert Schönbauer, MD,a Michael Gottsauner-Wolf, MD,a Irene M. Lang, MD,a
+Martin Hülsmann, MD,a Dietrich Beitzke, MD,b Jutta Bergler-Klein, MD,a Christian Hengstenberg, MD,a
+Christian Gerges, MD, PHD,a,* Thomas A. Zelniker, MD, MSCa,*
+
+
+   ABSTRACT
+
+
+   BACKGROUND Myocarditis typically affects ventricles, whereas isolated atrial myocarditis is rare, causing conduction
+   abnormalities, atrial standstill, and right heart failure.
+
+   CASE SUMMARY Two weeks after a respiratory infection, a 35-year-old man developed dyspnea, leg edema, and
+   bradycardia. Electrocardiogram revealed a narrow QRS escape rhythm without P waves, and N-terminal pro–B-type
+   natriuretic peptide was elevated. Echocardiography showed severe right ventricular dysfunction with massive tricuspid
+   regurgitation. Cardiac magnetic resonance demonstrated atrial late gadolinium enhancement and mild edema, whereas
+   electrophysiological testing conﬁrmed atrial standstill and atrioventricular block.
+
+   DISCUSSION This case highlights isolated atrial myocarditis as a rare cause of atrial dysfunction, marked by postca-
+   pillary pulmonary hypertension and prominent V waves, despite normal mitral valves. Rapid atrial ﬁbrosis progression
+   resulted in silent atria, conﬁrmed by magnetic resonance imaging and electrophysiology. Further research is required to
+   clarify pathophysiology and establish effective management.
+
+   TAKE-HOME MESSAGES Isolated atrial myocarditis is a rare cause of atrial standstill and atrioventricular block.
+   Comprehensive multimodality imaging is essential for accurate diagnosis and management. (JACC Case Rep.
+   2025;30:104029) © 2025 The Authors. Published by Elsevier on behalf of the American College of Cardiology
+   Foundation. This is an open access article under the CC BY-NC-ND license (http://creativecommons.org/licenses/
+   by-nc-nd/4.0/).
+
+
+
+
+M              yocarditis typically involves the ventri-
+               cles; however, isolated atrial myocarditis
+               is an uncommon clinical condition that
+has rarely been reported in the literature. 1,2 It can pre-
+                                                                           heart failure. Due to its rarity and atypical clinical fea-
+                                                                           tures, isolated atrial involvement poses signiﬁcant
+                                                                           diagnostic and management challenges. This case
+                                                                           report highlights the clinical implications and distinc-
+sent with complications, including conduction abnor-                       tive hemodynamic features of isolated atrial myocar-
+malities, atrial standstill, and progression to right                      ditis with atrial standstill.
+
+
+
+
+From the aDepartment of Medicine II, Division of Cardiology, Medical University of Vienna, Vienna, Austria; and the bDepartment
+of Biomedical Imaging and Image-Guided Therapy, Medical University of Vienna, Vienna, Austria. *These authors contributed
+equally to this work.
+The authors attest they are in compliance with human studies committees and animal welfare regulations of the authors’
+institutions and Food and Drug Administration guidelines, including patient consent where appropriate. For more information,
+visit the Author Center.
+
+Manuscript received February 4, 2025; revised manuscript received March 21, 2025, accepted March 24, 2025.
+
+ISSN 2666-0849                                                                                       https://doi.org/10.1016/j.jaccas.2025.104029
+2            Mann et al                                                                                                  JACC: CASE REPORTS, VOL. 30, NO. 18, 2025
+
+             Isolated Atrial Myocarditis With Atrial Standstill                                                                                    JULY 9, 2025:104029
+
+
+
+
+ABBREVIATIONS                          CASE PRESENTATION
+AND ACRONYMS
+                                                                                                      TAKE-HOME MESSAGES
+
+                                       A 35-year-old White man presented to the                        Isolated atrial myocarditis is a rare clinical
+AV = atrioventricular
+                                       emergency department with dyspnea on mild                        entity that can lead to complications,
+hs-TnT = high-sensitivity                                                                               including conduction abnormalities, atrial
+                                       exertion (NYHA functional class III), leg
+troponin T
+                                       edema, and abdominal pain. He denied                             standstill, and rapid progression to right
+                                                                                                        heart failure.
+                            experiencing chest pain or dizziness. Two weeks
+                                                                                                       Comprehensive diagnostic evaluation,
+                            prior, he reported symptoms consistent with a viral
+                                                                                                        including cardiac magnetic resonance and
+                            infection but decided to proceed with a planned trip.
+                                                                                                        electrophysiological testing, is crucial for
+                            However, the progression of his symptoms led him to                         accurate diagnosis and localization of
+                            return early and seek medical attention. His medical                        ﬁbrosis.
+                            history included ulcerative colitis, which had been                        Postcapillary pulmonary hypertension with
+                            well controlled with mesalazine, and a history of                           prominent V waves in the absence of mitral
+                            tobacco use.                                                                valve abnormalities may be distinctive
+                                                                                                        hemodynamic hallmarks of isolated atrial
+                            INVESTIGATION                                                               involvement.
+
+
+                            On physical examination, notable ﬁndings included
+                            peripheral edema in the lower extremities and                           (reference range: #125 pg/mL) and a high-sensitivity
+                            bradycardia with a heart rate of 42 beats/min. The                      troponin T (hs-TnT) level of 31 ng/L (reference
+                            electrocardiogram demonstrated the absence of P                         range: #14 ng/L). Mild elevations in liver enzymes
+                            waves with a narrow QRS escape rhythm (Figure 1).                       and inﬂammatory markers were also noted. Trans-
+                            Laboratory ﬁndings showed an elevated N-terminal                        thoracic echocardiography showed a normally sized
+                            pro–B-type natriuretic peptide level of 432 pg/mL                       left ventricle with preserved systolic function and
+
+
+
+
+                               F I G U R E 1 Initial ECG
+
+
+
+
+                               Initial ECG with an absence of P waves and narrow QRS complex with an escape rhythm at a bradycardic rate of 42 beats/min.
+                               ECG ¼ electrocardiogram.
+JACC: CASE REPORTS, VOL. 30, NO. 18, 2025                                                                                               Mann et al         3
+JULY 9, 2025:104029                                                                               Isolated Atrial Myocarditis With Atrial Standstill
+
+
+
+
+                                                               F I G U R E 2 Transthoracic Echocardiography Performed at Admission
+mild mitral regurgitation. However, the left atrium
+and right ventricle were dilated, with evidence of
+pressure overload (D-sign), impaired right ventricular
+systolic function, and severe tricuspid regurgitation.
+The estimated systolic pulmonary artery pressure was
+elevated at 58 mm Hg (Figure 2). Given the clinical
+presentation and ﬁndings, a pulmonary embolism
+was initially suspected. The D-dimer level was
+markedly     elevated    at   2.94   mg/mL       (reference
+range: <0.5 m g/mL). However, computed tomography
+pulmonary angiography ruled out pulmonary embo-
+lism and instead revealed a dilated right ventricle,
+bilateral pleural effusions, and contrast agent reﬂux
+into the hepatic veins. To exclude the possibility of a
+right ventricular infarction, coronary computed to-
+mography angiography was performed but showed
+only minimal stenosis of the proximal left anterior
+descending artery.
+  Right heart catheterization revealed a markedly
+elevated V-wave, reaching 65 mm Hg in the pulmo-
+nary arterial wedge pressure tracing without clearly
+deﬁnable A waves (Figure 3). This exceptionally high
+V-wave extended visibly into the pulmonary artery
+tracing, suggesting passive upstream pressure trans-
+mission of elevated left atrial pressure. Further he-
+modynamic      assessment     showed        elevated    mean
+pulmonary artery pressure at 35 mm Hg and mean
+pulmonary arterial wedge pressure at 28 mm Hg. The
+cardiac output was 5.8 L/min, resulting in a pulmo-
+nary vascular resistance that was normal at 1.2 WU,
+consistent with isolated postcapillary pulmonary
+hypertension associated with left heart disease.
+  Given the signiﬁcant V-wave elevation, mitral
+disease was strongly suspected. However, initial
+transthoracic echocardiography revealed only mild
+mitral regurgitation, prompting further investigation.
+Transesophageal echocardiography was subsequently
+performed, conﬁrming the transthoracic echocardi-
+ography ﬁndings and demonstrating only mild mitral
+regurgitation, effectively ruling out severe mitral
+valve pathology as the primary cause of the pro-
+nounced V-wave. A silent left atrium was considered
+as a rare cause of the giant V waves. Hence, cardiac
+magnetic resonance was performed, revealing normal
+left and right ventricular function but borderline
+elevated T 1 and T 2 times suggestive of mild myocar-
+dial edema. Late gadolinium enhancement was
+observed in the left atrium, consistent with ﬁbrotic
+changes,    whereas     no    signiﬁcant     scarring    was
+observed in the ventricles (Figure 4). Based on the
+                                                               Transthoracic echocardiography performed at admission (A) with no visible A-wave in the
+presence of 2 of 3 Lake Louise criteria (late gadolin-
+                                                               mitral inﬂow Doppler image. (B) Right ventricle is dilated and shows severe systolic
+ium   enhancement       and   myocardial      edema)     and
+                                                               dysfunction with massive tricuspid regurgitation. (C) Estimated systolic pulmonary artery
+elevated hs-TnT concentrations, a clinical diagnosis           pressure is 58 mm Hg.
+of myocarditis was made.3 Notably, in this case,
+4   Mann et al                                                                                                     JACC: CASE REPORTS, VOL. 30, NO. 18, 2025
+
+    Isolated Atrial Myocarditis With Atrial Standstill                                                                                        JULY 9, 2025:104029
+
+
+
+
+                      F I G U R E 3 Right Heart Catheterization
+
+
+
+
+                      Right heart catheterization displaying markedly elevated V waves in the PAWP. The tracing also demonstrates upstream pressure transmission
+                      to the PA. PA ¼ pulmonary artery; PAWP ¼ pulmonary arterial wedge pressure waveform.
+
+
+
+                                                                                             myocarditis, at least in the postacute phase, appeared
+                      F I G U R E 4 Cardiac Magnetic Resonance
+                                                                                             to be conﬁned to the atria.
+
+                                                                                             MANAGEMENT
+
+                                                                                             The patient was treated with furosemide and epler-
+                                                                                             enone, leading to symptomatic improvement and a
+                                                                                             decline in cardiac biomarker levels. Four days after
+                                                                                             admission, he developed dizziness and was managed
+                                                                                             with isoprenaline, which stabilized his heart rate. Due
+                                                                                             to a nonfunctioning atrioventricular (AV) node, a
+                                                                                             cardiac resynchronization therapy pacemaker was
+                                                                                             implanted because His bundle pacing was not avail-
+                                                                                             able at that time. During the implantation, we
+                                                                                             attempted atrial pacing at multiple sites; however, all
+                                                                                             efforts were unsuccessful. Postinterventional trans-
+                                                                                             thoracic echocardiography showed the absence of an
+                                                                                             A-wave in the mitral inﬂow signal, a mildly reduced
+                                                                                             right ventricular systolic function, and massive
+                                                                                             tricuspid regurgitation.
+
+                                                                                             OUTCOME AND FOLLOW-UP
+
+                                                                                             During his hospital stay, the patient lost a total 7 kg
+                      Cardiac magnetic resonance showing late gadolinium                     and was discharged in a recompensated state. Two
+                      enhancement in the left atrium (red arrow, consistent with             weeks later, the patient was electively readmitted for
+                      ﬁbrotic changes.                                                       an electrophysiological examination to evaluate the
+JACC: CASE REPORTS, VOL. 30, NO. 18, 2025                                                                                                                  Mann et al     5
+JULY 9, 2025:104029                                                                                                  Isolated Atrial Myocarditis With Atrial Standstill
+
+
+
+   F I G U R E 5 Electrograms During Electrophysiological Examination
+
+
+
+
+   (A) Electrograms demonstrating septal pacing attempts via a pentaspline multipolar mapping catheter. Despite successful capture of the local
+   septal atrial myocardium, as seen on Penta 9-10, pacing consistently resulted in complete atrioventricular block. (B) A Decapolar mapping
+   catheter (CS) (Abbott) was inserted in the coronary sinus with the proximal bipole (CS 9-10) positioned at the coronary sinus ostium. The
+   underlying rhythm is a junctional escape rhythm with narrow QRS complexes on the surface electrocardiogram. The CS shows only far-ﬁeld
+   ventricular signals without evidence of atrial activity. Additionally, pacing from the proximal CS bipole (CS 9-10) does not result in atrial
+   capture.
+6          Mann et al                                                                                          JACC: CASE REPORTS, VOL. 30, NO. 18, 2025
+
+           Isolated Atrial Myocarditis With Atrial Standstill                                                                         JULY 9, 2025:104029
+
+
+
+
+                                                                                          potential beneﬁt of relocating the atrial lead. Labo-
+    F I G U R E 6 Follow-Up Transthoracic Echocardiography Performed 6 Weeks
+    Postdischarge
+                                                                                          ratory ﬁndings showed an hs-TnT level of 11 ng/L and
+                                                                                          an N-terminal pro–B-type natriuretic peptide level of
+                                                                                          95 pg/mL. Electrophysiological mapping of the right
+                                                                                          atrium revealed a silent right atrium, with only a
+                                                                                          small atrial septal capture and complete AV block
+                                                                                          (Figure 5A). Furthermore, coronary sinus pacing
+                                                                                          showed no electrical response (Figure 5B). Conse-
+                                                                                          quently, repositioning the atrial lead was deemed
+                                                                                          unnecessary because septal stimulation resulted in
+                                                                                          no meaningful activity of the atria and complete AV
+                                                                                          block. Given a CHA 2DS 2-VA score of 1 (due to
+                                                                                          atherosclerosis) in the absence of atrial activity,
+                                                                                          anticoagulation was deferred, with plans for interval
+                                                                                          reassessment. At a clinical follow-up visit 6 weeks
+                                                                                          later, transthoracic echocardiography continued to
+                                                                                          show no left atrial activity. However, the right
+                                                                                          ventricle was only mildly dilated, with normal right
+                                                                                          ventricular systolic function, mild tricuspid regurgi-
+                                                                                          tation, and normal systolic pulmonary artery pressure
+                                                                                          (Figure 6). One month later, device interrogation
+                                                                                          conﬁrmed 100% biventricular pacing.
+
+
+                                                                                          DISCUSSION
+
+                                                                                          This case report describes a rare presentation of iso-
+                                                                                          lated atrial myocarditis with atrial standstill leading
+                                                                                          to AV block and right ventricular dysfunction in a
+                                                                                          35-year-old man. The rapid progression of the disease
+                                                                                          and unusual distribution of ﬁbrosis conﬁned to the
+                                                                                          atria    make       this    case   particularly    noteworthy.
+                                                                                          Myocarditis typically involves the ventricles and can
+                                                                                          lead     to    ventricular    arrhythmias     or   conduction
+                                                                                          abnormalities, and heart failure. 2,4 In this case, the
+                                                                                          ﬁbrosis was exclusively conﬁned to the atria, with the
+                                                                                          ventricles completely unaffected. However, because
+                                                                                          only postmyocarditis changes were observed, it
+                                                                                          remains uncertain whether the acute phase of
+                                                                                          myocarditis was also restricted to the atria. Isolated
+                                                                                          atrial myocarditis has been rarely described in the
+                                                                                          literature and has been linked to giant cell myocar-
+                                                                                          ditis.1 An endomyocardial biopsy was not performed
+                                                                                          in this case because cardiac magnetic resonance did
+                                                                                          not indicate active myocarditis, and a biopsy would
+                                                                                          not have inﬂuenced the therapeutic approach.
+                                                                                            The rapid progression of myocarditis to ﬁbrosis
+                                                                                          was another striking feature of this case. Despite the
+                                                                                          patient’s recent viral infection and subsequent
+                                                                                          symptoms, ﬁbrosis developed unusually quickly,
+                                                                                          leading to atrial dysfunction and complete, irrevers-
+                                                                                          ible AV block. Such rapid progression of atrial
+    (A) Right ventricle is mildly dilated but shows normal systolic function. Tricuspid   myocarditis to ﬁbrosis is atypical and considered
+    regurgitation is reduced, and (B) estimated systolic pulmonary artery pressure has
+                                                                                          rare.5 Although atrial ﬁbrosis typically presents with
+    improved to 29 mm Hg. (C) Left atrial activity remains absent.
+                                                                                          atrial        ﬁbrillation    or    other     supraventricular
+JACC: CASE REPORTS, VOL. 30, NO. 18, 2025                                                                                                                            Mann et al     7
+JULY 9, 2025:104029                                                                                                            Isolated Atrial Myocarditis With Atrial Standstill
+
+
+
+
+arrhythmias,1 this patient demonstrated a rare pre-                                  and antiﬁbrotic therapies, including mineralocorti-
+sentation of atrial inactivity in electrophysiological                               coid       receptor       antagonists,            renin-angiotensin-
+testing (silent atria).6,7 Another distinctive feature of                            aldosterone system inhibitors, and sodium-glucose
+this case was the presence of prominent V waves,                                     cotransporter-2 inhibitors.
+despite the absence of mitral valve abnormalities.
+                                                                                     CONCLUSIONS
+The rapid progression of atrial ﬁbrosis ultimately
+contributed to the development of right heart failure.
+                                                                                     This case of isolated atrial myocarditis highlights an
+The absence of other contributing factors (eg, pul-
+                                                                                     unusual distribution of postmyocarditis scarring
+monary embolism) suggests a pivotal role of atrial
+                                                                                     conﬁned to the atria, rapid progression to ﬁbrosis,
+dysfunction in the pathogenesis of right heart failure,
+                                                                                     and resulting silent atria phenomenon with atrial
+likely mediated by acute-onset postcapillary pulmo-
+                                                                                     standstill. Further research is necessary to under-
+nary hypertension caused by increased left atrial
+                                                                                     stand the pathophysiology and establish effective
+pressure.
+                                                                                     management strategies for this rare condition.
+    This case highlights several important clinical im-
+plications: First, isolated atrial myocarditis should be
+                                                                                     FUNDING SUPPORT AND AUTHOR DISCLOSURES
+considered as a rare differential diagnosis in patients
+presenting with unexplained AV block, particularly in
+                                                                                     The authors have reported that they have no relationships relevant to
+the presence of recent viral infection or other sys-                                 the contents of this paper to disclose.
+temic symptoms. Comprehensive diagnostic evalua-
+tion, including cardiac magnetic resonance and
+electrophysiological testing, is crucial for accurate                                ADDRESS FOR CORRESPONDENCE:                               Dr Christian
+diagnosis and localization of ﬁbrosis. Postcapillary                                 Gerges, Division of Cardiology, Medical University of
+pulmonary hypertension with prominent V waves in                                     Vienna, Waehringer Guertel 18-20, 1090 Vienna,
+the absence of mitral valve abnormalities may be a                                   Austria. E-mail: Christian.gerges@meduniwien.ac.at.
+hallmark of isolated atrial involvement. Timely                                      OR Dr Thomas A. Zelniker, Division of Cardiology,
+management with diuretics can result in signiﬁcant                                   Medical University of Vienna, Waehringer Guertel
+clinical improvement. Although evidence is limited,                                  18-20,      1090      Vienna,       Austria.        E-mail:       thomas.
+consideration should also be given to anticoagulation                                zelniker@meduniwien.ac.at.
+
+
+
+REFERENCES
+
+1. Larsen BT, Maleszewski JJ, Edwards WD, et al.           4. Tschöpe C, Ammirati E, Bozkurt B, et al.         Pacing   Clin   Electrophysiol. 1993;16(11):2196–
+Atrial giant cell myocarditis. Circulation. 2013;127(1):   Myocarditis and inﬂammatory cardiomyopathy:         2201.
+39–47.                                                     current evidence and future directions. Nat Rev
+                                                                                                               7. Prabhu MA, Srinivas Prasad BV, Thajudeen A,
+                                                           Cardiol. 2021;18(3):169–193.
+2. Sagar S, Liu PP, Cooper LT. Myocarditis. Lancet.                                                            Namboodiri N. Persistent atrial standstill in
+2012;379(9817):738–747.                                    5. Tang Y, Qi L, Xu L, et al. Atrial giant          acute myocarditis. Indian Pediatr. 2016;53(2):
+                                                           cell myocarditis with preserved left ventricular    162–164.
+3. Ferreira VM, Schulz-Menger J, Holmvang G,
+                                                           function: a case report and literature review.
+et al. Cardiovascular magnetic resonance in non-
+                                                           J Cardiothorac Surg. 2023;18(1):232.
+ischemic myocardial inﬂammation: expert recom-
+mendations. J Am Coll Cardiol. 2018;72(24):3158–           6. Straumanis JP, Wiles HB, Case CL. Resolution     KEY WORDS cardiac magnetic resonance,
+3176.                                                      of atrial standstill in a child with myocarditis.   cardiomyopathy, right-sided catheterization
+

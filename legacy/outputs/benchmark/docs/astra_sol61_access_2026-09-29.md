@@ -1,0 +1,14 @@
+# Acesso verificado: Astra 6 e solicitação “Sol 6.1”
+
+Verificação UTC: 2026-09-29T21:00:15.740277+00:00. Conta Codex CLI autenticada por assinatura ChatGPT; executável `codex-cli 0.158.0-alpha.2.1`. Não se usou API paga, chave ou reset.
+
+| Rótulo pedido | ID usado | Evidência | Estado |
+|---|---|---|---|
+| Astra 6 | `gpt-6-astra` high | CLI embutida 0.158 aceitou inferência e `ping({})` estruturado | elegível |
+| Sol 6.1 | `gpt-6.1-sol` | Imagem enviada pelo usuário mostra opção distinta de `6 Sol`; [ajuda oficial](https://help-lb.openai.com/en/articles/20001275-chatgpt-work-and-codex) confirma modelo distinto no Work/Codex. CLI embutida 0.158 exit 1; CLI npm oficial 0.159.1 autenticada produziu `OK` em esforço baixo, exit 0; primeira tentativa `high` expirou após 120 s sem resposta, mas o preflight sintético estruturado posterior em `high` passou. | ID/acesso high e transporte estruturado confirmados |
+
+A rejeição pela CLI embutida não contradiz a evidência do aplicativo; o rollout é distinto por cliente/versão. A instalação da versão oficial npm0.159.1 ocorreu em `/opt/homebrew/bin/codex`, sem alterar o executável embutido usado por Astra. A [página oficial específica do GPT-6.1 Sol](https://developers.openai.com/api/docs/models/gpt-6.1-sol) confirma o ID, suporte a `high` e tarifa Standard por milhão: US$ 2 input, US$ 0,10 cached input, US$ 2,50 cache write, US$ 10 output. Acima de 272 mil tokens de entrada por chamada, aplica-se tier maior. Essa tarifa será usada apenas para proxy hipotético de API; a assinatura não gera essa fatura. O cache do Sol 6.1 custa metade do valor do Sol 6 na tabela oficial, portanto não copiar a tabela antiga. Os preflights low e high são sintéticos; nenhum entra no painel clínico. O high estruturado foi validado antes da primeira trajetória.
+
+Preflight Astra sem caso: saída estruturada em uma chamada permitida, `tool_transport=json_emulated`, config high solicitada. A CLI não expõe slug efetivamente servido; registrar como modelo solicitado/aceito, não snapshot observado. Entrada reportada 14.633 tokens, saída 27; isso inclui overhead da CLI. Nada desse preflight entra no denominador dos casos ou no proxy de custo terminal. O [modelo oficial Astra](https://developers.openai.com/api/docs/models/gpt-6-astra) documenta high e tarifa Standard por milhão: US$10 input, US$1 cached input, US$12,50 cache write e US$50 output; prompts acima 272k tokens seguem outra tarifa. Custos serão proxies, não cobranças de assinatura.
+
+O braço Astra usa o corpus e protocolo clínico congelados, resultados em `results/extension_astra_2026-09-29/` e [manifesto novo](protocol_astra_extension_2026-09-29.json). Luna e Terra permanecem encerrados como antes; a automação anterior fica pausada. Revisão médica segue pendente. Sol 6.1 agora também tem preflight estruturado high aceito. O manifesto aditivo está em `protocol_sol61_extension_2026-09-29.json`.

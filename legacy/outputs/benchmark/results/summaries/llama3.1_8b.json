@@ -1,0 +1,795 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_version": "mvp10_v3_2026-09-26",
+  "model_id": "llama3.1:8b",
+  "provider": "ollama",
+  "eligible_cases": 10,
+  "expected_runs": 30,
+  "completed_runs": 0,
+  "failed_runs": 30,
+  "observed_runs": 30,
+  "metrics": {
+    "diagnosis_attempt_rate": {
+      "numerator": 12,
+      "denominator": 30,
+      "estimate": 0.4,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": null
+    },
+    "diagnosis_emission_rate": {
+      "numerator": 0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": null
+    },
+    "published_diagnosis_exact_match": {
+      "numerator": 0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": true,
+      "unit": null
+    },
+    "published_diagnosis_top3_exact": {
+      "numerator": 0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": true,
+      "unit": null
+    },
+    "published_diagnosis_top5_exact": {
+      "numerator": 0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": true,
+      "unit": null
+    },
+    "published_diagnosis_concept_match": {
+      "numerator": 0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": true,
+      "unit": null
+    },
+    "published_diagnosis_top3_concept": {
+      "numerator": 0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": true,
+      "unit": null
+    },
+    "published_diagnosis_top5_concept": {
+      "numerator": 0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": true,
+      "unit": null
+    },
+    "benchmark_target_exact_match": {
+      "numerator": 0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": true,
+      "unit": null
+    },
+    "benchmark_target_concept_match": {
+      "numerator": 0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": true,
+      "unit": null
+    },
+    "benchmark_target_top3_concept": {
+      "numerator": 0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": true,
+      "unit": null
+    },
+    "benchmark_target_top5_concept": {
+      "numerator": 0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": true,
+      "unit": null
+    },
+    "benchmark_target_concept_match_given_diagnosis": {
+      "numerator": 0,
+      "denominator": 0,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "no_evaluable_runs",
+      "provisional": true,
+      "unit": null
+    },
+    "disposition_published_exact_match": {
+      "numerator": 0,
+      "denominator": 21,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": true,
+      "unit": null
+    },
+    "long_horizon_completion_rate": {
+      "numerator": 0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": null
+    },
+    "tool_call_validity_rate": {
+      "numerator": 112,
+      "denominator": 930,
+      "estimate": 0.12043010752688173,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": null
+    },
+    "tool_call_failure_rate": {
+      "numerator": 818,
+      "denominator": 930,
+      "estimate": 0.8795698924731182,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": null
+    },
+    "mean_tool_calls": {
+      "numerator": 930,
+      "denominator": 30,
+      "estimate": 31.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": "calls/run"
+    },
+    "mean_retrieval_calls": {
+      "numerator": 653,
+      "denominator": 30,
+      "estimate": 21.766666666666666,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": "calls/run"
+    },
+    "unique_facts_per_retrieval_call": {
+      "numerator": 12,
+      "denominator": 653,
+      "estimate": 0.018376722817764167,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": null
+    },
+    "mean_lab_analytes_requested": {
+      "numerator": 0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": "analytes/run"
+    },
+    "mean_imaging_requests": {
+      "numerator": 4,
+      "denominator": 30,
+      "estimate": 0.13333333333333333,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": "studies/run"
+    },
+    "mean_procedure_orders": {
+      "numerator": 15,
+      "denominator": 30,
+      "estimate": 0.5,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": "orders/run"
+    },
+    "mean_medication_orders": {
+      "numerator": 0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": "orders/run"
+    },
+    "mean_steps_to_first_exact_diagnosis": {
+      "numerator": 0,
+      "denominator": 0,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "not_reported",
+      "provisional": false,
+      "unit": "calls"
+    },
+    "mean_steps_to_first_concept_diagnosis": {
+      "numerator": 0,
+      "denominator": 0,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "not_reported",
+      "provisional": false,
+      "unit": "calls"
+    },
+    "mean_steps_to_first_benchmark_target": {
+      "numerator": 0,
+      "denominator": 0,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "not_reported",
+      "provisional": false,
+      "unit": "calls"
+    },
+    "exact_diagnosis_ever_mentioned_rate": {
+      "numerator": 0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": true,
+      "unit": null
+    },
+    "concept_diagnosis_ever_mentioned_rate": {
+      "numerator": 0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": true,
+      "unit": null
+    },
+    "primary_diagnosis_consistency_pair_agreement": {
+      "numerator": 0,
+      "denominator": 0,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_repeated_runs",
+      "provisional": false,
+      "unit": null
+    },
+    "mean_total_latency_ms": {
+      "numerator": 1852085,
+      "denominator": 30,
+      "estimate": 61736.166666666664,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": "ms/run"
+    },
+    "mean_first_action_latency_ms": {
+      "numerator": 83020,
+      "denominator": 30,
+      "estimate": 2767.3333333333335,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": "ms/run"
+    },
+    "mean_local_tokens_per_second": {
+      "numerator": 763.2222461948436,
+      "denominator": 30,
+      "estimate": 25.44074153982812,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": "tokens/s"
+    },
+    "total_latency_p50_ms": {
+      "numerator": null,
+      "denominator": 30,
+      "estimate": 63234.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": "ms"
+    },
+    "total_latency_p95_ms": {
+      "numerator": null,
+      "denominator": 30,
+      "estimate": 121629.74999999997,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": "ms"
+    },
+    "total_input_tokens": {
+      "numerator": 2594413,
+      "denominator": 30,
+      "estimate": 2594413,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": "input_tokens"
+    },
+    "total_output_tokens": {
+      "numerator": 29667,
+      "denominator": 30,
+      "estimate": 29667,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": "output_tokens"
+    },
+    "total_cached_input_tokens": {
+      "numerator": null,
+      "denominator": 0,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "provider_did_not_report",
+      "provisional": false,
+      "unit": "cached_input_tokens"
+    },
+    "total_cache_creation_input_tokens": {
+      "numerator": null,
+      "denominator": 0,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "provider_did_not_report",
+      "provisional": false,
+      "unit": "cache_creation_input_tokens"
+    },
+    "total_reasoning_tokens": {
+      "numerator": null,
+      "denominator": 0,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "provider_did_not_report",
+      "provisional": false,
+      "unit": "reasoning_tokens"
+    },
+    "total_cost_estimate_usd": {
+      "numerator": 0.0,
+      "denominator": 30,
+      "estimate": 0.0,
+      "interval": null,
+      "missing_reason": null,
+      "provisional": false,
+      "unit": "USD"
+    },
+    "total_memory_peak_bytes": {
+      "numerator": null,
+      "denominator": 0,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "provider_did_not_report",
+      "provisional": false,
+      "unit": "memory_peak_bytes"
+    },
+    "final_diagnosis_accuracy": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "acceptable_alternative_rate": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "critical_diagnosis_miss_rate": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "appropriate_next_action_rate": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "laboratory_appropriateness": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "imaging_appropriateness": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "procedure_appropriateness": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "medication_appropriateness": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "guideline_concordance": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "safety_error_rate": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "disposition_clinical_accuracy": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "unnecessary_action_count": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "safety_error_allergy": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "safety_error_dose": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "safety_error_renal_adjustment": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "safety_error_QT": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "safety_error_interaction": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "safety_error_anticoagulation": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "safety_error_opioid_risk": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "safety_error_contraindication": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    },
+    "safety_error_duplicate_therapy": {
+      "numerator": null,
+      "denominator": null,
+      "estimate": null,
+      "interval": null,
+      "missing_reason": "requires_physician_adjudication",
+      "provisional": false,
+      "unit": null
+    }
+  },
+  "per_case": [
+    {
+      "case_id": "case_001",
+      "runs": 3,
+      "published_diagnosis_exact_matches": 0,
+      "completed_runs": 0,
+      "primary_diagnosis_pair_agreement": {
+        "numerator": 0,
+        "denominator": 0,
+        "estimate": null,
+        "interval": null,
+        "missing_reason": "requires_at_least_two_diagnoses",
+        "provisional": false,
+        "unit": null
+      },
+      "tool_calls": [
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "case_id": "case_002",
+      "runs": 3,
+      "published_diagnosis_exact_matches": 0,
+      "completed_runs": 0,
+      "primary_diagnosis_pair_agreement": {
+        "numerator": 0,
+        "denominator": 0,
+        "estimate": null,
+        "interval": null,
+        "missing_reason": "requires_at_least_two_diagnoses",
+        "provisional": false,
+        "unit": null
+      },
+      "tool_calls": [
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "case_id": "case_003",
+      "runs": 3,
+      "published_diagnosis_exact_matches": 0,
+      "completed_runs": 0,
+      "primary_diagnosis_pair_agreement": {
+        "numerator": 0,
+        "denominator": 0,
+        "estimate": null,
+        "interval": null,
+        "missing_reason": "requires_at_least_two_diagnoses",
+        "provisional": false,
+        "unit": null
+      },
+      "tool_calls": [
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "case_id": "case_004",
+      "runs": 3,
+      "published_diagnosis_exact_matches": 0,
+      "completed_runs": 0,
+      "primary_diagnosis_pair_agreement": {
+        "numerator": 0,
+        "denominator": 0,
+        "estimate": null,
+        "interval": null,
+        "missing_reason": "requires_at_least_two_diagnoses",
+        "provisional": false,
+        "unit": null
+      },
+      "tool_calls": [
+        40,
+        12,
+        40
+      ]
+    },
+    {
+      "case_id": "case_005",
+      "runs": 3,
+      "published_diagnosis_exact_matches": 0,
+      "completed_runs": 0,
+      "primary_diagnosis_pair_agreement": {
+        "numerator": 0,
+        "denominator": 0,
+        "estimate": null,
+        "interval": null,
+        "missing_reason": "requires_at_least_two_diagnoses",
+        "provisional": false,
+        "unit": null
+      },
+      "tool_calls": [
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "case_id": "case_006",
+      "runs": 3,
+      "published_diagnosis_exact_matches": 0,
+      "completed_runs": 0,
+      "primary_diagnosis_pair_agreement": {
+        "numerator": 0,
+        "denominator": 0,
+        "estimate": null,
+        "interval": null,
+        "missing_reason": "requires_at_least_two_diagnoses",
+        "provisional": false,
+        "unit": null
+      },
+      "tool_calls": [
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "case_id": "case_007",
+      "runs": 3,
+      "published_diagnosis_exact_matches": 0,
+      "completed_runs": 0,
+      "primary_diagnosis_pair_agreement": {
+        "numerator": 0,
+        "denominator": 0,
+        "estimate": null,
+        "interval": null,
+        "missing_reason": "requires_at_least_two_diagnoses",
+        "provisional": false,
+        "unit": null
+      },
+      "tool_calls": [
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "case_id": "case_008",
+      "runs": 3,
+      "published_diagnosis_exact_matches": 0,
+      "completed_runs": 0,
+      "primary_diagnosis_pair_agreement": {
+        "numerator": 0,
+        "denominator": 0,
+        "estimate": null,
+        "interval": null,
+        "missing_reason": "requires_at_least_two_diagnoses",
+        "provisional": false,
+        "unit": null
+      },
+      "tool_calls": [
+        40,
+        8,
+        40
+      ]
+    },
+    {
+      "case_id": "case_009",
+      "runs": 3,
+      "published_diagnosis_exact_matches": 0,
+      "completed_runs": 0,
+      "primary_diagnosis_pair_agreement": {
+        "numerator": 0,
+        "denominator": 0,
+        "estimate": null,
+        "interval": null,
+        "missing_reason": "requires_at_least_two_diagnoses",
+        "provisional": false,
+        "unit": null
+      },
+      "tool_calls": [
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "case_id": "case_010",
+      "runs": 3,
+      "published_diagnosis_exact_matches": 0,
+      "completed_runs": 0,
+      "primary_diagnosis_pair_agreement": {
+        "numerator": 0,
+        "denominator": 0,
+        "estimate": null,
+        "interval": null,
+        "missing_reason": "requires_at_least_two_diagnoses",
+        "provisional": false,
+        "unit": null
+      },
+      "tool_calls": [
+        40,
+        40,
+        40
+      ]
+    }
+  ],
+  "review_state": "pending",
+  "calculation_version": "evaluation-v2",
+  "diagnosis_concept_ruleset_version": "diagnostic-concepts-2026-09-26-v2",
+  "diagnosis_concept_ruleset_sha256": "b2da153cd8d65df6658f45e715b0287cc4956a040bf62fbb8ddeb09d261df9fc",
+  "limitations": [
+    "Diagnosis rates use all attempted trajectories; missing accepted final diagnoses count as misses. Conditional match among accepted diagnoses is reported separately.",
+    "Exact string matches are provisional lower bounds until physician adjudication.",
+    "Concept matches are deterministic lexical screens and are not physician-adjudicated accuracy.",
+    "Clinical appropriateness, safety, guideline concordance and unnecessary actions are not auto-scored.",
+    "Claude CLI cost_estimate_usd is an API-equivalent estimate, not a charge to the subscription; missing Sol cost is unavailable, not zero.",
+    "Intervals require a complete repeated-run panel and case-level paired bootstrap."
+  ],
+  "protocol_version": "mvp10_closedbook_v5_2026-09-26"
+}

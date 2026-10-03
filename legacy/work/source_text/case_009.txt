@@ -1,0 +1,175 @@
+    Journal of Surgical Case Reports, 2026, 2026(4), rjag282
+    https://doi.org/10.1093/jscr/rjag282
+    Published: 20 April 2026
+    Case Report
+
+
+
+
+     Migrated biliary stent causing Meckel’s diverticulitis and ileal
+             perforation: a rare cause of acute abdomen
+                                                 İbrahim Doğan *, Fatih Polat , Sait Tayfun , Ezgi Sönmez
+
+          Department of General Surgery, University of Health Sciences Van Training and Research Hospital, Süphan Mah., Edremit, 65300, Van, Türkiye
+
+ *Corresponding author. Department of General Surgery, University of Health Sciences Van Training and Research Hospital, Süphan Mah., Edremit, 65300, Van, Türkiye. E-mail: dogan_203@hotmail.com
+
+
+•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+                                                                                        Abstract
+Migration of plastic biliary stents is a recognized complication of endoscopic retrograde cholangiopancreatography (ERCP), although it
+is usually asymptomatic and self-limiting. Intestinal perforation due to stent migration is rare, and involvement of Meckel’s diverticulum
+is exceedingly uncommon. We report a 70-year-old woman who presented with acute abdomen approximately one year after ERCP with
+placement of a 10F–10 cm plastic biliary stent for choledocholithiasis. Computed tomography revealed small bowel obstruction and a
+linear hyperdense intraluminal structure consistent with a foreign body. Emergency surgery identified a migrated biliary stent impacted
+within a Meckel’s diverticulum located 40 cm proximal to the ileocecal valve. One end of the stent was lodged in the diverticulum, while the
+opposite end perforated the adjacent ileal loop, resulting in localized peritonitis. Segmental small bowel resection with primary side-to-side
+anastomosis was performed. The postoperative course was complicated by respiratory failure requiring prolonged ventilatory support;
+however, the patient recovered and was discharged in good condition. This case highlights a rare bidirectional perforation mechanism
+caused by long-term indwelling plastic biliary stent migration. In patients with a history of ERCP presenting with acute abdomen, migrated
+stents should be considered in the differential diagnosis. Regular surveillance and timely removal of plastic biliary stents are essential to
+prevent severe late complications.
+Keywords biliary stent migration, Meckel’s diverticulum, ileal perforation
+•••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••
+
+                                  Introduction                                                      the adjacent ileal loop. Such a condition may be associated with a
+                                                                                                    potentially high risk of morbidity.
+Endoscopic retrograde cholangiopancreatography (ERCP) is a widely
+                                                                                                      In this article, we present a case of acute abdomen caused by
+used and effective therapeutic modality for the management of biliary
+                                                                                                    a biliary stent that migrated and became lodged within a Meckel’s
+tract diseases. Plastic biliary stents are frequently preferred, particu-
+                                                                                                    diverticulum, leading to ileal perforation in a patient who had under-
+larly in cases of choledocholithiasis and benign biliary obstruction;
+                                                                                                    gone ERCP for choledocholithiasis approximately one and a half years
+however, stent-related complications are not entirely negligible. Dis-
+                                                                                                    earlier.
+tal migration occurs in ∼5%–10% of plastic biliary stents and, in
+most cases, the stent passes through the gastrointestinal tract without
+                                                                                                                                  Case presentation
+causing clinical symptoms [1, 2]. Nevertheless, in rare circumstances,
+a migrated stent may become impacted within the intestine, lead-                                    A 70-year-old female patient with a history of type 2 diabetes mellitus,
+ing to serious complications such as obstruction, inflammation, or                                  hypertension, chronic atrial fibrillation, and chronic obstructive pul-
+perforation [3, 4].                                                                                 monary disease (COPD) presented to the emergency department with
+   Meckel’s diverticulum is the most common congenital anomaly of                                   progressively worsening abdominal pain. She had undergone ERCP
+the gastrointestinal tract and remains asymptomatic in the majority of                              for choledocholithiasis one year earlier, during which a 10F–10 cm
+individuals [5]. However, impaction of foreign bodies within the diver-                             plastic biliary stent was placed following balloon extraction.
+ticulum may result in complications including diverticulitis, ulcera-                                  She presented with diffuse abdominal pain, distension, and nausea.
+tion, and perforation [6, 7]. Although cases of migrated foreign bodies                             Physical examination revealed signs of peritoneal irritation. Upright
+causing perforation of Meckel’s diverticulum have been reported in                                  abdominal radiography and abdominal computed tomography (CT)
+the literature, to the best of our knowledge, no case has been described                            demonstrated multiple air–fluid levels in the small bowel loops and
+in which migration into the diverticulum resulted in perforation of                                 a linear hyperdense structure within the intestinal lumen consistent
+
+
+Received: 5 February 2026. Accepted: 30 March 2026
+© The Author(s) 2026. Published by Oxford University Press and JSCR Publishing Ltd.
+This is an Open Access article distributed under the terms of the Creative Commons Attribution-NonCommercial License (https://creativecommons.org/licenses/by-nc/4.0/),
+which permits non-commercial re-use, distribution, and reproduction in any medium, provided the original work is properly cited. For commercial re-use, please contact
+reprints@oup.com for reprints and translation rights for reprints. All other permissions can be obtained through our RightsLink service via the Permissions link on the article
+page on our site—for further information please contact journals.permissions@oup.com.
+2 | Journal of Surgical Case Reports, 2026, Volume 2026, Issue 4
+
+
+
+
+Figure 1 Abdominal computed tomography demonstrating a linear
+hyperdense intraluminal structure consistent with a migrated biliary
+stent.
+
+
+with a foreign body (Fig. 1). These findings suggested acute abdomen
+secondary to mechanical small bowel obstruction.
+   Emergency laparoscopic exploration was planned; however, due
+to dense purulent fluid and extensive intra-abdominal adhesions, the
+procedure was converted to open surgery. Systematic evaluation of the
+small intestine revealed a Meckel’s diverticulum ∼40 cm proximal to
+the ileocecal valve containing a rigid foreign body. Its distal end had
+perforated the adjacent ileal segment. The object was identified as a
+migrated biliary stent (Fig. 2).
+   A segmental resection of ∼20 cm of small intestine, including the
+diverticulum and perforation site, was performed, followed by side-to-
+side stapled anastomosis. After irrigation and drainage, the operation
+was completed, and the patient was transferred intubated to the
+intensive care unit.
+   Postoperatively, prolonged ventilatory support was required due to
+COPD-related respiratory failure. She was managed with mechanical
+ventilation, high-flow nasal oxygen therapy, and intermittent non-
+invasive ventilation. Episodes of hypernatremia, hypercalcemia, and
+atrial fibrillation were treated medically. From postoperative day 13
+onward, respiratory and neurological status improved, and she was
+successfully extubated. She tolerated oral intake and was discharged         Figure 2 Intraoperative view showing a migrated plastic biliary stent
+on postoperative day 40 after an uneventful recovery.                        impacted within a Meckel’s diverticulum, with perforation of the adjacent
+                                                                             ileal segment.
+
+                             Discussion
+                                                                             rarity of the case but also appears to contribute to a more severe
+Although biliary stent migration is usually asymptomatic, severe com-        clinical presentation.
+plications such as intestinal perforation are exceedingly rare. Due             CT is the preferred imaging modality in suspected foreign body–
+to their structural characteristics, plastic biliary stents are known to     related perforations due to its high sensitivity and specificity in
+migrate more frequently than metal stents [2, 8]. Following migration,       demonstrating both direct and indirect signs of bowel perforation [11].
+impaction of the stent within the intestine is more likely in the pres-      Once perforation occurs, urgent surgical intervention is mandatory.
+ence of anatomical narrowings, inflammatory changes, or diverticular         Appropriate surgical management includes diverticulectomy or seg-
+disease [3, 9].                                                              mental small bowel resection with primary anastomosis, depending
+   Meckel’s diverticulum represents a high-risk location for foreign         on the extent of involvement.
+body impaction. Intraluminal stasis and the narrow neck of the diver-           This case also highlights the importance of regular follow-up and
+ticulum may facilitate retention of foreign bodies, predisposing to local    timely removal of plastic biliary stents. International guidelines rec-
+inflammation and perforation [5, 6]. Various foreign bodies causing          ommend that plastic biliary stents be removed or exchanged ideally
+perforation after impaction within a Meckel’s diverticulum have been         within three months [8]. Inadequate follow-up of indwelling stents
+reported in the literature; however, cases in which a migrated biliary       may result in late complications such as migration, obstruction, and,
+stent lodges within the diverticulum and subsequently perforates the         rarely, life-threatening perforation.
+adjacent ileal loop are exceedingly rare. In the case reported by Topal
+et al. [10], a migrated biliary stent was shown to perforate the Meckel’s
+                                                                                                         Conclusion
+diverticulum itself. In contrast, in our case, impaction of one end of the
+stent within the Meckel’s diverticulum mechanically prevented fur-           Although rare, migrated biliary stents impacted within the intes-
+ther distal migration, while the opposite end perforated the adjacent        tine can lead to life-threatening complications. This case presents
+ileal segment. This bidirectional mechanism not only increases the           an unusual clinical scenario in which a long-term indwelling plastic
+                                                                                                                                                       Journal of Surgical Case Reports, 2026, Volume 2026, Issue 4 | 3
+
+
+biliary stent became lodged within a Meckel’s diverticulum, resulting                                                                                 report and a review of literature of 85 cases from 2000 to 2022. Clin
+in diverticulitis and ileal perforation. In patients with a history of                                                                                Case Reports 2023;11:e7425. https://doi.org/10.1002/ccr3.7425
+ERCP presenting with acute abdomen, stent migration should always                                                                                  4. Zorbas KA, Ashmeade S, Lois W et al. Small bowel perforation from a
+be considered in the differential diagnosis. Early recognition and                                                                                    migrated biliary stent: a case report and review of literature. World
+timely surgical intervention are crucial for reducing morbidity. Reg-                                                                                 J Gastrointest Endosc 2021;13:543–54. https://doi.org/10.4253/wjge.
+ular surveillance and appropriate removal of plastic biliary stents                                                                                   v13.i10.543
+remain essential to prevent such complications.                                                                                                    5. Park JJ, Wolff BG, Tollefson MK et al. Meckel diverticulum: the Mayo
+                                                                                                                                                      Clinic experience with 1476 patients (1950-2002). Ann Surg 2005;
+                                                                                                                                                      241:529–33. https://doi.org/10.1097/01.sla.0000154270.14308.5f
+                                         Conflicts of interest                                                                                     6. Cotirlet A, Anghel R, Tincu E et al. Perforation of Meckel’s divertic-
+                                                                                                                                                      ulum by foreign body, a rare complication. Chirurgia (Bucur) 2013;
+None declared.                                                                                                                                        108:411–3.
+                                                                                                                                                   7. Mouawad NJ, Hammond S, Kaoutzanis C. Perforation of Meckel’s
+                                                                                                                                                      diverticulum by an intact fish bone. BMJ Case Rep 2013;2013:
+                                                         Funding
+                                                                                                                                                      bcr2012008226. https://doi.org/10.1136/bcr-2012-008226
+None declared.                                                                                                                                     8. Dumonceau JM, Tringali A, Blero D et al. European Society of
+                                                                                                                                                      Gastrointestinal Endoscopy. Biliary stenting: indications, choice of
+                                                                                                                                                      stents and results: European Society of Gastrointestinal Endoscopy
+                                                         Consent
+                                                                                                                                                      (ESGE) clinical guideline. Endoscopy 2012;44:277–98. https://doi.org/
+Written informed consent was obtained from the patient.                                                                                               10.1055/s-0031-1291633
+                                                                                                                                                   9. Swied MY, Al Turk Y, Maitar M. Migrated plastic biliary stent causing
+                                                                                                                                                      cecal perforation. ACG Case Rep J 2024;11:e01424. https://doi.org/10.
+                                                     References
+                                                                                                                                                      14309/crj.0000000000001424
+  1. Arhan M, Odemiş B, Parlak E et al. Migration of biliary plastic stents:                                                                     10. Topal U, Ülkü A, Sarıtaş AG et al. A rare complication in a liver
+     experience of a tertiary center. Surg Endosc 2009;23:769–75. https://                                                                            transplant patient: Meckel diverticulum perforation due to biliary
+     doi.org/10.1007/s00464-008-0067-x                                                                                                                stent. Int J Surg Case Rep 2018;53:35–8. https://doi.org/10.1016/j.ijscr.
+  2. Johanson JF, Schmalz MJ, Geenen JE. Incidence and risk factors for                                                                               2018.09.034
+     biliary stent migration. Gastrointest Endosc 1992;38:341–6. https://                                                                         11. Kuzmich S, Burke CJ, Harvey CJ et al. Perforation of gastrointestinal
+     doi.org/10.1016/S0016-5107(92)70429-5                                                                                                            tract by poorly conspicuous ingested foreign bodies: radiological
+  3. Alkhawaldeh IM, Shattarah O, AlSamhori JF et al. Late small bowel                                                                                diagnosis. Br J Radiol 2015;88:20150086. https://doi.org/10.1259/bjr.
+     perforation from a migrated double plastic biliary stent: a case                                                                                 20150086
+
+
+
+
+© The Author(s) 2026. Published by Oxford University Press and JSCR Publishing Ltd. This is an Open Access article distributed under the terms of the Creative Commons Attribution-NonCommercial License (https://creativecommons.org/licenses/by- nc/4.0/), which permits
+non-commercial re-use, distribution, and reproduction in any medium, provided the original work is properly cited. For commercial re-use, please contact reprints@oup.com for reprints and translation rights for reprints. All other permissions can be obtained through our RightsLink
+service via the Permissions link on the article page on our site—for further information please contact journals.permissions@oup.com.
+Journal of Surgical Case Reports, 2026, 2026(4), rjag282
+https://doi.org/10.1093/jscr/rjag282
+Case Report
+

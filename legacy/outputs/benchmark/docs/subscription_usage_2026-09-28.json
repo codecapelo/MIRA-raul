@@ -1,0 +1,59 @@
+{
+  "snapshot_utc": "2026-09-29T00:37:47.175365+00:00",
+  "source": "preserved_trace_usage_events",
+  "quota_conversion": "unknown",
+  "models": {
+    "luna": {
+      "terminal": {
+        "attempts": 20,
+        "model_responses": 257,
+        "input_tokens": 4734032,
+        "cached_input_tokens": 3960320,
+        "output_tokens": 101796,
+        "reasoning_output_tokens": 77852
+      },
+      "failed_prefix": {
+        "attempts": 2,
+        "model_responses": 12,
+        "input_tokens": 265018,
+        "cached_input_tokens": 227584,
+        "output_tokens": 4869,
+        "reasoning_output_tokens": 3677
+      },
+      "user_stop_prefix": {
+        "attempts": 1,
+        "model_responses": 9,
+        "input_tokens": 161730,
+        "cached_input_tokens": 60416,
+        "output_tokens": 2898,
+        "reasoning_output_tokens": 2161
+      }
+    },
+    "terra": {
+      "terminal": {
+        "attempts": 30,
+        "model_responses": 305,
+        "input_tokens": 4929392,
+        "cached_input_tokens": 4295680,
+        "output_tokens": 75997,
+        "reasoning_output_tokens": 50011
+      },
+      "failed_prefix": {
+        "attempts": 5,
+        "model_responses": 35,
+        "input_tokens": 561896,
+        "cached_input_tokens": 512256,
+        "output_tokens": 9604,
+        "reasoning_output_tokens": 6728
+      },
+      "user_stop_prefix": {
+        "attempts": 0,
+        "model_responses": 0,
+        "input_tokens": 0,
+        "cached_input_tokens": 0,
+        "output_tokens": 0,
+        "reasoning_output_tokens": 0
+      }
+    }
+  }
+}

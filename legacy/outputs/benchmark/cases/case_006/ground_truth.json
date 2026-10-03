@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_006",
+  "source_sha256": "c44320de6506861de16eae39b9850cf0037a6918f560930fca846d7191a73575",
+  "published_final_diagnosis": {
+    "label": "Adrenal tuberculosis causing primary adrenal insufficiency",
+    "codes": [],
+    "source_locators": [
+      "Case report and figures 1–4, pp. 1–3"
+    ]
+  },
+  "diagnostic_differential_from_source": [
+    "Autoimmune adrenalitis",
+    "Adrenal metastases",
+    "Adrenal lymphoma",
+    "Adrenal hemorrhage or infarction"
+  ],
+  "source_treatment": [
+    {
+      "description": "Hydrocortisone acetate 20 mg daily with adjustments",
+      "source_locators": [
+        "Case report and figures 1–4, pp. 1–3"
+      ]
+    },
+    {
+      "description": "Isoniazid 300 mg daily, rifapentine 450 mg twice weekly, ethambutol 750 mg daily, levofloxacin 500 mg daily as reported",
+      "source_locators": [
+        "Case report and figures 1–4, pp. 1–3"
+      ]
+    }
+  ],
+  "source_disposition": {
+    "category": "unknown",
+    "outcome": "Five follow-up visits showed clinical and hormonal improvement.",
+    "source_locators": [
+      "Case report and figures 1–4, pp. 1–3"
+    ]
+  },
+  "key_guideline_decisions": [
+    {
+      "guideline_ref": "endocrine_pai_2016",
+      "status": "candidate_for_adjudication",
+      "note": "See docs/guideline_sources.yaml; applicability and alternative care require clinician review."
+    }
+  ],
+  "distractors": [
+    "Calcified adrenal masses raise malignancy or old granulomatous disease; no constitutional TB symptoms."
+  ],
+  "critical_safety_points": [
+    "Recognize primary adrenal insufficiency and risk of adrenal crisis under stress.",
+    "Do not assume negative acid-fast stain excludes tuberculosis.",
+    "Antituberculous regimen in source is descriptive; independent guideline review is needed before rating as standard."
+  ],
+  "fact_provenance": [
+    {
+      "fact_id": "hpi_001",
+      "source_locators": [
+        "Case report and figures 1–4, pp. 1–3"
+      ]
+    },
+    {
+      "fact_id": "pmh_002",
+      "source_locators": [
+        "Case report and figures 1–4, pp. 1–3"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_003",
+      "source_locators": [
+        "Case report and figures 1–4, pp. 1–3"
+      ]
+    },
+    {
+      "fact_id": "lab_004",
+      "source_locators": [
+        "Case report and figures 1–4, pp. 1–3"
+      ]
+    },
+    {
+      "fact_id": "lab_005",
+      "source_locators": [
+        "Case report and figures 1–4, pp. 1–3"
+      ]
+    },
+    {
+      "fact_id": "lab_006",
+      "source_locators": [
+        "Case report and figures 1–4, pp. 1–3"
+      ]
+    },
+    {
+      "fact_id": "imaging_007",
+      "source_locators": [
+        "Case report and figures 1–4, pp. 1–3"
+      ]
+    },
+    {
+      "fact_id": "imaging_008",
+      "source_locators": [
+        "Case report and figures 1–4, pp. 1–3"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "source_locators": [
+        "Case report and figures 1–4, pp. 1–3"
+      ]
+    },
+    {
+      "fact_id": "microbiology_010",
+      "source_locators": [
+        "Case report and figures 1–4, pp. 1–3"
+      ]
+    }
+  ],
+  "source_uncertainties": [
+    "Unspecified dose, timing or normal findings were not inferred.",
+    "Published management is descriptive and requires separate normative review.",
+    "No explicit ward admission or unit is documented. The report does not describe biochemical exclusion of pheochromocytoma before biopsy."
+  ],
+  "clinician_signoff": {
+    "reviewer_id": null,
+    "signed_at": null,
+    "status": "pending"
+  }
+}

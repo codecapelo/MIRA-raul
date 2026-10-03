@@ -1,0 +1,53 @@
+{
+  "verified_at_utc": "2026-09-29T00:41:43.987422+00:00",
+  "state": "stopped_by_user_partial_luna",
+  "terminal_panel_count": 230,
+  "extension_count": 80,
+  "base_count": 150,
+  "clinical_review": "pending",
+  "checks": [
+    {
+      "manifest": "docs/corpus_freeze_manifest.json",
+      "count": 50,
+      "unchanged": true
+    },
+    {
+      "manifest": "docs/protocol_freeze_manifest.json",
+      "count": 10,
+      "unchanged": true
+    },
+    {
+      "manifest": "docs/evaluation_freeze_manifest.json",
+      "count": 7,
+      "unchanged": true
+    },
+    {
+      "manifest": "docs/protocol_extension_2026-09-28.json",
+      "count": 3,
+      "unchanged": true
+    },
+    {
+      "manifest": "docs/protocol_terra_extension_2026-09-28.json",
+      "count": 2,
+      "unchanged": true
+    },
+    {
+      "manifest": "results/trace_manifest.json",
+      "count": 150,
+      "unchanged": true
+    },
+    {
+      "manifest": "results/extension_2026-09-28/trace_manifest.json",
+      "count": 80,
+      "unchanged": true
+    }
+  ],
+  "base_scores_exact": true,
+  "sol_api_proxy_preserved": 4.6561284,
+  "luna_and_terra_locks_free": true,
+  "automation_tool_confirmed": "PAUSED",
+  "interrupted_prefix_hash_verified": true,
+  "review_additional_packets": 80,
+  "review_additional_decision_rows": 240,
+  "analysis_sha256": "9fa80b5a33d175a93d851a00537da3cdd3e6f43c757314f26caedcf82723f727"
+}

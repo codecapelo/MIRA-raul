@@ -1,0 +1,27 @@
+{
+  "template_only": true,
+  "schema_version": "1.0.0",
+  "case_id": "case_XXX",
+  "index_patient": "single_reported_patient",
+  "language": "en",
+  "setting": "emergency_department",
+  "time_zero": "first_clinical_contact",
+  "initial": {
+    "age_years": null,
+    "sex_recorded": "unknown",
+    "chief_complaint": null
+  },
+  "facts": [],
+  "catalog": {
+    "history_topics": [],
+    "physical_regions": [],
+    "lab_tests": [],
+    "imaging_studies": [],
+    "ecg_or_tests": [],
+    "microbiology_tests": [],
+    "procedures": [],
+    "medications": []
+  },
+  "temporal_events": [],
+  "unknown_fields": []
+}

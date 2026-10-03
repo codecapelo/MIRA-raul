@@ -1,0 +1,366 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_002",
+  "index_patient": "single_reported_patient",
+  "language": "en",
+  "setting": "emergency_department",
+  "time_zero": "first_clinical_contact",
+  "initial": {
+    "age_years": 35,
+    "sex_recorded": "male",
+    "chief_complaint": "Progressive exertional dyspnea, leg edema and abdominal pain."
+  },
+  "facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "topic_codes": [
+        "onset"
+      ],
+      "value": "Two weeks after respiratory infection symptoms, dyspnea progressed to NYHA III with leg edema and abdominal pain; no chest pain or dizziness initially.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "onset"
+        ]
+      }
+    },
+    {
+      "fact_id": "pmh_002",
+      "domain": "pmh",
+      "topic_codes": [
+        "medical"
+      ],
+      "value": "Ulcerative colitis controlled with mesalazine; past tobacco use.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "medical"
+        ]
+      }
+    },
+    {
+      "fact_id": "meds_003",
+      "domain": "meds",
+      "topic_codes": [
+        "current"
+      ],
+      "value": "Mesalazine.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "current"
+        ]
+      }
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "domain": "physical_exam",
+      "topic_codes": [
+        "cardiovascular"
+      ],
+      "value": "Peripheral edema and bradycardia, heart rate 42/min.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_physical_exam",
+        "match_codes": [
+          "cardiovascular"
+        ]
+      }
+    },
+    {
+      "fact_id": "ecg_005",
+      "domain": "ecg",
+      "topic_codes": [
+        "ecg"
+      ],
+      "value": "No P waves; narrow-QRS escape rhythm at 42/min.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_ecg_or_test",
+        "match_codes": [
+          "ecg"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_006",
+      "domain": "lab",
+      "topic_codes": [
+        "nt_probnp"
+      ],
+      "value": "NT-proBNP 432 pg/mL (reference ≤125).",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "nt_probnp"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_007",
+      "domain": "lab",
+      "topic_codes": [
+        "troponin"
+      ],
+      "value": "High-sensitivity troponin T 31 ng/L (reference ≤14).",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "troponin"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_008",
+      "domain": "lab",
+      "topic_codes": [
+        "d_dimer"
+      ],
+      "value": "D-dimer 2.94 µg/mL (reference <0.5 µg/mL).",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "d_dimer"
+        ]
+      }
+    },
+    {
+      "fact_id": "ecg_009",
+      "domain": "ecg",
+      "topic_codes": [
+        "echo"
+      ],
+      "value": "TTE: preserved LV systolic function; dilated LA and RV; impaired RV function; severe tricuspid regurgitation; estimated systolic PA pressure 58 mm Hg; only mild mitral regurgitation.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_ecg_or_test",
+        "match_codes": [
+          "echo"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_010",
+      "domain": "imaging",
+      "topic_codes": [
+        "ctpa"
+      ],
+      "value": "CT pulmonary angiography: no pulmonary embolus; RV dilatation, bilateral pleural effusions and contrast reflux into hepatic veins.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "ctpa"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_011",
+      "domain": "imaging",
+      "topic_codes": [
+        "coronary_ct"
+      ],
+      "value": "Coronary CT: minimal proximal LAD stenosis only.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "coronary_ct"
+        ]
+      }
+    },
+    {
+      "fact_id": "procedure_result_012",
+      "domain": "procedure_result",
+      "topic_codes": [
+        "rhc"
+      ],
+      "value": "Right-heart catheterization: giant wedge V waves to 65 mm Hg, no clear A wave, mPAP 35, mean wedge 28 mm Hg, cardiac output 5.8 L/min, PVR 1.2 WU.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_procedure",
+        "match_codes": [
+          "rhc"
+        ]
+      }
+    },
+    {
+      "fact_id": "ecg_013",
+      "domain": "ecg",
+      "topic_codes": [
+        "tee"
+      ],
+      "value": "TEE confirmed only mild mitral regurgitation.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_ecg_or_test",
+        "match_codes": [
+          "tee"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_014",
+      "domain": "imaging",
+      "topic_codes": [
+        "cardiac_mri"
+      ],
+      "value": "Cardiac MRI: left atrial late gadolinium enhancement and borderline T1/T2 edema; no substantial ventricular scar.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "cardiac_mri"
+        ]
+      }
+    },
+    {
+      "fact_id": "ecg_015",
+      "domain": "ecg",
+      "topic_codes": [
+        "electrophysiology"
+      ],
+      "value": "Subsequent study: electrically silent right atrium, limited septal capture and complete AV block; no response to coronary-sinus pacing.",
+      "status": "reported",
+      "available_at": "followup",
+      "release_rule": {
+        "tool": "request_ecg_or_test",
+        "match_codes": [
+          "electrophysiology"
+        ]
+      }
+    }
+  ],
+  "catalog": {
+    "history_topics": [
+      "cardiac",
+      "catheter",
+      "current",
+      "drug_reaction",
+      "history",
+      "infection",
+      "medical",
+      "negatives",
+      "oncology",
+      "onset",
+      "pregnancy",
+      "procedure",
+      "recent_therapy",
+      "renal",
+      "smoking",
+      "symptoms",
+      "urologic"
+    ],
+    "physical_regions": [
+      "abdomen",
+      "abdomen_pelvis",
+      "cardiovascular",
+      "general",
+      "hemodynamics",
+      "neurologic",
+      "postoperative",
+      "respiratory",
+      "skin",
+      "skin_eye",
+      "vitals"
+    ],
+    "lab_tests": [
+      "adrenal_hormones",
+      "blood_film",
+      "blood_panel",
+      "cbc",
+      "chemistry",
+      "coagulation",
+      "d_dimer",
+      "dat",
+      "hemoglobin",
+      "hemolysis",
+      "inflammation",
+      "inflammation_followup",
+      "lactate",
+      "metabolic",
+      "nt_probnp",
+      "pleural_fluid",
+      "pregnancy_test",
+      "troponin",
+      "tspot"
+    ],
+    "imaging_studies": [
+      "abdominal_xray",
+      "adrenal_ct",
+      "adrenal_ultrasound",
+      "brain_mri",
+      "cardiac_mri",
+      "chest_xray",
+      "coronary_angiography",
+      "coronary_ct",
+      "ct_abdomen",
+      "ct_chest",
+      "ctpa",
+      "pelvic_ultrasound",
+      "pet",
+      "spine_mri",
+      "thoracic_ultrasound"
+    ],
+    "microbiology_tests": [
+      "adrenal_tb_pcr",
+      "blood_cultures",
+      "drain_culture",
+      "pleural_culture",
+      "urine_culture"
+    ],
+    "ecg_or_tests": [
+      "ecg",
+      "echo",
+      "electrophysiology",
+      "intravascular_imaging",
+      "research_cfdna",
+      "rhc",
+      "tee",
+      "tumor_genetics"
+    ],
+    "procedures": [
+      "adrenal_biopsy",
+      "device_exploration",
+      "ebus_biopsy",
+      "hematoma_evacuation",
+      "laparoscopy",
+      "laparotomy",
+      "pathology",
+      "pericardiocentesis",
+      "pleural_biopsy",
+      "resection",
+      "thoracentesis"
+    ],
+    "medications": []
+  },
+  "temporal_events": [],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ],
+  "catalog_version": "v1_shared_all_cases"
+}

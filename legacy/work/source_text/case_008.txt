@@ -1,0 +1,305 @@
+                                                      International Journal of Surgery Case Reports 127 (2025) 110932
+
+
+                                                                   Contents lists available at ScienceDirect
+
+
+                                         International Journal of Surgery Case Reports
+                                                           journal homepage: www.elsevier.com/locate/ijscr
+
+
+Case report
+
+Primary spinal epidural hematoma mimicking stroke: A case report of rare
+diagnostic challenge
+Bibek Shrestha a,* , Bishal Gaurav b, Priyesh Shrestha c , Sushil K. Shilpakar d, Dipendra Thapa d,
+Bikas Thapa d
+a
+  Maharajgunj Medical Campus, Tribhuvan University, Institute of Medicine, Kathmandu, Nepal
+b
+  Department of General Surgery, Tribhuvan University Teaching Hospital, Kathmandu, Nepal
+c
+  Department of Radiology, Tribhuvan University Teaching Hospital, Kathmandu, Nepal
+d
+  Department of Neurosurgery, Tribhuvan University Teaching Hospital, Kathmandu, Nepal
+
+
+
+
+A R T I C L E I N F O                                    A B S T R A C T
+
+Keywords:                                                Introduction and importance: Spinal epidural hematoma is a rare and potentially life-threatening condition
+Hemiplegia                                               characterized by bleeding into epidural space, leading to spinal cord compression. With an incidence of
+Laminotomy                                               approximately 1 per 1,000,000 annually, SEH requires urgent diagnosis and management to prevent irreversible
+Spinal cord compression
+                                                         neurological damage. This report highlights a case of primary spinal epidural hematoma causing acute spinal
+Spinal epidural hematoma
+                                                         cord compression and hemiplegia mimicking stroke like features.
+                                                         Case presentation: A 23-year-old male presented to the emergency department with acute upper back pain,
+                                                         progressive lower limb weakness, and bowel and bladder incontinence. Neurological examination revealed
+                                                         motor strength of 0/5 in the lower limbs, sensory loss in the perineal region, and preserved bulbocavernosus
+                                                         reflex. MRI of the spine demonstrated epidural hematoma compressing the spinal cord from C6 to D2. The pa­
+                                                         tient underwent emergent laminotomy and hematoma evacuation. Postoperative recovery was uneventful, with
+                                                         significant improvement in neurological function.
+                                                         Clinical discussion: Spinal epidural hematoma is a diagnostic challenge due to its nonspecific symptoms, which
+                                                         may mimic other conditions such as ischemic stroke. MRI remains the diagnostic gold standard. Timely surgical
+                                                         decompression is critical for favorable outcomes, especially in cases presenting significant neurological deficits.
+                                                         Conclusion: This case emphasizes the importance of rapid recognition of SHE from stroke and spinal cord
+                                                         ischemia, imaging, and surgical management of Spinal epidural hematoma to mitigate severe neurological
+                                                         consequences. Awareness of this rare condition is vital for early diagnosis and effective treatment.
+
+
+
+
+1. Introduction                                                                               mimic other conditions such as ischemic stroke and spinal cord lesion
+                                                                                              such as transverse myelitis and spinal cord ischemia [5]. The urgency of
+    Primary Spinal epidural hematoma (SEH) is a rare condition char­                          diagnosis and intervention is critical, as delayed treatment can lead to
+acterized by bleeding in the epidural space, potentially causing spinal                       irreversible neurological damage [6]. Surgical decompression remains
+cord compression or cauda equina syndrome [1,2]. With an incidence of                         the standard treatment for symptomatic cases, particularly when
+approximately 1 per 1,000,000 patients annually, Primary SEH typically                        neurological deficits are present [7]. From a modern perspective, the
+presents with acute, severe pain at the hemorrhage site, often radiating                      challenge of spinal epidural hematoma does not lie in the ability to di­
+to the extremities, and can rapidly progress to severe neurologic deficits                    agnose or treat the condition, but rather in diagnosing the underlying
+[3]. The pathophysiology involves the accumulation of blood in the                            cause and preventing recurrence.
+epidural space, leading to mechanical compression of the spinal cord,                             Here in, we will discuss a case of a 23-year-old male, presented with
+which can result in severe neurological deficits, including paraplegia or                     acute pain on the interscapular area, hemiplegia along with bowel and
+quadriplegia [4]. The clinical presentation of SEH varies widely, ranging                     bladder incontinence which mimicked like ischemic stroke. This is re­
+from localized back pain to acute neurological deficits, which may                            ported according to SCARE guideline [8].
+
+
+
+    * Corresponding author at: Maharajgunj Medical Campus, Tribhuvan University, Institute of Medicine, Nepal.
+      E-mail address: shresthabibek85iom@gmail.com (B. Shrestha).
+
+https://doi.org/10.1016/j.ijscr.2025.110932
+Received 13 December 2024; Received in revised form 20 January 2025; Accepted 22 January 2025
+Available online 23 January 2025
+2210-2612/© 2025 The Author(s). Published by Elsevier Ltd on behalf of IJS Publishing Group Limited. This is an open access article under the CC BY-NC-ND
+license (http://creativecommons.org/licenses/by-nc-nd/4.0/).
+B. Shrestha et al.                                                                                   International Journal of Surgery Case Reports 127 (2025) 110932
+
+
+2. Case presentation                                                            Coma Scale score of 15/15. Vital signs were stable. There were no signs
+                                                                                of pallor, icterus, cyanosis, lymphadenopathy, or dehydration. Neuro­
+    A 23-year-old male presented to the emergency department with a             logical examination revealed absent perianal sensation, although the
+chief complaint of acute pain in the upper back region, progressive             bulbocavernosus reflex was preserved. Motor strength in the lower limbs
+weakness in both lower limbs, and bowel and bladder incontinence. The           was 0/5, while upper limb strength was 5/5.
+symptoms began two days prior with non-radiating pain localized to the             Initial blood investigations showed elevated total leukocyte count
+interscapular area, followed by weakness in both lower limbs that               (13,000/cmm; normal: 4000–11,000), neutrophilia (85 %; normal:
+rendered the patient unable to stand. He reported sensory loss in the           45–75 %), and slightly decreased lymphocyte count (10 %; normal:
+perineal region and concurrent bowel and bladder incontinence. The              24–45 %). Other hematological and biochemical parameters, including
+patient denied any history of fever, nausea, vomiting, abdominal pain,          hemoglobin, renal function, and differential leukocyte count, were
+heavy lifting, trauma, autoimmune disease in the family, recent vacci­          within normal limits. Coagulation studies performed on the patient
+nations, or chronic illness. There was no prior use of medications. On          revealed normal results. The prothrombin time (PT) was 12 s (normal
+physical examination, the patient was alert and oriented with a Glasgow         range: 10–14 s), the international normalized ratio (INR) was 1.0
+
+
+
+
+Fig. 1. Sagittal Magnetic Resonance Imaging (MRI) demonstrated an epidural hematoma compressing the spinal cord and posterior thecal sac from the C6 to D2
+vertebral levels.
+
+                                                                            2
+B. Shrestha et al.                                                                                     International Journal of Surgery Case Reports 127 (2025) 110932
+
+
+(normal range: 0.8–1.2), and the activated partial thromboplastin time
+(aPTT) was 30 s (normal range: 25–35 s). Fibrinogen levels were
+measured at 300 mg/dL (normal range: 200–400 mg/dL), and the
+platelet count was 250,000/μL (normal range: 150,000–400,000/μL).
+These findings ruled out any underlying coagulation disturbances that
+might have contributed to the development of spinal epidural hema­
+toma. Chest X ray was performed and was normal. Magnetic resonance
+imaging (MRI) of the cervical spine and brainstem was performed. The
+brain and brainstem MRI was normal excluding stroke as an etiology.
+Sagittal and axial T2-weighted imaging demonstrated an epidural he­
+matoma compressing the spinal cord and posterior thecal sac from the
+C6 to D2 vertebral levels (Figs. 1 and 2). There was no radiological
+evidence of trauma or structural abnormalities of spine as well as brain.
+    The diagnosis of spontaneous spinal epidural hematoma (SSEH)
+causing acute spinal cord compression was confirmed based on clinical
+presentation, laboratory findings, and MRI. The patient was promptly
+referred to the neurosurgery department for emergency surgical inter­
+vention. Following preoperative evaluations, the patient underwent
+laminotomy and hematoma evacuation under general anesthesia. A
+midline incision was made from C5 to D2, followed by paraspinal muscle
+dissection to expose the lamina. Hemi-laminotomy was performed, and
+the hematoma was evacuated. Hemostasis was achieved, and the inci­
+sion was closed in layers (Figs. 3 and 4). During the laminotomy and
+hematoma evacuation, meticulous hemostasis was achieved using
+techniques such as bipolar cautery and absorbable hemostatic agents.
+After the evacuation of the hematoma, the surgical site was carefully
+inspected to identify and manage any active bleeding vessels or areas
+prone to rebleeding. The dura was examined to ensure there were no
+additional sources of bleeding. The incision was closed in layers to
+maintain tissue integrity and provide adequate support to the surgical
+site. This prevents undue strain on the wound, which could lead to
+reopening or minor bleeding. Postoperatively, the patient was closely
+monitored for signs of recurrence, such as worsening neurological def­           Fig. 3. Intraoperative procedure: Hemi Laminotomy performed with midline
+icits or new onset of back pain. In the immediate postoperative period,          incision at C5 to D2, followed by paraspinal muscle dissection to expose the
+anticoagulants and antiplatelet agents were avoided unless clinically            lamina, showing epidural hematoma.
+indicated to minimize the risk of rebleeding. Postoperative recovery was
+uneventful, with gradual improvement in neurological function. The               weeks and the patient were fully recovered without any neurological
+patient was discharged after 2 days of hospital stay with instructions for       deficit.
+follow-up and rehabilitation. The patient was followed up at 4, and 8
+                                                                                 3. Discussion
+
+                                                                                     The case presented illustrates the complexities surrounding the
+                                                                                 diagnosis and management of epidural hematoma resulting in spinal
+                                                                                 cord compression. The mechanism in such cases often involves the
+                                                                                 sudden accumulation of blood in the epidural space, which exerts
+                                                                                 pressure on the spinal cord. This pressure can lead to both immediate
+                                                                                 and secondary injuries to neural tissues, including damage to the
+                                                                                 vascular endothelium and surrounding soft tissues. These tissues may
+                                                                                 include the spinal cord, dura mater, blood vessels, ligaments, and other
+                                                                                 components of the epidural space. The pressure exerted by the hema­
+                                                                                 toma on these tissues can lead to neural and vascular damage, influ­
+                                                                                 encing both immediate symptoms and long-term recovery outcomes [9].
+                                                                                 The impact of epidural hematoma on spinal cord structures is profound.
+                                                                                 The immediate mechanical compression of the spinal cord due to the
+                                                                                 hematoma can lead to both primary and secondary injury mechanisms.
+                                                                                 Primary injury occurs due to direct compression of neural tissue, which
+                                                                                 can disrupt neuronal function and lead to immediate neurological def­
+                                                                                 icits. Secondary injury mechanisms are also critical; they include
+                                                                                 ischemia resulting from compromised blood flow, inflammation, and the
+                                                                                 release of neurotoxic substances, which can exacerbate neuronal dam­
+                                                                                 age [1,19]. In this case, the rapid onset of neurological deficits neces­
+                                                                                 sitated prompt imaging and surgical intervention to alleviate the
+                                                                                 compression. Spinal cord hematomas are rare conditions classified
+                                                                                 based on the location of bleeding: intramedullary, subarachnoid, sub­
+Fig. 2. Axial T2-weighted MRI demonstrated an epidural hematoma com­             dural, or epidural. Common causes include trauma, iatrogenic factors,
+pressing the spinal cord.
+
+                                                                             3
+B. Shrestha et al.                                                                                     International Journal of Surgery Case Reports 127 (2025) 110932
+
+
+                                                                                 management strategies [6,14]. Interestingly, while spontaneous reso­
+                                                                                 lution of epidural hematomas has been documented, this phenomenon is
+                                                                                 rare and typically occurs in cases with minimal initial symptoms [13]. In
+                                                                                 our case, the decision to proceed with surgical intervention was sup­
+                                                                                 ported by the presence of significant neurological deficits, aligning with
+                                                                                 the recommendations in the literature that advocate for surgical man­
+                                                                                 agement in symptomatic patients [4,6]. Preoperative neurological status
+                                                                                 significantly influences outcomes, with incomplete deficits correlating
+                                                                                 to better recovery and shorter hospital stays Factors contributing to poor
+                                                                                 postoperative recovery include coagulopathy, larger hematoma size,
+                                                                                 and complete preoperative spinal dysfunction [15].
+                                                                                     While surgery is generally recommended, conservative management
+                                                                                 may be considered for patients without neurological deficits [16]. In this
+                                                                                 case, due to neurological deficit, urgent surgery was recommended after
+                                                                                 diagnosis through history, examination and radiology. This case high­
+                                                                                 lights several important clinical insights. First, it emphasizes the need to
+                                                                                 consider SHE in the differential diagnosis for acute neurological deficits
+                                                                                 resembling ischemic stroke, particularly in young patients without
+                                                                                 traditional risk factors such as trauma or anticoagulation therapy.
+                                                                                 Misdiagnosis of SEH as stroke can lead to inappropriate management,
+                                                                                 including the administration of thrombolytics, which may worsen the
+                                                                                 hematoma and complicate subsequent surgical intervention. Second, the
+                                                                                 case underscores the critical role of MRI in differentiating SEH from
+                                                                                 other neurological conditions, facilitating timely and accurate diagnosis.
+                                                                                 Third, it illustrates the importance of early surgical decompression,
+                                                                                 which is pivotal in achieving favorable neurological outcomes. Finally,
+                                                                                 this case serves as a valuable teaching tool for emergency and neurology
+                                                                                 teams, reinforcing the importance of maintaining high clinical suspicion
+                                                                                 for rare conditions like SEH, even in the absence of apparent predis­
+                                                                                 posing factors.
+
+                                                                                 4. Conclusion
+Fig. 4. Intraoperative procedure: Hemi Laminotomy, showing epidural hema­
+toma after midline incision.                                                         Primary Spinal epidural hematoma is a rare but potentially severe
+                                                                                 condition requiring high clinical suspicion for timely diagnosis and
+vascular malformations, and bleeding disorders and symptoms typically            management. MRI is the gold standard for identifying SEH, particularly
+involve acute onset of pain and myelopathy, though presentation can              in patients presenting with acute neurological deficits. Prompt surgical
+vary. In our case, the patient developed acute pain in the interscapular         decompression, preferably within 12 h of symptom onset, significantly
+area, hemiplegia along with bowel and bladder incontinence without               improves neurological recovery and reduces the risk of permanent def­
+any identifying cause. While often associated with trauma, anti­                 icits. Conservative management may be considered in asymptomatic
+coagulation therapy, or spinal procedures, primary SEH can occur                 cases, but surgical intervention is critical for cases with significant
+without an obvious cause [11]. Diagnosis is challenging due to over­             neurological compromise, as illustrated by the presented case. Factors
+lapping symptoms with ischemic stroke, but maintaining high clinical             such as coagulopathy, larger hematoma size, and complete preoperative
+suspicion and using MRI can aid in accurate identification [10]. The             spinal dysfunction are associated with poorer outcomes.
+misdiagnosis of SEH as a stroke can have serious implications for
+treatment, especially regarding the administration of thrombolytics like         CRediT authorship contribution statement
+tissue plasminogen activator (TPA), which could exacerbate the hema­
+toma and complicate surgical intervention [17]. Diagnostic imaging,                 Bibek Shrestha Conceptualization, data curation, formal analysis,
+particularly magnetic resonance imaging (MRI), plays a crucial role in           methodology, project administration, original writing, review, editing,
+the identification of SEH. MRI can effectively delineate the extent of the       and visualization
+hematoma and its impact on surrounding neural structures, aiding in the             Bishal Gaurav Supervision, validation, and investigations
+differentiation from other conditions such as stroke [18]. In our case,             Sushil K Shilpakar Supervision, validation, and investigations.
+MRI delineated the confusion between hematoma and ischemic stroke in                Dipendra Thapa Supervision, validation, and investigations.
+brain.                                                                              Bikas Thapa Supervision, validation, and investigations.
+    The literature indicates that the timing of surgical intervention is
+crucial for optimal recovery outcomes. Studies have shown that surgical
+decompression performed within 12 h of symptom onset significantly               Consent
+improves neurological recovery [12]. In contrast, delays in treatment
+can result in permanent deficits, as evidenced by cases where patients               Written informed consent was obtained from the patient for publi­
+are presented with extensive neurological impairments due to prolonged           cation of this case report and accompanying images. A copy of the
+compression [4,13]. In our case, the patient underwent surgical inter­           written consent is available for review by the Editor-in-Chief of this
+nation within 2 days of symptoms however no significant neurological             journal on request.
+impairments were noticed on the follow up. Furthermore, the differen­
+tial diagnosis for patients presenting with back pain and neurological           Guarantor
+deficits must include EH, as misdiagnosis can lead to inappropriate
+                                                                                    Dr. Bishal Gaurav
+
+                                                                             4
+B. Shrestha et al.                                                                                                    International Journal of Surgery Case Reports 127 (2025) 110932
+
+
+Provenance and peer review                                                                   [4] M. Taha, A. Elsharkawy, H. Menshawy, A. AlBakry, Spontaneous cervical epidural
+                                                                                                 hematoma: a case report and review of literature, Surg. Neurol. Int. 10 (2019) 247,
+                                                                                                 https://doi.org/10.25259/sni_543_2019.
+    Not commissioned, externally peer reviewed.                                              [5] A. Yurter, P. Kaloostian, Spontaneous cervical epidural hematoma mimicking
+                                                                                                 stroke: a new perspective on diagnosis and treatment, Open Journal of Modern
+                                                                                                 Neurosurgery 03 (04) (2013) 59–62, https://doi.org/10.4236/ojmn.2013.34013.
+Declaration of Generative AI and AI-assisted technologies in the                             [6] K. Nam, C. Choi, M. Yang, D. Kang, Spinal epidural hematoma after pain control
+writing process                                                                                  procedure, Journal of Korean Neurosurgical Society 48 (3) (2010) 281, https://doi.
+                                                                                                 org/10.3340/jkns.2010.48.3.281.
+                                                                                             [7] K. Raasck, A. Habis, A. Aoude, L. Simões, F. Barros, R. Reindl, P. Jarzem,
+    During the preparation of this work the author(s) used ChatGPT 4.0
+                                                                                                 Spontaneous spinal epidural hematoma management: a case series and literature
+to improve readability and language. After using this tool/service, the                          review, Spinal Cord Ser. Cases 3 (1) (2017), https://doi.org/10.1038/
+author(s) reviewed and edited the content as needed and take(s) full                             scsandc.2016.43.
+responsibility for the content of the publication.                                           [8] C. Sohrabi, G. Mathew, N. Maria, A. Kerwan, T. Franchi, R.A. Agha, The SCARE
+                                                                                                 2023 guideline: updating consensus surgical CAse REport (SCARE) guidelines, Int.
+                                                                                                 J. Surg. 109 (5) (2023) 1136–1140, https://doi.org/10.1097/
+Sources of funding                                                                               js9.0000000000000373.
+                                                                                             [9] G. Fassina, Spontaneous resolution of traumatic cervical epidural hematoma:
+                                                                                                 illustrative case, Journal of Neurosurgery Case Lessons 8 (3) (2024), https://doi.
+    None.                                                                                        org/10.3171/case24167.
+                                                                                            [10] K.M. Kebaish, J.N. Awad, Spinal epidural hematoma causing acute cauda equina
+                                                                                                 syndrome, Neurosurg. Focus 16 (6) (2004 Jun 15) e1 (PMID: 15202871).
+Research registration                                                                       [11] D. Kieser, S. Soltani, M. Wyatt, K. Lim, S. Kieser, Spontaneous spinal epidural
+                                                                                                 haematomas, In IntechOpen eBooks. (2019), https://doi.org/10.5772/
+   1.Name of the registry: Research Registry.                                                    intechopen.89175.
+                                                                                            [12] K. Bhat, S. Kapoor, Y. Watali, J. Sharma, Spontaneous epidural hematoma of spine
+   2.Unique      identifying     number       or     registration     ID:
+                                                                                                 associated with clopidogrel: a case study and review of the literature, Asian Journal
+researchregistry10899.                                                                           of Neurosurgery 10 (01) (2015) 54, https://doi.org/10.4103/1793-5482.151521.
+   3.Hyperlink to your specific registration (must be publicly accessible                   [13] K. Raasck, A. Habis, A. Aoude, L. Simões, F. Barros, R. Reindl, P. Jarzem,
+and will be checked): researchregistry10899.                                                     Spontaneous spinal epidural hematoma management: a case series and literature
+                                                                                                 review, Spinal Cord Ser. Cases 3 (1) (2017), https://doi.org/10.1038/
+                                                                                                 scsandc.2016.43.
+                                                                                            [14] A. Yurter, P. Kaloostian, Spontaneous cervical epidural hematoma mimicking
+Declaration of competing interest                                                                stroke: a new perspective on diagnosis and treatment, Open Journal of Modern
+                                                                                                 Neurosurgery 03 (04) (2013) 59–62, https://doi.org/10.4236/ojmn.2013.34013.
+    None.                                                                                   [15] C. Liao, P. Hsieh, T. Lin, C. Lin, Y. Lo, S. Lee, Surgical treatment of spontaneous
+                                                                                                 spinal epidural hematoma: a 5-year experience, J. Neurosurg. Spine 11 (4) (2009)
+                                                                                                 480–486, https://doi.org/10.3171/2009.4.spine08904.
+References                                                                                  [16] Kokubo R, Kim K, Sugawara A, Nomura R, Morimoto D, Isu T, Kobayashi S,
+                                                                                                 Teramoto A. [Treatment of spontaneous spinal epidural hematoma]. No Shinkei
+ [1] C. Smith, A report of paraparesis following spinal cord stimulator trial,                   Geka. 2011 Oct;vol. 39(10):947–52. Japanese. PMID: 21972183.
+     implantation and revision, Pain Physician 4;13(4;7) (2010) 357–363, https://doi.       [17] Y. Inatomi, M. Nakajima, T. Yonehara, Spinal epidural hematoma as a stroke
+     org/10.36076/ppj.2010/13/357.                                                               mimic, J. Stroke Cerebrovasc. Dis. 29 (9) (2020) 105030, https://doi.org/10.1016/
+ [2] U. Katari, G. Prasanna, Acute spontaneous epidural hematoma of cervical spine               j.jstrokecerebrovasdis.2020.105030.
+     presenting as quadriparesis in a young patient: a case report. Indonesian,             [18] O. Sheng, R. Wu, I. Chang, Spontaneous spinal epidural hematoma: a case report.
+     J. Neurosurg. 3 (1) (2020), https://doi.org/10.15562/ijn.v3i1.65.                           International, J. Emerg. Med. 14 (1) (2021), https://doi.org/10.1186/s12245-021-
+ [3] Y. Dokponou, A. Belhachmi, F. Imoumby, DJIMRABEYE, A., Mostarchid, B., &                    00379-0.
+     Gazzaz, M., Management and outcome of spontaneous cervical epidural                    [19] K. Chia, L. Lin, M. Sung, T. Su, J. Huang, H. Lee, T. Lee, Acute spontaneous thoracic
+     hematoma: case report and review of the literature, World Journal of Advanced               epidural hematoma associated with intraspinal lymphangioma: a case report,
+     Research and Reviews 12 (3) (2021) 094–097, https://doi.org/10.30574/                       World J. Clin. Cases 9 (14) (2021) 3411–3417, https://doi.org/10.12998/wjcc.v9.
+     wjarr.2021.12.3.0629.                                                                       i14.3411.
+
+
+
+
+                                                                                        5
+

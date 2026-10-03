@@ -1,0 +1,3109 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_version": "mvp10_v3_2026-09-26",
+  "protocol_version": "mvp10_closedbook_v5_2026-09-26",
+  "evaluation": {
+    "version": "evaluation-v2",
+    "diagnosis_ruleset_version": "diagnostic-concepts-2026-09-26-v2",
+    "diagnosis_ruleset_sha256": "b2da153cd8d65df6658f45e715b0287cc4956a040bf62fbb8ddeb09d261df9fc",
+    "scorer_sha256": "c9975c7ca126de8b1eb8fa7a3bdaa33cd48f755cdc803498e04c2639514e1172",
+    "analyzer_sha256": "9a974e450482f5fb1797880bd3ca97a7b0bd7576473f2bf5afc378284cc3e438"
+  },
+  "expected_trajectories": 240,
+  "observed_terminal_trajectories": 230,
+  "extension_version": "combined_additive_extensions_2026-09-28",
+  "extension_manifests": [
+    {
+      "path": "docs/protocol_extension_2026-09-28.json",
+      "sha256": "8835f7313e36170d2163084b319fd1ecc4a671190ad76f99834f9855ca52c9ab",
+      "extension_version": "mvp10_extension_sonnet_luna_2026-09-28",
+      "results_directory": "results/extension_2026-09-28"
+    },
+    {
+      "path": "docs/protocol_terra_extension_2026-09-28.json",
+      "sha256": "3847354a7e94513ecb76369489c6b6114cfec4d2d0f26b49038ed0f773d5b4f3",
+      "extension_version": "mvp10_extension_terra_2026-09-28",
+      "results_directory": "results/extension_terra_2026-09-28"
+    }
+  ],
+  "excluded_operational_attempts": {
+    "attempts": [
+      {
+        "path": "results/extension_2026-09-28/incomplete/19e74413-35c6-49ee-8738-66f4959868d3.jsonl",
+        "source_sha256": "13f382c1cf0916da3f378451c52833c15f300fe1c7d95bbfcfb74981fa9d4bbc",
+        "run_id": "19e74413-35c6-49ee-8738-66f4959868d3",
+        "model_id": "gpt-6-luna",
+        "case_id": "case_003",
+        "repetition": 1,
+        "stopping_reason": "provider_or_runner_error",
+        "error_class": "OpenAIAccountError",
+        "error_event_utc": [
+          "2026-09-28T19:25:37.997315Z"
+        ],
+        "cause": "indeterminate; exception class does not establish authentication, quota or clinical error",
+        "usage_events": 10,
+        "usage": {
+          "input_tokens": 233785,
+          "cached_input_tokens": 197376,
+          "cache_read_input_tokens": null,
+          "cache_creation_input_tokens": null,
+          "output_tokens": 4344,
+          "reasoning_output_tokens": 3258
+        },
+        "cli_equivalent_reported_usd": null,
+        "usage_coverage": "known_prefix_only; usage_of_last_failed_call_unknown",
+        "total_attempt_cost_known": false,
+        "computed_cost_proxy": {
+          "computed_api_equivalent_usd": 0.00778666,
+          "sensitivity_all_uncached_as_cache_writes_usd": 0.008696885,
+          "evaluable_runs": 1,
+          "observed_runs": 1,
+          "per_run": [
+            {
+              "run_id": "19e74413-35c6-49ee-8738-66f4959868d3",
+              "estimated_usd": 0.00778666,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.008696885,
+              "maximum_input_tokens_per_call": 35375,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            }
+          ],
+          "excluded_runs": [],
+          "pricing": {
+            "verified": true,
+            "as_of": "2026-09-28",
+            "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+            "input_per_million": 0.1,
+            "cached_input_per_million": 0.01,
+            "cache_write_input_per_million": 0.125,
+            "output_per_million": 0.5,
+            "input_includes_cached": true,
+            "output_includes_reasoning": true,
+            "long_context_threshold": 272000,
+            "currency": "USD",
+            "basis": "hypothetical_API_Standard_not_subscription_charge"
+          },
+          "is_subscription_charge": false,
+          "is_proxy": true,
+          "missing_reason": null,
+          "coverage": "known_usage_prefix_only_not_total_attempt_cost"
+        }
+      },
+      {
+        "path": "results/extension_2026-09-28/incomplete/a96b2b5a-0e60-45f5-9f1d-4720fc2e1287.jsonl",
+        "source_sha256": "dfe647e08ac99bd198b6c65a33cf770a8c448db10079390f8ba9eb45e88d801c",
+        "run_id": "a96b2b5a-0e60-45f5-9f1d-4720fc2e1287",
+        "model_id": "gpt-6-luna",
+        "case_id": "case_007",
+        "repetition": 3,
+        "stopping_reason": "provider_or_runner_error",
+        "error_class": "OpenAIAccountError",
+        "error_event_utc": [
+          "2026-09-28T21:10:19.043942Z"
+        ],
+        "cause": "indeterminate; exception class does not establish authentication, quota or clinical error",
+        "usage_events": 2,
+        "usage": {
+          "input_tokens": 31233,
+          "cached_input_tokens": 30208,
+          "cache_read_input_tokens": null,
+          "cache_creation_input_tokens": null,
+          "output_tokens": 525,
+          "reasoning_output_tokens": 419
+        },
+        "cli_equivalent_reported_usd": null,
+        "usage_coverage": "known_prefix_only; usage_of_last_failed_call_unknown",
+        "total_attempt_cost_known": false,
+        "computed_cost_proxy": {
+          "computed_api_equivalent_usd": 0.0006670799999999999,
+          "sensitivity_all_uncached_as_cache_writes_usd": 0.000692705,
+          "evaluable_runs": 1,
+          "observed_runs": 1,
+          "per_run": [
+            {
+              "run_id": "a96b2b5a-0e60-45f5-9f1d-4720fc2e1287",
+              "estimated_usd": 0.0006670799999999999,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.000692705,
+              "maximum_input_tokens_per_call": 15704,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 2
+            }
+          ],
+          "excluded_runs": [],
+          "pricing": {
+            "verified": true,
+            "as_of": "2026-09-28",
+            "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+            "input_per_million": 0.1,
+            "cached_input_per_million": 0.01,
+            "cache_write_input_per_million": 0.125,
+            "output_per_million": 0.5,
+            "input_includes_cached": true,
+            "output_includes_reasoning": true,
+            "long_context_threshold": 272000,
+            "currency": "USD",
+            "basis": "hypothetical_API_Standard_not_subscription_charge"
+          },
+          "is_subscription_charge": false,
+          "is_proxy": true,
+          "missing_reason": null,
+          "coverage": "known_usage_prefix_only_not_total_attempt_cost"
+        }
+      },
+      {
+        "path": "results/extension_terra_2026-09-28/incomplete/1727002e-8af1-46ae-92bc-d90faaf181b5.jsonl",
+        "source_sha256": "cea4f78531ae465d686b9ef123d84a50ac1ab45b1b2692ede075f9d7673adde5",
+        "run_id": "1727002e-8af1-46ae-92bc-d90faaf181b5",
+        "model_id": "gpt-5.6-terra",
+        "case_id": "case_006",
+        "repetition": 2,
+        "stopping_reason": "provider_or_runner_error",
+        "error_class": "OpenAIAccountError",
+        "error_event_utc": [
+          "2026-09-28T20:09:01.326570Z"
+        ],
+        "cause": "indeterminate; exception class does not establish authentication, quota or clinical error",
+        "usage_events": 8,
+        "usage": {
+          "input_tokens": 127152,
+          "cached_input_tokens": 116736,
+          "cache_read_input_tokens": null,
+          "cache_creation_input_tokens": null,
+          "output_tokens": 1851,
+          "reasoning_output_tokens": 1195
+        },
+        "cli_equivalent_reported_usd": null,
+        "usage_coverage": "known_prefix_only; usage_of_last_failed_call_unknown",
+        "total_attempt_cost_known": false,
+        "computed_cost_proxy": {
+          "computed_api_equivalent_usd": 0.0663912,
+          "sensitivity_all_uncached_as_cache_writes_usd": 0.0715992,
+          "evaluable_runs": 1,
+          "observed_runs": 1,
+          "per_run": [
+            {
+              "run_id": "1727002e-8af1-46ae-92bc-d90faaf181b5",
+              "estimated_usd": 0.0663912,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.0715992,
+              "maximum_input_tokens_per_call": 16536,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 8
+            }
+          ],
+          "excluded_runs": [],
+          "pricing": {
+            "verified": true,
+            "as_of": "2026-09-28",
+            "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+            "input_per_million": 2.0,
+            "cached_input_per_million": 0.2,
+            "cache_write_input_per_million": 2.5,
+            "cache_write_rate_source": "official page says 1.25x uncached input rate; 1.25 * USD2 = USD2.50/M",
+            "output_per_million": 12.0,
+            "input_includes_cached": true,
+            "output_includes_reasoning": true,
+            "long_context_threshold": 272000,
+            "currency": "USD",
+            "basis": "hypothetical_API_Standard_not_subscription_charge"
+          },
+          "is_subscription_charge": false,
+          "is_proxy": true,
+          "missing_reason": null,
+          "coverage": "known_usage_prefix_only_not_total_attempt_cost"
+        }
+      },
+      {
+        "path": "results/extension_terra_2026-09-28/incomplete/27eed42e-0ed1-40c2-b866-51a1bafcfc06.jsonl",
+        "source_sha256": "3d0fa97caa6695206b3d50fc79e9f3ac091d07452e0aad3837f44348e4d183db",
+        "run_id": "27eed42e-0ed1-40c2-b866-51a1bafcfc06",
+        "model_id": "gpt-5.6-terra",
+        "case_id": "case_003",
+        "repetition": 2,
+        "stopping_reason": "provider_or_runner_error",
+        "error_class": "OpenAIAccountError",
+        "error_event_utc": [
+          "2026-09-28T19:21:10.045753Z"
+        ],
+        "cause": "indeterminate; exception class does not establish authentication, quota or clinical error",
+        "usage_events": 0,
+        "usage": {
+          "input_tokens": null,
+          "cached_input_tokens": null,
+          "cache_read_input_tokens": null,
+          "cache_creation_input_tokens": null,
+          "output_tokens": null,
+          "reasoning_output_tokens": null
+        },
+        "cli_equivalent_reported_usd": null,
+        "usage_coverage": "known_prefix_only; usage_of_last_failed_call_unknown",
+        "total_attempt_cost_known": false,
+        "computed_cost_proxy": {
+          "computed_api_equivalent_usd": null,
+          "sensitivity_all_uncached_as_cache_writes_usd": null,
+          "evaluable_runs": 0,
+          "observed_runs": 1,
+          "per_run": [],
+          "excluded_runs": [
+            {
+              "run_id": "27eed42e-0ed1-40c2-b866-51a1bafcfc06",
+              "reason": "missing_per_call_token_usage"
+            }
+          ],
+          "pricing": {
+            "verified": true,
+            "as_of": "2026-09-28",
+            "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+            "input_per_million": 2.0,
+            "cached_input_per_million": 0.2,
+            "cache_write_input_per_million": 2.5,
+            "cache_write_rate_source": "official page says 1.25x uncached input rate; 1.25 * USD2 = USD2.50/M",
+            "output_per_million": 12.0,
+            "input_includes_cached": true,
+            "output_includes_reasoning": true,
+            "long_context_threshold": 272000,
+            "currency": "USD",
+            "basis": "hypothetical_API_Standard_not_subscription_charge"
+          },
+          "is_subscription_charge": false,
+          "is_proxy": true,
+          "missing_reason": "official_tariff_or_token_semantics_unverified_or_usage_missing",
+          "coverage": "known_usage_prefix_only_not_total_attempt_cost"
+        }
+      },
+      {
+        "path": "results/extension_terra_2026-09-28/incomplete/958a7393-2b4f-414b-a8c0-fc6b5d53c5bf.jsonl",
+        "source_sha256": "936ead6b720ea829aca601363a845b998565028c56c95745f17cf1a248e61ea9",
+        "run_id": "958a7393-2b4f-414b-a8c0-fc6b5d53c5bf",
+        "model_id": "gpt-5.6-terra",
+        "case_id": "case_002",
+        "repetition": 3,
+        "stopping_reason": "provider_or_runner_error",
+        "error_class": "TimeoutExpired",
+        "error_event_utc": [
+          "2026-09-28T19:16:17.749258Z"
+        ],
+        "cause": "indeterminate; exception class does not establish authentication, quota or clinical error",
+        "usage_events": 14,
+        "usage": {
+          "input_tokens": 228486,
+          "cached_input_tokens": 209408,
+          "cache_read_input_tokens": null,
+          "cache_creation_input_tokens": null,
+          "output_tokens": 5057,
+          "reasoning_output_tokens": 4024
+        },
+        "cli_equivalent_reported_usd": null,
+        "usage_coverage": "known_prefix_only; usage_of_last_failed_call_unknown",
+        "total_attempt_cost_known": false,
+        "computed_cost_proxy": {
+          "computed_api_equivalent_usd": 0.1407216,
+          "sensitivity_all_uncached_as_cache_writes_usd": 0.1502606,
+          "evaluable_runs": 1,
+          "observed_runs": 1,
+          "per_run": [
+            {
+              "run_id": "958a7393-2b4f-414b-a8c0-fc6b5d53c5bf",
+              "estimated_usd": 0.1407216,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.1502606,
+              "maximum_input_tokens_per_call": 17296,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 14
+            }
+          ],
+          "excluded_runs": [],
+          "pricing": {
+            "verified": true,
+            "as_of": "2026-09-28",
+            "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+            "input_per_million": 2.0,
+            "cached_input_per_million": 0.2,
+            "cache_write_input_per_million": 2.5,
+            "cache_write_rate_source": "official page says 1.25x uncached input rate; 1.25 * USD2 = USD2.50/M",
+            "output_per_million": 12.0,
+            "input_includes_cached": true,
+            "output_includes_reasoning": true,
+            "long_context_threshold": 272000,
+            "currency": "USD",
+            "basis": "hypothetical_API_Standard_not_subscription_charge"
+          },
+          "is_subscription_charge": false,
+          "is_proxy": true,
+          "missing_reason": null,
+          "coverage": "known_usage_prefix_only_not_total_attempt_cost"
+        }
+      },
+      {
+        "path": "results/extension_terra_2026-09-28/incomplete/a0ed1f21-4b61-4e43-91bc-d8f8f76cb09c.jsonl",
+        "source_sha256": "aaad7b518e81d024f27d958d4a15e117e25fff5979f3e601409145922b44e99f",
+        "run_id": "a0ed1f21-4b61-4e43-91bc-d8f8f76cb09c",
+        "model_id": "gpt-5.6-terra",
+        "case_id": "case_004",
+        "repetition": 1,
+        "stopping_reason": "provider_or_runner_error",
+        "error_class": "OpenAIAccountError",
+        "error_event_utc": [
+          "2026-09-28T19:32:22.525549Z"
+        ],
+        "cause": "indeterminate; exception class does not establish authentication, quota or clinical error",
+        "usage_events": 5,
+        "usage": {
+          "input_tokens": 78391,
+          "cached_input_tokens": 69376,
+          "cache_read_input_tokens": null,
+          "cache_creation_input_tokens": null,
+          "output_tokens": 871,
+          "reasoning_output_tokens": 426
+        },
+        "cli_equivalent_reported_usd": null,
+        "usage_coverage": "known_prefix_only; usage_of_last_failed_call_unknown",
+        "total_attempt_cost_known": false,
+        "computed_cost_proxy": {
+          "computed_api_equivalent_usd": 0.0423572,
+          "sensitivity_all_uncached_as_cache_writes_usd": 0.046864699999999995,
+          "evaluable_runs": 1,
+          "observed_runs": 1,
+          "per_run": [
+            {
+              "run_id": "a0ed1f21-4b61-4e43-91bc-d8f8f76cb09c",
+              "estimated_usd": 0.0423572,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.046864699999999995,
+              "maximum_input_tokens_per_call": 16085,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 5
+            }
+          ],
+          "excluded_runs": [],
+          "pricing": {
+            "verified": true,
+            "as_of": "2026-09-28",
+            "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+            "input_per_million": 2.0,
+            "cached_input_per_million": 0.2,
+            "cache_write_input_per_million": 2.5,
+            "cache_write_rate_source": "official page says 1.25x uncached input rate; 1.25 * USD2 = USD2.50/M",
+            "output_per_million": 12.0,
+            "input_includes_cached": true,
+            "output_includes_reasoning": true,
+            "long_context_threshold": 272000,
+            "currency": "USD",
+            "basis": "hypothetical_API_Standard_not_subscription_charge"
+          },
+          "is_subscription_charge": false,
+          "is_proxy": true,
+          "missing_reason": null,
+          "coverage": "known_usage_prefix_only_not_total_attempt_cost"
+        }
+      },
+      {
+        "path": "results/extension_terra_2026-09-28/incomplete/f3afa428-4acc-4357-a21f-fefb7d37b134.jsonl",
+        "source_sha256": "76f0d9993c5d96d52ca34f648efc42c484000f2361534641ab0cdae33e35576e",
+        "run_id": "f3afa428-4acc-4357-a21f-fefb7d37b134",
+        "model_id": "gpt-5.6-terra",
+        "case_id": "case_004",
+        "repetition": 3,
+        "stopping_reason": "provider_or_runner_error",
+        "error_class": "OpenAIAccountError",
+        "error_event_utc": [
+          "2026-09-28T19:45:28.129519Z"
+        ],
+        "cause": "indeterminate; exception class does not establish authentication, quota or clinical error",
+        "usage_events": 8,
+        "usage": {
+          "input_tokens": 127867,
+          "cached_input_tokens": 116736,
+          "cache_read_input_tokens": null,
+          "cache_creation_input_tokens": null,
+          "output_tokens": 1825,
+          "reasoning_output_tokens": 1083
+        },
+        "cli_equivalent_reported_usd": null,
+        "usage_coverage": "known_prefix_only; usage_of_last_failed_call_unknown",
+        "total_attempt_cost_known": false,
+        "computed_cost_proxy": {
+          "computed_api_equivalent_usd": 0.06750919999999999,
+          "sensitivity_all_uncached_as_cache_writes_usd": 0.07307469999999999,
+          "evaluable_runs": 1,
+          "observed_runs": 1,
+          "per_run": [
+            {
+              "run_id": "f3afa428-4acc-4357-a21f-fefb7d37b134",
+              "estimated_usd": 0.06750919999999999,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.07307469999999999,
+              "maximum_input_tokens_per_call": 16705,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 8
+            }
+          ],
+          "excluded_runs": [],
+          "pricing": {
+            "verified": true,
+            "as_of": "2026-09-28",
+            "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+            "input_per_million": 2.0,
+            "cached_input_per_million": 0.2,
+            "cache_write_input_per_million": 2.5,
+            "cache_write_rate_source": "official page says 1.25x uncached input rate; 1.25 * USD2 = USD2.50/M",
+            "output_per_million": 12.0,
+            "input_includes_cached": true,
+            "output_includes_reasoning": true,
+            "long_context_threshold": 272000,
+            "currency": "USD",
+            "basis": "hypothetical_API_Standard_not_subscription_charge"
+          },
+          "is_subscription_charge": false,
+          "is_proxy": true,
+          "missing_reason": null,
+          "coverage": "known_usage_prefix_only_not_total_attempt_cost"
+        }
+      },
+      {
+        "path": "results/incomplete/84c46001-ca01-4b7d-8c69-9e7817427501.jsonl",
+        "source_sha256": "5c605e7e91e32e248045cf6d11975822b9b7ce78e763f2e5034b698483cddff5",
+        "run_id": "84c46001-ca01-4b7d-8c69-9e7817427501",
+        "model_id": "gpt-6-sol",
+        "case_id": "case_002",
+        "repetition": 1,
+        "stopping_reason": "provider_or_runner_error",
+        "error_class": "OpenAIAccountError",
+        "error_event_utc": [
+          "2026-09-26T00:40:53.756240Z"
+        ],
+        "cause": "indeterminate; exception class does not establish authentication, quota or clinical error",
+        "usage_events": 17,
+        "usage": {
+          "input_tokens": 288888,
+          "cached_input_tokens": 232320,
+          "cache_read_input_tokens": null,
+          "cache_creation_input_tokens": null,
+          "output_tokens": 6878,
+          "reasoning_output_tokens": 5575
+        },
+        "cli_equivalent_reported_usd": null,
+        "usage_coverage": "known_prefix_only; usage_of_last_failed_call_unknown",
+        "total_attempt_cost_known": false
+      }
+    ],
+    "attempt_count": 8,
+    "included_in_clinical_denominator": false,
+    "manual_user_stopped_prefixes": [
+      {
+        "path": "results/extension_2026-09-28/incomplete/b35ed940-14e8-41ea-b937-5011e3d5ca74.jsonl",
+        "source_sha256": "b9a857cc0f0270d8fd7f43a1a07fb0dee8cc404258f00c24effcd5c1015d1cbe",
+        "run_id": "b35ed940-14e8-41ea-b937-5011e3d5ca74",
+        "model_id": "gpt-6-luna",
+        "case_id": "case_007",
+        "repetition": 3,
+        "stopping_reason": "user_requested_execution_stop_nonterminal_prefix",
+        "error_class": null,
+        "error_event_utc": [],
+        "cause": "user_requested_execution_stop",
+        "usage_events": 9,
+        "usage": {
+          "input_tokens": 161730,
+          "cached_input_tokens": 60416,
+          "cache_read_input_tokens": null,
+          "cache_creation_input_tokens": null,
+          "output_tokens": 2898,
+          "reasoning_output_tokens": 2161
+        },
+        "cli_equivalent_reported_usd": null,
+        "usage_coverage": "known_prefix_only; usage_of_last_failed_call_unknown",
+        "total_attempt_cost_known": false,
+        "computed_cost_proxy": {
+          "computed_api_equivalent_usd": 0.01218456,
+          "sensitivity_all_uncached_as_cache_writes_usd": 0.01471741,
+          "evaluable_runs": 1,
+          "observed_runs": 1,
+          "per_run": [
+            {
+              "run_id": "b35ed940-14e8-41ea-b937-5011e3d5ca74",
+              "estimated_usd": 0.01218456,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.01471741,
+              "maximum_input_tokens_per_call": 32525,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 9
+            }
+          ],
+          "excluded_runs": [],
+          "pricing": {
+            "verified": true,
+            "as_of": "2026-09-28",
+            "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+            "input_per_million": 0.1,
+            "cached_input_per_million": 0.01,
+            "cache_write_input_per_million": 0.125,
+            "output_per_million": 0.5,
+            "input_includes_cached": true,
+            "output_includes_reasoning": true,
+            "long_context_threshold": 272000,
+            "currency": "USD",
+            "basis": "hypothetical_API_Standard_not_subscription_charge"
+          },
+          "is_subscription_charge": false,
+          "is_proxy": true,
+          "missing_reason": null,
+          "coverage": "known_usage_prefix_only_not_total_attempt_cost"
+        },
+        "user_stop_annotation": {
+          "path": "results/extension_2026-09-28/summaries/user_stop_2026-09-28.json",
+          "sha256": "5ef83ee62093c0c860779afb599d64d5bb4fa71abaaf943af217fd0b9e960cf2",
+          "kind": "user_requested_execution_stop",
+          "recorded_at_utc": "2026-09-29T00:35:12.480132+00:00",
+          "last_call_usage": "unknown",
+          "resume_authorized": false
+        },
+        "provider_error": false,
+        "terminal": false
+      }
+    ],
+    "manual_user_stopped_prefix_count": 1,
+    "excluded_evidence": [
+      {
+        "path": "results/incomplete/0de9c164-87b4-4dec-bdf0-521901a211ae.jsonl",
+        "state": "different_packet_prompt_or_schema",
+        "model_id": "qwen3.5:9b-mlx"
+      },
+      {
+        "path": "results/incomplete/b8f41cfd-6bbf-44f7-9732-6270be289da5.jsonl",
+        "state": "different_packet_prompt_or_schema",
+        "model_id": "qwen3.5:9b-mlx"
+      },
+      {
+        "path": "results/incomplete/c9093296-f626-4e9a-bfbb-43ebc13e2098.jsonl",
+        "state": "different_packet_prompt_or_schema",
+        "model_id": "qwen3.5:9b-mlx"
+      }
+    ],
+    "missing_directories": [],
+    "coverage": "Verified matching-freeze preserved base/extension errors only; historical completeness unknown; no preflights/pilots or other-protocol attempts; usage is known prefix, not total task or attempt cost."
+  },
+  "physician_review_state": "pending",
+  "models": {
+    "qwen3.5:9b-mlx": {
+      "observed_runs": 30,
+      "expected_runs": 30,
+      "complete_panel": true,
+      "cases": {
+        "case_001": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            12,
+            13,
+            9
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_002": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            4,
+            6,
+            5
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_003": {
+          "runs": 3,
+          "completed": 1,
+          "concept_matches": 0,
+          "tool_calls": [
+            13,
+            11,
+            6
+          ],
+          "stopping_reasons": [
+            "completed",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_004": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            3,
+            3,
+            10
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_005": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            8,
+            8,
+            10
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_006": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            6,
+            6,
+            6
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_007": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            17,
+            16,
+            40
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "max_actions"
+          ]
+        },
+        "case_008": {
+          "runs": 3,
+          "completed": 2,
+          "concept_matches": 2,
+          "tool_calls": [
+            12,
+            11,
+            13
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_009": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            11,
+            12,
+            12
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_010": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            6,
+            6,
+            40
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "max_actions"
+          ]
+        }
+      },
+      "metrics": {
+        "completed": {
+          "case_mean": 0.3,
+          "case_cluster_bootstrap_95": [
+            0.06666666666666667,
+            0.5666666666666667
+          ],
+          "evaluable_cases": 10,
+          "provisional": false
+        },
+        "published_diagnosis_exact_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_concept_match": {
+          "case_mean": 0.06666666666666667,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.2
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_top3_concept": {
+          "case_mean": 0.06666666666666667,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.2
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_concept_match": {
+          "case_mean": 0.06666666666666667,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.2
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_top3_concept": {
+          "case_mean": 0.06666666666666667,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.2
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "disposition_published_exact_match": {
+          "case_mean": 0.23809523809523808,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        }
+      },
+      "total_tool_calls": 335,
+      "median_run_seconds": 54.6225,
+      "diagnosis_emitted_runs": 9,
+      "target_match_given_diagnosis": 0.2222222222222222,
+      "process": {
+        "mean_lab_requests": 1.0666666666666667,
+        "mean_imaging_requests": 0.5,
+        "mean_procedure_orders": 0.26666666666666666,
+        "mean_medication_orders": 0.13333333333333333,
+        "mean_steps_to_benchmark_diagnosis": 9.0,
+        "invalid_tool_calls": 3,
+        "failed_tool_calls": 3,
+        "reported_input_tokens": 874371.0,
+        "reported_cached_input_tokens": null,
+        "reported_cache_creation_input_tokens": null,
+        "reported_output_tokens": 27689.0,
+        "reported_reasoning_tokens": null,
+        "reported_cost_equivalent_usd": 0.0,
+        "mean_local_tokens_per_second": 18.282588645704777
+      },
+      "observed_match_count": 2,
+      "observed_run_target_rate": 0.06666666666666667
+    },
+    "qwen3:8b": {
+      "observed_runs": 30,
+      "expected_runs": 30,
+      "complete_panel": true,
+      "cases": {
+        "case_001": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            3,
+            3,
+            3
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_002": {
+          "runs": 3,
+          "completed": 1,
+          "concept_matches": 0,
+          "tool_calls": [
+            7,
+            7,
+            10
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "completed"
+          ]
+        },
+        "case_003": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            9,
+            9,
+            9
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_004": {
+          "runs": 3,
+          "completed": 2,
+          "concept_matches": 0,
+          "tool_calls": [
+            8,
+            8,
+            25
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_005": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            5,
+            11,
+            5
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_006": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            14,
+            9,
+            15
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_007": {
+          "runs": 3,
+          "completed": 1,
+          "concept_matches": 0,
+          "tool_calls": [
+            10,
+            20,
+            6
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "completed",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_008": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            7,
+            7,
+            7
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_009": {
+          "runs": 3,
+          "completed": 1,
+          "concept_matches": 0,
+          "tool_calls": [
+            6,
+            6,
+            6
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "completed"
+          ]
+        },
+        "case_010": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            7,
+            7,
+            7
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        }
+      },
+      "metrics": {
+        "completed": {
+          "case_mean": 0.4666666666666667,
+          "case_cluster_bootstrap_95": [
+            0.2333333333333333,
+            0.7333333333333333
+          ],
+          "evaluable_cases": 10,
+          "provisional": false
+        },
+        "published_diagnosis_exact_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_concept_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_top3_concept": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_concept_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_top3_concept": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "disposition_published_exact_match": {
+          "case_mean": 0.09523809523809523,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        }
+      },
+      "total_tool_calls": 256,
+      "median_run_seconds": 25.424500000000002,
+      "diagnosis_emitted_runs": 14,
+      "target_match_given_diagnosis": 0.0,
+      "process": {
+        "mean_lab_requests": 2.9,
+        "mean_imaging_requests": 0.9333333333333333,
+        "mean_procedure_orders": 0.03333333333333333,
+        "mean_medication_orders": 0.0,
+        "mean_steps_to_benchmark_diagnosis": null,
+        "invalid_tool_calls": 79,
+        "failed_tool_calls": 80,
+        "reported_input_tokens": 559641.0,
+        "reported_cached_input_tokens": null,
+        "reported_cache_creation_input_tokens": null,
+        "reported_output_tokens": 13546.0,
+        "reported_reasoning_tokens": null,
+        "reported_cost_equivalent_usd": 0.0,
+        "mean_local_tokens_per_second": 22.170880750539958
+      },
+      "observed_match_count": 0,
+      "observed_run_target_rate": 0.0
+    },
+    "llama3.1:8b": {
+      "observed_runs": 30,
+      "expected_runs": 30,
+      "complete_panel": true,
+      "cases": {
+        "case_001": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            4,
+            4,
+            4
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_002": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            40,
+            40,
+            40
+          ],
+          "stopping_reasons": [
+            "max_actions",
+            "max_actions",
+            "max_actions"
+          ]
+        },
+        "case_003": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            40,
+            40,
+            40
+          ],
+          "stopping_reasons": [
+            "max_actions",
+            "max_actions",
+            "max_actions"
+          ]
+        },
+        "case_004": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            40,
+            12,
+            40
+          ],
+          "stopping_reasons": [
+            "max_actions",
+            "repeated_unproductive_call",
+            "max_actions"
+          ]
+        },
+        "case_005": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            6,
+            6,
+            6
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_006": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            40,
+            40,
+            40
+          ],
+          "stopping_reasons": [
+            "max_actions",
+            "max_actions",
+            "max_actions"
+          ]
+        },
+        "case_007": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            40,
+            40,
+            40
+          ],
+          "stopping_reasons": [
+            "max_actions",
+            "max_actions",
+            "max_actions"
+          ]
+        },
+        "case_008": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            40,
+            8,
+            40
+          ],
+          "stopping_reasons": [
+            "max_actions",
+            "repeated_unproductive_call",
+            "max_actions"
+          ]
+        },
+        "case_009": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            40,
+            40,
+            40
+          ],
+          "stopping_reasons": [
+            "max_actions",
+            "max_actions",
+            "max_actions"
+          ]
+        },
+        "case_010": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            40,
+            40,
+            40
+          ],
+          "stopping_reasons": [
+            "max_actions",
+            "max_actions",
+            "max_actions"
+          ]
+        }
+      },
+      "metrics": {
+        "completed": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": false
+        },
+        "published_diagnosis_exact_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_concept_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_top3_concept": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_concept_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_top3_concept": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "disposition_published_exact_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        }
+      },
+      "total_tool_calls": 930,
+      "median_run_seconds": 63.234,
+      "diagnosis_emitted_runs": 0,
+      "target_match_given_diagnosis": null,
+      "process": {
+        "mean_lab_requests": 9.366666666666667,
+        "mean_imaging_requests": 0.13333333333333333,
+        "mean_procedure_orders": 0.5,
+        "mean_medication_orders": 0.0,
+        "mean_steps_to_benchmark_diagnosis": null,
+        "invalid_tool_calls": 818,
+        "failed_tool_calls": 818,
+        "reported_input_tokens": 2594413.0,
+        "reported_cached_input_tokens": null,
+        "reported_cache_creation_input_tokens": null,
+        "reported_output_tokens": 29667.0,
+        "reported_reasoning_tokens": null,
+        "reported_cost_equivalent_usd": 0.0,
+        "mean_local_tokens_per_second": 25.440741539828124
+      },
+      "observed_match_count": 0,
+      "observed_run_target_rate": 0.0
+    },
+    "gpt-6-sol": {
+      "observed_runs": 30,
+      "expected_runs": 30,
+      "complete_panel": true,
+      "cases": {
+        "case_001": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 1,
+          "tool_calls": [
+            13,
+            13,
+            13
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_002": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            17,
+            17,
+            17
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_003": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            9,
+            12,
+            13
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_004": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            13,
+            14,
+            16
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_005": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 1,
+          "tool_calls": [
+            12,
+            12,
+            12
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_006": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            16,
+            16,
+            14
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_007": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 1,
+          "tool_calls": [
+            24,
+            17,
+            17
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_008": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            6,
+            8,
+            7
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_009": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 1,
+          "tool_calls": [
+            9,
+            11,
+            10
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_010": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 1,
+          "tool_calls": [
+            15,
+            14,
+            14
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        }
+      },
+      "metrics": {
+        "completed": {
+          "case_mean": 1.0,
+          "case_cluster_bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": false
+        },
+        "published_diagnosis_exact_match": {
+          "case_mean": 0.03333333333333333,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.1
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_concept_match": {
+          "case_mean": 0.4,
+          "case_cluster_bootstrap_95": [
+            0.19999999999999998,
+            0.6
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_top3_concept": {
+          "case_mean": 0.4,
+          "case_cluster_bootstrap_95": [
+            0.19999999999999998,
+            0.6
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_concept_match": {
+          "case_mean": 0.4666666666666666,
+          "case_cluster_bootstrap_95": [
+            0.23333333333333334,
+            0.7
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_top3_concept": {
+          "case_mean": 0.4666666666666666,
+          "case_cluster_bootstrap_95": [
+            0.23333333333333334,
+            0.7
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "disposition_published_exact_match": {
+          "case_mean": 0.5714285714285714,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        }
+      },
+      "total_tool_calls": 401,
+      "median_run_seconds": 170.351,
+      "diagnosis_emitted_runs": 30,
+      "target_match_given_diagnosis": 0.4666666666666667,
+      "process": {
+        "mean_lab_requests": 1.5333333333333334,
+        "mean_imaging_requests": 1.5666666666666667,
+        "mean_procedure_orders": 1.7666666666666666,
+        "mean_medication_orders": 0.3333333333333333,
+        "mean_steps_to_benchmark_diagnosis": 8.333333333333334,
+        "invalid_tool_calls": 0,
+        "failed_tool_calls": 0,
+        "reported_input_tokens": 6703197.0,
+        "reported_cached_input_tokens": 5630592.0,
+        "reported_cache_creation_input_tokens": null,
+        "reported_output_tokens": 138480.0,
+        "reported_reasoning_tokens": 103778.0,
+        "reported_cost_equivalent_usd": null,
+        "mean_local_tokens_per_second": null
+      },
+      "observed_match_count": 14,
+      "observed_run_target_rate": 0.4666666666666667,
+      "computed_cost_proxy": {
+        "computed_api_equivalent_usd": 4.6561284,
+        "sensitivity_all_uncached_as_cache_writes_usd": 5.192430900000001,
+        "evaluable_runs": 30,
+        "observed_runs": 30,
+        "is_subscription_charge": false,
+        "is_proxy": true,
+        "source_artifact": "results/summaries/SOL_COST.json",
+        "source_sha256": "5ced1cfb04a3981bbec3eabac13c8400278df57362c5cf49c16547546bf49028",
+        "verified_usage_totals": {
+          "input_tokens_including_cached": 6703197,
+          "cached_input_tokens": 5630592,
+          "output_tokens_including_reasoning": 138480,
+          "reasoning_output_tokens_subset": 103778
+        },
+        "pricing_url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+        "pricing_checked_date": "2026-09-26"
+      }
+    },
+    "claude-opus-5-5": {
+      "observed_runs": 30,
+      "expected_runs": 30,
+      "complete_panel": true,
+      "cases": {
+        "case_001": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 2,
+          "tool_calls": [
+            12,
+            13,
+            13
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_002": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            16,
+            14,
+            14
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_003": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            13,
+            13,
+            13
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_004": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            10,
+            9,
+            8
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_005": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            7,
+            7,
+            10
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_006": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            12,
+            13,
+            10
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_007": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 1,
+          "tool_calls": [
+            27,
+            20,
+            17
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_008": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            8,
+            8,
+            8
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_009": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            10,
+            11,
+            10
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_010": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            12,
+            14,
+            15
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        }
+      },
+      "metrics": {
+        "completed": {
+          "case_mean": 1.0,
+          "case_cluster_bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": false
+        },
+        "published_diagnosis_exact_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_concept_match": {
+          "case_mean": 0.7999999999999999,
+          "case_cluster_bootstrap_95": [
+            0.5666666666666667,
+            1.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_top3_concept": {
+          "case_mean": 0.7999999999999999,
+          "case_cluster_bootstrap_95": [
+            0.5666666666666667,
+            1.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_concept_match": {
+          "case_mean": 0.7999999999999999,
+          "case_cluster_bootstrap_95": [
+            0.5666666666666667,
+            1.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_top3_concept": {
+          "case_mean": 0.7999999999999999,
+          "case_cluster_bootstrap_95": [
+            0.5666666666666667,
+            1.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "disposition_published_exact_match": {
+          "case_mean": 0.380952380952381,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        }
+      },
+      "total_tool_calls": 367,
+      "median_run_seconds": 85.634,
+      "diagnosis_emitted_runs": 30,
+      "target_match_given_diagnosis": 0.8,
+      "process": {
+        "mean_lab_requests": 1.8333333333333333,
+        "mean_imaging_requests": 1.3333333333333333,
+        "mean_procedure_orders": 1.2,
+        "mean_medication_orders": 0.6,
+        "mean_steps_to_benchmark_diagnosis": 8.541666666666666,
+        "invalid_tool_calls": 0,
+        "failed_tool_calls": 0,
+        "reported_input_tokens": 744.0,
+        "reported_cached_input_tokens": 592596.0,
+        "reported_cache_creation_input_tokens": 1743447.0,
+        "reported_output_tokens": 205091.0,
+        "reported_reasoning_tokens": null,
+        "reported_cost_equivalent_usd": 18.170891199999996,
+        "mean_local_tokens_per_second": null
+      },
+      "observed_match_count": 24,
+      "observed_run_target_rate": 0.8
+    },
+    "claude-sonnet-5-5": {
+      "observed_runs": 30,
+      "expected_runs": 30,
+      "complete_panel": true,
+      "cases": {
+        "case_001": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            11,
+            10,
+            11
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_002": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            14,
+            11,
+            12
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_003": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            11,
+            12,
+            11
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_004": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 2,
+          "tool_calls": [
+            13,
+            10,
+            10
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_005": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            8,
+            8,
+            8
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_006": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            9,
+            11,
+            11
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_007": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            19,
+            17,
+            16
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_008": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            8,
+            8,
+            8
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_009": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            9,
+            11,
+            10
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_010": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            12,
+            15,
+            11
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        }
+      },
+      "metrics": {
+        "completed": {
+          "case_mean": 1.0,
+          "case_cluster_bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": false
+        },
+        "published_diagnosis_exact_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_concept_match": {
+          "case_mean": 0.6666666666666666,
+          "case_cluster_bootstrap_95": [
+            0.36666666666666664,
+            0.9
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_top3_concept": {
+          "case_mean": 0.6666666666666666,
+          "case_cluster_bootstrap_95": [
+            0.36666666666666664,
+            0.9
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_concept_match": {
+          "case_mean": 0.6666666666666666,
+          "case_cluster_bootstrap_95": [
+            0.36666666666666664,
+            0.9
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_top3_concept": {
+          "case_mean": 0.6666666666666666,
+          "case_cluster_bootstrap_95": [
+            0.36666666666666664,
+            0.9
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "disposition_published_exact_match": {
+          "case_mean": 0.7142857142857143,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        }
+      },
+      "total_tool_calls": 335,
+      "median_run_seconds": 58.5595,
+      "diagnosis_emitted_runs": 30,
+      "target_match_given_diagnosis": 0.6666666666666666,
+      "process": {
+        "mean_lab_requests": 1.9666666666666666,
+        "mean_imaging_requests": 1.4333333333333333,
+        "mean_procedure_orders": 0.8666666666666667,
+        "mean_medication_orders": 0.5,
+        "mean_steps_to_benchmark_diagnosis": 8.05,
+        "invalid_tool_calls": 0,
+        "failed_tool_calls": 1,
+        "reported_input_tokens": 980.0,
+        "reported_cached_input_tokens": 1347916.0,
+        "reported_cache_creation_input_tokens": 1442387.0,
+        "reported_output_tokens": 153113.0,
+        "reported_reasoning_tokens": null,
+        "reported_cost_equivalent_usd": 7.572221199999999,
+        "mean_local_tokens_per_second": null
+      },
+      "observed_match_count": 20,
+      "observed_run_target_rate": 0.6666666666666666,
+      "identity_evidence": "observed_slug_in_each_response"
+    },
+    "gpt-6-luna": {
+      "observed_runs": 20,
+      "expected_runs": 30,
+      "complete_panel": false,
+      "cases": {
+        "case_001": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            10,
+            12,
+            9
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_002": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            17,
+            21,
+            11
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_003": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 2,
+          "tool_calls": [
+            11,
+            12,
+            10
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_004": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            10,
+            15,
+            13
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_005": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 1,
+          "tool_calls": [
+            15,
+            10,
+            11
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_006": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 2,
+          "tool_calls": [
+            14,
+            13,
+            13
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_007": {
+          "runs": 2,
+          "completed": 2,
+          "concept_matches": 1,
+          "tool_calls": [
+            15,
+            15
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed"
+          ]
+        },
+        "case_008": {
+          "runs": 0,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [],
+          "stopping_reasons": []
+        },
+        "case_009": {
+          "runs": 0,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [],
+          "stopping_reasons": []
+        },
+        "case_010": {
+          "runs": 0,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [],
+          "stopping_reasons": []
+        }
+      },
+      "metrics": {
+        "completed": {
+          "case_mean": 1.0,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": false
+        },
+        "published_diagnosis_exact_match": {
+          "case_mean": 0.07142857142857142,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        },
+        "published_diagnosis_concept_match": {
+          "case_mean": 0.2619047619047619,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        },
+        "published_diagnosis_top3_concept": {
+          "case_mean": 0.2619047619047619,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        },
+        "benchmark_target_concept_match": {
+          "case_mean": 0.3095238095238095,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        },
+        "benchmark_target_top3_concept": {
+          "case_mean": 0.3095238095238095,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        },
+        "disposition_published_exact_match": {
+          "case_mean": 0.75,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 4,
+          "provisional": true
+        }
+      },
+      "total_tool_calls": 257,
+      "median_run_seconds": 348.451,
+      "diagnosis_emitted_runs": 20,
+      "target_match_given_diagnosis": 0.3,
+      "process": {
+        "mean_lab_requests": 1.5,
+        "mean_imaging_requests": 1.3,
+        "mean_procedure_orders": 0.95,
+        "mean_medication_orders": 0.25,
+        "mean_steps_to_benchmark_diagnosis": 8.666666666666666,
+        "invalid_tool_calls": 0,
+        "failed_tool_calls": 0,
+        "reported_input_tokens": 4734032.0,
+        "reported_cached_input_tokens": 3960320.0,
+        "reported_cache_creation_input_tokens": null,
+        "reported_output_tokens": 101796.0,
+        "reported_reasoning_tokens": 77852.0,
+        "reported_cost_equivalent_usd": null,
+        "mean_local_tokens_per_second": null
+      },
+      "observed_match_count": 6,
+      "observed_run_target_rate": 0.3,
+      "computed_cost_proxy": {
+        "computed_api_equivalent_usd": 0.1678724,
+        "sensitivity_all_uncached_as_cache_writes_usd": 0.1872152,
+        "evaluable_runs": 20,
+        "observed_runs": 20,
+        "per_run": [
+          {
+            "run_id": "04278e79-b247-4651-8b2b-1926de4b9b8b",
+            "estimated_usd": 0.00650642,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.007095069999999999,
+            "maximum_input_tokens_per_call": 33429,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 11
+          },
+          {
+            "run_id": "707e22a3-4635-4f1a-91ee-a331aaa62aa6",
+            "estimated_usd": 0.00717,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.0077901,
+            "maximum_input_tokens_per_call": 34285,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 12
+          },
+          {
+            "run_id": "b17165df-7a4f-41a2-866e-f83c82117df7",
+            "estimated_usd": 0.00427066,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.00464391,
+            "maximum_input_tokens_per_call": 17469,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 10
+          },
+          {
+            "run_id": "1876a093-c71a-403b-b2f9-8a590cb66321",
+            "estimated_usd": 0.01071152,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.011490720000000001,
+            "maximum_input_tokens_per_call": 33621,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 17
+          },
+          {
+            "run_id": "2e5c2934-3582-450a-8505-0640787fc713",
+            "estimated_usd": 0.02389048,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.027624105,
+            "maximum_input_tokens_per_call": 38715,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 21
+          },
+          {
+            "run_id": "add50f9b-2b03-4a27-a753-f673c317f0d6",
+            "estimated_usd": 0.0070536,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.0078482,
+            "maximum_input_tokens_per_call": 32243,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 11
+          },
+          {
+            "run_id": "21342c93-44bc-4a76-8f0a-3e03f7a44b71",
+            "estimated_usd": 0.012105320000000001,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.014681295,
+            "maximum_input_tokens_per_call": 17016,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 10
+          },
+          {
+            "run_id": "ab681970-da7f-412e-b584-8ae2c09e1ea3",
+            "estimated_usd": 0.01142312,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.013396745000000002,
+            "maximum_input_tokens_per_call": 34149,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 12
+          },
+          {
+            "run_id": "f6fad15f-3cf0-4caf-9af4-0c4335dec6ac",
+            "estimated_usd": 0.00749434,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.008858365,
+            "maximum_input_tokens_per_call": 16765,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 9
+          },
+          {
+            "run_id": "23d79bd8-a538-47be-8fec-41babdaee3b8",
+            "estimated_usd": 0.00461686,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.005010335,
+            "maximum_input_tokens_per_call": 32658,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 10
+          },
+          {
+            "run_id": "2eb3e0cb-8b9d-428f-89e6-f0d408452d08",
+            "estimated_usd": 0.00944818,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.010265604999999999,
+            "maximum_input_tokens_per_call": 36794,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 15
+          },
+          {
+            "run_id": "874ce27f-b144-4d41-9ed9-0b2f8c61fbd8",
+            "estimated_usd": 0.0061953600000000004,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.006689059999999999,
+            "maximum_input_tokens_per_call": 35222,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 13
+          },
+          {
+            "run_id": "43cc91fb-2216-433a-a994-e9003361209e",
+            "estimated_usd": 0.008319479999999999,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.00898343,
+            "maximum_input_tokens_per_call": 32810,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 15
+          },
+          {
+            "run_id": "7b8d3d1f-850b-457e-88f2-09cb93019ae4",
+            "estimated_usd": 0.00475234,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.0051560650000000005,
+            "maximum_input_tokens_per_call": 17152,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 10
+          },
+          {
+            "run_id": "b9c99679-2a79-4568-ad84-a822d2616fc5",
+            "estimated_usd": 0.00510532,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.005461720000000001,
+            "maximum_input_tokens_per_call": 32325,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 11
+          },
+          {
+            "run_id": "59fb95c6-9eab-40fb-9c01-11839478b69d",
+            "estimated_usd": 0.00817634,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.008916440000000001,
+            "maximum_input_tokens_per_call": 34618,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 15
+          },
+          {
+            "run_id": "acf51a86-774a-42e7-8310-19878d0928ad",
+            "estimated_usd": 0.0067956200000000005,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.0072990699999999995,
+            "maximum_input_tokens_per_call": 17867,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 15
+          },
+          {
+            "run_id": "654cae11-4bc0-43b7-bc24-a434ae74f50f",
+            "estimated_usd": 0.010589639999999999,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.011866165000000001,
+            "maximum_input_tokens_per_call": 35948,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 14
+          },
+          {
+            "run_id": "72ba1bad-dc88-4ffe-93ce-651b54f68f87",
+            "estimated_usd": 0.00712372,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.007577895,
+            "maximum_input_tokens_per_call": 36100,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 13
+          },
+          {
+            "run_id": "aca657ea-00ed-4b0f-86bd-8a7f64939e31",
+            "estimated_usd": 0.00612408,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.0065609050000000006,
+            "maximum_input_tokens_per_call": 33762,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 13
+          }
+        ],
+        "excluded_runs": [],
+        "pricing": {
+          "verified": true,
+          "as_of": "2026-09-28",
+          "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+          "input_per_million": 0.1,
+          "cached_input_per_million": 0.01,
+          "cache_write_input_per_million": 0.125,
+          "output_per_million": 0.5,
+          "input_includes_cached": true,
+          "output_includes_reasoning": true,
+          "long_context_threshold": 272000,
+          "currency": "USD",
+          "basis": "hypothetical_API_Standard_not_subscription_charge"
+        },
+        "is_subscription_charge": false,
+        "is_proxy": true,
+        "missing_reason": null
+      },
+      "identity_evidence": "requested_and_inference_accepted_not_observed"
+    },
+    "gpt-5.6-terra": {
+      "observed_runs": 30,
+      "expected_runs": 30,
+      "complete_panel": true,
+      "cases": {
+        "case_001": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            12,
+            11,
+            9
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_002": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            9,
+            10,
+            12
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_003": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            8,
+            7,
+            6
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_004": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            10,
+            12,
+            11
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_005": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 1,
+          "tool_calls": [
+            10,
+            10,
+            9
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_006": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            11,
+            11,
+            10
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_007": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            16,
+            16,
+            18
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_008": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            6,
+            5,
+            6
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_009": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            6,
+            6,
+            6
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_010": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 1,
+          "tool_calls": [
+            14,
+            14,
+            14
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        }
+      },
+      "metrics": {
+        "completed": {
+          "case_mean": 1.0,
+          "case_cluster_bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": false
+        },
+        "published_diagnosis_exact_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_concept_match": {
+          "case_mean": 0.36666666666666664,
+          "case_cluster_bootstrap_95": [
+            0.1,
+            0.6333333333333334
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_top3_concept": {
+          "case_mean": 0.36666666666666664,
+          "case_cluster_bootstrap_95": [
+            0.1,
+            0.6333333333333334
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_concept_match": {
+          "case_mean": 0.4666666666666666,
+          "case_cluster_bootstrap_95": [
+            0.19999999999999998,
+            0.7333333333333334
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_top3_concept": {
+          "case_mean": 0.4666666666666666,
+          "case_cluster_bootstrap_95": [
+            0.19999999999999998,
+            0.7333333333333334
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "disposition_published_exact_match": {
+          "case_mean": 0.5714285714285714,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        }
+      },
+      "total_tool_calls": 305,
+      "median_run_seconds": 128.2295,
+      "diagnosis_emitted_runs": 30,
+      "target_match_given_diagnosis": 0.4666666666666667,
+      "process": {
+        "mean_lab_requests": 0.9333333333333333,
+        "mean_imaging_requests": 1.5333333333333334,
+        "mean_procedure_orders": 1.4666666666666666,
+        "mean_medication_orders": 0.03333333333333333,
+        "mean_steps_to_benchmark_diagnosis": 5.357142857142857,
+        "invalid_tool_calls": 0,
+        "failed_tool_calls": 2,
+        "reported_input_tokens": 4929392.0,
+        "reported_cached_input_tokens": 4295680.0,
+        "reported_cache_creation_input_tokens": null,
+        "reported_output_tokens": 75997.0,
+        "reported_reasoning_tokens": 50011.0,
+        "reported_cost_equivalent_usd": null,
+        "mean_local_tokens_per_second": null
+      },
+      "observed_match_count": 14,
+      "observed_run_target_rate": 0.4666666666666667,
+      "computed_cost_proxy": {
+        "computed_api_equivalent_usd": 3.0385240000000007,
+        "sensitivity_all_uncached_as_cache_writes_usd": 3.35538,
+        "evaluable_runs": 30,
+        "observed_runs": 30,
+        "per_run": [
+          {
+            "run_id": "0b7b28e8-ffac-4dff-a6d8-ccf8cbe29d84",
+            "estimated_usd": 0.10413120000000001,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.11443120000000001,
+            "maximum_input_tokens_per_call": 17070,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 12
+          },
+          {
+            "run_id": "8cb985b8-03c7-4642-bb91-b1959d7d94fd",
+            "estimated_usd": 0.23245120000000002,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.2765322,
+            "maximum_input_tokens_per_call": 16872,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 11
+          },
+          {
+            "run_id": "9fff6cb8-0c60-43d1-9861-fe886991c2e1",
+            "estimated_usd": 0.15130760000000001,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.17969010000000002,
+            "maximum_input_tokens_per_call": 16593,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 9
+          },
+          {
+            "run_id": "0f05e6cb-7f1d-4d57-9b29-7292d010944f",
+            "estimated_usd": 0.1004936,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.1130366,
+            "maximum_input_tokens_per_call": 16634,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 9
+          },
+          {
+            "run_id": "3e713a05-3909-4d36-b3f3-3832d77f1974",
+            "estimated_usd": 0.08486160000000001,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.0909596,
+            "maximum_input_tokens_per_call": 16767,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 10
+          },
+          {
+            "run_id": "c5114be6-03cc-4a59-9f5b-ee17cb25e469",
+            "estimated_usd": 0.10376120000000001,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.10952970000000001,
+            "maximum_input_tokens_per_call": 17196,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 12
+          },
+          {
+            "run_id": "1004ca0a-ceda-443e-8717-4d7305ef1047",
+            "estimated_usd": 0.1530548,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.17120329999999997,
+            "maximum_input_tokens_per_call": 17581,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 14
+          },
+          {
+            "run_id": "84fbc723-3e19-4dd3-9fda-43210e9ddddb",
+            "estimated_usd": 0.1303148,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.1409123,
+            "maximum_input_tokens_per_call": 17544,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 14
+          },
+          {
+            "run_id": "e7e38db9-a2f0-45fc-9c0e-48c6c72fdb10",
+            "estimated_usd": 0.1212088,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.1315218,
+            "maximum_input_tokens_per_call": 17474,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 14
+          },
+          {
+            "run_id": "10920fb8-9b36-4da1-bdbf-7c6de97a07d6",
+            "estimated_usd": 0.1481416,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.1584056,
+            "maximum_input_tokens_per_call": 17583,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 16
+          },
+          {
+            "run_id": "7f2a2512-767b-4ace-94dc-fb89aa102784",
+            "estimated_usd": 0.1755912,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.1927442,
+            "maximum_input_tokens_per_call": 17650,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 16
+          },
+          {
+            "run_id": "d1798417-3ce8-41cd-9b03-c0e6a439472b",
+            "estimated_usd": 0.19633720000000002,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.2121907,
+            "maximum_input_tokens_per_call": 17955,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 18
+          },
+          {
+            "run_id": "15327adf-5491-4b67-a190-cfe8763be5fb",
+            "estimated_usd": 0.08051280000000001,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.08528580000000001,
+            "maximum_input_tokens_per_call": 17048,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 10
+          },
+          {
+            "run_id": "3fc47d04-5e81-4561-9196-5ca1d7b928ac",
+            "estimated_usd": 0.13398079999999998,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.14880379999999999,
+            "maximum_input_tokens_per_call": 17354,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 12
+          },
+          {
+            "run_id": "94ee5af0-52db-4847-bb5e-8cdc052a32cf",
+            "estimated_usd": 0.097342,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.1067715,
+            "maximum_input_tokens_per_call": 17200,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 11
+          },
+          {
+            "run_id": "17342811-4e64-4943-9ed3-c87abbe2a5cb",
+            "estimated_usd": 0.0776892,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.08341269999999999,
+            "maximum_input_tokens_per_call": 16938,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 10
+          },
+          {
+            "run_id": "21ebf373-6a40-40c8-8c33-2f3172f2ee60",
+            "estimated_usd": 0.0857844,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.09204989999999999,
+            "maximum_input_tokens_per_call": 16922,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 10
+          },
+          {
+            "run_id": "735d331b-1c48-4e9e-b74a-d06ed40a75ae",
+            "estimated_usd": 0.09371239999999999,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.1058799,
+            "maximum_input_tokens_per_call": 16750,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 9
+          },
+          {
+            "run_id": "32d4b0ad-8f0f-48a6-8059-271f7290f92b",
+            "estimated_usd": 0.041855199999999995,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.044797199999999995,
+            "maximum_input_tokens_per_call": 16232,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 6
+          },
+          {
+            "run_id": "caf64549-0738-4be7-bce1-a093d90f7dc2",
+            "estimated_usd": 0.0529104,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.058920400000000005,
+            "maximum_input_tokens_per_call": 16237,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 6
+          },
+          {
+            "run_id": "ecadf93c-88e9-443b-9037-41c623b26e12",
+            "estimated_usd": 0.048488,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.053491,
+            "maximum_input_tokens_per_call": 16243,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 6
+          },
+          {
+            "run_id": "547386a2-2acf-4971-8ce9-1130a2181359",
+            "estimated_usd": 0.1080028,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.1160833,
+            "maximum_input_tokens_per_call": 16929,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 11
+          },
+          {
+            "run_id": "63799037-f547-4497-84eb-33306b4e6ec8",
+            "estimated_usd": 0.11694,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.130689,
+            "maximum_input_tokens_per_call": 16928,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 11
+          },
+          {
+            "run_id": "e3721e9a-5a26-4da3-b1e4-c04123034dfb",
+            "estimated_usd": 0.0804808,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.0870108,
+            "maximum_input_tokens_per_call": 16770,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 10
+          },
+          {
+            "run_id": "6a9e1c62-fa63-4111-9573-baeb3cb02b2b",
+            "estimated_usd": 0.046009600000000005,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.05027260000000001,
+            "maximum_input_tokens_per_call": 16339,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 6
+          },
+          {
+            "run_id": "db2bd88d-7036-4e6b-8b56-1a944c32b812",
+            "estimated_usd": 0.051828400000000004,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.0593259,
+            "maximum_input_tokens_per_call": 15892,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 5
+          },
+          {
+            "run_id": "eb65d205-b811-4de9-9054-5dfd16aa41fc",
+            "estimated_usd": 0.0388768,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.0410258,
+            "maximum_input_tokens_per_call": 16294,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 6
+          },
+          {
+            "run_id": "7ee74c08-6468-47e2-a1ed-4cd1d8a5192e",
+            "estimated_usd": 0.060026,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.0649385,
+            "maximum_input_tokens_per_call": 16679,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 8
+          },
+          {
+            "run_id": "9794040c-dc21-410c-8ef3-72b1266b3fe2",
+            "estimated_usd": 0.0799804,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.0899459,
+            "maximum_input_tokens_per_call": 16568,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 7
+          },
+          {
+            "run_id": "d07d241a-e950-4928-987a-732432488c4c",
+            "estimated_usd": 0.0424492,
+            "sensitivity_all_uncached_as_cache_writes_usd": 0.045518699999999995,
+            "maximum_input_tokens_per_call": 16284,
+            "cache_write_input_tokens_reported": 0,
+            "usage_event_count": 6
+          }
+        ],
+        "excluded_runs": [],
+        "pricing": {
+          "verified": true,
+          "as_of": "2026-09-28",
+          "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+          "input_per_million": 2.0,
+          "cached_input_per_million": 0.2,
+          "cache_write_input_per_million": 2.5,
+          "cache_write_rate_source": "official page says 1.25x uncached input rate; 1.25 * USD2 = USD2.50/M",
+          "output_per_million": 12.0,
+          "input_includes_cached": true,
+          "output_includes_reasoning": true,
+          "long_context_threshold": 272000,
+          "currency": "USD",
+          "basis": "hypothetical_API_Standard_not_subscription_charge"
+        },
+        "is_subscription_charge": false,
+        "is_proxy": true,
+        "missing_reason": null
+      },
+      "identity_evidence": "requested_and_inference_accepted_not_observed"
+    }
+  },
+  "paired_differences": {},
+  "interpretation": "Exploratory public-case lexical and process measures only; no definitive clinical accuracy or safety estimate.",
+  "passive_provider_diagnostics": {
+    "sources": [
+      {
+        "path": "results/provider_diagnostics_2026-09-28/gpt-5.6-terra.jsonl",
+        "sha256": "12448c3160d4cbf79c9ba70367a853159f4113d3752c4692b6a2f0a189b82f39",
+        "byte_count": 362,
+        "instrumentation_starts_utc": [
+          "2026-09-28T19:47:19.969821Z",
+          "2026-09-28T20:11:01.043996Z"
+        ]
+      },
+      {
+        "path": "results/provider_diagnostics_2026-09-28/gpt-6-luna.jsonl",
+        "sha256": "81245589318da27e07863db653a5d7a35be514df99c9f509affdd85eca3302b3",
+        "byte_count": 111,
+        "instrumentation_starts_utc": [
+          "2026-09-29T00:32:06.398714Z"
+        ]
+      }
+    ],
+    "observations": [
+      {
+        "source_path": "results/provider_diagnostics_2026-09-28/gpt-5.6-terra.jsonl",
+        "source_sha256": "12448c3160d4cbf79c9ba70367a853159f4113d3752c4692b6a2f0a189b82f39",
+        "line": 2,
+        "model_id": "gpt-5.6-terra",
+        "utc": "2026-09-28T20:09:01.325548Z",
+        "category": "arguments_json_invalid",
+        "confirmed_format_failure": true,
+        "mapping_state": "unique_model_and_error_utc_within_2s",
+        "run_id": "1727002e-8af1-46ae-92bc-d90faaf181b5",
+        "trace_error_utc": "2026-09-28T20:09:01.326570Z",
+        "absolute_delta_seconds": 0.001022
+      }
+    ],
+    "ignored_records": [],
+    "confirmed_format_failure_count": 1,
+    "coverage": "Partial prospective observations since each instrumentation start; start records are ignored for error matching. No retrospective attribution to older errors; no raw stdout recovered and final failed-call usage unknown.",
+    "mapping_rule": "same model and unique trace error event, absolute UTC distance <=2 seconds; bidirectional uniqueness required"
+  },
+  "operational_summary": {
+    "models": {
+      "qwen3.5:9b-mlx": {
+        "planned_trajectories": 30,
+        "observed_terminal_trajectories": 30,
+        "completed_terminal_trajectories": 9,
+        "verified_preserved_error_attempts": 0,
+        "observed_closed_attempts": 30,
+        "completed_over_planned_30": 0.3,
+        "completed_over_observed_closed_attempts": 0.3,
+        "confirmed_format_failure_attempts_partial_observation": 0,
+        "error_attempts_without_confirmed_passive_category": 0,
+        "verified_user_stopped_nonterminal_prefixes": 0,
+        "error_inventory_state": "preserved_matching_records_only_historical_completeness_unknown",
+        "unverified_evidence_count": 0
+      },
+      "qwen3:8b": {
+        "planned_trajectories": 30,
+        "observed_terminal_trajectories": 30,
+        "completed_terminal_trajectories": 14,
+        "verified_preserved_error_attempts": 0,
+        "observed_closed_attempts": 30,
+        "completed_over_planned_30": 0.4666666666666667,
+        "completed_over_observed_closed_attempts": 0.4666666666666667,
+        "confirmed_format_failure_attempts_partial_observation": 0,
+        "error_attempts_without_confirmed_passive_category": 0,
+        "verified_user_stopped_nonterminal_prefixes": 0,
+        "error_inventory_state": "preserved_matching_records_only_historical_completeness_unknown",
+        "unverified_evidence_count": 0
+      },
+      "llama3.1:8b": {
+        "planned_trajectories": 30,
+        "observed_terminal_trajectories": 30,
+        "completed_terminal_trajectories": 0,
+        "verified_preserved_error_attempts": 0,
+        "observed_closed_attempts": 30,
+        "completed_over_planned_30": 0.0,
+        "completed_over_observed_closed_attempts": 0.0,
+        "confirmed_format_failure_attempts_partial_observation": 0,
+        "error_attempts_without_confirmed_passive_category": 0,
+        "verified_user_stopped_nonterminal_prefixes": 0,
+        "error_inventory_state": "preserved_matching_records_only_historical_completeness_unknown",
+        "unverified_evidence_count": 0
+      },
+      "gpt-6-sol": {
+        "planned_trajectories": 30,
+        "observed_terminal_trajectories": 30,
+        "completed_terminal_trajectories": 30,
+        "verified_preserved_error_attempts": 1,
+        "observed_closed_attempts": 31,
+        "completed_over_planned_30": 1.0,
+        "completed_over_observed_closed_attempts": 0.967741935483871,
+        "confirmed_format_failure_attempts_partial_observation": 0,
+        "error_attempts_without_confirmed_passive_category": 1,
+        "verified_user_stopped_nonterminal_prefixes": 0,
+        "error_inventory_state": "preserved_matching_records_only_historical_completeness_unknown",
+        "unverified_evidence_count": 0
+      },
+      "claude-opus-5-5": {
+        "planned_trajectories": 30,
+        "observed_terminal_trajectories": 30,
+        "completed_terminal_trajectories": 30,
+        "verified_preserved_error_attempts": 0,
+        "observed_closed_attempts": 30,
+        "completed_over_planned_30": 1.0,
+        "completed_over_observed_closed_attempts": 1.0,
+        "confirmed_format_failure_attempts_partial_observation": 0,
+        "error_attempts_without_confirmed_passive_category": 0,
+        "verified_user_stopped_nonterminal_prefixes": 0,
+        "error_inventory_state": "preserved_matching_records_only_historical_completeness_unknown",
+        "unverified_evidence_count": 0
+      },
+      "claude-sonnet-5-5": {
+        "planned_trajectories": 30,
+        "observed_terminal_trajectories": 30,
+        "completed_terminal_trajectories": 30,
+        "verified_preserved_error_attempts": 0,
+        "observed_closed_attempts": 30,
+        "completed_over_planned_30": 1.0,
+        "completed_over_observed_closed_attempts": 1.0,
+        "confirmed_format_failure_attempts_partial_observation": 0,
+        "error_attempts_without_confirmed_passive_category": 0,
+        "verified_user_stopped_nonterminal_prefixes": 0,
+        "error_inventory_state": "preserved_matching_records_only_historical_completeness_unknown",
+        "unverified_evidence_count": 0
+      },
+      "gpt-6-luna": {
+        "planned_trajectories": 30,
+        "observed_terminal_trajectories": 20,
+        "completed_terminal_trajectories": 20,
+        "verified_preserved_error_attempts": 2,
+        "observed_closed_attempts": 22,
+        "completed_over_planned_30": 0.6666666666666666,
+        "completed_over_observed_closed_attempts": 0.9090909090909091,
+        "confirmed_format_failure_attempts_partial_observation": 0,
+        "error_attempts_without_confirmed_passive_category": 2,
+        "verified_user_stopped_nonterminal_prefixes": 1,
+        "error_inventory_state": "preserved_matching_records_only_historical_completeness_unknown",
+        "unverified_evidence_count": 0
+      },
+      "gpt-5.6-terra": {
+        "planned_trajectories": 30,
+        "observed_terminal_trajectories": 30,
+        "completed_terminal_trajectories": 30,
+        "verified_preserved_error_attempts": 5,
+        "observed_closed_attempts": 35,
+        "completed_over_planned_30": 1.0,
+        "completed_over_observed_closed_attempts": 0.8571428571428571,
+        "confirmed_format_failure_attempts_partial_observation": 1,
+        "error_attempts_without_confirmed_passive_category": 4,
+        "verified_user_stopped_nonterminal_prefixes": 0,
+        "error_inventory_state": "preserved_matching_records_only_historical_completeness_unknown",
+        "unverified_evidence_count": 0
+      }
+    },
+    "post_hoc": true,
+    "iid_confidence_intervals": null,
+    "interpretation": "Conditional on observed terminal trajectories plus verified preserved error attempts; retries are selected and dependent. Not an unconditional clinical or provider reliability estimate; incomplete/active attempts excluded and historical preservation completeness unknown."
+  },
+  "base_score_verification": {
+    "exact_base_model_fields_equal": true,
+    "artifact": "results/summaries/exploratory_analysis.json",
+    "artifact_sha256": "1fd3fcc75123c6e7997a9c296831d53763b25b253ae376e2486e8103d0855f3d",
+    "base_terminal_runs": 150
+  },
+  "panel_state": "partial"
+}

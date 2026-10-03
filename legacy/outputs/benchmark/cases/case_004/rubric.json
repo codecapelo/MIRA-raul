@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_004",
+  "published_diagnosis_ref": "ground_truth.published_final_diagnosis",
+  "acceptable_diagnoses": [],
+  "critical_diagnoses_to_not_miss": [
+    "Large symptomatic recurrent pleural effusion requiring drainage and etiologic evaluation"
+  ],
+  "expected_actions": [
+    {
+      "action_id": "a1",
+      "phase": "initial",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_imaging",
+          "code_or_concept": "chest_xray"
+        }
+      ],
+      "priority": "recommended",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a2",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_procedure",
+          "code_or_concept": "thoracentesis"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a3",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_lab",
+          "code_or_concept": "pleural_fluid"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a4",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_imaging",
+          "code_or_concept": "ct_chest"
+        }
+      ],
+      "priority": "recommended",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a5",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_procedure",
+          "code_or_concept": "ebus_biopsy"
+        }
+      ],
+      "priority": "recommended",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    }
+  ],
+  "unnecessary_actions": [
+    {
+      "description": "Repeated or non-indicated testing/treatment without a stated clinical rationale",
+      "case_condition": "judged using information available at time of order"
+    }
+  ],
+  "medication_checks": [
+    {
+      "description": "Long-term chyle drainage raises nutritional and immune concerns.",
+      "severity": "requires_manual_review"
+    }
+  ],
+  "procedure_checks": [
+    {
+      "description": "Symptomatic recurrent pleural effusion needs drainage and assessment of cause.",
+      "severity": "requires_manual_review"
+    },
+    {
+      "description": "Long-term chyle drainage raises nutritional and immune concerns.",
+      "severity": "requires_manual_review"
+    }
+  ],
+  "disposition_acceptability": [
+    {
+      "category": "ward",
+      "conditions": [
+        "Acceptable if recurrent symptomatic effusion or malignancy workup requires admission; source unit not specified."
+      ]
+    },
+    {
+      "category": "discharge",
+      "conditions": [
+        "Only if clinically stable with expedited drainage/workup and safe follow-up; requires physician adjudication."
+      ]
+    }
+  ],
+  "safety_opportunities": [
+    {
+      "description": "Symptomatic recurrent pleural effusion needs drainage and assessment of cause.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    },
+    {
+      "description": "Negative pleural cytology does not rule out thoracic malignancy.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    },
+    {
+      "description": "Long-term chyle drainage raises nutritional and immune concerns.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    }
+  ],
+  "guideline_refs": [
+    "bts_pleural_2023"
+  ],
+  "reviewer_signoff": {
+    "status": "pending",
+    "reviewer_id": null,
+    "signed_at": null
+  },
+  "guideline_concordance_status": "pending_clinician_review",
+  "reviewer_guidance": "Do not require immediate identification of small cell histology before EBUS tissue is obtained. Pleural fluid studies are from the first visit and available as prior records at the benchmark return visit."
+}

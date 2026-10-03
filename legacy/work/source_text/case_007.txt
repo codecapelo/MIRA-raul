@@ -1,0 +1,348 @@
+                                                                                                                                                                                        e-ISSN 1941-5923
+                                                                                                                                                                      © Am J Case Rep, 2025; 26: e946630
+                                                                                                                                                                              DOI: 10.12659/AJCR.946630
+
+
+       Received:
+       Accepted:
+                      2024.09.21
+                      2025.02.15                  Early-Onset Autoimmune Hemolytic Anemia
+Available online:
+      Published:
+                      2025.02.20
+                      2025.03.23                  from Pembrolizumab in a Patient with Metastatic
+                                                  Lung Cancer: A Case Report
+
+    Authors’ Contribution:       ABCDEF 1,2       Femi Williams Adeoye                                                         1 Department of Oncology, Southend University Hospital,
+            Study Design A        ABCDEF 2        Sanggeeta Surandran                                                            Southend-on-Sea, United Kingdom
+          Data Collection B                                                                                                    2 Department of Internal Medicine, Basildon University Hospital,
+      Statistical Analysis C         ADEF 1       Nida Jaffar                                                                    Basildon, United Kingdom
+     Data Interpretation D          ABCDE 3       Shankari Serumadar                                                           3 Department of Haematology, Basildon University Hospital,
+  Manuscript Preparation E       ABCDE 1,2        Gulshad Begum                                                                  Basildon, United Kingdom
+        Literature Search F
+        Funds Collection G
+
+
+
+                  Corresponding Author:           Femi Williams Adeoye, e-mail: Femi.Adeoye1@nhs.net
+                       Financial support:         None declared
+                     Conflict of interest:        None declared
+
+
+
+                              Patient:            Male, 69-year-old
+                     Final Diagnosis:             Pembrolizumab-induced autoimmune haemolytic anemia
+                          Symptoms:               Anaemia • dyspnea • jaundice
+                  Clinical Procedure:             —
+                            Specialty:            Oncology
+
+                             Objective:           Rare disease
+                           Background:            Immunotherapy is now a well-established systemic anticancer treatment in both curative and palliative set-
+                                                  tings in oncology. Immune-related adverse events associated with pembrolizumab, a novel humanized thera-
+                                                  peutic monoclonal antibody, very rarely affect the hematologic system. While previous reports have noted au-
+                                                  toimmune hemolytic anemia occurring after multiple cycles of immunotherapy, this article describes a case of
+                                                  a patient with advanced lung adenocarcinoma, who was diagnosed with autoimmune hemolytic anemia short-
+                                                  ly after his first cycle.
+                           Case Report:           In this article, we report a rare case of autoimmune hemolytic anemia, occurring after 1 cycle of pembrolizum-
+                                                  ab, in a 69-year-old man with metastatic lung adenocarcinoma. He presented with new-onset severe anemia,
+                                                  jaundice, and dyspnea 14 days after his first cycle of pembrolizumab. The remarkable findings in the initial
+                                                  investigations included hyperbilirubinemia, severe anemia, markedly elevated serum lactate dehydrogenase
+                                                  levels, and positive direct and indirect antiglobulin (Coombs) test results. He had an urgent specialist review
+                                                  at presentation, and was promptly started on high-dose steroids, intravenous immunoglobins, blood transfu-
+                                                  sions, and other supportive treatments, with subsequent resolution of hemolysis over the next few days. He
+                                                  made a good clinical and hematological recovery and was discharged home after 5 days of hospitalization.
+                           Conclusions:           Autoimmune hemolytic anemia is a rare adverse effect of immunotherapy, which can be life-threatening with-
+                                                  out prompt recognition and appropriate management. This case also shows that this disease should be con-
+                                                  sidered as a differential diagnosis of new-onset anemia or sudden-onset jaundice in patients on immunother-
+                                                  apy, regardless of the number of cycles received.
+
+                               Keywords:          Anemia, Hemolytic, Autoimmune • Immune Checkpoint Inhibitors • Immunotherapy
+
+                          Full-text PDF:          https://www.amjcaserep.com/abstract/index/idArt/946630
+
+
+                                                             2211                      1                  1                    18
+
+
+
+                                                    Publisher’s note: All claims expressed in this article are solely those of the authors and do not necessarily represent those of their affiliated
+                                                    organizations, or those of the publisher, the editors and the reviewers. Any product that may be evaluated in this article, or claim that may be
+                                                    made by its manufacturer, is not guaranteed or endorsed by the publisher
+
+
+
+
+                               This work is licensed under Creative Common Attribution-                                     Indexed in: [PMC] [PubMed] [Emerging Sources Citation Index (ESCI)]
+                         NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)           e946630-1                [Web of Science by Clarivate]
+                                                                                                                                              Adeoye F.W. et al:
+                                                                                                               Autoimmune hemolytic anemia from pembrolizumab
+                                                                                                                            © Am J Case Rep, 2025; 26: e946630
+
+
+
+
+Introduction                                                                    with left adrenal and subdiaphragmatic metastases. Further
+                                                                                molecular analyses were significant for high PD-L1 TPS of 70%
+The emergence of immune checkpoint inhibitors (ICIs) has rev-                   on immunohistochemistry. A few weeks later, he was started
+olutionized the management of various malignancies over the                     on intravenous pembrolizumab monotherapy at a dose of 400
+years [1]. The more widely used agents target the Cytotoxic                     mg in 6-week cycles, with palliative intent.
+T-Lymphocytes Associated protein 4 (CTLA-4) and Programmed
+Death 1/Programmed Death Ligand 1 (PD-1/PD-L1) checkpoint                       Fourteen days after receiving his first dose of pembrolizumab,
+pathways [2]. Pembrolizumab is a novel humanized monoclonal                     he presented via the Emergency Department with a 4-day his-
+antibody that binds to PD-1 on T-cell surfaces and blocks its in-               tory of progressive jaundice and dark stools with associated
+teraction with its corresponding ligands (PD-L1) on cancer cells;               lethargy and light-headedness. He reported no bleeding, fever,
+by so doing, it prevents the downregulation of T-cell-mediated                  cough, or abdominal pain. On examination at presentation, he
+tumoricidal activities [3]. Pembrolizumab, since its initial ap-                was afebrile, pale, and deeply icteric. His vital signs revealed
+proval for treatment of metastatic melanoma about a decade                      heart rate of 92 beats per minute, respiratory rate of 20 cy-
+ago, has significantly altered the management of a growing                      cles per minute, and systolic blood pressure of 115 mmHg. His
+number of cancer types, including non-small cell lung cancers                   initial laboratory investigations (Table 1) showed severe ane-
+(NSCLC) in both curative and palliative settings, recurrent and                 mia with hemoglobin 45 g/l (baseline level of 123 g/l) in the
+metastatic head and neck squamous cell carcinoma, and other                     absence of any obvious bleeding. There was elevated serum
+cancers [3-5]. The Keynote-024 trial, for instance, showed that                 lactate (4.2 mmol/l) and unconjugated hyperbilirubinemia. In
+pembrolizumab monotherapy offered significantly improved                        view of the findings of severe anemia and unconjugated hy-
+overall survival benefits compared with platinum-based chemo-                   perbilirubinemia on initial blood tests, there was suspicion of
+therapy in patients with previously untreated metastatic NSCLC                  an ongoing hemolytic process. Further laboratory investiga-
+with PD-L1 Tumor Proportion Score (TPS) of 50% or greater [5].                  tions revealed profoundly low haptoglobin levels (<0.3 g/l),
+                                                                                and markedly elevated ferritin (2441 ng/ml) and lactate de-
+Despite its well-established efficacy, pembrolizumab can                        hydrogenase (LDH) 1214 u/l. A peripheral blood film showed
+cause a wide range of immune-related adverse events (irAEs)                     marked reticulocytosis, spherocytosis, and reactive neutro-
+of varying severity in different organ systems. The commonly                    philia (Figure 1A, 1B). An urgent direct antiglobulin test (DAT)
+observed irAEs of pembrolizumab include pneumonitis, skin                       showed a moderately positive immunoglobulin G (IgG) anti-
+toxicities, colitis, hepatitis, nephritis; autoimmune endocrinop-               body (2+), and strongly positive (5+) complement C3d reac-
+athies such as thyroiditis, adrenal dysfunction, and hypophy-                   tivity. The DAT findings of IgG (2+) and C3d (5+) were consis-
+sitis [3]. Rarely, irAEs involve the hematologic system, causing                tent with an immune-mediated hemolytic process. Reactions
+neutropenia, thrombocytopenia, or anemia due to pure red cell                   of no specificity were detected by direct agglutination at 30°C.
+aplasia or autoimmune hemolysis [6]. Autoimmune hemolytic                       Pan-reactive autoantibody was detected by indirect antiglobu-
+anemia (AIHA) due to pembrolizumab has been reported in a                       lin test (IAT) and enzyme IAT, with no underlying allo-antibod-
+patient who had an acute exacerbation of pre-existing AIHA                      ies detected by IAT. Triple-phase computed tomography (CT)
+shortly after receiving his first dose, and in other patients with              examination of the abdomen and pelvis was also performed,
+metastatic lung cancer who had no underlying predisposition                     which showed no evidence of hemorrhage or intra-abdominal
+[7-9]. In this article, we report a rare case of AIHA induced by                collection. Overall, the clinical and laboratory features were in
+immunotherapy to raise an awareness of this entity and con-                     keeping with acute autoimmune hemolytic anemia, presum-
+tribute to a growing body of literature on rare irAEs and their                 ably induced by pembrolizumab.
+management. This case, to our knowledge, also is one of the
+first case reports of this condition during the first cycle [7,8].              On the first day of admission, his case was promptly reviewed
+This report describes a 69-year-old man with advanced ade-                      by the on-call Hematology team and started on intravenous
+nocarcinoma of the lung who was diagnosed with AIHA after                       immunoglobin (IVIG) 1 g/kg. He received IVIG in divided daily
+his first cycle of pembrolizumab.                                               doses over the first 3 days in combination with steroid pulse
+                                                                                therapy (methylprednisolone 500 mg/day) for the first 4 days.
+                                                                                Also, during the first 72 hours, he was cautiously transfused
+Case Report                                                                     with multiple units of red blood cells. There was prompt reso-
+                                                                                lution of hemolysis (Table 1) and clinical improvement.
+We present the case of a 69-year-old man with background of
+gastritis, hyperlipidemia, and previous cholecystectomy. He was                 On day 4, his hyperbilirubinemia had declined remarkably
+an ex-smoker with a baseline Eastern Cooperative Oncology                       (26 umol/l) and hemoglobin was stable at 86 g/l. He was ulti-
+Group (ECOG) Performance Status of 1. In late February 2024,                    mately discharged home after 5 days of hospitalization on a
+he was diagnosed with de novo advanced lung adenocarcinoma                      weaning course of prednisolone over a period of 6 weeks with
+
+
+
+
+              This work is licensed under Creative Common Attribution-                   Indexed in: [PMC] [PubMed] [Emerging Sources Citation Index (ESCI)]
+        NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)   e946630-2      [Web of Science by Clarivate]
+Adeoye F.W. et al:
+Autoimmune hemolytic anemia from pembrolizumab
+© Am J Case Rep, 2025; 26: e946630
+
+
+
+
+Table 1. Trend of selected laboratory test results during hospitalization and 2 weeks after discharge.
+
+         Laboratory                                                                                        2 weeks after          Normal
+                                          Day 1                 Day 2        Day 4            Day 5                                                  SI unit
+         parameters                                                                                          discharge             range
+   Lactate                                 4.2                    (–)         (–)               (–)               (–)              0.4-2.2           mmol/l
+
+   Hemoglobin                               45                    67          86                93                114             130-180               g/l
+
+   LDH                                    1214                    (–)         (–)             1128                860             240-480               u/l
+                                         61
+   Bilirubin (total)                (unconjugated                 54          26                16                 9                0-21             umol/l
+                                        72%)
+   INR                                     1.4                    1.3         1.1               (–)               1.1             0.8-1.2
+
+   Haptoglobin                             <0.3                  <0.3         (–)               (–)               (–)             0.3-2.0               g/l
+                                         261.7
+   Reticulocyte count                                             (–)         (–)               (–)               (–)             50-100              109/l
+                                        (23.7%)
+   Serum ferritin                         2441                    (–)         (–)               (–)               (–)             15-300              ng/ml
+
+   IgA                                     6.5                    (–)         6.3               (–)               (–)             0.8-4.0
+
+   IgG                                     17.8                   (–)         18.4              (–)               (–)              6-16.0               g/l
+
+   IgM                                     0.6                    (–)         0.6               (–)               (–)             0.5-2.0
+
+                                         C3 1.0                   (–)         (–)               (–)               (–)             0.9-1.80
+   Complements                                                                                                                                          g/l
+                                        C4 0.12                   (–)         (–)               (–)               (–)            0.14-0.54
+
+INR – international normalized ratio; LDH – lactate dehydrogenase; Ig – immunoglobulin; (–) – not tested.
+
+
+   A                                                                                 B
+
+
+
+
+Figure 1. (A, B) Photomicrographs of peripheral blood film showing spherocytes, nucleated red blood cells, and polychromasia,
+           consistent with a hemolytic process.
+
+
+outpatient follow-up by Hematology and Oncology teams. Two                          rare irAE, about 2 weeks after his first dose of pembrolizum-
+weeks after discharge from the hospital, his hemoglobin, bili-                      ab. He made a remarkable clinical and biochemical recovery
+rubin, and LDH levels were 114 g/l, 9 umol/l, and 860 u/l, re-                      after prompt initiation of immunosuppressant, IVIG, and other
+spectively. Given the severity of his irAE, immunotherapy was                       supportive measures. This case highlights the fact that, despite
+permanently discontinued.                                                           the benefits of immunotherapy in a growing number of cancer
+                                                                                    types, the risks of common and rare immune-related adverse
+                                                                                    events like AIHA remain a real clinical challenge. The exact in-
+Discussion                                                                          cidence of immunotherapy-induced AIHA is uncertain, possibly
+                                                                                    due to underdiagnosis, heterogenous clinical and pathologic
+This patient with advanced lung cancer presented with clin-                         patterns, and increasing use of ICIs [10]. Previous studies have
+ico-pathologic features of immunotherapy-induced AIHA, a                            shown hematological irAEs to be extremely rare (0.5%), with
+
+
+
+
+               This work is licensed under Creative Common Attribution-                      Indexed in: [PMC] [PubMed] [Emerging Sources Citation Index (ESCI)]
+         NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)   e946630-3         [Web of Science by Clarivate]
+                                                                                                                                              Adeoye F.W. et al:
+                                                                                                               Autoimmune hemolytic anemia from pembrolizumab
+                                                                                                                            © Am J Case Rep, 2025; 26: e946630
+
+
+
+
+immunotherapy-induced AIHA comprising 16-26% of these,                          The management of this irAE may be challenging for clini-
+yet with fatality rates up to 16.7% [11-13].                                    cians, as it is a rare entity. The European Society for Medical
+                                                                                Oncology therefore recommends early consultation with a
+While the pathogenesis of this entity remains unclear, ICI-                     hematologist to guide investigation and management [14].
+induced immunologic dysregulation leading to autoantibody                       According to the Society for Immunotherapy of Cancer (SITC)
+formation, blunting of regulatory T-cell activity, and activation               Toxicity Management Working Group, the general recommen-
+of nascent T-cell clones has been theorized [10]. These auto-                   dation for management of irAEs entails steroid therapy with
+antibodies directed against own red blood cells, cause clinical                 slow taper as a first-line approach, and use of immunomod-
+and laboratory features of hemolysis as evidenced by anemia,                    ulatory medications in refractory cases [15]. Immunotherapy
+low serum haptoglobin levels, unconjugated hyperbilirubine-                     should be discontinued in patients with life-threatening pre-
+mia, elevated LDH, reticulocytosis, and, commonly, positive                     sentations or in severe cases without prompt resolution of he-
+direct antiglobulin test [10]. It is important to bear in mind                  molysis [15]. This guideline, however, makes no firm recom-
+that, although our patient had positive IgG and complement                      mendation of steroid dose specifically in ICI-induced AIHA, to
+C3d, this is not always the case. For instance, a literature re-                allow for individualized treatment. Systemic corticosteroids
+view by Tanios et al suggests that out of 12 published cases                    with prednisolone 0.5-2 mg/kg, or methylprednisolone equiv-
+of ICI-induced AIHA, complements and IgG were only detect-                      alent dose, has been recommended as a first-line approach,
+ed on the red cell surface in 3 and 9 cases, respectively [13].                 with consideration of IVIG as an adjunctive therapy in severe
+                                                                                cases of warm AIHA [10,14]. Due to the severity of our pa-
+ICI-induced AIHA may also pose a diagnostic challenge in an                     tient’s presentation, there was early involvement of a spe-
+acute medical setting for different reasons. Apart from its rari-               cialist hematology team, prompt initiation of immunosup-
+ty and heterogenous clinical and laboratory findings, anemia in                 pression with high-dose steroid therapy (methylprednisolone
+cancer patients may be due to a myriad of other etiologies [10].                500 mg/day), and IVIG. There was rapid resolution of hemo-
+In this patient, although other differential diagnoses, including               lysis, as evidenced by decline in LDH and bilirubin levels, and
+acute upper-gastrointestinal bleeding, cancer-related anemia,                   symptomatic improvement after a few days. Upon discharge,
+acute viremia, disease progression, and disseminated intravas-                  steroid dose was tapered slowly under careful monitoring in
+cular coagulopathy, were considered, the clinical and labora-                   the outpatient clinic.
+tory features were more in keeping with a hemolytic process.
+Furthermore, the onset time of AIHA from start of immuno-                       In steroid-refractory cases, we observed some variability in
+therapy appears variable. A recent review of literature showed                  practice in the literature. For instance, in the case reported
+a median onset time of 10 weeks (range, 2-78 weeks) [13].                       by Baek and Chae, there was no resolution of hemolysis de-
+AIHA occurring 17 days after the first cycle of pembrolizum-                    spite administering first-line high-dose steroid (prednisolone
+ab was reported in an 86-year-old Japanese man with a pre-                      1 mg/kg/day) for over a week [8]. This steroid-refractory pem-
+existing AIHA [7]. However, unlike our case, the patient had                    brolizumab-induced AIHA required steroid dose escalation
+an underlying AIHA exacerbated by ICI therapy. Another case                     and plasmapheresis 5 times on alternate days for 2 weeks,
+of early-onset AIHA was reported in a 70-year-old man with                      with good outcome [8]. Another patient who had AIHA re-
+metastatic lung cancer who developed progressive dyspnea                        lapse following immunotherapy rechallenge was refractory to
+and hyperbilirubinemia 2 weeks after starting pembrolizum-                      a repeat course of high-dose steroid, but ultimately had res-
+ab, who was also receiving concurrent doublet cytotoxic che-                    olution of hemolysis with addition of weekly rituximab over
+motherapy with cisplatin and pemetrexed, unlike our patient,                    4 weeks [16]. Similarly, Hasanov et al reported a case of cold
+who received pembrolizumab monotherapy [8]. Johnstone et                        agglutinin AIHA syndrome secondary to nivolumab in a meta-
+al also reported a case of pembrolizumab-induced AIHA in a                      static urothelial cancer patient after the seventh cycle of im-
+patient who presented with hemoglobin 74 g/l (from his base-                    munotherapy, which initially did not respond to steroids but
+line of 110 g/l) after 13 cycles [9]. Our patient’s symptoms be-                was then treated successfully with rituximab [17]. The evidence
+gan less than 2 weeks after his first cycle of immunotherapy,                   for use of other agents, including azathioprine, mycopheno-
+representing an early-onset presentation of AIHA. Clinicians                    late mofetil, and cyclophosphamide, in this setting currently
+must therefore be aware of the diverse clinical presentations                   remains weak and requires more investigations [10]. The ob-
+and variable onset times of this disorder. New-onset severe                     served variability in practice in second-line treatment shows
+anemia and jaundice in cancer patients receiving ICIs like pem-                 the need for more studies in this area to determine the opti-
+brolizumab should prompt physicians to consider a diagnosis                     mal treatment approach.
+of ICI-induced AIHA regardless of the duration of treatment,
+as this could be potentially fatal if not recognized early and                  The decision to rechallenge patients with immune checkpoint
+managed appropriately.                                                          inhibitors after recovering from AIHA should be carefully made
+                                                                                in consideration of the risks and benefits, as reinitiation of
+
+
+
+
+              This work is licensed under Creative Common Attribution-                   Indexed in: [PMC] [PubMed] [Emerging Sources Citation Index (ESCI)]
+        NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)   e946630-4      [Web of Science by Clarivate]
+Adeoye F.W. et al:
+Autoimmune hemolytic anemia from pembrolizumab
+© Am J Case Rep, 2025; 26: e946630
+
+
+
+
+immunotherapy comes with a significant risk of exacerbation                           use of ICIs globally for various indications, this entity is likely
+of symptoms [14]. Our patient was not rechallenged with im-                           to be seen more frequently in acute-care settings. Therefore, it
+munotherapy given the severity of his adverse effect.                                 is important for physicians to be aware of this entity and con-
+                                                                                      sider it as a differential diagnosis of new-onset anemia and
+While the exact underlying factors predisposing certain groups                        jaundice in patients on immunotherapy regardless of the num-
+of patients to this rare irAE remain uncertain, it is apparent that                   ber of cycles. Early specialist involvement and prompt initia-
+ICI-associated AIHA is observed more in patients with certain                         tion of immunosuppressants and other supportive care mea-
+cancer types, with melanoma and lung cancers accounting for                           sures is vital to ensuring good outcomes.
+about two-thirds (41% and 26%, respectively) of all cases [13].
+Furthermore, most cases of ICI-induced AIHA (63.2%) are re-                           Acknowledgements
+lated to nivolumab, and less frequently with pembrolizumab
+and anti-CTLA-4 agents [13]. Patients with underlying hema-                           Special thanks to Mark Brookes, Principal Biomedical Scientist,
+tological disorders such as chronic lymphocytic leukemia are                          Haematology Department, Basildon University Hospital, for pro-
+at higher risk of developing this irAE [7,18].                                        viding photomicrographs of the peripheral blood films (Figure 1).
+
+Overall, we postulate that the occurrence of AIHA in patients                         Institution Where Work Was Done
+with different cancer types and in association with different
+ICIs could suggest that there may be inherent genetic or other                        Basildon University Hospital, Nethermayne, Basildon, United
+acquired characteristics that increase certain individuals’ risks                     Kingdom.
+of developing this condition. Further studies to establish these
+specific predisposing factors as clinically validated biomarkers                      Consent Declaration
+are needed to identify higher-risk individuals.
+                                                                                      Written consent was obtained from next-of-kin (wife), as pa-
+                                                                                      tient is now dead.
+Conclusions
+                                                                                      Declaration of Figures’ Authenticity
+This report describes a rare occurrence of AIHA shortly after
+a first dose of pembrolizumab, an immune checkpoint inhibi-                           All figures submitted have been created by the authors who
+tor. While ICI-induced AIHA is rare, it can be rapidly fatal if not                   confirm that the images are original with no duplication and
+recognized early and managed appropriately. With increasing                           have not been previously published in whole or in part.
+
+References:
+  1. Darvin P, Toor SM, Sasidharan Nair V, Elkord E. Immune checkpoint inhibitors:    10. Hwang SR, Saliba AN, Wolanskyj-Spinner AP. Immunotherapy-associated auto-
+     Recent progress and potential biomarkers. Exp Mol Med. 2018;50(12):1-11              immune hemolytic anemia. Hematol Oncol Clin North Am. 2022;36(2):365-80
+  2. Schaub J, Tang SC. Beyond checkpoint inhibitors: The three generations of        11. Delanoy N, Michot JM, Comont T, et al. Haematological immune-related
+     immunotherapy. Clin Exp Med. 2025;25(1):43                                           adverse events induced by anti-PD-1 or anti-PD-L1 immunotherapy: A de-
+  3. Flynn JP, Gerriets V. Pembrolizumab. [Updated 2023 Jun 26]. In: StatPearls           scriptive observational study. Lancet Haematol. 2019;6:e48-57
+     [Internet]. Treasure Island (FL): StatPearls Publishing; 2025. Available from:   12. Michot JM, Lazarovici J, Tieu A, et al. Haematological immune-related ad-
+     https://www.ncbi.nlm.nih.gov/books/NBK546616/                                        verse events with immune checkpoint inhibitors, how to manage? Eur J
+  4. Cortes J, Cescon DW, Rugo HS, et al. Pembrolizumab plus chemotherapy ver-            Cancer. 2019;122:72-90
+     sus placebo plus chemotherapy for previously untreated locally recurrent         13. Tanios GE, Doley PB, Munker R. Autoimmune hemolytic anemia associat-
+     inoperable or metastatic triple-negative breast cancer (KEYNOTE-355): A              ed with the use of immune checkpoint inhibitors for cancer: 68 cases from
+     randomised, placebo-controlled, double-blind, phase 3 clinical trial: Lancet,        the Food and Drug Administration database and review. Eur J Haematol.
+     2020; 396(10265);1817-28                                                             2019;102:157-62
+  5. Reck M, Rodríguez-Abreu D, Robinson AG, et al. Updated analysis of               14. Haanen J, Obeid M, Spain L. Management of toxicities from immunother-
+     KEYNOTE-024: Pembrolizumab versus platinum-based chemotherapy for                    apy: ESMO Clinical Practice Guideline for diagnosis, treatment and follow-
+     advanced non-small-cell lung cancer with PD-L1 tumor proportion score of             up. Ann Oncol. 2022;33(12):1217-38
+     50% or greater. J Clin Oncol. 2019;37(7):537-46                                  15. Puzanov I, Diab A, Abdallah K, et al. Society for Immunotherapy of Cancer
+  6. Leaf RK, Ferreri C, Rangachari D, et al. Clinical and laboratory features of         Toxicity Management Working Group. Managing toxicities associated with
+     autoimmune hemolytic anemia associated with immune checkpoint inhib-                 immune checkpoint inhibitors: consensus recommendations from the Society
+     itors. Am J Hematol. 2019;94(5):563-74                                               for Immunotherapy of Cancer (SITC) Toxicity Management Working Group.
+  7. Ogawa K, Ito J, Fujimoto D, et al. Exacerbation of autoimmune hemolytic              J Immunother Cancer. 2017;5(1):95
+     anemia induced by the first dose of programmed death-1 inhibitor pem-            16. Khan U, Ali F, Khurram MS, et al. Immunotherapy-associated autoimmune
+     brolizumab: A case report. Invest New Drugs. 2018;36(3):509-12                       hemolytic anemia. J Immunother Cancer. 2017;5:15
+  8. Baek DW, Chae YS. Pembrolizumab-related autoimmune hemolytic anemia              17. Hasanov M, Konoplev SN, Hernandez CMR. Nivolumab-induced cold agglutinin
+     in a patient with metastatic lung adenocarcinoma: A case report. Yeungnam            syndrome successfully treated with rituximab. Blood Adv. 2018;2(15):1865-68
+     Univ J Med. 2021;38(4):366-70                                                    18. Smithy JW, Pianko MJ, Maher C, et al. Checkpoint blockade in melanoma
+  9. Johnstone P, Khan O. Pembrolizumab-associated autoimmune haemolytic                  patients with underlying chronic lymphocytic leukemia. J Immunother.
+     anaemia. BMJ Case Rep. 2019;12(10):e229064                                           2021;44:9-15
+
+
+
+
+                This work is licensed under Creative Common Attribution-                        Indexed in: [PMC] [PubMed] [Emerging Sources Citation Index (ESCI)]
+          NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)      e946630-5        [Web of Science by Clarivate]
+

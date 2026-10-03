@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_002",
+  "source_sha256": "21523f7a83638db5b4056e153fd73f727da541b8599f6bb8f3e7a0ddf9fe2bf9",
+  "published_final_diagnosis": {
+    "label": "Isolated atrial myocarditis with atrial standstill and atrioventricular block",
+    "codes": [],
+    "source_locators": [
+      "Case presentation, investigation, management and follow-up, pp. 2–6"
+    ]
+  },
+  "diagnostic_differential_from_source": [
+    "Pulmonary embolism",
+    "Severe mitral regurgitation",
+    "Right ventricular infarction",
+    "Other cause of bradyarrhythmia"
+  ],
+  "source_treatment": [
+    {
+      "description": "Furosemide and eplerenone",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "description": "Isoprenaline for symptomatic bradycardia",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "description": "Cardiac resynchronization pacemaker",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    }
+  ],
+  "source_disposition": {
+    "category": "ward",
+    "outcome": "Discharged after diuresis; electrophysiology study on readmission; interval reassessment of anticoagulation.",
+    "source_locators": [
+      "Case presentation, investigation, management and follow-up, pp. 2–6"
+    ]
+  },
+  "key_guideline_decisions": [
+    {
+      "guideline_ref": "esc_pacing_2021",
+      "status": "candidate_for_adjudication",
+      "note": "See docs/guideline_sources.yaml; applicability and alternative care require clinician review."
+    }
+  ],
+  "distractors": [
+    "High D-dimer and right-ventricular strain initially favored pulmonary embolism."
+  ],
+  "critical_safety_points": [
+    "Symptomatic bradycardia and AV block need prompt stabilization and pacing assessment.",
+    "Do not diagnose PE solely from elevated D-dimer.",
+    "Anticoagulation decision with atrial standstill requires explicit individualized assessment."
+  ],
+  "fact_provenance": [
+    {
+      "fact_id": "hpi_001",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "pmh_002",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "meds_003",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "ecg_005",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "lab_006",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "lab_007",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "lab_008",
+      "source_locators": [
+        "PDF p. 3, paragraph following Figure 2"
+      ]
+    },
+    {
+      "fact_id": "ecg_009",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "imaging_010",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "imaging_011",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_012",
+      "source_locators": [
+        "PDF p. 3, right-heart catheterization paragraph"
+      ]
+    },
+    {
+      "fact_id": "ecg_013",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "imaging_014",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "ecg_015",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    }
+  ],
+  "source_uncertainties": [
+    "Unspecified dose, timing or normal findings were not inferred.",
+    "Published management is descriptive and requires separate normative review."
+  ],
+  "clinician_signoff": {
+    "reviewer_id": null,
+    "signed_at": null,
+    "status": "pending"
+  }
+}

@@ -1,0 +1,1615 @@
+{
+  "schema_version": "1.0.0",
+  "corpus_version": "mvp10_v3_2026-09-26",
+  "protocol_version": "mvp10_closedbook_v5_2026-09-26",
+  "evaluation": {
+    "version": "evaluation-v2",
+    "diagnosis_ruleset_version": "diagnostic-concepts-2026-09-26-v2",
+    "diagnosis_ruleset_sha256": "b2da153cd8d65df6658f45e715b0287cc4956a040bf62fbb8ddeb09d261df9fc",
+    "scorer_sha256": "c9975c7ca126de8b1eb8fa7a3bdaa33cd48f755cdc803498e04c2639514e1172",
+    "analyzer_sha256": "d7460bdacc69be6fb3aa738c5d21d12188ba0179a69c7cd304faa575dbe2248b"
+  },
+  "expected_trajectories": 150,
+  "observed_terminal_trajectories": 150,
+  "physician_review_state": "pending",
+  "models": {
+    "qwen3.5:9b-mlx": {
+      "observed_runs": 30,
+      "expected_runs": 30,
+      "complete_panel": true,
+      "cases": {
+        "case_001": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            12,
+            13,
+            9
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_002": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            4,
+            6,
+            5
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_003": {
+          "runs": 3,
+          "completed": 1,
+          "concept_matches": 0,
+          "tool_calls": [
+            13,
+            11,
+            6
+          ],
+          "stopping_reasons": [
+            "completed",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_004": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            3,
+            3,
+            10
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_005": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            8,
+            8,
+            10
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_006": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            6,
+            6,
+            6
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_007": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            17,
+            16,
+            40
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "max_actions"
+          ]
+        },
+        "case_008": {
+          "runs": 3,
+          "completed": 2,
+          "concept_matches": 2,
+          "tool_calls": [
+            12,
+            11,
+            13
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_009": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            11,
+            12,
+            12
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_010": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            6,
+            6,
+            40
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "max_actions"
+          ]
+        }
+      },
+      "metrics": {
+        "completed": {
+          "case_mean": 0.3,
+          "case_cluster_bootstrap_95": [
+            0.06666666666666667,
+            0.5666666666666667
+          ],
+          "evaluable_cases": 10,
+          "provisional": false
+        },
+        "published_diagnosis_exact_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_concept_match": {
+          "case_mean": 0.06666666666666667,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.2
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_top3_concept": {
+          "case_mean": 0.06666666666666667,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.2
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_concept_match": {
+          "case_mean": 0.06666666666666667,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.2
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_top3_concept": {
+          "case_mean": 0.06666666666666667,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.2
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "disposition_published_exact_match": {
+          "case_mean": 0.23809523809523808,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        }
+      },
+      "total_tool_calls": 335,
+      "median_run_seconds": 54.6225,
+      "diagnosis_emitted_runs": 9,
+      "target_match_given_diagnosis": 0.2222222222222222,
+      "process": {
+        "mean_lab_requests": 1.0666666666666667,
+        "mean_imaging_requests": 0.5,
+        "mean_procedure_orders": 0.26666666666666666,
+        "mean_medication_orders": 0.13333333333333333,
+        "mean_steps_to_benchmark_diagnosis": 9.0,
+        "invalid_tool_calls": 3,
+        "failed_tool_calls": 3,
+        "reported_input_tokens": 874371.0,
+        "reported_cached_input_tokens": null,
+        "reported_cache_creation_input_tokens": null,
+        "reported_output_tokens": 27689.0,
+        "reported_reasoning_tokens": null,
+        "reported_cost_equivalent_usd": 0.0,
+        "mean_local_tokens_per_second": 18.282588645704777
+      }
+    },
+    "qwen3:8b": {
+      "observed_runs": 30,
+      "expected_runs": 30,
+      "complete_panel": true,
+      "cases": {
+        "case_001": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            3,
+            3,
+            3
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_002": {
+          "runs": 3,
+          "completed": 1,
+          "concept_matches": 0,
+          "tool_calls": [
+            7,
+            7,
+            10
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "completed"
+          ]
+        },
+        "case_003": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            9,
+            9,
+            9
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_004": {
+          "runs": 3,
+          "completed": 2,
+          "concept_matches": 0,
+          "tool_calls": [
+            8,
+            8,
+            25
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_005": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            5,
+            11,
+            5
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_006": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            14,
+            9,
+            15
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_007": {
+          "runs": 3,
+          "completed": 1,
+          "concept_matches": 0,
+          "tool_calls": [
+            10,
+            20,
+            6
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "completed",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_008": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            7,
+            7,
+            7
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_009": {
+          "runs": 3,
+          "completed": 1,
+          "concept_matches": 0,
+          "tool_calls": [
+            6,
+            6,
+            6
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "completed"
+          ]
+        },
+        "case_010": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            7,
+            7,
+            7
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        }
+      },
+      "metrics": {
+        "completed": {
+          "case_mean": 0.4666666666666667,
+          "case_cluster_bootstrap_95": [
+            0.2333333333333333,
+            0.7333333333333333
+          ],
+          "evaluable_cases": 10,
+          "provisional": false
+        },
+        "published_diagnosis_exact_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_concept_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_top3_concept": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_concept_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_top3_concept": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "disposition_published_exact_match": {
+          "case_mean": 0.09523809523809523,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        }
+      },
+      "total_tool_calls": 256,
+      "median_run_seconds": 25.424500000000002,
+      "diagnosis_emitted_runs": 14,
+      "target_match_given_diagnosis": 0.0,
+      "process": {
+        "mean_lab_requests": 2.9,
+        "mean_imaging_requests": 0.9333333333333333,
+        "mean_procedure_orders": 0.03333333333333333,
+        "mean_medication_orders": 0.0,
+        "mean_steps_to_benchmark_diagnosis": null,
+        "invalid_tool_calls": 79,
+        "failed_tool_calls": 80,
+        "reported_input_tokens": 559641.0,
+        "reported_cached_input_tokens": null,
+        "reported_cache_creation_input_tokens": null,
+        "reported_output_tokens": 13546.0,
+        "reported_reasoning_tokens": null,
+        "reported_cost_equivalent_usd": 0.0,
+        "mean_local_tokens_per_second": 22.170880750539958
+      }
+    },
+    "llama3.1:8b": {
+      "observed_runs": 30,
+      "expected_runs": 30,
+      "complete_panel": true,
+      "cases": {
+        "case_001": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            4,
+            4,
+            4
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_002": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            40,
+            40,
+            40
+          ],
+          "stopping_reasons": [
+            "max_actions",
+            "max_actions",
+            "max_actions"
+          ]
+        },
+        "case_003": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            40,
+            40,
+            40
+          ],
+          "stopping_reasons": [
+            "max_actions",
+            "max_actions",
+            "max_actions"
+          ]
+        },
+        "case_004": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            40,
+            12,
+            40
+          ],
+          "stopping_reasons": [
+            "max_actions",
+            "repeated_unproductive_call",
+            "max_actions"
+          ]
+        },
+        "case_005": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            6,
+            6,
+            6
+          ],
+          "stopping_reasons": [
+            "repeated_unproductive_call",
+            "repeated_unproductive_call",
+            "repeated_unproductive_call"
+          ]
+        },
+        "case_006": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            40,
+            40,
+            40
+          ],
+          "stopping_reasons": [
+            "max_actions",
+            "max_actions",
+            "max_actions"
+          ]
+        },
+        "case_007": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            40,
+            40,
+            40
+          ],
+          "stopping_reasons": [
+            "max_actions",
+            "max_actions",
+            "max_actions"
+          ]
+        },
+        "case_008": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            40,
+            8,
+            40
+          ],
+          "stopping_reasons": [
+            "max_actions",
+            "repeated_unproductive_call",
+            "max_actions"
+          ]
+        },
+        "case_009": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            40,
+            40,
+            40
+          ],
+          "stopping_reasons": [
+            "max_actions",
+            "max_actions",
+            "max_actions"
+          ]
+        },
+        "case_010": {
+          "runs": 3,
+          "completed": 0,
+          "concept_matches": 0,
+          "tool_calls": [
+            40,
+            40,
+            40
+          ],
+          "stopping_reasons": [
+            "max_actions",
+            "max_actions",
+            "max_actions"
+          ]
+        }
+      },
+      "metrics": {
+        "completed": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": false
+        },
+        "published_diagnosis_exact_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_concept_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_top3_concept": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_concept_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_top3_concept": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "disposition_published_exact_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        }
+      },
+      "total_tool_calls": 930,
+      "median_run_seconds": 63.234,
+      "diagnosis_emitted_runs": 0,
+      "target_match_given_diagnosis": null,
+      "process": {
+        "mean_lab_requests": 9.366666666666667,
+        "mean_imaging_requests": 0.13333333333333333,
+        "mean_procedure_orders": 0.5,
+        "mean_medication_orders": 0.0,
+        "mean_steps_to_benchmark_diagnosis": null,
+        "invalid_tool_calls": 818,
+        "failed_tool_calls": 818,
+        "reported_input_tokens": 2594413.0,
+        "reported_cached_input_tokens": null,
+        "reported_cache_creation_input_tokens": null,
+        "reported_output_tokens": 29667.0,
+        "reported_reasoning_tokens": null,
+        "reported_cost_equivalent_usd": 0.0,
+        "mean_local_tokens_per_second": 25.440741539828124
+      }
+    },
+    "gpt-6-sol": {
+      "observed_runs": 30,
+      "expected_runs": 30,
+      "complete_panel": true,
+      "cases": {
+        "case_001": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 1,
+          "tool_calls": [
+            13,
+            13,
+            13
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_002": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            17,
+            17,
+            17
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_003": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            9,
+            12,
+            13
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_004": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            13,
+            14,
+            16
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_005": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 1,
+          "tool_calls": [
+            12,
+            12,
+            12
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_006": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            16,
+            16,
+            14
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_007": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 1,
+          "tool_calls": [
+            24,
+            17,
+            17
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_008": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            6,
+            8,
+            7
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_009": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 1,
+          "tool_calls": [
+            9,
+            11,
+            10
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_010": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 1,
+          "tool_calls": [
+            15,
+            14,
+            14
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        }
+      },
+      "metrics": {
+        "completed": {
+          "case_mean": 1.0,
+          "case_cluster_bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": false
+        },
+        "published_diagnosis_exact_match": {
+          "case_mean": 0.03333333333333333,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.1
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_concept_match": {
+          "case_mean": 0.4,
+          "case_cluster_bootstrap_95": [
+            0.19999999999999998,
+            0.6
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_top3_concept": {
+          "case_mean": 0.4,
+          "case_cluster_bootstrap_95": [
+            0.19999999999999998,
+            0.6
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_concept_match": {
+          "case_mean": 0.4666666666666666,
+          "case_cluster_bootstrap_95": [
+            0.23333333333333334,
+            0.7
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_top3_concept": {
+          "case_mean": 0.4666666666666666,
+          "case_cluster_bootstrap_95": [
+            0.23333333333333334,
+            0.7
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "disposition_published_exact_match": {
+          "case_mean": 0.5714285714285714,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        }
+      },
+      "total_tool_calls": 401,
+      "median_run_seconds": 170.351,
+      "diagnosis_emitted_runs": 30,
+      "target_match_given_diagnosis": 0.4666666666666667,
+      "process": {
+        "mean_lab_requests": 1.5333333333333334,
+        "mean_imaging_requests": 1.5666666666666667,
+        "mean_procedure_orders": 1.7666666666666666,
+        "mean_medication_orders": 0.3333333333333333,
+        "mean_steps_to_benchmark_diagnosis": 8.333333333333334,
+        "invalid_tool_calls": 0,
+        "failed_tool_calls": 0,
+        "reported_input_tokens": 6703197.0,
+        "reported_cached_input_tokens": 5630592.0,
+        "reported_cache_creation_input_tokens": null,
+        "reported_output_tokens": 138480.0,
+        "reported_reasoning_tokens": 103778.0,
+        "reported_cost_equivalent_usd": null,
+        "mean_local_tokens_per_second": null
+      }
+    },
+    "claude-opus-5-5": {
+      "observed_runs": 30,
+      "expected_runs": 30,
+      "complete_panel": true,
+      "cases": {
+        "case_001": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 2,
+          "tool_calls": [
+            12,
+            13,
+            13
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_002": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 0,
+          "tool_calls": [
+            16,
+            14,
+            14
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_003": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            13,
+            13,
+            13
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_004": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            10,
+            9,
+            8
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_005": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            7,
+            7,
+            10
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_006": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            12,
+            13,
+            10
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_007": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 1,
+          "tool_calls": [
+            27,
+            20,
+            17
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_008": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            8,
+            8,
+            8
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_009": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            10,
+            11,
+            10
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        },
+        "case_010": {
+          "runs": 3,
+          "completed": 3,
+          "concept_matches": 3,
+          "tool_calls": [
+            12,
+            14,
+            15
+          ],
+          "stopping_reasons": [
+            "completed",
+            "completed",
+            "completed"
+          ]
+        }
+      },
+      "metrics": {
+        "completed": {
+          "case_mean": 1.0,
+          "case_cluster_bootstrap_95": [
+            1.0,
+            1.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": false
+        },
+        "published_diagnosis_exact_match": {
+          "case_mean": 0.0,
+          "case_cluster_bootstrap_95": [
+            0.0,
+            0.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_concept_match": {
+          "case_mean": 0.7999999999999999,
+          "case_cluster_bootstrap_95": [
+            0.5666666666666667,
+            1.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "published_diagnosis_top3_concept": {
+          "case_mean": 0.7999999999999999,
+          "case_cluster_bootstrap_95": [
+            0.5666666666666667,
+            1.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_concept_match": {
+          "case_mean": 0.7999999999999999,
+          "case_cluster_bootstrap_95": [
+            0.5666666666666667,
+            1.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "benchmark_target_top3_concept": {
+          "case_mean": 0.7999999999999999,
+          "case_cluster_bootstrap_95": [
+            0.5666666666666667,
+            1.0
+          ],
+          "evaluable_cases": 10,
+          "provisional": true
+        },
+        "disposition_published_exact_match": {
+          "case_mean": 0.380952380952381,
+          "case_cluster_bootstrap_95": null,
+          "evaluable_cases": 7,
+          "provisional": true
+        }
+      },
+      "total_tool_calls": 367,
+      "median_run_seconds": 85.634,
+      "diagnosis_emitted_runs": 30,
+      "target_match_given_diagnosis": 0.8,
+      "process": {
+        "mean_lab_requests": 1.8333333333333333,
+        "mean_imaging_requests": 1.3333333333333333,
+        "mean_procedure_orders": 1.2,
+        "mean_medication_orders": 0.6,
+        "mean_steps_to_benchmark_diagnosis": 8.541666666666666,
+        "invalid_tool_calls": 0,
+        "failed_tool_calls": 0,
+        "reported_input_tokens": 744.0,
+        "reported_cached_input_tokens": 592596.0,
+        "reported_cache_creation_input_tokens": 1743447.0,
+        "reported_output_tokens": 205091.0,
+        "reported_reasoning_tokens": null,
+        "reported_cost_equivalent_usd": 18.170891199999996,
+        "mean_local_tokens_per_second": null
+      }
+    }
+  },
+  "paired_differences": {
+    "completed: qwen3.5:9b-mlx minus qwen3:8b": {
+      "mean": -0.16666666666666663,
+      "case_cluster_bootstrap_95": [
+        -0.5000000000000001,
+        0.2
+      ],
+      "case_differences": [
+        0.0,
+        -0.3333333333333333,
+        -0.6666666666666667,
+        -0.6666666666666666,
+        1.0,
+        0.0,
+        -0.3333333333333333,
+        -0.33333333333333337,
+        0.6666666666666667,
+        -1.0
+      ],
+      "provisional": false
+    },
+    "completed: qwen3.5:9b-mlx minus llama3.1:8b": {
+      "mean": 0.3,
+      "case_cluster_bootstrap_95": [
+        0.06666666666666667,
+        0.5666666666666667
+      ],
+      "case_differences": [
+        0.0,
+        0.0,
+        0.3333333333333333,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.6666666666666666,
+        1.0,
+        0.0
+      ],
+      "provisional": false
+    },
+    "completed: qwen3.5:9b-mlx minus gpt-6-sol": {
+      "mean": -0.7,
+      "case_cluster_bootstrap_95": [
+        -0.9333333333333333,
+        -0.4333333333333334
+      ],
+      "case_differences": [
+        -1.0,
+        -1.0,
+        -0.6666666666666667,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -0.33333333333333337,
+        0.0,
+        -1.0
+      ],
+      "provisional": false
+    },
+    "completed: qwen3.5:9b-mlx minus claude-opus-5-5": {
+      "mean": -0.7,
+      "case_cluster_bootstrap_95": [
+        -0.9333333333333333,
+        -0.4333333333333334
+      ],
+      "case_differences": [
+        -1.0,
+        -1.0,
+        -0.6666666666666667,
+        -1.0,
+        0.0,
+        -1.0,
+        -1.0,
+        -0.33333333333333337,
+        0.0,
+        -1.0
+      ],
+      "provisional": false
+    },
+    "completed: qwen3:8b minus llama3.1:8b": {
+      "mean": 0.4666666666666667,
+      "case_cluster_bootstrap_95": [
+        0.2333333333333333,
+        0.7333333333333333
+      ],
+      "case_differences": [
+        0.0,
+        0.3333333333333333,
+        1.0,
+        0.6666666666666666,
+        0.0,
+        0.0,
+        0.3333333333333333,
+        1.0,
+        0.3333333333333333,
+        1.0
+      ],
+      "provisional": false
+    },
+    "completed: qwen3:8b minus gpt-6-sol": {
+      "mean": -0.5333333333333334,
+      "case_cluster_bootstrap_95": [
+        -0.7666666666666668,
+        -0.2666666666666667
+      ],
+      "case_differences": [
+        -1.0,
+        -0.6666666666666667,
+        0.0,
+        -0.33333333333333337,
+        -1.0,
+        -1.0,
+        -0.6666666666666667,
+        0.0,
+        -0.6666666666666667,
+        0.0
+      ],
+      "provisional": false
+    },
+    "completed: qwen3:8b minus claude-opus-5-5": {
+      "mean": -0.5333333333333334,
+      "case_cluster_bootstrap_95": [
+        -0.7666666666666668,
+        -0.2666666666666667
+      ],
+      "case_differences": [
+        -1.0,
+        -0.6666666666666667,
+        0.0,
+        -0.33333333333333337,
+        -1.0,
+        -1.0,
+        -0.6666666666666667,
+        0.0,
+        -0.6666666666666667,
+        0.0
+      ],
+      "provisional": false
+    },
+    "completed: llama3.1:8b minus gpt-6-sol": {
+      "mean": -1.0,
+      "case_cluster_bootstrap_95": [
+        -1.0,
+        -1.0
+      ],
+      "case_differences": [
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "provisional": false
+    },
+    "completed: llama3.1:8b minus claude-opus-5-5": {
+      "mean": -1.0,
+      "case_cluster_bootstrap_95": [
+        -1.0,
+        -1.0
+      ],
+      "case_differences": [
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "provisional": false
+    },
+    "completed: gpt-6-sol minus claude-opus-5-5": {
+      "mean": 0.0,
+      "case_cluster_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "case_differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "provisional": false
+    },
+    "benchmark_target_concept_match: qwen3.5:9b-mlx minus qwen3:8b": {
+      "mean": 0.06666666666666667,
+      "case_cluster_bootstrap_95": [
+        0.0,
+        0.2
+      ],
+      "case_differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.6666666666666666,
+        0.0,
+        0.0
+      ],
+      "provisional": true
+    },
+    "benchmark_target_concept_match: qwen3.5:9b-mlx minus llama3.1:8b": {
+      "mean": 0.06666666666666667,
+      "case_cluster_bootstrap_95": [
+        0.0,
+        0.2
+      ],
+      "case_differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.6666666666666666,
+        0.0,
+        0.0
+      ],
+      "provisional": true
+    },
+    "benchmark_target_concept_match: qwen3.5:9b-mlx minus gpt-6-sol": {
+      "mean": -0.4,
+      "case_cluster_bootstrap_95": [
+        -0.6,
+        -0.20000000000000004
+      ],
+      "case_differences": [
+        -0.3333333333333333,
+        0.0,
+        -1.0,
+        0.0,
+        -0.3333333333333333,
+        -1.0,
+        -0.3333333333333333,
+        -0.33333333333333337,
+        -0.3333333333333333,
+        -0.3333333333333333
+      ],
+      "provisional": true
+    },
+    "benchmark_target_concept_match: qwen3.5:9b-mlx minus claude-opus-5-5": {
+      "mean": -0.7333333333333332,
+      "case_cluster_bootstrap_95": [
+        -0.9333333333333333,
+        -0.5
+      ],
+      "case_differences": [
+        -0.6666666666666666,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -0.3333333333333333,
+        -0.33333333333333337,
+        -1.0,
+        -1.0
+      ],
+      "provisional": true
+    },
+    "benchmark_target_concept_match: qwen3:8b minus llama3.1:8b": {
+      "mean": 0.0,
+      "case_cluster_bootstrap_95": [
+        0.0,
+        0.0
+      ],
+      "case_differences": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "provisional": true
+    },
+    "benchmark_target_concept_match: qwen3:8b minus gpt-6-sol": {
+      "mean": -0.4666666666666666,
+      "case_cluster_bootstrap_95": [
+        -0.7,
+        -0.23333333333333334
+      ],
+      "case_differences": [
+        -0.3333333333333333,
+        0.0,
+        -1.0,
+        0.0,
+        -0.3333333333333333,
+        -1.0,
+        -0.3333333333333333,
+        -1.0,
+        -0.3333333333333333,
+        -0.3333333333333333
+      ],
+      "provisional": true
+    },
+    "benchmark_target_concept_match: qwen3:8b minus claude-opus-5-5": {
+      "mean": -0.7999999999999999,
+      "case_cluster_bootstrap_95": [
+        -1.0,
+        -0.5666666666666667
+      ],
+      "case_differences": [
+        -0.6666666666666666,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -0.3333333333333333,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "provisional": true
+    },
+    "benchmark_target_concept_match: llama3.1:8b minus gpt-6-sol": {
+      "mean": -0.4666666666666666,
+      "case_cluster_bootstrap_95": [
+        -0.7,
+        -0.23333333333333334
+      ],
+      "case_differences": [
+        -0.3333333333333333,
+        0.0,
+        -1.0,
+        0.0,
+        -0.3333333333333333,
+        -1.0,
+        -0.3333333333333333,
+        -1.0,
+        -0.3333333333333333,
+        -0.3333333333333333
+      ],
+      "provisional": true
+    },
+    "benchmark_target_concept_match: llama3.1:8b minus claude-opus-5-5": {
+      "mean": -0.7999999999999999,
+      "case_cluster_bootstrap_95": [
+        -1.0,
+        -0.5666666666666667
+      ],
+      "case_differences": [
+        -0.6666666666666666,
+        0.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -0.3333333333333333,
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "provisional": true
+    },
+    "benchmark_target_concept_match: gpt-6-sol minus claude-opus-5-5": {
+      "mean": -0.33333333333333337,
+      "case_cluster_bootstrap_95": [
+        -0.5666666666666668,
+        -0.1
+      ],
+      "case_differences": [
+        -0.3333333333333333,
+        0.0,
+        0.0,
+        -1.0,
+        -0.6666666666666667,
+        0.0,
+        0.0,
+        0.0,
+        -0.6666666666666667,
+        -0.6666666666666667
+      ],
+      "provisional": true
+    }
+  },
+  "interpretation": "Exploratory public-case lexical and process measures only; no definitive clinical accuracy or safety estimate."
+}

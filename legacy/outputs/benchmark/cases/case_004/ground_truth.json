@@ -1,0 +1,132 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_004",
+  "source_sha256": "acbe808bacc3648afcd11f9d3d31909f00db775ac01e8b2e245fc298555b43fb",
+  "published_final_diagnosis": {
+    "label": "Malignant chylothorax as initial manifestation of extensive-stage small cell lung carcinoma",
+    "codes": [],
+    "source_locators": [
+      "Case report and table 1, pp. 1–2"
+    ]
+  },
+  "diagnostic_differential_from_source": [
+    "Lymphoma-associated chylothorax",
+    "Traumatic chylothorax",
+    "Other lung cancer",
+    "Nonchylous malignant pleural effusion"
+  ],
+  "source_treatment": [
+    {
+      "description": "Thoracentesis",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    },
+    {
+      "description": "Indwelling pleural catheter for recurrent symptomatic effusion",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    },
+    {
+      "description": "Carboplatin plus etoposide, later atezolizumab",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    }
+  ],
+  "source_disposition": {
+    "category": "unknown",
+    "outcome": "Partial response, then pneumonia, Pseudomonas bacteremia, septic shock and death.",
+    "source_locators": [
+      "Case report and table 1, pp. 1–2"
+    ]
+  },
+  "key_guideline_decisions": [
+    {
+      "guideline_ref": "bts_pleural_2023",
+      "status": "candidate_for_adjudication",
+      "note": "See docs/guideline_sources.yaml; applicability and alternative care require clinician review."
+    }
+  ],
+  "distractors": [
+    "Negative initial pleural cytology; lymphoma is a more common malignant cause of chylothorax."
+  ],
+  "critical_safety_points": [
+    "Symptomatic recurrent pleural effusion needs drainage and assessment of cause.",
+    "Negative pleural cytology does not rule out thoracic malignancy.",
+    "Long-term chyle drainage raises nutritional and immune concerns."
+  ],
+  "fact_provenance": [
+    {
+      "fact_id": "hpi_001",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "pmh_002",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_003",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "imaging_004",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_005",
+      "source_locators": [
+        "PDF p. 1, second ED visit and repeat thoracentesis"
+      ]
+    },
+    {
+      "fact_id": "lab_006",
+      "source_locators": [
+        "PDF p. 1, initial thoracentesis and Table 1"
+      ]
+    },
+    {
+      "fact_id": "microbiology_007",
+      "source_locators": [
+        "PDF p. 1, Table 1"
+      ]
+    },
+    {
+      "fact_id": "imaging_008",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "microbiology_010",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    }
+  ],
+  "source_uncertainties": [
+    "Unspecified dose, timing or normal findings were not inferred.",
+    "Published management is descriptive and requires separate normative review.",
+    "The acute ED return is the benchmark time zero. Initial thoracentesis and its fluid studies are prior records; the article does not document a specific inpatient ward disposition for this return."
+  ],
+  "clinician_signoff": {
+    "reviewer_id": null,
+    "signed_at": null,
+    "status": "pending"
+  }
+}

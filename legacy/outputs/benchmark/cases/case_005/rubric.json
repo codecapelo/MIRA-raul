@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_005",
+  "published_diagnosis_ref": "ground_truth.published_final_diagnosis",
+  "acceptable_diagnoses": [],
+  "critical_diagnoses_to_not_miss": [
+    "Malignant pleural effusion requiring tissue diagnosis after an inconclusive initial evaluation"
+  ],
+  "expected_actions": [
+    {
+      "action_id": "a1",
+      "phase": "initial",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_imaging",
+          "code_or_concept": "ct_chest"
+        }
+      ],
+      "priority": "recommended",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a2",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_procedure",
+          "code_or_concept": "thoracentesis"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a3",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_procedure",
+          "code_or_concept": "pleural_biopsy"
+        }
+      ],
+      "priority": "recommended",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a4",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_ecg_or_test",
+          "code_or_concept": "tumor_genetics"
+        }
+      ],
+      "priority": "recommended",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    }
+  ],
+  "unnecessary_actions": [
+    {
+      "description": "Repeated or non-indicated testing/treatment without a stated clinical rationale",
+      "case_condition": "judged using information available at time of order"
+    }
+  ],
+  "medication_checks": [],
+  "procedure_checks": [],
+  "disposition_acceptability": [
+    {
+      "category": "ward",
+      "conditions": [
+        "Urgency and phase aligned with published acute care"
+      ]
+    }
+  ],
+  "safety_opportunities": [
+    {
+      "description": "Do not conclude mesothelioma from asbestos history and CT alone; obtain cytology and tissue with immunophenotyping.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    },
+    {
+      "description": "Account for baseline interstitial lung disease when weighing immunotherapy pneumonitis risk.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    }
+  ],
+  "guideline_refs": [
+    "bts_pleural_2023"
+  ],
+  "reviewer_signoff": {
+    "status": "pending",
+    "reviewer_id": null,
+    "signed_at": null
+  },
+  "guideline_concordance_status": "pending_clinician_review",
+  "reviewer_guidance": "Before cytology/biopsy, recognizing malignancy and obtaining tissue is clinically appropriate; do not score omission of melanoma histology itself as an early critical safety miss."
+}

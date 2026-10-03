@@ -1,0 +1,415 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_003",
+  "index_patient": "single_reported_patient",
+  "language": "en",
+  "setting": "urology_clinic",
+  "time_zero": "first_clinical_contact",
+  "initial": {
+    "age_years": null,
+    "sex_recorded": "female",
+    "chief_complaint": "Severe lower abdominal pain and dyspnea after catheter drainage failure.",
+    "age_band": "early 30s"
+  },
+  "facts": [
+    {
+      "fact_id": "pmh_001",
+      "domain": "pmh",
+      "topic_codes": [
+        "urologic"
+      ],
+      "value": "Lumbosacral meningomyelocele; ileocecal augmented bladder and catheterizable stoma; later radical cystectomy for bladder cancer with continent MAINZ pouch I urinary diversion.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "urologic"
+        ]
+      }
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "topic_codes": [
+        "catheter"
+      ],
+      "value": "Increasing difficulty catheterizing for weeks; indwelling pouch catheter placed for continuous drainage. Drainage failed the night before presentation, with reduced urine output.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "catheter"
+        ]
+      }
+    },
+    {
+      "fact_id": "hpi_003",
+      "domain": "hpi",
+      "topic_codes": [
+        "onset"
+      ],
+      "value": "Severe lower abdominal pain and progressive dyspnea followed catheter dysfunction.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "onset"
+        ]
+      }
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "domain": "physical_exam",
+      "topic_codes": [
+        "hemodynamics"
+      ],
+      "value": "Cardiopulmonary decompensation on presentation; specific initial preoperative vital signs not reported.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_physical_exam",
+        "match_codes": [
+          "hemodynamics"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_005",
+      "domain": "imaging",
+      "topic_codes": [
+        "ct_abdomen"
+      ],
+      "value": "Urgent contrast CT with retrograde pouch contrast: large left laterodorsal reservoir defect, contrast leakage into peritoneum and free intraperitoneal fluid.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "ct_abdomen"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_006",
+      "domain": "imaging",
+      "topic_codes": [
+        "ct_chest"
+      ],
+      "value": "Chest CT excluded pulmonary embolism and right-heart strain.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "ct_chest"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_007",
+      "domain": "lab",
+      "topic_codes": [
+        "cbc"
+      ],
+      "value": "Before surgery: WBC 15.3×10^9/L, hemoglobin 143 g/L, platelets 513×10^9/L.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "cbc"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_008",
+      "domain": "lab",
+      "topic_codes": [
+        "chemistry"
+      ],
+      "value": "Before surgery: sodium 138 mmol/L, creatinine 1.08 mg/dL, eGFR 68 mL/min/1.73 m².",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "chemistry"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_009",
+      "domain": "lab",
+      "topic_codes": [
+        "inflammation"
+      ],
+      "value": "CRP 1.7 mg/L before surgery.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "inflammation"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_010",
+      "domain": "lab",
+      "topic_codes": [
+        "inflammation_followup"
+      ],
+      "value": "CRP 361 mg/L and procalcitonin 4.7 ng/mL on ICU day 2.",
+      "status": "reported",
+      "available_at": "day_2",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "inflammation_followup"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_011",
+      "domain": "lab",
+      "topic_codes": [
+        "lactate"
+      ],
+      "value": "Postoperative ICU day 1 lactate 4.7 mmol/L.",
+      "status": "reported",
+      "available_at": "after_procedure:laparotomy",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "lactate"
+        ]
+      }
+    },
+    {
+      "fact_id": "procedure_result_012",
+      "domain": "procedure_result",
+      "topic_codes": [
+        "laparotomy"
+      ],
+      "value": "Emergency laparotomy confirmed pouch rupture, which was repaired; pouch catheter fixed and nasogastric tube placed.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_procedure",
+        "match_codes": [
+          "laparotomy"
+        ]
+      }
+    },
+    {
+      "fact_id": "physical_exam_013",
+      "domain": "physical_exam",
+      "topic_codes": [
+        "postoperative"
+      ],
+      "value": "ICU after surgery: GCS 14, HR 120/min, systolic BP 110 mm Hg, SpO2 98% on 3 L oxygen; abdomen soft and moderately distended.",
+      "status": "reported",
+      "available_at": "after_procedure:laparotomy",
+      "release_rule": {
+        "tool": "request_physical_exam",
+        "match_codes": [
+          "postoperative"
+        ]
+      }
+    },
+    {
+      "fact_id": "microbiology_014",
+      "domain": "microbiology",
+      "topic_codes": [
+        "blood_cultures"
+      ],
+      "value": "Two blood-culture sets on ICU day 2 remained negative after five days.",
+      "status": "reported",
+      "available_at": "day_7",
+      "release_rule": {
+        "tool": "request_microbiology",
+        "match_codes": [
+          "blood_cultures"
+        ]
+      }
+    },
+    {
+      "fact_id": "microbiology_015",
+      "domain": "microbiology",
+      "topic_codes": [
+        "drain_culture"
+      ],
+      "value": "Drain fluid collected day 2 later grew low-quantity Klebsiella oxytoca; later sample grew vanB Enterococcus faecium.",
+      "status": "reported",
+      "available_at": "followup",
+      "release_rule": {
+        "tool": "request_microbiology",
+        "match_codes": [
+          "drain_culture"
+        ]
+      }
+    },
+    {
+      "fact_id": "microbiology_016",
+      "domain": "microbiology",
+      "topic_codes": [
+        "urine_culture"
+      ],
+      "value": "Pouch urine on day 7 grew low-concentration Pseudomonas aeruginosa.",
+      "status": "reported",
+      "available_at": "day_9",
+      "release_rule": {
+        "tool": "request_microbiology",
+        "match_codes": [
+          "urine_culture"
+        ]
+      }
+    },
+    {
+      "fact_id": "other_test_017",
+      "domain": "other_test",
+      "topic_codes": [
+        "research_cfdna"
+      ],
+      "value": "Research plasma microbial cfDNA identified Klebsiella and Pseudomonas retrospectively; result was not available for immediate care.",
+      "status": "reported",
+      "available_at": "retrospective",
+      "release_rule": {
+        "tool": "request_ecg_or_test",
+        "match_codes": [
+          "research_cfdna"
+        ]
+      }
+    },
+    {
+      "fact_id": "allergies_018",
+      "domain": "allergies",
+      "topic_codes": [
+        "drug_reaction"
+      ],
+      "value": "ICU day 2: pruritus, flushing, wheeze and agitation shortly after meropenem plus fluconazole; a second reaction followed piperacillin–tazobactam re-challenge. The offending component was not established.",
+      "status": "reported",
+      "available_at": "day_2",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "drug_reaction"
+        ]
+      }
+    }
+  ],
+  "catalog": {
+    "history_topics": [
+      "cardiac",
+      "catheter",
+      "current",
+      "drug_reaction",
+      "history",
+      "infection",
+      "medical",
+      "negatives",
+      "oncology",
+      "onset",
+      "pregnancy",
+      "procedure",
+      "recent_therapy",
+      "renal",
+      "smoking",
+      "symptoms",
+      "urologic"
+    ],
+    "physical_regions": [
+      "abdomen",
+      "abdomen_pelvis",
+      "cardiovascular",
+      "general",
+      "hemodynamics",
+      "neurologic",
+      "postoperative",
+      "respiratory",
+      "skin",
+      "skin_eye",
+      "vitals"
+    ],
+    "lab_tests": [
+      "adrenal_hormones",
+      "blood_film",
+      "blood_panel",
+      "cbc",
+      "chemistry",
+      "coagulation",
+      "d_dimer",
+      "dat",
+      "hemoglobin",
+      "hemolysis",
+      "inflammation",
+      "inflammation_followup",
+      "lactate",
+      "metabolic",
+      "nt_probnp",
+      "pleural_fluid",
+      "pregnancy_test",
+      "troponin",
+      "tspot"
+    ],
+    "imaging_studies": [
+      "abdominal_xray",
+      "adrenal_ct",
+      "adrenal_ultrasound",
+      "brain_mri",
+      "cardiac_mri",
+      "chest_xray",
+      "coronary_angiography",
+      "coronary_ct",
+      "ct_abdomen",
+      "ct_chest",
+      "ctpa",
+      "pelvic_ultrasound",
+      "pet",
+      "spine_mri",
+      "thoracic_ultrasound"
+    ],
+    "microbiology_tests": [
+      "adrenal_tb_pcr",
+      "blood_cultures",
+      "drain_culture",
+      "pleural_culture",
+      "urine_culture"
+    ],
+    "ecg_or_tests": [
+      "ecg",
+      "echo",
+      "electrophysiology",
+      "intravascular_imaging",
+      "research_cfdna",
+      "rhc",
+      "tee",
+      "tumor_genetics"
+    ],
+    "procedures": [
+      "adrenal_biopsy",
+      "device_exploration",
+      "ebus_biopsy",
+      "hematoma_evacuation",
+      "laparoscopy",
+      "laparotomy",
+      "pathology",
+      "pericardiocentesis",
+      "pleural_biopsy",
+      "resection",
+      "thoracentesis"
+    ],
+    "medications": []
+  },
+  "temporal_events": [],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ],
+  "catalog_version": "v1_shared_all_cases"
+}

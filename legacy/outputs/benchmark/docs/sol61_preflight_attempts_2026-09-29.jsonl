@@ -1,0 +1,4 @@
+{"utc_observed": "2026-09-29T21:02-21:05Z", "cli_version": "0.159.1", "model_id": "gpt-6.1-sol", "reasoning_effort": "high", "type": "simple_no_tool", "status": "timeout_120s", "clinical_run": false, "usage": "unavailable"}
+{"utc_observed": "2026-09-29T21:05Z", "cli_version": "0.159.1", "model_id": "gpt-6.1-sol", "reasoning_effort": "low", "type": "simple_no_tool", "status": "completed_OK_exit0", "clinical_run": false, "usage": "not_recorded"}
+{"utc_observed": "2026-09-29T21:02Z", "cli_version": "0.158.0-alpha.2.1", "model_id": "gpt-6.1-sol", "reasoning_effort": "high", "type": "simple_no_tool", "status": "exit1_no_turn", "clinical_run": false, "usage": "unavailable"}
+{"utc_observed": "2026-09-29T23:18:46.276277+00:00", "cli_version": "0.159.1", "model_id": "gpt-6.1-sol", "reasoning_effort": "high", "type": "synthetic_structured_ping", "status": "completed_exit0_valid_action", "clinical_run": false, "usage": {"input_tokens": 14599, "output_tokens": 54}}

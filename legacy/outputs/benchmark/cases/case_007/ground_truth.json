@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_007",
+  "source_sha256": "379696de974dd62ef2d1c5d25a8593bde8310bc53f28abe4717a0e39a905b9c2",
+  "published_final_diagnosis": {
+    "label": "Pembrolizumab-associated autoimmune hemolytic anemia",
+    "codes": [],
+    "source_locators": [
+      "Case report and table 1, pp. 2–3"
+    ]
+  },
+  "diagnostic_differential_from_source": [
+    "Gastrointestinal bleeding",
+    "Cancer-associated anemia",
+    "Other hemolytic anemia",
+    "Biliary obstruction"
+  ],
+  "source_treatment": [
+    {
+      "description": "Urgent hematology review",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "description": "Methylprednisolone 500 mg/day IV for four days",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "description": "IVIG total 1 g/kg over three days",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "description": "Careful red-cell transfusion",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "description": "Pembrolizumab permanently discontinued",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    }
+  ],
+  "source_disposition": {
+    "category": "ward",
+    "outcome": "Discharged on day 5 with six-week prednisolone taper and hematology/oncology follow-up.",
+    "source_locators": [
+      "Case report and table 1, pp. 2–3"
+    ]
+  },
+  "key_guideline_decisions": [
+    {
+      "guideline_ref": "sitc_ici_irAE_2021",
+      "status": "candidate_for_adjudication",
+      "note": "See docs/guideline_sources.yaml; applicability and alternative care require clinician review."
+    }
+  ],
+  "distractors": [
+    "Dark stools suggest upper gastrointestinal bleeding, but source reports no overt bleeding."
+  ],
+  "critical_safety_points": [
+    "Severe symptomatic anemia requires urgent assessment and transfusion strategy.",
+    "Stop immune checkpoint therapy in life-threatening immune-mediated toxicity.",
+    "Compatibility testing may be complicated by panreactive autoantibody."
+  ],
+  "fact_provenance": [
+    {
+      "fact_id": "hpi_001",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "pmh_002",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "meds_003",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "pmh_004",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_005",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "lab_006",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "lab_007",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "lab_008",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "lab_009",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "lab_010",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "imaging_011",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    }
+  ],
+  "source_uncertainties": [
+    "Unspecified dose, timing or normal findings were not inferred.",
+    "Published management is descriptive and requires separate normative review."
+  ],
+  "clinician_signoff": {
+    "reviewer_id": null,
+    "signed_at": null,
+    "status": "pending"
+  }
+}

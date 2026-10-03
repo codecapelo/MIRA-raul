@@ -1,0 +1,145 @@
+JACC: CASE REPORTS                                                                                                      VOL. 31, NO. 6, 2026
+
+ª 2026 THE AUTHORS. PUBLISHED BY ELSEVIER ON BEHALF OF THE AMERICAN
+
+COLLEGE OF CARDIOLOGY FOUNDATION. THIS IS AN OPEN ACCESS ARTICLE UNDER
+
+THE CC BY-NC-ND LICENSE (http://creativecommons.org/licenses/by-nc-nd/4.0/).
+
+
+
+
+CORONARY, PERIPHERAL, AND STRUCTURAL INTERVENTIONS
+
+THE FOUR CORNERS: CLINICAL VIGNETTE CORNER
+
+
+
+
+Coronary Pseudoaneurysm and
+Stent Disruption Caused by
+Infective Endocarditis
+Daisuke Kanda, MD, PHD, Nobuhiro Ito, MD, Mitsuru Ohishi, MD, PHD
+
+
+   ABSTRACT
+
+
+   IMAGES Intravascular imaging (optical coherence tomography and intravascular ultrasound) demonstrating coronary
+   pseudoaneurysm and stent disruption.
+
+   CASE SUMMARY A 65-year-old man undergoing hemodialysis for diabetic nephropathy developed methicillin-
+   resistant Staphylococcus aureus infective endocarditis complicated by coronary pseudoaneurysm and stent disruption,
+   resulting in cardiac tamponade. Intravascular imaging confirmed the complete destruction of the arterial wall.
+   Emergency covered stent implantation and pericardiocentesis stabilized the patient, followed by a multidisciplinary
+   treatment approach, including prolonged antibiotics and surgical source control, leading to survival.
+
+   TAKE-HOME MESSAGE Timely imaging-guided diagnosis and a stepwise multidisciplinary strategy were lifesaving in
+   this extremely rare and complex case. (JACC Case Rep. 2026;31:106337) © 2026 The Authors. Published by Elsevier on
+   behalf of the American College of Cardiology Foundation. This is an open access article under the CC BY-NC-ND license
+   (http://creativecommons.org/licenses/by-nc-nd/4.0/).
+
+
+
+
+A          65-year-old man on hemodialysis for diabetic nephropathy, with a history of leadless pacemaker im-
+           plantation and prior percutaneous coronary intervention with drug-eluting stenting of the left ante-
+           rior descending artery for stable angina (Figure 1A), developed methicillin-resistant Staphylococcus
+aureus bacteremia complicated by infective endocarditis.
+   During intravenous antibiotic therapy for methicillin-resistant Staphylococcus aureus bacteremia, he
+developed chest pain. Echocardiography revealed new left ventricular wall motion abnormalities and
+
+
+  TAKE-HOME MESSAGES
+
+  • This report describes an extremely rare and complex presentation of a coronary pseudoaneurysm and stent
+     disruption complicated by infective endocarditis in a patient with multiple comorbidities (diabetes, end-stage
+     renal disease, and prior device implantation).
+  • Survival was achieved through prompt intravascular imaging–guided diagnosis and a multidisciplinary,
+     stepwise treatment strategy including pericardiocentesis, covered stent placement, prolonged antibiotics, and
+     surgical source control.
+
+
+
+
+From the Department of Cardiovascular Medicine and Hypertension, Graduate School of Medical and Dental Sciences,
+Kagoshima University, Kagoshima, Japan.
+The authors attest they are in compliance with human studies committees and animal welfare regulations of the authors’
+institutions and Food and Drug Administration guidelines, including patient consent where appropriate. For more
+information, visit the Author Center.
+
+Manuscript received August 13, 2025; revised manuscript received October 1, 2025, accepted November 5, 2025.
+
+ISSN 2666-0849                                                                                    https://doi.org/10.1016/j.jaccas.2025.106337
+2          Kanda et al                                                                                                        JACC: CASE REPORTS, VOL. 31, NO. 6, 2026
+
+           Coronary Pseudoaneurysm With Infective Endocarditis                                                                                   FEBRUARY 11, 2026:106337
+
+
+
+
+    F I G U R E 1 Multimodality Imaging and Covered Stent Management of a Coronary Pseudoaneurysm With Infective Endocarditis
+
+
+
+
+    (A) Baseline angiography showing prior drug-eluting stent in the left anterior descending artery. (B to D) Coronary angiography after pericardiocentesis demonstrating
+    stent disruption with a rapidly enlarging pseudoaneurysm. (E to J) Optical coherence tomography showing loss of the three-layered structure, consistent with a
+    pseudoaneurysm. (H) Intravascular ultrasound confirming pseudoaneurysm formation. (K) Covered stent deployed to seal the lesion. (L) Final angiography confirming
+    complete exclusion of the pseudoaneurysm. (M) Yellowish, turbid pericardial fluid obtained during emergency pericardiocentesis. (N) Surgical exploration of the
+    leadless pacemaker revealing vegetation.
+
+
+
+
+                         pericardial effusion. The patient rapidly developed hemodynamic instability owing to cardiac tamponade and
+                         cardiogenic shock. Laboratory tests revealed a high inflammatory response with disseminated intravascular
+                         coagulation, suggesting multiorgan dysfunction.
+                            Following emergency pericardiocentesis, coronary angiography revealed disruption of the previously
+                         implanted stent and the presence of a rapidly enlarging coronary pseudoaneurysm (Figures 1B to 1D).
+                            Optical coherence tomography (Figures 1E to 1J) and intravascular ultrasound (Figure 1H) revealed complete
+                         destruction of the arterial wall and loss of the normal 3-layer architecture, consistent with pseudoaneurysm.
+                         The pseudoaneurysm likely resulted from infectious degradation of the vessel wall, facilitated by septic
+                         microembolism or direct extension from bacteremia. Given the imminent risk of rupture, a covered coronary
+                         stent was deployed to seal the lesion (Figure 1K). Final angiography (Figure 1L) confirmed complete exclusion
+                         of the pseudoaneurysm. Yellowish, turbid pericardial fluid was aspirated immediately before percutaneous
+                         coronary intervention, further indicating a systemic infection (Figure 1M). After drainage and covered stent
+                         implantation, his vital signs and laboratory marker levels improved. The patient subsequently underwent
+                         coronary artery bypass grafting, leadless pacemaker removal, and epicardial pacemaker implantation. Surgical
+                         exploration of the leadless pacemaker revealed visible vegetation, suggesting device involvement (Figure 1N).
+                         He received a total of 4 months of hospitalization, including approximately 2 months of antibiotic therapy,
+                         and was eventually discharged home in stable condition. Coronary pseudoaneurysms caused by infective
+                         endocarditis are rare and life-threatening and lack standardized management protocols. 1 Surgical manage-
+                         ment of active infective endocarditis with impending pseudoaneurysm rupture can be extremely challenging
+                         and is often associated with poor outcomes, particularly when infection control is inadequate. 2 Therefore,
+                         timely diagnosis enabled by intravascular imaging and subsequent urgent treatment with covered stent
+JACC: CASE REPORTS, VOL. 31, NO. 6, 2026                                                                                                            Kanda et al   3
+FEBRUARY 11, 2026:106337                                                                                    Coronary Pseudoaneurysm With Infective Endocarditis
+
+
+
+
+implantation proved critical for patient survival in this setting of impending rupture. This case highlights that
+even in the most complex clinical settings, rapid diagnosis and a stepwise multidisciplinary approach can be
+lifesaving.
+ACKNOWLEDGMENTS The authors thank the staff of the Department of Cardiovascular Medicine and
+Hypertension for their assistance.
+
+FUNDING SUPPORT AND AUTHOR DISCLOSURES
+
+The authors have reported that they have no relationships relevant to the contents of this paper to disclose.
+
+
+
+ADDRESS FOR CORRESPONDENCE: Dr Daisuke Kanda, 8-35-1 Sakuragaoka, Kagoshima 890-8520, Japan.
+E-mail: kanchan@m3.kufm.kagoshima-u.ac.jp.
+
+
+
+REFERENCES
+
+1. Ramakumar V, Thakur A, Abdulkader RS, et al.   2. Pisani A, Braham W, Borghese O. Coronary
+Coronary stent infections - A systematic review   stent infection: are patients amenable to surgical   KEY WORDS endocarditis, imaging,
+and meta-analysis. Cardiovasc Revasc Med.         treatment? A systematic review and narrative         percutaneous coronary intervention
+2023;54:16–24.                                    synthesis. Int J Cardiol. 2021;344:40–46.
+

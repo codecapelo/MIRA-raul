@@ -1,0 +1,78 @@
+# Revisão clínica R7E1A7D63FDAA
+
+Caso: `case_010`
+
+Consultar o PDF fonte, `ground_truth.json` e `rubric.json` do caso antes de adjudicar.
+
+A identidade do modelo e as métricas automáticas foram ocultadas neste packet.
+
+## Encontro inicial
+
+`{"case_id": "case_010", "initial": {"age_years": 25, "chief_complaint": "Worsening left upper abdominal pain with nausea and vomiting.", "sex_recorded": "female"}, "setting": "emergency_department"}`
+
+## Trajetória observável
+
+### Passo 1: `plan_reason`
+
+Argumentos: `{"next_actions": ["Obtain vital signs", "Perform physical examination", "Order laboratory tests"], "summary": "A 25-year-old female presents with worsening left upper abdominal pain, nausea, and vomiting. The differential includes conditions such as cholecystitis, pancreatitis, and gastrointestinal obstruction.", "working_diagnoses": ["Cholecystitis", "Pancreatitis", "Gastrointestinal obstruction", "Gastritis", "Peptic ulcer disease"]}`
+
+Resultado: `ok`
+
+Dados retornados: `{"recorded": true}`
+
+### Passo 2: `request_physical_exam`
+
+Argumentos: `{"region_or_system": "abdomen"}`
+
+Resultado: `not_available_in_source`
+
+Dados retornados: `{}`
+
+### Passo 3: `request_lab`
+
+Argumentos: `{"priority": "urgent", "test_codes": ["CBC", "LFT", "AMYLASE", "LIPASE", "CRP"]}`
+
+Resultado: `not_available_in_source`
+
+Dados retornados: `{}`
+
+### Passo 4: `request_imaging`
+
+Argumentos: `{"body_region": "abdomen", "modality": "CT", "priority": "urgent", "protocol": "non-contrast"}`
+
+Resultado: `ok`
+
+Dados retornados: `{"facts": [{"domain": "imaging", "fact_id": "imaging_008", "status": "reported", "value": "Contrast CT showed a vascular left upper abdominal mass about 46 × 40 × 56 mm."}], "order_recorded": false}`
+
+### Passo 5: `plan_reason`
+
+Argumentos: `{"next_actions": ["Review imaging findings", "Assess for surgical consultation", "Monitor vital signs"], "summary": "A 25-year-old female with worsening left upper abdominal pain, nausea, and vomiting has a CT scan showing a vascular mass in the left upper abdomen. The differential includes a possible tumor or vascular anomaly.", "working_diagnoses": ["Abdominal mass", "Vascular tumor", "Hemorrhage", "Pancreatic mass", "Gastrointestinal obstruction"]}`
+
+Resultado: `ok`
+
+Dados retornados: `{"recorded": true}`
+
+### Passo 6: `final_diagnosis`
+
+Argumentos: `{"confidence_0_1": 0.9, "differential": ["Abdominal mass", "Vascular tumor", "Hemorrhage", "Pancreatic mass", "Gastrointestinal obstruction"], "primary": "Abdominal mass", "supporting_fact_ids": ["imaging_008"]}`
+
+Resultado: `ok`
+
+Dados retornados: `{"recorded": true}`
+
+### Passo 7: `disposition`
+
+Argumentos: `{"category": "ward", "followup_or_handoff": "Admit for further evaluation and surgical consultation.", "rationale": "The patient has a vascular mass in the left upper abdomen, requiring further diagnostic and therapeutic intervention.", "urgency": "urgent"}`
+
+Resultado: `ok`
+
+Dados retornados: `{"category": "ward", "recorded": true}`
+
+## Encerramento
+
+Concluído: `True`. Motivo: `completed`. Turnos: `7`. Ações: `7`. Saídas inválidas do modelo: `0`.
+
+## Classificação médica
+
+Preencher `review_decisions.csv`; classes: `correct`, `acceptable_alternative`, `questionable`, `unsafe`.
+Registrar omissões críticas e eventos de segurança com passo e evidência disponível naquele instante.

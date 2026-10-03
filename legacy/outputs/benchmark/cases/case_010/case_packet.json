@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_010",
+  "index_patient": "single_reported_patient",
+  "language": "en",
+  "setting": "emergency_department",
+  "time_zero": "first_clinical_contact",
+  "initial": {
+    "age_years": 25,
+    "sex_recorded": "female",
+    "chief_complaint": "Worsening left upper abdominal pain with nausea and vomiting."
+  },
+  "facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "topic_codes": [
+        "onset"
+      ],
+      "value": "Left upper quadrant pain began mildly about eight days earlier; initial noncontrast CT showed a 21 × 19 × 10 mm indeterminate lesion. Treated as gastroenteritis without improvement; now worse with nausea and vomiting.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "onset"
+        ]
+      }
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "topic_codes": [
+        "pregnancy"
+      ],
+      "value": "Amenorrhea and positive home urine pregnancy test; approximately five weeks gestation by dates, gravida 1 para 0.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "pregnancy"
+        ]
+      }
+    },
+    {
+      "fact_id": "pmh_003",
+      "domain": "pmh",
+      "topic_codes": [
+        "medical"
+      ],
+      "value": "No reported chronic medical or surgical disease, pelvic inflammatory disease, tobacco or alcohol use.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "medical"
+        ]
+      }
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "domain": "physical_exam",
+      "topic_codes": [
+        "vitals"
+      ],
+      "value": "BP 107/77 mm Hg, HR 89/min, temperature 36.7°C.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_physical_exam",
+        "match_codes": [
+          "vitals"
+        ]
+      }
+    },
+    {
+      "fact_id": "physical_exam_005",
+      "domain": "physical_exam",
+      "topic_codes": [
+        "abdomen_pelvis"
+      ],
+      "value": "Left upper abdominal tenderness; no lower abdominal tenderness, guarding or rigidity; no vaginal bleeding; cervix closed; no palpable adnexal mass or cervical motion tenderness.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_physical_exam",
+        "match_codes": [
+          "abdomen_pelvis"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_006",
+      "domain": "lab",
+      "topic_codes": [
+        "pregnancy_test"
+      ],
+      "value": "Serum hCG 10,130.28 IU/L.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "pregnancy_test"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_007",
+      "domain": "imaging",
+      "topic_codes": [
+        "pelvic_ultrasound"
+      ],
+      "value": "No intrauterine gestational sac; endometrium 8 mm; no adnexal abnormality.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "pelvic_ultrasound"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_008",
+      "domain": "imaging",
+      "topic_codes": [
+        "ct_abdomen"
+      ],
+      "value": "Contrast CT showed a vascular left upper abdominal mass about 46 × 40 × 56 mm.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "ct_abdomen"
+        ]
+      }
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "domain": "procedure_result",
+      "topic_codes": [
+        "laparoscopy"
+      ],
+      "value": "Diagnostic laparoscopy: ~300 mL hemoperitoneum and actively bleeding 6 × 4 × 5 cm lesion between spleen and descending colon, involving omentum; uterus, ovaries and tubes appeared normal.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_procedure",
+        "match_codes": [
+          "laparoscopy"
+        ]
+      }
+    },
+    {
+      "fact_id": "procedure_result_010",
+      "domain": "procedure_result",
+      "topic_codes": [
+        "pathology"
+      ],
+      "value": "Resected lesion and partial omentum contained products of conception on pathology.",
+      "status": "reported",
+      "available_at": "after_procedure:laparoscopy",
+      "release_rule": {
+        "tool": "request_procedure",
+        "match_codes": [
+          "pathology"
+        ]
+      }
+    }
+  ],
+  "catalog": {
+    "history_topics": [
+      "cardiac",
+      "catheter",
+      "current",
+      "drug_reaction",
+      "history",
+      "infection",
+      "medical",
+      "negatives",
+      "oncology",
+      "onset",
+      "pregnancy",
+      "procedure",
+      "recent_therapy",
+      "renal",
+      "smoking",
+      "symptoms",
+      "urologic"
+    ],
+    "physical_regions": [
+      "abdomen",
+      "abdomen_pelvis",
+      "cardiovascular",
+      "general",
+      "hemodynamics",
+      "neurologic",
+      "postoperative",
+      "respiratory",
+      "skin",
+      "skin_eye",
+      "vitals"
+    ],
+    "lab_tests": [
+      "adrenal_hormones",
+      "blood_film",
+      "blood_panel",
+      "cbc",
+      "chemistry",
+      "coagulation",
+      "d_dimer",
+      "dat",
+      "hemoglobin",
+      "hemolysis",
+      "inflammation",
+      "inflammation_followup",
+      "lactate",
+      "metabolic",
+      "nt_probnp",
+      "pleural_fluid",
+      "pregnancy_test",
+      "troponin",
+      "tspot"
+    ],
+    "imaging_studies": [
+      "abdominal_xray",
+      "adrenal_ct",
+      "adrenal_ultrasound",
+      "brain_mri",
+      "cardiac_mri",
+      "chest_xray",
+      "coronary_angiography",
+      "coronary_ct",
+      "ct_abdomen",
+      "ct_chest",
+      "ctpa",
+      "pelvic_ultrasound",
+      "pet",
+      "spine_mri",
+      "thoracic_ultrasound"
+    ],
+    "microbiology_tests": [
+      "adrenal_tb_pcr",
+      "blood_cultures",
+      "drain_culture",
+      "pleural_culture",
+      "urine_culture"
+    ],
+    "ecg_or_tests": [
+      "ecg",
+      "echo",
+      "electrophysiology",
+      "intravascular_imaging",
+      "research_cfdna",
+      "rhc",
+      "tee",
+      "tumor_genetics"
+    ],
+    "procedures": [
+      "adrenal_biopsy",
+      "device_exploration",
+      "ebus_biopsy",
+      "hematoma_evacuation",
+      "laparoscopy",
+      "laparotomy",
+      "pathology",
+      "pericardiocentesis",
+      "pleural_biopsy",
+      "resection",
+      "thoracentesis"
+    ],
+    "medications": []
+  },
+  "temporal_events": [],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ],
+  "catalog_version": "v1_shared_all_cases"
+}

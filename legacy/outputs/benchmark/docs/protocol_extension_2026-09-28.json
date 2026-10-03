@@ -1,0 +1,84 @@
+{
+  "extension_version": "mvp10_extension_sonnet_luna_2026-09-28",
+  "corpus_version": "mvp10_v3_2026-09-26",
+  "base_protocol_version": "mvp10_closedbook_v5_2026-09-26",
+  "frozen_at_utc": "2026-09-28T18:39:42.140325+00:00",
+  "base_protocol_manifest_sha256": "5ddd276e469f104aa7c417e529e4d55f677360b98bc91adc8cc733ff3fe9c19f",
+  "results_directory": "results/extension_2026-09-28",
+  "case_order": [
+    "case_001",
+    "case_002",
+    "case_003",
+    "case_004",
+    "case_005",
+    "case_006",
+    "case_007",
+    "case_008",
+    "case_009",
+    "case_010"
+  ],
+  "repetitions": 3,
+  "max_actions": 40,
+  "max_model_turns": 60,
+  "max_wall_seconds": 3600,
+  "repeated_unproductive_call_limit": 3,
+  "models": {
+    "gpt-6-luna": {
+      "provider": "openai",
+      "effort": "high",
+      "progress_path": "results/extension_2026-09-28/summaries/luna_progress.jsonl",
+      "adapter": "providers/openai_luna.py",
+      "cli_version": "0.158.0-alpha.2.1",
+      "identity_evidence": "requested_and_inference_accepted_not_observed",
+      "model_observed": null,
+      "access_verified": true,
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna"
+    },
+    "claude-sonnet-5-5": {
+      "provider": "anthropic",
+      "effort": "high",
+      "progress_path": "results/extension_2026-09-28/summaries/sonnet_progress.jsonl",
+      "adapter": "providers/anthropic_sonnet.py",
+      "cli_version": "2.1.284",
+      "identity_evidence": "observed_slug_in_cli_envelope",
+      "observed_model_ids": [
+        "claude-sonnet-5-5"
+      ],
+      "access_verified": true,
+      "source_url": "https://code.claude.com/docs/en/model-config"
+    }
+  },
+  "pricing": {
+    "gpt-6-luna": {
+      "verified": true,
+      "as_of": "2026-09-28",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "input_per_million": 0.1,
+      "cached_input_per_million": 0.01,
+      "cache_write_input_per_million": 0.125,
+      "output_per_million": 0.5,
+      "input_includes_cached": true,
+      "output_includes_reasoning": true,
+      "long_context_threshold": 272000,
+      "currency": "USD",
+      "basis": "hypothetical_API_Standard_not_subscription_charge"
+    }
+  },
+  "files": [
+    {
+      "path": "runner/run_extension.py",
+      "sha256": "5a4ab9ed14bc17a86ac4b4f5167bfc967294db29080852d015bac0c22f6f33b8"
+    },
+    {
+      "path": "providers/openai_luna.py",
+      "sha256": "53f8089644230f8a00a4553e015315f787fc7abaed0ed3d96de1043bc559428b"
+    },
+    {
+      "path": "providers/anthropic_sonnet.py",
+      "sha256": "898b6cc4b5cd3caa1505f4b3c916581ea6f6028f0db4dcdf2dbfc15f70c4f3c4"
+    }
+  ],
+  "change_scope": "Two additive models only. No changes to frozen corpus, physician prompt, EHR, tools, action schema, runner.run_case, clinical stopping or evaluation rules. Current CLI versions differ from base; account transports and snapshot drift remain limitations.",
+  "clinical_review": "pending",
+  "reset_credit_policy": "preserve"
+}

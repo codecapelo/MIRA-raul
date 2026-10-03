@@ -1,0 +1,197 @@
+                                                                                                                                          Images in...
+
+                                    Melanoma of the pleura mimicking malignant
+                                    mesothelioma: a rare and rapidly progressive
+                                    pleural disease
+                                    Benjamin Edland ‍ ‍,1 Christopher Stanley,1 Francis Hong Xin Yap,2
+                                    Yuranga Weerakkody3
+
+1
+ Department of Respiratory,         A woman in her 60s presented to an emergency
+Royal Perth Hospital, Perth,        department in Western Australia with a week’s
+Western Australia, Australia        history of dyspnoea and a new non-­        productive
+2
+ Department of Pathology, Royal     cough. She had a history of rheumatoid arthritis
+Perth Hospital, Perth, Western
+                                    with a stable immunosuppressive regimen of barici-
+Australia, Australia
+3
+ Department of Radiology, Royal
+                                    tinib and methotrexate, as well as connective tissue
+Perth Hospital, Perth, Western      disease-­associated interstitial lung disease which
+Australia, Australia                had been stable for the past 5 years.
+                                       On examination, she was dyspnoeic and hypoxic
+Correspondence to                   requiring 4 L of oxygen via nasal prongs to main-
+Dr Benjamin Edland;                 tain saturations greater than 92%. Other vital
+​ben.​edland@​gmail.​com            signs remained within normal limits. There was no
+                                    palpable lymphadenopathy or hepatosplenomegaly.
+Accepted 16 January 2025            Cardiovascular examination was normal, and the
+                                    calves were soft and non-­tender without subcuta-
+                                    neous oedema. Breath sounds were reduced at the
+                                    left lung base with diffuse fine inspiratory crackles
+                                    throughout all lung fields. A blood panel revealed
+                                    a mild thrombocytosis, and inflammatory markers                 Figure 2 (A) Photomicrograph of melanoma cell in
+                                    were not significantly elevated. Biochemical analysis           pleural fluid cytology. (B) Photomicrograph of melanoma
+                                    of the liver, thyroid and kidneys was unremarkable.             cells in pleural biopsy. (C) Melan A immunohistochemical
+                                    Bedside thoracic ultrasound revealed a moderate-­               stain. (D) SOX-­10 immunohistochemical stain.
+                                    to-­large, left-­sided homogenous pleural effusion. A
+                                    postcontrast CT thorax (figure 1A) confirmed the                immunohistochemical stains for SOX10, Melan A
+                                    moderate left-­    sided effusion, with the additional          and S100, with negative stains for calretinin, EMA,
+                                    finding of nodular circumferential pleural thick-               p40 and WT1 (figure 2). A cytological diagnosis of
+                                    ening inclusive of the mediastinal pleura. Given                malignant melanoma was made. Given the unusual
+                                    the patient’s history of exposure to asbestos-­related          appearance and location of the disease, a CT-­guided
+                                    materials, the combination of epidemiological data              pleural biopsy was obtained which confirmed
+                                    and radiological findings strongly indicated a diag-            abnormal cells of similar appearance with positive
+                                    nosis of malignant mesothelioma.                                immunohistochemical stains for SOX10 and Melan
+                                       A high-­  volume thoracentesis was performed                 A confirming the diagnosis.
+                                    on day 2 of admission with cytological anal-                       Given the rarity of pleural melanoma and the
+                                    ysis revealing abnormal epithelioid and plump                   absence of a personal history of cutaneous mela-
+                                    spindle-­shaped cells with highly pleomorphic                   noma, a thorough dermatological and ocular exam-
+                                    nuclei. These abnormal cells were positive on                   ination was conducted. This assessment revealed
+                                                                                                    no suspicious or concerning lesions. A positron
+                                                                                                    emission tomography (PET) scan was performed
+                                                                                                    revealing an intensely FDG(fluorodeoxyglucose)-­
+                                                                                                    avid left hemithorax with circumferential multi-
+                                                                                                    nodular pleural thickening (figure 1B). No primary
+© BMJ Publishing Group                                                                              cutaneous or subcutaneous lesion was identified.
+Limited 2025. Re-­use                                                                                  Rapid accumulation of the pleural fluid despite
+permitted under CC BY-­NC. No
+commercial re-­use. See rights                                                                      drainage required insertion of an indwelling pleural
+and permissions. Published by                                                                       catheter with drainages of up to 1 L required every
+BMJ Group.                                                                                          48 hours for symptom relief. The disease was iden-
+                                                                                                    tified as BRAF and KIT wild type, making the use
+    To cite: Edland B, Stanley C,
+    Yap FHX, et al. BMJ Case        Figure 1 (A) Axial view CT of the chest demonstrating           of targeted therapies unsuitable for this patient.
+    Rep 2025;18:e262662.            nodular circumferential pleural thickening. (B) Positron        Surgical intervention was ruled out due to the
+    doi:10.1136/bcr-2024-           emission tomography revealing intensely FDG-­avid left          location of the tumour and the extensive disease
+    262662                          hemithorax. FDG, fluorodeoxyglucose.                            burden. Given the patient’s history of interstitial
+                                             Edland B, et al. BMJ Case Rep 2025;18:e262662. doi:10.1136/bcr-2024-262662                                    1
+ Images in...
+lung disease and the associated risk of immunotherapy-­related        site.10 Various hypotheses have been proposed to explain the
+pneumonitis, dual-­agent immunotherapy with ipilimumab and            origin of melanoma with an unknown primary, including the
+nivolumab was deemed inappropriate. Instead, single-­      agent      spontaneous regression of the primary tumour and the presence
+immunotherapy with nivolumab was initiated. Unfortunately,            of ectopic melanocytes in lymph nodes or visceral organs. The
+the disease progressed rapidly and showed no response to the          distinction between primary melanoma of visceral organs and
+treatment. The patient continued to deteriorate and transitioned      regressed cutaneous melanoma with visceral metastases remains
+to comfort-­based care within 3 months of diagnosis.                  a topic of debate, as reflected in the literature.11
+
+DISCUSSION
+                                                                      Pleural melanoma of unknown primary
+Definition and epidemiology of malignant melanoma
+                                                                      We present the case of a woman in her 60s with pleural mela-
+Malignant melanoma is an aggressive cancer arising from melano-
+                                                                      noma, presenting as a malignant effusion without an identifi-
+cytes, the melanin-­producing cells primarily located in the skin.1
+                                                                      able primary site. Initial differential diagnoses based on imaging
+Although melanoma accounts for only 3% of all skin cancers, it
+                                                                      findings included, but were not limited to, malignant mesothe-
+is responsible for 60% of skin cancer-­related mortality.2 While
+                                                                      lioma, pleural metastases or carcinomatosis, lymphoma and
+it most commonly originates in the skin, melanoma can also
+                                                                      primary lung cancer with pleural invasion. Melanoma of the
+develop in ocular or mucosal tissues.3 If not controlled early
+                                                                      pleura with unknown primary is exceedingly rare. To the best
+through surgical resection, metastases are frequent and can
+                                                                      of our knowledge, only nine other cases have been reported in
+spread to the skin, subcutaneous tissues, skeleton, lymph nodes
+                                                                      the English literature.12–20 Some of these cases were identified
+and visceral organs.
+                                                                      postmortem before the advent of modern diagnostic techniques
+                                                                      which may have indeed found a primary site. Similar to prior
+Investigation and management of malignant melanoma                    cases, our patient exhibited a particularly aggressive form of
+The initial step in the evaluation of suspected melanoma involves     the disease, which did not respond to conventional melanoma
+a thorough clinical examination of the skin. Dermoscopy is a          therapies.
+non-­invasive technique that enhances the visualisation of skin
+lesions and has been shown to improve diagnostic accuracy
+compared with visual inspection.4                                     Recommendations
+   A definitive diagnosis of melanoma is established through          Melanoma should be included in the differential diagnosis of
+biopsy with the most common type of biopsy being excisional,          visceral organ or nodal malignancies, even in the absence of a
+with removal of the entire lesion. Histopathological exam-            history of cutaneous, ocular or mucosal melanoma. With meta-
+ination of the biopsy specimen is essential for confirming the        static pleural effusions, a comprehensive analysis of pleural
+diagnosis and determining the melanoma subtype, which can             fluid is essential and should encompass cytological and immu-
+influence prognosis and treatment. Sentinel lymph node biopsy         nohistochemical evaluations to confirm or disprove the diag-
+is performed in cases where the melanoma is thicker than 1 mm         nosis of melanoma. Given the aggressive nature of melanoma of
+or has other high-­risk features for staging purposes to guide        unknown primary, prompt initiation of treatment is critical to
+further treatment decisions.5                                         improve patient outcomes.
+   Imaging studies play a critical role in the staging of melanoma,
+particularly when there is a suspicion of metastasis. Common            Learning points
+modalities include CT or PET which are useful for evaluating
+regional lymph nodes and distant metastases, while MRI is bene-         ► Melanoma should be included in the differential diagnosis of
+ficial for assessing brain metastases.                                    visceral organ or nodal malignancies, even in the absence of
+   Genetic testing for mutations in genes such as BRAF, NRAS              a history of cutaneous, ocular or mucosal melanoma.
+and KIT can provide insight into the tumour’s biology and               ► With metastatic pleural effusions, a comprehensive analysis
+inform targeted therapy options, such as BRAF inhibitors, which           of pleural fluid is essential and should encompass cytological
+have shown efficacy in treating advanced melanoma.6                       and immunohistochemical evaluations to confirm or disprove
+   The management of melanoma depends on the pathological                 the diagnosis of melanoma.
+and radiological staging of the tumour. Surgery, the cornerstone        ► Given the aggressive nature of melanoma of unknown
+of treatment for localised melanoma, may also be an option                primary, prompt initiation of treatment is critical to improve
+for patients with oligometastatic disease, where metastases are           patient outcomes.
+limited in number and location.7
+   For metastatic melanoma, systemic therapies play a central role
+and are broadly categorised into immunotherapy and targeted           Contributors BE was the primary author of the main report. CS was the primary
+                                                                      respiratory consultant. YW was the thoracic radiologist who reported the imaging.
+therapy. Immune checkpoint inhibitors, such as PD-­1 inhibitors       FHXY was the consultant pathologist. BE acted as the guarantor.
+(nivolumab), PD-­L1 inhibitors (pembrolizumab), CTLA4 inhibi-
+                                                                      Funding The authors have not declared a specific grant for this research from any
+tors (ipilimumab) or a combination of the above, are the primary      funding agency in the public, commercial or not-­for-­profit sectors.
+treatment options and have shown remarkable efficacy in the
+                                                                      Competing interests None declared.
+setting of metastatic disease.8 For patients with BRAF V600
+mutations, targeted therapy with BRAF and MEK inhibitors also         Patient consent for publication Consent obtained directly from patient(s).
+offers significant improvements in both progression-­      free and   Provenance and peer review Not commissioned; externally peer reviewed.
+overall survival.9                                                    Open access This is an open access article distributed in accordance with the
+                                                                      Creative Commons Attribution Non Commercial (CC BY-­NC 4.0) license, which
+                                                                      permits others to distribute, remix, adapt, build upon this work non-­commercially,
+Melanoma of unknown primary                                           and license their derivative works on different terms, provided the original work
+In approximately 3% of cases, melanoma is discovered in the           is properly cited and the use is non-­commercial. See: http://creativecommons.org/​
+lymph nodes or visceral organs without a detectable primary           licenses/by-nc/4.0/.
+
+2                                                                        Edland B, et al. BMJ Case Rep 2025;18:e262662. doi:10.1136/bcr-2024-262662
+                                                                                                                                                              Images in...
+Case reports provide a valuable learning resource for the scientific community and          9 Long GV, Stroyakovskiy D, Gogas H, et al. Combined BRAF and MEK inhibition versus
+can indicate areas of interest for future research. They should not be used in isolation      BRAF inhibition alone in melanoma. N Engl J Med 2014;371:1877–88.
+to guide treatment choices or public health policy.                                        10 Kamposioras K, Pentheroudakis G, Pectasides D, et al. Malignant melanoma of
+                                                                                              unknown primary site. To make the long story short. A systematic review of the
+                                                                                              literature. Crit Rev Oncol Hematol 2011;78:112–26.
+ORCID iD                                                                                   11 Yang C, Sanchez-­Vega F, Chang JC, et al. Lung-­only melanoma: UV mutational
+Benjamin Edland http://orcid.org/0009-0005-9576-8059                                          signature supports origin from occult cutaneous primaries and argues against the
+                                                                                              concept of primary pulmonary melanoma. Mod Pathol 2020;33:2244–55.
+REFERENCES                                                                                 12 Smith S, Opipari MI. Primary pleural melanoma. A first reported case and literature
+ 1 Shain AH, Bastian BC. The Genetic Evolution of Melanoma. N Engl J Med                      reivew. J Thorac Cardiovasc Surg 1978;75:827–31.
+   2016;374:995–6.                                                                         13 Um SW, Yoo CG, Lee CT, et al. Apparent primary pleural melanoma: case report and
+ 2 Markovic SN, Erickson LA, Rao RD, et al. Malignant melanoma in the 21st century,           literature review. Respir Med 2003;97:586–7.
+   part 1: epidemiology, risk factors, screening, prevention, and diagnosis. Mayo Clin     14 Mohanty PP, Pasricha R, Gupta A, et al. Malignant melanoma of pleura in a patient
+   Proc 2007;82:364–80.                                                                       with giant congenital ’bathing suit’ hairy nevus. Int J Clin Oncol 2004;9:410–2.
+ 3 Leonardi GC, Falzone L, Salemi R, et al. Cutaneous melanoma: From pathogenesis to       15 Ohata Y, Haga T, Ogata S, et al. Malignant amelanotic melanoma of the pleura
+   therapy (Review). Int J Oncol 2018;52:1071–80.                                             without primary skin lesion:an autopsy case report. Acta Med Okayama
+ 4 Kittler H, Pehamberger H, Wolff K, et al. Diagnostic accuracy of dermoscopy. Lancet        2009;63:379–84.
+   Oncol 2002;3:159–65.                                                                    16 Shameem M, Akhtar J, Baneen U, et al. Malignant melanoma presenting as an
+ 5 Valsecchi ME, Silbermins D, de Rosa N, et al. Lymphatic mapping and sentinel               isolated pleural effusion. Monaldi Arch Chest Dis 2011;75:138–40.
+   lymph node biopsy in patients with melanoma: a meta-­analysis. J Clin Oncol             17 Cheng L, Nie J, Li J, et al. Primary pleural malignant melanoma with rapid progression.
+   2011;29:1479–87.                                                                           Ann Thorac Surg 2014;98:334–6.
+ 6 Dummer R, Hauschild A, Santinami M, et al. Five-­Year Analysis of Adjuvant Dabrafenib   18 Wang Q, Chen J, Dassarath M, et al. Primary malignant melanoma of the pleura with
+   plus Trametinib in Stage III Melanoma. N Engl J Med 2020;383:1139–48.                      rapid progression: A case report and literature review. Oncol Lett 2015;9:2713–5.
+ 7 Raigani S, Cohen S, Boland GM. The Role of Surgery for Melanoma in an Era of            19 Agarwal P, Nambiyar KManjuKet al. Primary Malignant Melanoma of Pleura: A Case
+   Effective Systemic Therapy. Curr Oncol Rep 2017;19:1–5.                                    Report and Literature Review. Diagn Cytopathol 2016;44:648–52.
+ 8 Robert C, Schachter J, Long GV, et al. Pembrolizumab versus Ipilimumab in Advanced      20 Murakami K, Tobino K, Yamaji Y, et al. Primary Pleural Melanoma: A Case Report and
+   Melanoma. N Engl J Med 2015;372:2521–32.                                                   Literature Review. Intern Med 2019;58:3273–6.
+
+
+
+    Copyright 2025 BMJ Publishing Group. All rights reserved. For permission to reuse any of this content visit
+    https://www.bmj.com/company/products-services/rights-and-licensing/permissions/
+    BMJ Case Report Fellows may re-use this article for personal use and teaching without any further permission.
+    Become a Fellow of BMJ Case Reports today and you can:
+    ► Submit as many cases as you like
+    ► Enjoy fast sympathetic peer review and rapid publication of accepted articles
+    ► Access all the published articles
+    ► Re-use any of the published material for personal use and teaching without further permission
+    Customer Service
+    If you have any further queries about your subscription, please contact our customer services team on +44 (0) 207111 1105 or via email at support@bmj.com.
+    Visit casereports.bmj.com for more articles like this and to become a Fellow
+
+
+
+
+\n\nEdland\n B\n, et al. BMJ Case Rep 2025;18:e262662. doi:10.1136/bcr-2024-262662                                                                                                 3
+

@@ -1,0 +1,85 @@
+schema_version: "1.0.0"
+as_of: "2026-09-25"
+status: "editorial_reference_pending_clinician_signoff"
+note: "Guidelines inform normative rubric decisions; the published case PDF alone defines what happened. No guideline is available to physician agents in the closed-book arm. These links do not imply that every published treatment is guideline standard."
+guidelines:
+  - id: esc_endocarditis_2023
+    title: "2023 ESC Guidelines for the management of endocarditis"
+    publisher: "European Society of Cardiology"
+    year: 2023
+    url: "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/endocarditis/"
+    cases: [case_001]
+    decisions: ["multidisciplinary assessment of complicated infective endocarditis", "device infection and extraction assessment"]
+  - id: esc_pericardial_2025
+    title: "2025 ESC Guidelines on pericardial diseases"
+    publisher: "European Society of Cardiology"
+    year: 2025
+    url: "https://www.escardio.org/guidelines/clinical-practice-guidelines/pocket-guidelines/pericardial-diseases/"
+    cases: [case_001]
+    decisions: ["urgent evaluation and drainage of cardiac tamponade"]
+  - id: esc_pacing_2021
+    title: "2021 ESC Guidelines on cardiac pacing and cardiac resynchronization therapy"
+    publisher: "European Society of Cardiology"
+    year: 2021
+    url: "https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/cardiac-pacing-and-cardiac-resynchronization-therapy/"
+    cases: [case_002]
+    decisions: ["evaluate symptomatic bradycardia and atrioventricular block", "pacing decision"]
+  - id: ssc_2026
+    title: "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2026"
+    publisher: "Society of Critical Care Medicine and European Society of Intensive Care Medicine"
+    year: 2026
+    url: "https://sccm.org/survivingsepsiscampaign/guidelines-and-resources/surviving-sepsis-campaign-adult-guidelines"
+    cases: [case_003]
+    decisions: ["timely antimicrobial treatment", "early source control", "de-escalation and adverse-reaction reassessment"]
+  - id: bts_pleural_2023
+    title: "British Thoracic Society Guideline for Pleural Disease 2023"
+    publisher: "British Thoracic Society"
+    year: 2023
+    url: "https://www.brit-thoracic.org.uk/clinical-resources/guidelines/pleural-disease/"
+    cases: [case_004, case_005]
+    decisions: ["diagnostic pleural fluid analysis", "pleural biopsy after inconclusive initial evaluation", "symptomatic effusion management"]
+  - id: endocrine_pai_2016
+    title: "Diagnosis and Treatment of Primary Adrenal Insufficiency"
+    publisher: "Endocrine Society"
+    year: 2016
+    url: "https://www.endocrine.org/clinical-practice-guidelines/primary-adrenal-insufficiency"
+    cases: [case_006]
+    decisions: ["glucocorticoid replacement", "stress-dose and adrenal-crisis precautions"]
+  - id: ese_adrenal_incidentaloma_2023
+    title: "European Society of Endocrinology clinical practice guidelines on the management of adrenal incidentalomas"
+    publisher: "European Society of Endocrinology"
+    year: 2023
+    doi: "10.1093/ejendo/lvad066"
+    url: "https://doi.org/10.1093/ejendo/lvad066"
+    cases: [case_006]
+    decisions: ["R.6.3.5: biopsy requires hormonal inactivity, particularly exclusion of pheochromocytoma, indeterminate imaging and a management-changing histology"]
+    limitation: "The published case does not report a metanephrine result. Do not infer that pheochromocytoma was excluded or rate the published biopsy automatically guideline-concordant."
+  - id: sitc_ici_irAE_2021
+    title: "SITC clinical practice guideline on immune checkpoint inhibitor-related adverse events"
+    publisher: "Society for Immunotherapy of Cancer"
+    year: 2021
+    url: "https://jitc.bmj.com/content/9/6/e002435"
+    cases: [case_007]
+    decisions: ["AIHA workup with CBC, reticulocytes, smear, DAT and LDH", "hematology assessment", "steroids and treatment interruption for severe immune toxicity"]
+  - id: acr_myelopathy_2020
+    title: "ACR Appropriateness Criteria: Myelopathy, acute onset variant"
+    publisher: "American College of Radiology"
+    year: 2020
+    url: "https://acsearch.acr.org/docs/69484/Narrative/"
+    cases: [case_008]
+    decisions: ["urgent MRI of the spine for acute myelopathy"]
+  - id: asge_choledocholithiasis_2019
+    title: "ASGE guideline on the role of endoscopy in the management of choledocholithiasis"
+    publisher: "American Society for Gastrointestinal Endoscopy"
+    year: 2019
+    url: "https://www.asge.org/home/resources/publications/guidelines/role-of-endoscopy-in-the-management-of-choledocholithiasis"
+    cases: [case_009]
+    decisions: ["plastic biliary stents require planned exchange or removal"]
+    limitation: "Preventive follow-up context only; acute perforation management in this case is grounded in the published report and surgical judgment."
+  - id: rcog_ectopic_2016
+    title: "Diagnosis and Management of Ectopic Pregnancy, Green-top Guideline No. 21"
+    publisher: "Royal College of Obstetricians and Gynaecologists"
+    year: 2016
+    url: "https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/diagnosis-and-management-of-ectopic-pregnancy-green-top-guideline-no-21/"
+    cases: [case_010]
+    decisions: ["evaluate extrauterine pregnancy and bleeding", "surgical treatment when appropriate"]

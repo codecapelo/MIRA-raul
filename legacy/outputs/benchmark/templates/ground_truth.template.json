@@ -1,0 +1,27 @@
+{
+  "template_only": true,
+  "schema_version": "1.0.0",
+  "case_id": "case_XXX",
+  "source_sha256": null,
+  "published_final_diagnosis": {
+    "label": null,
+    "codes": [],
+    "source_locators": []
+  },
+  "diagnostic_differential_from_source": [],
+  "source_treatment": [],
+  "source_disposition": {
+    "category": "unknown",
+    "source_locators": []
+  },
+  "key_guideline_decisions": [],
+  "distractors": [],
+  "critical_safety_points": [],
+  "fact_provenance": [],
+  "source_uncertainties": [],
+  "clinician_signoff": {
+    "reviewer_id": null,
+    "signed_at": null,
+    "status": "pending"
+  }
+}

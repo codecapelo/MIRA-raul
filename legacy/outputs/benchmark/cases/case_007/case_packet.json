@@ -1,0 +1,302 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_007",
+  "index_patient": "single_reported_patient",
+  "language": "en",
+  "setting": "emergency_department",
+  "time_zero": "first_clinical_contact",
+  "initial": {
+    "age_years": 69,
+    "sex_recorded": "male",
+    "chief_complaint": "Progressive jaundice, dark stools, lethargy and lightheadedness."
+  },
+  "facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "topic_codes": [
+        "onset"
+      ],
+      "value": "Four days of progressive jaundice and dark stools with lethargy and lightheadedness; no reported bleeding, fever, cough or abdominal pain.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "onset"
+        ]
+      }
+    },
+    {
+      "fact_id": "pmh_002",
+      "domain": "pmh",
+      "topic_codes": [
+        "oncology"
+      ],
+      "value": "Advanced lung adenocarcinoma with adrenal and subdiaphragmatic metastases; high tumor PD-L1 expression.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "oncology"
+        ]
+      }
+    },
+    {
+      "fact_id": "meds_003",
+      "domain": "meds",
+      "topic_codes": [
+        "recent_therapy"
+      ],
+      "value": "First pembrolizumab 400 mg IV dose 14 days before presentation.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "recent_therapy"
+        ]
+      }
+    },
+    {
+      "fact_id": "pmh_004",
+      "domain": "pmh",
+      "topic_codes": [
+        "medical"
+      ],
+      "value": "Gastritis, hyperlipidemia, previous cholecystectomy; former smoker.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "medical"
+        ]
+      }
+    },
+    {
+      "fact_id": "physical_exam_005",
+      "domain": "physical_exam",
+      "topic_codes": [
+        "general"
+      ],
+      "value": "Afebrile, pale and deeply icteric; HR 92/min, RR 20/min, systolic BP 115 mm Hg.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_physical_exam",
+        "match_codes": [
+          "general"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_006",
+      "domain": "lab",
+      "topic_codes": [
+        "hemoglobin"
+      ],
+      "value": "Hemoglobin 45 g/L, down from 123 g/L baseline.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "hemoglobin"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_007",
+      "domain": "lab",
+      "topic_codes": [
+        "hemolysis"
+      ],
+      "value": "LDH 1214 U/L, haptoglobin <0.3 g/L, total bilirubin 61 µmol/L with 72% unconjugated; reticulocytes 261.7×10^9/L (23.7%).",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "hemolysis"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_008",
+      "domain": "lab",
+      "topic_codes": [
+        "lactate"
+      ],
+      "value": "Lactate 4.2 mmol/L.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "lactate"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_009",
+      "domain": "lab",
+      "topic_codes": [
+        "blood_film"
+      ],
+      "value": "Peripheral blood film: reticulocytosis, spherocytes and reactive neutrophilia.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "blood_film"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_010",
+      "domain": "lab",
+      "topic_codes": [
+        "dat"
+      ],
+      "value": "Direct antiglobulin test IgG 2+ and complement C3d 5+; indirect antiglobulin test panreactive, no underlying alloantibodies detected.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "dat"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_011",
+      "domain": "imaging",
+      "topic_codes": [
+        "ct_abdomen"
+      ],
+      "value": "Triple-phase CT abdomen/pelvis found no hemorrhage or intra-abdominal collection.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "ct_abdomen"
+        ]
+      }
+    }
+  ],
+  "catalog": {
+    "history_topics": [
+      "cardiac",
+      "catheter",
+      "current",
+      "drug_reaction",
+      "history",
+      "infection",
+      "medical",
+      "negatives",
+      "oncology",
+      "onset",
+      "pregnancy",
+      "procedure",
+      "recent_therapy",
+      "renal",
+      "smoking",
+      "symptoms",
+      "urologic"
+    ],
+    "physical_regions": [
+      "abdomen",
+      "abdomen_pelvis",
+      "cardiovascular",
+      "general",
+      "hemodynamics",
+      "neurologic",
+      "postoperative",
+      "respiratory",
+      "skin",
+      "skin_eye",
+      "vitals"
+    ],
+    "lab_tests": [
+      "adrenal_hormones",
+      "blood_film",
+      "blood_panel",
+      "cbc",
+      "chemistry",
+      "coagulation",
+      "d_dimer",
+      "dat",
+      "hemoglobin",
+      "hemolysis",
+      "inflammation",
+      "inflammation_followup",
+      "lactate",
+      "metabolic",
+      "nt_probnp",
+      "pleural_fluid",
+      "pregnancy_test",
+      "troponin",
+      "tspot"
+    ],
+    "imaging_studies": [
+      "abdominal_xray",
+      "adrenal_ct",
+      "adrenal_ultrasound",
+      "brain_mri",
+      "cardiac_mri",
+      "chest_xray",
+      "coronary_angiography",
+      "coronary_ct",
+      "ct_abdomen",
+      "ct_chest",
+      "ctpa",
+      "pelvic_ultrasound",
+      "pet",
+      "spine_mri",
+      "thoracic_ultrasound"
+    ],
+    "microbiology_tests": [
+      "adrenal_tb_pcr",
+      "blood_cultures",
+      "drain_culture",
+      "pleural_culture",
+      "urine_culture"
+    ],
+    "ecg_or_tests": [
+      "ecg",
+      "echo",
+      "electrophysiology",
+      "intravascular_imaging",
+      "research_cfdna",
+      "rhc",
+      "tee",
+      "tumor_genetics"
+    ],
+    "procedures": [
+      "adrenal_biopsy",
+      "device_exploration",
+      "ebus_biopsy",
+      "hematoma_evacuation",
+      "laparoscopy",
+      "laparotomy",
+      "pathology",
+      "pericardiocentesis",
+      "pleural_biopsy",
+      "resection",
+      "thoracentesis"
+    ],
+    "medications": []
+  },
+  "temporal_events": [],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ],
+  "catalog_version": "v1_shared_all_cases"
+}

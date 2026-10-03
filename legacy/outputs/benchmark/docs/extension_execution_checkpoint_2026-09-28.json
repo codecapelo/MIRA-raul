@@ -1,0 +1,63 @@
+{
+  "snapshot_utc": "2026-09-29T00:38:38.837121+00:00",
+  "state": "stopped_by_user_partial_luna",
+  "base_terminal": 150,
+  "observed_total": 230,
+  "previous_target_total": 240,
+  "arms": {
+    "luna": {
+      "terminal": 20,
+      "completed": 20,
+      "failed_attempts": 2
+    },
+    "sonnet": {
+      "terminal": 30,
+      "completed": 30,
+      "failed_attempts": 0
+    },
+    "terra": {
+      "terminal": 30,
+      "completed": 30,
+      "failed_attempts": 5
+    }
+  },
+  "user_stopped_prefixes": {
+    "luna": 1
+  },
+  "integrity": [
+    {
+      "manifest": "docs/corpus_freeze_manifest.json",
+      "files": 50,
+      "changed": []
+    },
+    {
+      "manifest": "docs/protocol_freeze_manifest.json",
+      "files": 10,
+      "changed": []
+    },
+    {
+      "manifest": "docs/evaluation_freeze_manifest.json",
+      "files": 7,
+      "changed": []
+    },
+    {
+      "manifest": "docs/protocol_extension_2026-09-28.json",
+      "files": 3,
+      "changed": []
+    },
+    {
+      "manifest": "docs/protocol_terra_extension_2026-09-28.json",
+      "files": 2,
+      "changed": []
+    },
+    {
+      "manifest": "results/trace_manifest.json",
+      "files": 150,
+      "changed": []
+    }
+  ],
+  "medical_review": "pending",
+  "automation_status": "PAUSED",
+  "resume_authorized": false,
+  "reset_policy": "no_agent_redemption; user_manually_reset_2026-09-28"
+}

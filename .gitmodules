@@ -1,0 +1,3 @@
+[submodule "upstream/onprem-medical-agents"]
+	path = upstream/onprem-medical-agents
+	url = https://github.com/KatherLab/onprem-medical-agents.git

@@ -1,0 +1,1720 @@
+nature medicine
+
+Article                                                                                              https://doi.org/10.1038/s41591-026-04609-x
+
+
+On-premise medical AI agents for reliable
+clinical decision-making
+
+Received: 10 February 2026                         Li Zhang 1, Georg Wölflein 1, Dyke Ferber 1,2, Junhao Liang1,
+                                                   Zunamys I. Carrero1, Xuewei Wu 2,3, Julien Vibert2,4,5, Jan Clusmann1,6,
+Accepted: 27 July 2026
+                                                   Lino Möhrmann 1,6, Elena E. Möhrmann1, Catharina Wichmann1,7, Fabian Wolf1,
+Published online: xx xx xxxx                       Tim Lenz1 & Jakob Nikolas Kather 1,2,6,8
+
+    Check for updates
+                                                   Autonomous clinical artificial intelligence (AI) agents powered by large
+                                                   language models (LLMs), meaning systems that can complete a diagnostic
+                                                   workflow without continuous human input, are increasingly capable of
+                                                   supporting complex reasoning and decision-making. Clinical translation,
+                                                   however, remains limited by two unmet requirements: institutionally
+                                                   governed deployment and reliable decision-time uncertainty estimation.
+                                                   Here we developed and evaluated a fully on-premise clinical agent that
+                                                   couples local operational control with a multi-perspective reliability
+                                                   framework to support selective autonomy. Across two Medical Information
+                                                   Mart for Intensive Care IV (MIMIC-IV)-derived benchmarks, the agent
+                                                   achieved 90.04% accuracy on a seven-disease task and 83.8% accuracy on a
+                                                   four-disease task, approaching a cloud baseline on the primary benchmark.
+                                                   To assess decision-time reliability, we quantified internal-likelihood,
+                                                   language-based and behavioral-stability measures for diagnosis and
+                                                   reasoning. Diagnostic behavioral consistency provided the strongest
+                                                   discrimination of correctness (area under the curve (AUC) = 0.860) and
+                                                   remained informative under stress testing (AUC = 0.875). At a consistency
+                                                   threshold of 0.90, 49.4% of cases were retained at 98.9% diagnostic accuracy.
+                                                   These findings support a practical framework for institutionally governed
+                                                   clinical agents in which decision-time reliability signals identify a lower-risk
+                                                   subset for autonomous handling and defer the remainder for review.
+
+Autonomous AI agents powered by LLMs can now conduct multi-turn             or similarly governed deployment in healthcare7–9. Decisional trust
+clinical dialogues, gather diagnostic evidence and produce diagnoses        concerns whether an agent’s outputs are reliable enough to support
+with accompanying rationales1–4. However, clinical translation depends      appropriate clinician reliance and, therefore, requires mechanisms for
+not only on diagnostic capability but also on safe institutional govern-    estimating decision-time uncertainty in high-stakes settings5,10,11. Regu-
+ance and appropriate clinician reliance5,6. We, therefore, distinguish      latory and implementation frameworks reinforce both needs by empha-
+two dimensions of trust: operational and decisional. Operational trust      sizing protected handling of health data, governance of AI-enabled
+concerns governance of data and models, including privacy, auditabil-       software changes across the lifecycle and the practical tradeoffs among
+ity, version stability and deployment control, motivating on-premise        control, collaboration, cost and security in healthcare deployment9,12–15.
+
+1
+ Else Kroener Fresenius Center for Digital Health, Faculty of Medicine, TUD Dresden University of Technology, Dresden, Germany. 2Medical Oncology,
+National Center for Tumor Diseases (NCT), University Hospital Heidelberg, Heidelberg, Germany. 3Department of Radiology, The First Affiliated Hospital
+of Jinan University, Guangzhou, China. 4Drug Development Department, Gustave Roussy, Villejuif, France. 5Université Paris-Saclay, Gustave Roussy,
+INSERM U981, IHU PRISM, Villejuif, France. 6Department of Medicine I, Faculty of Medicine, TUD Dresden University of Technology, Dresden, Germany.
+7
+ Department of Gynecology and Obstetrics, Faculty of Medicine, TUD Dresden University of Technology, Dresden, Germany. 8Pathology & Data Analytics,
+Leeds Institute of Medical Research at St. James’s, University of Leeds, Leeds, UK.  e-mail: kather.jn@tu-dresden.de
+
+
+Nature Medicine
+Article                                                                                                https://doi.org/10.1038/s41591-026-04609-x
+
+     However, operational trust alone is not sufficient for clinical safety.   in which a Physician Agent interacts with a Patient Agent, retrieves
+Even a well-governed deployment must support appropriate reliance:             benchmark-grounded evidence through tool use and returns a final
+clinicians need to know which outputs may be suitable for autonomous           diagnosis with a reasoning trace. We applied this framework to the two
+handling within a governed workflow and which should be deferred               primary MIMIC-IV-derived clinical reasoning benchmarks: MIRA-v2
+for clinician review6,16–19. Consequently, evaluation must move beyond         (ref. 29) and Clinical Decision Making (CDM)30 (Extended Data Fig. 1a).
+diagnostic accuracy toward a broader assessment of reliability and                   On the primary benchmark, MIRA-v2 (seven diagnostic condi-
+trustworthiness6,16–19. This shift matters because, in healthcare, harm        tions), we evaluated four on-premise open-weight models alongside
+depends not only on average performance but also on whether an agent           a cloud baseline (GPT-5.2), using an identical agent architecture and
+handles uncertainty appropriately, routing unstable or unreliable out-         evaluation pipeline that differed only in the underlying LLM (Fig. 2a).
+puts toward human oversight rather than presenting them as definitive          Qwen-3.5 achieved the highest on-premise accuracy (90.0%), followed
+decisions5,6,18. Safety, therefore, depends on reliable decision-time          by GLM-5 (89.7%), GLM-4.5-Air (88.4%) and GPT-OSS (85.3%); GPT-5.2
+signals indicating when to trust, verify or defer5.                            achieved 90.7%. The best on-premise model was, therefore, within
+     These risks are amplified by the technical nature of foundation           0.7 percentage points of the cloud baseline. Accuracy was lowest for
+model agents. LLMs are non-deterministic by default: the same input            pneumonia across all models; per-disease results for all models are
+can yield different outputs under common sampling settings, even               provided in Supplementary Table 1.
+when reproducibility controls are used20. In agentic systems, small                  We next tested whether this performance extended to a second
+stochastic differences can propagate across multi-step reasoning and           benchmark. On CDM (four abdominal diagnostic categories; n = 2,400),
+tool use, producing divergent intermediate states and unsafe conclu-           Qwen-3.5 achieved 83.8% accuracy and GLM-4.5-Air achieved 81.2%
+sions21. Beyond stochastic variation, recent evidence demonstrates             accuracy under the established evaluation protocol (Fig. 2b and
+that LLMs can amplify biases at scale: sociodemographic labels and             Supplementary Table 1). The highest previously reported open-weight
+patient characteristics can shift clinical recommendations in medically        result on this benchmark was 70.5% (Gemma-3)31. Accuracy varied little
+unjustified ways, raising the possibility that case-level uncertainty may      across five independent runs (Fig. 2b).
+aggregate into subgroup-level disparities after deployment22. These                  Across both MIMIC-derived benchmarks, residual errors were con-
+risks make uncertainty estimation and calibration safety functions             centrated in clinically overlapping categories, including pancreatitis
+rather than optional features6,11,23.                                          versus cholecystitis and appendicitis versus diverticulitis (Fig. 2c,d).
+     Although confidence estimation and calibration in LLMs are                To assess whether some apparent errors reflected benchmark label
+increasingly acknowledged11, their integration into agent evaluation           limitations rather than clinically implausible outputs, we performed
+remains limited. Existing approaches often rely on relatively simple           blinded physician adjudication on a randomized subset of MIRA-v2
+proxies, such as raw model probabilities or heuristic linguistic cues,         cases (n = 181, 33% of the benchmark; Supplementary Table 2). Physi-
+and have not been systematically evaluated in multi-step clinical              cian consensus judged 81.8% of reviewed cases clinically valid for both
+agent workflows11,24,25. Recent work has addressed related questions           the agent diagnosis and the reference label; in 4.4%, the agent diagnosis
+through semantic entropy, confidence-weighted self-consistency                 was considered clinically valid despite disagreement with the elec-
+and uncertainty-aware clinical diagnosis but mostly in single-turn             tronic health record (EHR) label (Fig. 2e and Supplementary Table 3).
+settings such as factual question answering, chain-of-thought reason-          Agreement between the automated LLM-based evaluator and physician
+ing or static clinical note diagnosis, rather than in multi-step agentic       consensus was 92.3% overall (167/181; Gwet’s Agreement Coefficient
+workflows, where uncertainty propagates across iterative tool use,             1 (AC1) = 0.898; Fig. 2f); full inter-rater and per-disease agreement
+intermediate reasoning and interactive information gathering26–28.             details are provided in the Methods and Supplementary Tables 4 and 5.
+A standardized framework is, therefore, needed to characterize how                   We also performed descriptive subgroup analyses strati-
+these diverse confidence signals behave in agentic clinical settings and       fied by age group and sex across MIRA-v2, CDM and VivaBench
+to identify which observable signals most reliably indicate correct-           (Extended Data Fig. 1) and examined a multi-agent variant incor-
+ness and whether such signals can support selective autonomy under             porating a differential diagnosis (DDx) Critic Agent. The critic did
+continued institutional governance11.                                          not improve overall diagnostic accuracy relative to the baseline
+     We studied these two dimensions of trust in an integrated frame-          single-agent configuration (87.1% with critic versus 88.4% without;
+work: an institutionally governed medical AI agent that can be deployed        Extended Data Fig. 2), although pneumonia showed a partial excep-
+on-premise and evaluated through inference-time reliability signals.           tion. Because the critic configuration did not translate into an overall
+First, we address operational trust by implementing the system in a            gain, all subsequent confidence and selective-autonomy analyses were
+clinically governable deployment setting and evaluating its end-to-end         performed using the baseline single-agent setup.
+performance with competitive open-weight LLMs. Second, we address
+decisional trust by introducing a multi-perspective confidence                 Deconstructing decisional trust with a multi-perspective
+framework that decomposes reliability into three complementary                 confidence framework
+perspectives: internal likelihood, expressed uncertainty in language           To evaluate the discriminative performance of the proposed reli-
+and behavioral stability across repeated runs. We then test how these          ability measures, we performed the primary confidence analyses on
+signals behave under baseline, perturbed and external-benchmark                MIRA-v2 (n = 551) under baseline conditions unless stated otherwise.
+conditions and whether they can support selective autonomy through             Primary reliability analyses used the GLM-4.5-Air baseline to keep the
+confidence-based triage. Together, these analyses show that interpret-         workflow fixed across experiments. We quantified three classes of
+able inference-time reliability signals can be coupled to institutionally      reliability-related metrics—internal generation likelihood (ProbScore),
+governed deployment while maintaining competitive performance.                 expressed language cues (LingCert and ConceptDensity) and behav-
+They also support selective-autonomy routing by helping distinguish            ioral stability across repeated runs (Consistency)—for both the final
+cases suitable for autonomous handling under continued governance              diagnostic output (Dx) and the accompanying reasoning trace (R).
+from those requiring clinician review.                                              Across metrics, ConsistencyDx provided the strongest discrimi-
+                                                                               nation of diagnostic correctness in dual-stream receiver operating
+Results                                                                        characteristic (ROC) analysis (AUC = 0.860) compared to ProbScoreDx
+On-premise agent achieves competitive diagnostic performance                   (AUC = 0.747) and other metrics (Fig. 3a). The difference between
+To establish a baseline for subsequent reliability analyses, we evalu-         ConsistencyDx and ProbScoreDx was significant by DeLong’s test (dif-
+ated our fully on-premise dual-agent framework (Fig. 1 and Methods),           ference in AUC = 0.114, P = 0.0011; false discovery rate (FDR)-adjusted
+
+
+Nature Medicine
+Article                                                                                                                      https://doi.org/10.1038/s41591-026-04609-x
+
+
+                                                          Benchmarks
+                a
+                                                                    MIRA-v2             CDM                  VivaBench
+                                                                    n = 551             n = 2,400            n = 990
+                                                                    7 diseases          4 diseases           10 spec.
+                                                                    MIMIC-IV-derived    MIMIC-IV-derived     PubMed-derived                                     Clinical history summary
+
+
+
+
+                                                                      Simulation                                             1. Patient presents chief complaint
+
+                                                                                                                             My primary symptom: abdominal pain.
+                                                                                                                                                                          Patient Agent
+                                                         2. Physician elicits clinical history
+
+                                                        Abdominal pain can be caused by a variety of factors. To better understand your condition, I would like
+                                    Physician Agent     to ask some questions...
+
+
+                                  4. Physician orders diagnostic investigations
+                                                                                                                     The pain is in my upper belly (epigastric area)...
+                    Tools
+
+                                                                                                                             3. Multi-turn diagnostic dialogue
+
+                    Physical exam      Blood test      Urine test          Radiology     Microbiology
+
+
+
+                 Search procedure        Request procedure       Prescribe medication         Admission
+
+
+                                                         5. Recover from tool call errors (retry/fallback)
+
+
+                    Physical exam
+                    Admission VS T 99.1F, BP 113/91, P 95, RR 18, O2SAT 100 RA Patient is comfortable, pleasant, and in
+                    no acute distress....
+                    Blood test                                             Urine test                                                   b            Evaluation
+                    White blood cells: 12.5 K µl–1 (reference: 4.0–10.0)   Leukocytes: result unavailable or unmeasurable.
+                    Neutrophils: 65.8% (reference: 34.0–71.0)              Blood: result unavailable or unmeasurable.
+                    ...                                                    ...
+Local
+                    Radiology                                                                                                                     Diagnostic accuracy
+environment
+                    Radiology report (CT, abdomen):
+                    LOWER CHEST: Visualized lung fields are within normal limits. There is no evidence of pleural or
+                    pericardial effusion.
+                    GASTROINTESTINAL: ...Hyperemic, distended appendix (~1.5 cm) with two large appendicoliths...
+
+                    Prescribe medication                                                                                                         Internal confidence
+                    Ceftriaxone: 1 g IV every 24 hours 1,000 mg, intravenous
+                    Metronidazole: 500 mg IV every 8 hours 500 mg, intravenous
+                    Morphine: 2–4 mg IV every 2–4 hours as needed for pain 2 appendicitis, Intravenous                                             Probabilistic score
+                    Search procedure                                                          Request procedure
+                    Top procedure options for query 'appendectomy':                           Laparoscopic appendectomy
+                    - Appendicostomy                                                                                                             Expressed confidence
+                    - Laparoscopic appendectomy
+                    ...
+                    Call the 'request_procedure' tool with the exact name if you'd like to                                                  Hedging-based linguistic certainty
+                    perform one of these.
+
+
+
+                                                        Let me summarize everything we've discussed and finalize your                            Clinical concept density
+                                                        care plan...
+     6. Physician issues diagnosis with reasoning
+
+                     Admission
+                                                                                                                                                  Behavioral confidence
+                    Diagnosis: Acute appendicitis
+
+                                                                                                                                                Cross-run consistency
+                     Reason: RLQ abdominal pain migrating from periumbilical area, fever, chills, and elevated WBC count.
+                     CT scan confirmed...
+
+
+Fig. 1 | On-premise autonomous clinical agent: simulation architecture and                     certainty into three layers: Internal Confidence (probabilistic score), Expressed
+evaluation framework. a, Simulation architecture and clinical encounter                        Confidence (hedging-based linguistic certainty; clinical concept density)
+workflow. The agent conducts multi-turn simulated encounters in a fully local                  and Behavioral Confidence (cross-run consistency; computed across N = 5
+environment (steps 1−6), beginning with the patient’s chief complaint and                      independent stochastic runs per case). This dual-stream design yields eight
+proceeding through iterative dialogue and structured clinical tool use                         confidence scores in total (four metrics × two streams), enabling separate
+(physical examination, blood tests, urine tests, radiology, microbiology,                      assessment of whether the agent’s conclusion and its underlying reasoning
+medication prescribing and procedure ordering). The encounter concludes                        are independently reliable. Data shown are abbreviated and lightly modified
+with a diagnostic admission decision producing both a diagnosis and a reasoning                to satisfy privacy requirements. Icons are sourced from Flaticon (https://www.
+trace. Encounters are instantiated from three benchmarks: MIRA-v2, CDM                         flaticon.com/) under the Flaticon license with attribution. Full source links,
+and VivaBench. b, Evaluation framework. System outputs are assessed along                      license details and modifications are provided in the Third Party Rights Table.
+two axes. Diagnostic accuracy is evaluated against reference labels.                           spec., specialty groups.
+A multi-perspective confidence analysis decomposes the agent’s apparent
+
+
+
+
+Nature Medicine
+Article                                                                                                         https://doi.org/10.1038/s41591-026-04609-x
+
+P = 0.0034). Distributional analyses supported this ranking: correct                 limitations of administrative labels and single-label evaluation. In
+diagnoses clustered near maximal Consistency, whereas errors were                    case A (ground truth: diverticulitis), the agent consistently diagnosed
+enriched at lower values (Fig. 3b,c). Bootstrapped 95% confidence                    epiploic appendagitis in line with the radiology report; expert adju-
+intervals for all AUC estimates are provided in Supplementary Table 6.               dication attributed the discrepancy to the absence of a dedicated
+      The remaining metrics showed more limited or stream-specific                   International Classification of Diseases, 9th Revision (ICD-9) code for
+utility. In the diagnosis stream, ProbScoreDx retained moderate dis-                 epiploic appendagitis, necessitating a proxy label. In case B (ground
+crimination but exhibited a residual tail of high-valued errors (Fig. 3b).           truth: acute cholecystitis), the agent prioritized acute pancreatitis in
+In the reasoning stream, LingCertR slightly exceeded ConsistencyR                    the setting of markedly elevated lipase; pancreatitis was documented
+(AUC = 0.792 versus AUC = 0.785), and incorrect reasoning traces were                as a secondary diagnosis in the full record but was not credited by the
+shifted toward lower linguistic certainty (Fig. 3d,e). ConceptDensityDx              single-label protocol. Second, some correct cases showed reduced
+retained modest discrimination (AUC = 0.674), whereas ConceptDensi-                  inference-time confidence signals, consistent with missing evidence or
+tyR showed below-chance discrimination (AUC = 0.426) and no signifi-                 intrinsic clinical ambiguity. In case C (urinary tract infection), urinalysis
+cant separation between correct and incorrect cases (Holm-adjusted                   information was absent, and the agent showed reduced internal prob-
+P = 0.08; Fig. 3a,e), indicating that reasoning trace concept density                ability with diagnoses varying across runs, consistent with reduced
+did not behave as a confidence signal. Condition-specific paired ROC                 reliability under evidentiary scarcity. In case D (early appendicitis
+curves for all eight metrics are shown in Extended Data Fig. 3.                      with classic symptoms but normal computed tomography), the agent
+      A supplementary cross-model analysis on Qwen-3.5, GLM-5                        produced the correct diagnosis but with reduced confidence signals
+and GPT-OSS further showed that this pattern was not unique                          (probability and consistency), consistent with calibrated uncertainty
+to GLM-4.5-Air: across all three additional models, Consisten-                       in an intrinsically ambiguous presentation.
+cyDx remained the strongest evaluated diagnostic stream metric                             Together, case review showed that discordant confidence states
+(Supplementary Table 34). Together, these results show that behav-                   were enriched for both genuine model uncertainty and benchmark-
+ioral stability was the strongest signal, whereas language-derived                   label limitations, reinforcing that internal likelihood and behavioral
+metrics contributed complementary information, particularly in the                   stability capture related but non-equivalent aspects of reliability.
+reasoning stream.
+                                                                                     Stress testing decisional trust under induced informational
+Confidence−state interactions reveal mechanisms of                                   scarcity
+diagnostic reliability                                                               To assess robustness under reduced evidentiary grounding, we com-
+We next examined how the top-performing reliability-related measures                 pared the factually grounded baseline with a perturbed setting in which
+related to one another and to diagnostic outcomes. Correlation analysis              the Patient Agent was ungrounded (initial history withheld) and could
+showed moderate, non-redundant associations among these metrics                      generate unreliable testimony (Methods). This perturbation caused
+(Fig. 4a). In particular, internal probability and diagnostic behavioral             a marked decline in diagnostic accuracy across conditions (Fig. 5a).
+consistency were moderately correlated (Pearsonʼs r = 0.51), indi-                        Confidence signals responded heterogeneously to this perfor-
+cating partial overlap without equivalence, whereas the strongest                    mance collapse (Fig. 5b). Consistency decreased sharply in parallel with
+association was observed between ConsistencyDx and ConsistencyR                      accuracy, indicating increased decision instability when grounding
+(r = 0.68). Variance inflation factors were low for all retained variables           evidence was removed. By contrast, ProbScore and LingCert showed
+(Supplementary Table 7), supporting that these measures captured                     limited downward shifts and, in some settings, remained high despite
+partially overlapping but non-collinear aspects of model behavior.                   lower accuracy. For example, in pneumonia, accuracy declined while
+      We next mapped decisions into a two-dimensional confidence                     both ProbScoreDx and LingCertR increased and remained above 0.90,
+space defined by internal probability and diagnostic behavio-                        indicating overconfident outputs under informational scarcity. More
+ral consistency (Fig. 4b,c). Correct diagnoses concentrated in the                   broadly, this pattern is inconsistent with a calibrated confidence signal:
+high-consistency region, whereas discordant states, particularly high                under degraded evidentiary grounding, some scores remained stable
+internal probability paired with low consistency, contained a dispropor-             or even increased despite declining diagnostic accuracy, indicating
+tionate fraction of errors (Fig. 4b). Quantitatively, accuracy approached            that high absolute score values alone did not reliably track reduced
+ceiling levels across the high-consistency row (99.0−100.0%), regard-                evidentiary support.
+less of internal probability bin, indicating that behavioral consistency                  Despite this perturbation, discriminative performance (AUC)
+was the dominant determinant of diagnostic accuracy, whereas internal                remained broadly stable relative to baseline (Fig. 5c), indicating that the
+probability provided secondary stratification mainly in less stable                  metrics retained the ability to rank correct versus incorrect decisions.
+states (Fig. 4c).                                                                    However, their absolute behavior differed. ProbScoreDx and LingCertR
+      Case review clarified clinically relevant failure modes (Fig. 4b).             retained discrimination while showing limited downward shifts in
+Two recurrent categories emerged. First, some outputs were scored                    score, whereas ConsistencyDx preserved discrimination, with a slight
+as incorrect despite stable, high-confidence behavior, reflecting                    increase in AUC (0.875), and shifted downward in absolute value under
+
+
+Fig. 2 | Diagnostic performance of a fully on-premise clinical agent across          the percentage of cases within each ground truth category assigned to each
+standardized benchmarks. a, Diagnostic accuracy of four on-premise                   predicted category. Matrices are shown for the run with accuracy closest to the
+open-weight models (GLM-4.5-Air, GLM-5, Qwen-3.5 and GPT-OSS) and a cloud            five-run mean. e, Blinded physician adjudication of diagnostic validity (n = 181).
+baseline (GPT-5.2) across seven MIRA-v2 diseases. All systems used the same          Bars indicate the proportion of cases judged valid for both the agent diagnosis
+agent architecture and evaluation pipeline, differing only in the underlying         and the EHR label (‘Both Valid’), valid for the agent diagnosis only (‘Agent Valid
+LLM. For each model, accuracy is reported at the best-performing temperature         Only’), valid for the EHR label only (‘GT Valid Only’) or neither. f, Agreement
+setting; sensitivity to temperature is analyzed in the ‘Implementation sensitivity   between the automated LLM-based judge and physician consensus on agent
+analyses of behavioral consistency’ section. b, Accuracy of the on-premise agents    diagnosis validity (n = 181). Overall raw agreement was 92.3% (167/181; Gwet’s
+(GLM-4.5-Air and Qwen-3.5) compared to the top reported score on the official        AC1 = 0.898, PABAK = 0.845). For bar plots in a and b, bars show mean ± s.d. across
+CDM leaderboard (Gemma-3) across four disease categories, evaluated using the        five independent stochastic inference runs; overlaid points indicate individual
+benchmark’s fuzzy-matching protocol. c,d, Row-normalized confusion matrices          runs. The Gemma-3 leaderboard result in b is shown as the reported benchmark
+for MIRA-v2 (c) and CDM (d), with rows denoting ground truth categories              reference value. GT, ground truth; PABAK, prevalence-adjusted bias-adjusted
+and columns denoting agent diagnosis categories. Cell values represent               kappa; Pulm., pulmonary; UTI, urinary tract infection.
+
+
+Nature Medicine
+Article                                                                                                                                                                                   https://doi.org/10.1038/s41591-026-04609-x
+
+
+               a                    100
+                                     90                                                                                                                                                                       Model
+
+
+
+
+          Diagnostic accuracy (%)
+                                     80                                                                                                                                                                      GPT-OSS
+                                     70                                                                                                                                                                      GLM-4.5-Air
+                                     60                                                                                                                                                                      GLM-5
+                                     50                                                                                                                                                                      Qwen-3.5
+                                     40                                                                                                                                                                      GPT-5.2
+                                     30
+                                     20
+                                     10
+                                      0
+                                                ll           di                     is              is             itis          on                  m                             UT
+                                             ra                citis
+                                                                               tit             icul                at               ia         bo                                    I
+                                          Ove                               cy s                    it        nc              eu                 lis
+                                                         en            ho                      rt               re              m              m
+                                                     Ap                  le              Dive               Pa             Pn              .e
+                                                        p              C                                                                Pu
+                                                                                                                                          lm
+
+              b                     100
+                                     90
+                                                                                                                                                                                                  Agent
+
+
+
+
+          Diagnosis accuracy (%)
+                                     80
+                                                                                                                                                                                      Our agent (GLM-4.5-Air)
+                                     70
+                                                                                                                                                                                      Our agent (Qwen-3.5)
+                                     60
+                                     50                                                                                                                                               CDM leaderboard (top score)
+
+                                     40
+                                     30
+                                     20
+                                     10
+                                      0
+                                                  ll                       s
+                                                                         iti                    iti s                     s
+                                                                                                                        iti                     s
+                                                                                                                                               iti
+                                                ra                     ic                       st                     ul                  at
+                                              ve                     nd                        cy                    ic                   re
+                                            O                    pe                        le                      rt                   nc
+                                                                                         ho                       ve                  Pa
+                                                               Ap                    C                         Di
+
+               c                                                                                                                                             d
+                                       Appendicitis      97%                   1%                                               2%
+                                                                                                                                                                                Appendicitis       96%                1%                3%
+
+
+
+
+                                                                                                                                                         Ground truth disease
+                                                                                                                                               0.8                                                                                               0.8
+                                      Cholecystitis                89%                    3%                                    8%
+
+
+
+
+          Ground truth disease
+                                                                                                                                                                                Cholecystitis      1%      73%                 3%    23%         0.6
+                                       Diverticulitis      6%                 93%                                               2%             0.6
+                                                                                                                                                                                                                                                 0.4
+                                                                                                                                                                                Diverticulitis     3%               68%        1%    28%
+                                       Pancreatitis                  4%                  83%                                    13%
+                                                                                                                                                                                                                                                 0.2
+                                                                                                                                               0.4                               Pancreatitis                8%       1%       71% 20%
+                                          Pneumonia                            3%                   59%       3%              34%                                                                                                                0
+                                                                                                                                                                                                   s
+                                                                                                                                                                                                  iti        s
+                                                                                                                                                                                                           iti        s
+                                                                                                                                                                                                                    iti     itis     er
+                                                                                                                                                                                                 ic      st       ul       at       th
+                                    Pulm. embolism                   1%                                      89%              10%                                                            nd         cy       ic       re        O
+                                                                                                                                               0.2                                         pe         le     ve
+                                                                                                                                                                                                               rt      nc
+                                                                                                                                                                                        Ap         ho      Di         Pa
+                                                                                                                                                                                                  C
+                                                  UTI                                                                84%        16%                                                                   Agent-diagnosed disease
+                                                                                                                                               0
+                                                           s
+                                                         iti         s
+                                                                   iti         s
+                                                                              iti         s
+                                                                                         iti        ia       m       UT
+                                                                                                                       I      er
+                                                        ic       st         ul       at         on          lis             th
+                                                     nd         cy        ic        re         m         bo                 O
+                                                  pe          le         rt      nc            eu       m
+                                                           ho          ve      Pa         Pn        .e
+                                                Ap        C          Di                             m
+                                                                                                Pu l
+                                                                              Agent-diagnosed disease
+
+               e                    100                                                                                                        f
+                                                                                                                        Both valid
+                                                                                                                        GT valid only
+                                     80                                                                                 Agent valid only
+                                                                                                                                                                                                 Consistent invalid             LLM overcalled
+                                                                                                                        Neither valid
+                                                                                                                                               Physician consensus:                                   (n = 18)                      (n = 7)
+                                     60                                                                                                                      Invalid
+
+
+              Cases (%)
+                                     40
+
+
+                                                                                                                                               Physician consensus:                              LLM undercalled               Consistent valid
+                                     20
+                                                                                                                                                              Valid                                   (n = 7)                     (n = 149)
+
+                                      0
+                                             s
+                                            iti      tit
+                                                        is       s
+                                                                iti         is       ia         m         UT
+                                                                                                            I
+                                                                       ea        m       m
+                                                                                  on                                                                                                                  LLM: Invalid                  LLM: Valid
+                                           ic     ys          ul         tit              bo
+                                       nd       ec         tic       cr       eu            lis
+                                     pe      ho         ve r    Pa          Pn       .e
+                                    Ap          l       Di         n
+                                            C                                    Pu
+                                                                                   lm
+
+
+
+
+Nature Medicine
+Article                                                                                                         https://doi.org/10.1038/s41591-026-04609-x
+
+perturbation. Among the evaluated metrics, ConsistencyDx, therefore,                      We next asked whether the main confidence patterns and
+remained the most robust decision-time signal under reduced eviden-                 selective-autonomy behavior observed on MIRA-v2 were pre-
+tiary grounding. Bootstrapped 95% confidence intervals for the AUC                  served externally. On VivaBench, ConsistencyDx again provided
+estimates in Fig. 5c are provided in Supplementary Table 8.                         the strongest discrimination of correctness among the evaluated
+                                                                                    metrics (AUC = 0.719), whereas probability-based and linguistic/
+Enabling selective autonomy                                                         concept-density metrics showed weaker discrimination (Extended
+We next asked whether the evaluated gating signals could support a                  Data Fig. 4b and Supplementary Table 11). Consistency-based case
+triage protocol in which the agent handled a high-confidence subset                 retention again produced a graded tradeoff between retained-set
+autonomously while deferring the remainder to clinician review. We                  accuracy and coverage (Extended Data Fig. 4c and Supplementary
+operationalized this using an accuracy−coverage analysis, in which                  Table 12). Within the evaluated threshold range, the highest retained-
+cases were retained only if a confidence score exceeded a threshold;                set accuracy was observed at ConsistencyDx ≥ 0.85, yielding 89.9%
+accuracy was computed on retained cases, and coverage was defined                   accuracy at 32.0% coverage. Triage simulations across increasing
+as the proportion retained (Fig. 6a,b and Supplementary Table 9).                   thresholds showed the same qualitative pattern as in MIRA-v2: stricter
+     Across thresholds, ConsistencyDx provided a more favorable                     thresholds reduced automation coverage while progressively lowering
+operating curve than ProbScoreDx. A ConsistencyDx threshold of 0.90                 residual autonomous-stream errors (Extended Data Fig. 4d–i). These
+retained 49.4% of cases (n = 272) while achieving 98.9% diagnostic accu-            results indicate that the selective-autonomy framework remained
+racy in the retained subset (Fig. 6a). By contrast, ProbScoreDx did not             portable to a broader external benchmark setting, although overall
+reach this accuracy level within the evaluated thresholds, illustrating             performance remained heterogeneous across domains.
+that internal likelihood alone did not provide an equally reliable basis                  We next reviewed representative autonomous-stream errors that
+for selective-autonomy routing.                                                     persisted at higher ConsistencyDx thresholds, asking whether they
+     We then simulated a clinical triage workflow at Consisten-                     reflected true misreasoning or disagreement between benchmark
+cyDx ≥ 0.90 (Fig. 6c). Under this policy, the agent handled 272 of                  endpoints and the clinically appropriate framing at initial presenta-
+551 cases autonomously with three residual autonomous errors; the                   tion (Supplementary Table 13). Two recurrent patterns emerged. First,
+deferred stream concentrated the remaining 49 errors for clinician                  several cases reflected a timepoint mismatch: the agent prioritized
+review. Thus, consistency-based gating supported selective autonomy                 the acute syndrome or admission-relevant problem at presentation,
+by capturing a large fraction of low-risk decisions while routing unsta-            whereas the benchmark endpoint corresponded to a diagnosis estab-
+ble outputs to human oversight. A supplementary threshold-sweep                     lished only after later investigations or inpatient evolution. Exam-
+analysis showed that residual autonomous-stream errors decreased                    ples included acute pericarditis versus later-confirmed tuberculosis,
+as review became more conservative but did not fall to zero within the              ST-elevation myocardial infarction (STEMI) versus Takotsubo syn-
+evaluated ConsistencyDx threshold range (Supplementary Table 35).                   drome and supracondylar humeral fracture versus reset osmostat. In
+This residual tail was consistent with the high-consistency discordant              these cases, physician review suggested that the model’s output was
+cases in Fig. 4, indicating that confidence-based routing can reduce but            more consistent with the presenting complaint and standard early
+not eliminate benchmark-defined failures. Across additional models,                 clinical reasoning than with the later benchmark endpoint.
+the retained-accuracy/coverage tradeoff for ConsistencyDx was also                        Second, some cases represented stable but incorrect reasoning,
+preserved, although the threshold required to achieve a given balance               in which the agent converged on a clinically plausible but ultimately
+varied across architectures (Supplementary Table 36).                               incorrect diagnosis by anchoring on a familiar syndrome narrative
+                                                                                    without prioritizing the key disambiguating evidence. Examples
+External benchmark evaluation on VivaBench                                          included multiple myeloma rather than primary hyperparathyroidism
+To evaluate portability beyond the MIMIC-derived benchmarks, we                     in a hypercalcemic syndrome case and POEMS syndrome rather than
+tested the on-premise agent on the PubMed-derived VivaBench bench-                  metallosis. More broadly, these high-consistency failures reflected pre-
+mark, which spans 10 specialty groups and is designed to probe diagnos-             mature closure on a coherent, familiar diagnostic explanation rather
+tically challenging sequential reasoning under uncertainty32. Because               than arbitrary outputs. One notable example was a case in which the
+VivaBench is based on physician-curated case reports and provides                   model converged on thyrotoxic periodic paralysis, whereas physician
+both a diagnosis list and accepted differentials, performance was evalu-            review noted that the benchmark diagnosis depended on concealed
+ated using a benchmark-aligned top-1 approximate accuracy criterion                 self-induced beta-agonist exposure suggestive of factitious disorder.
+(Methods). As expected for this more demanding external setting, abso-              Such cues would be difficult even for human clinicians to recover
+lute performance was lower than on the MIMIC-derived benchmarks.                    when the patient is explicitly hiding the diagnosis and are especially
+Among the evaluated open-weight models, Qwen-3.5 achieved higher                    challenging for a conversational agent lacking non-verbal observation.
+overall top-1 approximate accuracy than GPT-OSS (72.22 ± 0.92% versus               Clinical severity was heterogeneous: some were genuinely concern-
+67.96 ± 1.09%; Extended Data Fig. 4a and Supplementary Table 10).                   ing high-confidence failures with potential for harmful misdirection,
+
+
+Fig. 3 | Discriminative power of confidence metrics across diagnostic outcome       Boxes show the median and interquartile range
+and reasoning process. a, Dual-stream ROC analysis comparing discriminative         (Q1−Q3); whiskers extend to the most extreme values within 1.5 times the
+performance for the diagnostic output (left) and reasoning trace (right).           interquartile range; observations beyond the whiskers are shown as open circles.
+ConsistencyDx showed the highest discrimination for diagnostic correctness          For ConsistencyDx, incorrect cases are concentrated at lower values, whereas
+(AUC = 0.860). LingCertR showed higher discrimination in the reasoning trace        some other metrics retain high-valued errors. Two-sided Mann−Whitney
+than in the diagnostic output (AUC = 0.792). ConceptDensityR showed an inverse      U-tests with Holm adjustment across the eight prespecified metrics yielded
+trend with correctness but did not behave as a reliable confidence measure, with    Holm-adjusted P values of 2.336 × 10−8, 7.459 × 10−17, 3.328 × 10−6 and 6.469 × 10−5
+higher values associated with incorrect reasoning traces. b−e, Distributional       for ProbScoreDx, ConsistencyDx, LingCertDx and ConceptDensityDx,
+characteristics of correct and incorrect cases across metrics. Barcode plots        respectively (c), and 5.972 × 10−7, 8.122 × 10−11, 1.887 × 10−12 and 0.07955 for
+(b,d) show the density of individual cases; box plots (c,e) summarize group         ProbScoreR, ConsistencyR, LingCertR and ConceptDensityR, respectively
+separation. Each observation represents one unique MIRA-v2 benchmark case           (e). Incorrect traces showed a higher median ConceptDensityR than correct
+(n = 551; correct, n = 499, and incorrect, n = 52). Case-level confidence metrics   traces, but the difference did not reach conventional statistical significance.
+were computed from five repeated stochastic model inferences per case;              ****P < 0.0001.
+these computational repeats were not treated as independent observations.
+
+
+Nature Medicine
+Article                                                                                                                          https://doi.org/10.1038/s41591-026-04609-x
+
+whereas others reflected benchmark-labeling disagreement rather                                         behavior of ConsistencyDx was preserved: higher thresholds gener-
+than unsafe reasoning.                                                                                  ally increased retained-set accuracy at the cost of lower coverage, and
+                                                                                                        ConsistencyDx remained informative for routing. Repeated-run count
+Implementation sensitivity analyses of behavioral consistency                                           had modest effects on the cohort-level score distribution, but higher
+Unless otherwise stated, ConsistencyDx was estimated from five inde-                                    thresholds produced progressively more selective triage behavior.
+pendent stochastic runs per case using a MiniLM sentence encoder.                                       For example, at ConsistencyDx ≥ 0.90, retained accuracy increased
+We examined sensitivity to repeated-run count, decoding tempera-                                        from 97.5% (N = 3) to 98.9% (N = 5) and 99.6% (N = 10), whereas coverage
+ture and embedding model choice (Extended Data Fig. 5a–h and                                            decreased from 51.7% to 49.4% and 46.3%, respectively. At the same
+Supplementary Tables 14–19). Across these analyses, the qualitative                                     threshold, residual autonomous-stream errors also decreased from
+
+
+a                                                                                                  Overall
+                            Diagnosis                                                                        Reasoning
+                      1.0
+
+
+
+                      0.8
+
+
+
+
+ True-positive rate
+                      0.6
+
+
+
+                      0.4
+
+                                                                            ProbScore (0.747)                                                                       ProbScore (0.721)
+                      0.2                                                   Consistency (0.860)                                                                     Consistency (0.785)
+                                                                            LingCert (0.629)                                                                        LingCert (0.792)
+                                                                            ConceptDensity (0.674)                                                                  ConceptDensity (0.426)
+                       0
+                            0           0.2   0.4             0.6             0.8                 1.0      0               0.2       0.4            0.6                0.8                 1.0
+                                              False-positive rate                                                                    False-positive rate
+
+b                                                                    c                                     d                                                    e
+                                                                                                                                                                                    ****
+                                                          1          1.00            ****                                                            0.97
+                                                                                                                                                                0.90
+                ConsistencyDx                                                                              ConsistencyR
+                                                                     0.80
+                                                                                                                                                                0.80
+                                                          0.37                                                                                       0.61
+                                                                     0.60                                                                                       0.70
+
+                                                         Correct     0.40                                                                           Correct     0.60
+                            Decision                                                                            Decision
+                                                         Incorrect                                                                                  Incorrect
+                                                                                                                                                                             True      False
+                                                                                True     False
+
+
+
+                                                          1
+                                                                      1.00             ****                                                          0.95
+                                                                                                                                                                0.95                ****
+                      ProbScoreDx                                                                            ProbScoreR
+                                                                     0.95
+                                                                                                                                                                0.90
+                                                          0.81       0.90                                                                            0.81
+                                                                                                                                                                0.85
+                                                         Correct     0.85
+                                                                                                                                                    Correct
+                            Decision                                                                            Decision
+                                                         Incorrect                                                                                  Incorrect
+                                                                     0.80
+                                                                                 True     False                                                                              True      False
+
+
+
+                                                          1                                                                                           0.54
+                                                                     1.00              ****                                                                     0.50
+ConceptDensityDx                                                                                        ConceptDensityR
+                                                                     0.80
+                                                                                                                                                                0.40
+                                                          0          0.60                                                                             0.13
+                                                                                                                                                                0.30
+                                                                     0.40
+                                                         Correct                                                                                    Correct     0.20
+                                                                     0.20
+                            Decision                                                                            Decision
+                                                         Incorrect                                                                                  Incorrect
+                                                                         0
+                                                                                                                                                                             True      False
+                                                                                 True     False
+
+
+                                                          1
+                                                                      1.00             ****                                                           1
+                                                                                                                                                                1.00            ****
+                       LingCertDx                                                                              LingCertR
+                                                                                                                                                                0.99
+                                                                     0.95
+                                                          0.86                                                                                       0.96       0.98
+                                                                     0.90
+                                                         Correct                                                                                    Correct     0.97
+                            Decision                                                                            Decision
+                                                         Incorrect                                                                                  Incorrect
+                                                                                  True    False                                                                              True     False
+
+
+
+Nature Medicine
+Article                                                                                                                                   https://doi.org/10.1038/s41591-026-04609-x
+
+
+                   Case B                                                                                                    Case A
+
+                     Final decision: False                                                                                    Final decision: False
+
+                     Ground truth: Calculus of gallbladder with acute cholecystitis, without mention                          Ground truth: Diverticulitis of colon (without mention of
+                     of obstruction                                                                                           hemorrhage)
+                     Agent diagnoses:                                                                                         Agent diagnoses:
+                     Run1: Acute gallstone pancreatitis                                                                       Run1: Epiploic appendagitis
+                     Run2: Acute pancreatitis secondary to gallstones                                                         Run2: Epiploic appendagitis
+                     Run3: Acute pancreatitis secondary to gallstones                                                         Run3: Epiploic appendagitis
+                     Run4: Acute pancreatitis secondary to gallstones                                                         Run4: Epiploic appendagitis
+                     Run5: Acute cholecystitis with gallstone pancreatitis                                                    Run5: Epiploic appendagitis
+
+                     ConsistencyDx: 0.93                                                                                      ConsistencyDx: 1.00
+                     ProbScoreDx: 0.98                                                                                        ProbScoreDx: 1.00
+
+
+a                                                                b                                                                                  c
+                                                                               1.0       Decision
+                                                       1.00                                                                                                                                                      1.0
+
+
+
+
+                                                                                                                                              Behavioral consistency (bin)
+ConsistencyDx       1.00 0.51 0.68 0.41 0.51                                              Correct
+                                                       0.75                    0.9
+                                                                                          Incorrect                                                                          High   100.0% 100.0%      99.0%
+
+
+
+
+                                                                                                                                                                                                                       Diagnostic accuracy
+                                                                                                                                                                                                                 0.8
+                                                       0.50
+  ProbScoreDx       0.51 1.00 0.41 0.37 0.43                                   0.8
+
+
+
+
+                                                               ConsistencyDx
+                                                                                                                                                                                                                 0.6
+                                                       0.25
+                                                                                                                                                                             Med    94.9%    96.1%     96.6%
+  ConsistencyR      0.68 0.41 1.00 0.42 0.43           0                       0.7
+                                                                                                                                                                                                                 0.4
+                                                       –0.25
+                                                                               0.6
+    ProbScoreR      0.41 0.37 0.42 1.00 0.40                                                                                                                                        69.2%    84.7%     90.5%     0.2
+                                                       –0.50                                                                                                                 Low
+                                                                               0.5
+                    0.51 0.43 0.43 0.40 1.00           –0.75                                                                                                                                                     0
+     LingCertR
+                                                       –1.00
+                                                                                                                                                                                     Low      Med       High
+                                                                               0.4
+                  Dx      x      R    eR      tR                                                                                                                                    Internal probability (bin)
+                  cy    eD       cy   or      er
+               en      or      en   Sc       C                                       0     5    0       5     0    5    0       5     00
+                     Sc     st           ng                                      80       82   85     87     90   92   95      97
+             st
+             si   ob        si   ob      Li                                     0.       0.    0.   0.     0.     0.   0.     0.    1.0
+          on      Pr    on       Pr
+         C             C                                                                                 ProbScoreDx
+
+      Case D                                                                                        Case C
+
+        Final decision: True                                                                          Final decision: True
+
+        Ground truth: Acute appendicitis without mention of peritonitis                               Ground truth: Urinary tract infection, site not specified
+                                                                                                      Agent diagnoses:
+        Agent diagnoses:
+                                                                                                      Run1: Acute ischemic stroke/TIA with hypertensive encephalopathy
+        Run1:Abdominal pain, likely related to chronic GI issues                                      Run2: Urinary tract infection with confusion, type 2 diabetes mellitus,
+        Run2:Acute appendicitis                                                                       chronic
+        Run3:Acute appendicitis                                                                       kidney disease, atrial fibrillation
+        Run4: Right lower quadrant abdominal pain with clinical suspicion                             Run3: Elevated INR with possible warfarin toxicity causing confusion
+        of appendicitis                                                                               Run4: Urinary tract infection with confusion, hyperglycemia, elevated
+        Run5: Right lower quadrant abdominal pain, etiology unclear                                   INR
+                                                                                                      Run5: Urinary tract infection with hyperglycemia
+        ConsistencyDx: 0.59
+        ProbScoreDx: 0.82                                                                             ConsistencyDx: 0.37
+                                                                                                      ProbScoreDx: 0.88
+
+Fig. 4 | Confidence−state interactions and diagnostic outcomes.                                         are dispersed. Colored markers correspond to the illustrative cases in the
+a, Pearsonʼs correlation matrix for the top-performing reliability-related                              surrounding panels. c, Grid-based accuracy heatmap illustrating the synergistic
+metrics. Associations were moderate rather than collinear, indicating partial                           effect of internal and behavioral metrics. Accuracy heatmap across binned
+overlap but non-redundancy among diagnostic stability, internal probability                             diagnostic internal probability and diagnostic behavioral consistency. Accuracy
+and reasoning-level metrics. The strongest correlation was observed between                             approached ceiling levels across the high-consistency row (99.0−100.0%),
+ConsistencyDx and ConsistencyR. b, Scatter plot of Internal Probability versus                          regardless of probability bin, whereas internal probability provided additional
+Behavioral Consistency, overlaid with specific case studies. Correct diagnoses                          stratification primarily when consistency was not high. GI, gastrointestinal; INR,
+(gray dots) cluster in the top-right ‘Safe Zone’; incorrect diagnoses (gray crosses)                    international normalized ratio; TIA, transient ischemic attack.
+
+
+
+
+seven (N = 3) to three (N = 5) and one (N = 10). Decoding temperature                                   repeated execution. Although the runs are, in principle, parallelizable,
+also shifted the operating point of consistency-based triage, while                                     total token consumption and GPU compute remained substantially
+embedding model choice had the largest effect on threshold calibra-                                     higher, and serial wall clock latency would increase correspondingly.
+tion. At ConsistencyDx ≥0.85, for example, BGE retained 73.9% of cases                                  Repeated-run consistency is, therefore, a useful but computationally
+compared to 62.6% for MiniLM and 63.7% for MPNet, without a cor-                                        costly decision-time reliability signal whose deployment value must
+responding retained-accuracy advantage. These findings indicate                                         be balanced against infrastructure constraints.
+that absolute consistency thresholds are not universal and must be
+calibrated to the deployment configuration rather than transferred                                      Discussion
+directly across settings.                                                                               Clinical deployment of autonomous LLM agents depends not only
+     Because consistency estimation requires repeated multi-turn                                        on diagnostic accuracy but also on institutionally governed opera-
+encounters, we also quantified computational cost (Extended                                             tion and reliable decision-time assessment of when outputs should
+Data Fig. 5i and Supplementary Tables 20–23). Aggregating five runs                                     be trusted6,16–19. In the present study, we addressed these require-
+increased doctor agent token use by approximately five-fold relative                                    ments jointly by combining an on-premise agent architecture with
+to single-pass inference, close to the expected linear scaling from                                     inference-time reliability signals that support selective autonomy.
+
+
+Nature Medicine
+Article                                                                                                                                                                    https://doi.org/10.1038/s41591-026-04609-x
+
+
+    a                                                                          c                                                                                    Overall
+                                         ***
+                          100                                                                          Diagnosis                                                              Reasoning
+                                                                                                 1.0
+
+
+                          80
+                                                                                                 0.8
+
+
+
+
+Diagnostic accuracy (%)
+                                                                            True-positive rate
+                          60
+                                                                                                 0.6
+
+
+
+
+                          40                                                                     0.4
+
+
+                                                                                                                                   ProbScore (0.723)                                                  ProbScore (0.765)
+                                                                                                 0.2                               Consistency (0.875)                                                Consistency (0.793)
+                          20
+                                                                                                                                   LingCert (0.636)                                                   LingCert (0.785)
+                                                                                                                                   ConceptDensity (0.686)                                             ConceptDensity (0.457)
+                                                                                                  0
+                           0                                                                           0      0.2          0.4        0.6          0.8               1.0   0         0.2      0.4       0.6        0.8      1.0
+                            Baseline                Perturbed
+                                                                                                                         False-positive rate                                                False-positive rate
+                          (grounded)              (ungrounded)
+
+
+    b                                  ***                                                                          **                                                                ***
+                                                                                                                                                            0.998
+
+
+                          0.9                                                      0.96
+                                                                                                                                                            0.996
+
+
+                                                                                   0.95                                                                     0.994
+                          0.8                                                                                                                                                                                     Disease
+
+
+
+
+ConsistencyDx
+                                                                                                                                                                                                              Appendicitis
+
+
+
+                                                              ProbScoreDx                                                                       LingCertR
+                                                                                   0.94                                                                     0.992                                             Cholecystitis
+                          0.7                                                                                                                                                                                 Diverticulitis
+                                                                                                                                                                                                              Pancreatitis
+                                                                                                                                                            0.990
+                                                                                   0.93                                                                                                                       Pneumonia
+                          0.6                                                                                                                                                                                 Pulmonary embolism
+                                                                                                                                                            0.988                                             UTI
+                                                                                    0.92
+
+                          0.5                                                                                                                               0.986
+                                                                                     0.91
+
+                            Baseline             Perturbed                                Baseline                                 Perturbed                    Baseline                        Perturbed
+                          (grounded)           (ungrounded)                             (grounded)                               (ungrounded)                 (grounded)                      (ungrounded)
+
+Fig. 5 | Stress testing decisional trust under induced information scarcity.                                                       and 123 pairs worsening under perturbation (P = 4.139 × 10−25). No multiple
+For a and b, analyses were performed at the paired case level across the Baseline                                                  comparison adjustment was applied because this was a single prespecified
+(grounded) and Perturbed (ungrounded) conditions (n = 551 unique benchmark                                                         comparison. b, Paired changes in ConsistencyDx, ProbScoreDx and LingCertR
+cases). Case-level diagnostic correctness and confidence metrics were computed                                                     between conditions; lines show disease-level means. Two-sided Wilcoxon
+from repeated stochastic inferences, with five inferences per case except for                                                      signed-rank tests with Holm adjustment yielded adjusted P = 2.209 × 10−35 for
+one Perturbed case with four completed inferences; these were treated as                                                           ConsistencyDx, 0.007147 for ProbScoreDx and 3.599 × 10−5 for LingCertR (n = 551
+computational repeats rather than independent observations. A single disease                                                       paired cases). ConsistencyDx decreased sharply under perturbation, whereas
+legend is shared across a and b. a, Disease-specific diagnostic accuracy under the                                                 ProbScoreDx and LingCertR shifted less, and both increased for pneumonia.
+Perturbed and Baselines conditions; lines connect disease-level mean accuracies.                                                   c, Discriminative performance under perturbation (ROC). ConsistencyDx
+Overall accuracy decreased from 90.6% (499/551) in the Baseline condition to                                                       remains strongly discriminative in the Perturbed condition (AUC = 0.875).
+70.2% (387/551) in the Perturbed condition, a decrease of 20.3 percentage points.                                                  UTI, urinary tract infection. **P < 0.01, ***P < 0.001.
+A two-sided exact McNemarʼs test across paired cases showed 11 pairs improving
+
+
+
+Under a matched agent architecture and evaluation pipeline, on-premise                                                             when evidence was removed, helping to explain why probability-based
+performance on MIRA-v2 remained close to the cloud baseline, indicat-                                                              gating was less effective for selective autonomy. In this study, cross-run
+ing that governance-oriented local deployment did not impose a large                                                               consistency was used not as a decoding rule but as a decision-time reli-
+performance penalty in this setting. The main contribution, however,                                                               ability signal for autonomous clinical workflows.
+is not competitive performance alone but also the demonstration that                                                                    Our dual-stream evaluation further indicates that reliability
+reliability signals can be quantified at decision time and translated                                                              depends on what is being scored. Linguistic hedging carried more
+into explicit triage policies within a locally governed workflow5,16–19.                                                           information in the reasoning trace than in the final diagnostic label,
+     A central finding was that behavioral consistency provided the                                                                consistent with uncertainty being more likely to appear in extended
+strongest indicator of diagnostic correctness. Cross-run semantic con-                                                             explanatory language than in a brief final diagnosis. This measure
+sistency of the final diagnostic output outperformed token-level likeli-                                                           remained surface level and did not resolve the scope of uncertainty
+hood and remained informative under induced information scarcity,                                                                  within a sentence, limiting fine-grained clinical interpretability. By
+where accuracy deteriorated but consistency both preserved discrimi-                                                               contrast, concept density in reasoning did not behave as a confidence
+nation and shifted downward in absolute value. By contrast, internal                                                               measure and, instead, showed an inverse trend with correctness, rais-
+likelihood retained only partial utility and did not reliably decrease                                                             ing the possibility that jargon-rich rationales may project competence
+
+
+Nature Medicine
+Article                                                                                                                                                 https://doi.org/10.1038/s41591-026-04609-x
+
+
+                          a                        Accuracy                                                      b                    Accuracy
+                                                   Coverage                                                                           Coverage
+                                                                            98.9 99.4                                                                    97.6
+                                       100                    97.4 97.4                                                                   96.0 96.1 96.9
+                                               96.3 96.9                                                                           94.3                                 94.2
+                                                                                                                              95
+
+
+
+                        Accuracy (%)                                                                           Accuracy (%)
+                                       95
+
+                                       90                                                                                     90
+
+                                       85                                                                                     85
+
+                                       80                                                 0                                   80                                                   0
+
+                                                                                          20                                                                             9.4       20
+
+
+
+
+                                                                                                                                                                                         Coverage (%)
+                                                                                                                                                                 22.5
+
+
+
+                                                                                                Coverage (%)
+                                                                                   31.6   40                                                             35.2                      40
+
+                                                                            49.4          60
+                                                                                                                                                 46.3                              60
+                                                                     62.6                                                                 58.8
+                                                              70.8                        80                                       69.5                                            80
+                                                      76.6
+                                               82.8
+                                                                                          100                                                                                      100
+                                               0.70    0.75   0.80   0.85   0.90   0.95                                            0.94   0.95   0.96    0.97    0.98    0.99
+                                                      ConsistencyDx threshold                                                             ProbScoreDx threshold
+
+
+                          c                  Clinical triage workflow (ConsistencyDx threshold = 0.90)
+
+
+
+
+                                                                                                                                                          Autonomous correct
+                                                                                                                                                                   (n = 269)
+                                                                                                AI autonomy
+                                                                                                (n = 272)
+
+
+
+
+                                                Total cases
+                                                (n = 551)
+
+                                                                                                                                                                Deferred correct
+                                                                                                                                                                       (n = 230)
+
+                                                                                                Human review
+                                                                                                (n = 279)
+
+
+
+                                                                                                                                                                  Deferred error
+                                                                                                                                                                        (n = 49)
+
+                                                                                                                                                            Autonomous error
+                                                                                                                                                                     (n = 3)
+
+Fig. 6 | Operationalizing trust through selective autonomy using                                                 categories under confidence-based routing: Autonomous correct (retained for
+confidence-based filtering. a, Accuracy−coverage tradeoff for gating signal:                                     autonomous handling, and the agent’s diagnosis was correct); Autonomous error
+Behavioral Consistency of the diagnosis (ConsistencyDx). Bars report diagnostic                                  (retained for autonomous handling, but the agent’s diagnosis was incorrect);
+accuracy among cases meeting the threshold (top) and corresponding                                               Deferred correct (deferred to clinician review because the consistency threshold
+automation coverage (bottom) across increasing thresholds. ConsistencyDx                                         was not met, despite a correct agent diagnosis); and Deferred error (deferred to
+provides a favorable operating curve: at a threshold of 0.90, accuracy reaches                                   clinician review because the consistency threshold was not met, and the agent’s
+98.9% while retaining 49.4% of cases. Case-level 95% confidence intervals for                                    diagnosis was incorrect). Cases meeting the threshold are routed to autonomous
+coverage and retained-case accuracy are reported in Supplementary Table 9.                                       handling (n = 272; 98.9% accuracy), yielding three autonomous errors. Remaining
+b, Accuracy−coverage tradeoff for internal probability of the diagnosis                                          cases are deferred to human review. The review stream concentrates the majority
+(ProbScoreDx) as the gating signal. ProbScoreDx did not reach the same                                           of errors, supporting the use of Consistency-based gating to defer ambiguous
+retained-case accuracy within the evaluated thresholds; at a threshold of ≥0.98,                                 or unstable outputs while reducing clinician workload for high-confidence
+coverage was 22.5%, and retained-case accuracy was 97.6%. c, Simulated triage                                    cases. For visualization, deferred cases are stratified post hoc by reference-label
+workflow at a Consistency threshold of 0.90. Flows indicate four outcome                                         correctness into Deferred error (n = 49) and Deferred correct (n = 230).
+
+
+
+
+without corresponding factual grounding. However, post hoc analy-                                                correlated with ConsistencyDx, which retained superior performance
+ses suggested that reasoning trace concept density covaried with                                                 (Supplementary Table 37)26.
+aspects of the diagnostic workup rather than independently track-                                                     These signals can be operationalized for selective autonomy.
+ing incorrectness, reinforcing that it should not be interpreted as                                              Consistency-based gating retained a substantially larger autonomous
+a conventional confidence measure (Supplementary Fig. 1). These                                                  subset than probability-based gating at similar retained-set accuracy,
+findings argue for treating internal, expressed and behavioral sig-                                              allowing lower-risk cases to be handled autonomously while concen-
+nals as related but non-interchangeable views of reliability. A recent                                           trating unstable cases into the review stream. Selective autonomy,
+calibration probing study33 also decomposes confidence into intrin-                                              therefore, does not remove uncertainty but redistributes it. In an
+sic, consistency-based and semantic components and similarly finds                                               on-premise deployment, thresholds, escalation rules and validation
+that inconsistency-aware signals can outperform intrinsic probability                                            procedures can remain under institutional governance rather than
+alone, although the task setting and operationalization differ substan-                                          being delegated externally. At the same time, confidence-based routing
+tially from ours. For transparency, we also report a supplementary                                               is a mechanism for risk stratification, not a substitute for continuing
+semantic-entropy-inspired comparison (SemanticCertaintyDx) on                                                    clinical governance. The threshold-sweep analysis reinforces this: more
+MIRA-v2; this metric showed strong discrimination but remained highly                                            conservative review policies reduced residual autonomous-stream
+
+
+Nature Medicine
+Article                                                                                                 https://doi.org/10.1038/s41591-026-04609-x
+
+errors but did not eliminate them in the benchmark setting. Some of             improving overall performance, leaving the circumstances under
+these residual high-consistency errors also reflected benchmark-label           which critique is beneficial undefined. Fourth, implementation analy-
+limitations rather than uniformly unsafe reasoning, suggesting that             ses showed that absolute consistency thresholds were not universal:
+zero benchmark discordance is neither a realistic nor a sufficient              decoding temperature, semantic encoder choice and repeated-run
+deployment target.                                                              count altered operating characteristics, indicating that thresholds
+      An additional deployment-relevant finding was the age gradi-              must be calibrated to the deployment configuration. Finally, all evalu-
+ent observed in the subgroup analyses. On both MIRA-v2 and CDM,                 ations were retrospective simulations; prospective studies and dedi-
+diagnostic accuracy was lower in older age groups than in younger               cated bias audits will be required to determine how these signals affect
+adults, whereas sex-stratified differences were smaller. This matters           clinician reliance, review burden, safety outcomes and fairness across
+for selective autonomy because a routing concerns not only average              patient subgroups in real practice.
+retained accuracy but also which patients are more likely to be handled              In summary, our findings support a practical framework for more
+autonomously versus deferred. Exploratory age-stratified analyses               trustworthy medical AI agents in which institutionally governed deploy-
+were directionally consistent with this concern under a fixed consist-          ment is paired with decision-time reliability estimation to support
+ency threshold (Supplementary Table 38). If such reductions affect              selective autonomy with explicit human escalation. Behavioral con-
+older patients, they could map onto a population already carrying               sistency was the most informative signal in this setting, not because it
+higher clinical risk, with implications for both safety and fairness. These     eliminates uncertainty but because it helps determine when autono-
+analyses remain descriptive: without counterfactual demographic                 mous handling may be reasonable and when uncertainty should remain
+perturbation or prospective workflow evaluation, we cannot determine            with the clinician.
+whether the observed gradients arise from benchmark composition,
+case complexity, documentation effects or model bias. We, therefore,            Online content
+interpret this as an important deployment consideration requiring               Any methods, additional references, Nature Portfolio reporting sum-
+dedicated bias auditing rather than as a resolved finding.                      maries, source data, extended data, supplementary information,
+      The external VivaBench analysis provides partial support for the          acknowledgements, peer review information; details of author contri-
+portability of this framework beyond the MIMIC-derived setting. On              butions and competing interests; and statements of data and code avail-
+this independent PubMed-derived benchmark, ConsistencyDx again                  ability are available at https://doi.org/10.1038/s41591-026-04609-x.
+emerged as the strongest evaluated signal, and threshold-based gating
+again produced a graded tradeoff between retained-set accuracy and              References
+coverage. Because VivaBench is assembled from physician-curated                 1.  Schmidgall, S. et al. AgentClinic: a multimodal benchmark for
+PubMed case reports and designed to evaluate sequential reasoning                   tool-using clinical AI agents. npj Digit. Med. 9, 499 (2026).
+under uncertainty, its absolute performance should not be interpreted           2. Mehandru, N. et al. Evaluating large language models as agents in
+as directly comparable to the MIMIC-derived tasks but, rather, as a more            the clinic. npj Digit. Med. 7, 84 (2024).
+demanding external reasoning setting. Physician review showed that              3. Chen, X. et al. Enhancing diagnostic capability with multi-agents
+these residual errors were heterogeneous, reflecting either a timepoint             conversational large language models. npj Digit. Med. 8, 159
+mismatch between presentation-level reasoning and a later etiologic                 (2025).
+benchmark endpoint or stable but incorrect reasoning in which the               4. Zhou, S. et al. Large language models for disease diagnosis: a
+model anchored on a familiar syndrome pattern without prioritiz-                    scoping review. npj Artif. Intell. 1, 9 (2025).
+ing decisive disambiguating evidence (Results). Some were further               5. Lee, J. D. & See, K. A. Trust in automation: designing for
+amplified by the limits of a conversational setting, where key cues were            appropriate reliance. Hum. Factors 46, 50–80 (2004).
+concealed or depended on non-verbal observation. This distinction is            6. Artificial Intelligence Risk Management Framework: Generative
+clinically relevant: in first-contact settings, the task is often to identify       Artificial Intelligence Profile https://doi.org/10.6028/NIST.AI.600-1
+the high-risk syndrome and avoid unsafe dismissal rather than to infer              (National Institute of Standards and Technology, 2024).
+immediately the final etiologic diagnosis that may become appar-                7. Regulation (EU) 2025/327 of the European Parliament and of
+ent only after later investigations or clinical evolution. Benchmark                the Council of 11 February 2025 on the European Health Data
+disagreement should, therefore, not automatically be interpreted as                 Space and amending Directive 2011/24/EU and Regulation (EU)
+equivalent to unsafe reasoning, although this does not diminish the                 2024/2847 (Text with EEA relevance) http://data.europa.eu/eli/
+importance of the truly high-confidence failures that remained.                     reg/2025/327/oj (2025).
+      Computational profiling highlights a practical tradeoff of                8. Artificial intelligence guidance for IG professionals https://digital.
+consistency-based autonomy. Repeated-run consistency estimation                     nhs.uk/data-and-information/information-governance/guidance/
+increased token use by approximately five-fold relative to single-pass              artificial-intelligence/guidance-for-ig-professionals (NHS Digital,
+inference. Although the repeated runs are independent and, there-                   2026).
+fore, amenable to parallel execution, total token consumption and               9. Dennstädt, F., Hastings, J., Putora, P. M., Schmerder, M. &
+GPU compute remain substantially higher. Repeated-run consistency                   Cihoric, N. Implementing large language models in healthcare
+should, therefore, be understood as a useful but computationally                    while balancing control, collaboration, costs and security.
+costly decision-time reliability signal whose deployment value must                 npj Digit. Med. 8, 143 (2025).
+be balanced against infrastructure constraints.                                 10. Lembo, S., Barra, P., Di Biasi, L., Bouwmans, T. & Tortora, G.
+      Several limitations should be acknowledged. First, both primary               AI4RDD: artificial intelligence and rare disease diagnosis: a
+benchmarks derive from MIMIC-IV, reflecting a single-institution data               proposal to improve the anamnesis process. Image Vis. Comput.
+ecology; VivaBench broadens the evaluation setting but does not                     162, 105658 (2025).
+substitute for validation on independent datasets or in prospective             11. Geng, J. et al. A survey of confidence estimation and calibration
+workflows. Second, the evaluation is limited to text-based diagnostic               in large language models. in Proc. 2024 Conference of the North
+reasoning; although the framework is modular and could incorporate                  American Chapter of the Association for Computational Linguistics:
+multimodal components, native image interpretation represents a                     Human Language Technologies (Volume 1: Long Papers) (eds Duh,
+distinct clinical and methodological subproblem rather than a simple                K., Gomez, H. & Bethard, S.) 6577−6595 https://doi.org/10.18653/
+extension of the workflow studied here. Third, a multi-agent critic                 v1/2024.naacl-long.366 (Association for Computational
+extension showed heterogeneous condition-specific effects without                   Linguistics, 2024).
+
+
+Nature Medicine
+Article                                                                                          https://doi.org/10.1038/s41591-026-04609-x
+
+12. May a HIPAA covered entity or business associate use a cloud         24. Xiong, M. et al. Can LLMs express their uncertainty? An empirical
+    service to store or process ePHI? https://www.hhs.gov/hipaa/for-         evaluation of confidence elicitation in LLMs. in International
+    professionals/faq/2075/may-a-hipaa-covered-entity-or-business-           Conference on Learning Representations (2024).
+    associate-use-cloud-service-to-store-or-process-ephi/index.html      25. Savage, T. et al. Large language model uncertainty proxies:
+    (US Department of Health and Human Services, 2023).                      discrimination and calibration for medical diagnosis and
+13. Regulation (EU) 2016/679 of the European Parliament and of the           treatment. J. Am. Med. Inform. Assoc. 32, 139–149 (2025).
+    Council of 27 April 2016 on the protection of natural persons        26. Farquhar, S., Kossen, J., Kuhn, L. & Gal, Y. Detecting hallucinations
+    with regard to the processing of personal data and on the free           in large language models using semantic entropy. Nature 630,
+    movement of such data, and repealing Directive 95/46/EC                  625–630 (2024).
+    (General Data Protection Regulation) (Text with EEA relevance)       27. Zhou, S. et al. Uncertainty-aware large language models for
+    http://data.europa.eu/eli/reg/2016/679/oj (2016).                        explainable disease diagnosis. npj Digit. Med. 8, 690 (2025).
+14. Personal Information Protection and Electronic Documents             28. Taubenfeld, A. et al. Confidence improves self-consistency in
+    Act. https://www.laws-lois.justice.gc.ca/eng/acts/P-8.6/                 LLMs. in Findings of the Association for Computational Linguistics:
+    (Government of Canada, 2000).                                            ACL 2025 (eds Che, W. et al.) 20090−20111 https://doi.org/
+15. Marketing Submission Recommendations for a Predetermined                 10.18653/v1/2025.findings-acl.1030 (Association for
+    Change Control Plan for Artificial Intelligence-Enabled Device           Computational Linguistics, 2025).
+    Software Functions: Guidance for Industry and Food and Drug          29. Ferber, D. et al. Towards autonomous medical artificial intelligence
+    Administration Staff https://www.fda.gov/regulatory-information/         agents. Nature 655, 1282−1291 https://doi.org/10.1038/s41586-
+    search-fda-guidance-documents/marketing-submission-                      026-10675-5 (2026).
+    recommendations-predetermined-change-control-plan-artificial-        30. Hager, P. et al. Evaluation and mitigation of the limitations of
+    intelligence (US Food and Drug Administration, 2025).                    large language models in clinical decision-making. Nat. Med. 30,
+16. Vasey, B. et al. Reporting guideline for the early-stage clinical        2613–2622 (2024).
+    evaluation of decision support systems driven by artificial          31. MIMIC CDM Leaderboard - a Hugging Face Space by MIMIC-CDM
+    intelligence: DECIDE-AI. Nat. Med. 28, 924–933 (2022).                   https://huggingface.co/spaces/MIMIC-CDM/leaderboard
+17. Clinical Decision Support Software: Guidance for Industry and Food   32. Chiu, C., Pitis, S. & van der Schaar, M. Simulating viva voce
+    and Drug Administration Staff https://www.fda.gov/regulatory-            examinations to evaluate clinical reasoning in large language
+    information/search-fda-guidance-documents/clinical-decision-             models. in Advances in Neural Information Processing Systems 38
+    support-software (US Food and Drug Administration, 2026).                (2026).
+18. Applying Human Factors and Usability Engineering to Medical          33. Kissling, C., Merdjanovska, E. & Akbik, A. Self-aware knowledge
+    Devices: Guidance for Industry and Food and Drug Administration          probing: evaluating language models’ relational knowledge
+    Staff https://www.fda.gov/regulatory-information/search-fda-             through confidence calibration. Preprint at https://doi.org/
+    guidance-documents/applying-human-factors-and-usability-                 10.48550/arXiv.2601.18901 (2026).
+    engineering-medical-devices (US Food and Drug Administration,
+    2016).                                                               Publisher’s note Springer Nature remains neutral with regard to
+19. Ethics and governance of artificial intelligence for health:         jurisdictional claims in published maps and institutional affiliations.
+    WHO guidance https://www.who.int/publications/i/
+    item/9789240029200 (World Health Organization, 2021).                Open Access This article is licensed under a Creative Commons
+20. Anadkat, S. How to make your completions outputs consistent          Attribution 4.0 International License, which permits use, sharing,
+    with the new seed parameter https://developers.openai.com/           adaptation, distribution and reproduction in any medium or format,
+    cookbook/examples/reproducible_outputs_with_the_seed_                as long as you give appropriate credit to the original author(s) and the
+    parameter (2023).                                                    source, provide a link to the Creative Commons licence, and indicate
+21. Zhao, Q. et al. Uncertainty Propagation on LLM Agent. in Proc.       if changes were made. The images or other third party material in this
+    63rd Annual Meeting of the Association for Computational             article are included in the article’s Creative Commons licence, unless
+    Linguistics (Volume 1: Long Papers) 6064–6073 (Association for       indicated otherwise in a credit line to the material. If material is not
+    Computational Linguistics, 2025).                                    included in the article’s Creative Commons licence and your intended
+22. Omar, M. et al. Sociodemographic biases in medical decision          use is not permitted by statutory regulation or exceeds the permitted
+    making by large language models. Nat. Med. 31, 1873–1881 (2025).     use, you will need to obtain permission directly from the copyright
+23. Guo, C., Pleiss, G., Sun, Y. & Weinberger, K. Q. On calibration of   holder. To view a copy of this licence, visit http://creativecommons.
+    modern neural networks. in International Conference on Machine       org/licenses/by/4.0/.
+    Learning 1321−1330 https://proceedings.mlr.press/v70/guo17a.
+    html (PMLR, 2017).                                                   © The Author(s) 2026
+
+
+
+
+Nature Medicine
+Article                                                                                              https://doi.org/10.1038/s41591-026-04609-x
+
+Methods                                                                      Agent framework architecture
+Ethics statement                                                             Overview. We developed a fully on-premise, dual-agent simulation
+This study utilized deidentified, retrospective clinical data from the       framework to evaluate clinical reasoning in autonomous medical
+MIMIC-IV (version 2.2) and physician-curated cases from previously           agents. The architecture is adapted from the MIRA29 framework and
+published reports in VivaBench. The collection of patient information        centers on two interacting agents: a Physician Agent and a Patient Agent
+and creation of the MIMIC-IV resource was reviewed and approved by           operating within a controlled local environment. Our implementation
+the institutional review boards of the Beth Israel Deaconess Medical         prioritizes modularity, observability and operational control and sup-
+Center (BIDMC) and the Massachusetts Institute of Technology (MIT),          ports future multi-agent extensions. Interoperability and EHR integra-
+which granted a waiver of informed consent. No participants were             tion standards (for example, FHIR34) were not modeled, as the present
+prospectively recruited or compensated for the present study, and            study focuses on diagnostic reasoning and confidence signaling rather
+no additional informed consent was obtained. All data processing was         than deployment integration.
+conducted within a fully on-premise, institutionally governed environ-
+ment. No protected health information or deidentified clinical text          The Patient Agent. The Patient Agent simulates a real patient
+was transmitted to, stored by or accessible to any external entities or      within the clinical encounter. It is a non-tool-using conversational
+model providers. All researchers involved in data analysis of this study     model restricted to case-specific information provided at initializa-
+completed the required CITI Program training (‘Data or Specimens             tion, including the chief complaint, a clinical history summary and
+Only Research’) and adhered strictly to the PhysioNet Credentialed           pre-admission medications when available. For the MIMIC-IV-derived
+Health Data Use Agreement.                                                   benchmarks, these inputs were derived from the source clinical record;
+                                                                             for VivaBench, they were derived from the benchmark-provided case
+Dataset                                                                      material. Benchmark-specific Patient Agent prompts are provided in
+To evaluate the agent’s clinical reasoning capabilities across distinct      Supplementary Tables 25 and 26. Across benchmarks, the Patient Agent
+diagnostic settings and to assess generalizability, we used three            was required to remain grounded in the provided case context and to
+benchmarks spanning two independent data sources (Fig. 1). Two               avoid introducing unsupported symptoms, findings, diagnoses or
+benchmarks are derived from MIMIC-IV, a publicly available dataset of        treatments in the baseline setting. Pre-admission medication lists were
+deidentified EHRs from BIDMC: MIRA-v2 (n = 551; seven conditions),           included for MIRA-v2 when available and omitted for CDM because of
+adapted from the MIRA29 framework, which serves as the primary               data availability.
+benchmark for diagnostic decision-making, and CDM30 (n = 2,400; four
+acute abdominal conditions), which serves as a cross-validation bench-       The Physician Agent. The Physician Agent performs diagnostic rea-
+mark for diagnostic reasoning at scale. A third benchmark, VivaBench32       soning through multi-turn dialogue and tool use, using an on-premise
+(n = 990; 10 clinical specialty groups), provides independent external       LLM. It can request objective clinical evidence via function calling,
+validation across a broad multi-specialty case mix. Each benchmark is        including laboratory values, urinalysis, radiology reports, microbiol-
+described in detail in Extended Data Fig. 1a.                                ogy results and physical examination findings (Extended Data Table 1).
+     The primary benchmark (MIRA-v2) includes seven conditions,              Tool outputs are returned as textual observations and appended to the
+including appendicitis, cholecystitis, diverticulitis, pancreatitis, pneu-   agent’s context for subsequent reasoning. Each episode terminates
+monia, pulmonary embolism and urinary tract infection. It simulates          when the agent invokes a submission action (‘admission’), provid-
+early emergency assessment. We excluded the pancreatic cancer                ing (1) a single diagnosis (Dx) and (2) a structured reasoning trace
+subset (n = 23) from the original MIRA benchmark for three reasons.          (R). These two outputs are used to compute the reliability-related
+First, evaluation of pancreatic masses is inherently multimodal and          metrics described in the ‘Multi-perspective confidence framework’
+depends heavily on cross-sectional imaging (computed tomography/             section. Benchmark-specific Physician Agent prompts are provided
+magnetic resonance imaging) for diagnosis and staging; because               in Supplementary Tables 27 and 28.
+our framework operates on structured text without imaging inputs,
+including these cases would introduce a modality mismatch that               Planning strategy. Given the context budget constraints of on-premise
+could confound performance and reliability analyses. Second, these           models, we removed the explicit Plan tool used in the original MIRA
+encounters more often reflect oncological workup, staging and treat-         framework to reduce prompt overhead and preserve token capacity
+ment planning rather than the acute, early-presentation diagnostic           for dialogue history and tool outputs. The Physician Agent instead per-
+reasoning emphasized in this study, shifting the primary decision            formed implicit planning, in which successive tool calls and intermedi-
+target from de novo diagnosis toward management decisions. Third,            ate reasoning adaptively guided the diagnostic trajectory across turns.
+the small sample size limits statistical power and would yield unstable
+estimates at the disease level.                                              Clinical encounter workflow. Each simulation models a complete
+     The cross-validation benchmark (CDM) spans appendicitis, chol-          clinical encounter from initial presentation to final diagnosis. The
+ecystitis, diverticulitis and pancreatitis, with each case simulating a      encounter opens with the Patient Agent’s initial complaint, instantiated
+complete clinical encounter beginning with abdominal pain.                   from the case’s chief complaint in the benchmark-specific case mate-
+     To extend the evaluation beyond the acute-care, single-institution      rial. This opening utterance serves as the first input to the Physician
+setting represented by the MIMIC-IV-derived benchmarks, we                   Agent and initiates the diagnostic dialogue.
+additionally assessed the agent on VivaBench, an independent                       The core of the encounter is a dynamic, multi-turn interaction.
+PubMed-derived diagnostic benchmark (n = 990). VivaBench consists            During each encounter, the Physician Agent elicits subjective informa-
+of physician-curated cases drawn from published case reports and             tion from the Patient Agent and retrieves objective findings through
+spans 10 specialty groups, including cardiovascular, endocrine, gas-         the available clinical tools (Extended Data Table 1). Tool outputs are
+trointestinal, infectious disease, neurological, hematology/oncology,        appended to the Physician Agent’s context. The encounter terminates
+pediatric and respiratory presentations. Unlike the MIMIC-IV-derived         when the Physician Agent invokes the admission tool or reaches the
+benchmarks, VivaBench is designed to simulate viva-style diagnostic          10-turn limit.
+reasoning under uncertainty across broader clinical domains rather
+than admission-specific emergency encounters. This makes it structur-        Model selection under on-premise constraints. We screened
+ally distinct from the more common-condition, EHR-derived MIMIC              open-weight LLMs for reliable multi-turn dialogue, structured tool
+benchmarks and less directly comparable in absolute performance.             calling and sufficient context length. GLM-4.5-Air35 was selected
+
+
+Nature Medicine
+Article                                                                                            https://doi.org/10.1038/s41591-026-04609-x
+
+as the primary model after several candidates were excluded                 Adversarial stress testing. To assess robustness under informa-
+because of malformed tool calls, unsupported serving infrastruc-            tional scarcity, we performed an adversarial stress test comparing
+ture or context-length limitations. During revision, GPT-OSS36,             the Physician Agent’s performance in the standard, factually grounded
+GLM-5 (ref. 37) and Qwen-3.5 (ref. 38) were additionally evalu-             simulation (baseline) with a perturbed condition designed to reduce
+ated. Detailed screening criteria and failure modes are reported in         evidentiary grounding in the patient narrative.
+Supplementary Table 24.                                                          In the perturbed condition, we removed the chief complaint and
+                                                                            the full history summary (including the appended admission medica-
+Computational cost and resource profiling. We quantified computa-           tion section when present) from the Patient Agent’s system prompt,
+tional cost using token usage and wall clock runtime. Token usage was       leaving the system prompt with no information about the patient
+extracted from run metadata for each completed encounter. Doctor            (Supplementary Table 30). Without these structured anchors, the
+agent token use was analyzed separately from total workflow token use,      LLM-based Patient Agent was forced to confabulate context, generat-
+where total workflow tokens included doctor agent, patient simulator        ing a symptom history that was often incomplete, inconsistent or laden
+and other workflow component tokens.                                        with unsupported details relative to the ground truth.
+      For single-run inference, token use was analyzed at the encounter          The key manipulation was, therefore, the quality and stability of
+level. For five-run consistency analysis, token use was aggregated at the   conversational evidence available to the Physician Agent. This design
+case level by summing token use across the five repeated encounters         enabled us to quantify how degraded patient-provided information
+for the same case and model temperature configuration. Token use was        affects diagnostic accuracy and the agent’s decision-time confidence
+summarized using median and interquartile range. Five-run overhead          signals. All other experimental settings were held constant across
+ratios were calculated within each model temperature configuration          conditions, including model versions, decoding parameters (for exam-
+as the median five-run case-level token use divided by the median           ple, temperature), tool availability, Physician Agent prompts and the
+single-run encounter-level token use.                                       number of repeated runs per case.
+      Wall clock runtime was assessed separately in a controlled latency
+subset of 35 encounters, consisting of five randomly sampled cases          External benchmark configuration. For VivaBench, benchmark-level
+from each of seven disease cohorts. The same subset was used for            comparisons were performed with GPT-OSS and Qwen-3.5, both at
+all four locally hosted model configurations. For each encounter,           T = 0.6. The main confidence and triage analyses on VivaBench
+wall clock time was recorded from simulation start to completion            (Extended Data Fig. 4b–i) used Qwen-3.5 with model-default Hug-
+and represents encounter-level runtime, including the doctor agent,         ging Face sampling settings (top_k = 20, top_p = 0.95). Because
+patient simulator, tool calls and workflow overhead. Five-run runtime       VivaBench represents viva-style diagnostic encounters rather than
+was estimated under a serial execution assumption as five times the         admission-specific emergency workflows, benchmark-specific
+measured single-run runtime.                                                Patient Agent prompts and Physician Agent tool interfaces were
+      The LLMs were served using vLLM 39 on NVIDIA H200 and                 used. The core diagnostic reasoning logic, submission format and
+NVIDIA RTX PRO 6000 GPUs. Model-specific details are in Extended            confidence-estimation procedures remained unchanged.
+Data Table 2. The system was built using the OpenAI Agents SDK40 to
+support flexible orchestration of tool use and conversation flow.           Sensitivity analyses. Implementation-sensitivity analyses
+                                                                            (Extended Data Fig. 5) varied repeated-run count (N = 3, 5, 10), decod-
+Experimental configurations                                                 ing temperature (T = 0.01, 0.3, 0.6, 0.9) and semantic encoder (MiniLM,
+Single-agent baseline. Unless otherwise stated, the principal confi-        MPNet and BGE). Except for the repeated-run sensitivity analysis,
+dence, stress test and selective-autonomy analyses were conducted           all confidence, triage and implementation-sensitivity analyses used
+on MIRA-v2 using a single-agent baseline in which one Physician Agent       N = 5 stochastic runs and MiniLM for consistency estimation. In
+interacted with one Patient Agent. This baseline used GLM-4.5-Air with      temperature-sensitivity analyses, top_p and top_k were held at the
+T = 0.01, top_p = 1.0 and top_k = 0, where T, top_p and top_k denote        model-specific default settings listed in Extended Data Table 2.
+sampling temperature, nucleus-sampling probability threshold and
+top-k sampling cutoff, respectively. We used this configuration for the     Performance evaluation
+main reliability analyses to keep the workflow fixed across experiments.    Automated benchmark scoring. We evaluated diagnostic per-
+     For benchmark−performance comparisons, we evaluated                    formance using benchmark-specific scoring protocols. For the
+additional on-premise open-weight models under the same agent               seven-disease MIRA-v2 benchmark, we used an LLM-based adjudica-
+architecture and evaluation pipeline. On MIRA-v2, these included            tion protocol29 (LLM-as-a-judge). The evaluator model was run inde-
+GLM-4.5-Air, GLM-5, Qwen-3.5 and GPT-OSS; each model is reported            pendently from the clinical agent and received the agent’s predicted
+at its best-performing temperature setting. On CDM, the main                diagnosis together with the reference diagnosis label for the case,
+on-premise evaluations were performed with GLM-4.5-Air and Qwen-            returning a structured decision on clinical equivalence. All LLM-based
+3.5. Confusion matrix and adjudication analyses in Fig. 2c–f used the       adjudication analyses reported here used Gemini 3.1 Flash-Lite41 as the
+GLM-4.5-Air baseline.                                                       evaluator model. The evaluator prompt used for the MIMIC-IV-derived
+                                                                            benchmarks is provided in Supplementary Table 31.
+Multi-agent extension. To explore potential safety enhancements,                 For the four-disease CDM benchmark, we used the published
+we implemented a multi-agent system by introducing a DDx Critic             fuzzy-matching evaluation procedure 30, which compares the
+Agent. This agent, powered by a domain-specific LLM (MedGemma),             agent’s final diagnosis with a predefined set of permissible terms
+serves as a secondary reviewer. It receives the primary agent’s differ-     for each disease class. This protocol was retained to preserve direct
+ential diagnosis and returns a structured critique that highlights weak-    comparability with the original CDM leaderboard and previously
+nesses or potential high-risk alternatives, functioning as an automated     reported results.
+‘devil’s advocate’.                                                              For VivaBench, we also used an LLM-based adjudication proce-
+     The Physician Agent can optionally consult the Critic Agent            dure but with a benchmark-specific evaluation prompt adapted to
+before submitting a final diagnosis. The Critic Agent ablation              the task format (Supplementary Table 32). VivaBench provides both
+(Extended Data Fig. 2) used the same baseline and differed only by          a diagnosis list and an accepted differentials list, whereas the clini-
+addition of the DDx Critic Agent. The specific instruction governing        cal agent outputs a single final diagnosis. We, therefore, aligned the
+the Critic Agent is detailed in Supplementary Table 29.                     evaluation to the benchmark’s top-1 approximate accuracy principle32:
+
+
+Nature Medicine
+Article                                                                                                https://doi.org/10.1038/s41591-026-04609-x
+
+the evaluator assessed the prediction against both the diagnosis list        Multi-perspective confidence framework
+(decision) and the accepted differential list (partial_credit). A case       We defined decisional trust using reference-independent,
+was counted as incorrect only when both decision and partial_credit          inference-time reliability measures computed from the agent’s outputs
+were false.                                                                  without access to ground truth labels. The framework captures three
+     To assess agreement between LLM-based adjudication and the              complementary dimensions: internal likelihood, expressed uncertainty
+published fuzzy-matching protocol in a setting where both were appli-        in language and behavioral stability across repeated stochastic runs.
+cable, we performed a head-to-head concordance analysis on the               These dimensions were selected to capture distinct aspects of model
+CDM dataset. We evaluated a single prespecified run (GLM-4.5-Air;            behavior: token-level preference under a given context, linguistic
+run 1; pooled n = 2,400). The two methods showed high agreement              expression of certainty and semantic stability across repeated outputs.
+(Cohen’s κ = 0.95) and did not differ significantly in aggregate accuracy    The framework was informed by previous work on self-consistency
+(McNemarʼs test, P > 0.05) (Extended Data Fig. 6), supporting the use of     reasoning, semantic uncertainty estimation and uncertainty-aware
+LLM-based adjudication when rigid term list matching is impractical.         diagnostic systems26,27,42 but evaluates these signals jointly within an
+                                                                             autonomous clinical agent workflow and separately for both the final
+Physician evaluation. To validate automated scoring and assess clini-        diagnosis (Dx) and reasoning trace (R). Unless stated otherwise, scores
+cal validity beyond administrative labels, we performed blinded physi-       were computed per case. For ProbScore, LingCert and ConceptDensity,
+cian review in two rounds.                                                   run-level values were averaged across runs; Consistency was computed
+      In round 1, we sampled a stratified random subset of 111 MIRA-v2       once per case using the full set of runs.
+cases (approximately 20%), broadly reflecting disease prevalence.
+Two board-certified physicians independently reviewed each case              Internal Confidence: probabilistic score (ProbScore). We used
+using the same structured clinical information provided to the agent         token-level likelihood as a lightweight internal likelihood proxy. For
+(summarized history, medications, physical examination, laboratory           each run, let the output text (Dx or R) contain k tokens (t1 , … , tk ) gener-
+tests, urinalysis, microbiology and radiology). In phase 1, physicians       ated given the context C . We compute the geometric mean token prob-
+generated an independent diagnosis without access to the dataset label       ability in log space:
+or the agent output. In phase 2, they assessed the clinical validity of
+                                                                                                                      k
+both the dataset reference label and the agent diagnosis (each marked                                              1
+                                                                                                   Sprob = exp (     ∑ logP(ti |t<i , C))
+clinically valid or not clinically valid). Disagreements were adjudicated                                          k i=1
+by a third board-certified physician, and the final round 1 outcome was
+determined by majority vote.                                                      We report this score separately for diagnosis and reasoning as
+      Because some low-prevalence conditions remained underrep-              ProbScoreDx and ProbScoreR. Because this metric is derived from
+resented in round 1, particularly pneumonia (n = 6), we conducted            token-level generation likelihood within a single run, it may reflect local
+a second physician evaluation round to enrich small disease strata.          fluency or model preference without guaranteeing factual correctness
+Specifically, we added diverticulitis (+16), pancreatitis (+16) and uri-     or calibration. We, therefore, treated ProbScore as one component of
+nary tract infection (+15) cases to reach approximately 50% physician        a broader reliability framework rather than as a sufficient confidence
+coverage in those categories and added all remaining pneumonia cases         measure on its own.
+(+23), yielding full physician review for pneumonia (29/29 cases). This
+produced an additional 70 cases in round 2.                                  Expressed Confidence: linguistic and content cues (LingCert and
+      In round 2, six board-certified physicians participated: the three     ConceptDensity). Hedging-based linguistic certainty (LingCert). We
+physicians from round 1 and three additional physicians. The 70 cases        treated linguistic hedging as a lightweight proxy for expressed uncer-
+were randomly partitioned into three fixed subsets: X (n = 20), Y (n = 25)   tainty in the generated text. This choice was informed by previous work
+and Z (n = 25). For inter-rater agreement analysis, all six physicians       on hedge/speculation cues and uncertainty expression in biomedical
+reviewed subset X. The physicians were then split into two groups of         and clinical language. Because our aim was a transparent, audit-friendly
+three, with one group reviewing X + Y (n = 45) and the other reviewing       metric applicable directly to generated outputs, we implemented
+X + Z (n = 45). Each case was, therefore, independently reviewed by at       LingCert as a rule-based cue density score rather than a learned uncer-
+least three physicians, and round 2 case-level outcomes were deter-          tainty detector. Given an output text with k words and h matched
+mined by majority vote within the corresponding physician set (details       hedging cues, we compute:
+in Supplementary Table 3).
+                                                                                                                           h
+                                                                                                            Sling = 1 −
+                                                                                                                          k+ϵ
+Qualitative case review. To characterize failure modes,
+confidence-state discordance and benchmark-label ambiguity, physi-
+cians conducted targeted review of representative cases from both the        with ϵ = 1 for numerical stability. Higher values indicate fewer hedging
+MIRA-v2 and VivaBench analyses. In MIRA-v2, four prespecified base-          cues and, thus, higher expressed certainty. We compute LingCertDx
+line cases were reviewed to represent contrasting confidence profiles:       and LingCertR. The hedging lexicon comprises 35 terms curated from
+two high-confidence incorrect cases by automated scoring and two             established biomedical uncertainty language resources43,44, covering
+low-confidence correct cases. Review focused on missing or mislead-          modal verbs (may, might, could), hedging verbs (suggest, indicate,
+ing evidence, reasoning trajectory and safety-relevant implications for      appear, seem) and probabilistic modifiers (possible, probable, unlikely,
+escalation. In VivaBench, we additionally reviewed 10 baseline cases         uncertain); the full list is provided in Extended Data Table 3.
+under the Qwen-3.5 configuration that had high ConsistencyDx (≥0.85)
+but were scored as false by the LLM-based evaluator and, thus, repre-        Clinical concept density (ConceptDensity). To capture whether the
+sented cases incorrectly retained in the autonomous stream (‘Autono-         output is dominated by clinically meaningful content, we compute the
+mous Error’) in the selective-autonomy simulations. Two physicians           fraction of valid tokens attributable to core clinical concepts. We pro-
+reviewed these cases to determine whether the evaluator-marked               cess text using a biomedical natural language processing (NLP) pipeline
+discordances were clinically meaningful errors, whether partial credit       (spaCy + scispaCy) with Unified Medical Language System (UMLS)
+was warranted, why the model appeared confident despite disagree-            entity linking45–47 and retain only entities whose linked concept seman-
+ment with the benchmark endpoint and what missing or later-available         tic types (type unique identifiers (TUIs)) fall within a predefined
+evidence would have changed the answer.                                      whitelist of core clinical categories (for example, diseases/syndromes,
+
+
+Nature Medicine
+Article                                                                                             https://doi.org/10.1038/s41591-026-04609-x
+
+signs/symptoms, findings, anatomical structures and diagnostic/             test, whereas paired differences in continuous confidence metrics were
+therapeutic procedures; full list in Extended Data Table 4). Let T be the   assessed using two-sided Wilcoxon signed-rank tests. Where multiple
+set of valid tokens (excluding punctuation and whitespace), and let         paired comparisons were performed within the same figure or analysis
+Tcore ⊆ T be tokens covered by whitelisted entity spans. We define:         family, P values were adjusted using the Holm method.
+                                                                                  For implementation-sensitivity analyses, paired differences in
+                                          |Tcore |
+                                  Scd =                                     per-case ConsistencyDx values across repeated-run counts, decoding
+                                            |T|
+                                                                            temperatures or embedding models were assessed using the Friedman
+     We compute ConceptDensityDx and ConceptDensityR. Concept-              test. Threshold-specific differences in binary coverage status across
+Density was included as an exploratory content structure measure to         conditions were assessed using Cochran’s Q test. When correctness
+test whether concept-rich outputs aligned with diagnostic reliability. As   was compared across conditions within the subset of jointly retained
+reported in the Results, ConceptDensityR did not behave as a positive       cases, Cochran’s Q test was again used, restricted to the complete
+confidence signal and was, therefore, not interpreted as a standalone       paired intersection.
+reliability metric.                                                               Agreement between evaluation methods on paired case-level out-
+                                                                            comes was assessed using Cohen’s κ and McNemarʼs test. Agreement
+Behavioral Confidence: cross-run stability (Consistency). We                between automated judging and physician adjudication was summa-
+defined Behavioral Confidence as the semantic stability of the model’s      rized using Gwet’s AC1, together with overall agreement and discord-
+output across repeated stochastic runs under identical prompts. This        ance counts. All statistical tests were two-sided unless otherwise stated.
+choice was motivated by previous work on self-consistency reasoning
+and related semantic uncertainty methods26,42, but here the resulting       Use of AI tools
+cross-run agreement score was used as an inference-time reliability         In accordance with the Committee on Publication Ethics (COPE) posi-
+signal rather than as a decoding or answer-selection rule. For each         tion statement of 13 February 2023 (https://publicationethics.org/
+case, we generated N independent runs and embedded each output              cope-position-statements/ai-author), the authors hereby disclose the
+(Dx or R) using a sentence encoder (all-MiniLM). We then computed           use of the following AI model during the writing of this article: GPT-5.2
+the mean pairwise cosine similarity across runs:                            (OpenAI) for checking spelling and grammar.
+                                 2
+                       s̄ =              ∑ cos(ei , e j )                   Reporting summary
+                              N(N − 1) 1≤i<j≤N
+                                                                            Further information on research design is available in the Nature
+    To obtain a score bounded in [0,1], we clipped the mean pairwise        Portfolio Reporting Summary linked to this article.
+cosine similarity to the unit interval:
+                                                                            Data availability
+                          Scon = min(1, max(0, s))
+                                                                            MIRA-v2 and CDM are derived from MIMIC-IV version 2.2 and are sub-
+                                                                            ject to PhysioNet credentialed access requirements, including com-
+     We report ConsistencyDx and ConsistencyR. This approach is             pletion of the required training and signing of the PhysioNet data use
+related to self-consistency methods and semantic entropy but differs        agreement for credentialed health data. MIRA-v2 can be reconstructed
+in that it operates on full-output embeddings rather than discrete          from MIMIC-IV version 2.2 using the code released by the benchmark
+answer clusters and is applied separately to diagnostic conclusions         developers at https://github.com/Dyke-F/MIRA. CDM can be recon-
+and reasoning traces within a multi-step agentic workflow. Sensitivity      structed using the code released by the benchmark authors at https://
+of Consistency to the number of runs (N), embedding model choice and        github.com/paulhager/MIMIC-Clinical-Decision-Making-Dataset and
+decoding temperature is assessed in the ‘Implementation sensitivity         is also available to credentialed users through its PhysioNet release
+analyses of behavioral consistency’ section.                                at https://www.physionet.org/content/mimic-iv-ext-cdm/1.0/. Viva-
+     Unless otherwise stated, confidence analyses used five stochas-        Bench is publicly available under a CC BY 4.0 license on Hugging Face
+tic runs per case and MiniLM as the default sentence encoder for            at https://huggingface.co/datasets/chychiu/VivaBench. Source data
+consistency estimation.                                                     are provided with this paper.
+
+Statistical analysis                                                        Code availability
+Discriminative performance of reliability-related metrics was quanti-       All code in this study is available at https://github.com/KatherLab/
+fied using ROC analysis and summarized by the AUC. Bootstrapped             onprem-medical-agents and archived on Zenodo at https://doi.org/
+95% confidence intervals were computed for all AUC estimates. For the       10.5281/zenodo.20233449 (ref. 48) under a CC BY 4.0 license.
+primary comparison between ConsistencyDx and ProbScoreDx, differ-
+ences between correlated ROC curves were assessed using DeLong’s            References
+test; FDR-adjusted P values are reported where applicable. Detailed         34. Health Level Seven International. FHIR Specification
+AUC summaries and confidence intervals are provided in the corre-               https://hl7.org/fhir/
+sponding supplementary tables. Correlations among reliability-related       35. GLM-4.5 Team. GLM-4.5: agentic, reasoning, and coding (ARC)
+metrics were assessed using Pearsonʼs correlation coefficients. Differ-         foundation models. Preprint at https://doi.org/10.48550/
+ences in score distributions between correct and incorrect cases were           arXiv.2508.06471 (2025).
+assessed using two-sided Mann−Whitney U-tests, with Holm correction         36. OpenAI. gpt-oss-120b & gpt-oss-20b model card. Preprint at
+applied across the family of metrics compared in the same analysis.             https://doi.org/10.48550/arXiv.2508.10925 (2025).
+     For threshold-based selective-autonomy analyses, retained-set          37. GLM-5-Team. GLM-5: from vibe coding to agentic engineering.
+accuracy and coverage were summarized with 95% Wilson confidence                Preprint at https://doi.org/10.48550/arXiv.2602.15763 (2026).
+intervals. Threshold analyses were treated as descriptive operating         38. Qwen Team. Qwen/Qwen3.5-397B-A17B-FP8 · Hugging Face
+characteristic analyses over predefined threshold grids rather than             https://huggingface.co/Qwen/Qwen3.5-397B-A17B-FP8
+as formal threshold optimization procedures.                                39. Kwon, W. et al. Efficient memory management for large language
+     For the stress test analyses, baseline and perturbed conditions            model serving with PagedAttention. in Proc. 29th Symposium on
+were paired at the case level (n = 551). Paired differences in diagnostic       Operating Systems Principles 611–626 https://doi.org/10.1145/
+correctness (binary per case) were assessed using the exact McNemarʼs           3600006.3613165 (ACM, Koblenz Germany, 2023).
+
+
+Nature Medicine
+Article                                                                                              https://doi.org/10.1038/s41591-026-04609-x
+
+40. OpenAI. OpenAI Agents SDK. https://github.com/openai/openai-             01KD2420A; NextBIG, 01ZU2402A; PROSURV, 01KD2509C); the
+    agents-python                                                            German Research Foundation (Deutsche Forschungsgemeinschaft
+41. Gemini 3.1 Flash-Lite Preview. Gemini API https://ai.google.dev/         (DFG)) as part of Germany’s Excellence Strategy – EXC 2050/2 –
+    gemini-api/docs/models/gemini-3.1-flash-lite-preview                     Project ID 390696704 – Cluster of Excellence ‘Centre for Tactile
+42. Wang, X. et al. Self-consistency improves chain-of-thought               Internet with Human-in-the-Loop’ (CeTI) of Technische Universität
+    reasoning in language models. in International Conference on             Dresden as well as through DFG-funded collaborative research
+    Learning Representations (2023).                                         projects (TRR 412/1, 535081457; SFB 1709/1 2025, 533056198); the
+43. Vincze, V., Szarvas, G., Farkas, R., Móra, G. & Csirik, J. The           German Academic Exchange Service DAAD (SECAI, 57616814); the
+    BioScope corpus: biomedical texts annotated for uncertainty,             German Federal Joint Committee G-BA (TransplantKI, 01VSF21048);
+    negation and their scopes. BMC Bioinformatics 9, S9 (2008).              the European Union’s Horizon Europe research and innovation
+44. Hanauer, D. A. et al. Hedging their mets: the use of uncertainty         programme (ODELIA, 101057091; GENIAL, 101096312); the European
+    terms in clinical documents and its potential implications when          Research Council (ERC) (NADIR, 101114631); the Breast Cancer
+    sharing the documents with patients. AMIA Annu. Symp. Proc.              Research Foundation (BELLADONNA, BCRF-25-225); and the National
+    2012, 321–330 (2012).                                                    Institute for Health and Care Research (NIHR) (Leeds Biomedical
+45. Bodenreider, O. The Unified Medical Language System (UMLS):              Research Centre, NIHR203331). The views expressed are those of the
+    integrating biomedical terminology. Nucleic Acids Res. 32,               author(s) and not necessarily those of the National Health Service,
+    D267–D270 (2004).                                                        the NIHR or the Department of Health and Social Care. This work was
+46. Neumann, M., King, D., Beltagy, I. & Ammar, W. ScispaCy:                 funded by the European Union. The views and opinions expressed are,
+    fast and robust models for biomedical natural language                   however, those of the author(s) only and do not necessarily reflect
+    processing. in Proc. 18th BioNLP Workshop and Shared Task (eds           those of the European Union. Neither the European Union nor the
+    Demner-Fushman, D. et al.) 319−327 https://doi.org/10.18653/v1/          granting authority can be held responsible for them. J.V. is supported
+    W19-5034 (Association for Computational Linguistics, 2019).              by Fondation Inserm-Bettencourt and La Ligue contre le Cancer.
+47. spaCy: industrial-strength natural language processing in Python         J.C. is supported by the Mildred-Scheel-Postdoktorandenprogramm of
+    https://spacy.io/                                                        the German Cancer Aid (grant number 70115730). L.M. was supported
+48. Zhang, L. CAPA. Zenodo https://doi.org/10.5281/                          by the DFG through a Walter Benjamin Fellowship (grant numbers
+    zenodo.20233449 (2026).                                                  551924272 and 574708936). The funders had no role in study design,
+                                                                             data collection and analysis, decision to publish or preparation of
+Acknowledgements                                                             the paper.
+We gratefully acknowledge support from the Gemeinsame
+Wissenschaftskonferenz (GWK) for funding this project by providing           Competing interests
+computing time through the Center for Information Services and               J.N.K. declares ongoing consulting services for AstraZeneca and
+High Performance Computing (Zentrum für Informationsdienste und              Bioptimus. Furthermore, he holds shares in StratifAI, Synagen,
+Hochleistungsrechnen (ZIH)) at Technische Universität Dresden.               Tremont AI, Saterra AI and Spira Labs and has received an institutional
+We are grateful to the ZIH at Technische Universität Dresden for             research grant from GlaxoSmithKline and AstraZeneca as well as
+providing its facilities for high-throughput calculations. We gratefully     honoraria from AstraZeneca, Bayer, Daiichi Sankyo, Eisai, Janssen,
+acknowledge the Gauss Centre for Supercomputing e.V. (https://www.           Merck, Merck Sharp & Dohme, Bristol Myers Squibb, Roche, Pfizer and
+gauss-centre.eu/) for funding this project by providing computing            Fresenius. D.F. holds shares of and is an employee at Synagen. T.L.
+time through the John von Neumann Institute for Computing (NIC)              declares consulting services for StratifAI. J.C. received honoraria from
+on the GCS Supercomputer JUWELS at the Jülich Supercomputing                 Johnson & Johnson. L.M. declares that his wife is an employee of Pfizer
+Centre (JSC).                                                                Pharma GmbH. E.E.M. is an employee of Pfizer Pharma GmbH. This
+                                                                             work was conducted independently during parental leave, without
+Author contributions                                                         funding or support from Pfizer. Pfizer had no role in the study.
+L.Z., G.W. and D.F. conceptualized the study. L.Z. designed and              The other authors declare no competing interests.
+performed the experiments, developed the code, analyzed and
+interpreted the results and drafted the paper. G.W. provided technical       Additional information
+support. D.F. provided the MIRA-v2 dataset and code and contributed          Extended data is available for this paper at
+clinical expertise. J.H.L. advised on experimental design and                https://doi.org/10.1038/s41591-026-04609-x.
+visualization. Z.I.C. led project administration. Z.I.C., X.W.W., J.V. and
+J.C. contributed to the design of the physician evaluation. X.W.W.,          Supplementary information The online version contains supplementary
+J.V. and J.C. contributed to physician evaluation and qualitative            material available at https://doi.org/10.1038/s41591-026-04609-x.
+case analysis. L.M., E.E.M. and C.W. contributed equally to the
+second-round physician evaluation. F.W. provided the on-premise              Correspondence and requests for materials should be addressed to
+LLM serving infrastructure. G.W. and J.N.K. supervised the project.          Jakob Nikolas Kather.
+All authors contributed to revision of the paper and approved the
+final version.                                                               Peer review information Nature Medicine thanks Mahmud Omar and
+                                                                             the other, anonymous, reviewer(s) for their contribution to the peer
+Funding                                                                      review of this work. Primary Handling Editors: Mattia Andreoletti and
+J.N.K. is supported by the German Cancer Aid DKH (DECADE,                    Joao Monteiro, in collaboration with the Nature Medicine team.
+70115166); the German Federal Ministry of Research, Technology and           Peer reviewer reports are available.
+Space BMFTR (PEARL, 01KD2104C; CAMINO, 01EO2101; TRANSFORM
+LIVER, 031L0312A; TANGERINE, 01KT2302 through ERA-NET Transcan;              Reprints and permissions information is available at
+Come2Data, 16DKZ2044A; DEEP-HCC, 031L0315A; DECIPHER-M,                      www.nature.com/reprints.
+
+
+
+
+Nature Medicine
+Article                                                                                                                            https://doi.org/10.1038/s41591-026-04609-x
+
+
+Extended Data Table 1 | Diagnostic Toolset for the Physician Agent
+
+ Tool Name                              Parameters                     Description                                                 Example Output
+
+ Physical Exam                          None                           Retrieves comprehensive physical examination                 “Vitals: T: 100.0F HR: 125…”
+                                                                       findings.
+ Laboratory Test                        Test Names                     Orders specific quantitative laboratory tests                “White Blood Cells: 14.5 K/uL (Ref: 4-10).”
+                                                                       from the available panel.
+ Urine Test                             Test Names                     Orders specific quantitative urinalysis markers.             “RBC: 14.0 #/hpf (Reference: 0.0 - 2.0)”
+ Radiology                              Modality, Body Region          Requests diagnostic imaging studies. Returns                 “Radiology Report (Radiograph, Chest): …
+                                                                       the radiologist’s interpretation report.                     atelectasis versus pneumonia.”
+ Microbiology                           Culture Type                   Orders cultures to identify infectious pathogens             “Blood Culture: No Growth.”
+                                                                       in blood, urine, or other fluids.
+ Bedside Test (VivaBench Only)          Test Names                     Order bedside investigations such as ECG or                  â€œ- Electrocardiogram: evidence consistent with
+                                                                       other point-of-care tests.                                   left ventricular hypertrophyâ€
+ Other Investigation                    Test Names                     For non-blood, non-urine, non-microbiology,                  â€œ- Peripheral Blood Film: fragmented
+ (VivaBench Only)                                                      non-bedside investigations from remaining                    red blood cells, increased polychromasia,
+                                                                       sections                                                     thrombocytopeniaâ€
+ Admission                              Final Diagnosis, Clinical      Concludes the encounter. Submits the definitive              “Diagnosis: Pneumonia in patient with stage
+                                        Reasoning                      diagnosis and a summarized reasoning trace,                  IV NSCLC” “Reasoning: Patient presented with
+                                                                       which serves as the basis for confidence                     symptoms of coughâ€¦â€
+                                                                       assessment.
+This table lists the diagnostic tools available to the Physician Agent for acquiring objective clinical evidence during multi-turn reasoning. Each episode concludes with a final submission action
+(“Admission”), which returns a diagnostic output and a structured reasoning trace used in subsequent reliability analyses. The full MIRA-v2 framework also includes therapeutic tools, but the
+present study focuses on the diagnostic toolset. For VivaBench, two additional diagnostic tools were added to cover investigation categories not present in the MIMIC-IV–derived benchmarks.
+
+
+
+
+Nature Medicine
+Article                                                                                                                     https://doi.org/10.1038/s41591-026-04609-x
+
+
+Extended Data Table 2 | Model sources, inference frameworks, and deployment settings
+
+ Model Name                    Identifier                                        Source / access                     Inference framework            Default T,   GPU
+                                                                                                                                                    top-p, top-k
+
+ GLM-4.5-Air                   zai-org/GLM-4.5-Air-FP8                            Hugging Face weights;              vLLM                           1.0; 1.0; 0     2x H200
+                                                                                  on-premise deployment
+ GLM-5                         zai-org/GLM-5-FP8                                  Hugging Face weights;              vLLM                           1.0; 0.95; 0    8x H200
+                                                                                  on-premise deployment
+ GPT-OSS                       openai/gpt-oss-120b                                Hugging Face weights;              vLLM                           1.0; 1.0; 0     1x H200
+                                                                                  on-premise deployment
+ Qwen-3.5                      Qwen/Qwen3.5-397B-A17B-FP8                         Hugging Face weights;              vLLM                           0.6; 0.95;      4x H200
+                                                                                  on-premise deployment                                             20
+ MedGemma                      google/medgemma-27b-it                             Hugging Face weights;              vLLM                           1.0; 1.0; 0     1x RTX PRO
+                                                                                  on-premise deployment                                                             6000 Blackwell
+ Gemini 3.1 Flash-Lite         google/gemini-3.1-flash-lite-preview               OpenRouter                         OpenRouter API                 1.0; 0.95;
+                                                                                                                                                    64
+ GPT-5.2                       gpt-5.2-2025-12-11                                 OpenAI                             OpenAI API
+ all-MiniLM                    sentence-transformers/all-MiniLM-L6-v2             Hugging Face                       Sentence-Transformers
+ MPNet                         sentence-transformers/all-mpnet-base-v2            Hugging Face                       Sentence-Transformers
+ BGE                           BAAI/bge-base-en-v1.5                              Hugging Face                       Sentence-Transformers
+ (leaderboard) Gemma-3         google/gemma-3-27b-it                              Not reported (leaderboard)         Not reported
+Note: H200 and RTX PRO 6000 Blackwell refer to NVIDIA GPUs. Hardware was reported only for locally hosted models; provider-hosted API models were listed as not reported.
+
+
+
+
+Nature Medicine
+Article                                                                                                                         https://doi.org/10.1038/s41591-026-04609-x
+
+
+Extended Data Table 3 | Hedging Lexicon for the Linguistic Certainty Score (LingCert)
+
+ Lexicon version             Count       Phrase / Word
+
+ Original (compact)          15          possible, likely, suspected, cannot rule out, vs, might, probable, concern for, suggests, worrisome for, appears, indeterminate,
+                                         question of, consider, suspicious for
+ Broad (inclusive,           48          Original (compact) + unlikely, certain, never, sometimes, rarely, often, almost, perhaps, occasionally, frequent, compatible
+ unfiltered)                             with, improbable, always, probably, consistent with, possibly, not unreasonable, doubtful, not certain, low probability, usually,
+                                         suggestive, not likely, low chance, no evidence of, possibility of, versus, uncertain, unclear, maybe, suspected, equivocal, not
+                                         excluded
+ Refined (curated)           35          may, might, could, suggest, suggests, suggesting, indicate, indicates, appear, appears, seem, seems, suspect, suspected,
+                                         possible, possibly, probable, probably, likely, unlikely, potential, potentially, presumed, uncertain, unclear, questionable,
+                                         equivocal, improbable, doubtful, suggestive, approximate, perhaps, maybe, presumably, apparently
+Three lexicon versions were evaluated: an original compact lexicon of 15 terms, a broad lexicon of 48 terms informed by BioScope and clinical EHR terminology, and a refined lexicon of 35
+unambiguous single-word epistemic uncertainty terms. The refined lexicon was used for the analyses reported in the main text. Full AUC comparison across lexicon versions is provided in
+Supplementary Table S33.
+
+
+
+
+Nature Medicine
+Article                                                                                                                      https://doi.org/10.1038/s41591-026-04609-x
+
+
+Extended Data Table 4 | Whitelist of core clinical concept categories for ConceptDensity
+
+ UMLS TUI                                                                                   Semantic type (UMLS)
+
+ T047                                                                                        Disease or Syndrome
+ T048                                                                                        Mental or Behavioral Dysfunction
+ T184                                                                                        Sign or Symptom
+ T033                                                                                        Finding
+ T023                                                                                        Body Part, Organ, or Organ Component
+ T060                                                                                        Diagnostic Procedure
+ T059                                                                                        Laboratory Procedure
+ T061                                                                                        Therapeutic or Preventive Procedure
+ T121                                                                                        Pharmacologic Substance
+ T195                                                                                        Antibiotic
+ T109                                                                                        Organic Chemical
+This table lists the UMLS semantic types (TUIs) treated as core clinical concept categories when computing ConceptDensity.
+
+
+
+
+Nature Medicine
+Article                                                                                                     https://doi.org/10.1038/s41591-026-04609-x
+
+
+
+
+Extended Data Fig. 1 | Benchmark demographic composition and subgroup             across five repeated stochastic model-inference runs, and horizontal bars show
+diagnostic accuracy. a, Heatmaps showing age-group (left) and sex (right)         case-level bootstrap 95% confidence intervals. Labels report the exact number
+distributions for each benchmark overall and by disease category or specialty     of unique benchmark cases in each subgroup. In MIRA-v2, accuracy decreased
+group. Rows indicate benchmark-level or subgroup-level cohorts, with case         from 91.8% in the 18-39 age group to 79.7% in the ≥65 group. In CDM, accuracy
+counts shown in parentheses. Cell values denote within-row percentages. Age       similarly decreased from 88.2% in the 18-39 group to 72.5% in the ≥65 group. In
+and recorded sex were obtained from the source benchmark records and used         VivaBench, the pediatric subgroup had lower accuracy than the adult subgroups.
+for descriptive subgroup analyses. Age groups were defined as <18, 18-39, 40-64   Sex-stratified performance was comparatively similar in MIRA-v2 and VivaBench,
+and ≥65 years; sex labels were harmonized across datasets. (b, c) Diagnostic      while CDM showed a modest difference between female and male cases.
+accuracy stratified by age group (b) and sex (c). Points show mean accuracy
+
+
+
+
+Nature Medicine
+Article                                                                                                    https://doi.org/10.1038/s41591-026-04609-x
+
+
+
+
+Extended Data Fig. 2 | Effect of the DDx Critic Agent on diagnostic accuracy.    DDx Critic. Bars show mean ± s.d.; overlaid points indicate individual runs
+Mean diagnostic accuracy across five independent stochastic inference runs is    (n = 5 independent stochastic inference runs per configuration). Overall accuracy
+shown for the baseline agent and the multi-agent configuration incorporating a   was not improved by adding the critic.
+
+
+
+
+Nature Medicine
+Article                                                                                                     https://doi.org/10.1038/s41591-026-04609-x
+
+
+
+
+Extended Data Fig. 3 | Discriminability of confidence metrics across disease      likelihood as a discriminator (for example, appendicitis, cholecystitis and
+categories. Paired Receiver Operating Characteristic (ROC) curves evaluating      pulmonary embolism), whereas internal likelihood approached chance or worse
+the performance of eight confidence metrics across seven distinct clinical        for some diagnoses (for example, pancreatitis). Performance varied by clinical
+diseases. The left column displays metrics derived from the Diagnostic Outcome,   condition, indicating that the discriminative value of language-derived and
+while the right column displays metrics derived from the Reasoning Process.       likelihood-based metrics was context dependent.
+In several high-risk or ambiguous categories, LingCertR exceeded internal
+
+
+
+
+Nature Medicine
+Article                                                                                                      https://doi.org/10.1038/s41591-026-04609-x
+
+
+
+
+Extended Data Fig. 4 | External benchmark evaluation and triage simulation        showed weaker discrimination. Bootstrapped 95% confidence intervals for all
+on VivaBench. a, Because VivaBench is derived from physician-curated              AUC estimates are provided in Supplementary Table S11. c, Accuracy–coverage
+PubMed case reports and was designed to evaluate sequential reasoning             analysis for consistency-based case retention on VivaBench. Accuracy was
+under uncertainty, absolute performance is not directly comparable to the         computed among retained cases, and coverage was defined as the proportion
+MIMIC-derived benchmarks. Top-1 approximate accuracy on the VivaBench             of all cases retained at each ConsistencyDx threshold. Within the evaluated
+benchmark, shown overall and across 10 specialty groups for the evaluated         threshold range, the highest retained-set accuracy was observed at a threshold
+open-weight models. Overall accuracy was 67.96% ± 1.09 for GPT-OSS and            of 0.85 (89.9% accuracy at 32.0% coverage). Full operating points, including 95%
+72.22% ± 0.92 for Qwen-3.5. Bars show mean accuracy ± s.d. across five            confidence intervals, are provided in Supplementary Table S12. d–i, Selective-
+stochastic model-inference runs (n = 5 per model or model-specialty group);       autonomy simulations on VivaBench across increasing ConsistencyDx
+overlaid points indicate individual runs. Detailed specialty-group results are    thresholds (0.70, 0.75, 0.80, 0.85, 0.90 and 0.95). Cases meeting the threshold
+provided in Supplementary Table S10. b, ROC analysis of reliability-related       were routed to AI autonomy and the remaining cases to human review. Flows
+metrics on VivaBench. ConsistencyDx showed the highest discrimination of          show autonomous correct, deferred correct, deferred error, autonomous error,
+correctness among the evaluated metrics (AUC = 0.719), exceeding ConsistencyR     illustrating the trade-off between automation coverage and residual risk as the
+(AUC = 0.684), whereas probability-based and linguistic/concept-density metrics   threshold becomes more stringent.
+
+
+
+
+Nature Medicine
+Article                                                                                                                                             https://doi.org/10.1038/s41591-026-04609-x
+
+
+   a                                                                                                              bConsistencyDx threshold = 0.90
+                                                                                                                                                                  c
+                                                                                                                                                                                             Autonomous Correct
+                                                                                                                                            Autonomous Correct
+                                                                                                                                                                                                       (n=269)
+                                                                                                                                                      (n=278)
+                                                                                                                                     AI Autonomy                                       AI Autonomy
+                                                                                                                                     (n=285)                                           (n=272)
+
+
+                                                                                                                      Total Cases                                   Total Cases
+                                                                                                                      (n=551)                                       (n=551)                     Deferred Correct
+                                                                                                                                             Deferred Correct
+                                                                                                                                                                                                        (n=230)
+                                                                                                                                                     (n=216)
+                                                                                                                                     Human Review                                      Human Review
+                                                                                                                                     (n=266)                                           (n=279)
+                                                                                                                                                Deferred Error                                    Deferred Error
+                                                                                                                                                       (n=50)                                            (n=49)
+
+
+ e                                                             f
+                                                                                                                                             Autonomous Error                                  Autonomous Error
+                                                                                                                                                        (n=7)
+
+                                                                                                                                       d
+                                                                                                                                                                                                          (n=3)
+                                  Full Caverage                                            Consistency_Dx >= 0.9
+                100                                                           100                                                                                     Autonomous Correct
+                                                                                                                                                                                (n=254)
+                 90                                                            90
+                                                                                                                                                                 AI Autonomy
+
+
+ Accuracy (%)                                                  Accuracy (%)
+                 80                                                            80
+                                                                                                                                                                 (n=255)
+                 70                                                            70
+                                                                                                                                                 Total Cases
+                 60                                                            60                                                                                         Deferred Correct
+                                                                                                                                                 (n=551)
+                 50                                                            50                                                                                                 (n=237)
+                                                                                    Full
+                                                                                    Filtered
+                 40                                                            40                                                                                Human Review
+                      GPT-OSS GLM-4.5-Air   GLM-5   Qwen-3.5                          40         60          80       100                                        (n=296)
+                                                                                                Coverage (%)
+                                                                                                                                                                           Deferred Error
+
+ g                                                                                                                 h                                                              (n=59)
+                                                                                                                                                                        Autonomous Error
+                                                                                                                                                                                   (n=1)
+
+
+
+
+ i
+
+
+
+
+Extended Data Fig. 5 | Implementation sensitivity analyses of behavioral                                              accuracy for GLM-4.5-Air at temperatures 0.01, 0.3, 0.6 and 0.9. Exact values
+consistency. Across panels, coverage denotes the proportion of benchmark                                              and paired comparisons are provided in Supplementary Tables S16 and S17.
+cases retained above a specified ConsistencyDx threshold, and retained accuracy                                       h, Threshold-wise coverage and retained accuracy using MiniLM, MPNet
+denotes diagnostic accuracy among retained cases. Unless otherwise stated,                                            and BGE embeddings. Exact values and paired comparisons are provided in
+analyses used 551 unique MIRA-v2 benchmark cases. a, Coverage and retained                                            Supplementary Tables S18 and S19. i, Doctor-agent token use for single-run
+accuracy across ConsistencyDx thresholds calculated from N = 3, N=5 or N = 10                                         and five-run consistency inference across model–temperature configurations.
+repeated stochastic inference runs per case. Exact operating characteristics and                                      For single-run inference, each observation is one run-level encounter record
+95% Wilson confidence intervals are provided in Supplementary Table S14; paired                                       (n = 2,755 per configuration, except GLM-5 at T = 0.3, n = 2,754, and Qwen-3.5
+comparisons are reported in Supplementary Table S15. b–d, Representative                                              at T = 0.9, n = 2,753, owing to missing token-usage metadata). For five-run
+clinical triage workflows at a ConsistencyDx threshold of 0.90 for N = 3, N = 5,                                      consistency inference, each observation is the case-level sum of doctor-agent
+and N = 10, respectively. e, Diagnostic accuracy at full coverage across model–                                       tokens across all available stochastic inference runs for the same case (nominally
+temperature configurations. Bars show mean ± s.d. across five computationally                                         five runs; n = 551 case-level sums per configuration). Boxes show the interquartile
+repeated stochastic inference runs, and points denote individual runs (n = 5                                          range, centre lines show medians, whiskers extend to the most extreme values
+runs per configuration; 551 cases per run). f, Coverage–accuracy operating                                            within 1.5× the interquartile range, and more extreme observations are shown
+points at full coverage and after retention at ConsistencyDx≥0.90 across                                              as open circles. Repeated inferences were computational repeats and were not
+models and decoding temperatures. g, Threshold-wise coverage and retained                                             treated as independent case-level observations.
+
+
+
+
+Nature Medicine
+Article                                                                                                  https://doi.org/10.1038/s41591-026-04609-x
+
+
+
+
+Extended Data Fig. 6 | Validation of LLM-based evaluation against standard    and 81.79%, respectively; the LLM-minus-fuzzy difference was 0.25 percentage
+fuzzy matching. Concordance matrix comparing paired classifications from      points (paired-bootstrap 95% CI, -0.21 to 0.71 percentage points). A two-sided
+the LLM-based evaluator and the established fuzzy-matching protocol for       exact McNemar test of the paired classifications identified 20 fuzzy-incorrect/
+run 1 of the CDM benchmark (pooled analysis, n = 2,400 unique benchmark       LLM-correct and 14 fuzzy-correct/LLM-incorrect discordant pairs (P = 0.3915).
+cases; one paired classification per case). Total agreement was 98.6%, with   No multiple-comparison adjustment was applied because this was a single
+Cohen’s κ = 0.952 (paired-bootstrap 95% CI, 0.936-0.968; 10,000 resamples).   prespecified comparison. These results support the use of LLM-based
+The LLM-based evaluator and fuzzy matching yielded accuracies of 82.04%       adjudication in settings where rigid term-list matching is impractical.
+
+
+
+
+Nature Medicine
+

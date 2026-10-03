@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_009",
+  "published_diagnosis_ref": "ground_truth.published_final_diagnosis",
+  "acceptable_diagnoses": [],
+  "critical_diagnoses_to_not_miss": [
+    "Small-bowel obstruction with perforation or peritonitis requiring emergency surgery"
+  ],
+  "expected_actions": [
+    {
+      "action_id": "a1",
+      "phase": "initial",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_imaging",
+          "code_or_concept": "ct_abdomen"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a2",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_procedure",
+          "code_or_concept": "laparotomy"
+        },
+        {
+          "tool": "request_procedure",
+          "code_or_concept": "laparoscopy"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Urgent abdominal exploration; laparoscopy with conversion to open surgery was the published sequence, but clinically justified open exploration is an acceptable alternative.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a3",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "disposition",
+          "code_or_concept": "surgery"
+        },
+        {
+          "tool": "disposition",
+          "code_or_concept": "ICU"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Surgery is the immediate handoff; ICU is source-supported after operation.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    }
+  ],
+  "unnecessary_actions": [
+    {
+      "description": "Repeated or non-indicated testing/treatment without a stated clinical rationale",
+      "case_condition": "judged using information available at time of order"
+    }
+  ],
+  "medication_checks": [
+    {
+      "description": "Consider anticoagulation and COPD risk during perioperative planning; source does not specify drug regimen.",
+      "severity": "requires_manual_review"
+    }
+  ],
+  "procedure_checks": [
+    {
+      "description": "Peritoneal signs and obstruction demand urgent surgical assessment.",
+      "severity": "requires_manual_review"
+    },
+    {
+      "description": "Prior biliary stent history materially changes interpretation of linear CT foreign body.",
+      "severity": "requires_manual_review"
+    }
+  ],
+  "disposition_acceptability": [
+    {
+      "category": "surgery",
+      "conditions": [
+        "Appropriate immediate destination from acute evaluation for perforation/peritonitis."
+      ]
+    },
+    {
+      "category": "ICU",
+      "conditions": [
+        "Source-supported postoperative destination after emergency operation, with intubation and respiratory support."
+      ]
+    }
+  ],
+  "safety_opportunities": [
+    {
+      "description": "Peritoneal signs and obstruction demand urgent surgical assessment.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    },
+    {
+      "description": "Prior biliary stent history materially changes interpretation of linear CT foreign body.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    },
+    {
+      "description": "Consider anticoagulation and COPD risk during perioperative planning; source does not specify drug regimen.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    }
+  ],
+  "guideline_refs": [
+    "asge_choledocholithiasis_2019"
+  ],
+  "reviewer_signoff": {
+    "status": "pending",
+    "reviewer_id": null,
+    "signed_at": null
+  },
+  "guideline_concordance_status": "pending_clinician_review"
+}

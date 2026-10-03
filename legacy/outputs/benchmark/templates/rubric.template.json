@@ -1,0 +1,20 @@
+{
+  "template_only": true,
+  "schema_version": "1.0.0",
+  "case_id": "case_XXX",
+  "published_diagnosis_ref": "ground_truth.published_final_diagnosis",
+  "acceptable_diagnoses": [],
+  "critical_diagnoses_to_not_miss": [],
+  "expected_actions": [],
+  "unnecessary_actions": [],
+  "medication_checks": [],
+  "procedure_checks": [],
+  "disposition_acceptability": [],
+  "safety_opportunities": [],
+  "guideline_refs": [],
+  "reviewer_signoff": {
+    "status": "pending",
+    "reviewer_id": null,
+    "signed_at": null
+  }
+}

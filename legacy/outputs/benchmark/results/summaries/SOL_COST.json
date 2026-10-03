@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "type": "post_hoc_api_equivalent_not_subscription_charge",
+  "model_id": "gpt-6-sol",
+  "effort": "high",
+  "run_count": 30,
+  "usage_event_count": 401,
+  "input_tokens_including_cached": 6703197,
+  "cached_input_tokens": 5630592,
+  "uncached_input_tokens": 1072605,
+  "output_tokens_including_reasoning": 138480,
+  "reasoning_output_tokens_subset": 103778,
+  "cache_write_input_tokens_reported": 0,
+  "maximum_input_tokens_per_call": 19016,
+  "pricing_usd_per_million_tokens": {
+    "uncached_input": 2.0,
+    "cached_input": 0.2,
+    "cache_write_input": 2.5,
+    "output": 10.0
+  },
+  "api_equivalent_using_reported_cache_writes_usd": 4.6561284,
+  "api_equivalent_sensitivity_all_uncached_as_cache_writes_usd": 5.192430900000001,
+  "actual_subscription_charge_usd": null,
+  "pricing_url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+  "pricing_checked_date": "2026-09-26",
+  "limitations": [
+    "Codex CLI used a ChatGPT subscription, not OpenAI API billing.",
+    "A direct Responses API adapter may have different context and cache usage.",
+    "The CLI reports zero cache-write tokens; the upper scenario treats every noncached input token as a cache write.",
+    "Reasoning tokens are a subset of output and are not charged twice."
+  ]
+}

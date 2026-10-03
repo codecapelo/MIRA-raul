@@ -1,0 +1,66 @@
+{
+  "protocol_version": "mvp10_closedbook_v5_2026-09-26",
+  "corpus_version": "mvp10_v3_2026-09-26",
+  "frozen_at_utc": "2026-09-26T00:27:47.336891+00:00",
+  "target_models": [
+    "llama3.1:8b",
+    "qwen3:8b",
+    "qwen3.5:9b-mlx",
+    "gpt-6-sol",
+    "claude-opus-5-5"
+  ],
+  "repetitions": 3,
+  "max_actions": 40,
+  "max_model_turns": 60,
+  "max_wall_seconds": 3600,
+  "catalog_model_visible": false,
+  "frontier_transport": "json_emulated_via_subscription_cli",
+  "ollama_transport": "native_tool_calls",
+  "clinical_review": "pending",
+  "files": [
+    {
+      "path": "prompts/physician_agent.md",
+      "sha256": "c1670d8a17fcb1bca0f8a9ac825db946eec2db8498e8e7c118719b7425b46578"
+    },
+    {
+      "path": "tools/schemas.py",
+      "sha256": "e956b3cfb2c7e6b89b26ab7ff111dd2c23ee0e06119437b019555456d6412e72"
+    },
+    {
+      "path": "tools/ehr_sandbox.py",
+      "sha256": "8f8858877af98b7c9590ef8449c964eea30b0277ccb0c4dc1a5f580a3b92e4a1"
+    },
+    {
+      "path": "runner/run_case.py",
+      "sha256": "63617b05358ee1c33b2b6b13842a23cf82604250ff63a22d3250a107580727ab"
+    },
+    {
+      "path": "runner/run_benchmark.py",
+      "sha256": "1d253e1805088dffc1dc474bc10ee52837ad67fe7be7e1b510aaf8eb2cc7bafc"
+    },
+    {
+      "path": "runner/run_frontier.py",
+      "sha256": "2f19cee4217f6e5176b418af03e99bda12e3ae3d1379b5d50383dbb92282c3e2"
+    },
+    {
+      "path": "providers/ollama.py",
+      "sha256": "ff837442b421d3dd7db19fb105dce0fcd4dd340f38a91e6ad9278214ab63938d"
+    },
+    {
+      "path": "providers/openai.py",
+      "sha256": "928a23798c88c665a81ae4d566d696870a21d93c07f7db94596081a661b87dec"
+    },
+    {
+      "path": "providers/anthropic.py",
+      "sha256": "b26c0b378605637cbc78c78145b98fb2309fc35b1115da0ada38a950cdcc919d"
+    },
+    {
+      "path": "providers/action_schema.json",
+      "sha256": "21dbc529a2279b7ae79359787a1dd7a63861339c8ebc11cad28f1e568937f20d"
+    }
+  ],
+  "repeated_unproductive_call_limit": 3,
+  "v3_change_note": "Stops after three identical invalid, blocked or unavailable requests; prompts avoid repeating unavailable requests; natural-language vital signs queries and procedure-form coronary angiography are mapped to source facts.",
+  "v4_change_note": "Three identical consecutive requests stop regardless of tool result; provider errors omit prompt; CLI per-turn timeout 600 s; frontier resume checks protocol version.",
+  "v5_change_note": "EHR after-procedure result requires its own matching request; supports after_any_procedure for laparoscopy/open exploration. Corpus v3 is phase-audited; benchmark target differs from later published diagnosis in case_003."
+}

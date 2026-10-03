@@ -1,0 +1,335 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_005",
+  "index_patient": "single_reported_patient",
+  "language": "en",
+  "setting": "emergency_department",
+  "time_zero": "first_clinical_contact",
+  "initial": {
+    "age_years": null,
+    "sex_recorded": "female",
+    "chief_complaint": "One week of dyspnea and a new dry cough.",
+    "age_band": "60s"
+  },
+  "facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "topic_codes": [
+        "onset"
+      ],
+      "value": "Woman in her 60s with one week of dyspnea and new nonproductive cough.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "onset"
+        ]
+      }
+    },
+    {
+      "fact_id": "pmh_002",
+      "domain": "pmh",
+      "topic_codes": [
+        "medical"
+      ],
+      "value": "Rheumatoid arthritis and stable connective-tissue-disease-associated interstitial lung disease for five years; asbestos-material exposure.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "medical"
+        ]
+      }
+    },
+    {
+      "fact_id": "meds_003",
+      "domain": "meds",
+      "topic_codes": [
+        "current"
+      ],
+      "value": "Stable baricitinib and methotrexate regimen.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "current"
+        ]
+      }
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "domain": "physical_exam",
+      "topic_codes": [
+        "respiratory"
+      ],
+      "value": "Hypoxemic, requiring 4 L/min nasal oxygen for saturation >92%; diminished left basal breath sounds and diffuse fine inspiratory crackles; other vitals normal.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_physical_exam",
+        "match_codes": [
+          "respiratory"
+        ]
+      }
+    },
+    {
+      "fact_id": "physical_exam_005",
+      "domain": "physical_exam",
+      "topic_codes": [
+        "general"
+      ],
+      "value": "No palpable lymph nodes or hepatosplenomegaly.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_physical_exam",
+        "match_codes": [
+          "general"
+        ]
+      }
+    },
+    {
+      "fact_id": "lab_006",
+      "domain": "lab",
+      "topic_codes": [
+        "blood_panel"
+      ],
+      "value": "Mild thrombocytosis; inflammatory markers not significantly elevated; liver, thyroid and kidney tests unremarkable.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_lab",
+        "match_codes": [
+          "blood_panel"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_007",
+      "domain": "imaging",
+      "topic_codes": [
+        "thoracic_ultrasound"
+      ],
+      "value": "Moderate to large homogeneous left pleural effusion.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "thoracic_ultrasound"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_008",
+      "domain": "imaging",
+      "topic_codes": [
+        "ct_chest"
+      ],
+      "value": "Postcontrast chest CT: moderate left effusion and nodular circumferential pleural thickening, including mediastinal pleura.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "ct_chest"
+        ]
+      }
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "domain": "procedure_result",
+      "topic_codes": [
+        "thoracentesis"
+      ],
+      "value": "High-volume thoracentesis: atypical epithelioid and spindle cells; SOX10, Melan-A and S100 positive; calretinin, EMA, p40 and WT1 negative.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_procedure",
+        "match_codes": [
+          "thoracentesis"
+        ]
+      }
+    },
+    {
+      "fact_id": "procedure_result_010",
+      "domain": "procedure_result",
+      "topic_codes": [
+        "pleural_biopsy"
+      ],
+      "value": "CT-guided pleural biopsy confirmed cells positive for SOX10 and Melan-A.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_procedure",
+        "match_codes": [
+          "pleural_biopsy"
+        ]
+      }
+    },
+    {
+      "fact_id": "physical_exam_011",
+      "domain": "physical_exam",
+      "topic_codes": [
+        "skin_eye"
+      ],
+      "value": "Dermatologic and ocular examinations found no suspicious primary lesion.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_physical_exam",
+        "match_codes": [
+          "skin_eye"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_012",
+      "domain": "imaging",
+      "topic_codes": [
+        "pet"
+      ],
+      "value": "PET: intensely FDG-avid circumferential pleural disease; no cutaneous or subcutaneous primary identified.",
+      "status": "reported",
+      "available_at": "after_procedure:pleural_biopsy",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "pet"
+        ]
+      }
+    },
+    {
+      "fact_id": "other_test_013",
+      "domain": "other_test",
+      "topic_codes": [
+        "tumor_genetics"
+      ],
+      "value": "BRAF and KIT wild type.",
+      "status": "reported",
+      "available_at": "after_procedure:pleural_biopsy",
+      "release_rule": {
+        "tool": "request_ecg_or_test",
+        "match_codes": [
+          "tumor_genetics"
+        ]
+      }
+    }
+  ],
+  "catalog": {
+    "history_topics": [
+      "cardiac",
+      "catheter",
+      "current",
+      "drug_reaction",
+      "history",
+      "infection",
+      "medical",
+      "negatives",
+      "oncology",
+      "onset",
+      "pregnancy",
+      "procedure",
+      "recent_therapy",
+      "renal",
+      "smoking",
+      "symptoms",
+      "urologic"
+    ],
+    "physical_regions": [
+      "abdomen",
+      "abdomen_pelvis",
+      "cardiovascular",
+      "general",
+      "hemodynamics",
+      "neurologic",
+      "postoperative",
+      "respiratory",
+      "skin",
+      "skin_eye",
+      "vitals"
+    ],
+    "lab_tests": [
+      "adrenal_hormones",
+      "blood_film",
+      "blood_panel",
+      "cbc",
+      "chemistry",
+      "coagulation",
+      "d_dimer",
+      "dat",
+      "hemoglobin",
+      "hemolysis",
+      "inflammation",
+      "inflammation_followup",
+      "lactate",
+      "metabolic",
+      "nt_probnp",
+      "pleural_fluid",
+      "pregnancy_test",
+      "troponin",
+      "tspot"
+    ],
+    "imaging_studies": [
+      "abdominal_xray",
+      "adrenal_ct",
+      "adrenal_ultrasound",
+      "brain_mri",
+      "cardiac_mri",
+      "chest_xray",
+      "coronary_angiography",
+      "coronary_ct",
+      "ct_abdomen",
+      "ct_chest",
+      "ctpa",
+      "pelvic_ultrasound",
+      "pet",
+      "spine_mri",
+      "thoracic_ultrasound"
+    ],
+    "microbiology_tests": [
+      "adrenal_tb_pcr",
+      "blood_cultures",
+      "drain_culture",
+      "pleural_culture",
+      "urine_culture"
+    ],
+    "ecg_or_tests": [
+      "ecg",
+      "echo",
+      "electrophysiology",
+      "intravascular_imaging",
+      "research_cfdna",
+      "rhc",
+      "tee",
+      "tumor_genetics"
+    ],
+    "procedures": [
+      "adrenal_biopsy",
+      "device_exploration",
+      "ebus_biopsy",
+      "hematoma_evacuation",
+      "laparoscopy",
+      "laparotomy",
+      "pathology",
+      "pericardiocentesis",
+      "pleural_biopsy",
+      "resection",
+      "thoracentesis"
+    ],
+    "medications": []
+  },
+  "temporal_events": [],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ],
+  "catalog_version": "v1_shared_all_cases"
+}

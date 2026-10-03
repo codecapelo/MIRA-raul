@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_003",
+  "source_sha256": "0d0586082ebde45b92c57c79023ce1c58d1e81606448916376cc0801c76a488f",
+  "published_final_diagnosis": {
+    "label": "Ruptured continent urinary diversion pouch with secondary intra-abdominal sepsis",
+    "codes": [],
+    "source_locators": [
+      "Case presentation, investigations and tables 1–2, pp. 1–5"
+    ]
+  },
+  "diagnostic_differential_from_source": [
+    "Bowel perforation",
+    "Urinary obstruction without rupture",
+    "Pulmonary embolism",
+    "Pneumonia"
+  ],
+  "source_treatment": [
+    {
+      "description": "Emergency pouch repair and drainage",
+      "source_locators": [
+        "Case presentation, investigations and tables 1–2, pp. 1–5"
+      ]
+    },
+    {
+      "description": "Piperacillin–tazobactam initially",
+      "source_locators": [
+        "Case presentation, investigations and tables 1–2, pp. 1–5"
+      ]
+    },
+    {
+      "description": "Meropenem and fluconazole stopped after acute reaction",
+      "source_locators": [
+        "Case presentation, investigations and tables 1–2, pp. 1–5"
+      ]
+    },
+    {
+      "description": "Ceftriaxone tolerated as definitive therapy",
+      "source_locators": [
+        "Case presentation, investigations and tables 1–2, pp. 1–5"
+      ]
+    },
+    {
+      "description": "ICU support",
+      "source_locators": [
+        "Case presentation, investigations and tables 1–2, pp. 1–5"
+      ]
+    }
+  ],
+  "source_disposition": {
+    "category": "ICU",
+    "outcome": "Improved and transferred from ICU to urology ward.",
+    "source_locators": [
+      "Case presentation, investigations and tables 1–2, pp. 1–5"
+    ]
+  },
+  "key_guideline_decisions": [
+    {
+      "guideline_ref": "ssc_2026",
+      "status": "candidate_for_adjudication",
+      "note": "See docs/guideline_sources.yaml; applicability and alternative care require clinician review."
+    }
+  ],
+  "distractors": [
+    "Acute dyspnea could redirect workup toward pulmonary embolism; early CRP was low."
+  ],
+  "critical_safety_points": [
+    "Do not delay urgent source control for microbiology.",
+    "Immediate recognition and discontinuation of drugs after hypersensitivity reaction.",
+    "Research cfDNA result was retrospective and must not be given to the agent during acute management."
+  ],
+  "fact_provenance": [
+    {
+      "fact_id": "pmh_001",
+      "source_locators": [
+        "PDF p. 1, case presentation"
+      ]
+    },
+    {
+      "fact_id": "hpi_002",
+      "source_locators": [
+        "PDF p. 1, case presentation"
+      ]
+    },
+    {
+      "fact_id": "hpi_003",
+      "source_locators": [
+        "PDF p. 1, case presentation"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "source_locators": [
+        "PDF p. 1, case presentation"
+      ]
+    },
+    {
+      "fact_id": "imaging_005",
+      "source_locators": [
+        "PDF p. 2, case presentation/investigations; allergy sequence also Table 2 on PDF p. 4"
+      ]
+    },
+    {
+      "fact_id": "imaging_006",
+      "source_locators": [
+        "PDF p. 2, case presentation/investigations; allergy sequence also Table 2 on PDF p. 4"
+      ]
+    },
+    {
+      "fact_id": "lab_007",
+      "source_locators": [
+        "PDF p. 3, Table 1"
+      ]
+    },
+    {
+      "fact_id": "lab_008",
+      "source_locators": [
+        "PDF p. 3, Table 1"
+      ]
+    },
+    {
+      "fact_id": "lab_009",
+      "source_locators": [
+        "PDF p. 3, Table 1"
+      ]
+    },
+    {
+      "fact_id": "lab_010",
+      "source_locators": [
+        "PDF p. 3, Table 1"
+      ]
+    },
+    {
+      "fact_id": "lab_011",
+      "source_locators": [
+        "PDF p. 3, Table 1"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_012",
+      "source_locators": [
+        "PDF p. 2, case presentation/investigations; allergy sequence also Table 2 on PDF p. 4"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_013",
+      "source_locators": [
+        "PDF p. 2, case presentation/investigations; allergy sequence also Table 2 on PDF p. 4"
+      ]
+    },
+    {
+      "fact_id": "microbiology_014",
+      "source_locators": [
+        "PDF p. 4, Table 2 and investigations on PDF pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "microbiology_015",
+      "source_locators": [
+        "PDF p. 4, Table 2 and investigations on PDF pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "microbiology_016",
+      "source_locators": [
+        "PDF p. 4, Table 2 and investigations on PDF pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "other_test_017",
+      "source_locators": [
+        "PDF pp. 1–2 and p. 4, research cfDNA description and Table 2"
+      ]
+    },
+    {
+      "fact_id": "allergies_018",
+      "source_locators": [
+        "PDF p. 2, case presentation/investigations; allergy sequence also Table 2 on PDF p. 4"
+      ]
+    }
+  ],
+  "source_uncertainties": [
+    "Unspecified dose, timing or normal findings were not inferred.",
+    "Published management is descriptive and requires separate normative review.",
+    "Secondary sepsis and antimicrobial hypersensitivity developed after emergency surgery and are not preoperative diagnostic requirements in this MVP.",
+    "The combined drain-culture narrative is delayed follow-up and is not released by the time-zero EHR."
+  ],
+  "clinician_signoff": {
+    "reviewer_id": null,
+    "signed_at": null,
+    "status": "pending"
+  },
+  "benchmark_assessment_scope": "Acute presentation through emergency laparotomy and immediate postoperative stabilization. Published later sepsis is a separate source outcome, not required to call the preoperative diagnosis clinically acceptable.",
+  "benchmark_target_diagnosis": {
+    "label": "Rupture of continent urinary diversion pouch with intraperitoneal leak",
+    "assessment_phase": "acute presentation through emergency laparotomy",
+    "source_locators": [
+      "PDF pp. 1–2, case presentation and operative confirmation"
+    ],
+    "rationale": "The published secondary sepsis was diagnosed only after surgery; time-zero models cannot observe that later complication."
+  }
+}

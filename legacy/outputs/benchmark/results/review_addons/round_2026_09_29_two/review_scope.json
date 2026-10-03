@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0.0",
+  "panel_state": "complete",
+  "observed_new_terminal_packets": 60,
+  "expected_new_terminal_packets": 60,
+  "observed_combined_terminal_trajectories": 290,
+  "expected_combined_terminal_trajectories": 300,
+  "scope": "Only new clinical terminal trajectories in this blinded addon round; preserved errors require additional review. No model identities in this directory."
+}

@@ -1,0 +1,68 @@
+{
+  "extension_version": "mvp10_extension_terra_2026-09-28",
+  "corpus_version": "mvp10_v3_2026-09-26",
+  "base_protocol_version": "mvp10_closedbook_v5_2026-09-26",
+  "frozen_at_utc": "2026-09-28T18:52:21.698044+00:00",
+  "base_protocol_manifest_sha256": "5ddd276e469f104aa7c417e529e4d55f677360b98bc91adc8cc733ff3fe9c19f",
+  "results_directory": "results/extension_terra_2026-09-28",
+  "case_order": [
+    "case_001",
+    "case_002",
+    "case_003",
+    "case_004",
+    "case_005",
+    "case_006",
+    "case_007",
+    "case_008",
+    "case_009",
+    "case_010"
+  ],
+  "repetitions": 3,
+  "max_actions": 40,
+  "max_model_turns": 60,
+  "max_wall_seconds": 3600,
+  "repeated_unproductive_call_limit": 3,
+  "models": {
+    "gpt-5.6-terra": {
+      "provider": "openai",
+      "effort": "high",
+      "progress_path": "results/extension_terra_2026-09-28/summaries/terra_progress.jsonl",
+      "adapter": "providers/openai_terra.py",
+      "cli_version": "0.158.0-alpha.2.1",
+      "identity_evidence": "requested_and_inference_accepted_not_observed",
+      "model_observed": null,
+      "access_verified": true,
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra"
+    }
+  },
+  "pricing": {
+    "gpt-5.6-terra": {
+      "verified": true,
+      "as_of": "2026-09-28",
+      "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+      "input_per_million": 2.0,
+      "cached_input_per_million": 0.2,
+      "cache_write_input_per_million": 2.5,
+      "cache_write_rate_source": "official page says 1.25x uncached input rate; 1.25 * USD2 = USD2.50/M",
+      "output_per_million": 12.0,
+      "input_includes_cached": true,
+      "output_includes_reasoning": true,
+      "long_context_threshold": 272000,
+      "currency": "USD",
+      "basis": "hypothetical_API_Standard_not_subscription_charge"
+    }
+  },
+  "files": [
+    {
+      "path": "runner/run_terra_extension.py",
+      "sha256": "9cefa5d59392938e1e0528b7782bfc908ebc7f179d278d676f7c3fd4b67536b9"
+    },
+    {
+      "path": "providers/openai_terra.py",
+      "sha256": "ffce9225043e62527cd2b121a357afd415daaf27afd346c87189f169b64d503e"
+    }
+  ],
+  "change_scope": "Additive Terra model only, authorized after Sonnet/Luna began. No changes to first extension or frozen corpus, physician prompt, EHR, tools, action schema, runner.run_case, stopping or scoring. Current Codex CLI version differs from base.",
+  "clinical_review": "pending",
+  "reset_credit_policy": "preserve"
+}

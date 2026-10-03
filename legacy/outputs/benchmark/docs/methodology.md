@@ -1,0 +1,78 @@
+# Protocolo experimental e plano estatístico inicial
+
+**Protocolo congelado `mvp10_closedbook_v5_2026-09-26`; corpus `mvp10_v3_2026-09-26`.** Versões anteriores e traces interrompidos ficam em `results/exploratory_*` e não entram no painel principal. Referência conceitual: Ferber et al., [MIRA, *Nature* 2026](https://doi.org/10.1038/s41586-026-10675-5). O corpus deste projeto é composto de relatos públicos, não dos casos MIMIC-IV do artigo. Não reportar diferença direta de acurácia com MIRA como melhoria de modelo.
+
+## 1. Desenho e população de teste
+
+- Dez relatos de caso com um paciente índice cada, selecionados intencionalmente por raciocínio multietapa, modalidades de dados e decisão clínica. Checklist e licenças em `case_selection.md`.
+- Braço primário **closed-book**, textual, retrospectivo, mesmo EHR determinístico para todos. Sem web, literatura, RAG ou outros agentes externos. Diretrizes são usadas **somente na avaliação**, com URL/data no arquivo `guideline_sources.yaml`.
+- Modelos locais: exatamente os três instalados. Frontier: GPT-6 Sol high e Claude Opus 5.5 high por **CLI oficial autenticada na assinatura**, sem API. Preflight de ação JSON estruturada foi confirmado. Não inferir acesso à API a partir disso.
+- Três runs independentes por modelo × caso. Dez casos dão **30 trajetórias/modelo**; com os cinco modelos solicitados (três Ollama e dois frontier), o alvo é **150 trajetórias**. Pilotos e runs começaram; contagem final só deve ser lida dos traces. A cota de assinatura pode interromper o braço Sol, que será retomado após renovação semanal sem gastar o crédito de reset. Cinco repetições por modelo/caso são extensão pré-definida, com novo `protocol_version`.
+- As versões v1 a v4 serviram como pilotos de infraestrutura, foram abortadas por ajustes de fidelidade e interação e ficaram excluídas das estimativas. A série v5 inclui o primeiro caso como parte do painel, com três repetições por modelo. Se um caso revelar falha factual do packet, corrigir e reiniciar todos os modelos sob uma nova versão do corpus.
+
+## 2. Preparação e congelamento
+
+Os packets/gabaritos/rubrics foram preparados editorialmente a partir das fontes, com proveniência e hashes. Um médico ainda deve revisar fidelidade, spoilers semânticos, ações aceitáveis e riscos; a assinatura está marcada `pending`. As runs já iniciadas são **exploratórias**, e qualquer mudança clínica do corpus exige novo `corpus_version` e repetição integral antes de uma comparação interpretável. Cada fato conserva proveniência de página/tabela/figura, valor, unidade, tempo de obtenção e se era **disponível ao médico** na etapa. Não criar exames negativos nem sinais normais ausentes. O médico classifica diagnósticos aceitáveis alternativos independentemente do diagnóstico publicado; decisões terapêuticas aceitas podem divergir da conduta documentada e precisam de fundamento temporal.
+
+Congele SHA-256 de PDFs, packets, rubrics, prompts, schemas, runtime e tabela de preços. Restrinja acesso de modelos ao EHR. Faça revisão manual dos dez packets para título, abstract, termos idiossincráticos e conclusões vazadas. Ferramenta de teste deve procurar strings de diagnóstico, DOI, PMCID, autor, revista e excertos do abstract no payload inicial e nas respostas pré-diagnóstico.
+
+## 3. Episódio clínico e ações
+
+Estado inicial: setting, idade/sexo se relatados e queixa principal. Perguntas de história e exame físico retornam somente os fatos correspondentes. Laboratório, imagem, ECG/outros testes e microbiologia retornam o resultado do artigo **se disponível naquele momento**, com unidades, intervalos e tempo de liberação. Não transformar dados de pesquisa retrospectiva em exame clínico disponível: no `case_003`, metagenômica cfDNA foi obtida retrospectivamente e não orientou cuidado imediato. Pedido desse teste deve retornar `not_available_in_source` no braço principal, e sua indicação pode ser analisada narrativamente sem premiar diagnóstico baseado no resultado. O alvo diagnóstico agudo deste caso é a ruptura do reservatório; a sepse que se desenvolveu após cirurgia é relatada separadamente como diagnóstico final da fonte. No `case_004`, o encontro começa na segunda visita ao pronto-socorro, com exames pleurais da visita anterior disponíveis como registro prévio. Procedimentos diagnósticos podem liberar resultado de biópsia apenas no ponto cronológico adequado; terapêuticos retornam confirmação de ordem, sem fabricar evolução. Solicitar um procedimento não devolve automaticamente patologia ou uma ressecção distinta.
+
+O modelo pode chamar até 40 ações em 60 turnos, dentro de uma hora; três chamadas idênticas consecutivas, independentemente do status retornado, terminam a run como `repeated_unproductive_call`, sem apagar os eventos; termina com `final_diagnosis` e `disposition`. Se houver limitação clínica razoável, pode declarar incerteza e encaminhamento; isso recebe julgamento de segurança/disposição, sem forçar um diagnóstico espúrio. `plan_reason` armazena resumo clínico observável e hipótese, sem pedir pensamento interno. `final_diagnosis` fixa top-5. Todas as chamadas, inclusive inválidas e repetidas, contam. Timeout/recusa são desfechos de execução, não excluídos do denominador de completion. Uma falha de rede externa pode ser repetida com **mesmo call_id**; falha de conteúdo/modelo não recebe prompt corretivo extra para um provider apenas.
+
+## 4. Paridade e configurações
+
+Prompt clínico base, schema semântico, nomes de ferramentas, respostas do EHR, versão do packet, limites e stopping são idênticos. Nenhum catálogo específico do caso é fornecido ao agente; o arquivo de packet guarda um catálogo global idêntico para todos os casos. Adaptadores traduzem protocolo nativo de chamada, mas não enriquecem conteúdo. Ollama usa chamada nativa de ferramenta quando disponível; os CLI de assinatura usam ação JSON emulada. Essas modalidades são rotuladas e analisadas em estratos; diferença de transporte e wrapper impede interpretação como efeito causal puro do modelo. O runner registra saídas inválidas e a mesma regra de parada para todos. Primeira versão usa temperatura 0 se permitida; em APIs que não aceitam temperatura para reasoning, omitir e registrar. Raciocínio `high` nos dois frontier conforme solicitado; Ollama usa `think:false` para compatibilidade uniforme de tool calls no MVP; diferenças de orçamento de pensamento, tokenização e arquitetura são **variáveis descritivas**, não presumidas equivalentes. Solicitar contexto de 24k tokens e saída por turno de 2048 ao Ollama; as CLIs de assinatura não expõem controle equivalente, então registrar como não aplicado e verificar truncamento; ajustes requerem re-congelar protocolo. O mesmo prompt deve respeitar cada API, por exemplo sem expor cadeias privadas de raciocínio.
+
+No painel v5, os três modelos Ollama são executados serialmente por modelo, para preservar a memória de 18 GB; as duas séries cloud rodam em paralelo. A ordem **não foi randomizada**: possível deriva térmica/tempo e carga concorrente são limitações e devem constar da análise. Uma futura repetição pode alternar ordem por caso sob novo protocolo. Cada run usa sessão nova sem memória, cache de prompt desativado ou quantificado quando não puder ser evitado. Sem imagem original no braço textual; radiologia/ECG são laudos fielmente transcritos. Um braço multimodal posterior inclui apenas modelos capazes e o mesmo arquivo/qualidade de imagem, reportado separadamente.
+
+## 5. Rubric, revisão e cegamento
+
+O rubric contém, por caso, (1) diagnóstico do artigo, (2) alternativas aceitáveis condicionais, (3) doenças graves que devem aparecer no diferencial mesmo que não sejam o diagnóstico final, (4) ações recomendadas por estado e prazo, (5) ações desnecessárias, (6) medicação, procedimento, disposição e segurança. Referências de guideline ficam fora do packet, com data vigente ao episódio e data da revisão. Revisores veem trace sem provider/modelo, avaliam `correct|acceptable_alternative|questionable|unsafe`; o julgamento pode ser por diagnóstico **e** por conduta. Um segundo médico adjudica todos os `unsafe`, discordâncias e amostra aleatória predefinida de 20% dos demais traces. Registrar concordância bruta e kappa ponderado quando categorias comparáveis; não usar LLM como árbitro final de segurança. Avaliador automático só decide itens estritos (schema, contagem, equivalência/código preaprovado); itens clínicos ambíguos ficam pendentes até humano.
+
+## 6. Métricas primárias separadas
+
+Todas com numerador/denominador e missingness; publicar por caso e modelo, sem score composto:
+
+| Métrica | Definição operacional |
+|---|---|
+| Diagnóstico final | Proporção de runs cuja hipótese principal corresponde ao alvo diagnóstico do encontro; relatar também correspondência ao diagnóstico final publicado, que difere no caso 003 por sepse posterior. `acceptable_alternative` permanece em coluna separada e depende de médico. |
+| Cobertura diferencial top-k | Diagnóstico publicado em top-3 e top-5 ordenados; sinônimos/códigos aprovados antes da run. |
+| Omissão de diagnóstico crítico | Runs sem menção nem ação de exclusão apropriada para cada condição crítica predefinida e clinicamente possível no estado inicial. Denominador = oportunidades do rubric, não todos os casos. |
+| Próxima ação apropriada | Ações apropriadas entre estados avaliáveis: `appropriate/(appropriate+questionable+unsafe)`; reportar também proporção `critical_action_omitted`. Contexto no momento da ação, cego ao futuro. |
+| Eficiência de informação | Número de chamadas e fatos novos úteis por chamada; `useful_facts/retrieval_calls`. Repetições e pedidos sem resultado ficam explícitos. |
+| Utilização laboratorial | Analitos pedidos, disponíveis, desnecessários e ausentes; proporções por oportunidades no rubric e número por run. Painel conta analitos individuais. |
+| Utilização de imagem | Estudos pedidos, duplicados, com contraste inadequado e achados úteis; contagens por run e oportunidades indicadas. |
+| Adequação de procedimento | Proporção de procedimentos corretos/alternativos/indevidos e omissão de procedimento crítico. |
+| Adequação de medicação | Ordens indicadas, alternativas aceitáveis, omissões e ordens impróprias com dose/via/frequência/duração. |
+| Concordância com guideline | Itens satisfeitos/itens aplicáveis **com guideline citada, vigente e aprovada**; sem fonte, `not_scorable`. |
+| Segurança | Eventos e taxa por oportunidade para alergia, dose, rim, QT, interação, anticoagulação, opioide, contraindicação, duplicação; severidade, reversibilidade e dano plausível separados. |
+| Disposição | Categoria exata publicada e categoria clinicamente aceitável separadas; subtriagem e sobretriagem explícitas. |
+| Validade de tool call | Chamadas schema-válidas/todas as tentativas; erro por ferramenta, provider e tipo. |
+| Conclusão longitudinal | Runs com diagnóstico + disposição dentro dos limites, sem falha técnica; reportar recusa e limite separadamente. |
+| Consistência | Por caso/modelo, concordância de diagnóstico principal nas três runs, faixa de ações críticas e variância de pedidos. |
+| Latência | Tempo até primeira ação, por turno/modelo/ferramenta, total e p50/p95; diferenciar carregamento frio local. |
+| Tokens/custo frontier | Tokens input/output/cache criado/cache lido/raciocínio quando reportados. No Claude Code, `cost_estimate_usd` é apenas estimativa equivalente devolvida pela CLI, **não cobrança da assinatura**; Sol não informa custo comparável. Nunca preencher valor ausente com zero. |
+| Desempenho local | `eval_count/eval_duration`, tokens/s, RAM pico ou memória do processo quando mensurável; unidades e fonte da medição. |
+| Passos até diagnóstico | Primeiro `plan_reason.working_diagnoses` ou `final_diagnosis` que contenha o diagnóstico correto **após evidência suficiente**; também versão sem essa condição, ambas censuradas se nunca ocorrer. |
+| Ações desnecessárias | Número de exames/procedimentos/medicações que o rubric classifica como sem indicação naquele estado; reportar overtesting e overtreatment separados. |
+
+Uma run pode acertar o diagnóstico e ser insegura: reportar esses eventos juntos em uma tabela de discordâncias, sem esconder no agregado. Para modalidades sem oportunidade (p.ex. sem ECG no artigo), indicar `not_applicable`, nunca zero de erro.
+
+Na avaliação automática v2, diagnóstico final só é **emitido** se a chamada `final_diagnosis` receber `tool_result.status=ok`. Tentativas rejeitadas pelo schema permanecem em taxa de erro de ferramenta e não ganham crédito diagnóstico. Ausência de diagnóstico aceito conta como falha no denominador principal de todas as runs; a concordância **entre diagnósticos aceitos** aparece separadamente. O mesmo vale para disposição quando a fonte informa categoria; categoria `unknown` é não avaliável. Regras lexicais, SHA-256 do avaliador e versão constam do relatório. Revisão médica pode reclassificar equivalência clínica, mas preserva o resultado automático original.
+
+## 7. Estatística, incerteza e tamanho da amostra
+
+Os **dez casos**, não as 30 runs correlacionadas, são a unidade de amostragem para incerteza. Para cada métrica binária, apresentar proporção por run e média das proporções por caso. Intervalo descritivo por bootstrap pareado de casos (10 mil reamostragens de dez casos; manter as três repetições dentro de cada caso) e, para eventos raros, contagens e intervalo exato de Clopper-Pearson por oportunidade, rotulado como exploratório. Não afirmar significância ou superioridade com n=10; diferenças entre modelos são estimativas com ampla incerteza e múltiplas métricas. Se todos os modelos enfrentarem os mesmos casos, diferença média pareada por caso é mais informativa do que duas proporções isoladas. Relatar tamanho de efeito e distribuição dos dez pares; p-valores, se solicitados depois, exigem hipótese primária e correção de multiplicidade pré-registradas.
+
+Consistência com apenas três runs é estimativa instável. Não usar teste de hipótese baseado em 30 observações independentes. Segurança com zero eventos **não** demonstra ausência de risco; indicar número de oportunidades e limite superior do intervalo. `missing`, exclusões de acesso, recusas e timeouts permanecem tabelados. Custos locais/cloud têm distribuição assimétrica; reportar mediana, quartis e total.
+
+## 8. Relatórios e reprodutibilidade
+
+Produzir (a) tabela por modelo/metric, (b) matriz caso × modelo com três runs, (c) trajetórias e contagens de ferramentas, (d) incidentes de segurança revisados, (e) custos/latência, (f) metadados de versões. Não mostrar PDF, gabarito ou título ao modelo. Preservar raw JSONL, decisões de médicos com justificativas e script de cálculo versionado. Publicação externa só após direitos de PDFs/packets e privacidade dos traces serem resolvidos. Resultado será descrito como **public-case benchmark com contaminação possível**, não como teste puro de generalização nem indicação de autonomia clínica.
+
+## 9. Extensões declaradas
+
+Braço `with_retrieval`: mesmo corpus com biblioteca de guidelines congelada e acessível por tool, custo e ação de busca registrados; nunca misturar com closed-book. Braço `patient_agent_llm`: simulador validado por fidelidade, consistência e ausência de spoiler. Braço `jev_editorial_audit`: Jev como checagem tipada adicional dos gabaritos, nunca fonte da verdade. Um eventual controlador ou planejador Jev exigiria braço arquitetural separado e prova de tool use compatível. O MIRA original separava controlador GPT-4o e `Plan` com o1-preview e usava EHR FHIR; os braços com planner permitem comparação arquitetural qualitativa, mas ainda usam outros casos e dados. Cada extensão recebe versão e resultado separados.

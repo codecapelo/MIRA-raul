@@ -1,0 +1,256 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_009",
+  "index_patient": "single_reported_patient",
+  "language": "en",
+  "setting": "emergency_department",
+  "time_zero": "first_clinical_contact",
+  "initial": {
+    "age_years": 70,
+    "sex_recorded": "female",
+    "chief_complaint": "Progressively worsening diffuse abdominal pain, distension and nausea."
+  },
+  "facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "topic_codes": [
+        "onset"
+      ],
+      "value": "Progressive diffuse abdominal pain, distension and nausea.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "onset"
+        ]
+      }
+    },
+    {
+      "fact_id": "pmh_002",
+      "domain": "pmh",
+      "topic_codes": [
+        "medical"
+      ],
+      "value": "Type 2 diabetes, hypertension, chronic atrial fibrillation and COPD.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "medical"
+        ]
+      }
+    },
+    {
+      "fact_id": "pmh_003",
+      "domain": "pmh",
+      "topic_codes": [
+        "procedure"
+      ],
+      "value": "ERCP for choledocholithiasis one year earlier, with 10F × 10 cm plastic biliary stent left after stone extraction.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "ask_history",
+        "match_codes": [
+          "procedure"
+        ]
+      }
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "domain": "physical_exam",
+      "topic_codes": [
+        "abdomen"
+      ],
+      "value": "Signs of peritoneal irritation.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_physical_exam",
+        "match_codes": [
+          "abdomen"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_005",
+      "domain": "imaging",
+      "topic_codes": [
+        "abdominal_xray"
+      ],
+      "value": "Upright abdominal radiograph: multiple small-bowel air–fluid levels.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "abdominal_xray"
+        ]
+      }
+    },
+    {
+      "fact_id": "imaging_006",
+      "domain": "imaging",
+      "topic_codes": [
+        "ct_abdomen"
+      ],
+      "value": "CT: multiple small-bowel air–fluid levels and a linear hyperdense intraluminal structure consistent with a foreign body; mechanical obstruction suspected.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_imaging",
+        "match_codes": [
+          "ct_abdomen"
+        ]
+      }
+    },
+    {
+      "fact_id": "procedure_result_007",
+      "domain": "procedure_result",
+      "topic_codes": [
+        "laparoscopy",
+        "laparotomy"
+      ],
+      "value": "Emergency laparoscopy converted to open operation because of purulent fluid and adhesions. A Meckel diverticulum ~40 cm proximal to ileocecal valve contained a biliary stent; its distal end perforated adjacent ileum.",
+      "status": "reported",
+      "available_at": "time_zero",
+      "release_rule": {
+        "tool": "request_procedure",
+        "match_codes": [
+          "laparoscopy",
+          "laparotomy"
+        ]
+      }
+    },
+    {
+      "fact_id": "procedure_result_008",
+      "domain": "procedure_result",
+      "topic_codes": [
+        "resection"
+      ],
+      "value": "About 20 cm of small bowel, including diverticulum and perforation, was resected with side-to-side anastomosis, irrigation and drainage.",
+      "status": "reported",
+      "available_at": "after_any_procedure:laparoscopy|laparotomy",
+      "release_rule": {
+        "tool": "request_procedure",
+        "match_codes": [
+          "resection"
+        ]
+      }
+    }
+  ],
+  "catalog": {
+    "history_topics": [
+      "cardiac",
+      "catheter",
+      "current",
+      "drug_reaction",
+      "history",
+      "infection",
+      "medical",
+      "negatives",
+      "oncology",
+      "onset",
+      "pregnancy",
+      "procedure",
+      "recent_therapy",
+      "renal",
+      "smoking",
+      "symptoms",
+      "urologic"
+    ],
+    "physical_regions": [
+      "abdomen",
+      "abdomen_pelvis",
+      "cardiovascular",
+      "general",
+      "hemodynamics",
+      "neurologic",
+      "postoperative",
+      "respiratory",
+      "skin",
+      "skin_eye",
+      "vitals"
+    ],
+    "lab_tests": [
+      "adrenal_hormones",
+      "blood_film",
+      "blood_panel",
+      "cbc",
+      "chemistry",
+      "coagulation",
+      "d_dimer",
+      "dat",
+      "hemoglobin",
+      "hemolysis",
+      "inflammation",
+      "inflammation_followup",
+      "lactate",
+      "metabolic",
+      "nt_probnp",
+      "pleural_fluid",
+      "pregnancy_test",
+      "troponin",
+      "tspot"
+    ],
+    "imaging_studies": [
+      "abdominal_xray",
+      "adrenal_ct",
+      "adrenal_ultrasound",
+      "brain_mri",
+      "cardiac_mri",
+      "chest_xray",
+      "coronary_angiography",
+      "coronary_ct",
+      "ct_abdomen",
+      "ct_chest",
+      "ctpa",
+      "pelvic_ultrasound",
+      "pet",
+      "spine_mri",
+      "thoracic_ultrasound"
+    ],
+    "microbiology_tests": [
+      "adrenal_tb_pcr",
+      "blood_cultures",
+      "drain_culture",
+      "pleural_culture",
+      "urine_culture"
+    ],
+    "ecg_or_tests": [
+      "ecg",
+      "echo",
+      "electrophysiology",
+      "intravascular_imaging",
+      "research_cfdna",
+      "rhc",
+      "tee",
+      "tumor_genetics"
+    ],
+    "procedures": [
+      "adrenal_biopsy",
+      "device_exploration",
+      "ebus_biopsy",
+      "hematoma_evacuation",
+      "laparoscopy",
+      "laparotomy",
+      "pathology",
+      "pericardiocentesis",
+      "pleural_biopsy",
+      "resection",
+      "thoracentesis"
+    ],
+    "medications": []
+  },
+  "temporal_events": [],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ],
+  "catalog_version": "v1_shared_all_cases"
+}

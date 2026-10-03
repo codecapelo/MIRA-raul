@@ -1,0 +1,583 @@
+                                                                                                                                            Case report
+
+                                     Plasma metagenomic cfDNA sequencing identifies
+                                     pathogens in culture-­negative sepsis following
+                                     urinary pouch rupture
+                                     Katharina Hoeter ‍ ‍,1 Linda Marriott,2 Elmo W I Neuberger,3
+                                     Urantschimeg Dagwadordsch,4 Radhe Shantha Kumar,5 Perikles Simon,3
+                                     Marc Bodenstein,1 Maïwenn Kersaudy-­Kerhoas ‍ ‍2
+
+1
+ Department of Anesthesiology,       SUMMARY                                                          sequencing, offer a novel approach to early pathogen
+University Medical Center            A patient with a complex urological history presented with       detection. This ‘liquid biopsy’ technology can identify a
+of the Johannes Gutenberg            abdominal pain and respiratory distress after catheter           broad range of pathogens directly from blood samples,
+University Mainz Department                                                                           including atypical organisms, and may provide clini-
+                                     dysfunction. She underwent emergency surgery for a
+of Anesthesiology, Mainz,
+                                     ruptured urinary pouch. Sepsis was later diagnosed based         cally actionable results even when standard cultures are
+Rheinland-­Pfalz, Germany
+2
+ School of Engineering and           on clinical deterioration, including tachycardia, fever, an      negative.6 7
+Physical Sciences, Heriot-­Watt      elevated respiratory rate and raised inflammatory markers,          This case illustrates its potential clinical
+University, Edinburgh, UK            but blood cultures remained negative. A metagenomic              utility.
+3
+ Department of Sports                microbial cell-­free DNA (cfDNA) assay (iSEP-­SEQ),
+Medicine, Disease Prevention         performed early from plasma as part of a research protocol,      CASE PRESENTATION
+and Rehabilitation, Johannes         identified Klebsiella and Pseudomonas at the genus               A woman in her early 30s under regular urological
+Gutenberg University Mainz,          level. Results were obtained retrospectively and were            follow-­up presented directly to a urology outpa-
+Mainz, RP, Germany
+4                                    not available in real time; therefore, they did not alter        tient clinic of a tertiary care hospital in Germany,
+ Institute of Medical
+                                     immediate management. These findings were confirmed              with severe lower abdominal pain and progres-
+Microbiology and Hygiene,
+University Medical Center of the     by cultures from drainage fluid and urine. Broad-­spectrum       sive dyspnoea following catheter dysfunction. Her
+Johannes Gutenberg University        antibiotic treatment led to clinical improvement. This case      relevant medical history included a lumbosacral
+Mainz, Mainz, RP, Germany            highlights the limitations of conventional microbiological       meningomyelocele, which required multiple prior
+5
+ University of Cambridge,            methods in culture-­negative sepsis and illustrates the role     neurosurgical procedures, including spinal unteth-
+Cambridge, UK                        of cfDNA-­based metagenomic testing as an adjunctive             ering, placement of a ventriculoperitoneal shunt and
+                                     and complementary diagnostic tool for early, accurate            posterior spinal stabilisation. She had also developed
+Correspondence to                    pathogen detection. Early use of such tools may support          low bladder compliance, which was managed with
+Dr Katharina Hoeter;                                                                                  ileocaecal augmentation and an appendix stoma.
+​katharina.​hoeter@​unimedizin-​     timely and targeted management in complex infectious
+ mainz.​de and                       disease presentations.                                              During follow-­u p, she developed transitional
+ Professor Maïwenn Kersaudy-­                                                                         cell carcinoma of the augmented bladder, which
+ Kerhoas, School of Engineering                                                                       progressed to keratinising squamous cell carci-
+ and Physical Sciences, Heriot-­                                                                      noma. This was managed with radical cystectomy
+ Watt University, Edinburgh, UK;     BACKGROUND                                                       and conversion to a continent urinary diversion
+ ​m.​kersaudy-​kerhoas@​hw.​ac.​uk   Sepsis is a life-­
+                                                      threatening syndrome caused by the              (MAINZ pouch I, a continent ileocaecal urinary
+                                     immune system’s dysregulated response to infection,              reservoir with catheterisable stoma), with pres-
+Accepted 25 February 2026            leading to organ damage, septic shock, and death.                ervation of the appendix stoma. She was moni-
+                                     The condition is characterised by an increase of two             tored through regular oncological evaluations
+                                     or more points in the Sequential Organ Failure Assess-           and managed bladder emptying via clean inter-
+                                     ment (SOFA) score.1 Globally, sepsis accounts for                mittent catheterisation.
+                                     approximately 20% of deaths, as highlighted by the
+                                     WHO Sepsis Report 2017.2                                            In the weeks prior to admission, the patient
+                                        Current guidelines recommend immediate empir-                 reported increasing difficulty with catheterisation.
+                                     ical broad-­spectrum antibiotic therapy following blood          A pouchoscopy revealed mucosal swelling at the
+                                     culture collection, with transition to pathogen-­specific        stoma site, and a catheter was placed for contin-
+                                     de-­escalation based on microbiological results.1                uous drainage for 3 weeks without immediate
+                                        However, conventional culture techniques                      complications.
+© BMJ Publishing Group               often require 2–7 days for pathogen identifica-                     The night before presentation, catheter func-
+Limited 2026. Re-­use                tion 3 and may yield false negatives in 40%–60%                  tion deteriorated, with reduced urine output
+permitted under CC BY-­NC. No
+                                     of cases with suspected sepsis, particularly                     followed by acute respiratory symptoms. On
+commercial re-­use. See rights
+and permissions. Published by        in patients with prior antibiotic exposure or                    admission, she showed signs of cardiopulmo-
+BMJ Group.                           complex infections. 3–5 This hampers the initi-                  nary decompensation, and emergency computer
+                                     ation of targeted therapy and contributes to                     tomography (CT) demonstrated a large rupture
+    To cite: Hoeter K, Marriott L,
+    Neuberger EWI, et al. BMJ        the growing threat of antimicrobial resistance                   of the urinary reservoir. Emergency lower
+    Case Rep 2026;19:e267878.        (AMR).                                                           abdominal laparotomy confirmed an iatrogenic
+    doi:10.1136/bcr-2025-               Advances in molecular diagnostics, such as plasma             pouch rupture, which was surgically repaired.
+    267878                           metagenomics microbial cell-­    free DNA (mcfDNA)               A catheter fixation device (Pouchofix, Teleflex)
+                                               Hoeter K, et al. BMJ Case Rep 2026;19:e267878. doi:10.1136/bcr-2025-267878                                    1
+Case report
+and a nasogastric tube were placed. Relevant laboratory                   discontinued and managed with antihistamines (dimetin-
+findings on admission and throughout her hospital stay are                dene, cimetidine) and corticosteroids (methylprednisolone),
+presented in table 1.                                                     with rapid symptom improvement. Reintroduction of anti-
+   Postoperatively, the patient was transferred to the intensive          microbial therapie triggered a second hypersensitivity reac-
+care unit (ICU). On admission, she was alert (Glasgow Coma                tion, prompting a switch to ceftriaxone, which was well
+Scale score 14), with pupils equal and reactive, tachycardia (120         tolerated and continued as definitive therapy. The subse-
+beats per minute), systolic blood pressure of 110 mm Hg, and              quent ICU course (Days 2–9) was characterised by persistent
+oxygen saturation of 98% on 3 L/min oxygen via nasal cannula.             tachycardia, fluctuating infection markers, evolving pulmo-
+The abdomen was soft and moderately distended without peri-               nary findings, and negative blood cultures. These events and
+tonism; surgical drains showed minor haemorrhagic output.                 the laboratory parameter course are summarised in table 2.
+Piperacillin–tazobactam was initiated intraoperatively and                   A metagenomic microbial cfDNA assay performed on a
+continued postoperatively.                                                blood sample collected on Day 3 as part of a clinical research
+   On Day 2 of ICU admission, due to ongoing clinical insta-              protocol (approved by the regional ethics committee; study
+bility, antimicrobial therapy was escalated to meropenem                  ID 2020–15535) identified Klebsiella and Pseudomonas
+and fluconazole. Shortly after administration, the patient                species. These pathogens were later confirmed by cultures
+developed pruritus, flushing, wheeze and agitation, consis-               from drainage fluid and urine obtained on Days 8 and 9,
+tent with an acute hypersensitivity reaction; therapy was                 respectively. At the time of culture confirmation, the patient
+                                                                          was clinically improving and was transferred from the ICU to
+                                                                          the urology monitoring ward in stable condition (figure 1).
+    Definitions box
+                                                                          INVESTIGATIONS
+    Sepsis-3
+    ► Sepsis is defined as life-­threatening organ dysfunction caused
+                                                                          Imaging studies
+                                                                          Contrast-­enhanced abdominal CT was performed on admis-
+      by a dysregulated host response to infection.
+                                                                          sion. During the excretory phase, following retrograde contrast
+    ► Operationally, sepsis is identified by an acute increase of ≥2
+                                                                          instillation via an indwelling pouch catheter, significant contrast
+      points in the Sequential Organ Failure Assessment score, as
+                                                                          leakage into the abdominal cavity was identified, originating
+      evidence of organ failure.
+                                                                          from a defect in the left laterodorsal aspect of the urinary pouch.
+    Criteria for septic shock (per Sepsis-­3)                             Free intraperitoneal fluid was detected in the perisplenic, perihe-
+                                                                          patic and pelvic spaces.
+    Septic shock is defined by both:                                         CT of the chest excluded pulmonary embolism and right heart
+    (1) Persistent hypotension requiring vasopressors to maintain a       strain.
+    mean arterial pressure ≥65 mm Hg;                                        Abdominal ultrasound confirmed a small volume of free fluid
+    (2) Serum lactate >2 mmol/L (>18 mg/dL), despite adequate fluid       in the pelvic cavity (Koller pouch) with no further abnormalities.
+    resuscitation.                                                           Supine chest radiography demonstrated an enlarged cardiac
+                                                                          silhouette and a left lower lobe consolidation with a positive
+    Culture-­negative sepsis (per Sepsis-­3)                              bronchopneumogram, consistent with pneumonia, as well as a
+                                                                          right-­sided pleural effusion.
+    ► Clinical diagnosis of sepsis with negative conventional cultures,
+                                                                             Transthoracic echocardiography showed a volume-­         depleted
+      despite appropriate sampling (blood, urine, respiratory samples,    state with kissing ventricles and a collapsible inferior vena cava,
+      etc.) within a reasonable diagnostic timeframe.                     supporting the need for aggressive fluid management.
+    ► Occurs in up to 40%–60% of suspected cases, often
+                                                                             Continuous physiological monitoring was maintained
+      due to prior antibiotics, difficult sampling (e.g., altered         throughout the patient’s ICU stay, including 5-­         l ead elec-
+      anatomy), low pathogen burden, or infection with                    trocardiography, invasive and non-­invasive blood pressure,
+      fastidious/unculturable organisms.                                  respiratory rate and body temperature. These parameters
+    Plasma metagenomic cfDNA                                              are summarised infigures 2 and 3.
+
+    ► Plasma metagenomic cell-­free DNA (cfDNA) sequencing is a
+                                                                          Microbiological investigations
+      non-­invasive test that detects microbial cfDNA fragments in        Two pairs of blood cultures obtained on Day 2 (using BD
+      plasma using next-­generation sequencing.                           BACTEC Standard/10 Aerobic/F and Standard/Anaerobic/F
+    ► It can identify bacteria, fungi, DNA viruses, and some
+                                                                          bottles (BD Becton Dickinson, USA); and incubated using the
+      parasites at genus or species level, and reports relative           BD BACTEC FX40 system) remained negative after 5 days of
+      abundance metrics (e.g., reads per million).                        incubation.
+    ► Some platforms can also report antimicrobial resistance markers.
+    ► Typical turnaround is 24–72 hours after laboratory receipt.
+                                                                          Drainage fluid from the surgical site (Easy Flow drain) was cultured
+    Limitations and pitfalls of cfDNA sequencing
+                                                                          repeatedly
+                                                                          Initial Sample (Day 2)
+    ► Does not distinguish viable from non-­viable organisms.
+                                                                          After 4 days of incubation, Klebsiella oxytoca was isolated in
+    ► May reflect contamination or transient DNAemia.
+                                                                          low quantities. Identification was confirmed using the MALDI
+    ► Limited detection of RNA viruses or pathogens with very low
+                                                                          Biotyper (Bruker Daltonics), and susceptibility testing was
+       cfDNA shedding.
+                                                                          performed with the VITEK2 system (bioMérieux) using the
+    ► Does not provide infection source, host response severity, or
+                                                                          VGN-­14 card. Results were interpreted according to European
+       functional virulence data.
+                                                                          Committee on Antimicrobial Susceptibility Testing (EUCAST)
+2                                                                            Hoeter K, et al. BMJ Case Rep 2026;19:e267878. doi:10.1136/bcr-2025-267878
+                                                                                                                                                                            Case report
+
+ Table 1      Trends in laboratory parameters throughout ICU treatment
+                                 Sampling day
+                                 Unit                  Day 1 pre-­op       Day 1 post-­op        Day 2         Day 3           Day 4           Day 5           Day 6          Normal range
+ Clinical chemical parameters
+  Sodium                        mmol/L                138                 144                   139           145             142             137             137            136–145
+  Potassium                     mmol/L                3.7                 4.2                   3.9           4.6             3.8             3.8             4.3            3.4–4.9
+  Chloride                      mmol/L                105                 155                   109           122             105             100             103            98–107
+  Calcium                       mmol/L                2.4                 2.14                  2.27          2.18            2.14            2.21            2.23           2.15–2.58
+  Inorganic phosphorus          mg/dL                 3.1                 2.6                   2.9           2.8             2.8             3.8             2.7            2.3–4.7
+  Creatinine                    mg/dL                 1.08                0.39                  0.34          0.36            0.38            0.33            0.31           0.55–1.02
+  eGFR                          mL/min/1.73 m2        68                  139                   145           143             140             147             150            77–129
+  Urea                          mg/dL                 19                  7                     7             11              10              6               5              7–19
+  CRP                           mg/L                  1.7                 68                    361           402             336             363             378            <5
+  PCT                           ng/mL                                                           4.7           3.2             1.9             0.78                           <0.5
+  IL-­6                         pg/mL                                                                         117                                                            <7
+ Basic haematological parameters
+  WBC                           x109/L                15.3                3.6                   10.0          13.9            10.2            10.8            13.1           3.5–10
+  RBC                           x1012/L               4.91                3.69                  3.20          3.24            3.20            3.36            3.34           3.7–4.8
+  HGB                           g/L                   143                 109                   95            95              93              99              97             120–160
+  HCT                           L/L                   0.427               0.326                 0.284         0.282           0.286           0.298           0.293          0.34–0.44
+  PLT                           x109/L                513                 265                   249           271             296             281             290            150–360
+ Blood gas analysis
+  pH                                                                      7.42 (art)            7.46 (art)    7.42 (ven)      7.43 (ven)      7.38 (ven)      7.43 (ven)     7.35–7.45
+  pCO2                          mmHg                                      30                    35            43              46              45              43             32–45
+  pO2                           mmHg                                      100                   71            42              43              41              36             21.8–26.2
+  cHCO3                         mmol/L                                    21.1                  25.4          26.8            28.8            24.9            26.9           21.8–26.2
+  BE                            mmol/L                                    −4.0                  1.1           3.0             5.3             1.0             3.4            −2–3
+  sO2                           %                                         98.5                  95.5          76.1            75.8            72.2            67.0           95–99
+  Lactate                       mmol/L                                    4.7                   3.2           0.6             0.9             0.6             0.5            0.5–1.6
+ Averaged values in 8-­hour intervals.
+ BE, base excess; cHCO₃, bicarbonate concentration; CRP, C-­reactive protein; eGFR, estimated glomerular filtration rate; HCT, haematocrit; HGB, haemoglobin; HR, heart rate; ICU, intensive care
+ unit; IL-­6, interleukin-­6; MAP, mean arterial pressure; mg, milligram; mL/min/1.73 m², millilitres per minute per 1.73 square metres of body surface area; mm Hg, millimetres of mercury; mmol,
+ millimole; ng, nanogram; nL, nanolitre; pCO₂, partial pressure of carbon dioxide; PCT, procalcitonin; pg, picogram; pH, measure of acidity/alkalinity; pL, picolitre; PLT, platelet; pO₂, partial
+ pressure of oxygen; RBC, red blood cell; RR, respiratory rate; sO₂, oxygen saturation; WBC, white blood cell.
+
+
+
+
+guidelines, showing susceptibility to most antibiotics except                                          imipenem and aztreonam, and resistant to piperacillin/tazo-
+ampicillin.                                                                                            bactam, ceftazidime and cefepime.
+
+Follow-up Sample (Day 5)                                                                               Fungal biomarkers
+No microbial growth.                                                                                   Serum β-­d-­glucan levels measured on Days 2 and 6 were within
+  Repeated Sample (Day 7):                                                                             borderline or non-­diagnostic ranges.
+  Vancomycin-­r esistant Enterococcus faecium was isolated
+in low quantities after 5 days. Identification and suscepti-                                           Metagenomic cfDNA Analysis
+bility profiling were performed using the MALDI Biotyper                                               Following the clinical diagnosis of sepsis on Day 3 (see the Defi-
+and VITEK ®2 (AST-­P 655 card). The isolate was resistant                                              nition box), plasma was collected for research-­based metage-
+to ampicillin, ampicillin/sulbactam, imipenem, vancomycin                                              nomic analysis with informed consent (approved by the regional
+and levofloxacin, but susceptible to teicoplanin, linezolid                                            ethics committee; study ID 2020–15535). Plasma was processed
+and tigecycline. PCR confirmed the presence of the vanB                                                through a standardised protocol: centrifugation, cryopres-
+resistance gene.                                                                                       ervation and shipment on dry ice to a research facility in the
+                                                                                                       United Kingdom (UK). The plasma sample was processed using
+Urine cultures                                                                                         a proprietary microfluidic extraction method and sequenced on
+Conduit urine (Day 2)                                                                                  the MinION Mk1C platform (Oxford Nanopore Technologies)
+Cultures were negative for bacterial growth.                                                           for 2 hours. Details of this approach (iSEP-­SEQ) are available
+                                                                                                       in DOI: 10.1101/2024.12.29.24319315. Bioinformatic analysis
+Catheterised urine (Day 7)                                                                             using the EPI2ME WIMP workflow identified Klebsiella (160
+No microbial growth was observed.                                                                      reads per million) and Pseudomonas (53 reads per million) at the
+  Pouch urine sample (Day 7):                                                                          genus level. All other classifications were below interpretative
+  Pseudomonas aeruginosa was identified at a low concentration                                         thresholds (<30 RPM), consistent with background signal or
+(10² CFU/mL). The isolate was susceptible to meropenem, tobra-                                         contamination. The complete workflow took less than 6 hours.
+mycin and amikacin, dose-­dependent sensitive to ciprofloxacin,                                        Results were not available in real time but were obtained blindly,
+Hoeter K, et al. BMJ Case Rep 2026;19:e267878. doi:10.1136/bcr-2025-267878                                                                                                                           3
+Case report
+
+    Table 2 Integrated timeline of clinical course, interventions, antimicrobial therapy and microbiological/cfDNA findings during intensive care (ICU)
+    admission
+    Day                              Clinical course and interventions         Key outcomes                         Antimicrobials                                  Microbiology/cfDNA
+    ICU admission (Day 0)            Alert (GCS 14); pupils equal/reactive.    Initial assessment on transfer       Piperacillin–tazobactam (empiric)
+                                     HR 120 bpm, SBP 110 mm Hg, SpO₂           to ICU showed moderate
+                                     98% (3 L/min O₂ via NC).                  abdominal distension, mild
+                                     Abdomen soft, moderately                  tachycardia and adequate
+                                     distended, no guarding; drains with       oxygenation.
+                                     minor haemorrhagic output.
+                                     P/T started intra- and
+                                     postoperatively.
+    Day 1                            HR ↑150 bpm, hypotension.                 HR partially improved,               Piperacillin–tazobactam (continued)
+                                     TTE: hypovolaemia.                        instability persisted.
+                                     Worsening abdominal pain.                 PE ruled out based on
+                                     US: small free fluid Douglas pouch.       admission imaging.
+                                     Gelatin-­based fluid replacement
+                                     (Gelafundin, B. Braun).
+                                     Tremors, shivering, respiratory
+                                     distress→treated with morphine.
+                                     IV fluids.
+    Day 2                            Persistent symptoms. Urology                                                   Meropenem+fluconazole                           Blood cultures drawn (later
+                                     consulted                                                                      (escalated)                                     negative)
+                                     Allergic reaction (pruritus, flushing,    Allergic symptoms resolved.          Meropenem+fluconazole→stopped;
+                                     wheeze, agitation)→discontinued           Stable with fluids.
+                                     treatment.
+                                     Allergic reaction managed
+                                     with dimetindene, cimetidine,
+                                     methylprednisolone.
+                                     Respiratory symptoms treated with
+                                     salbutamol and ipratropium.
+                                     Second allergic reaction                  Allergic symptoms resolved.          Piperacillin–tazobactam re-­
+                                     lactate 3.2 mmol/L.                       Stable with fluids.                  challenge→stopped;
+                                     Abdominal exam soft, tender, no                                                →Ceftriaxone
+                                     peritonitis.
+    Day 3                            Respiratory symptoms improved;            Fluid balance improved.              Ceftriaxone ongoing (tolerated)                 cfDNA: Klebsiella, Pseudomonas
+                                     tachycardia persisted (>130 bpm).         Metagenomic cfDNA                                                                    (not real time)
+                                     Inflammatory markers ↑, PT ↓ to           assay identified Klebsiella,
+                                     30%.                                      Pseudomonas.
+                                     Lung US: bilateral diaphragmatic
+                                     elevation, basal atelectasis, small
+                                     pleural effusion.
+                                     Furosemide 10 mg.
+    Day 4                            Dyspnoea→relieved after furosemide Symptomatic improvement.                    Ceftriaxone ongoing
+                                     40 mg.
+                                     CXR: bilateral diaphragmatic
+                                     elevation, pleural effusions.
+                                     Inflammatory markers declined.
+    Day 5                            Nausea, vomiting (treated with     GI symptoms controlled.                     Ceftriaxone ongoing                             Drain cultures remained
+                                     dimenhydrinate).                                                                                                               negative
+                                     Purulent wound drainage collected.
+                                     −4235 mL negative fluid balance.
+                                     Abdominal cramps→further urology
+                                     consult.
+    Day 6                            Alert, pain-­free. Stable vitals: BP      Fluctuating infection markers.       Ceftriaxone ongoing                             Blood cultures remained
+                                     110/70 mm Hg, HR 100 bpm.                                                                                                      negative.
+                                     Cautious oral diet continued.
+    Days 7–9                         Persistent elevated infection markers. Clinical improvement;                   Ceftriaxone completed (7 days total)            Drainage fluid (day 8) and urine
+                                     Blood cultures remained negative.      transferred to urology ward in                                                          cultures (day 9) confirmed
+                                                                            stable condition.                                                                       cfDNA pathogens: Klebsiella
+                                                                                                                                                                    and Pseudomonas.
+    cfDNA, cell-­free DNA; CXR, chest radiograph; GI, gastrointestinal; HR, heart rate; IV, intravenous; NC, nasal cannula; PE, pulmonary embolism; P/T, piperacillin/tazobactam; SBP, systolic blood
+    pressure; SpO₂, peripheral oxygen saturation; TTE, transthoracic echocardiography; US, ultrasound.
+
+
+
+
+4                                                                                                             Hoeter K, et al. BMJ Case Rep 2026;19:e267878. doi:10.1136/bcr-2025-267878
+                                                                                                                                       Case report
+
+
+
+
+Figure 1 Infectious disease laboratory course: from emergency admission to ICU discharge. CRP, C-­reactive protein; ICU, intensive care unit; PCT,
+procalcitonin; WBC, white blood cell.
+
+shared with the clinical team, and were later found to correlate                volume responsiveness, but persistent tachycardia and respi-
+with culture results from drainage fluid and urine samples.                     ratory distress indicated an additional process.
+                                                                                   Pulmonary embolism was excluded by contrast-­           enhanced
+Interpretation and Limitations                                                  chest CT and normal D-­dimer levels. A temporal association
+While standard blood cultures remained negative, cfDNA                          between β-­lactam administration and respiratory symptoms,
+metagenomic sequencing yielded early identification of Klebsi-                  with rapid resolution after withdrawal, supported antibiotic-­
+ella and Pseudomonas, later confirmed by conventional cultures                  induced hypersensitivity.
+of the abdominal drain fluid (table 3). This case highlights both                  Despite these considerations, progressive organ dysfunction,
+the diagnostic potential of cfDNA-­    based sequencing and the                 rising inflammatory markers, hyperlactataemia and a ∆SOFA ≥
+current limitations related to real-­time availability and clinical             2 fulfilled Sepsis-­3 criteria, leading to the clinical diagnosis of
+integration.                                                                    sepsis despite persistently negative blood cultures.
+
+DIFFERENTIAL DIAGNOSIS                                                          OUTCOME AND FOLLOW-UP
+Differential diagnoses considered during the ICU course included                Following her transfer from the ICU, the patient underwent
+hypovolaemia, postoperative pain-­related respiratory compro-                   early mobilisation and respiratory therapy as part of standard
+mise, pulmonary embolism, antibiotic-­induced hypersensitivity                  postintensive care rehabilitation. The surgical wound healed per
+reactions, and sepsis.                                                          primam intentionem, and drainage was removed as planned.
+  Initial tachycardia and echocardiographic findings of                           During the remainder of her hospital stay, the patient
+kissing ventricles and a collapsible inferior vena cava                         remained afebrile, and inflammatory markers declined
+supported hypovolaemia and prompted aggressive fluid                            steadily. She completed a 7-­d ay course of intravenous ceftri-
+resuscitation. Partial heart rate improvement suggested                         axone without adverse effects. She was discharged on Day
+
+
+
+
+Figure 2    Trends in vital parameter throughout ICU stay. HR, heart rate; ICU, intensive care unit; MAP, mean arterial pressure; RR, respiratory rate.
+Hoeter K, et al. BMJ Case Rep 2026;19:e267878. doi:10.1136/bcr-2025-267878                                                                                5
+ Case report
+
+
+
+
+Figure 3 Simplified diagnostic pathway (steps 1–4) for suspected sepsis, integrating cell-­free DNA (cfDNA) sequencing with cultures. Step 2 shows
+detection of microbial cfDNA fragments directly from plasma using metagenomic sequencing, enabling pathogen identification within hours, even
+when cultures remain negative.
+
+
+14, in stable condition, with ongoing urinary drainage via                                  DISCUSSION
+the Pouchofix system and a catheter.                                                        This case underscores the diagnostic and therapeutic complexity of
+   At 4-­week follow-­up, the patient reported no symptoms of                               sepsis in patients with altered anatomy following complex urological
+infection or complications. Laboratory parameters, including                                reconstruction. Structural modifications, such as continent urinary
+white cell count and C-­reactive protein, had normalised. The                               diversions, complicate physiological drainage, sample acquisition and
+surgical site remained fully healed, and she had resumed most                               localisation of infection and may delay diagnosis. Similar diagnostic
+activities of daily living.                                                                 complexities and the need for early imaging in patients with compli-
+   The patient remains under regular outpatient surveillance. At                            cated urinary diversions support the findings of this case.8 9 Urinary
+the latest follow-­up (15 months after discharge), she was alive,                           conduit (pouch) rupture should be suspected in patients presenting
+clinically stable and had experienced no recurrence of infection                            with acute abdominal pain, reduced catheter output or systemic
+or hospital readmission.                                                                    decompensation, and early imaging is critical for timely surgical
+                                                                                            management.
+                                                                                               While structural complications may be identified
+    Table 3        Microbiological testing and results throughout hospital                  promptly with imaging, microbiological confirmation of
+    stay                                                                                    sepsis-­c ausing pathogens is frequently delayed despite early
+                                                                                            sampling and empirical therapy. 10 11 According to Sepsis-­3
+                          Sampling day
+                                                                                            guidelines, early empirical antibiotic therapy should be initi-
+                          Day 2           Day 3                Day 5      Day 7
+                                                                                            ated within the first hour of recognition, with de-­e scala-
+    Blood culture         Negative
+    Central venous        result
+                                                                                            tion guided by microbiological data. 1 In practice, delayed
+    catheter              (Day 8)                                                           or absent pathogen identification frequently limits timely
+    Blood culture         Negative                                                          de-­e scalation, as illustrated in this case.
+    arterial catheter     result                                                               Initial treatment focused on volume resuscitation and
+                          (Day 8)                                                           empiric antimicrobial therapy with piperacillin–tazobactam.
+    Urine (conduit)       Negative                                                          Clinical deterioration prompted escalation to meropenem
+                          result                                                            and fluconazole, while hypersensitivity reactions necessi-
+                          (Day 4)                                                           tated an urgent switch to ceftriaxone. 12 Despite ongoing
+    Urine (catheter)                                                      Negative result   clinical deterioration, standard microbiological diagnostics
+                                                                          (Day 8)
+                                                                                            remained negative for the first 7 days. This is not uncommon
+    Urine (pouch)                                                         Pseudomonas
+                                                                                            in urinary tract infections. 13 14 Subsequent identification of
+                                                                          aeruginosa
+                                                                          (Day 8)
+                                                                                            Klebsiella oxytoca and Pseudomonas aeruginosa in drainage
+                                                                                            fluid occurred only after clinical improvement, rendering
+    Easy-­flow            Klebsiella                           Negative   Enterococcus
+    drainage              oxytoca                              result     faecium (VRE)     culture results confirmatory rather than actionable.
+                          (Day 7)                              (Day 10)   (Day 13)             A metagenomic microbial cfDNA assay performed on Day 3
+    β-­d-­glucan          Positive                                                          samples detected both Klebsiella and Pseudomonas several days
+                          result                                                            before culture confirmation on drainage fluid. However, as the
+                          (Day 3)                                                           test was not part of routine clinical diagnostics, results were not
+    Metagenomic                           Klebsiella genus                                  used to guide therapy. Published data suggest that plasma metag-
+    plasma analysis                       (160 RPM)                                         enomic cfDNA assays can achieve sensitivities of approximately
+                                          Pseudomonas
+                                                                                            75%–90% with analytical specificities >99% and clinical speci-
+                                          genus (53 RPM)
+                                                                                            ficities of 62%–97% depending on the interpretative thresholds
+    In parenthesis, day at which the results were available.
+                                                                                            applied and the specific context.15–18 Plasma cfDNA sequencing
+6                                                                                              Hoeter K, et al. BMJ Case Rep 2026;19:e267878. doi:10.1136/bcr-2025-267878
+                                                                                                                                                          Case report
+
+ Table 4 Summary of case reports demonstrating the clinical application of metagenomic next-­generation sequencing for early pathogen
+ identification in complex infections
+ Citation            Clinical scenario                   Conventional diagnostics        mNGS findings              NGS method applied             Impact on management
+ 12
+                     Elderly female with rheumatoid      Routine microbiological tests   Detected P. jirovecii      Plasma and BALF                Confirmation of suspected
+                     arthritis and acute respiratory     (cultures, BALF analyses)       in BALF and serum,         metagenomic NGS (platform      Pneumocystis pneumonia
+                     failure on immunosuppression.       negative for pathogens.         confirmed by qPCR.         not specified).                enabling targeted therapy
+                                                                                                                                                   and supporting clinical
+                                                                                                                                                   decision-­making.
+ 13
+                     74-­year-­old female with           Negative blood cultures;        Identified Lactobacillus   Plasma microbial cfDNA         Enabled etiological
+                     persistent fever and suspected      transesophagal                  fermentum from             sequencing (platform not       diagnosis of culture-­negative
+                     endocarditis after cardiac          echocardiography suggested      plasma microbial cfDNA     specified).                    endocarditis and guided
+                     surgery.                            vegetation.                     sequencing.                                               targeted antibiotic therapy.
+ 14
+                     53-­year-­old male presenting       Blood and CSF cultures          Detected of Lichtheimia    Unbiased metagenomic next-­ Prompted antifungal
+                     with symptoms of intracranial       negative; serology              ramosa (Mucor species)     generation sequencing of CSF therapy and initial clinical
+                     infection.                          inconclusive.                   in CSF.                    (platform not specified).    improvement; however
+                                                                                                                                                 overall outcome remained
+                                                                                                                                                 poor.
+ 15
+                     15-­year-­old boy with severe       Influenza A detected by PCR Detection of                   Unbiased metagenomic           Enabled antimicrobial
+                     pneumonia complicated by            from throat swab; cultures     Staphylococcus aureus       next-­generation sequencing    escalation (initiation
+                     systemic infection.                 inconclusive, bronchoscopy     in BALF and peripheral      of BALF and peripheral blood   of anti-­MRSA therapy
+                                                         suggested possible alternative blood; MRSA later           (platform not specified).      and discontinuation of
+                                                         pathogens.                     confirmed by culture.                                      antifungals).
+ 16
+                     53-­year-­old man with persistent   Routine microbiological tests   Detection of Coxiella      Metagenomic next-­generation Led to diagnosis of Q fever
+                     fever of unknown origin.            negative.                       burnetii DNA in blood.     sequencing of blood (platform and initiation of targeted
+                                                                                                                    not specified).               antibiotic therapy.
+
+
+
+
+has demonstrated superior detection of Gram-­negative pathogens                               It should be noted that the Oxford Nanopore workflow offers
+compared with conventional blood cultures, including Enterobac-                            technical capability for concurrent AMR gene detection.28 While
+terales and Pseudomonas.19 In a recent prospective study, plasma                           our analysis focused on species-­level identification, incorporating
+cfDNA mNGS detected 78% of Gram-­negative rods in blood-                                   resistance profiling would provide a more comprehensive diagnostic
+stream infections, surpassing traditional culture performance.20                           tool. This is particularly relevant in regions with higher prevalence
+Several medical case reports have reported the use of cfDNA                                of AmpC or carbapenemase-­       mediated resistance,29 30 expanding
+sequencing for the detection of pathogens. Table 4 provides an                             the potential for rapid pathogen and resistance profiling in critical
+overview of cases in which cfDNA sequencing revealed patho-                                settings.
+gens not identified by initial culture-­    based methods.21–25 Our                           Clinical improvement was multifactorial, driven by
+case complements other published reports to support the notion                             surgical source control, empirical antimicrobial therapy and
+that metagenomics could improve outcomes by enabling earlier                               supportive intensive care. The cfDNA findings correlated
+targeted therapy and subsequent de-­escalation and reduction of                            with abdominal drainage fluid and urine culture results,
+antimicrobial exposure. Klebsiella and Pseudomonas are common                              which identified causative pathogens. The added value of
+Gram-­  negative uropathogens, and their detection by cfDNA is                             this case lies in the diagnostic context and timing: cfDNA
+biologically expected in severe postoperative infection. This case
+                                                                                           sequencing was applied in a patient with complex postop-
+is distinguished from previous reports by the use of real-­        time
+                                                                                           erative anatomy and persistently negative blood cultures,
+nanopore sequencing for pathogen detection directly from cfDNA
+                                                                                           with pathogen detection preceding culture confirmation by
+extracted by a novel sample preparation platform, CNASafe. Most
+                                                                                           several days.
+existing cases have relied on large-­scale laboratory infrastructure,
+                                                                                              Current European Association of Urology guidelines recommend
+whereas this approach demonstrates the feasibility of decentralised
+                                                                                           empirical broad-­  spectrum therapy for urosepsis with subsequent
+diagnostics. In addition, this case uniquely demonstrates the detec-
+                                                                                           de-­escalation based on microbiological results.31 This case illustrates
+tion of uropathogens from plasma cfDNA sequencing.
+   Compared with standard cultures, cfDNA sequencing offers                                the diagnostic gap created when culture results are delayed or absent.
+earlier, culture-­independent pathogen detection, but cannot distin-                       These developments align with broader public health initiatives, such
+guish viable from non-­viable organisms and does not reliably localise                     as the UK metagenomic pathogen surveillance programme.26 Until
+the site of infection. In addition, limitations of cfDNA sequencing                        supported by prospective validation studies and adopted into clinical
+include susceptibility to contamination, variable reporting thresholds                     guidelines, metagenomic cfDNA assays should be regarded as valu-
+and heterogeneity in laboratory workflows and bioinformatic pipe-                          able adjuncts rather than replacements for conventional diagnostics
+lines.26 27 Accordingly, cfDNA assays should be regarded as comple-                        in sepsis care.
+mentary to conventional diagnostics in diagnostically complex or                              Our case complements other published reports describing
+culture-­negative cases. The metagenomic cfDNA assay used in this                          delayed pathogen detection in clinically altered patients
+case was performed within a research framework. The Oxford                                 and supports the notion that molecular diagnostics could
+Nanopore Technologies MinION Mk1C platform was selected for                                improve outcomes by enabling earlier targeted therapy and
+its on-­demand sequencing capability and potential applicability in                        subsequent de-­     e scalation and reduction of antimicrobial
+near-­patient settings. Although the complete analytical workflow                          exposure. Table 4 provides an overview of cases in which
+required less than 6 hours, results were not available in real time and                    cfDNA sequencing revealed pathogens not identified by
+did not inform clinical decision-­making.                                                  initial culture-­b ased methods. 21–25
+Hoeter K, et al. BMJ Case Rep 2026;19:e267878. doi:10.1136/bcr-2025-267878                                                                                                      7
+ Case report
+                                                                                            3 Samuel L. Direct-­from-­Blood Detection of Pathogens: a Review of Technology and
+    Learning points                                                                           Challenges. J Clin Microbiol 2023;61:e00231-­21.
+                                                                                            4 Ali J, Johansen W, Ahmad R. Short turnaround time of seven to nine hours from
+    ► Sepsis in multimorbid patients with surgically altered                                  sample collection until informed decision for sepsis treatment using nanopore
+                                                                                              sequencing. Sci Rep 2024;14:6534.
+      anatomy may present atypically and complicate early
+                                                                                            5 Iyer V, Castro D, Malla B, et al. Culture-­independent identification of bloodstream
+      diagnosis, especially when conventional microbiological                                 infections from whole blood: prospective evaluation in specimens of known infection
+      sampling is challenging or delayed.                                                     status. J Clin Microbiol 2024;62:e01498-­23.
+    ► Empiric broad-­spectrum antibiotic therapy remains essential                          6 Han D, Li R, Shi J, et al. Liquid biopsy for infectious diseases: a focus on microbial
+      in early sepsis management, but hypersensitivity reactions                              cell-­free DNA sequencing. Theranostics 2020;10:5501–13.
+                                                                                            7 Marriott L, Martinez Lopez A, Liga A, et al. An Automated and Portable Platform for
+      may significantly limit therapeutic options, requiring close                            Rapid Cell-­Free DNA Isolation and Its Application in Microbial DNA metagenomic
+      clinical monitoring and adaptability.                                                   Sequencing from Human Blood Samples. Lab Chip 2026.
+    ► Conventional culture-­based diagnostics often fail to provide                         8 Zhang Y, Yuan S, Alshayyah RWA, et al. Spontaneous Rupture of Urinary Bladder: Two
+      timely pathogen identification in complex cases, limiting their                         Case Reports and Review of Literature. Front Surg 2021;8:721705.
+                                                                                            9 Munshi IA, Hong JJ, Mueller CM, et al. Spontaneous rupture of the urinary bladder in
+      utility for early targeted antimicrobial therapy.
+                                                                                              the alcoholic patient. J Trauma 1999;46:1133–4.
+    ► Metagenomic cell-­free DNA (cfDNA) sequencing can                                    10 Lin J-­N, Lai C-­H, Chen Y-­H, et al. Characteristics and outcomes of polymicrobial
+      detect pathogens rapidly and independently of viable                                    bloodstream infections in the emergency department: A matched case-­control study.
+      cultures—offering a promising adjunct in time-­sensitive or                             Acad Emerg Med 2010;17:1072–9.
+      diagnostically unclear infections.                                                   11 Gasiorek M, Hsieh MH, Forster CS. Utility of DNA Next-­Generation Sequencing and
+                                                                                              Expanded Quantitative Urine Culture in Diagnosis and Management of Chronic or
+    ► While cfDNA sequencing was not applied in real time in
+                                                                                              Persistent Lower Urinary Tract Symptoms. J Clin Microbiol 2019;58:e00204-­19.
+      this case, this study highlights its potential as a near-­patient                    12 Macy E. Penicillin and beta-­lactam allergy: epidemiology and diagnosis. Curr Allergy
+      adjunctive diagnostic tool within future clinical workflows,                            Asthma Rep 2014;14:476:938–43:.
+      reducing reliance on central laboratory infrastructure and                           13 Ngoo A, Eisemann J, Matsika A, et al. Ureaplasma urealyticum infection presenting as
+                                                                                              pyelonephritis and perinephric abscess in an immunocompromised patient. BMJ Case
+      improving pathogen-­specific decision-­making in sepsis care.
+                                                                                              Rep 2020;13:e234538.
+                                                                                           14 Shrestha M, Jyothi Ramachandran Nair DP, Amin S, et al. Unveiling Ureaplasma: A
+                                                                                              Case Report of a Rare Culprit in Pyelonephritis. Cureus 2024.
+Social media Katharina Hoeter, LinkedIn @katharina-hoeter-10364a368
+                                                                                           15 Schmoch T, Westhoff JH, Decker SO. Next-­generation sequencing diagnostics of
+Contributors The following authors were responsible for drafting of the text,                 bacteremia in pediatric sepsis. Medicine (Baltimore) 2021.
+sourcing and editing of clinical images, investigation results, drawing original           16 Blauwkamp TA, Thair S, Rosen MJ, et al. Analytical and clinical validation of a
+diagrams and algorithms and critical revision for important intellectual content: KH,         microbial cell-­free DNA sequencing test for infectious disease. Nat Microbiol
+LM, EWIN, UD and RSK. PS, MB and MK-­K. The following authors gave final approval             2019;4:663–74.
+of the manuscript: KH, LM, EWIN, UD, RSK, PS, MB and MK-­K. KH is the guarantor of         17 Hong DK, Blauwkamp TA, Kertesz M, et al. Liquid biopsy for infectious diseases:
+the study. Deep L was used to improve readability and language of the case report.            sequencing of cell-­free plasma to detect pathogen DNA in patients with invasive
+Funding The study was funded by the clinical research fellowship of the University            fungal disease. Diagn Microbiol Infect Dis 2018;92:210–3.
+medical Centre Mainz to Katharina Hoeter and the EPSRC Healthcare Technology               18 Hoenigl M, Egger M, Price J, et al. Metagenomic Next-­Generation Sequencing
+Challenge award to Maiwenn Kersaudy-­Kerhoas (EP/R00398X/1). The funders played               of Plasma for Diagnosis of COVID-­19-­Associated Pulmonary Aspergillosis. J Clin
+no further role in the conduct of the study and the funders did not influence the             Microbiol 2023;61:e01859-­22.
+results r outcomes of the study despite author affiliations with the funder.               19 Zhang H, Liang R, Zhu Y, et al. Metagenomic next-­generation sequencing of plasma
+                                                                                              cell-­free DNA improves the early diagnosis of suspected infections. BMC Infect Dis
+Competing interests MK-­K is inventor on several patents owned by Heriot-­                    2024;24:187.
+Watt University, which cover the microfluidic cfDNA extraction platform, CNASafe,          20 Li D, Gai W, Zhang J, et al. Metagenomic Next-­Generation Sequencing for
+mentioned in this study. RSK and MK-­K are co-­founder are co-­founders of                    the Microbiological Diagnosis of Abdominal Sepsis Patients. Front Microbiol
+Natantis, an early-­stage spinout from Heriot-­Watt University developing CNASafe             2022;13:816631.
+technology for cfDNA extraction and its application to pathogen identification             21 Zhang Y, Zeng Z, Li F, et al. Metagenomic next-­generation sequencing in diagnosing
+using metagenomic sequencing. CNASafe was used for cfDNA extraction in this                   Pneumocystis jirovecii pneumonia: A case report. Open Life Sci 2022;17:938–43.
+study. Natantis is not yet a trading entity, and no commercial or financial interests      22 Adi A, Lebrun S, Kondo M, et al. Culture-­negative subacute lactobacillus endocarditis
+influenced the design, analysis, or reporting of this work.                                   diagnosed by microbial cell-­free dna sequencing. JACC: Case Reports,
+Patient consent for publication Consent obtained directly from patient(s).                 23 Liu Y, Zhang J, Han B, et al. Case Report: Diagnostic Value of Metagenomics Next
+                                                                                              Generation Sequencing in Intracranial Infection Caused by Mucor. Front Med
+Provenance and peer review Not commissioned; externally peer reviewed.                        2021;8:682758.
+Open access This is an open access article distributed in accordance with the              24 Li Y, Lei J, Ren Z, et al. Case Report: Metagenomic next-­generation sequencing assists
+Creative Commons Attribution Non Commercial (CC BY-­NC 4.0) license, which                    in dynamic pathogen monitoring: powerful tool for progressing severe pneumonia.
+permits others to distribute, remix, adapt, build upon this work non-­commercially,           Front Cell Infect Microbiol 2023;13:1230813.
+and license their derivative works on different terms, provided the original work is       25 Xu Q, Han W, Cai Y, et al. A case report of the metagenomic next-­generation
+properly cited and the use is non-­commercial. See: https://creativecommons.org/​             sequencing for timely diagnosis of a traveler with nonspecific febrile Q fever. Heliyon
+licenses/by-nc/4.0/.                                                                          2024;10:e33649.
+                                                                                           26 O’Grady J. A powerful, non-­invasive test to rule out infection. Nat Microbiol
+Case reports provide a valuable learning resource for the scientific community and
+                                                                                              2019;4:554–5.
+can indicate areas of interest for future research. They should not be used in isolation
+                                                                                           27 Peaper DR, Durant TS. Can Circulating Cell-­Free Microbial DNA Carry Us into the
+to guide treatment choices or public health policy.
+                                                                                              Future of Culture Independent Microbiology? Clin Chem 2020;66:29–32.
+                                                                                           28 © 2020 - 2025 Oxford Nanopore Technologies plc. EPI2ME: bacterial assembly and
+                                                                                              annotation workflow. 2020. Available: https://epi2me.nanoporetech.com/epi2me-​
+ORCID iDs
+                                                                                              docs/workflows/wf-bacterial-genomes [Accessed 26 Aug 2025].
+Katharina Hoeter https://orcid.org/0000-0003-4392-9672
+                                                                                           29 Hoarau AOG, Mavingui P, Miltgen G. Comprehensive analysis of antimicrobial
+Maïwenn Kersaudy-­Kerhoas https://orcid.org/0000-0002-8185-8230
+                                                                                              resistance in the Southwest Indian Ocean: focus on WHO critical and high priority
+                                                                                              pathogens. Front Public Health 2024;12:1357345.
+REFERENCES                                                                                 30 Ghotaslou R, Sadeghi MR, Akhi MT, et al. Prevalence and Antimicrobial
+ 1 Singer M, Deutschman CS, Seymour CW, et al. The Third International Consensus              Susceptibility Patterns of ESBL, AmpC and Carbapenemase-­producing
+   Definitions for Sepsis and Septic Shock (Sepsis-­3). JAMA 2016;315:801–10.                 Enterobactericeae Isolated from Hospitalized Patients in Azerbaijan, Iran. Iran J
+ 2 Rudd KE, Johnson SC, Agesa KM, et al. Global, regional, and national sepsis incidence      Pharm Res 2018;17:79–88.
+   and mortality, 1990-­2017: analysis for the Global Burden of Disease Study. Lancet      31 Kranz J, Bartoletti R, Bruyère F, et al. European Association of Urology Guidelines on
+   2020;395:200–11.                                                                           Urological Infections: Summary of the 2024 Guidelines. Eur Urol 2024;86:27–41.
+
+
+
+8                                                                                              Hoeter K, et al. BMJ Case Rep 2026;19:e267878. doi:10.1136/bcr-2025-267878
+                                                                                                                                                    Case report
+
+   Copyright 2026 BMJ Publishing Group. All rights reserved. For permission to reuse any of this content visit
+   https://www.bmj.com/company/products-services/rights-and-licensing/permissions/
+   BMJ Case Report Fellows may re-use this article for personal use and teaching without any further permission.
+   Become a Fellow of BMJ Case Reports today and you can:
+   ► Submit as many cases as you like
+   ► Enjoy fast sympathetic peer review and rapid publication of accepted articles
+   ► Access all the published articles
+   ► Re-use any of the published material for personal use and teaching without further permission
+   Customer Service
+   If you have any further queries about your subscription, please contact our customer services team on +44 (0) 207111 1105 or via email at support@bmj.com.
+   Visit casereports.bmj.com for more articles like this and to become a Fellow
+
+
+
+
+Hoeter K, et al. BMJ Case Rep 2026;19:e267878. doi:10.1136/bcr-2025-267878                                                                                      9
+

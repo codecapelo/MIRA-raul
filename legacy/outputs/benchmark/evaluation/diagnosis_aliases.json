@@ -1,0 +1,302 @@
+{
+  "schema_version": "1.0.0",
+  "ruleset_version": "diagnostic-concepts-2026-09-26-v2",
+  "purpose": "Provisional deterministic concept matching of the published primary diagnosis; requires physician adjudication. Frozen case files are unchanged.",
+  "matching_policy": "Every required concept must match the same diagnosis string. Secondary concepts describe granularity and do not affect the provisional core match. No differential strings are concatenated.",
+  "case_rules": {
+    "case_001": {
+      "required": [
+        {
+          "name": "coronary_pseudoaneurysm",
+          "any_regex": [
+            "\\bcoronary\\b.*\\b(pseudoaneurysm|false aneurysm|mycotic aneurysm)\\b",
+            "\\b(pseudoaneurysm|false aneurysm|mycotic aneurysm)\\b.*\\bcoronary\\b"
+          ]
+        },
+        {
+          "name": "infection",
+          "any_regex": [
+            "\\b(infective|infected|infection|mycotic|septic|purulent|mrsa)\\b"
+          ]
+        },
+        {
+          "name": "stent_complication",
+          "any_regex": [
+            "\\bstent\\b.*\\b(disruption|disrupted|rupture|ruptured|infection|infected|erosion|failure)\\b",
+            "\\b(disruption|disrupted|rupture|ruptured|infection|infected|erosion|failure)\\b.*\\bstent\\b"
+          ]
+        },
+        {
+          "name": "tamponade",
+          "any_regex": [
+            "\\btamponade\\b"
+          ]
+        }
+      ],
+      "secondary": [
+        {
+          "name": "mrsa",
+          "any_regex": [
+            "\\bmrsa\\b",
+            "\\bmethicillin resistant staphylococcus aureus\\b"
+          ]
+        },
+        {
+          "name": "endocarditis",
+          "any_regex": [
+            "\\bendocarditis\\b"
+          ]
+        }
+      ]
+    },
+    "case_002": {
+      "required": [
+        {
+          "name": "atrial_myocarditis",
+          "any_regex": [
+            "\\batrial\\b.*\\b(myocarditis|inflammation|inflammatory myopathy)\\b",
+            "\\b(myocarditis|inflammatory myopathy)\\b.*\\batrial\\b",
+            "\\binflammatory atrial myopathy\\b"
+          ]
+        },
+        {
+          "name": "atrial_standstill",
+          "any_regex": [
+            "\\batrial standstill\\b",
+            "\\belectrical silence of (the )?atria\\b",
+            "\\batrial electrical inactivity\\b"
+          ]
+        },
+        {
+          "name": "av_block",
+          "any_regex": [
+            "\\b(av|atrioventricular) block\\b",
+            "\\bcomplete heart block\\b",
+            "\\bthird degree heart block\\b"
+          ]
+        }
+      ],
+      "secondary": []
+    },
+    "case_003": {
+      "required": [
+        {
+          "name": "urinary_reservoir",
+          "any_regex": [
+            "\\b(continent urinary|urinary diversion|urinary pouch|ileal pouch|indiana pouch|neobladder|urinary reservoir)\\b"
+          ]
+        },
+        {
+          "name": "rupture",
+          "any_regex": [
+            "\\b(ruptur(ed|e)|perforat(ed|ion)|leak(age)?)\\b"
+          ]
+        },
+        {
+          "name": "intraabdominal_infection",
+          "any_regex": [
+            "\\b(sepsis|peritonitis|intra abdominal infection|abdominal sepsis|urosepsis)\\b"
+          ]
+        }
+      ],
+      "secondary": [],
+      "benchmark_required": [
+        {
+          "name": "urinary_reservoir",
+          "any_regex": [
+            "\\b(continent urinary|urinary diversion|urinary pouch|ileal pouch|indiana pouch|neobladder|urinary reservoir)\\b"
+          ]
+        },
+        {
+          "name": "rupture",
+          "any_regex": [
+            "\\b(ruptur(ed|e)|perforat(ed|ion)|leak(age)?)\\b"
+          ]
+        }
+      ]
+    },
+    "case_004": {
+      "required": [
+        {
+          "name": "chylothorax",
+          "any_regex": [
+            "\\bchylothorax\\b",
+            "\\bchylous pleural effusion\\b"
+          ]
+        },
+        {
+          "name": "small_cell_lung_cancer",
+          "any_regex": [
+            "\\b(small cell lung (carcinoma|cancer)|sclc)\\b"
+          ]
+        }
+      ],
+      "secondary": [
+        {
+          "name": "extensive_stage",
+          "any_regex": [
+            "\\bextensive stage\\b",
+            "\\bmetastatic\\b"
+          ]
+        }
+      ]
+    },
+    "case_005": {
+      "required": [
+        {
+          "name": "melanoma",
+          "any_regex": [
+            "\\bmelanoma\\b"
+          ]
+        },
+        {
+          "name": "pleural_involvement",
+          "any_regex": [
+            "\\bpleur(al|a)\\b"
+          ]
+        },
+        {
+          "name": "malignant_effusion",
+          "any_regex": [
+            "\\b(effusion|hydrothorax)\\b"
+          ]
+        }
+      ],
+      "secondary": [
+        {
+          "name": "unknown_primary",
+          "any_regex": [
+            "\\bunknown primary\\b",
+            "\\boccult primary\\b",
+            "\\bno identified primary\\b"
+          ]
+        }
+      ]
+    },
+    "case_006": {
+      "required": [
+        {
+          "name": "tuberculosis",
+          "any_regex": [
+            "\\b(tuberculosis|tuberculous|tb)\\b"
+          ]
+        },
+        {
+          "name": "adrenal",
+          "any_regex": [
+            "\\badrenal\\b"
+          ]
+        },
+        {
+          "name": "primary_adrenal_insufficiency",
+          "any_regex": [
+            "\\b(adrenal insufficiency|addison(s| disease)?|adrenal failure|adrenal crisis)\\b"
+          ]
+        }
+      ],
+      "secondary": []
+    },
+    "case_007": {
+      "required": [
+        {
+          "name": "pembrolizumab_or_checkpoint",
+          "any_regex": [
+            "\\b(pembrolizumab|keytruda|pd 1 inhibitor|checkpoint inhibitor|immune checkpoint inhibitor)\\b"
+          ]
+        },
+        {
+          "name": "autoimmune_hemolytic_anemia",
+          "any_regex": [
+            "\\b(autoimmune hemolytic anemia|immune mediated hemolytic anemia|immune hemolysis|aiha|autoimmune haemolytic anaemia|immune mediated haemolytic anaemia)\\b"
+          ]
+        }
+      ],
+      "secondary": []
+    },
+    "case_008": {
+      "required": [
+        {
+          "name": "spinal_epidural_hematoma",
+          "any_regex": [
+            "\\bspinal\\b.*\\bepidural\\b.*\\b(hematoma|haematoma|hemorrhage|haemorrhage)\\b",
+            "\\bepidural\\b.*\\b(hematoma|haematoma|hemorrhage|haemorrhage)\\b.*\\bspinal\\b"
+          ]
+        },
+        {
+          "name": "cord_compression",
+          "any_regex": [
+            "\\b(spinal )?cord compression\\b",
+            "\\bcompressive myelopathy\\b"
+          ]
+        }
+      ],
+      "secondary": [
+        {
+          "name": "cervicothoracic",
+          "any_regex": [
+            "\\bcervicothoracic\\b",
+            "\\bcervical\\b",
+            "\\bthoracic\\b"
+          ]
+        }
+      ]
+    },
+    "case_009": {
+      "required": [
+        {
+          "name": "migrated_biliary_stent",
+          "any_regex": [
+            "\\b(biliary|bile duct)\\b.*\\bstent\\b.*\\b(migrat(ed|ion)|displac(ed|ement))\\b",
+            "\\b(migrat(ed|ion)|displac(ed|ement))\\b.*\\b(biliary|bile duct)\\b.*\\bstent\\b"
+          ]
+        },
+        {
+          "name": "meckel_diverticulum",
+          "any_regex": [
+            "\\bmeckel(s)?\\b.*\\bdiverticul(um|itis)\\b"
+          ]
+        },
+        {
+          "name": "bowel_perforation",
+          "any_regex": [
+            "\\b(perforat(ed|ion)|ruptur(ed|e))\\b"
+          ]
+        }
+      ],
+      "secondary": [
+        {
+          "name": "ileal",
+          "any_regex": [
+            "\\bile(al|um)\\b"
+          ]
+        }
+      ]
+    },
+    "case_010": {
+      "required": [
+        {
+          "name": "abdominal_ectopic_pregnancy",
+          "any_regex": [
+            "\\babdominal\\b.*\\b(ectopic )?pregnancy\\b",
+            "\\b(ectopic|extrauterine)\\b.*\\b(abdominal|peritoneal)\\b.*\\bpregnancy\\b",
+            "\\bperitoneal implantation\\b.*\\bpregnancy\\b"
+          ]
+        },
+        {
+          "name": "hemorrhage",
+          "any_regex": [
+            "\\b(bleed(ing)?|hemorrhag(e|ic)|haemorrhag(e|ic)|hemoperitoneum|haemoperitoneum)\\b"
+          ]
+        }
+      ],
+      "secondary": [
+        {
+          "name": "left_upper_abdomen",
+          "any_regex": [
+            "\\b(left upper (abdomen|abdominal|quadrant)|luq|splenic|subphrenic)\\b"
+          ]
+        }
+      ]
+    }
+  }
+}

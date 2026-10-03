@@ -1,0 +1,228 @@
+Respirology Case Reports
+
+
+
+
+   CASE REPORT                OPEN ACCESS
+
+
+
+
+Chylothorax as the Initial Manifestation of Small Cell
+Lung Carcinoma
+Sathish Krishnan1            | Anam Naumaan2 | Venu Pararath Gopalakrishnan3
+
+1 Division of Pulmonary and Critical Care Medicine, Community Health Network, Indianapolis, Indiana, USA                | 2Division of Anatomic and
+Clinical Pathology, Community Health Network, Indianapolis, Indiana, USA |            3University of Massachusetts Chan Medical School, Worcester,
+
+Massachusetts, USA
+
+Correspondence: Sathish Krishnan (dr.skkrish@gmail.com)
+
+Received: 5 February 2025 | Revised: 14 April 2025 | Accepted: 17 April 2025
+
+Associate Editor: Sita Andarini
+
+Funding: The authors received no specific funding for this work.
+
+Keywords: chylothorax | chylothorax in lung cancer | chylothorax in malignancy | non-­traumatic chylothorax | pleural catheter in chylothorax
+
+
+  ABSTRACT
+  Chylothorax, the accumulation of lymphatic fluid in the pleural space, is a rare condition often linked to trauma, surgery or ma-
+  lignancy. We present the case of a 63-­year-­old female with a significant smoking history who was diagnosed with chylothorax as
+  the initial manifestation of small cell lung carcinoma (SCLC). Diagnostic workup, including pleural fluid analysis and imaging,
+  confirmed the diagnosis and revealed mediastinal lymphadenopathy and bronchial narrowing. The patient underwent chemo-
+  therapy, immunotherapy and management of recurrent effusions but ultimately succumbed to pneumonia and septic shock.
+  Recognising chylothorax as a potential initial manifestation and understanding the risks of prolonged chyle drainage are crucial
+  for effectively managing such complex cases.
+
+
+1   |   Introduction                                                                 history of progressive shortness of breath and cough. She did
+                                                                                     not report recent trauma or surgical interventions. On examina-
+Chylothorax is characterised by the accumulation of chyle in the                     tion, she was tachypneic but not hypoxemic. Physical findings
+pleural space, which arises from disruption or obstruction of the                    included decreased breath sounds on the right side. A chest X-­
+thoracic duct. It is most commonly associated with trauma, sur-                      ray revealed a right-­sided pleural effusion confirmed by thora-
+gical complications or malignancies such as lymphoma, while its                      centesis, which yielded 1.5 L of milky fluid (Figure 1). Pleural
+occurrence in small cell lung carcinoma (SCLC) is exceedingly                        fluid analysis indicated a chylothorax with a triglyceride level of
+uncommon [1, 2]. In the context of malignancy, chylothorax re-                       434 mg/dL and a cholesterol level of 154 mg/dL (Table 1).
+sults from direct invasion or compression of the thoracic duct by
+tumour masses or metastatic lymph nodes [3]. This condition                          The patient initially improved but returned to the ED days later
+presents unique diagnostic and therapeutic challenges, requir-                       with worsening dyspnea. Imaging revealed recurrent right pleu-
+ing a multidisciplinary approach for effective management.                           ral effusion. Repeat thoracentesis produced 1.2 L of fluid with
+                                                                                     similar characteristics. Given her smoking history, a computed
+                                                                                     tomography (CT) scan was performed, showing bilateral hilar
+2   |   Case Report                                                                  and mediastinal adenopathy, with severe narrowing of the right
+                                                                                     middle lobe bronchus, and partial atelectasis and infiltrates of
+A 63-­year-­old female with a 45-­pack-­year smoking history pre-                    the right middle lobe (Figure 2A). Bronchoscopy with endobron-
+sented to the emergency department (ED) with a two-­week                             chial ultrasound-­guided biopsy confirmed extensive-­stage small
+
+This is an open access article under the terms of the Creative Commons Attribution License, which permits use, distribution and reproduction in any medium,
+provided the original work is properly cited.
+© 2025 The Author(s). Respirology Case Reports published by John Wiley & Sons Australia, Ltd on behalf of The Asian Pacific Society of Respirology.
+
+
+Respirology Case Reports, 2025; 13:e70202                                                                                                                     1 of 4
+https://doi.org/10.1002/rcr2.70202
+FIGURE 1    |    (A) Chest X-­ray showing large right pleural effusion with meniscus sign (yellow arrow). (B) Thoracentesis revealing chylous fluid
+with a milky-­white appearance.
+
+
+TABLE 1    |    Pleural fluid characteristics.                             continued improvement, the recommendation was further ad-
+                                                                           justed to twice-­weekly drainage. Six weeks later, she reported an
+ Variables                       Values               Reference
+                                                                           output of about 550 mL twice a week.
+ Total white cells               1068/μL              < 1000/μL
+                                                                           Follow-­up positron emission tomography that was obtained
+ Lymphocytes                       82%             Not established
+                                                                           6 weeks later showed partial response to therapy, with re-
+ pH                                7.48                 7.4–7.6            duced lymphadenopathy and improved bronchial narrowing
+                                                                           (Figure 2B). However, she presented 2 weeks later with fever,
+ Lactate                          83 U/L             120–246 U/L
+                                                                           chills and worsening respiratory symptoms. Work-­up showed
+ Dehydogenase
+                                                                           neutrophilic leukocytosis (white cell count: 28.8 K/cumm with
+ (LDH)
+                                                                           87% neutrophils) and thrombocytosis (1020 K/cumm). Imaging
+ Protein                         2.4 g/dL            6.3–8.2 g/dL          revealed bilateral lower lobe infiltrates suggestive of pneumo-
+ Gram stain and                 Negative               Negative            nia. Blood cultures identified Pseudomonas aeruginosa. Despite
+ culture                                                                   aggressive management, she rapidly deteriorated due to septic
+                                                                           shock, ultimately leading to cardiac arrest and death.
+ Triglycerides                 434 mg/dL             < 110 mg/dL
+ Cholesterol                   154 mg/dL             < 200 mg/dL
+                                                                           3   |   Discussion
+ Cytology                Rare mesothelial cells     Normal cells
+                          with lymphocytes.        with no atypical        Chylothorax is characterised by leakage of chyle into the pleu-
+                          No malignant cells.          features            ral space and it accounts for 2% of all pleural effusions [1].
+                                                                           Chylothorax is typically classified into traumatic and non-­
+                                                                           traumatic etiologies. Traumatic causes include penetrating or
+cell carcinoma. The patient was started on carboplatin and                 blunt chest trauma, as well as surgical interventions involving
+etoposide, later supplemented with atezolizumab.                           the thoracic cavity. Non-­traumatic chylothorax is most com-
+                                                                           monly caused by malignancy, with lymphoma being the leading
+She experienced rapid reaccumulation of pleural fluid causing              contributor. Non-­ malignant causes include yellow nail syn-
+dyspnea, and therapeutic thoracentesis was inadequate, neces-              drome, sarcoidosis, histoplasmosis, tuberculosis and Castleman
+sitating the placement of an indwelling pleural catheter, which            disease. In patients with lung cancer, it occurs usually as a com-
+drained 700–800 mL daily. Owing to the rapid build-­up of fluid            plication of thoracic surgery or radiotherapy. Chylothorax as an
+and high-­volume output, thoracoscopy with pleurodesis was                 initial manifestation of small cell lung cancer (SCLC) is exceed-
+not considered suitable. She also chose not to pursue dietary              ingly rare [2].
+modifications. The patient was therefore advised to continue
+daily drainage via the catheter to alleviate dyspnea. In addition,         In malignancies like SCLC, it can occur due to direct invasion
+she elected against dietary modifications. During follow-­up in            or compression of the thoracic duct by tumour masses or meta-
+the pulmonary clinic, the patient reported a reduction in fluid            static lymph nodes. The high propensity for SCLC to metastasize
+drainage output. As a result, she was initially advised to de-             to mediastinal lymph nodes increases the risk of thoracic duct
+crease the frequency of drainage to three times per week. With             involvement, thereby precipitating chylothorax [3]. The thoracic
+
+2 of 4                                                                                                                   Respirology Case Reports, 2025
+FIGURE 2    |    Upper panel (A) Computed tomography images showing enlarged subcarinal (yellow arrows) and right hilar (blue arrow) nodes, caus-
+ing narrowing of the right middle lobe bronchus and collapse of the right middle lobe (green arrow). Lower panel (B) Positron Emission Tomography
+images showing a decrease in size of subcarinal (yellow arrows) and right hilar (blue arrow) nodes, and improvement in the collapse of the right
+middle lobe (green arrow).
+
+
+
+duct originates from the cisterna chyli, the coalescence of intra-­       Recurrent and rapid reaccumulation of chylothorax may neces-
+abdominal and lower extremities lymphatic channels anterior               sitate the placement of an indwelling pleural catheter. However,
+to the second lumbar vertebra. It carries triglycerides including         prolonged chest tube drainage can lead to nutritional deficien-
+chylomicrons, T-­lymphocytes, immunoglobulins and fat-­soluble            cies and immunosuppression, as chyle is rich in T-­lymphocytes,
+vitamins in the form of chyle. As it ascends into the mediasti-           immunoglobulins, electrolytes, proteins and chylomicrons [3].
+num, the thoracic duct crosses from right to left of midline at the       This presents unique challenges in patients with malignancy,
+level of the fourth to sixth thoracic vertebrae [4]. Compression of       who may already be immunocompromised due to both the dis-
+the thoracic duct at this level is considered the mechanism of de-        ease and chemotherapy. Notably, the 90-­day mortality rate asso-
+velopment of chylothorax in conditions like lymphoma, sarcoid-            ciated with this condition has been reported to be as high as 82%
+osis, histoplasmosis, tuberculosis and Castleman disease [5]. In          [4]. In our patient, prolonged high-­volume drainage may have
+our patient, we suspect that the enlarged subcarinal node was             exacerbated immunosuppression, potentially contributing to
+causing compression of the thoracic duct at this level.                   pseudomonas bacteremia and sepsis.
+
+The diagnosis of chylothorax is confirmed through pleural fluid           In cases where conservative management fails, invasive pro-
+analysis, typically revealing a milky appearance with elevated            cedures may be warranted. Thoracic duct ligation or emboli-
+triglyceride levels (> 110 mg/dL), a cholesterol level of < 200 mg/       zation are surgical options aimed at sealing the site of leakage
+dL, and a predominance of lymphocytes [6]. Unexplained chy-               [10]. These options need to be considered early, particularly in
+lothorax, particularly in the absence of recent trauma or thoracic        patients with high-­volume output and additional factors caus-
+surgery should prompt concern for malignancy. A thorough                  ing malnutrition and immunosuppression. Although surgical
+evaluation, primarily with a computed tomography of the chest             interventions are generally effective in managing traumatic
+is recommended. Advanced imaging techniques, including                    chylothorax, their role in malignancy-­associated chylothorax
+lymphangiography, can further delineate the site of chyle leak-           remains uncertain. Given the unclear efficacy of both octreotide
+age and guide therapeutic interventions [7].                              and surgical approaches in this context, we opted not to pursue
+                                                                          these options for our patient. Instead, the decision was made to
+There is a paucity of data on the optimal management of chy-              focus on treating the underlying malignancy and closely moni-
+lothorax associated with malignancy. It involves addressing both          tor the response. The choice between conservative and surgical
+the underlying malignancy and the chyle leak. Initial conserva-           interventions should be individualised, considering factors such
+tive measures include dietary modifications, such as a low-­fat           as the patient's overall condition, the volume of chyle output,
+diet enriched with medium-­chain triglycerides or total paren-            and the response to initial therapies [11].
+teral nutrition, to reduce chyle production [8]. Pharmacological
+interventions, like octreotide, have been employed to decrease            In conclusion, Chylothorax can be an initial manifestation of
+lymphatic flow, though evidence supporting their efficacy in              lung cancer. This case underscores the importance of maintain-
+malignancy-­associated chylothorax is limited [9].                        ing a high index of suspicion for timely diagnosis of underlying
+
+                                                                                                                                          3 of 4
+malignancy. A multidisciplinary approach to management is                       9. L. Mincher, J. Evans, M. W. Jenner, et al., “The Successful Treatment
+crucial, focusing on both treating the malignancy and address-                  of Chylous Effusions in Malignant Disease With Octreotide,” Clinical
+ing complications of chyle leak. Recognising the immunosup-                     Oncology 17, no. 2 (2005): 118–121, https://​doi.​org/​10.​1016/j.​clon.​2 004.​
+                                                                                06.​016.
+pressive risks of prolonged drainage is vital to optimising patient
+care and preventing adverse outcomes.                                           10. R. Epaud, B. Dubern, M. Larroquet, et al., “Therapeutic Strate-
+                                                                                gies for Idiopathic Chylothorax,” Journal of Pediatric Surgery 43, no. 3
+                                                                                (2008): 461–465, https://​doi.​org/​10.​1016/j.​jpeds​urg.​2 007.​10.​024.
+                                                                                11. S. Jackson and A. J. Jnah, “Chylothorax: A Stepwise Approach to
+Author Contributions
+                                                                                Diagnosis and Treatment,” Neonatal Network 40, no. 6 (2021): 386–392,
+Sathish Krishnan: conceptualization, supervision, writing – original            https://​doi.​org/​10.​1891/​11-­​T-­​705.
+draft. Anam Naumaan: resources, writing – review and editing. Venu
+Pararath Gopalakrishnan: resources, visualization, writing – review
+and editing.
+
+
+Ethics Statement
+The authors attest that the submitted manuscript conforms to the
+ICMJE Recommendations for the Conduct, Reporting, Editing, and
+Publication of Scholarly Work in Medical Journals. Institutional Review
+Board approval not applicable given type of manuscript. The authors
+declare that written informed consent was obtained from the patient's
+healthcare power of attorney for patient information and images to be
+published.
+
+
+Conflicts of Interest
+The authors declare no conflicts of interest.
+
+
+Data Availability Statement
+Data sharing not applicable to this article as no datasets were generated
+or analysed during the current study.
+
+
+References
+1. S. Hanina, C. Vivekananthan, R. Randhawa, et al., “Spontaneous
+Chylothorax Complicating Small Cell Lung Cancer – Review of Aetiol-
+ogy and Diagnosis,” Respiratory Medicine Case Reports 15, no. 15 (2015):
+51–53, https://​doi.​org/​10.​1016/j.​rmcr.​2 015.​02.​0 05.
+2. M. Singhal, A. Kapoor, P. Bagri, et al., “Chylothorax With Superior
+Vena Caval Syndrome as the Initial Presentation of Squamous Cell
+Lung Cancer: A Case Report and Review of Literature,” Clinical Cancer
+Investigation Journal 3, no. 5 (2014): 414–416, https://​doi.​org/​10.​4103/​
+2278- ­​0513.​138068.
+3. A. Agrawal, U. Chaddha, S. Shojaee, et al., “Multidisciplinary Man-
+agement of Adult Patients With Chylothorax: A Consensus Statement,”
+European Respiratory Journal 64, no. 5 (2024): 2400470, https://​doi.​org/​
+10.​1183/​13993​0 03.​0 0470​-­​2 024.
+4. M. Bhatnagar, A. Fisher, S. Ramsaroop, et al., “Chylothorax: Patho-
+physiology, Diagnosis, and Management—A Comprehensive Review,”
+Journal of Thoracic Disease 16, no. 2 (2024): 1645–1661, https://​doi.​org/​
+10.​21037/​​jtd-­​23-­​1636.
+5. L. Israeli-­Shani, D. King, G. E. Shochet, et al., “Chylothorax Asso-
+ciated With Sarcoidosis: A Review of the Literature,” Sarcoidosis, Vas-
+culitis, and Diffuse Lung Diseases 39, no. 4 (2022): e2022039, https://​
+pubmed.​ncbi.​nlm.​nih.​gov/​36533603.
+6. J. T. Huggins, “Chylothorax and Cholesterol Pleural Effusion,” Semi-
+nars in Respiratory and Critical Care Medicine 31, no. 6 (2010): 743–750,
+https://​doi.​org/​10.​1055/​s-­​0 030-­​1269834.
+7. K. Ur Rehman and P. Sivakumar, “Non-­Traumatic Chylothorax: Diag-
+nostic and Therapeutic Strategies,” Breathe (Sheffield, England) 18, no. 2
+(2022): 210163, https://​doi.​org/​10.​1183/​2 0734​735.​0163-­​2 021.
+8. C. Harvey, H. Shin, S. Martin, et al., “Traumatic Chylothorax Follow-
+ing Blunt Thoracic Trauma,” Trauma Case Reports 15, no. 54 (2024):
+101101, https://​doi.​org/​10.​1016/j.​tcr.​2 024.​101101.
+
+
+4 of 4                                                                                                                            Respirology Case Reports, 2025
+

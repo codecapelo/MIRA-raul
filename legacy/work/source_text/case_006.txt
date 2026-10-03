@@ -1,0 +1,303 @@
+                                                                                                                       TYPE Case Report
+                                                                                                                       PUBLISHED 20 November 2025
+                                                                                                                       DOI 10.3389/fmed.2025.1622617
+
+
+
+
+                                                    Case Report: Adrenal tuberculosis
+OPEN ACCESS                                         causing primary adrenal
+                                                    insufficiency: diagnosis by
+EDITED BY
+Akash Batta,
+Dayanand Medical College & Hospital, India
+
+REVIEWED BY
+Naonori Kawakubo,
+                                                    ultrasound-guided biopsy
+Kyushu University, Japan
+Shreyak Sharma,
+Yale School of Medicine, United States
+                                                    Tianzhen Xiong , Rongchen Wang , Jiaojiao Zhou and
+*CORRESPONDENCE
+                                                    Boyang Yu *
+Boyang Yu
+                                                    Division of Ultrasound, West China Hospital, Sichuan University, Chengdu, Sichuan, China
+  yuboyang@wchscu.edu.cn
+
+RECEIVED 04 May 2025
+ACCEPTED 30 September 2025                          Adrenal tuberculosis, though a rare extrapulmonary manifestation of Mycobacterium
+PUBLISHED 20 November 2025
+                                                    tuberculosis infection, remains a significant etiology of primary adrenal insufficiency
+CITATION                                            in tuberculosis-endemic regions. We present a case of a 38-year-old asymptomatic
+Xiong T, Wang R, Zhou J and Yu B (2025)
+Case Report: Adrenal tuberculosis causing
+                                                    female patient incidentally found to have bilateral adrenal nodules with calcifications
+primary adrenal insufficiency: diagnosis by         during routine health screening. Laboratory tests revealed significantly elevated
+ultrasound-guided biopsy.                           adrenocorticotropic hormone levels and low plasma cortisol, while imaging
+Front. Med. 12:1622617.
+doi: 10.3389/fmed.2025.1622617
+                                                    studies showed bilateral adrenal masses. Despite anatomically challenging
+                                                    access, an ultrasound-guided core needle biopsy was successfully performed.
+COPYRIGHT
+© 2025 Xiong, Wang, Zhou and Yu. This is an         Histopathological analysis identified caseating granulomatous inflammation, and
+open-access article distributed under the           the positive T-SPOT. TB assay confirmed the diagnosis of adrenal tuberculosis.
+terms of the Creative Commons Attribution           This case illustrates an innovative biopsy approach for anatomically complex
+License (CC BY). The use, distribution or
+reproduction in other forums is permitted,          adrenal lesions, underscoring the diagnostic utility of image-guided techniques
+provided the original author(s) and the             in rare adrenal disorders.
+copyright owner(s) are credited and that the
+original publication in this journal is cited, in
+accordance with accepted academic                   KEYWORDS
+
+practice. No use, distribution or reproduction      adrenal tuberculosis, primary adrenal insufficiency, ultrasound-guided biopsy,
+is permitted which does not comply with
+                                                    ultrasound, ultrasound intervention
+these terms.
+
+
+
+                                                    Introduction
+                                                         Primary adrenal insufficiency (PAI) is an endocrine disorder caused by adrenal cortex
+                                                    dysfunction, characterized by insufficient secretion of cortisol and aldosterone (1).
+                                                    Autoimmune diseases are the predominant etiology of PAI. In developed nations, autoimmune
+                                                    adrenalitis is the leading cause. However, in regions with a high incidence of tuberculosis,
+                                                    adrenal tuberculosis remains a significant cause (2, 3). In elderly and immunocompromised
+                                                    patients, beyond mycobacterium tuberculosis, other pathogens can also disrupt the bilateral
+                                                    adrenal cortical architecture, leading to functional failure. Fungal infections such as
+                                                    histoplasmosis, as well as other deep-seated mycoses-including par coccidioidomycosis and
+                                                    blastomycosis-may disseminate hematogenously to the adrenal glands and cause similar
+                                                    patterns of adrenal destruction (4). The opportunistic infectious etiologies of PAI are primarily
+                                                    cytomegalovirus and mycobacterium avium complex. Non-infectious causes encompass
+                                                    autoimmune adrenalitis, bilateral adrenal hemorrhage or infarction, and neoplastic diseases
+                                                    (e.g., metastatic tumors, lymphoma) (5).
+
+
+
+                                                    Case report
+                                                         A 38-year-old female patient presented to our hospital for further diagnosis and treatment
+                                                    after the discovery of bilateral adrenal nodules during a routine physical examination. She
+
+
+Frontiers in Medicine                                                     01                                                              frontiersin.org
+Xiong et al.                                                                                                                     10.3389/fmed.2025.1622617
+
+
+
+
+exhibited mild pigmentation over the interphalangeal joints of her hands             negative SMA and S100 (Figure 4). Special staining, including acid-fast
+and knees, yet she did not present with typical symptoms of tuberculosis,            bacilli and silver staining, was negative. Mycobacterium tuberculosis
+such as low-grade fever, night sweats, or cough. Three months ago,                   qPCR analysis detected DNA fragments suggesting the presence of
+outpatient testing revealed elevated adrenocorticotropic hormone                     tuberculosis bacteria, confirming the diagnosis of adrenal tuberculosis.
+(ACTH) levels at 577.10 ng/L (reference range, 5.00–78.00 ng/L) and                  The medication regimen for the patient was as follows: For PAI,
+decreased plasma cortisol at 161.00 nmol/L (reference range, 133.0–                  hydrocortisone acetate tablets (20 mg once daily) were administered,
+537.0 nmol/L), consistent with PAI. Five years ago, she was hospitalized             with dosage adjustments as clinically indicated, to maintain adrenal
+for a “chest shadow”; however, tuberculosis was not diagnosed, and no                function. For adrenal tuberculosis, a first-line anti-tuberculosis
+anti-tuberculosis treatment was administered. She denied any history of              regimen was prescribed: isoniazid (300 mg once daily), rifapentine
+glucocorticoid use and has no family history of hereditary diseases.                 (450 mg twice weekly), ethambutol hydrochloride (0.75 g once daily),
+     Laboratory results at admission showed significantly elevated                   and levofloxacin (0.5 g once daily). The follow-up included regular
+ACTH (365.80 ng/L) and decreased plasma cortisol (139.00 nmol/L),                    abdominal ultrasound and chest CT, along with monitoring of
+along with low fasting blood glucose and sodium levels, indicating                   hormone levels for dosage adjustments. According to the results of the
+adrenal insufficiency. Meanwhile, renin-angiotensin-aldosterone ratio                five follow-up visits, the patient’s symptoms have improved, hormone
+(ARR 0.09) was consistent with adrenal insufficiency and the                         levels were gradually stabilizing, and the tuberculosis treatment
+25-hydroxyvitamin D was low (20.6 nmol/L; reference range,                           regimen has shown a good response.
+47.7-144 nmol/L). The T-SPOT. TB test was positive, further
+supporting the diagnosis. The T-SPOT. TB test for tuberculosis was
+positive, further supporting the diagnosis of tuberculosis. Computed                 Discussion
+tomography (CT) scans revealed bilateral adrenal nodules with
+calcification and old tuberculosis lesions in both lungs and the pleura                  In developed countries, the predominant cause of PAI is
+(Figure 1). Ultrasonography showed hypoechoic nodules with                           autoimmune adrenalitis, characterized by the presence of anti-21-
+calcification in both adrenal glands, the largest of which was located on            hydroxylase antibodies, a type of autoimmune disease (6, 7). In
+the left side, measuring approximately 2.7 × 2.2 cm in size. Contrast                contrast, in developing countries, particularly in regions with a high
+enhanced ultrasound demonstrated low intensity enhancement during                    prevalence of tuberculosis, tuberculosis remains one of the major
+both corticomedullary and delayed phases (Figure 2). Ultrasound-                     causes of PAI. Adrenal tuberculosis is a rare form of extrapulmonary
+guided biopsy of the adrenal lesions was performed. Due to the thin                  tuberculosis, presenting as a chronic, destructive inflammatory process
+strip shape, the right adrenal mass was unsuitable for biopsy. The left              that induces irreversible adrenal damage and loss of function (6).
+adrenal mass was slightly larger but surrounded by the pancreas,                     Adrenal tuberculosis, more commonly seen in young and middle-aged
+spleen, and kidney, making the biopsy path anatomically complex and                  men, often involves both adrenal glands and presents with symptoms
+challenging. After a multidisciplinary discussion, percutaneous biopsy               such as skin pigmentation, weight loss, fatigue, and anorexia (8). PAI
+by a route passing the left kidney under ultrasound guidance was                     is rare in clinical practice and its presentation lacks specificity.
+designed. This route was chosen to avoid puncturing the spleen or                    Furthermore, the imaging features of various adrenal diseases often
+pancreas. Under guidance from a Color Doppler Ultrasound System                      overlap, making PAI diagnostically challenging and prone to
+(Resona R9, Shenzhen Mindray Bio-Medical Electronics Co., Ltd.,                      misdiagnosis. Accurate identification of the cause is crucial for
+China), we used a 17G coaxial needle (C1816B, 17 g × 13.0 cm, Bard                   appropriate treatment. Studies have reported that about 68% of adrenal
+Peripheral Vascular, Inc) to establish a biopsy tract. An 18G disposable             tuberculosis cases are misdiagnosed due to atypical symptoms (9).
+biopsy needle (N1816, 18 g × 16 cm, Bard Peripheral Vascular, Inc) was               Undiagnosed adrenal tuberculosis is a potentially life-threatening
+then advanced through this coaxial system. And the biopsy path was                   condition, as adrenal crisis may occur during physiological stress in
+then sealed with gelatin sponge (Gelfoam 560, 560 μm-710 μm,                         patients with bilateral adrenal involvement (10, 11). Early etiological
+Hangzhou Alicon Pharmaceutical Co., Ltd) to reduce the risk of                       identification is critical to guide targeted therapy.
+bleeding and contamination (Figure 3). Pathological examination                          Patients with pulmonary tuberculosis may develop adrenal
+revealed granulomatous inflammation with necrosis, and                               enlargement even without direct adrenal infection, likely due to
+immunohistochemical staining demonstrated positive CD68PG-M1,                        systemic inflammatory responses and chronic stress (4). Typically,
+
+
+
+
+    FIGURE 1
+    Left adrenal nodule with calcification (A,B; red arrow) and old tuberculosis lesions in both lungs and pleura (C).
+
+
+
+
+Frontiers in Medicine                                                           02                                                             frontiersin.org
+Xiong et al.                                                                                                                   10.3389/fmed.2025.1622617
+
+
+
+
+    FIGURE 2
+    Two-dimensional ultrasound and contrast-enhanced ultrasound images of left adrenal tuberculosis. A hypoechoic nodule with calcification measuring
+    approximately 2.7 × 2.2 cm was observed in the left adrenal region (A). Contrast-enhanced ultrasound demonstrates heterogeneous
+    hypoenhancement of the nodule during both the corticomedullary and delayed phases (B,C) (the arrow indicates the lesion).
+
+
+
+
+    FIGURE 3
+    The process of percutaneous biopsy. (A) The arrow indicated the biopsy needle passing through the parenchyma of the left kidney to reach the left
+    adrenal mass. (B) The arrow indicated the gelatin sponge used to occlude the needle tract.
+
+
+
+
+    FIGURE 4
+    Pathological results: (A) HE stains, ×200: Granulomatous inflammation with necrosis; (B) Immunohistochemistry: Tissue cells CD68PG-M1 (+).
+
+
+
+
+patients with active or recent infection (within the last 2 years)                prolonged course of illness, with bilateral adrenal masses
+present with bilateral adrenal enlargement, often accompanied by                  on imaging.
+central necrosis and peripheral enhancement, a combination which                      When bilateral adrenal lesions occur simultaneously, it is
+represents an important radiological feature of adrenal tuberculosis              important to differentiate them from adrenal tumors, particularly
+(12). As the disease progresses to the chronic phase, enlarged                    adrenal metastases, and lymphoma. Adrenal metastases are usually
+adrenals may shrink or return to normal size and shape due to                     bilateral and associated with a known primary malignancy, rarely
+fibrosis and calcification (13). In this case, the patient had a                  causing PAI (14). On contrast-enhanced imaging, adrenal metastases
+
+
+Frontiers in Medicine                                                        03                                                               frontiersin.org
+Xiong et al.                                                                                                               10.3389/fmed.2025.1622617
+
+
+
+
+typically exhibit peripheral hyper-enhancement with rapid washout              Conclusion
+in the delayed phase. Adrenal abscess, typically arising as a secondary
+infection resulting from hematogenous dissemination, commonly                      As a rare yet clinically significant etiology of PAI, adrenal
+manifests with clinical features such as fever, abdominal pain, and            tuberculosis warrants heightened clinical vigilance in TB-endemic
+weight loss. On contrast-enhanced CT, the condition is characterized           areas. This case demonstrates that ultrasound-guided biopsy serves as
+by bilateral adrenal enlargement featuring central hypodense areas             a definitive diagnostic tool while providing critical technical insights
+(indicative of necrosis or liquefaction) and peripheral rim                    for managing anatomically challenging lesions. Given its minimally
+enhancement and calcifications may be observed in later stages (15).           invasive nature and superior diagnostic yield, ultrasound-guided
+Adrenal lymphoma, though rare, typically appears as large, bilateral           adrenal biopsy should be regarded as the diagnostic modality of
+hypoechoic masses with more uniform enhancement on contrast                    choice for suspected adrenal tuberculosis.
+imaging (16). Other conditions that need to be considered include
+pheochromocytoma, adrenal adenoma, myelolipoma, and
+adrenal hemorrhage.                                                            Data availability statement
+     While imaging plays a crucial role not only in the early
+detection of adrenal lesions but also in providing initial differential             The original contributions presented in the study are included in
+diagnostic information about the nature of the lesions, definitive             the article/supplementary material, further inquiries can be directed
+diagnosis still relies on histopathological examination. Ultrasound-           to the corresponding author/s.
+guided biopsy, a precise and minimally invasive diagnostic tool, is
+especially useful for lesions in anatomically complex locations. This
+technique allows for real-time imaging-guided tissue acquisition,              Ethics statement
+minimizing the risk of injury to vital blood vessels and organs,
+thereby providing a reliable basis for diagnosis. Due to the unique                 This study involving human participants was approved by the
+anatomical position of the adrenal glands, most diagnoses of PAI               Institutional Ethics Committee of West China Hospital of Sichuan
+caused by adrenal tuberculosis have primarily relied on imaging                University and complied with all applicable national laws and
+and laboratory results (17). Current guidelines recommend that                 institutional policies. Written informed consent for participation was
+core needle biopsy may be performed for adrenal lesions larger than            waived under these regulations. However, written consent was obtained
+4 cm (18). In this case, the left adrenal mass was 2.7 cm in size,             for the publication of any potentially identifiable images or data.
+located anterior to the left kidney, and closely surrounded by the
+pancreas and spleen, making the biopsy path anatomically
+challenging. Ultimately, the biopsy was performed via the left                 Author contributions
+kidney path under ultrasound guidance. Notably, after tissue
+collection, gelatin sponge was used through the coaxial needle to                  TX: Investigation, Methodology, Resources, Writing – original
+embolize the needle tract to reduce bleeding risk and contamination.           draft. RW: Resources, Writing – original draft. JZ: Supervision, Writing
+Compared to CT-guided adrenal biopsy, ultrasound guidance                      – review & editing. BY: Supervision, Resources, Project administration.
+demonstrates distinct advantages, including the absence of ionizing
+radiation, real-time imaging capability, procedural convenience,
+and higher cost-effectiveness, particularly when adequate target               Funding
+visualization and a safe needle trajectory can be achieved. However,
+ultrasound guidance is limited in situations where a secure puncture               The author(s) declare that no financial support was received for
+path is unattainable, such as when traversal of the renal collecting           the research and/or publication of this article.
+system is unavoidable or when intervening organs (e.g., bowel)
+impede access. Furthermore, in cases involving obese patients,
+extensive bowel gas, or small deeply located lesions, CT guidance              Conflict of interest
+emerges as an essential and reliable alternative owing to its superior
+tissue contrast resolution and consistent imaging performance                      The authors declare that the research was conducted in the
+unimpeded by acoustic limitations.                                             absence of any commercial or financial relationships that could
+     This case emphasizes an innovative technical approach to                  be construed as a potential conflict of interest.
+biopsy for adrenal tuberculosis in complex anatomical locations
+and serves as a reminder for clinicians in tuberculosis-endemic
+regions to maintain a high index of suspicion for adrenal                      Generative AI statement
+tuberculosis in patients presenting with PAI. By combining
+contrast-enhanced ultrasound, biopsy, and molecular diagnostic                      The authors declare that no Gen AI was used in the creation of
+techniques, early diagnosis of adrenal tuberculosis clinicians can             this manuscript.
+achieve, allowing for prompt treatment and improved patient                         Any alternative text (alt text) provided alongside figures in this
+outcomes. The diagnostic and treatment experience in this case                 article has been generated by Frontiers with the support of artificial
+provides valuable reference for similar cases and offers a basis for           intelligence and reasonable efforts have been made to ensure accuracy,
+the development of more efficient diagnostic and                               including review by the authors wherever possible. If you identify any
+therapeutic strategies.                                                        issues, please contact us.
+
+
+Frontiers in Medicine                                                     04                                                             frontiersin.org
+Xiong et al.                                                                                                                                            10.3389/fmed.2025.1622617
+
+
+
+
+Publisher’s note                                                                                  organizations, or those of the publisher, the editors and the
+                                                                                                  reviewers. Any product that may be evaluated in this article, or claim
+   All claims expressed in this article are solely those of the authors                           that may be made by its manufacturer, is not guaranteed or endorsed
+and do not necessarily represent those of their affiliated                                        by the publisher.
+
+
+
+References
+  1. Erichsen MM, Løvås K, Skinningsrud B, Wolff AB, Undlien DE, Svartberg J, et al.                11. Lindh JD, Patrova J, Rushworth RL, Mannheimer B, Falhammar H. Tuberculosis
+Clinical, immunological, and genetic features of autoimmune primary adrenal                       of adrenal glands-a population-based case-control study. J Endocr Soc. (2023) 7:bvad047.
+insufficiency: observations from a Norwegian registry. J Clin Endocrinol Metab. (2009)            doi: 10.1210/jendso/bvad047
+94:4882–90. doi: 10.1210/jc.2009-1368
+                                                                                                    12. Alshahrani MA, Bin Saeedan M, Alkhunaizan T, Aljohani IM, Azzumeea FM.
+  2. Alevritis EM, Sarubbi FA, Jordan RM, Peiris AN. Infectious causes of adrenal                 Bilateral adrenal abnormalities: imaging review of different entities. Abdom Radiol (NY).
+insufficiency. South Med J. (2003) 96:888–90. doi: 10.1097/01.SMJ.0000073269.49575.DF             (2019) 44:154–79. doi: 10.1007/s00261-018-1670-5
+  3. Michels AW, Eisenbarth GS. Immunologic endocrine disorders. J Allergy Clin                     13. Guo Y-K, Yang Z-G, Li Y, Ma ES, Deng YP, Min PQ, et al. Addison’s disease
+Immunol. (2010) 125:S226–37. doi: 10.1016/j.jaci.2009.09.053                                      due to adrenal tuberculosis: contrast-enhanced CT features and clinical duration
+                                                                                                  correlation. Eur J Radiol. (2007) 62:126–31. doi: 10.1016/j.ejrad.2006.
+  4. Upadhyay J, Sudhindra P, Abraham G, Trivedi N. Tuberculosis of the adrenal gland:
+                                                                                                  11.025
+a case report and review of the literature of infections of the adrenal gland. Int J
+Endocrinol. (2014) 2014:876037. doi: 10.1155/2014/876037                                            14. Gupta S, Ansari MAM, Gupta AK, Chaudhary P, Bansal LK. Current approach for
+                                                                                                  diagnosis and treatment of adrenal tuberculosis-our experience and review of literature.
+  5. Gligorijevic N, Kaljevic M, Radovanovic N, Jovanovic F, Joksimovic B, Singh S, et al.
+                                                                                                  Surg J (NY). (2022) 8:e92–7. doi: 10.1055/s-0042-1743523
+Adrenal abscesses: a systematic review of the literature. J Clin Med. (2023) 12:4601. doi:
+10.3390/jcm12144601                                                                                 15. Saunier F, Grange S, Rigaill J, Lutz MF, Gagneux-Brunon A, Botelho-Nevers E.
+                                                                                                  Bacteremia and adrenal gland abscess due to Nocardia cyriacigeorgica: a case
+  6. Yu J, Lu Y, Han B. Primary adrenal insufficiency due to adrenal tuberculosis: a case
+                                                                                                  report and review. BMC Infect Dis. (2022) 22:966. doi: 10.1186/s12879-022-
+report. J Int Med Res. (2020) 48:300060520980590. doi: 10.1177/0300060520980590
+                                                                                                  07839-9
+  7. Soedarso MA, Nugroho KH, Meira Dewi KA. A case report: Addison disease caused by
+                                                                                                    16. Zhou L, Peng W, Wang C, Liu X, Shen Y, Zhou K. Primary adrenal lymphoma:
+adrenal tuberculosis. Urol Case Rep. (2018) 20:12–4. doi: 10.1016/j.eucr.2018.05.015
+                                                                                                  radiological; pathological, clinical correlation. Eur J Radiol. (2012) 81:401–5. doi:
+  8. Arambewela M, Ross R, Pirzada O, Balasubramanian SP. Tuberculosis as a                       10.1016/j.ejrad.2010.11.026
+differential for bilateral adrenal masses in the UK. BMJ Case Rep. (2019) 12:e228532.
+                                                                                                    17. Huang Y-C, Tang Y-L, Zhang X-M, Zeng NL, Li R, Chen TW. Evaluation of
+doi: 10.1136/bcr-2018-228532
+                                                                                                  primary adrenal insufficiency secondary to tuberculous adrenalitis with computed
+  9. Bleicken B, Hahner S, Ventz M, Quinkler M. Delayed diagnosis of adrenal                      tomography and magnetic resonance imaging: current status. World J Radiol. (2015)
+insufficiency is common: a cross-sectional study in 216 patients. Am J Med Sci. (2010)            7:336–42. doi: 10.4329/wjr.v7.i10.336
+339:525–31. doi: 10.1097/MAJ.0b013e3181db6b7a
+                                                                                                    18. Schenker MP, Silverman SG, Mayo-Smith WW, Khorasani R, Glazer DI. Clinical
+  10. Azeez TA, Irojah OA, Lakoh S, Lawal AO, Ajiboso OA. A systematic review of                  indications, safety, and effectiveness of percutaneous image-guided adrenal mass biopsy:
+adrenal insufficiency among patients with pulmonary tuberculosis in sub-Saharan                   an 8-year retrospective analysis in 160 patients. Abdom Radiol (NY). (2024) 49:1231–40.
+Africa. Int J Mycobacteriol. (2021) 10:1–7. doi: 10.4103/ijmy.ijmy_4_21                           doi: 10.1007/s00261-024-04211-0
+
+
+
+
+Frontiers in Medicine                                                                        05                                                                          frontiersin.org
+

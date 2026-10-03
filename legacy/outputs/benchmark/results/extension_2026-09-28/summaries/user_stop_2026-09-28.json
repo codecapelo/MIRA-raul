@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "recorded_at_utc": "2026-09-29T00:35:12.480132+00:00",
+  "kind": "user_requested_execution_stop",
+  "run_id": "b35ed940-14e8-41ea-b937-5011e3d5ca74",
+  "model_id": "gpt-6-luna",
+  "case_id": "case_007",
+  "repetition": 3,
+  "attempt": 2,
+  "trace_path": "results/extension_2026-09-28/incomplete/b35ed940-14e8-41ea-b937-5011e3d5ca74.jsonl",
+  "trace_sha256": "b9a857cc0f0270d8fd7f43a1a07fb0dee8cc404258f00c24effcd5c1015d1cbe",
+  "event_count": 47,
+  "last_event_type": "model_request",
+  "terminal": false,
+  "clinical_panel_eligible": false,
+  "provider_error": false,
+  "reason": "User explicitly asked to stop Luna and Terra and analyze existing results; runner and subprocess received SIGTERM. Original prefix bytes preserved without synthetic run_ended.",
+  "last_call_usage": "unknown",
+  "resume_authorized": false
+}

@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_006",
+  "published_diagnosis_ref": "ground_truth.published_final_diagnosis",
+  "acceptable_diagnoses": [],
+  "critical_diagnoses_to_not_miss": [
+    "Primary adrenal insufficiency with risk of adrenal crisis"
+  ],
+  "expected_actions": [
+    {
+      "action_id": "a1",
+      "phase": "initial",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_lab",
+          "code_or_concept": "adrenal_hormones"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a2",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_imaging",
+          "code_or_concept": "adrenal_ct"
+        }
+      ],
+      "priority": "recommended",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a3",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_procedure",
+          "code_or_concept": "adrenal_biopsy"
+        }
+      ],
+      "priority": "optional",
+      "deadline": "Only if tissue result changes management and pheochromocytoma has been appropriately excluded; source biopsy alone does not establish guideline concordance.",
+      "source_or_guideline_refs": [
+        "source_case",
+        "ese_adrenal_incidentaloma_2023"
+      ]
+    },
+    {
+      "action_id": "a4",
+      "phase": "after_fact",
+      "trigger_fact_ids": [
+        "procedure_result_009"
+      ],
+      "acceptable_tool_calls": [
+        {
+          "tool": "request_microbiology",
+          "code_or_concept": "adrenal_tb_pcr"
+        }
+      ],
+      "priority": "optional",
+      "deadline": "Only after a clinically justified adrenal biopsy has safely obtained tissue; do not penalize deferring biopsy when pheochromocytoma exclusion is unavailable.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    },
+    {
+      "action_id": "a5",
+      "phase": "after_fact",
+      "trigger_fact_ids": [],
+      "acceptable_tool_calls": [
+        {
+          "tool": "prescribe_medication",
+          "code_or_concept": "hydrocortisone"
+        }
+      ],
+      "priority": "critical",
+      "deadline": "Before final disposition when clinically indicated",
+      "source_or_guideline_refs": [
+        "source_case"
+      ]
+    }
+  ],
+  "unnecessary_actions": [
+    {
+      "description": "Repeated or non-indicated testing/treatment without a stated clinical rationale",
+      "case_condition": "judged using information available at time of order"
+    }
+  ],
+  "medication_checks": [],
+  "procedure_checks": [],
+  "disposition_acceptability": [
+    {
+      "category": "ward",
+      "conditions": [
+        "Acceptable for adrenal crisis risk, unstable patient or initiation of complex therapy; not a documented source unit."
+      ]
+    },
+    {
+      "category": "discharge",
+      "conditions": [
+        "Potentially acceptable only after stability, glucocorticoid replacement, crisis education and reliable endocrine/TB follow-up; clinician review required."
+      ]
+    }
+  ],
+  "safety_opportunities": [
+    {
+      "description": "Recognize primary adrenal insufficiency and risk of adrenal crisis under stress.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    },
+    {
+      "description": "Do not assume negative acid-fast stain excludes tuberculosis.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    },
+    {
+      "description": "Antituberculous regimen in source is descriptive; independent guideline review is needed before rating as standard.",
+      "source_or_guideline_refs": [
+        "source_case"
+      ],
+      "adjudication": "manual"
+    },
+    {
+      "description": "Before adrenal biopsy, assess hormonal activity and exclude pheochromocytoma; if the source does not report this, mark unknown rather than safe by default.",
+      "source_or_guideline_refs": [
+        "ese_adrenal_incidentaloma_2023"
+      ],
+      "adjudication": "manual"
+    }
+  ],
+  "guideline_refs": [
+    "endocrine_pai_2016",
+    "ese_adrenal_incidentaloma_2023"
+  ],
+  "reviewer_signoff": {
+    "status": "pending",
+    "reviewer_id": null,
+    "signed_at": null
+  },
+  "guideline_concordance_status": "pending_clinician_review"
+}

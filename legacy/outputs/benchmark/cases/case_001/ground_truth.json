@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_001",
+  "source_sha256": "2d77401170e241b4b75e60c233dd3d37dcc474949b0e1e17e68f6fdbfc73d5e8",
+  "published_final_diagnosis": {
+    "label": "Infective coronary pseudoaneurysm with stent disruption causing cardiac tamponade in MRSA infective endocarditis",
+    "codes": [],
+    "source_locators": [
+      "Case summary and main text, pp. 1–2"
+    ]
+  },
+  "diagnostic_differential_from_source": [
+    "Acute coronary syndrome",
+    "Pericardial tamponade from another cause",
+    "Coronary stent thrombosis"
+  ],
+  "source_treatment": [
+    {
+      "description": "Emergency pericardiocentesis",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "description": "Covered coronary stent",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "description": "Coronary artery bypass grafting",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "description": "Leadless pacemaker removal and epicardial pacemaker implantation",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "description": "Approximately two months of antibiotics",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    }
+  ],
+  "source_disposition": {
+    "category": "unknown",
+    "outcome": "Four-month hospitalization; discharged home stable.",
+    "source_locators": [
+      "Case summary and main text, pp. 1–2"
+    ]
+  },
+  "key_guideline_decisions": [
+    {
+      "guideline_ref": "esc_endocarditis_2023",
+      "status": "candidate_for_adjudication",
+      "note": "See docs/guideline_sources.yaml; applicability and alternative care require clinician review."
+    },
+    {
+      "guideline_ref": "esc_pericardial_2025",
+      "status": "candidate_for_adjudication",
+      "note": "See docs/guideline_sources.yaml; applicability and alternative care require clinician review."
+    }
+  ],
+  "distractors": [
+    "Chest pain and new regional wall-motion abnormality can resemble uncomplicated acute coronary syndrome."
+  ],
+  "critical_safety_points": [
+    "Recognize tamponade and shock; urgent drainage.",
+    "Avoid delay in coronary and structural evaluation after stabilization.",
+    "Account for active infection and dialysis in medication and procedure decisions."
+  ],
+  "fact_provenance": [
+    {
+      "fact_id": "pmh_001",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "pmh_002",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "hpi_003",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "hpi_004",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_005",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "lab_006",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "lab_007",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "ecg_008",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "imaging_009",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "ecg_010",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_011",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_012",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "microbiology_013",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    }
+  ],
+  "source_uncertainties": [
+    "Unspecified dose, timing or normal findings were not inferred.",
+    "Published management is descriptive and requires separate normative review.",
+    "The source does not identify a specific ICU/ward placement during the acute event; ICU is a clinical option, not a published disposition fact."
+  ],
+  "clinician_signoff": {
+    "reviewer_id": null,
+    "signed_at": null,
+    "status": "pending"
+  }
+}
