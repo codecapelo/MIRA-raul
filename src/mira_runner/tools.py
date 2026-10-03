@@ -10,17 +10,21 @@ def schemas():
         result.append({'type':'function','function':{'name':n,'description':'Finalize case' if n=='admission' else 'Retrieve available published case findings; missing findings are unavailable.','parameters':{'type':'object','properties':props,'required':required,'additionalProperties':False}}})
     return result
 
+class ToolArgumentsError(ValueError):pass
+
 def norm(x): return re.sub('[^a-z0-9]+',' ',str(x).lower()).strip()
 class CaseTools:
     def __init__(self,observations,matcher=None): self.observations=observations; self.returned=set(); self.errors=0; self.matcher=matcher
     def execute(self,name,args):
-        if name not in NAMES: raise ValueError('Unknown tool')
-        if not isinstance(args,dict): raise ValueError('Arguments must be a JSON object')
+        if name not in NAMES: raise ToolArgumentsError('Unknown tool')
+        if not isinstance(args,dict): raise ToolArgumentsError('Arguments must be a JSON object')
+        allowed=next(x['function']['parameters']['properties'] for x in schemas() if x['function']['name']==name)
+        if set(args)-set(allowed):raise ToolArgumentsError('Unexpected argument keys')
         if name not in ['admission','request_physical_exam','request_radiology']:
-            if not isinstance(args.get('test_names'),list) or not all(isinstance(x,str) for x in args['test_names']):raise ValueError('test_names must be a string array')
-        if name=='request_radiology' and any(not isinstance(v,(str,type(None))) for v in args.values()):raise ValueError('Radiology arguments must be strings')
+            if not isinstance(args.get('test_names'),list) or not all(isinstance(x,str) for x in args['test_names']):raise ToolArgumentsError('test_names must be a string array')
+        if name=='request_radiology' and any(not isinstance(v,(str,type(None))) for v in args.values()):raise ToolArgumentsError('Radiology arguments must be strings')
         if name=='admission':
-            if not all(isinstance(args.get(k),str) and args[k].strip() for k in ['diagnosis','reasoning']): raise ValueError('Empty admission diagnosis/reasoning')
+            if not all(isinstance(args.get(k),str) and args[k].strip() for k in ['diagnosis','reasoning']): raise ToolArgumentsError('Empty admission diagnosis/reasoning')
             return 'Case admitted.'
         domains={'request_physical_exam':['physical_exam','exam','physical','vitals'],'request_blood_test':['blood','lab','laboratory'],'request_urine_test':['urine'],'request_bedside_test':['bedside','ecg','imaging'],'request_radiology':['radiology','imaging'],'request_microbiology':['microbiology'],'request_other_investigation':['other','tissue','csf','genetic','other_fluid','procedure_result','other_test']}
         pool=[o for o in self.observations if o['domain'] in domains[name] and not o.get('unavailable_for_immediate_care')]

@@ -2,7 +2,7 @@ import argparse,ast,csv,fcntl,hashlib,importlib.util,json,os,subprocess,time
 from pathlib import Path
 from .budget import Ledger
 from .client import AuditLog,Client
-from .tools import CaseTools,schemas
+from .tools import CaseTools,schemas,ToolArgumentsError
 MODELS={'openai/gpt-oss-120b':{'temperature':1,'top_p':1},'z-ai/glm-4.5-air':{'temperature':.01,'top_p':1},'z-ai/glm-5':{'temperature':1,'top_p':.95},'qwen/qwen3.5-397b-a17b':{'temperature':.6,'top_p':.95,'top_k':20},'openai/gpt-5.2':{}}
 JUDGE='google/gemini-3.1-flash-lite-preview'
 FIELDS='case_id model provider dx_agent reasoning dx_reference judge_correct judge_rationale n_turns n_tool_calls tool_errors prompt_tokens completion_tokens reasoning_tokens cost_usd latency_s commit timestamp physician_review'.split()
@@ -27,9 +27,13 @@ def run_case(root,case_dir,model,client,commit):
         candidates=[{'category':o['domain'],'key':o['fact_id'],'display_name':o['name']} for o in pool]
         tree=ast.parse((root/'upstream/onprem-medical-agents/src/tools/tool_vivabench.py').read_text())
         prompt=next(ast.literal_eval(n.value) for n in tree.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='INVESTIGATION_MATCHER_SYSTEM_PROMPT' for t in n.targets))
-        reply=client.call('z-ai/glm-4.5-air',[{'role':'system','content':prompt},{'role':'user','content':'REQUESTED_TESTS:\n'+json.dumps(requested)+'\n\nALLOWED_CATEGORIES:\n'+json.dumps(sorted({o['domain'] for o in pool}))+'\n\nAVAILABLE_CANDIDATES:\n'+json.dumps(candidates)}],log,'matcher',{'temperature':0,'top_p':1},max_tokens=2048)
-        answer=json.loads(reply['content'].strip().removeprefix('```json').removeprefix('```').removesuffix('```').strip()); allowed={(o['domain'],o['fact_id']) for o in pool}
-        return [m['key'] for x in answer.get('matched',[]) for m in x.get('matches',[]) if (m.get('category'),m.get('key')) in allowed]
+        reply=client.call('z-ai/glm-4.5-air',[{'role':'system','content':prompt},{'role':'user','content':'REQUESTED_TESTS:\n'+json.dumps(requested)+'\n\nALLOWED_CATEGORIES:\n'+json.dumps(sorted({o['domain'] for o in pool}))+'\n\nAVAILABLE_CANDIDATES:\n'+json.dumps(candidates)}],log,'matcher',{'temperature':0,'top_p':1},max_tokens=8192,reasoning={'enabled':False})
+        try:
+            answer=json.loads(reply['content'].strip().removeprefix('```json').removeprefix('```').removesuffix('```').strip()); allowed={(o['domain'],o['fact_id']) for o in pool}
+            return [m['key'] for x in answer.get('matched',[]) for m in x.get('matches',[]) if (m.get('category'),m.get('key')) in allowed]
+        except (json.JSONDecodeError,TypeError,AttributeError,KeyError):
+            log.append({'event':'backend_error','role':'matcher','reason':'settled malformed matcher output','fallback':'unavailable'})
+            return []
     tools=CaseTools(inv['observations'],matcher); ntools=0; final=None; start=time.monotonic()
     for turn in range(1,11):
         if turn==10:doctor.append({'role':'system','content':prompts.COMPLETION_PROMPT+' Call admission now.'})
@@ -42,7 +46,7 @@ def run_case(root,case_dir,model,client,commit):
                 invalid=False; ntools+=1; f=tc['function'];args=None
                 try:
                     args=json.loads(f['arguments']); output=tools.execute(f['name'],args)
-                except (json.JSONDecodeError,ValueError,TypeError,KeyError):
+                except (json.JSONDecodeError,ToolArgumentsError):
                     tools.errors+=1; invalid=True
                     output='Invalid tool arguments. Retry this tool with valid JSON matching its schema; admission requires non-empty diagnosis and reasoning.'
                     if tools.errors>1:raise RuntimeError('Exceeded one bounded corrective tool retry')
@@ -74,10 +78,13 @@ def export(root,results):
     os.replace(tmp,path)
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[2]);parser.add_argument('--execute',action='store_true');parser.add_argument('--pilot-only',action='store_true');args=parser.parse_args();root=args.root
+    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[2]);parser.add_argument('--execute',action='store_true');parser.add_argument('--pilot-only',action='store_true');parser.add_argument('--max-cases',type=int);args=parser.parse_args();root=args.root
     config=json.loads((root/'config/run1.json').read_text()); cases=sorted((root/'cases').glob('case_*'))
     if not cases:raise RuntimeError('No cases')
     schedule=[(cases[0],m) for m in MODELS]+([] if args.pilot_only else [(c,m) for m in MODELS for c in cases[1:]])
+    if args.max_cases is not None:
+        if args.max_cases<1:raise ValueError('--max-cases must be positive')
+        schedule=schedule[:args.max_cases]
     if not args.execute:print(json.dumps({'mode':'preflight','case_count':len(cases),'requests_not_sent':True,'schedule':[(c.name,m) for c,m in schedule]},indent=2));return
     key=os.getenv('OPENROUTER_API_KEY')
     if not key:

@@ -25,7 +25,7 @@ def main(root):
   if key in seen:duplicates.append(key);continue
   rows.append(r);seen.add(key)
  calls={};malformed=[]
- for log in sorted((root/'logs/raw').glob('**/*.jsonl')):
+ for log in sorted(set((root/'logs/raw').glob('**/*.jsonl')) | set((root/'logs/incomplete').glob('**/*.jsonl'))):
   hashes[str(log.relative_to(root))]=sha(log)
   for lineno,line in enumerate(log.read_text().splitlines(),1):
    try:e=json.loads(line)
@@ -49,7 +49,7 @@ def main(root):
  model_results=[];projection=[]
  for m in MODELS:
   rr=[r for r in rows if r['model']==m];s={'model':m,'expected':10,**score(rr)};s['categories']={c:score([r for r in rr if CATEGORY.get(r['case_id'])==c]) for c in sorted(set(CATEGORY.values()))};s['usage']={k:stat([float(r[k]) for r in rr if r.get(k)]) for k in ('prompt_tokens','completion_tokens','reasoning_tokens','latency_s')};model_results.append(s)
-  pilot=[r for r in rr if r['case_id']=='case_001'];costs=[Decimal(r['cost_usd']) for r in pilot if r.get('cost_usd')];total=sum(costs,Decimal(0));projection.append({'model':m,'pilot_completed':len(pilot),'pilot_cost_usd':str(total) if costs else None,'projected_10x1_usd':str(total*10/len(costs)) if costs else None,'projected_10x5_usd':str(total*50/len(costs)) if costs else None})
+  pilot=[r for r in rr if r['case_id']=='case_001'];costs=[Decimal(r['cost_usd']) for r in pilot if r.get('cost_usd')];total=sum(costs,Decimal(0));projection.append({'model':m,'pilot_completed':len(pilot),'pilot_providers':sorted({r.get('provider','unknown') for r in pilot}),'pilot_cost_usd':str(total) if costs else None,'projected_10x1_usd':str(total*10/len(costs)) if costs else None,'projected_10x5_usd':str(total*50/len(costs)) if costs else None})
  old=root/'legacy/outputs/benchmark/results/frontier_addons_2026-09-29/summaries/frontier_addons_analysis.json';historical={}
  if old.exists():
   d=json.loads(old.read_text());historical={'path':str(old),'sha256':sha(old),'expected_trajectories':d['expected_trajectories'],'observed_terminal_trajectories':d['observed_terminal_trajectories'],'models_original':d['models'],'evaluation_original':d['evaluation'],'physician_review_state_original':d['physician_review_state']}
@@ -62,6 +62,15 @@ def main(root):
   ci=s['wilson95'];lines.append(f"| {s['model']} | {s['completed']}/10 | {s['correct']}/{s['judged']} | {f'{ci[0]:.1%}–{ci[1]:.1%}' if ci else 'indisponível'} |")
  lines+=['',f"Custo conhecido ledger: US$ {result['ledger_known_cost_usd']}; CSV completo: US$ {result['csv_known_cost_usd']}. Custos de tentativas incompletas aparecem no detalhamento por ator. Chamadas não liquidadas impedem presumir total final.",'','Mediana/IQR de tokens e latência, intervalos por categoria e pares ausentes estão no JSON. Tokens de raciocínio são subconjunto da conclusão; não somar novamente. Grupos clínicos descritivos possuem denominadores pequenos.','', 'O juiz LLM avalia equivalência diagnóstica. A análise antiga é lexical, com outros modelos, transporte, ferramentas e três repetições. Não há comparação de superioridade clínica. Revisão médica cega pendente. Repetições não são pacientes independentes.']
  if historical:lines+=['',f"Histórico imutável: {historical['observed_terminal_trajectories']}/{historical['expected_trajectories']} trajetórias, métricas originais de todos os modelos preservadas no JSON. Fonte `{old}`, SHA-256 `{historical['sha256']}`."]
- (report/'run1_summary.md').write_text('\n'.join(lines)+'\n');print(json.dumps({'completed':len(rows),'expected':len(expected),'reports':str(report)}))
+ (report/'run1_summary.md').write_text('\n'.join(lines)+'\n');(report/'summary.md').write_text('\n'.join(lines)+'\n')
+ costlines=['# Custos observados e projeção','',f"Piloto: {proj['pilot_completed']}/5 episódios concluídos, um caso por modelo. Valores reais provenientes do CSV; custos conhecidos de todas as chamadas provenientes do ledger.",'', '| Modelo | Provedor observado | Piloto real US$ | 10 casos × 1 execução US$ | 10 casos × 5 execuções US$ |','|---|---|---:|---:|---:|']
+ for item in projection:
+  display=lambda key: f"{Decimal(item[key]):.6f}" if item[key] is not None else 'pendente'
+  costlines.append(f"| {item['model']} | {', '.join(item['pilot_providers']) or 'pendente'} | {display('pilot_cost_usd')} | {display('projected_10x1_usd')} | {display('projected_10x5_usd')} |")
+ costlines+=['',f"Custo total conhecido, incluindo tentativas arquivadas/incompletas: US$ {result['ledger_known_cost_usd']}. Total dos episódios completos: US$ {result['csv_known_cost_usd']}.",'', '| Ator | Chamadas | Custo conhecido US$ | Chamadas sem custo resolvido |','|---|---:|---:|---:|']
+ for role,a in sorted(actors.items()):costlines.append(f"| {role} | {a['calls']} | {a['known_cost_usd']} | {a['unknown_cost_calls']} |")
+ costlines+=['',f"Chamadas não liquidadas: {len(result['unsettled_calls'])}; detalhes e reservas no JSON. Logs atuais e logs/incomplete são agregados por request_id, sem duplicar chamadas presentes nos dois locais.",'', 'Projeção linear baseada somente no caso 001, incluindo médico, paciente, juiz e matcher quando usados. Casos mais complexos e alterações de preço/provedor modificam o custo. Projeções futuras não incorporam novamente custos históricos de tentativas incompletas e não autorizam novas execuções. Provedor observado vem do CSV e acompanha alterações do registro, incluindo AkashML.']
+ (report/'cost_projection.md').write_text('\n'.join(costlines)+'\n')
+ print(json.dumps({'completed':len(rows),'expected':len(expected),'reports':str(report)}))
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);main(p.parse_args().root)

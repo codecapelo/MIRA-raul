@@ -25,6 +25,14 @@ class SafetyTests(unittest.TestCase):
         with patch('urllib.request.urlopen',side_effect=error):
             with self.assertRaises(HTTPFailure) as caught:client.http({'model':'m'})
         self.assertEqual(caught.exception.status,429);self.assertNotIn('sk-or-sensitive',caught.exception.body);self.assertNotIn('Bearer secret',caught.exception.body)
+    def test_backend_error_is_not_physician_argument_error(self):
+        from mira_runner.tools import ToolArgumentsError
+        with self.assertRaises(ToolArgumentsError):CaseTools([]).execute('request_physical_exam',{'':{}})
+        pool=[{'fact_id':'a','domain':'lab','name':'CBC','value':'x'}]
+        def broken(q,p):raise RuntimeError('backend failure')
+        tools=CaseTools(pool,broken)
+        with self.assertRaises(RuntimeError):tools.execute('request_blood_test',{'test_names':['unmatched']})
+        self.assertEqual(tools.errors,0)
     def test_cap(self):
         ledger=Ledger(self.root/'l.db');rid=ledger.reserve('18',{});ledger.settle(rid,'18')
         with self.assertRaises(BudgetError):ledger.reserve('.51',{})

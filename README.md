@@ -16,4 +16,6 @@ O escore lexical anterior não é diretamente comparável ao novo juiz clínico.
 
 A configuração de rotas fica em `config/run1.json`, construída a partir dos registros de endpoints em `reports/endpoints/`. A simulação está em `src/mira_runner/runner.py`; a execução sem `--execute` faz somente a conferência do cronograma. A opção `--pilot-only`, combinada com execução explícita, restringe a rodada ao piloto. A execução completa deve ocorrer apenas após a validação e autorização já registradas pelo responsável.
 
+GPT-OSS usa AkashML BF16 (`akashml/bf16`), selecionado explicitamente após rejeições HTTP 429 da rota Deka BF16. Essa mudança está registrada no protocolo e no relatório de recuperação; não habilita fallback automático.
+
 Código e prompts upstream: CC BY 4.0 conforme README do repositório; atribuição a KatherLab e autores do trabalho, commit `eea2386c665c9caaa7ee093c8cb092d1c337de88`. Este projeto registra alterações de transporte, dados, contagem de turnos e isolamento de tentativas. Os direitos sobre fontes clínicas públicas e modelos permanecem próprios de cada fonte.
