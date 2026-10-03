@@ -2,34 +2,35 @@
   "budget_usd": "18.50",
   "models": {
     "openai/gpt-oss-120b": {
-      "provider": "dekallm/bf16",
-      "provider_name": "DekaLLM",
+      "provider": "akashml/bf16",
+      "provider_name": "AkashML",
       "pricing_verified": true,
       "context_tokens": 0,
       "context_limit": 131072,
       "max_tokens": 24576,
       "usd_per_million": {
-        "input": 0.03,
-        "output": 0.18
+        "input": 0.037,
+        "output": 0.187
       },
       "supports_logprobs": true,
       "supported_parameters": [
         "reasoning",
         "include_reasoning",
-        "frequency_penalty",
-        "logit_bias",
-        "max_tokens",
-        "presence_penalty",
-        "seed",
-        "stop",
         "temperature",
         "top_p",
+        "top_k",
+        "stop",
+        "seed",
+        "frequency_penalty",
+        "presence_penalty",
+        "repetition_penalty",
+        "max_tokens",
         "response_format",
         "structured_outputs",
         "tools",
-        "tool_choice",
         "logprobs",
         "top_logprobs",
+        "tool_choice",
         "reasoning_effort"
       ]
     },
