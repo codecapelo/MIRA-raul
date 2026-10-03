@@ -1,7 +1,12 @@
-import hashlib, json, os, time, urllib.request
+import hashlib, json, os, time, urllib.error, urllib.request
 from decimal import Decimal
 from pathlib import Path
 from .budget import BudgetError
+
+class HTTPFailure(RuntimeError):
+    def __init__(self,status,body):
+        self.status=status;self.body=body
+        super().__init__('OpenRouter HTTP '+str(status))
 
 class AuditLog:
     def __init__(self,path,commit): self.path=Path(path); self.commit=commit; self.path.parent.mkdir(parents=True,exist_ok=True)
@@ -15,7 +20,15 @@ class Client:
     def http(self,payload):
         if not self.key: raise RuntimeError('API key missing')
         req=urllib.request.Request('https://openrouter.ai/api/v1/chat/completions',json.dumps(payload).encode(),{'Authorization':'Bearer '+self.key,'Content-Type':'application/json'})
-        with urllib.request.urlopen(req,timeout=800) as r: return json.load(r)
+        try:
+            with urllib.request.urlopen(req,timeout=800) as r:return json.load(r)
+        except urllib.error.HTTPError as e:
+            body=e.read(16384).decode('utf-8',errors='replace')
+            if self.key:body=body.replace(self.key,'[REDACTED]')
+            import re
+            body=re.sub(r'(?i)bearer\s+[^\s\"<>]+','Bearer [REDACTED]',body)
+            body=re.sub(r'sk-or-[A-Za-z0-9_-]+','[REDACTED]',body)
+            raise HTTPFailure(e.code,body) from None
     def call(self,model,messages,log,role,params=None,**kwargs):
         cfg=self.config['models'][model]
         if not cfg.get('provider') or not cfg.get('pricing_verified'): raise BudgetError('Verified pinned provider/pricing required')
@@ -53,5 +66,5 @@ class Client:
                 raise BudgetError('Unexpected provider')
             return response['choices'][0]['message']
         except BaseException as e:
-            log.append({'event':'halt','request_id':rid,'reason':type(e).__name__})
+            log.append({'event':'halt','request_id':rid,'reason':type(e).__name__,**({'http_status':e.status,'http_body':e.body} if isinstance(e,HTTPFailure) else {})})
             raise

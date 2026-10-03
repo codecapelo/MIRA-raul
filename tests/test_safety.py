@@ -16,6 +16,15 @@ class SafetyTests(unittest.TestCase):
         first=c.call('m',msg,AuditLog(path,'abc'),'patient')
         second=c.call('m',msg,AuditLog(path,'abc'),'patient')
         self.assertEqual(first,second);self.assertEqual(len(sent),1);self.assertEqual(str(l.total()),'0.001')
+    def test_http_rejection_preserves_sanitized_details(self):
+        import io,urllib.error
+        from unittest.mock import patch
+        from mira_runner.client import HTTPFailure
+        client=Client(None,{},key='sk-or-sensitive')
+        error=urllib.error.HTTPError('https://openrouter.ai',429,'rate',{},io.BytesIO(b'{"error":"rate limited sk-or-sensitive Bearer secret"}'))
+        with patch('urllib.request.urlopen',side_effect=error):
+            with self.assertRaises(HTTPFailure) as caught:client.http({'model':'m'})
+        self.assertEqual(caught.exception.status,429);self.assertNotIn('sk-or-sensitive',caught.exception.body);self.assertNotIn('Bearer secret',caught.exception.body)
     def test_cap(self):
         ledger=Ledger(self.root/'l.db');rid=ledger.reserve('18',{});ledger.settle(rid,'18')
         with self.assertRaises(BudgetError):ledger.reserve('.51',{})
