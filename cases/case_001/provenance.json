@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_001",
+  "source_directory": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_001",
+  "source_sha256": {
+    "case_packet.json": "f93a92049247463978d5c8736d008a9d7978a396f5510fe3db72e08807a1a245",
+    "rubric.json": "e58f44f4bc7ec82d2a6793027860d004a9db5785527d278296b07fc35501c6b7",
+    "source_metadata.yaml": "9f53e165937e12cf356ae467b831f2b701e4364a87f8c0057af98bbf8140e9da",
+    "source.pdf": "2d77401170e241b4b75e60c233dd3d37dcc474949b0e1e17e68f6fdbfc73d5e8",
+    "ground_truth.json": "2a80dde363d5c97786b9a1a423adce428b44ad95e58c53fa9849535df6341e4b"
+  },
+  "source_metadata_text": "case_id: case_001\npmcid: PMC12905702\ntitle: \"Coronary Pseudoaneurysm and Stent Disruption Caused by Infective Endocarditis\"\njournal: \"JACC Case Reports\"\npublication_year: 2025\ncitation: \"JACC Case Rep. 2025 Dec 3;31(6):106337. doi: 10.1016/j.jaccas.2025.106337\"\ndoi: \"10.1016/j.jaccas.2025.106337\"\narticle_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12905702/\npdf_url: \"https://pmc-oa-opendata.s3.amazonaws.com/PMC12905702.1/PMC12905702.1.pdf?md5=afdfb0176958f64b9538f84ff6b0d612\"\nmetadata_url: \"https://pmc-oa-opendata.s3.amazonaws.com/metadata/PMC12905702.1.json\"\nlicense_code: \"CC BY-NC-ND\"\nlicense_url: \"https://creativecommons.org/licenses/by-nc-nd/4.0/\"\naccess_status: downloaded_verified_public_pdf\ncase_packet_status: pending_clinician_review\nretrieved_on: 2026-09-25\nsha256: 2d77401170e241b4b75e60c233dd3d37dcc474949b0e1e17e68f6fdbfc73d5e8\nbytes: 3028276\n",
+  "fact_provenance": [
+    {
+      "fact_id": "pmh_001",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "pmh_002",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "hpi_003",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "hpi_004",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_005",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "lab_006",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "lab_007",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "ecg_008",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "imaging_009",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "ecg_010",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_011",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_012",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "microbiology_013",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    }
+  ],
+  "conversion_edits": [],
+  "original_fact_count": 13,
+  "history_fact_count": 4,
+  "observation_count": 9,
+  "validation_scope": "Faithful conversion of legacy extracted JSON; no new independent PDF transcription or physician adjudication."
+}

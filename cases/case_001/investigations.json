@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_001",
+  "observations": [
+    {
+      "fact_id": "physical_exam_005",
+      "domain": "physical_exam",
+      "value": "Rapid hemodynamic deterioration with cardiogenic shock.",
+      "available_at": "time_zero",
+      "name": "Hemodynamics",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_006",
+      "domain": "lab",
+      "value": "High inflammatory response; exact analyte values were not reported.",
+      "available_at": "time_zero",
+      "name": "Inflammatory markers",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_007",
+      "domain": "lab",
+      "value": "Disseminated intravascular coagulation was reported; exact values were not provided.",
+      "available_at": "time_zero",
+      "name": "Coagulation studies",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "ecg_008",
+      "domain": "ecg",
+      "value": "Echocardiography showed new left-ventricular wall-motion abnormalities and pericardial effusion, then tamponade.",
+      "available_at": "time_zero",
+      "name": "Transthoracic echocardiography",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_009",
+      "domain": "imaging",
+      "value": "After emergency pericardiocentesis, coronary angiography showed disruption of the prior stent and rapidly enlarging coronary pseudoaneurysm.",
+      "available_at": "after_procedure:pericardiocentesis",
+      "name": "Coronary angiography",
+      "prerequisites": [
+        "after_procedure:pericardiocentesis"
+      ],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "ecg_010",
+      "domain": "ecg",
+      "value": "Optical coherence tomography and intravascular ultrasound showed loss of the arterial wall three-layer structure, consistent with pseudoaneurysm.",
+      "available_at": "after_procedure:pericardiocentesis",
+      "name": "Optical coherence tomography and intravascular ultrasound",
+      "prerequisites": [
+        "after_procedure:pericardiocentesis"
+      ],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "procedure_result_011",
+      "domain": "procedure_result",
+      "value": "Emergency pericardiocentesis yielded yellowish, turbid pericardial fluid.",
+      "available_at": "time_zero",
+      "name": "Pericardiocentesis",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "procedure_result_012",
+      "domain": "procedure_result",
+      "value": "Surgical exploration of the leadless pacemaker revealed vegetation.",
+      "available_at": "time_zero",
+      "name": "Cardiac device surgical exploration",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "microbiology_013",
+      "domain": "microbiology",
+      "value": "MRSA bacteremia was documented; exact culture sampling time and antimicrobial susceptibility details were not reported.",
+      "available_at": "time_zero",
+      "name": "Blood cultures",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "Each observation requires a requested examination/test/procedure. Non-time_zero gates must additionally be satisfied; retrospective results are never available for immediate care. No unreported results may be invented."
+}

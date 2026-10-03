@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_010",
+  "initial": {
+    "age_years": 25,
+    "sex_recorded": "female",
+    "chief_complaint": "Worsening left upper abdominal pain with nausea and vomiting."
+  },
+  "presenting_complaint": "Worsening left upper abdominal pain with nausea and vomiting.",
+  "history_freetext": "Left upper quadrant pain began mildly about eight days earlier. Treated as gastroenteritis without improvement; now worse with nausea and vomiting.\nAmenorrhea and positive home urine pregnancy test; approximately five weeks gestation by dates, gravida 1 para 0.\nNo reported chronic medical or surgical disease, pelvic inflammatory disease, tobacco or alcohol use.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Left upper quadrant pain began mildly about eight days earlier. Treated as gastroenteritis without improvement; now worse with nausea and vomiting.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "value": "Amenorrhea and positive home urine pregnancy test; approximately five weeks gestation by dates, gravida 1 para 0.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_003",
+      "domain": "pmh",
+      "value": "No reported chronic medical or surgical disease, pelvic inflammatory disease, tobacco or alcohol use.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

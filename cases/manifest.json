@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0.0",
+  "cases": [
+    {
+      "case_id": "case_001",
+      "history_fact_count": 4,
+      "observation_count": 9,
+      "source_packet_sha256": "f93a92049247463978d5c8736d008a9d7978a396f5510fe3db72e08807a1a245"
+    },
+    {
+      "case_id": "case_002",
+      "history_fact_count": 3,
+      "observation_count": 12,
+      "source_packet_sha256": "47460946199b1bf67dedd094512a14f20ee520180da8bebfa74addfd3d40d7f1"
+    },
+    {
+      "case_id": "case_003",
+      "history_fact_count": 3,
+      "observation_count": 15,
+      "source_packet_sha256": "28911a473132aaf4b3215d10f63dcbf84099c70d426506d185f10dbd0a5020a3"
+    },
+    {
+      "case_id": "case_004",
+      "history_fact_count": 2,
+      "observation_count": 8,
+      "source_packet_sha256": "dcb2b5a26c53620752756e0fc4970afe3c7b2aff37176821fc7763bbda494118"
+    },
+    {
+      "case_id": "case_005",
+      "history_fact_count": 3,
+      "observation_count": 10,
+      "source_packet_sha256": "9c74dd4600b7b9ea15fe1df111674e7357b3ff842dc9be7b848b7752b46d5828"
+    },
+    {
+      "case_id": "case_006",
+      "history_fact_count": 2,
+      "observation_count": 8,
+      "source_packet_sha256": "d102512430929774950531f48cec9907b37f4870c638f283cf8a0283486772a3"
+    },
+    {
+      "case_id": "case_007",
+      "history_fact_count": 4,
+      "observation_count": 7,
+      "source_packet_sha256": "13d4b6ce14ebabe386a6360eed99b3ca0b7fd71cf4d978b51e9a3773bbec19a9"
+    },
+    {
+      "case_id": "case_008",
+      "history_fact_count": 2,
+      "observation_count": 7,
+      "source_packet_sha256": "9545db225601ac154a316a92f81375c276b2001d0fc3428e65b18d7d02af52ee"
+    },
+    {
+      "case_id": "case_009",
+      "history_fact_count": 3,
+      "observation_count": 5,
+      "source_packet_sha256": "64015276fe6bae571c51cff060ee12a62a57b0bd15914ec0b1dacd5aab41db0d"
+    },
+    {
+      "case_id": "case_010",
+      "history_fact_count": 3,
+      "observation_count": 8,
+      "source_packet_sha256": "2a7533237493d8f6a19922512f8ad31f9db7825f5619348e3da3ebec16069cc3"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_006",
+  "initial": {
+    "age_years": 38,
+    "sex_recorded": "female",
+    "chief_complaint": "Bilateral adrenal nodules found on examination, with biochemical concern for adrenal insufficiency."
+  },
+  "presenting_complaint": "Bilateral adrenal nodules found on examination, with biochemical concern for adrenal insufficiency.",
+  "history_freetext": "Mild pigmentation over finger joints and knees; no fever, night sweats or cough.\nRemote hospitalization for a chest opacity five years earlier without TB diagnosis or treatment; no glucocorticoid use or family hereditary disease history.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Mild pigmentation over finger joints and knees; no fever, night sweats or cough.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_002",
+      "domain": "pmh",
+      "value": "Remote hospitalization for a chest opacity five years earlier without TB diagnosis or treatment; no glucocorticoid use or family hereditary disease history.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

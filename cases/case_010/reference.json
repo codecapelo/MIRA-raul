@@ -1,0 +1,258 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_010",
+  "correct_diagnosis": "Primary abdominal ectopic pregnancy with bleeding left upper abdominal implantation",
+  "ground_truth": {
+    "schema_version": "1.0.0",
+    "case_id": "case_010",
+    "source_sha256": "e7c0a06004d4c8d100b4059a202300939b09055c4a636a58c127b9fd69e36d62",
+    "published_final_diagnosis": {
+      "label": "Primary abdominal ectopic pregnancy with bleeding left upper abdominal implantation",
+      "codes": [],
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    "diagnostic_differential_from_source": [
+      "Tubal ectopic pregnancy",
+      "Hemorrhagic ovarian cyst",
+      "Splenic or gastrointestinal lesion",
+      "Gastroenteritis"
+    ],
+    "source_treatment": [
+      {
+        "description": "Urgent diagnostic laparoscopy and excision of ectopic lesion with partial omentectomy",
+        "source_locators": [
+          "Case report, pp. 2–3"
+        ]
+      },
+      {
+        "description": "Postoperative hCG monitoring",
+        "source_locators": [
+          "Case report, pp. 2–3"
+        ]
+      }
+    ],
+    "source_disposition": {
+      "category": "surgery",
+      "outcome": "Discharged postoperative day 5; hCG normalized within one month.",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    "key_guideline_decisions": [
+      {
+        "guideline_ref": "rcog_ectopic_2016",
+        "status": "candidate_for_adjudication",
+        "note": "See docs/guideline_sources.yaml; applicability and alternative care require clinician review."
+      }
+    ],
+    "distractors": [
+      "Pain is in left upper abdomen and adnexa appear normal; early episode was labelled gastroenteritis."
+    ],
+    "critical_safety_points": [
+      "Pregnancy test is essential in reproductive-age patient with abdominal pain.",
+      "No intrauterine pregnancy with hCG around 10,130 IU/L requires urgent ectopic pregnancy evaluation.",
+      "Hemorrhage and vascular implantation favor surgical planning with bleeding preparedness."
+    ],
+    "fact_provenance": [
+      {
+        "fact_id": "hpi_001",
+        "source_locators": [
+          "Case report, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "hpi_002",
+        "source_locators": [
+          "Case report, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "pmh_003",
+        "source_locators": [
+          "Case report, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "physical_exam_004",
+        "source_locators": [
+          "Case report, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "physical_exam_005",
+        "source_locators": [
+          "Case report, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "lab_006",
+        "source_locators": [
+          "Case report, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "imaging_007",
+        "source_locators": [
+          "Case report, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "imaging_008",
+        "source_locators": [
+          "Case report, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "procedure_result_009",
+        "source_locators": [
+          "Case report, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "procedure_result_010",
+        "source_locators": [
+          "Case report, pp. 2–3"
+        ]
+      }
+    ],
+    "source_uncertainties": [
+      "Unspecified dose, timing or normal findings were not inferred.",
+      "Published management is descriptive and requires separate normative review."
+    ],
+    "clinician_signoff": {
+      "reviewer_id": null,
+      "signed_at": null,
+      "status": "pending"
+    }
+  },
+  "rubric": {
+    "schema_version": "1.0.0",
+    "case_id": "case_010",
+    "published_diagnosis_ref": "ground_truth.published_final_diagnosis",
+    "acceptable_diagnoses": [],
+    "critical_diagnoses_to_not_miss": [
+      "Ectopic pregnancy with intra-abdominal hemorrhage requiring urgent surgical evaluation"
+    ],
+    "expected_actions": [
+      {
+        "action_id": "a1",
+        "phase": "initial",
+        "trigger_fact_ids": [],
+        "acceptable_tool_calls": [
+          {
+            "tool": "request_lab",
+            "code_or_concept": "pregnancy_test"
+          }
+        ],
+        "priority": "critical",
+        "deadline": "Before final disposition when clinically indicated",
+        "source_or_guideline_refs": [
+          "source_case"
+        ]
+      },
+      {
+        "action_id": "a2",
+        "phase": "after_fact",
+        "trigger_fact_ids": [],
+        "acceptable_tool_calls": [
+          {
+            "tool": "request_imaging",
+            "code_or_concept": "pelvic_ultrasound"
+          }
+        ],
+        "priority": "critical",
+        "deadline": "Before final disposition when clinically indicated",
+        "source_or_guideline_refs": [
+          "source_case"
+        ]
+      },
+      {
+        "action_id": "a3",
+        "phase": "after_fact",
+        "trigger_fact_ids": [],
+        "acceptable_tool_calls": [
+          {
+            "tool": "request_procedure",
+            "code_or_concept": "laparoscopy"
+          }
+        ],
+        "priority": "critical",
+        "deadline": "Before final disposition when clinically indicated",
+        "source_or_guideline_refs": [
+          "source_case"
+        ]
+      },
+      {
+        "action_id": "a4",
+        "phase": "after_fact",
+        "trigger_fact_ids": [],
+        "acceptable_tool_calls": [
+          {
+            "tool": "disposition",
+            "code_or_concept": "surgery"
+          }
+        ],
+        "priority": "critical",
+        "deadline": "Before final disposition when clinically indicated",
+        "source_or_guideline_refs": [
+          "source_case"
+        ]
+      }
+    ],
+    "unnecessary_actions": [
+      {
+        "description": "Repeated or non-indicated testing/treatment without a stated clinical rationale",
+        "case_condition": "judged using information available at time of order"
+      }
+    ],
+    "medication_checks": [],
+    "procedure_checks": [
+      {
+        "description": "Hemorrhage and vascular implantation favor surgical planning with bleeding preparedness.",
+        "severity": "requires_manual_review"
+      }
+    ],
+    "disposition_acceptability": [
+      {
+        "category": "surgery",
+        "conditions": [
+          "Urgency and phase aligned with published acute care"
+        ]
+      }
+    ],
+    "safety_opportunities": [
+      {
+        "description": "Pregnancy test is essential in reproductive-age patient with abdominal pain.",
+        "source_or_guideline_refs": [
+          "source_case"
+        ],
+        "adjudication": "manual"
+      },
+      {
+        "description": "No intrauterine pregnancy with hCG around 10,130 IU/L requires urgent ectopic pregnancy evaluation.",
+        "source_or_guideline_refs": [
+          "source_case"
+        ],
+        "adjudication": "manual"
+      },
+      {
+        "description": "Hemorrhage and vascular implantation favor surgical planning with bleeding preparedness.",
+        "source_or_guideline_refs": [
+          "source_case"
+        ],
+        "adjudication": "manual"
+      }
+    ],
+    "guideline_refs": [
+      "rcog_ectopic_2016"
+    ],
+    "reviewer_signoff": {
+      "status": "pending",
+      "reviewer_id": null,
+      "signed_at": null
+    },
+    "guideline_concordance_status": "pending_clinician_review"
+  }
+}

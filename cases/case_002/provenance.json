@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_002",
+  "source_directory": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_002",
+  "source_sha256": {
+    "case_packet.json": "47460946199b1bf67dedd094512a14f20ee520180da8bebfa74addfd3d40d7f1",
+    "rubric.json": "926ac2cdb59df4c962ee7a102be6f994e54c130e999a1ddc1716fefc649b1fcd",
+    "source_metadata.yaml": "955ed6e8338219457f47f4627c1a66f7aaa9a33556616e21f0306777017d88b8",
+    "source.pdf": "21523f7a83638db5b4056e153fd73f727da541b8599f6bb8f3e7a0ddf9fe2bf9",
+    "ground_truth.json": "da7bf8de444bd11d1c4a0c38cf075f29ffe7d03af1e225560139758d8e0bae27"
+  },
+  "source_metadata_text": "case_id: case_002\npmcid: PMC12441332\ntitle: \"Isolated Atrial Myocarditis With Atrial Standstill\"\njournal: \"JACC Case Reports\"\npublication_year: 2025\ncitation: \"JACC Case Rep. 2025 Jul 9;30(18):104029. doi: 10.1016/j.jaccas.2025.104029\"\ndoi: \"10.1016/j.jaccas.2025.104029\"\narticle_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12441332/\npdf_url: \"https://pmc-oa-opendata.s3.amazonaws.com/PMC12441332.1/PMC12441332.1.pdf?md5=b35996fc4bef714e8bda287b75a02b04\"\nmetadata_url: \"https://pmc-oa-opendata.s3.amazonaws.com/metadata/PMC12441332.1.json\"\nlicense_code: \"CC BY-NC-ND\"\nlicense_url: \"https://creativecommons.org/licenses/by-nc-nd/4.0/\"\naccess_status: downloaded_verified_public_pdf\ncase_packet_status: pending_clinician_review\nretrieved_on: 2026-09-25\nsha256: 21523f7a83638db5b4056e153fd73f727da541b8599f6bb8f3e7a0ddf9fe2bf9\nbytes: 2389565\n",
+  "fact_provenance": [
+    {
+      "fact_id": "hpi_001",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "pmh_002",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "meds_003",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "ecg_005",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "lab_006",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "lab_007",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "lab_008",
+      "source_locators": [
+        "PDF p. 3, paragraph following Figure 2"
+      ]
+    },
+    {
+      "fact_id": "ecg_009",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "imaging_010",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "imaging_011",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_012",
+      "source_locators": [
+        "PDF p. 3, right-heart catheterization paragraph"
+      ]
+    },
+    {
+      "fact_id": "ecg_013",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "imaging_014",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    },
+    {
+      "fact_id": "ecg_015",
+      "source_locators": [
+        "Case presentation, investigation, management and follow-up, pp. 2–6"
+      ]
+    }
+  ],
+  "conversion_edits": [],
+  "original_fact_count": 15,
+  "history_fact_count": 3,
+  "observation_count": 12,
+  "validation_scope": "Faithful conversion of legacy extracted JSON; no new independent PDF transcription or physician adjudication."
+}

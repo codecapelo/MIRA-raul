@@ -1,0 +1,261 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_008",
+  "correct_diagnosis": "Spontaneous cervicothoracic spinal epidural hematoma with acute spinal cord compression",
+  "ground_truth": {
+    "schema_version": "1.0.0",
+    "case_id": "case_008",
+    "source_sha256": "7e1722266e418610714f6d418e2d22cc2a0970393ee056a1e3aca96b58eb5681",
+    "published_final_diagnosis": {
+      "label": "Spontaneous cervicothoracic spinal epidural hematoma with acute spinal cord compression",
+      "codes": [],
+      "source_locators": [
+        "Case presentation, pp. 2–3"
+      ]
+    },
+    "diagnostic_differential_from_source": [
+      "Spinal cord infarction",
+      "Transverse myelitis",
+      "Ischemic stroke",
+      "Other compressive spinal lesion"
+    ],
+    "source_treatment": [
+      {
+        "description": "Emergency neurosurgical decompression and hematoma evacuation",
+        "source_locators": [
+          "Case presentation, pp. 2–3"
+        ]
+      },
+      {
+        "description": "Close postoperative neurological monitoring",
+        "source_locators": [
+          "Case presentation, pp. 2–3"
+        ]
+      }
+    ],
+    "source_disposition": {
+      "category": "surgery",
+      "outcome": "Discharged after two days; full neurological recovery at follow-up.",
+      "source_locators": [
+        "Case presentation, pp. 2–3"
+      ]
+    },
+    "key_guideline_decisions": [
+      {
+        "guideline_ref": "acr_myelopathy_2020",
+        "status": "candidate_for_adjudication",
+        "note": "See docs/guideline_sources.yaml; applicability and alternative care require clinician review."
+      }
+    ],
+    "distractors": [
+      "Source describes a stroke mimic, but axial pain and bilateral sphincter/leg deficits localize to spinal cord."
+    ],
+    "critical_safety_points": [
+      "Treat evolving paraplegia and sphincter dysfunction as spinal emergency.",
+      "Urgent spine MRI and neurosurgical consultation.",
+      "Avoid empiric thrombolysis for presumed stroke without localization; anticoagulation may worsen hematoma."
+    ],
+    "fact_provenance": [
+      {
+        "fact_id": "hpi_001",
+        "source_locators": [
+          "Case presentation, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "hpi_002",
+        "source_locators": [
+          "Case presentation, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "physical_exam_003",
+        "source_locators": [
+          "Case presentation, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "physical_exam_004",
+        "source_locators": [
+          "Case presentation, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "lab_005",
+        "source_locators": [
+          "Case presentation, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "lab_006",
+        "source_locators": [
+          "Case presentation, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "imaging_007",
+        "source_locators": [
+          "Case presentation, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "imaging_008",
+        "source_locators": [
+          "Case presentation, pp. 2–3"
+        ]
+      },
+      {
+        "fact_id": "procedure_result_009",
+        "source_locators": [
+          "Case presentation, pp. 2–3"
+        ]
+      }
+    ],
+    "source_uncertainties": [
+      "Unspecified dose, timing or normal findings were not inferred.",
+      "Published management is descriptive and requires separate normative review."
+    ],
+    "clinician_signoff": {
+      "reviewer_id": null,
+      "signed_at": null,
+      "status": "pending"
+    }
+  },
+  "rubric": {
+    "schema_version": "1.0.0",
+    "case_id": "case_008",
+    "published_diagnosis_ref": "ground_truth.published_final_diagnosis",
+    "acceptable_diagnoses": [],
+    "critical_diagnoses_to_not_miss": [
+      "Acute spinal cord compression from epidural hematoma requiring urgent MRI and neurosurgical assessment"
+    ],
+    "expected_actions": [
+      {
+        "action_id": "a1",
+        "phase": "initial",
+        "trigger_fact_ids": [],
+        "acceptable_tool_calls": [
+          {
+            "tool": "request_physical_exam",
+            "code_or_concept": "neurologic"
+          }
+        ],
+        "priority": "critical",
+        "deadline": "Before final disposition when clinically indicated",
+        "source_or_guideline_refs": [
+          "source_case"
+        ]
+      },
+      {
+        "action_id": "a2",
+        "phase": "after_fact",
+        "trigger_fact_ids": [],
+        "acceptable_tool_calls": [
+          {
+            "tool": "request_imaging",
+            "code_or_concept": "spine_mri"
+          }
+        ],
+        "priority": "critical",
+        "deadline": "Before final disposition when clinically indicated",
+        "source_or_guideline_refs": [
+          "source_case"
+        ]
+      },
+      {
+        "action_id": "a3",
+        "phase": "after_fact",
+        "trigger_fact_ids": [],
+        "acceptable_tool_calls": [
+          {
+            "tool": "request_procedure",
+            "code_or_concept": "hematoma_evacuation"
+          }
+        ],
+        "priority": "critical",
+        "deadline": "Before final disposition when clinically indicated",
+        "source_or_guideline_refs": [
+          "source_case"
+        ]
+      },
+      {
+        "action_id": "a4",
+        "phase": "after_fact",
+        "trigger_fact_ids": [],
+        "acceptable_tool_calls": [
+          {
+            "tool": "disposition",
+            "code_or_concept": "surgery"
+          }
+        ],
+        "priority": "critical",
+        "deadline": "Before final disposition when clinically indicated",
+        "source_or_guideline_refs": [
+          "source_case"
+        ]
+      }
+    ],
+    "unnecessary_actions": [
+      {
+        "description": "Repeated or non-indicated testing/treatment without a stated clinical rationale",
+        "case_condition": "judged using information available at time of order"
+      }
+    ],
+    "medication_checks": [
+      {
+        "description": "Avoid empiric thrombolysis for presumed stroke without localization; anticoagulation may worsen hematoma.",
+        "severity": "requires_manual_review"
+      }
+    ],
+    "procedure_checks": [
+      {
+        "description": "Urgent spine MRI and neurosurgical consultation.",
+        "severity": "requires_manual_review"
+      },
+      {
+        "description": "Avoid empiric thrombolysis for presumed stroke without localization; anticoagulation may worsen hematoma.",
+        "severity": "requires_manual_review"
+      }
+    ],
+    "disposition_acceptability": [
+      {
+        "category": "surgery",
+        "conditions": [
+          "Urgency and phase aligned with published acute care"
+        ]
+      }
+    ],
+    "safety_opportunities": [
+      {
+        "description": "Treat evolving paraplegia and sphincter dysfunction as spinal emergency.",
+        "source_or_guideline_refs": [
+          "source_case"
+        ],
+        "adjudication": "manual"
+      },
+      {
+        "description": "Urgent spine MRI and neurosurgical consultation.",
+        "source_or_guideline_refs": [
+          "source_case"
+        ],
+        "adjudication": "manual"
+      },
+      {
+        "description": "Avoid empiric thrombolysis for presumed stroke without localization; anticoagulation may worsen hematoma.",
+        "source_or_guideline_refs": [
+          "source_case"
+        ],
+        "adjudication": "manual"
+      }
+    ],
+    "guideline_refs": [
+      "acr_myelopathy_2020"
+    ],
+    "reviewer_signoff": {
+      "status": "pending",
+      "reviewer_id": null,
+      "signed_at": null
+    },
+    "guideline_concordance_status": "pending_clinician_review"
+  }
+}

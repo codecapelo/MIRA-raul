@@ -1,0 +1,357 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_001",
+  "correct_diagnosis": "Infective coronary pseudoaneurysm with stent disruption causing cardiac tamponade in MRSA infective endocarditis",
+  "ground_truth": {
+    "schema_version": "1.0.0",
+    "case_id": "case_001",
+    "source_sha256": "2d77401170e241b4b75e60c233dd3d37dcc474949b0e1e17e68f6fdbfc73d5e8",
+    "published_final_diagnosis": {
+      "label": "Infective coronary pseudoaneurysm with stent disruption causing cardiac tamponade in MRSA infective endocarditis",
+      "codes": [],
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    "diagnostic_differential_from_source": [
+      "Acute coronary syndrome",
+      "Pericardial tamponade from another cause",
+      "Coronary stent thrombosis"
+    ],
+    "source_treatment": [
+      {
+        "description": "Emergency pericardiocentesis",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      },
+      {
+        "description": "Covered coronary stent",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      },
+      {
+        "description": "Coronary artery bypass grafting",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      },
+      {
+        "description": "Leadless pacemaker removal and epicardial pacemaker implantation",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      },
+      {
+        "description": "Approximately two months of antibiotics",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      }
+    ],
+    "source_disposition": {
+      "category": "unknown",
+      "outcome": "Four-month hospitalization; discharged home stable.",
+      "source_locators": [
+        "Case summary and main text, pp. 1–2"
+      ]
+    },
+    "key_guideline_decisions": [
+      {
+        "guideline_ref": "esc_endocarditis_2023",
+        "status": "candidate_for_adjudication",
+        "note": "See docs/guideline_sources.yaml; applicability and alternative care require clinician review."
+      },
+      {
+        "guideline_ref": "esc_pericardial_2025",
+        "status": "candidate_for_adjudication",
+        "note": "See docs/guideline_sources.yaml; applicability and alternative care require clinician review."
+      }
+    ],
+    "distractors": [
+      "Chest pain and new regional wall-motion abnormality can resemble uncomplicated acute coronary syndrome."
+    ],
+    "critical_safety_points": [
+      "Recognize tamponade and shock; urgent drainage.",
+      "Avoid delay in coronary and structural evaluation after stabilization.",
+      "Account for active infection and dialysis in medication and procedure decisions."
+    ],
+    "fact_provenance": [
+      {
+        "fact_id": "pmh_001",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      },
+      {
+        "fact_id": "pmh_002",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      },
+      {
+        "fact_id": "hpi_003",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      },
+      {
+        "fact_id": "hpi_004",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      },
+      {
+        "fact_id": "physical_exam_005",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      },
+      {
+        "fact_id": "lab_006",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      },
+      {
+        "fact_id": "lab_007",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      },
+      {
+        "fact_id": "ecg_008",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      },
+      {
+        "fact_id": "imaging_009",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      },
+      {
+        "fact_id": "ecg_010",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      },
+      {
+        "fact_id": "procedure_result_011",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      },
+      {
+        "fact_id": "procedure_result_012",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      },
+      {
+        "fact_id": "microbiology_013",
+        "source_locators": [
+          "Case summary and main text, pp. 1–2"
+        ]
+      }
+    ],
+    "source_uncertainties": [
+      "Unspecified dose, timing or normal findings were not inferred.",
+      "Published management is descriptive and requires separate normative review.",
+      "The source does not identify a specific ICU/ward placement during the acute event; ICU is a clinical option, not a published disposition fact."
+    ],
+    "clinician_signoff": {
+      "reviewer_id": null,
+      "signed_at": null,
+      "status": "pending"
+    }
+  },
+  "rubric": {
+    "schema_version": "1.0.0",
+    "case_id": "case_001",
+    "published_diagnosis_ref": "ground_truth.published_final_diagnosis",
+    "acceptable_diagnoses": [],
+    "critical_diagnoses_to_not_miss": [
+      "Cardiac tamponade with shock",
+      "Complicated infective endocarditis with coronary/pericardial involvement"
+    ],
+    "expected_actions": [
+      {
+        "action_id": "a1",
+        "phase": "initial",
+        "trigger_fact_ids": [],
+        "acceptable_tool_calls": [
+          {
+            "tool": "request_ecg_or_test",
+            "code_or_concept": "echo"
+          }
+        ],
+        "priority": "critical",
+        "deadline": "Before final disposition when clinically indicated",
+        "source_or_guideline_refs": [
+          "source_case"
+        ]
+      },
+      {
+        "action_id": "a2",
+        "phase": "after_fact",
+        "trigger_fact_ids": [],
+        "acceptable_tool_calls": [
+          {
+            "tool": "request_procedure",
+            "code_or_concept": "pericardiocentesis"
+          }
+        ],
+        "priority": "critical",
+        "deadline": "Before final disposition when clinically indicated",
+        "source_or_guideline_refs": [
+          "source_case"
+        ]
+      },
+      {
+        "action_id": "a3",
+        "phase": "after_fact",
+        "trigger_fact_ids": [],
+        "acceptable_tool_calls": [
+          {
+            "tool": "request_imaging",
+            "code_or_concept": "coronary_angiography"
+          },
+          {
+            "tool": "request_procedure",
+            "code_or_concept": "coronary_angiography"
+          }
+        ],
+        "priority": "critical",
+        "deadline": "Before final disposition when clinically indicated",
+        "source_or_guideline_refs": [
+          "source_case"
+        ]
+      },
+      {
+        "action_id": "a4",
+        "phase": "after_fact",
+        "trigger_fact_ids": [],
+        "acceptable_tool_calls": [
+          {
+            "tool": "request_procedure",
+            "code_or_concept": "covered_stent"
+          }
+        ],
+        "priority": "optional",
+        "deadline": "Only after angiographic definition, multidisciplinary review and explicit clinical indication; covered stent is source treatment, not a universal mandate.",
+        "source_or_guideline_refs": [
+          "source_case"
+        ]
+      },
+      {
+        "action_id": "a5",
+        "phase": "after_fact",
+        "trigger_fact_ids": [],
+        "acceptable_tool_calls": [
+          {
+            "tool": "prescribe_medication",
+            "code_or_concept": "antibiotics"
+          }
+        ],
+        "priority": "critical",
+        "deadline": "Before final disposition when clinically indicated",
+        "source_or_guideline_refs": [
+          "source_case"
+        ]
+      },
+      {
+        "action_id": "a6",
+        "phase": "after_fact",
+        "trigger_fact_ids": [],
+        "acceptable_tool_calls": [
+          {
+            "tool": "disposition",
+            "code_or_concept": "ICU"
+          },
+          {
+            "tool": "disposition",
+            "code_or_concept": "surgery"
+          }
+        ],
+        "priority": "recommended",
+        "deadline": "ICU after stabilization or surgery as immediate handoff may be appropriate; source did not name a unit, so require physician adjudication.",
+        "source_or_guideline_refs": [
+          "esc_pericardial_2025",
+          "source_case"
+        ]
+      }
+    ],
+    "unnecessary_actions": [
+      {
+        "description": "Repeated or non-indicated testing/treatment without a stated clinical rationale",
+        "case_condition": "judged using information available at time of order"
+      }
+    ],
+    "medication_checks": [
+      {
+        "description": "Account for active infection and dialysis in medication and procedure decisions.",
+        "severity": "requires_manual_review"
+      }
+    ],
+    "procedure_checks": [
+      {
+        "description": "Recognize tamponade and shock; urgent drainage.",
+        "severity": "requires_manual_review"
+      },
+      {
+        "description": "Account for active infection and dialysis in medication and procedure decisions.",
+        "severity": "requires_manual_review"
+      }
+    ],
+    "disposition_acceptability": [
+      {
+        "category": "ICU",
+        "conditions": [
+          "Acceptable for cardiogenic shock/tamponade after emergency stabilization; unit is not explicit in source."
+        ]
+      },
+      {
+        "category": "surgery",
+        "conditions": [
+          "Acceptable as immediate handoff for urgent coronary/pericardial source control, with critical-care monitoring."
+        ]
+      }
+    ],
+    "safety_opportunities": [
+      {
+        "description": "Recognize tamponade and shock; urgent drainage.",
+        "source_or_guideline_refs": [
+          "source_case"
+        ],
+        "adjudication": "manual"
+      },
+      {
+        "description": "Avoid delay in coronary and structural evaluation after stabilization.",
+        "source_or_guideline_refs": [
+          "source_case"
+        ],
+        "adjudication": "manual"
+      },
+      {
+        "description": "Account for active infection and dialysis in medication and procedure decisions.",
+        "source_or_guideline_refs": [
+          "source_case"
+        ],
+        "adjudication": "manual"
+      }
+    ],
+    "guideline_refs": [
+      "esc_endocarditis_2023",
+      "esc_pericardial_2025"
+    ],
+    "reviewer_signoff": {
+      "status": "pending",
+      "reviewer_id": null,
+      "signed_at": null
+    },
+    "guideline_concordance_status": "pending_clinician_review"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_001",
+  "initial": {
+    "age_years": 65,
+    "sex_recorded": "male",
+    "chief_complaint": "New chest pain during inpatient treatment for bloodstream infection."
+  },
+  "presenting_complaint": "New chest pain during inpatient treatment for bloodstream infection.",
+  "history_freetext": "Hemodialysis for diabetic nephropathy; end-stage renal disease.\nPrior leadless pacemaker and drug-eluting stent in the left anterior descending artery for stable angina.\nMethicillin-resistant Staphylococcus aureus bacteremia complicated by infective endocarditis; receiving intravenous antibiotics.\nChest pain developed during treatment for the bloodstream infection.",
+  "history_facts": [
+    {
+      "fact_id": "pmh_001",
+      "domain": "pmh",
+      "value": "Hemodialysis for diabetic nephropathy; end-stage renal disease.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_002",
+      "domain": "pmh",
+      "value": "Prior leadless pacemaker and drug-eluting stent in the left anterior descending artery for stable angina.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_003",
+      "domain": "hpi",
+      "value": "Methicillin-resistant Staphylococcus aureus bacteremia complicated by infective endocarditis; receiving intravenous antibiotics.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_004",
+      "domain": "hpi",
+      "value": "Chest pain developed during treatment for the bloodstream infection.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

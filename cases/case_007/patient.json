@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_007",
+  "initial": {
+    "age_years": 69,
+    "sex_recorded": "male",
+    "chief_complaint": "Progressive jaundice, dark stools, lethargy and lightheadedness."
+  },
+  "presenting_complaint": "Progressive jaundice, dark stools, lethargy and lightheadedness.",
+  "history_freetext": "Four days of progressive jaundice and dark stools with lethargy and lightheadedness; no reported bleeding, fever, cough or abdominal pain.\nAdvanced lung adenocarcinoma with adrenal and subdiaphragmatic metastases; high tumor PD-L1 expression.\nFirst pembrolizumab 400 mg IV dose 14 days before presentation.\nGastritis, hyperlipidemia, previous cholecystectomy; former smoker.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Four days of progressive jaundice and dark stools with lethargy and lightheadedness; no reported bleeding, fever, cough or abdominal pain.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_002",
+      "domain": "pmh",
+      "value": "Advanced lung adenocarcinoma with adrenal and subdiaphragmatic metastases; high tumor PD-L1 expression.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "meds_003",
+      "domain": "meds",
+      "value": "First pembrolizumab 400 mg IV dose 14 days before presentation.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_004",
+      "domain": "pmh",
+      "value": "Gastritis, hyperlipidemia, previous cholecystectomy; former smoker.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

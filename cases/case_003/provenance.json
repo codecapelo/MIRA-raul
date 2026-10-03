@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_003",
+  "source_directory": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_003",
+  "source_sha256": {
+    "case_packet.json": "28911a473132aaf4b3215d10f63dcbf84099c70d426506d185f10dbd0a5020a3",
+    "rubric.json": "1898014a94c0eaeac83fe7e37bf49c7425b15068bbaac37ba0ba726dd3948d9b",
+    "source_metadata.yaml": "71e4afff9e023e1e9c0bd5d1fefe29e15cff1d02e43f3d60bca276ad3b41e60b",
+    "source.pdf": "0d0586082ebde45b92c57c79023ce1c58d1e81606448916376cc0801c76a488f",
+    "ground_truth.json": "6614d0efb809a7997bb99c4aedeac478c2d5f0d44f34d766a4f49f9100ecdb6d"
+  },
+  "source_metadata_text": "case_id: case_003\npmcid: PMC13217375\ntitle: \"Plasma metagenomic cfDNA sequencing identifies pathogens in culture-negative sepsis following urinary pouch rupture\"\njournal: \"BMJ Case Reports\"\npublication_year: 2026\ncitation: \"BMJ Case Rep. 2026 May 27;19(5):e267878. doi: 10.1136/bcr-2025-267878\"\ndoi: \"10.1136/bcr-2025-267878\"\narticle_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC13217375/\npdf_url: \"https://pmc-oa-opendata.s3.amazonaws.com/PMC13217375.1/PMC13217375.1.pdf?md5=1917907f36c217e831c3c1a5e5a945fc\"\nmetadata_url: \"https://pmc-oa-opendata.s3.amazonaws.com/metadata/PMC13217375.1.json\"\nlicense_code: \"CC BY-NC\"\nlicense_url: \"https://creativecommons.org/licenses/by-nc/4.0/\"\naccess_status: downloaded_verified_public_pdf\ncase_packet_status: pending_clinician_review\nretrieved_on: 2026-09-25\nsha256: 0d0586082ebde45b92c57c79023ce1c58d1e81606448916376cc0801c76a488f\nbytes: 2416890\n",
+  "fact_provenance": [
+    {
+      "fact_id": "pmh_001",
+      "source_locators": [
+        "PDF p. 1, case presentation"
+      ]
+    },
+    {
+      "fact_id": "hpi_002",
+      "source_locators": [
+        "PDF p. 1, case presentation"
+      ]
+    },
+    {
+      "fact_id": "hpi_003",
+      "source_locators": [
+        "PDF p. 1, case presentation"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "source_locators": [
+        "PDF p. 1, case presentation"
+      ]
+    },
+    {
+      "fact_id": "imaging_005",
+      "source_locators": [
+        "PDF p. 2, case presentation/investigations; allergy sequence also Table 2 on PDF p. 4"
+      ]
+    },
+    {
+      "fact_id": "imaging_006",
+      "source_locators": [
+        "PDF p. 2, case presentation/investigations; allergy sequence also Table 2 on PDF p. 4"
+      ]
+    },
+    {
+      "fact_id": "lab_007",
+      "source_locators": [
+        "PDF p. 3, Table 1"
+      ]
+    },
+    {
+      "fact_id": "lab_008",
+      "source_locators": [
+        "PDF p. 3, Table 1"
+      ]
+    },
+    {
+      "fact_id": "lab_009",
+      "source_locators": [
+        "PDF p. 3, Table 1"
+      ]
+    },
+    {
+      "fact_id": "lab_010",
+      "source_locators": [
+        "PDF p. 3, Table 1"
+      ]
+    },
+    {
+      "fact_id": "lab_011",
+      "source_locators": [
+        "PDF p. 3, Table 1"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_012",
+      "source_locators": [
+        "PDF p. 2, case presentation/investigations; allergy sequence also Table 2 on PDF p. 4"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_013",
+      "source_locators": [
+        "PDF p. 2, case presentation/investigations; allergy sequence also Table 2 on PDF p. 4"
+      ]
+    },
+    {
+      "fact_id": "microbiology_014",
+      "source_locators": [
+        "PDF p. 4, Table 2 and investigations on PDF pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "microbiology_015",
+      "source_locators": [
+        "PDF p. 4, Table 2 and investigations on PDF pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "microbiology_016",
+      "source_locators": [
+        "PDF p. 4, Table 2 and investigations on PDF pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "other_test_017",
+      "source_locators": [
+        "PDF pp. 1–2 and p. 4, research cfDNA description and Table 2"
+      ]
+    },
+    {
+      "fact_id": "allergies_018",
+      "source_locators": [
+        "PDF p. 2, case presentation/investigations; allergy sequence also Table 2 on PDF p. 4"
+      ]
+    }
+  ],
+  "conversion_edits": [],
+  "original_fact_count": 18,
+  "history_fact_count": 3,
+  "observation_count": 15,
+  "validation_scope": "Faithful conversion of legacy extracted JSON; no new independent PDF transcription or physician adjudication."
+}

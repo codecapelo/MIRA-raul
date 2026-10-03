@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_004",
+  "initial": {
+    "age_years": 63,
+    "sex_recorded": "female",
+    "chief_complaint": "Recurrent dyspnea days after drainage of a right pleural effusion."
+  },
+  "presenting_complaint": "Recurrent dyspnea days after drainage of a right pleural effusion.",
+  "history_freetext": "Two weeks of dyspnea and cough, briefly improved after an initial thoracentesis removed 1.5 L of milky right pleural fluid; recurrent dyspnea led to an ED return days later. No recent trauma or thoracic surgery.\n45 pack-year smoking history.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Two weeks of dyspnea and cough, briefly improved after an initial thoracentesis removed 1.5 L of milky right pleural fluid; recurrent dyspnea led to an ED return days later. No recent trauma or thoracic surgery.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_002",
+      "domain": "pmh",
+      "value": "45 pack-year smoking history.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

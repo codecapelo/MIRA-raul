@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_004",
+  "observations": [
+    {
+      "fact_id": "physical_exam_003",
+      "domain": "physical_exam",
+      "value": "At the initial ED visit, tachypnea without hypoxemia and reduced right-sided breath sounds were reported; repeat-visit examination details were not supplied.",
+      "available_at": "time_zero",
+      "name": "Respiratory",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_004",
+      "domain": "imaging",
+      "value": "Imaging at ED return showed recurrent right pleural effusion.",
+      "available_at": "time_zero",
+      "name": "Chest radiograph",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "procedure_result_005",
+      "domain": "procedure_result",
+      "value": "Repeat thoracentesis on ED return removed 1.2 L of fluid with characteristics similar to the initial milky effusion.",
+      "available_at": "time_zero",
+      "name": "Thoracentesis and fluid examination",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_006",
+      "domain": "lab",
+      "value": "Initial thoracentesis pleural fluid (available as prior record): triglycerides 434 mg/dL, cholesterol 154 mg/dL, 82% lymphocytes, pH 7.48, protein 2.4 g/dL, LDH 83 U/L; cytology without malignant cells.",
+      "available_at": "time_zero",
+      "name": "Pleural fluid studies",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "microbiology_007",
+      "domain": "microbiology",
+      "value": "Initial thoracentesis pleural fluid: Gram stain and culture negative.",
+      "available_at": "time_zero",
+      "name": "Pleural fluid culture",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_008",
+      "domain": "imaging",
+      "value": "CT: bilateral hilar and mediastinal adenopathy, severe right-middle-lobe bronchial narrowing, partial atelectasis and infiltrates.",
+      "available_at": "time_zero",
+      "name": "Chest CT",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "domain": "procedure_result",
+      "value": "Bronchoscopy with endobronchial ultrasound guided biopsy established extensive-stage small cell lung carcinoma.",
+      "available_at": "time_zero",
+      "name": "Endobronchial ultrasound guided biopsy",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "microbiology_010",
+      "domain": "microbiology",
+      "value": "Much later, during febrile deterioration, blood cultures grew Pseudomonas aeruginosa.",
+      "available_at": "followup",
+      "name": "Blood cultures",
+      "prerequisites": [
+        "followup"
+      ],
+      "unavailable_for_immediate_care": false
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "Each observation requires a requested examination/test/procedure. Non-time_zero gates must additionally be satisfied; retrospective results are never available for immediate care. No unreported results may be invented."
+}

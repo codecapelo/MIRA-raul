@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_003",
+  "initial": {
+    "age_years": null,
+    "sex_recorded": "female",
+    "chief_complaint": "Severe lower abdominal pain and dyspnea after catheter drainage failure.",
+    "age_band": "early 30s"
+  },
+  "presenting_complaint": "Severe lower abdominal pain and dyspnea after catheter drainage failure.",
+  "history_freetext": "Lumbosacral meningomyelocele; ileocecal augmented bladder and catheterizable stoma; later radical cystectomy for bladder cancer with continent MAINZ pouch I urinary diversion.\nIncreasing difficulty catheterizing for weeks; indwelling pouch catheter placed for continuous drainage. Drainage failed the night before presentation, with reduced urine output.\nSevere lower abdominal pain and progressive dyspnea followed catheter dysfunction.",
+  "history_facts": [
+    {
+      "fact_id": "pmh_001",
+      "domain": "pmh",
+      "value": "Lumbosacral meningomyelocele; ileocecal augmented bladder and catheterizable stoma; later radical cystectomy for bladder cancer with continent MAINZ pouch I urinary diversion.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "value": "Increasing difficulty catheterizing for weeks; indwelling pouch catheter placed for continuous drainage. Drainage failed the night before presentation, with reduced urine output.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_003",
+      "domain": "hpi",
+      "value": "Severe lower abdominal pain and progressive dyspnea followed catheter dysfunction.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

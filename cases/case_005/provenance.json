@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_005",
+  "source_directory": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_005",
+  "source_sha256": {
+    "case_packet.json": "9c74dd4600b7b9ea15fe1df111674e7357b3ff842dc9be7b848b7752b46d5828",
+    "rubric.json": "8f122fa5c559994d45ccc5152eec2bc90076f7be032bdf2133d3363d9f09a492",
+    "source_metadata.yaml": "cf8892e62cd30a90844de6411adc9107e65922e18fc4c0172b2cbf519067b38d",
+    "source.pdf": "7d2f73cd7ec9b01ea923baad0e35a434d516f0c163e03e79fd284edc7c0589c6",
+    "ground_truth.json": "393369ddace563b7c5b5ab61a678e4c214a58e8c8214b9acc6e953c6d2116c75"
+  },
+  "source_metadata_text": "case_id: case_005\npmcid: PMC11780579\ntitle: \"Melanoma of the pleura mimicking malignant mesothelioma: a rare and rapidly progressive pleural disease\"\njournal: \"BMJ Case Reports\"\npublication_year: 2025\ncitation: \"BMJ Case Rep. 2025 Jan 29;18(1):e262662. doi: 10.1136/bcr-2024-262662\"\ndoi: \"10.1136/bcr-2024-262662\"\narticle_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11780579/\npdf_url: \"https://pmc-oa-opendata.s3.amazonaws.com/PMC11780579.1/PMC11780579.1.pdf?md5=143ac40f31f66fe8518e5057f6621adb\"\nmetadata_url: \"https://pmc-oa-opendata.s3.amazonaws.com/metadata/PMC11780579.1.json\"\nlicense_code: \"CC BY-NC\"\nlicense_url: \"https://creativecommons.org/licenses/by-nc/4.0/\"\naccess_status: downloaded_verified_public_pdf\ncase_packet_status: pending_clinician_review\nretrieved_on: 2026-09-25\nsha256: 7d2f73cd7ec9b01ea923baad0e35a434d516f0c163e03e79fd284edc7c0589c6\nbytes: 1022206\n",
+  "fact_provenance": [
+    {
+      "fact_id": "hpi_001",
+      "source_locators": [
+        "Case narrative and discussion, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "pmh_002",
+      "source_locators": [
+        "Case narrative and discussion, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "meds_003",
+      "source_locators": [
+        "Case narrative and discussion, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "source_locators": [
+        "Case narrative and discussion, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_005",
+      "source_locators": [
+        "Case narrative and discussion, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "lab_006",
+      "source_locators": [
+        "Case narrative and discussion, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "imaging_007",
+      "source_locators": [
+        "Case narrative and discussion, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "imaging_008",
+      "source_locators": [
+        "Case narrative and discussion, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "source_locators": [
+        "Case narrative and discussion, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_010",
+      "source_locators": [
+        "Case narrative and discussion, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_011",
+      "source_locators": [
+        "Case narrative and discussion, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "imaging_012",
+      "source_locators": [
+        "PDF p. 1, post-biopsy staging and molecular characterization"
+      ]
+    },
+    {
+      "fact_id": "other_test_013",
+      "source_locators": [
+        "PDF p. 1, post-biopsy staging and molecular characterization"
+      ]
+    }
+  ],
+  "conversion_edits": [],
+  "original_fact_count": 13,
+  "history_fact_count": 3,
+  "observation_count": 10,
+  "validation_scope": "Faithful conversion of legacy extracted JSON; no new independent PDF transcription or physician adjudication."
+}

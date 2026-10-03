@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_005",
+  "initial": {
+    "age_years": null,
+    "sex_recorded": "female",
+    "chief_complaint": "One week of dyspnea and a new dry cough.",
+    "age_band": "60s"
+  },
+  "presenting_complaint": "One week of dyspnea and a new dry cough.",
+  "history_freetext": "Woman in her 60s with one week of dyspnea and new nonproductive cough.\nRheumatoid arthritis and stable connective-tissue-disease-associated interstitial lung disease for five years; asbestos-material exposure.\nStable baricitinib and methotrexate regimen.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Woman in her 60s with one week of dyspnea and new nonproductive cough.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_002",
+      "domain": "pmh",
+      "value": "Rheumatoid arthritis and stable connective-tissue-disease-associated interstitial lung disease for five years; asbestos-material exposure.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "meds_003",
+      "domain": "meds",
+      "value": "Stable baricitinib and methotrexate regimen.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

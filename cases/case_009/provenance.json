@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_009",
+  "source_directory": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_009",
+  "source_sha256": {
+    "case_packet.json": "64015276fe6bae571c51cff060ee12a62a57b0bd15914ec0b1dacd5aab41db0d",
+    "rubric.json": "c7e4ad6f3cb4bcc6f6b430e551c3b37649a2941c3d65cd205dea2c92c4c6a0c2",
+    "source_metadata.yaml": "a6ec07cddfdf5af267d2ce8eace7a3130d9dc12fdefea48fd70ad2bbe4e7af82",
+    "source.pdf": "6da7ff2ac3dd3295762fba7a78571f2eb01eb9c8e0d45a6da7cb27731cea5eca",
+    "ground_truth.json": "1263e67362ac2a86686ac6af1aafa3990a8eb611cc7c7b8ee575c858aab4d539"
+  },
+  "source_metadata_text": "case_id: case_009\npmcid: PMC13092731\ntitle: \"Migrated biliary stent causing Meckel’s diverticulitis and ileal perforation: a rare cause of acute abdomen\"\njournal: \"Journal of Surgical Case Reports\"\npublication_year: 2026\ncitation: \"J Surg Case Rep. 2026 Apr 20;2026(4):rjag282. doi: 10.1093/jscr/rjag282\"\ndoi: \"10.1093/jscr/rjag282\"\narticle_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC13092731/\npdf_url: \"https://pmc-oa-opendata.s3.amazonaws.com/PMC13092731.1/PMC13092731.1.pdf?md5=fb13d6a59e881d88d2969e8226769a5d\"\nmetadata_url: \"https://pmc-oa-opendata.s3.amazonaws.com/metadata/PMC13092731.1.json\"\nlicense_code: \"CC BY-NC\"\nlicense_url: \"https://creativecommons.org/licenses/by-nc/4.0/\"\naccess_status: downloaded_verified_public_pdf\ncase_packet_status: pending_clinician_review\nretrieved_on: 2026-09-25\nsha256: 6da7ff2ac3dd3295762fba7a78571f2eb01eb9c8e0d45a6da7cb27731cea5eca\nbytes: 503969\n",
+  "fact_provenance": [
+    {
+      "fact_id": "hpi_001",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "pmh_002",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "pmh_003",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "imaging_005",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "imaging_006",
+      "source_locators": [
+        "PDF pp. 1–2, preoperative CT description in case presentation"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_007",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_008",
+      "source_locators": [
+        "Case presentation, pp. 1–2"
+      ]
+    }
+  ],
+  "conversion_edits": [],
+  "original_fact_count": 8,
+  "history_fact_count": 3,
+  "observation_count": 5,
+  "validation_scope": "Faithful conversion of legacy extracted JSON; no new independent PDF transcription or physician adjudication."
+}

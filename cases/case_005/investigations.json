@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_005",
+  "observations": [
+    {
+      "fact_id": "physical_exam_004",
+      "domain": "physical_exam",
+      "value": "Hypoxemic, requiring 4 L/min nasal oxygen for saturation >92%; diminished left basal breath sounds and diffuse fine inspiratory crackles; other vitals normal.",
+      "available_at": "time_zero",
+      "name": "Respiratory",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "physical_exam_005",
+      "domain": "physical_exam",
+      "value": "No palpable lymph nodes or hepatosplenomegaly.",
+      "available_at": "time_zero",
+      "name": "General",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_006",
+      "domain": "lab",
+      "value": "Mild thrombocytosis; inflammatory markers not significantly elevated; liver, thyroid and kidney tests unremarkable.",
+      "available_at": "time_zero",
+      "name": "Blood panel",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_007",
+      "domain": "imaging",
+      "value": "Moderate to large homogeneous left pleural effusion.",
+      "available_at": "time_zero",
+      "name": "Thoracic ultrasound",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_008",
+      "domain": "imaging",
+      "value": "Postcontrast chest CT: moderate left effusion and nodular circumferential pleural thickening, including mediastinal pleura.",
+      "available_at": "time_zero",
+      "name": "Chest CT",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "domain": "procedure_result",
+      "value": "High-volume thoracentesis: atypical epithelioid and spindle cells; SOX10, Melan-A and S100 positive; calretinin, EMA, p40 and WT1 negative.",
+      "available_at": "time_zero",
+      "name": "Thoracentesis and fluid examination",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "procedure_result_010",
+      "domain": "procedure_result",
+      "value": "CT-guided pleural biopsy confirmed cells positive for SOX10 and Melan-A.",
+      "available_at": "time_zero",
+      "name": "Pleural biopsy",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "physical_exam_011",
+      "domain": "physical_exam",
+      "value": "Dermatologic and ocular examinations found no suspicious primary lesion.",
+      "available_at": "time_zero",
+      "name": "Skin eye",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_012",
+      "domain": "imaging",
+      "value": "PET: intensely FDG-avid circumferential pleural disease; no cutaneous or subcutaneous primary identified.",
+      "available_at": "after_procedure:pleural_biopsy",
+      "name": "PET imaging",
+      "prerequisites": [
+        "after_procedure:pleural_biopsy"
+      ],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "other_test_013",
+      "domain": "other_test",
+      "value": "BRAF and KIT wild type.",
+      "available_at": "after_procedure:pleural_biopsy",
+      "name": "Tumor genetic testing",
+      "prerequisites": [
+        "after_procedure:pleural_biopsy"
+      ],
+      "unavailable_for_immediate_care": false
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "Each observation requires a requested examination/test/procedure. Non-time_zero gates must additionally be satisfied; retrospective results are never available for immediate care. No unreported results may be invented."
+}

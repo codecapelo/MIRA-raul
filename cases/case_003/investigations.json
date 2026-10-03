@@ -1,0 +1,159 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_003",
+  "observations": [
+    {
+      "fact_id": "physical_exam_004",
+      "domain": "physical_exam",
+      "value": "Cardiopulmonary decompensation on presentation; specific initial preoperative vital signs not reported.",
+      "available_at": "time_zero",
+      "name": "Hemodynamics",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_005",
+      "domain": "imaging",
+      "value": "Urgent contrast CT with retrograde pouch contrast: large left laterodorsal reservoir defect, contrast leakage into peritoneum and free intraperitoneal fluid.",
+      "available_at": "time_zero",
+      "name": "Abdominal CT",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_006",
+      "domain": "imaging",
+      "value": "Chest CT excluded pulmonary embolism and right-heart strain.",
+      "available_at": "time_zero",
+      "name": "Chest CT",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_007",
+      "domain": "lab",
+      "value": "Before surgery: WBC 15.3×10^9/L, hemoglobin 143 g/L, platelets 513×10^9/L.",
+      "available_at": "time_zero",
+      "name": "Complete blood count",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_008",
+      "domain": "lab",
+      "value": "Before surgery: sodium 138 mmol/L, creatinine 1.08 mg/dL, eGFR 68 mL/min/1.73 m².",
+      "available_at": "time_zero",
+      "name": "Blood chemistry",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_009",
+      "domain": "lab",
+      "value": "CRP 1.7 mg/L before surgery.",
+      "available_at": "time_zero",
+      "name": "Inflammatory markers",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_010",
+      "domain": "lab",
+      "value": "CRP 361 mg/L and procalcitonin 4.7 ng/mL on ICU day 2.",
+      "available_at": "day_2",
+      "name": "Follow-up inflammatory markers",
+      "prerequisites": [
+        "day_2"
+      ],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_011",
+      "domain": "lab",
+      "value": "Postoperative ICU day 1 lactate 4.7 mmol/L.",
+      "available_at": "after_procedure:laparotomy",
+      "name": "Lactate",
+      "prerequisites": [
+        "after_procedure:laparotomy"
+      ],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "procedure_result_012",
+      "domain": "procedure_result",
+      "value": "Emergency laparotomy confirmed pouch rupture, which was repaired; pouch catheter fixed and nasogastric tube placed.",
+      "available_at": "time_zero",
+      "name": "Exploratory laparotomy",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "physical_exam_013",
+      "domain": "physical_exam",
+      "value": "ICU after surgery: GCS 14, HR 120/min, systolic BP 110 mm Hg, SpO2 98% on 3 L oxygen; abdomen soft and moderately distended.",
+      "available_at": "after_procedure:laparotomy",
+      "name": "Postoperative",
+      "prerequisites": [
+        "after_procedure:laparotomy"
+      ],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "microbiology_014",
+      "domain": "microbiology",
+      "value": "Two blood-culture sets on ICU day 2 remained negative after five days.",
+      "available_at": "day_7",
+      "name": "Blood cultures",
+      "prerequisites": [
+        "day_7"
+      ],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "microbiology_015",
+      "domain": "microbiology",
+      "value": "Drain fluid collected day 2 later grew low-quantity Klebsiella oxytoca; later sample grew vanB Enterococcus faecium.",
+      "available_at": "followup",
+      "name": "Drain fluid culture",
+      "prerequisites": [
+        "followup"
+      ],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "microbiology_016",
+      "domain": "microbiology",
+      "value": "Pouch urine on day 7 grew low-concentration Pseudomonas aeruginosa.",
+      "available_at": "day_9",
+      "name": "Urine culture",
+      "prerequisites": [
+        "day_9"
+      ],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "other_test_017",
+      "domain": "other_test",
+      "value": "Research plasma microbial cfDNA identified Klebsiella and Pseudomonas retrospectively; result was not available for immediate care.",
+      "available_at": "retrospective",
+      "name": "Retrospective research microbial cell-free DNA",
+      "prerequisites": [
+        "retrospective"
+      ],
+      "unavailable_for_immediate_care": true
+    },
+    {
+      "fact_id": "allergies_018",
+      "domain": "allergies",
+      "value": "ICU day 2: pruritus, flushing, wheeze and agitation shortly after meropenem plus fluconazole; a second reaction followed piperacillin–tazobactam re-challenge. The offending component was not established.",
+      "available_at": "day_2",
+      "name": "Drug reaction",
+      "prerequisites": [
+        "day_2"
+      ],
+      "unavailable_for_immediate_care": false
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "Each observation requires a requested examination/test/procedure. Non-time_zero gates must additionally be satisfied; retrospective results are never available for immediate care. No unreported results may be invented."
+}

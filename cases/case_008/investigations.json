@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_008",
+  "observations": [
+    {
+      "fact_id": "physical_exam_003",
+      "domain": "physical_exam",
+      "value": "Alert, GCS 15; leg strength 0/5, arm strength 5/5, absent perianal sensation, preserved bulbocavernosus reflex.",
+      "available_at": "time_zero",
+      "name": "Neurologic",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "domain": "physical_exam",
+      "value": "Vital signs described as stable; no numerical values reported.",
+      "available_at": "time_zero",
+      "name": "Vitals",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_005",
+      "domain": "lab",
+      "value": "WBC 13,000/µL with 85% neutrophils; platelets 250,000/µL.",
+      "available_at": "time_zero",
+      "name": "Complete blood count",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_006",
+      "domain": "lab",
+      "value": "PT 12 s, INR 1.0, aPTT 30 s, fibrinogen 300 mg/dL.",
+      "available_at": "time_zero",
+      "name": "Coagulation studies",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_007",
+      "domain": "imaging",
+      "value": "Brain and brainstem MRI normal.",
+      "available_at": "time_zero",
+      "name": "Brain MRI",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_008",
+      "domain": "imaging",
+      "value": "Cervicothoracic spine MRI: epidural hematoma compressing the cord and posterior thecal sac from C6 to T2; no traumatic or structural lesion described.",
+      "available_at": "time_zero",
+      "name": "Spinal MRI",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "domain": "procedure_result",
+      "value": "Emergency hemilaminotomy/laminotomy with epidural hematoma evacuation.",
+      "available_at": "time_zero",
+      "name": "Spinal surgery",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "Each observation requires a requested examination/test/procedure. Non-time_zero gates must additionally be satisfied; retrospective results are never available for immediate care. No unreported results may be invented."
+}

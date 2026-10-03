@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_010",
+  "source_directory": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_010",
+  "source_sha256": {
+    "case_packet.json": "2a7533237493d8f6a19922512f8ad31f9db7825f5619348e3da3ebec16069cc3",
+    "rubric.json": "b22f1a1fd18ab82b17e10c16e59435d53d951aa2b92677b040008a72412912dc",
+    "source_metadata.yaml": "fd6237a4b5d4764cb9a0bc98e748c8d5f89ec59037bbf6879a931d22a8f1ea0e",
+    "source.pdf": "e7c0a06004d4c8d100b4059a202300939b09055c4a636a58c127b9fd69e36d62",
+    "ground_truth.json": "3689e57bc14046b65d53d15b12afd1fff4dc21c482a676658c2f85506bb05acb"
+  },
+  "source_metadata_text": "case_id: case_010\npmcid: PMC13124342\ntitle: \"Abdominal ectopic pregnancy – misdiagnosed upper abdominal pain: A case report\"\njournal: \"Medicine (Baltimore)\"\npublication_year: 2026\ncitation: \"Medicine (Baltimore). 2026 Apr 24;105(17):e48484. doi: 10.1097/MD.0000000000048484\"\ndoi: \"10.1097/MD.0000000000048484\"\narticle_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC13124342/\npdf_url: \"https://pmc-oa-opendata.s3.amazonaws.com/PMC13124342.1/PMC13124342.1.pdf?md5=2d627ed987a8cb63facb42c8bcd4168a\"\nmetadata_url: \"https://pmc-oa-opendata.s3.amazonaws.com/metadata/PMC13124342.1.json\"\nlicense_code: \"CC BY\"\nlicense_url: \"https://creativecommons.org/licenses/by/4.0/\"\naccess_status: downloaded_verified_public_pdf\ncase_packet_status: pending_clinician_review\nretrieved_on: 2026-09-25\nsha256: e7c0a06004d4c8d100b4059a202300939b09055c4a636a58c127b9fd69e36d62\nbytes: 652753\n",
+  "fact_provenance": [
+    {
+      "fact_id": "hpi_001",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "hpi_002",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "pmh_003",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_005",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "lab_006",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "imaging_007",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "imaging_008",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_010",
+      "source_locators": [
+        "Case report, pp. 2–3"
+      ]
+    }
+  ],
+  "conversion_edits": [
+    {
+      "fact_id": "hpi_001",
+      "action": "Split prior objective CT finding from history without removing clinical content."
+    }
+  ],
+  "original_fact_count": 10,
+  "history_fact_count": 3,
+  "observation_count": 8,
+  "validation_scope": "Faithful conversion of legacy extracted JSON; no new independent PDF transcription or physician adjudication."
+}

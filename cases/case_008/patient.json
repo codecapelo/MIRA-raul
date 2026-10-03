@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_008",
+  "initial": {
+    "age_years": 23,
+    "sex_recorded": "male",
+    "chief_complaint": "Acute interscapular pain followed by progressive bilateral leg weakness and bowel/bladder incontinence."
+  },
+  "presenting_complaint": "Acute interscapular pain followed by progressive bilateral leg weakness and bowel/bladder incontinence.",
+  "history_freetext": "Nonradiating interscapular pain began two days before presentation; leg weakness progressed to inability to stand, with perineal sensory loss and bowel/bladder incontinence.\nNo trauma, heavy lifting, fever, recent vaccination, chronic illness, known anticoagulant or other prior medication use.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Nonradiating interscapular pain began two days before presentation; leg weakness progressed to inability to stand, with perineal sensory loss and bowel/bladder incontinence.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "value": "No trauma, heavy lifting, fever, recent vaccination, chronic illness, known anticoagulant or other prior medication use.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

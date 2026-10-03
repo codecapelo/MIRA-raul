@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_002",
+  "observations": [
+    {
+      "fact_id": "physical_exam_004",
+      "domain": "physical_exam",
+      "value": "Peripheral edema and bradycardia, heart rate 42/min.",
+      "available_at": "time_zero",
+      "name": "Cardiovascular",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "ecg_005",
+      "domain": "ecg",
+      "value": "No P waves; narrow-QRS escape rhythm at 42/min.",
+      "available_at": "time_zero",
+      "name": "Electrocardiogram",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_006",
+      "domain": "lab",
+      "value": "NT-proBNP 432 pg/mL (reference ≤125).",
+      "available_at": "time_zero",
+      "name": "NT-proBNP",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_007",
+      "domain": "lab",
+      "value": "High-sensitivity troponin T 31 ng/L (reference ≤14).",
+      "available_at": "time_zero",
+      "name": "Troponin",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_008",
+      "domain": "lab",
+      "value": "D-dimer 2.94 µg/mL (reference <0.5 µg/mL).",
+      "available_at": "time_zero",
+      "name": "D-dimer",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "ecg_009",
+      "domain": "ecg",
+      "value": "TTE: preserved LV systolic function; dilated LA and RV; impaired RV function; severe tricuspid regurgitation; estimated systolic PA pressure 58 mm Hg; only mild mitral regurgitation.",
+      "available_at": "time_zero",
+      "name": "Transthoracic echocardiography",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_010",
+      "domain": "imaging",
+      "value": "CT pulmonary angiography: no pulmonary embolus; RV dilatation, bilateral pleural effusions and contrast reflux into hepatic veins.",
+      "available_at": "time_zero",
+      "name": "CT pulmonary angiography",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_011",
+      "domain": "imaging",
+      "value": "Coronary CT: minimal proximal LAD stenosis only.",
+      "available_at": "time_zero",
+      "name": "Coronary CT",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "procedure_result_012",
+      "domain": "procedure_result",
+      "value": "Right-heart catheterization: giant wedge V waves to 65 mm Hg, no clear A wave, mPAP 35, mean wedge 28 mm Hg, cardiac output 5.8 L/min, PVR 1.2 WU.",
+      "available_at": "time_zero",
+      "name": "Right-heart catheterization",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "ecg_013",
+      "domain": "ecg",
+      "value": "TEE confirmed only mild mitral regurgitation.",
+      "available_at": "time_zero",
+      "name": "Transesophageal echocardiography",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_014",
+      "domain": "imaging",
+      "value": "Cardiac MRI: left atrial late gadolinium enhancement and borderline T1/T2 edema; no substantial ventricular scar.",
+      "available_at": "time_zero",
+      "name": "Cardiac MRI",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "ecg_015",
+      "domain": "ecg",
+      "value": "Subsequent study: electrically silent right atrium, limited septal capture and complete AV block; no response to coronary-sinus pacing.",
+      "available_at": "followup",
+      "name": "Electrophysiology study",
+      "prerequisites": [
+        "followup"
+      ],
+      "unavailable_for_immediate_care": false
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "Each observation requires a requested examination/test/procedure. Non-time_zero gates must additionally be satisfied; retrospective results are never available for immediate care. No unreported results may be invented."
+}

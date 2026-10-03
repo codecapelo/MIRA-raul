@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_002",
+  "initial": {
+    "age_years": 35,
+    "sex_recorded": "male",
+    "chief_complaint": "Progressive exertional dyspnea, leg edema and abdominal pain."
+  },
+  "presenting_complaint": "Progressive exertional dyspnea, leg edema and abdominal pain.",
+  "history_freetext": "Two weeks after respiratory infection symptoms, dyspnea progressed to NYHA III with leg edema and abdominal pain; no chest pain or dizziness initially.\nUlcerative colitis controlled with mesalazine; past tobacco use.\nMesalazine.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Two weeks after respiratory infection symptoms, dyspnea progressed to NYHA III with leg edema and abdominal pain; no chest pain or dizziness initially.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_002",
+      "domain": "pmh",
+      "value": "Ulcerative colitis controlled with mesalazine; past tobacco use.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "meds_003",
+      "domain": "meds",
+      "value": "Mesalazine.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

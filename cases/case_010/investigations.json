@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_010",
+  "observations": [
+    {
+      "fact_id": "hpi_001_prior_ct",
+      "domain": "imaging",
+      "name": "Prior noncontrast abdominal CT",
+      "value": "Initial noncontrast CT showed a 21 × 19 × 10 mm indeterminate lesion.",
+      "available_at": "time_zero",
+      "prerequisites": [],
+      "source_fact_id": "hpi_001"
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "domain": "physical_exam",
+      "value": "BP 107/77 mm Hg, HR 89/min, temperature 36.7°C.",
+      "available_at": "time_zero",
+      "name": "Vitals",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "physical_exam_005",
+      "domain": "physical_exam",
+      "value": "Left upper abdominal tenderness; no lower abdominal tenderness, guarding or rigidity; no vaginal bleeding; cervix closed; no palpable adnexal mass or cervical motion tenderness.",
+      "available_at": "time_zero",
+      "name": "Abdomen pelvis",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_006",
+      "domain": "lab",
+      "value": "Serum hCG 10,130.28 IU/L.",
+      "available_at": "time_zero",
+      "name": "Serum hCG",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_007",
+      "domain": "imaging",
+      "value": "No intrauterine gestational sac; endometrium 8 mm; no adnexal abnormality.",
+      "available_at": "time_zero",
+      "name": "Pelvic ultrasound",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_008",
+      "domain": "imaging",
+      "value": "Contrast CT showed a vascular left upper abdominal mass about 46 × 40 × 56 mm.",
+      "available_at": "time_zero",
+      "name": "Abdominal CT",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "domain": "procedure_result",
+      "value": "Diagnostic laparoscopy: ~300 mL hemoperitoneum and actively bleeding 6 × 4 × 5 cm lesion between spleen and descending colon, involving omentum; uterus, ovaries and tubes appeared normal.",
+      "available_at": "time_zero",
+      "name": "Diagnostic laparoscopy",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "procedure_result_010",
+      "domain": "procedure_result",
+      "value": "Resected lesion and partial omentum contained products of conception on pathology.",
+      "available_at": "after_procedure:laparoscopy",
+      "name": "Surgical pathology",
+      "prerequisites": [
+        "after_procedure:laparoscopy"
+      ],
+      "unavailable_for_immediate_care": false
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "Each observation requires a requested examination/test/procedure. Non-time_zero gates must additionally be satisfied; retrospective results are never available for immediate care. No unreported results may be invented."
+}

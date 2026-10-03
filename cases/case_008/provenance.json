@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_008",
+  "source_directory": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_008",
+  "source_sha256": {
+    "case_packet.json": "9545db225601ac154a316a92f81375c276b2001d0fc3428e65b18d7d02af52ee",
+    "rubric.json": "b485ec202bdbe627aa7baa29aa63c0ce6295b87c5a73213979f2acc85d76256c",
+    "source_metadata.yaml": "47549d7cd434282d716dcad7f2f58f8c494b592c9bb287c488464523c6bfe1a1",
+    "source.pdf": "7e1722266e418610714f6d418e2d22cc2a0970393ee056a1e3aca96b58eb5681",
+    "ground_truth.json": "b5053f2f41b802c96cf33d9efb54a3cbb9359c943bef3a9ce06e3c60e51bcaef"
+  },
+  "source_metadata_text": "case_id: case_008\npmcid: PMC11864156\ntitle: \"Primary spinal epidural hematoma mimicking stroke: A case report of rare diagnostic challenge\"\njournal: \"International Journal of Surgery Case Reports\"\npublication_year: 2025\ncitation: \"Int J Surg Case Rep. 2025 Jan 23;127:110932. doi: 10.1016/j.ijscr.2025.110932\"\ndoi: \"10.1016/j.ijscr.2025.110932\"\narticle_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11864156/\npdf_url: \"https://pmc-oa-opendata.s3.amazonaws.com/PMC11864156.1/PMC11864156.1.pdf?md5=8cf2a6702366645c7ccf86f2f80df68c\"\nmetadata_url: \"https://pmc-oa-opendata.s3.amazonaws.com/metadata/PMC11864156.1.json\"\nlicense_code: \"CC BY-NC-ND\"\nlicense_url: \"https://creativecommons.org/licenses/by-nc-nd/4.0/\"\naccess_status: downloaded_verified_public_pdf\ncase_packet_status: pending_clinician_review\nretrieved_on: 2026-09-25\nsha256: 7e1722266e418610714f6d418e2d22cc2a0970393ee056a1e3aca96b58eb5681\nbytes: 2046751\n",
+  "fact_provenance": [
+    {
+      "fact_id": "hpi_001",
+      "source_locators": [
+        "Case presentation, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "hpi_002",
+      "source_locators": [
+        "Case presentation, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_003",
+      "source_locators": [
+        "Case presentation, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "source_locators": [
+        "Case presentation, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "lab_005",
+      "source_locators": [
+        "Case presentation, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "lab_006",
+      "source_locators": [
+        "Case presentation, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "imaging_007",
+      "source_locators": [
+        "Case presentation, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "imaging_008",
+      "source_locators": [
+        "Case presentation, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "source_locators": [
+        "Case presentation, pp. 2–3"
+      ]
+    }
+  ],
+  "conversion_edits": [],
+  "original_fact_count": 9,
+  "history_fact_count": 2,
+  "observation_count": 7,
+  "validation_scope": "Faithful conversion of legacy extracted JSON; no new independent PDF transcription or physician adjudication."
+}

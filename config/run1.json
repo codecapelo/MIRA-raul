@@ -1,0 +1,176 @@
+{
+  "budget_usd": "18.50",
+  "models": {
+    "openai/gpt-oss-120b": {
+      "provider": "dekallm/bf16",
+      "provider_name": "DekaLLM",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 131072,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 0.03,
+        "output": 0.18
+      },
+      "supports_logprobs": true,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "frequency_penalty",
+        "logit_bias",
+        "max_tokens",
+        "presence_penalty",
+        "seed",
+        "stop",
+        "temperature",
+        "top_p",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "logprobs",
+        "top_logprobs",
+        "reasoning_effort"
+      ]
+    },
+    "z-ai/glm-4.5-air": {
+      "provider": "novita/bf16",
+      "provider_name": "Novita",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 131072,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 0.13,
+        "output": 0.85
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "stop",
+        "frequency_penalty",
+        "presence_penalty",
+        "seed",
+        "top_k",
+        "repetition_penalty",
+        "tools",
+        "tool_choice"
+      ]
+    },
+    "z-ai/glm-5": {
+      "provider": "streamlake/fp8",
+      "provider_name": "StreamLake",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 198000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 0.6,
+        "output": 1.92
+      },
+      "supports_logprobs": true,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "tool_choice",
+        "tools",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "stop",
+        "response_format",
+        "structured_outputs",
+        "logprobs",
+        "top_logprobs"
+      ]
+    },
+    "qwen/qwen3.5-397b-a17b": {
+      "provider": "parasail/fp8",
+      "provider_name": "Parasail",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 262144,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 0.5,
+        "output": 3.5999999999999996
+      },
+      "supports_logprobs": true,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "frequency_penalty",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "top_k",
+        "logit_bias",
+        "tools",
+        "tool_choice",
+        "response_format",
+        "structured_outputs",
+        "logprobs",
+        "top_logprobs"
+      ]
+    },
+    "openai/gpt-5.2": {
+      "provider": "openai",
+      "provider_name": "OpenAI",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 400000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 1.75,
+        "output": 14.0
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "seed",
+        "max_tokens",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "reasoning_effort"
+      ]
+    },
+    "google/gemini-3.1-flash-lite-preview": {
+      "provider": "google-ai-studio",
+      "provider_name": "Google AI Studio",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1048576,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 0.25,
+        "output": 1.5
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "seed",
+        "response_format",
+        "structured_outputs",
+        "tool_choice",
+        "tools",
+        "reasoning_effort"
+      ]
+    }
+  }
+}

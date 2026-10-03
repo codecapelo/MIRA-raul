@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_004",
+  "source_directory": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_004",
+  "source_sha256": {
+    "case_packet.json": "dcb2b5a26c53620752756e0fc4970afe3c7b2aff37176821fc7763bbda494118",
+    "rubric.json": "6c5bd65c55d5b8d4ab2b5892e7d2db389c87bd330e4019574b5c6bfcbfaf4579",
+    "source_metadata.yaml": "94664d11665c8ccf192f9b6a70b92f1021586c55de11d550ab62a4a6524746d6",
+    "source.pdf": "acbe808bacc3648afcd11f9d3d31909f00db775ac01e8b2e245fc298555b43fb",
+    "ground_truth.json": "6b22d61f40081a97b87f8b2e92674d0e406f04687abe98040b1289c808ebf63b"
+  },
+  "source_metadata_text": "case_id: case_004\npmcid: PMC12052731\ntitle: \"Chylothorax as the Initial Manifestation of Small Cell Lung Carcinoma\"\njournal: \"Respirology Case Reports\"\npublication_year: 2025\ncitation: \"Respirol Case Rep. 2025 May 5;13(5):e70202. doi: 10.1002/rcr2.70202\"\ndoi: \"10.1002/rcr2.70202\"\narticle_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC12052731/\npdf_url: \"https://pmc-oa-opendata.s3.amazonaws.com/PMC12052731.1/PMC12052731.1.pdf?md5=707e8fea1fca3854dac421314bc51a69\"\nmetadata_url: \"https://pmc-oa-opendata.s3.amazonaws.com/metadata/PMC12052731.1.json\"\nlicense_code: \"CC BY\"\nlicense_url: \"https://creativecommons.org/licenses/by/4.0/\"\naccess_status: downloaded_verified_public_pdf\ncase_packet_status: pending_clinician_review\nretrieved_on: 2026-09-25\nsha256: acbe808bacc3648afcd11f9d3d31909f00db775ac01e8b2e245fc298555b43fb\nbytes: 1134298\n",
+  "fact_provenance": [
+    {
+      "fact_id": "hpi_001",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "pmh_002",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_003",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "imaging_004",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_005",
+      "source_locators": [
+        "PDF p. 1, second ED visit and repeat thoracentesis"
+      ]
+    },
+    {
+      "fact_id": "lab_006",
+      "source_locators": [
+        "PDF p. 1, initial thoracentesis and Table 1"
+      ]
+    },
+    {
+      "fact_id": "microbiology_007",
+      "source_locators": [
+        "PDF p. 1, Table 1"
+      ]
+    },
+    {
+      "fact_id": "imaging_008",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    },
+    {
+      "fact_id": "microbiology_010",
+      "source_locators": [
+        "Case report and table 1, pp. 1–2"
+      ]
+    }
+  ],
+  "conversion_edits": [],
+  "original_fact_count": 10,
+  "history_fact_count": 2,
+  "observation_count": 8,
+  "validation_scope": "Faithful conversion of legacy extracted JSON; no new independent PDF transcription or physician adjudication."
+}

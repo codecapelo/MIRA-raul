@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_007",
+  "source_directory": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_007",
+  "source_sha256": {
+    "case_packet.json": "13d4b6ce14ebabe386a6360eed99b3ca0b7fd71cf4d978b51e9a3773bbec19a9",
+    "rubric.json": "de51c66463cc615e34e9db499fa083455601947a592f1266a0bd793f56c5d763",
+    "source_metadata.yaml": "5c6f048ddbf89583a0cbffc6283c596509a0cac9f3d76b77ccae1155b4c2d44f",
+    "source.pdf": "379696de974dd62ef2d1c5d25a8593bde8310bc53f28abe4717a0e39a905b9c2",
+    "ground_truth.json": "f8ee43b8b2b850da54c0d51e4a7ab7a07ce4f5fe77ab8d10b0adee21556911d1"
+  },
+  "source_metadata_text": "case_id: case_007\npmcid: PMC11939122\ntitle: \"Early-Onset Autoimmune Hemolytic Anemia from Pembrolizumab in a Patient with Metastatic Lung Cancer: A Case Report\"\njournal: \"American Journal of Case Reports\"\npublication_year: 2025\ncitation: \"Am J Case Rep. 2025 Mar 23;26:e946630. doi: 10.12659/AJCR.946630\"\ndoi: \"10.12659/AJCR.946630\"\narticle_url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11939122/\npdf_url: \"https://pmc-oa-opendata.s3.amazonaws.com/PMC11939122.1/PMC11939122.1.pdf?md5=920ec4cf9c5ddf66b88ba9180fab406f\"\nmetadata_url: \"https://pmc-oa-opendata.s3.amazonaws.com/metadata/PMC11939122.1.json\"\nlicense_code: \"CC BY-NC-ND\"\nlicense_url: \"https://creativecommons.org/licenses/by-nc-nd/4.0/\"\naccess_status: downloaded_verified_public_pdf\ncase_packet_status: pending_clinician_review\nretrieved_on: 2026-09-25\nsha256: 379696de974dd62ef2d1c5d25a8593bde8310bc53f28abe4717a0e39a905b9c2\nbytes: 456466\n",
+  "fact_provenance": [
+    {
+      "fact_id": "hpi_001",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "pmh_002",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "meds_003",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "pmh_004",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "physical_exam_005",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "lab_006",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "lab_007",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "lab_008",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "lab_009",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "lab_010",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    },
+    {
+      "fact_id": "imaging_011",
+      "source_locators": [
+        "Case report and table 1, pp. 2–3"
+      ]
+    }
+  ],
+  "conversion_edits": [],
+  "original_fact_count": 11,
+  "history_fact_count": 4,
+  "observation_count": 7,
+  "validation_scope": "Faithful conversion of legacy extracted JSON; no new independent PDF transcription or physician adjudication."
+}

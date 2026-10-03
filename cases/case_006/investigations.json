@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_006",
+  "observations": [
+    {
+      "fact_id": "physical_exam_003",
+      "domain": "physical_exam",
+      "value": "Mild pigmentation of hand interphalangeal joints and knees.",
+      "available_at": "time_zero",
+      "name": "Skin",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_004",
+      "domain": "lab",
+      "value": "Earlier ACTH 577.10 ng/L and cortisol 161.00 nmol/L; admission ACTH 365.80 ng/L and cortisol 139.00 nmol/L.",
+      "available_at": "time_zero",
+      "name": "ACTH and cortisol",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_005",
+      "domain": "lab",
+      "value": "Low fasting glucose and sodium were described, without numerical values.",
+      "available_at": "time_zero",
+      "name": "Metabolic blood testing",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "lab_006",
+      "domain": "lab",
+      "value": "T-SPOT.TB positive.",
+      "available_at": "time_zero",
+      "name": "T-SPOT.TB",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_007",
+      "domain": "imaging",
+      "value": "CT: bilateral adrenal nodules with calcification; old tuberculosis lesions in lungs and pleura.",
+      "available_at": "time_zero",
+      "name": "Adrenal CT",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_008",
+      "domain": "imaging",
+      "value": "Bilateral hypoechoic adrenal nodules with calcifications; largest left lesion about 2.7 × 2.2 cm; low-intensity enhancement.",
+      "available_at": "time_zero",
+      "name": "Adrenal ultrasound",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "domain": "procedure_result",
+      "value": "Ultrasound-guided left adrenal biopsy: necrotizing granulomatous inflammation. Acid-fast and silver stains negative.",
+      "available_at": "time_zero",
+      "name": "Adrenal biopsy",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "microbiology_010",
+      "domain": "microbiology",
+      "value": "Mycobacterium tuberculosis qPCR detected DNA in adrenal biopsy tissue.",
+      "available_at": "after_procedure:adrenal_biopsy",
+      "name": "Adrenal tissue tuberculosis PCR",
+      "prerequisites": [
+        "after_procedure:adrenal_biopsy"
+      ],
+      "unavailable_for_immediate_care": false
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "Each observation requires a requested examination/test/procedure. Non-time_zero gates must additionally be satisfied; retrospective results are never available for immediate care. No unreported results may be invented."
+}

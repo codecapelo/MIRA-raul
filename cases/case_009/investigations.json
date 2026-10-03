@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "case_009",
+  "observations": [
+    {
+      "fact_id": "physical_exam_004",
+      "domain": "physical_exam",
+      "value": "Signs of peritoneal irritation.",
+      "available_at": "time_zero",
+      "name": "Abdomen",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_005",
+      "domain": "imaging",
+      "value": "Upright abdominal radiograph: multiple small-bowel air–fluid levels.",
+      "available_at": "time_zero",
+      "name": "Abdominal radiograph",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "imaging_006",
+      "domain": "imaging",
+      "value": "CT: multiple small-bowel air–fluid levels and a linear hyperdense intraluminal structure consistent with a foreign body; mechanical obstruction suspected.",
+      "available_at": "time_zero",
+      "name": "Abdominal CT",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "procedure_result_007",
+      "domain": "procedure_result",
+      "value": "Emergency laparoscopy converted to open operation because of purulent fluid and adhesions. A Meckel diverticulum ~40 cm proximal to ileocecal valve contained a biliary stent; its distal end perforated adjacent ileum.",
+      "available_at": "time_zero",
+      "name": "Diagnostic laparoscopy / Exploratory laparotomy",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false
+    },
+    {
+      "fact_id": "procedure_result_008",
+      "domain": "procedure_result",
+      "value": "About 20 cm of small bowel, including diverticulum and perforation, was resected with side-to-side anastomosis, irrigation and drainage.",
+      "available_at": "after_any_procedure:laparoscopy|laparotomy",
+      "name": "Operative resection",
+      "prerequisites": [
+        "after_any_procedure:laparoscopy|laparotomy"
+      ],
+      "unavailable_for_immediate_care": false
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "Each observation requires a requested examination/test/procedure. Non-time_zero gates must additionally be satisfied; retrospective results are never available for immediate care. No unreported results may be invented."
+}
