@@ -1,714 +1,828 @@
 {
   "schema_version": "1.0.0",
-  "completed_rows": 0,
+  "completed_rows": 50,
+  "terminal_attempts": 50,
+  "operational_failures": 2,
+  "judged_rows": 48,
   "expected_rows": 50,
-  "missing_pairs": [
-    [
-      "case_001",
-      "openai/gpt-oss-120b"
-    ],
-    [
-      "case_001",
-      "z-ai/glm-4.5-air"
-    ],
-    [
-      "case_001",
-      "z-ai/glm-5"
-    ],
-    [
-      "case_001",
-      "qwen/qwen3.5-397b-a17b"
-    ],
-    [
-      "case_001",
-      "openai/gpt-5.2"
-    ],
-    [
-      "case_002",
-      "openai/gpt-oss-120b"
-    ],
-    [
-      "case_002",
-      "z-ai/glm-4.5-air"
-    ],
-    [
-      "case_002",
-      "z-ai/glm-5"
-    ],
-    [
-      "case_002",
-      "qwen/qwen3.5-397b-a17b"
-    ],
-    [
-      "case_002",
-      "openai/gpt-5.2"
-    ],
-    [
-      "case_003",
-      "openai/gpt-oss-120b"
-    ],
-    [
-      "case_003",
-      "z-ai/glm-4.5-air"
-    ],
-    [
-      "case_003",
-      "z-ai/glm-5"
-    ],
-    [
-      "case_003",
-      "qwen/qwen3.5-397b-a17b"
-    ],
-    [
-      "case_003",
-      "openai/gpt-5.2"
-    ],
-    [
-      "case_004",
-      "openai/gpt-oss-120b"
-    ],
-    [
-      "case_004",
-      "z-ai/glm-4.5-air"
-    ],
-    [
-      "case_004",
-      "z-ai/glm-5"
-    ],
-    [
-      "case_004",
-      "qwen/qwen3.5-397b-a17b"
-    ],
-    [
-      "case_004",
-      "openai/gpt-5.2"
-    ],
-    [
-      "case_005",
-      "openai/gpt-oss-120b"
-    ],
-    [
-      "case_005",
-      "z-ai/glm-4.5-air"
-    ],
-    [
-      "case_005",
-      "z-ai/glm-5"
-    ],
-    [
-      "case_005",
-      "qwen/qwen3.5-397b-a17b"
-    ],
-    [
-      "case_005",
-      "openai/gpt-5.2"
-    ],
-    [
-      "case_006",
-      "openai/gpt-oss-120b"
-    ],
-    [
-      "case_006",
-      "z-ai/glm-4.5-air"
-    ],
-    [
-      "case_006",
-      "z-ai/glm-5"
-    ],
-    [
-      "case_006",
-      "qwen/qwen3.5-397b-a17b"
-    ],
-    [
-      "case_006",
-      "openai/gpt-5.2"
-    ],
-    [
-      "case_007",
-      "openai/gpt-oss-120b"
-    ],
-    [
-      "case_007",
-      "z-ai/glm-4.5-air"
-    ],
-    [
-      "case_007",
-      "z-ai/glm-5"
-    ],
-    [
-      "case_007",
-      "qwen/qwen3.5-397b-a17b"
-    ],
-    [
-      "case_007",
-      "openai/gpt-5.2"
-    ],
-    [
-      "case_008",
-      "openai/gpt-oss-120b"
-    ],
-    [
-      "case_008",
-      "z-ai/glm-4.5-air"
-    ],
-    [
-      "case_008",
-      "z-ai/glm-5"
-    ],
-    [
-      "case_008",
-      "qwen/qwen3.5-397b-a17b"
-    ],
-    [
-      "case_008",
-      "openai/gpt-5.2"
-    ],
-    [
-      "case_009",
-      "openai/gpt-oss-120b"
-    ],
-    [
-      "case_009",
-      "z-ai/glm-4.5-air"
-    ],
-    [
-      "case_009",
-      "z-ai/glm-5"
-    ],
-    [
-      "case_009",
-      "qwen/qwen3.5-397b-a17b"
-    ],
-    [
-      "case_009",
-      "openai/gpt-5.2"
-    ],
-    [
-      "case_010",
-      "openai/gpt-oss-120b"
-    ],
-    [
-      "case_010",
-      "z-ai/glm-4.5-air"
-    ],
-    [
-      "case_010",
-      "z-ai/glm-5"
-    ],
-    [
-      "case_010",
-      "qwen/qwen3.5-397b-a17b"
-    ],
-    [
-      "case_010",
-      "openai/gpt-5.2"
-    ]
-  ],
+  "missing_pairs": [],
   "duplicates": [],
   "malformed_raw_log_lines": [],
   "models": [
     {
       "model": "openai/gpt-oss-120b",
       "expected": 10,
-      "completed": 0,
-      "judged": 0,
-      "correct": 0,
-      "judge_accuracy": null,
-      "wilson95": null,
+      "attempts": 10,
+      "completed": 10,
+      "operational_failures": 2,
+      "diagnoses_submitted": 8,
+      "judged": 8,
+      "correct": 5,
+      "judge_accuracy": 0.625,
+      "wilson95": [
+        0.30574239460262737,
+        0.8631557141764026
+      ],
+      "conservative_success_all_terminal_attempts": 0.5,
       "categories": {
         "cardiovascular": {
-          "completed": 0,
-          "judged": 0,
+          "attempts": 2,
+          "completed": 2,
+          "operational_failures": 1,
+          "diagnoses_submitted": 1,
+          "judged": 1,
           "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "judge_accuracy": 0.0,
+          "wilson95": [
+            0.0,
+            0.7934506856227626
+          ],
+          "conservative_success_all_terminal_attempts": 0.0
         },
         "endocrine_infectious": {
-          "completed": 0,
-          "judged": 0,
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
           "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "judge_accuracy": 0.0,
+          "wilson95": [
+            0.0,
+            0.7934506856227626
+          ],
+          "conservative_success_all_terminal_attempts": 0.0
         },
         "gastrointestinal": {
-          "completed": 0,
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 1,
+          "diagnoses_submitted": 0,
           "judged": 0,
           "correct": 0,
           "judge_accuracy": null,
-          "wilson95": null
+          "wilson95": null,
+          "conservative_success_all_terminal_attempts": 0.0
         },
         "hematology": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "neurologic": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "obstetric": {
-          "completed": 0,
-          "judged": 0,
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
           "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "judge_accuracy": 0.0,
+          "wilson95": [
+            0.0,
+            0.7934506856227626
+          ],
+          "conservative_success_all_terminal_attempts": 0.0
         },
         "respiratory_oncology": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 2,
+          "completed": 2,
+          "operational_failures": 0,
+          "diagnoses_submitted": 2,
+          "judged": 2,
+          "correct": 2,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.34238022750665303,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "urologic": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         }
       },
       "usage": {
         "prompt_tokens": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 120234.5,
+          "q1": 63369.25,
+          "q3": 148611.0
         },
         "completion_tokens": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 12163.0,
+          "q1": 10319.75,
+          "q3": 18543.5
         },
         "reasoning_tokens": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 2546.0,
+          "q1": 2015.0,
+          "q3": 3033.0
         },
         "latency_s": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 168.0329602915,
+          "q1": 93.57541357275,
+          "q3": 223.07193592699997
         }
       }
     },
     {
       "model": "z-ai/glm-4.5-air",
       "expected": 10,
-      "completed": 0,
-      "judged": 0,
-      "correct": 0,
-      "judge_accuracy": null,
-      "wilson95": null,
+      "attempts": 10,
+      "completed": 10,
+      "operational_failures": 0,
+      "diagnoses_submitted": 10,
+      "judged": 10,
+      "correct": 7,
+      "judge_accuracy": 0.7,
+      "wilson95": [
+        0.39677814746114537,
+        0.8922087325936989
+      ],
+      "conservative_success_all_terminal_attempts": 0.7,
       "categories": {
         "cardiovascular": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 2,
+          "completed": 2,
+          "operational_failures": 0,
+          "diagnoses_submitted": 2,
+          "judged": 2,
+          "correct": 1,
+          "judge_accuracy": 0.5,
+          "wilson95": [
+            0.09453120573423074,
+            0.9054687942657693
+          ],
+          "conservative_success_all_terminal_attempts": 0.5
         },
         "endocrine_infectious": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "gastrointestinal": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "hematology": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "neurologic": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "obstetric": {
-          "completed": 0,
-          "judged": 0,
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
           "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "judge_accuracy": 0.0,
+          "wilson95": [
+            0.0,
+            0.7934506856227626
+          ],
+          "conservative_success_all_terminal_attempts": 0.0
         },
         "respiratory_oncology": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 2,
+          "completed": 2,
+          "operational_failures": 0,
+          "diagnoses_submitted": 2,
+          "judged": 2,
+          "correct": 1,
+          "judge_accuracy": 0.5,
+          "wilson95": [
+            0.09453120573423074,
+            0.9054687942657693
+          ],
+          "conservative_success_all_terminal_attempts": 0.5
         },
         "urologic": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         }
       },
       "usage": {
         "prompt_tokens": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 18306.5,
+          "q1": 14436.75,
+          "q3": 27434.0
         },
         "completion_tokens": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 3061.5,
+          "q1": 2627.75,
+          "q3": 3593.75
         },
         "reasoning_tokens": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 1913.0,
+          "q1": 1595.5,
+          "q3": 2260.5
         },
         "latency_s": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 44.018621896,
+          "q1": 34.129509270250004,
+          "q3": 49.498809011000006
         }
       }
     },
     {
       "model": "z-ai/glm-5",
       "expected": 10,
-      "completed": 0,
-      "judged": 0,
-      "correct": 0,
-      "judge_accuracy": null,
-      "wilson95": null,
+      "attempts": 10,
+      "completed": 10,
+      "operational_failures": 0,
+      "diagnoses_submitted": 10,
+      "judged": 10,
+      "correct": 7,
+      "judge_accuracy": 0.7,
+      "wilson95": [
+        0.39677814746114537,
+        0.8922087325936989
+      ],
+      "conservative_success_all_terminal_attempts": 0.7,
       "categories": {
         "cardiovascular": {
-          "completed": 0,
-          "judged": 0,
+          "attempts": 2,
+          "completed": 2,
+          "operational_failures": 0,
+          "diagnoses_submitted": 2,
+          "judged": 2,
           "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "judge_accuracy": 0.0,
+          "wilson95": [
+            0.0,
+            0.6576197724933469
+          ],
+          "conservative_success_all_terminal_attempts": 0.0
         },
         "endocrine_infectious": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "gastrointestinal": {
-          "completed": 0,
-          "judged": 0,
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
           "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "judge_accuracy": 0.0,
+          "wilson95": [
+            0.0,
+            0.7934506856227626
+          ],
+          "conservative_success_all_terminal_attempts": 0.0
         },
         "hematology": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "neurologic": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "obstetric": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "respiratory_oncology": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 2,
+          "completed": 2,
+          "operational_failures": 0,
+          "diagnoses_submitted": 2,
+          "judged": 2,
+          "correct": 2,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.34238022750665303,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "urologic": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         }
       },
       "usage": {
         "prompt_tokens": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 21385.5,
+          "q1": 14332.0,
+          "q3": 29589.5
         },
         "completion_tokens": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 5211.0,
+          "q1": 3827.25,
+          "q3": 6050.0
         },
         "reasoning_tokens": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 2740.0,
+          "q1": 2210.0,
+          "q3": 3470.25
         },
         "latency_s": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 77.7919887495,
+          "q1": 62.831312354000005,
+          "q3": 94.65131982324999
         }
       }
     },
     {
       "model": "qwen/qwen3.5-397b-a17b",
       "expected": 10,
-      "completed": 0,
-      "judged": 0,
-      "correct": 0,
-      "judge_accuracy": null,
-      "wilson95": null,
+      "attempts": 10,
+      "completed": 10,
+      "operational_failures": 0,
+      "diagnoses_submitted": 10,
+      "judged": 10,
+      "correct": 6,
+      "judge_accuracy": 0.6,
+      "wilson95": [
+        0.31267376973365824,
+        0.8318196702937638
+      ],
+      "conservative_success_all_terminal_attempts": 0.6,
       "categories": {
         "cardiovascular": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 2,
+          "completed": 2,
+          "operational_failures": 0,
+          "diagnoses_submitted": 2,
+          "judged": 2,
+          "correct": 1,
+          "judge_accuracy": 0.5,
+          "wilson95": [
+            0.09453120573423074,
+            0.9054687942657693
+          ],
+          "conservative_success_all_terminal_attempts": 0.5
         },
         "endocrine_infectious": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "gastrointestinal": {
-          "completed": 0,
-          "judged": 0,
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
           "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "judge_accuracy": 0.0,
+          "wilson95": [
+            0.0,
+            0.7934506856227626
+          ],
+          "conservative_success_all_terminal_attempts": 0.0
         },
         "hematology": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "neurologic": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "obstetric": {
-          "completed": 0,
-          "judged": 0,
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
           "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "judge_accuracy": 0.0,
+          "wilson95": [
+            0.0,
+            0.7934506856227626
+          ],
+          "conservative_success_all_terminal_attempts": 0.0
         },
         "respiratory_oncology": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 2,
+          "completed": 2,
+          "operational_failures": 0,
+          "diagnoses_submitted": 2,
+          "judged": 2,
+          "correct": 1,
+          "judge_accuracy": 0.5,
+          "wilson95": [
+            0.09453120573423074,
+            0.9054687942657693
+          ],
+          "conservative_success_all_terminal_attempts": 0.5
         },
         "urologic": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         }
       },
       "usage": {
         "prompt_tokens": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 19942.0,
+          "q1": 17295.0,
+          "q3": 29602.75
         },
         "completion_tokens": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 8661.5,
+          "q1": 6790.0,
+          "q3": 10958.25
         },
         "reasoning_tokens": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 6625.5,
+          "q1": 5107.0,
+          "q3": 8859.5
         },
         "latency_s": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 115.529444208,
+          "q1": 72.25808693775001,
+          "q3": 135.07803950049998
         }
       }
     },
     {
       "model": "openai/gpt-5.2",
       "expected": 10,
-      "completed": 0,
-      "judged": 0,
-      "correct": 0,
-      "judge_accuracy": null,
-      "wilson95": null,
+      "attempts": 10,
+      "completed": 10,
+      "operational_failures": 0,
+      "diagnoses_submitted": 10,
+      "judged": 10,
+      "correct": 7,
+      "judge_accuracy": 0.7,
+      "wilson95": [
+        0.39677814746114537,
+        0.8922087325936989
+      ],
+      "conservative_success_all_terminal_attempts": 0.7,
       "categories": {
         "cardiovascular": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 2,
+          "completed": 2,
+          "operational_failures": 0,
+          "diagnoses_submitted": 2,
+          "judged": 2,
+          "correct": 1,
+          "judge_accuracy": 0.5,
+          "wilson95": [
+            0.09453120573423074,
+            0.9054687942657693
+          ],
+          "conservative_success_all_terminal_attempts": 0.5
         },
         "endocrine_infectious": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "gastrointestinal": {
-          "completed": 0,
-          "judged": 0,
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
           "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "judge_accuracy": 0.0,
+          "wilson95": [
+            0.0,
+            0.7934506856227626
+          ],
+          "conservative_success_all_terminal_attempts": 0.0
         },
         "hematology": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "neurologic": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "obstetric": {
-          "completed": 0,
-          "judged": 0,
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
           "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "judge_accuracy": 0.0,
+          "wilson95": [
+            0.0,
+            0.7934506856227626
+          ],
+          "conservative_success_all_terminal_attempts": 0.0
         },
         "respiratory_oncology": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 2,
+          "completed": 2,
+          "operational_failures": 0,
+          "diagnoses_submitted": 2,
+          "judged": 2,
+          "correct": 2,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.34238022750665303,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         },
         "urologic": {
-          "completed": 0,
-          "judged": 0,
-          "correct": 0,
-          "judge_accuracy": null,
-          "wilson95": null
+          "attempts": 1,
+          "completed": 1,
+          "operational_failures": 0,
+          "diagnoses_submitted": 1,
+          "judged": 1,
+          "correct": 1,
+          "judge_accuracy": 1.0,
+          "wilson95": [
+            0.20654931437723745,
+            1.0
+          ],
+          "conservative_success_all_terminal_attempts": 1.0
         }
       },
       "usage": {
         "prompt_tokens": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 21172.5,
+          "q1": 14519.25,
+          "q3": 27852.0
         },
         "completion_tokens": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 3890.5,
+          "q1": 3348.0,
+          "q3": 4577.0
         },
         "reasoning_tokens": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 2184.5,
+          "q1": 1578.0,
+          "q3": 2324.5
         },
         "latency_s": {
-          "n": 0,
-          "median": null,
-          "q1": null,
-          "q3": null
+          "n": 10,
+          "median": 105.43381810400001,
+          "q1": 82.68676446849999,
+          "q3": 133.76666172925
         }
       }
     }
   ],
   "actor_breakdown_including_incomplete": {
     "doctor": {
-      "calls": 59,
-      "known_cost_usd": "0.074062954",
+      "calls": 549,
+      "known_cost_usd": "1.029856654",
       "unknown_cost_calls": 0,
-      "prompt_tokens": 144139,
-      "completion_tokens": 25808,
-      "reasoning_tokens": 7662
+      "prompt_tokens": 1466106,
+      "completion_tokens": 233371,
+      "reasoning_tokens": 95331
     },
     "patient": {
-      "calls": 21,
-      "known_cost_usd": "0.017845479",
+      "calls": 178,
+      "known_cost_usd": "0.429592389",
       "unknown_cost_calls": 0,
-      "prompt_tokens": 72524,
-      "completion_tokens": 9118,
-      "reasoning_tokens": 4553
+      "prompt_tokens": 555742,
+      "completion_tokens": 124956,
+      "reasoning_tokens": 83726
     },
     "matcher": {
-      "calls": 31,
-      "known_cost_usd": "0.007396200",
+      "calls": 354,
+      "known_cost_usd": "0.026940900",
       "unknown_cost_calls": 0,
-      "prompt_tokens": 8812,
-      "completion_tokens": 8147,
+      "prompt_tokens": 101668,
+      "completion_tokens": 25655,
       "reasoning_tokens": 5326
     },
     "judge": {
-      "calls": 5,
-      "known_cost_usd": "0.00175000",
+      "calls": 53,
+      "known_cost_usd": "0.01655150",
       "unknown_cost_calls": 0,
-      "prompt_tokens": 3190,
-      "completion_tokens": 635,
+      "prompt_tokens": 32750,
+      "completion_tokens": 5576,
       "reasoning_tokens": 0
     }
   },
-  "ledger_known_cost_usd": "0.101054633",
-  "csv_known_cost_usd": "0",
+  "ledger_known_cost_usd": "1.502941443",
+  "csv_known_cost_usd": "1.401886810",
   "unsettled_calls": [],
   "legacy_lexical_comparison": {
     "path": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/results/frontier_addons_2026-09-29/summaries/frontier_addons_analysis.json",
@@ -4102,15 +4216,102 @@
   },
   "physician_review": "pending",
   "input_sha256": {
+    "results/run1.csv": "2cfc135d57d91b8b418822d940efa10084323e8433db4d8a3ee222780eae6d7a",
     "logs/incomplete/akash_before_matcher_fix/case_001.jsonl": "bef8a3e5797cf1038e3e9195b064aa96b3cbb962d7b4d29080ea2d98f8f7e5c3",
     "logs/incomplete/dekallm_rate_limited/case_001.jsonl": "b8a7d675a375cc8370653ffb58b5ed420374fc0c03b35e3027192e2dc9f58c6f",
     "logs/incomplete/initial_429/case_001.jsonl": "49a052563e5a173a25d08b4ee85b9af2aab92bbd0a7942b73e9d596f5e4f659d",
+    "logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_002.jsonl": "fe4a34cc73c19b22771cc7be61fa426debecf54159864cf82419a8bdb7c35af1",
+    "logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_003.jsonl": "e3ed084b495f4e4473ea2c94394476e82f2876b02a1ec390866e54f7259723bb",
+    "logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_004.jsonl": "1e86f6025ab9efc158160c22b517795b35ae0ba47d6005590d62cae5437231be",
+    "logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_005.jsonl": "5191ad11fb478a53a7f9e0446596d249233f6cabbea23b63fc504172e56eec7e",
+    "logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_006.jsonl": "631c14e42908f8a151733b88bee6b24bd118dd5c22b6f773cc46a0c201ce12a8",
+    "logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_007.jsonl": "902aed6a76abcb516bdc0ed3acc9c7c8f6e5512aee3297a50dc0442a0883c6d3",
+    "logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_008.jsonl": "78adca6b43e5d7598fe849fed31f110220a4cd9dad0422f223b9a0c75edfd320",
+    "logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_009.jsonl": "bfd165931a683687108f970d75f6d116a55fc6f829dbc5ccee83f106845ea3d3",
+    "logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_010.jsonl": "549d84a19eb65e3f6c91e9a2d539a6be9a670d5603f9fdddf334fcd9873de4dd",
+    "logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_002.jsonl": "c13a88adcc46dd07b584584361d5b635ec6be56d31581414e37a38f460c96d18",
+    "logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_003.jsonl": "7e89068e6f26396052606ffb113df76de90935001257b6f8ed6fae2b71903f1e",
+    "logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_004.jsonl": "af36e5e39e9ef2fafc874209b451ddb037eeab3573ff993a1e4e35351f8e4c1d",
+    "logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_005.jsonl": "548e527804cafe8d79cb280498c7e9a7b9647f9ebf06b5f24aed1c77a35b45fa",
+    "logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_006.jsonl": "cc5d5e990837f3e5b42f139a18ed06b18516cfe3a82c54f38ddfd101639496f7",
+    "logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_007.jsonl": "3c3cdda06a1112ae46eff9223abb1e24fd50a70eeb9984b081b376360f1944ad",
+    "logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_008.jsonl": "76eb3dede6356fe94e9088bf5b082d1f3aeafa17e47693fc9ab5b174e9b87a19",
+    "logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_009.jsonl": "8eec7be5854a9c7e416d9b4e8d3bc371e739b42949aa02ad08e6ac2992d8f8c4",
+    "logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_010.jsonl": "b0255bd286abb45d93df14d978c5974cbb26ac977cc2a790c8049c581a7c4f3a",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_002.jsonl": "3f3bd3d49721181bdacf618b21aeb077dccececa9c142524c7651762b79f7c35",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_003.jsonl": "63d33c6eeeb345f22d2afcbc490c479099af2c653f00f2b5f74c7ce68a888c2f",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_004.jsonl": "b972527082343461bab9950d8b7fd316cfe5d0f947264dc6f5ece43f8e2d7c02",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_005.jsonl": "03b01384197e76cee7b396eedfd4dd8103429e79902de59c0e05d0e63ea89937",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_006.jsonl": "b4af6467bf1f59164b2c6688d0ff9cb3c0af6bbe1045ce88255b74c186c5ec40",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_007.jsonl": "f22cbbf10607c60a36e42f247fddc9b3d529603bf27b8e25bf5e0b8096964274",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_008.jsonl": "7a9a2c9a8c4e410fa4f52ffdbd112e8f07cd9e4c27afa693ca7c65312006f220",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_009.jsonl": "9338b91974e02e14038967f8f673ad4c617f4a8f2cdaab9c5ea5685bf0858bdc",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_010.jsonl": "c1bb57a7f81c76eaaf9e4a340edd22ae95397289d4cdc4955e1f20cf0dc7f611",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_002.jsonl": "7b511adf0928077558099f452e46593a118936307e7940705f8f91cfc18bc0c4",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_003.jsonl": "f2b200292e7fe03e6ae8f76a283ae104d2a34290acc628214970d96f64effd26",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_004.jsonl": "58fd3f2939cf2231a11f766eab784e2337d8bf335ee0997bc8d4483bd11532fa",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_005.jsonl": "da7632e1e6eaca81345e441bfd81b0ae820c75b3205cafe2ec96ec9601f58f45",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_006.jsonl": "80ee21cfeb9b121f0866c244c1fbbb34e92c5bf96984985197843b967df954ee",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_007.jsonl": "0670d908490a1714fb6ef3b780b6a816b1f6edbf8c67627ab3caee9765f16d19",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_008.jsonl": "54addbde8da3c06163271e94b482c5d55dd280e66cc8d4c74cad63cc836d203e",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_009.jsonl": "0574425a65685617cb34bd5d2f0926ffc8829f22cae61a9377542131942982bb",
+    "logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_010.jsonl": "b0728baea63789f61907b9774b8a56ffa9ac36566cdca2b0da52ddbb5a949128",
     "logs/incomplete/technical_invalid_v1/openai__gpt-5.2/case_001.jsonl": "375cda65c6e0b1b345d8ac2eeeb96ac51a6c53cface427ea5c588dadf3b2631d",
     "logs/incomplete/technical_invalid_v1/openai__gpt-oss-120b/case_001.jsonl": "bfd426c65109c1f66b2901664cd6badd0a78beaf8d6e5019b01b246a0dfac960",
     "logs/incomplete/technical_invalid_v1/openai__gpt-oss-120b/case_002.jsonl": "64510c2c4ee112240361fb9351cfcb07fd1fc91e28bba698495b98f55c31b8d9",
     "logs/incomplete/technical_invalid_v1/qwen__qwen3.5-397b-a17b/case_001.jsonl": "c2dfaf527c0a8ad402d45f7a59139305bd1dcddd0e339dea69f0bcbe44692ccf",
     "logs/incomplete/technical_invalid_v1/z-ai__glm-4.5-air/case_001.jsonl": "5cfdc3563eb1afb973a6c0ead52c2ae987423274e5e6c6c5cdfd54f403427c0e",
-    "logs/incomplete/technical_invalid_v1/z-ai__glm-5/case_001.jsonl": "9330884067b024667a43d373dca87d6feaaf0bc403e349e36adfa72a7de33c6f"
+    "logs/incomplete/technical_invalid_v1/z-ai__glm-5/case_001.jsonl": "9330884067b024667a43d373dca87d6feaaf0bc403e349e36adfa72a7de33c6f",
+    "logs/raw/openai__gpt-5.2/case_001.jsonl": "1e256f301e253b3e1705617eaf0a6bb9b68dc1c2a1fe390e6f88b3b912e7ad88",
+    "logs/raw/openai__gpt-5.2/case_002.jsonl": "a0b0f03ad92d7a8de0467acc1f58fa6be5206c6988285f2804a905d8295ec858",
+    "logs/raw/openai__gpt-5.2/case_003.jsonl": "1a23dcb344d7fd772ab22bf1377a6174f45ae1be54330344d6bcdd445bacaf92",
+    "logs/raw/openai__gpt-5.2/case_004.jsonl": "56b093ae13bea3c959d6011a2b4b0171e559bed4e29ebb01c7f1caa5c836ec3d",
+    "logs/raw/openai__gpt-5.2/case_005.jsonl": "c95116207cb390a49022109a7f5d6cf0f2fd5cfae9117a41221c8ba49aa04959",
+    "logs/raw/openai__gpt-5.2/case_006.jsonl": "c28f14a265d2a25e93422a1040e13dd56bec5e7d0024c9fa5ca242845f985e30",
+    "logs/raw/openai__gpt-5.2/case_007.jsonl": "b83e3b56c1e4ae5bfe3d04212fd25653528d431e79506a694cb67fa993a35d24",
+    "logs/raw/openai__gpt-5.2/case_008.jsonl": "77c6c1124600bcdc2571865d5f3fb66aa7d70a745d98628bdd2606dbfa601ba1",
+    "logs/raw/openai__gpt-5.2/case_009.jsonl": "7c0e02f1d8f251ffdca1209a17b73516008a9a4f7f5e24452b0e67a044ebfe82",
+    "logs/raw/openai__gpt-5.2/case_010.jsonl": "c4afe387ccba67a5841148a70a4b45881d739f62ae60122310f60eed6ac993e3",
+    "logs/raw/openai__gpt-oss-120b/case_001.jsonl": "b096c936f0ed2a05e1d2d26c7e661c931f609a263b69ac42667c5fede7e7e73f",
+    "logs/raw/openai__gpt-oss-120b/case_002.jsonl": "587c6e9262a5e54079129aed77c657e3f305cc6081629866d04461f3920325de",
+    "logs/raw/openai__gpt-oss-120b/case_003.jsonl": "96d4e39f4e1fbd11c8b4811e48dd89417f9e6add2de7ca0f19b2ab9103ef1435",
+    "logs/raw/openai__gpt-oss-120b/case_004.jsonl": "53414a4cb714761b57b5b3fea09ff8a0321dc3ab331d1b8975b160d80e3e76e9",
+    "logs/raw/openai__gpt-oss-120b/case_005.jsonl": "2173e0574cf2d98541995a87ba79e126d252438167a9f2959154c18177efa410",
+    "logs/raw/openai__gpt-oss-120b/case_006.jsonl": "0c19181cb8de172d8489a4f91d8cd859e1a90d6cb18a58b1fe08bb816c3d5639",
+    "logs/raw/openai__gpt-oss-120b/case_007.jsonl": "5c613a9930fb3d1568dabb24b8503ccfce2af6386cae02171b0ecd3698b0a1c3",
+    "logs/raw/openai__gpt-oss-120b/case_008.jsonl": "45d9269f04c50ebaf89f89dc345ff773a8258fa1c798a3503f0bda1c7dc81360",
+    "logs/raw/openai__gpt-oss-120b/case_009.jsonl": "84797b3b3819477405b944d900a48957f73c9b3a57158f9b93a1d147c8dafe12",
+    "logs/raw/openai__gpt-oss-120b/case_010.jsonl": "bb8f746ff5f2538c3f1b604d4a4d2ad659b3676305951366b425054fde303844",
+    "logs/raw/qwen__qwen3.5-397b-a17b/case_001.jsonl": "430ed9f3cb8f89b645849cb1c34e4cb3ec483c7a229e50ee6aa93f4456b9ee9b",
+    "logs/raw/qwen__qwen3.5-397b-a17b/case_002.jsonl": "2f59e876cb3dba053e02d6ab310f703d8bb9e81a466b851134953dee93b48e06",
+    "logs/raw/qwen__qwen3.5-397b-a17b/case_003.jsonl": "d1234730336aa4fb7d68061fbd7fb4dfb5e487a8571bdfc7459a60316130d00d",
+    "logs/raw/qwen__qwen3.5-397b-a17b/case_004.jsonl": "5e2bb40c9484c2384d0020480de1d1f1f4169a6e82175682c92cf05d75225a2e",
+    "logs/raw/qwen__qwen3.5-397b-a17b/case_005.jsonl": "13b7a185bc7bdb95ef159fd2c4d92d01389dc4d4c55d3a71bcc472801751e2e1",
+    "logs/raw/qwen__qwen3.5-397b-a17b/case_006.jsonl": "d3d29d979d7d28a20f23fda1e04982089a3af3d02998a5fe06598cfbfb3b4106",
+    "logs/raw/qwen__qwen3.5-397b-a17b/case_007.jsonl": "d9ac8cf12bee1f8e748d45f834e4c7e048a255678120c5594f5a4c3c30878773",
+    "logs/raw/qwen__qwen3.5-397b-a17b/case_008.jsonl": "538773182c83a8c4f8466d3d7648e1ed3bc404b97f83a2b9b2f39c21bc31ea9c",
+    "logs/raw/qwen__qwen3.5-397b-a17b/case_009.jsonl": "01cec4ce44a800e73104bcd58cb7ca3afbfd3438d3057b9e2c35c51104f205d4",
+    "logs/raw/qwen__qwen3.5-397b-a17b/case_010.jsonl": "5ce8b0403c06a87656508b87337ceab048eef724928daf690bc1d6a3b7a16d9d",
+    "logs/raw/z-ai__glm-4.5-air/case_001.jsonl": "eb304406940beb960c13ae12e8f471da2412bbbef2aea88c945ca2bee440a32b",
+    "logs/raw/z-ai__glm-4.5-air/case_002.jsonl": "0c479b1e38c7ed73f7b06f1d57f0bdc961ff45ca4fcf0920ca1651a38723ecd3",
+    "logs/raw/z-ai__glm-4.5-air/case_003.jsonl": "73e5ae7ef5c901302ec3dffecebfd0b23c252c923cb9669ef0aaa339be22646a",
+    "logs/raw/z-ai__glm-4.5-air/case_004.jsonl": "284194cf62d591f7129e78d5586c5baac1d05bcc51d64f1f67f03320402edfe4",
+    "logs/raw/z-ai__glm-4.5-air/case_005.jsonl": "4ac18f137b37abfb41017e889ff5b2df4948c1064fda9ec9282102edb56c7791",
+    "logs/raw/z-ai__glm-4.5-air/case_006.jsonl": "8322d74f464ff50dc029c41f589debe7f3f752205e16f47840c8942c5350899a",
+    "logs/raw/z-ai__glm-4.5-air/case_007.jsonl": "b0cc8f82535ec2b1f50bbbc8ab6e872d8d373c32a975371198559df7ed1fd680",
+    "logs/raw/z-ai__glm-4.5-air/case_008.jsonl": "fdc0567d0861fb37d8b99f8e000ae10513d552b9b07b3c6ffc1576deb9e494c1",
+    "logs/raw/z-ai__glm-4.5-air/case_009.jsonl": "bcc81e040fc4a135237287dc92911488d0665511bcfb5771cc0d62052118bc16",
+    "logs/raw/z-ai__glm-4.5-air/case_010.jsonl": "23d30b198e9ae689da323626fdf1071511502c214d2af69a3669c7978d415b61",
+    "logs/raw/z-ai__glm-5/case_001.jsonl": "1ff722f65d9342c36a8de2d61a820ddb69525981b48ae3dd1472e7707266f5e5",
+    "logs/raw/z-ai__glm-5/case_002.jsonl": "5f7eda737c599ec4f1f9ed8d98c1357ae9a24b5a5d6a5426e9c1b8de465d4a79",
+    "logs/raw/z-ai__glm-5/case_003.jsonl": "37e45494307466fa444d4345694b772aaea349089635254e8b294ebe4c54bb17",
+    "logs/raw/z-ai__glm-5/case_004.jsonl": "85f1cb86c33c9938af7e3898bb1bce0477f14150d0462a089c9662f0a40daf35",
+    "logs/raw/z-ai__glm-5/case_005.jsonl": "0bbe3d96aa02a7c686e6b39e825f88542d1a1eb788033afc2d55907edd3d67a0",
+    "logs/raw/z-ai__glm-5/case_006.jsonl": "020a458c54aa1ceeb8311e1fd17ee25e732b7a17ed852cc8b800285a4576c308",
+    "logs/raw/z-ai__glm-5/case_007.jsonl": "e3fd6d37b17a9503297efe154d936f6d4ea3f9ad69938faad1e8113698fcb9d2",
+    "logs/raw/z-ai__glm-5/case_008.jsonl": "ec8d6874549a5caeb4683a0cbce65f4b2e3427b381d92a5feea5cff1f7c2c75e",
+    "logs/raw/z-ai__glm-5/case_009.jsonl": "dd7938f31d5859499df7017eca0c657e572c61af60527fc72d26d527aed86e23",
+    "logs/raw/z-ai__glm-5/case_010.jsonl": "a443260199da89ff2702f467e7313bc86842ece811a219f6d7c00b98160e6c88"
   },
   "category_note": "Manually assigned broad descriptive groups, not upstream strata.",
   "patient_fidelity_warning": {

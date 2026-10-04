@@ -1,16 +1,16 @@
 # Run1: julgamento LLM, revisão médica pendente
 
-Completos 0/50; ausências e decisões inválidas explicitadas no JSON.
+Tentativas terminais 50/50, incluindo 2 falhas operacionais; julgamentos clínicos válidos: 48. Ausências explicitadas no JSON.
 
-| Modelo | Completos | Corretos/julgados | Wilson 95% |
-|---|---:|---:|---|
-| openai/gpt-oss-120b | 0/10 | 0/0 | indisponível |
-| z-ai/glm-4.5-air | 0/10 | 0/0 | indisponível |
-| z-ai/glm-5 | 0/10 | 0/0 | indisponível |
-| qwen/qwen3.5-397b-a17b | 0/10 | 0/0 | indisponível |
-| openai/gpt-5.2 | 0/10 | 0/0 | indisponível |
+| Modelo | Tentativas terminais | Falhas operacionais | Corretos/julgados | Wilson 95% |
+|---|---:|---:|---:|---|
+| openai/gpt-oss-120b | 10/10 | 2 | 5/8 | 30.6%–86.3% |
+| z-ai/glm-4.5-air | 10/10 | 0 | 7/10 | 39.7%–89.2% |
+| z-ai/glm-5 | 10/10 | 0 | 7/10 | 39.7%–89.2% |
+| qwen/qwen3.5-397b-a17b | 10/10 | 0 | 6/10 | 31.3%–83.2% |
+| openai/gpt-5.2 | 10/10 | 0 | 7/10 | 39.7%–89.2% |
 
-Custo conhecido ledger: US$ 0.101054633; CSV completo: US$ 0. Custos de tentativas incompletas aparecem no detalhamento por ator. Chamadas não liquidadas impedem presumir total final.
+Custo conhecido ledger: US$ 1.502941443; CSV terminal: US$ 1.401886810. Custos de tentativas incompletas aparecem no detalhamento por ator. Chamadas não liquidadas impedem presumir total final.
 
 Mediana/IQR de tokens e latência, intervalos por categoria e pares ausentes estão no JSON. Tokens de raciocínio são subconjunto da conclusão; não somar novamente. Grupos clínicos descritivos possuem denominadores pequenos.
 
@@ -20,75 +20,75 @@ Histórico imutável: 290/300 trajetórias, métricas originais de todos os mode
 
 ## Custo e consumo por modelo
 
-Custos por modelo abaixo somam episódios concluídos, incluindo todos os atores. O custo global por ator inclui também tentativas incompletas; por isso pode exceder esta soma.
+Custos por modelo abaixo somam tentativas terminais, inclusive falhas operacionais, incluindo todos os atores. O custo global por ator inclui também tentativas incompletas; por isso pode exceder esta soma.
 
 | Modelo | Episódios | Custo total US$ | Custo médio US$ | Tokens totais mediana [Q1; Q3] | Prompt mediana [Q1; Q3] | Conclusão mediana [Q1; Q3] | Raciocínio mediana [Q1; Q3] |
 |---|---:|---:|---:|---|---|---|---|
-| openai/gpt-oss-120b | 0 | 0.000000 | indisponível | indisponível | indisponível | indisponível | indisponível |
-| z-ai/glm-4.5-air | 0 | 0.000000 | indisponível | indisponível | indisponível | indisponível | indisponível |
-| z-ai/glm-5 | 0 | 0.000000 | indisponível | indisponível | indisponível | indisponível | indisponível |
-| qwen/qwen3.5-397b-a17b | 0 | 0.000000 | indisponível | indisponível | indisponível | indisponível | indisponível |
-| openai/gpt-5.2 | 0 | 0.000000 | indisponível | indisponível | indisponível | indisponível | indisponível |
+| openai/gpt-oss-120b | 10 | 0.085939 | 0.008594 | 134,122 [73,970; 167,224] | 120,234 [63,369; 148,611] | 12,163 [10,320; 18,544] | 2,546 [2,015; 3,033] |
+| z-ai/glm-4.5-air | 10 | 0.036398 | 0.003640 | 21,368 [17,624; 30,703] | 18,306 [14,437; 27,434] | 3,062 [2,628; 3,594] | 1,913 [1,596; 2,260] |
+| z-ai/glm-5 | 10 | 0.141193 | 0.014119 | 26,884 [18,234; 35,903] | 21,386 [14,332; 29,590] | 5,211 [3,827; 6,050] | 2,740 [2,210; 3,470] |
+| qwen/qwen3.5-397b-a17b | 10 | 0.412584 | 0.041258 | 33,560 [24,733; 37,882] | 19,942 [17,295; 29,603] | 8,662 [6,790; 10,958] | 6,626 [5,107; 8,860] |
+| openai/gpt-5.2 | 10 | 0.725774 | 0.072577 | 25,346 [17,264; 32,130] | 21,172 [14,519; 27,852] | 3,890 [3,348; 4,577] | 2,184 [1,578; 2,324] |
 
 ## Categorias e casos
 
-Cada linha tem seu próprio denominador; Wilson é calculado sobre julgamentos válidos. Categorias amplas foram atribuídas manualmente e não correspondem aos estratos do artigo.
+Falhas operacionais são tentativas terminais, sem diagnóstico/julgamento; não viram decisão falsa do juiz. Cada linha tem seu próprio denominador; Wilson é calculado sobre julgamentos válidos. Categorias amplas foram atribuídas manualmente e não correspondem aos estratos do artigo.
 
-| Modelo | Categoria | Completos | Corretos/julgados | Wilson 95% |
+| Modelo | Categoria | Tentativas | Corretos/julgados | Wilson 95% |
 |---|---|---:|---:|---|
-| openai/gpt-oss-120b | cardiovascular | 0 | 0/0 | indisponível |
-| openai/gpt-oss-120b | endocrine_infectious | 0 | 0/0 | indisponível |
-| openai/gpt-oss-120b | gastrointestinal | 0 | 0/0 | indisponível |
-| openai/gpt-oss-120b | hematology | 0 | 0/0 | indisponível |
-| openai/gpt-oss-120b | neurologic | 0 | 0/0 | indisponível |
-| openai/gpt-oss-120b | obstetric | 0 | 0/0 | indisponível |
-| openai/gpt-oss-120b | respiratory_oncology | 0 | 0/0 | indisponível |
-| openai/gpt-oss-120b | urologic | 0 | 0/0 | indisponível |
-| z-ai/glm-4.5-air | cardiovascular | 0 | 0/0 | indisponível |
-| z-ai/glm-4.5-air | endocrine_infectious | 0 | 0/0 | indisponível |
-| z-ai/glm-4.5-air | gastrointestinal | 0 | 0/0 | indisponível |
-| z-ai/glm-4.5-air | hematology | 0 | 0/0 | indisponível |
-| z-ai/glm-4.5-air | neurologic | 0 | 0/0 | indisponível |
-| z-ai/glm-4.5-air | obstetric | 0 | 0/0 | indisponível |
-| z-ai/glm-4.5-air | respiratory_oncology | 0 | 0/0 | indisponível |
-| z-ai/glm-4.5-air | urologic | 0 | 0/0 | indisponível |
-| z-ai/glm-5 | cardiovascular | 0 | 0/0 | indisponível |
-| z-ai/glm-5 | endocrine_infectious | 0 | 0/0 | indisponível |
-| z-ai/glm-5 | gastrointestinal | 0 | 0/0 | indisponível |
-| z-ai/glm-5 | hematology | 0 | 0/0 | indisponível |
-| z-ai/glm-5 | neurologic | 0 | 0/0 | indisponível |
-| z-ai/glm-5 | obstetric | 0 | 0/0 | indisponível |
-| z-ai/glm-5 | respiratory_oncology | 0 | 0/0 | indisponível |
-| z-ai/glm-5 | urologic | 0 | 0/0 | indisponível |
-| qwen/qwen3.5-397b-a17b | cardiovascular | 0 | 0/0 | indisponível |
-| qwen/qwen3.5-397b-a17b | endocrine_infectious | 0 | 0/0 | indisponível |
-| qwen/qwen3.5-397b-a17b | gastrointestinal | 0 | 0/0 | indisponível |
-| qwen/qwen3.5-397b-a17b | hematology | 0 | 0/0 | indisponível |
-| qwen/qwen3.5-397b-a17b | neurologic | 0 | 0/0 | indisponível |
-| qwen/qwen3.5-397b-a17b | obstetric | 0 | 0/0 | indisponível |
-| qwen/qwen3.5-397b-a17b | respiratory_oncology | 0 | 0/0 | indisponível |
-| qwen/qwen3.5-397b-a17b | urologic | 0 | 0/0 | indisponível |
-| openai/gpt-5.2 | cardiovascular | 0 | 0/0 | indisponível |
-| openai/gpt-5.2 | endocrine_infectious | 0 | 0/0 | indisponível |
-| openai/gpt-5.2 | gastrointestinal | 0 | 0/0 | indisponível |
-| openai/gpt-5.2 | hematology | 0 | 0/0 | indisponível |
-| openai/gpt-5.2 | neurologic | 0 | 0/0 | indisponível |
-| openai/gpt-5.2 | obstetric | 0 | 0/0 | indisponível |
-| openai/gpt-5.2 | respiratory_oncology | 0 | 0/0 | indisponível |
-| openai/gpt-5.2 | urologic | 0 | 0/0 | indisponível |
+| openai/gpt-oss-120b | cardiovascular | 2 | 0/1 | 0.0%–79.3% |
+| openai/gpt-oss-120b | endocrine_infectious | 1 | 0/1 | 0.0%–79.3% |
+| openai/gpt-oss-120b | gastrointestinal | 1 | 0/0 | indisponível |
+| openai/gpt-oss-120b | hematology | 1 | 1/1 | 20.7%–100.0% |
+| openai/gpt-oss-120b | neurologic | 1 | 1/1 | 20.7%–100.0% |
+| openai/gpt-oss-120b | obstetric | 1 | 0/1 | 0.0%–79.3% |
+| openai/gpt-oss-120b | respiratory_oncology | 2 | 2/2 | 34.2%–100.0% |
+| openai/gpt-oss-120b | urologic | 1 | 1/1 | 20.7%–100.0% |
+| z-ai/glm-4.5-air | cardiovascular | 2 | 1/2 | 9.5%–90.5% |
+| z-ai/glm-4.5-air | endocrine_infectious | 1 | 1/1 | 20.7%–100.0% |
+| z-ai/glm-4.5-air | gastrointestinal | 1 | 1/1 | 20.7%–100.0% |
+| z-ai/glm-4.5-air | hematology | 1 | 1/1 | 20.7%–100.0% |
+| z-ai/glm-4.5-air | neurologic | 1 | 1/1 | 20.7%–100.0% |
+| z-ai/glm-4.5-air | obstetric | 1 | 0/1 | 0.0%–79.3% |
+| z-ai/glm-4.5-air | respiratory_oncology | 2 | 1/2 | 9.5%–90.5% |
+| z-ai/glm-4.5-air | urologic | 1 | 1/1 | 20.7%–100.0% |
+| z-ai/glm-5 | cardiovascular | 2 | 0/2 | 0.0%–65.8% |
+| z-ai/glm-5 | endocrine_infectious | 1 | 1/1 | 20.7%–100.0% |
+| z-ai/glm-5 | gastrointestinal | 1 | 0/1 | 0.0%–79.3% |
+| z-ai/glm-5 | hematology | 1 | 1/1 | 20.7%–100.0% |
+| z-ai/glm-5 | neurologic | 1 | 1/1 | 20.7%–100.0% |
+| z-ai/glm-5 | obstetric | 1 | 1/1 | 20.7%–100.0% |
+| z-ai/glm-5 | respiratory_oncology | 2 | 2/2 | 34.2%–100.0% |
+| z-ai/glm-5 | urologic | 1 | 1/1 | 20.7%–100.0% |
+| qwen/qwen3.5-397b-a17b | cardiovascular | 2 | 1/2 | 9.5%–90.5% |
+| qwen/qwen3.5-397b-a17b | endocrine_infectious | 1 | 1/1 | 20.7%–100.0% |
+| qwen/qwen3.5-397b-a17b | gastrointestinal | 1 | 0/1 | 0.0%–79.3% |
+| qwen/qwen3.5-397b-a17b | hematology | 1 | 1/1 | 20.7%–100.0% |
+| qwen/qwen3.5-397b-a17b | neurologic | 1 | 1/1 | 20.7%–100.0% |
+| qwen/qwen3.5-397b-a17b | obstetric | 1 | 0/1 | 0.0%–79.3% |
+| qwen/qwen3.5-397b-a17b | respiratory_oncology | 2 | 1/2 | 9.5%–90.5% |
+| qwen/qwen3.5-397b-a17b | urologic | 1 | 1/1 | 20.7%–100.0% |
+| openai/gpt-5.2 | cardiovascular | 2 | 1/2 | 9.5%–90.5% |
+| openai/gpt-5.2 | endocrine_infectious | 1 | 1/1 | 20.7%–100.0% |
+| openai/gpt-5.2 | gastrointestinal | 1 | 0/1 | 0.0%–79.3% |
+| openai/gpt-5.2 | hematology | 1 | 1/1 | 20.7%–100.0% |
+| openai/gpt-5.2 | neurologic | 1 | 1/1 | 20.7%–100.0% |
+| openai/gpt-5.2 | obstetric | 1 | 0/1 | 0.0%–79.3% |
+| openai/gpt-5.2 | respiratory_oncology | 2 | 2/2 | 34.2%–100.0% |
+| openai/gpt-5.2 | urologic | 1 | 1/1 | 20.7%–100.0% |
 
-| Caso | Categoria | Completos | Corretos/julgados entre modelos | Wilson 95% |
+| Caso | Categoria | Tentativas | Corretos/julgados entre modelos | Wilson 95% |
 |---|---|---:|---:|---|
-| case_001 | cardiovascular | 0/5 | 0/0 | indisponível |
-| case_002 | cardiovascular | 0/5 | 0/0 | indisponível |
-| case_003 | urologic | 0/5 | 0/0 | indisponível |
-| case_004 | respiratory_oncology | 0/5 | 0/0 | indisponível |
-| case_005 | respiratory_oncology | 0/5 | 0/0 | indisponível |
-| case_006 | endocrine_infectious | 0/5 | 0/0 | indisponível |
-| case_007 | hematology | 0/5 | 0/0 | indisponível |
-| case_008 | neurologic | 0/5 | 0/0 | indisponível |
-| case_009 | gastrointestinal | 0/5 | 0/0 | indisponível |
-| case_010 | obstetric | 0/5 | 0/0 | indisponível |
+| case_001 | cardiovascular | 5/5 | 1/4 | 4.6%–69.9% |
+| case_002 | cardiovascular | 5/5 | 2/5 | 11.8%–76.9% |
+| case_003 | urologic | 5/5 | 5/5 | 56.6%–100.0% |
+| case_004 | respiratory_oncology | 5/5 | 4/5 | 37.6%–96.4% |
+| case_005 | respiratory_oncology | 5/5 | 4/5 | 37.6%–96.4% |
+| case_006 | endocrine_infectious | 5/5 | 4/5 | 37.6%–96.4% |
+| case_007 | hematology | 5/5 | 5/5 | 56.6%–100.0% |
+| case_008 | neurologic | 5/5 | 5/5 | 56.6%–100.0% |
+| case_009 | gastrointestinal | 5/5 | 1/4 | 4.6%–69.9% |
+| case_010 | obstetric | 5/5 | 1/5 | 3.6%–62.4% |
 
 Os intervalos por caso agrupam cinco configurações diferentes, sendo apenas descritivos; os modelos compartilham o mesmo caso e não são cinco pacientes independentes.
 

@@ -68,7 +68,7 @@
   ],
   "pilot_expected": 5,
   "pilot_completed": 5,
-  "known_all_calls_usd": "1.502941443",
+  "known_all_calls_usd": "0.214921008",
   "unsettled_calls": [],
   "assumption": "Linear extrapolation from case001 with patient/judge/matcher included; complexity differs. Projection is not execution authorization."
 }
