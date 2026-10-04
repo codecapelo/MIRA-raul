@@ -2,10 +2,13 @@
   "state": "execution_finished",
   "runner_exit_code": 0,
   "args": [
+    "--model",
+    "qwen/qwen3.8-max-0902",
     "--runs",
+    "1",
     "2",
     "3"
   ],
-  "supervisor_pid": 93086,
-  "timestamp": 1791139618.507555
+  "supervisor_pid": 93924,
+  "timestamp": 1791141207.952514
 }

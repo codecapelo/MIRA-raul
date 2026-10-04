@@ -6,8 +6,9 @@ from decimal import Decimal
 from itertools import combinations
 from pathlib import Path
 CORE=['openai/gpt-oss-120b','z-ai/glm-4.5-air','z-ai/glm-5','qwen/qwen3.5-397b-a17b','openai/gpt-5.2']
-EXT='qwen/qwen3.8-max-prime'  # extension model: isolated traces/CSVs, same protocol
-MODELS=CORE+[EXT]
+EXTS={'qwen/qwen3.8-max-prime':'qwen38_max_prime','qwen/qwen3.8-max-0902':'qwen38_max_0902'}  # extension models: isolated traces/CSVs, same protocol
+EXT=list(EXTS)
+MODELS=CORE+EXT
 RUNS=(1,2,3)
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def judge(s):
@@ -26,7 +27,7 @@ def load(root):
  rows=[];issues=[];cases=sorted(c.name for c in (root/'cases').glob('case_*'))
  for run in RUNS:
   seen=set()
-  for src in (root/'results'/f'run{run}.csv',root/'results'/f'qwen38_max_prime_run{run}.csv'):
+  for src in [root/'results'/f'run{run}.csv']+[root/'results'/f'{t}_run{run}.csv' for t in EXTS.values()]:
    for r in csv.DictReader(src.open()):
     k=(r['case_id'],r['model'])
     if k in seen:issues.append(['duplicate',run,list(k)]);continue
@@ -50,7 +51,7 @@ def cluster_boot(rr,cases,n=10000,seed=20261004):
  vals.sort();return [vals[int(.025*len(vals))],vals[int(.975*len(vals))-1]] if vals else None
 def trace_stats(root):
  out=defaultdict(lambda:{'doctor_responses':0,'with_logprobs':0});commits=defaultdict(set);providers=defaultdict(set);manifest={}
- for run,clab,d in(('1','1',root/'logs/raw'),('2','2',root/'runs/run2/logs/raw'),('3','3',root/'runs/run3/logs/raw'))+tuple((r,'ext'+r,root/f'runs/qwen38_max_prime/run{r}/logs/raw') for r in '123'):
+ for run,clab,d in(('1','1',root/'logs/raw'),('2','2',root/'runs/run2/logs/raw'),('3','3',root/'runs/run3/logs/raw'))+tuple((r,'ext'+t+r,root/f'runs/{t}/run{r}/logs/raw') for t in EXTS.values() for r in '123'):
   for log in sorted(d.glob('*/*.jsonl')):
    manifest[str(log.relative_to(root))]=sha(log);req={};model=log.parent.name.replace('__','/')
    for line in log.read_text().splitlines():
@@ -95,12 +96,12 @@ def main(root,write=True,legacy_root=None):
  for e in led:
   states[e['state']]+=1
   if e['cost'] is None:continue
-  m=json.loads(e['metadata'] or '{}');log=m.get('log','');run='run2' if '/runs/run2/' in log else 'run3' if '/runs/run3/' in log else 'qwen38_run'+log.split('/runs/qwen38_max_prime/run')[1][0] if '/runs/qwen38_max_prime/run' in log else 'run1_ou_historico'
+  m=json.loads(e['metadata'] or '{}');log=m.get('log','');run='run2' if '/runs/run2/' in log else 'run3' if '/runs/run3/' in log else next((t+'_run'+log.split(f'/runs/{t}/run')[1][0] for t in EXTS.values() if f'/runs/{t}/run' in log),'run1_ou_historico')
   a=actor[m.get('role') or 'unknown'][run];a[0]+=1;a[1]+=Decimal(e['cost']);total+=Decimal(e['cost'])
  res['ledger']={'states':dict(states),'total_usd':str(total),'by_actor_and_run':{r:{k:{'calls':v[0],'cost_usd':str(v[1])} for k,v in d.items()} for r,d in actor.items()}}
- snaps=sorted((root/'reports').glob('credits_run23_final_*.json'))
+ snaps=sorted((root/'reports').glob('credits_*final_*.json'),key=lambda f:json.loads(f.read_text())['timestamp'])
  if snaps:
-  last=json.loads(snaps[-1].read_text())['response']['data'];res['account_final']={'total_usage_usd':str(last['total_usage']),'total_credits_usd':str(last['total_credits']),'snapshots':[s.name for s in snaps],'equals_ledger':Decimal(str(last['total_usage']))==total}
+  last=json.loads(snaps[-1].read_text())['response']['data'];res['account_final']={'total_usage_usd':str(last['total_usage']),'total_credits_usd':str(last['total_credits']),'snapshots':[x.name for x in snaps[-3:]],'equals_ledger':Decimal(str(last['total_usage']))==total}
  res['terminal_csv_cost_usd']=str(sum((Decimal(r['cost_usd']) for r in rows if r['cost_usd']),Decimal(0)))
  res['cost_by_run_terminal_usd']={run:str(sum((Decimal(r['cost_usd']) for r in rows if r['run']==run and r['cost_usd']),Decimal(0))) for run in RUNS}
  tr,commits,providers,manifest=trace_stats(root)
@@ -109,28 +110,28 @@ def main(root,write=True,legacy_root=None):
  def mark(c,m,run):
   r=next((x for x in rows if x['case_id']==c and x['model']==m and x['run']==run),None);return '?' if r is None or r['verdict'] is None else 'Y' if r['verdict'] else 'N'
  res['verdict_triples_run1_run2_run3']={c:{m:''.join(mark(c,m,run) for run in RUNS) for m in MODELS} for c in cases}
- res['pooled_all_models']=score(rows);res['pooled_core5_models']=score([r for r in rows if r['model'] in CORE])
+ res['pooled_all_models']=score(rows);res['pooled_core5_models']=score([r for r in rows if r['model'] in CORE]);res['pooled_extension_models']={m:score([r for r in rows if r['model']==m]) for m in EXT}
  pr=[Decimal(v) for v in res['cost_by_run_terminal_usd'].values()];mean=sum(pr)/3
  res['projection_5_runs']={'method':'mean terminal cost of the 3 observed runs x 5; excludes invalidated pilot, incomplete attempts and unattributed cost','mean_terminal_cost_per_run_usd':str(mean),'projected_5_runs_terminal_usd':str(mean*5),'additional_2_runs_estimate_usd':str(mean*2),'per_model_projected_5_runs_usd':{m:str(sum((Decimal(v) for v in per[m]['by_run_cost_usd'].values()),Decimal(0))/3*5) for m in MODELS},'not_an_authorization':True}
  res['legacy_verification']=legacy_check(legacy_root or root);res['legacy_verification']['root_checked']=str(legacy_root or root);res['trace_manifest_files']=len(manifest)
  if not write:return res
  (out/'all_runs_summary.json').write_text(json.dumps(res,indent=2,ensure_ascii=False)+'\n')
- ext_m={k:v for k,v in manifest.items() if '/qwen38_max_prime/' in k};core_m={k:v for k,v in manifest.items() if k not in ext_m}
+ ext_by={t:{k:v for k,v in manifest.items() if f'/{t}/' in k} for t in EXTS.values()};core_m={k:v for k,v in manifest.items() if not any(k in d for d in ext_by.values())}
  (out/'final_trace_manifest_runs123.json').write_text(json.dumps({'description':'sha256 of every raw trace used (run1 logs/raw, run2/run3 runs/*/logs/raw)','files':core_m},indent=2)+'\n')
- (out/'final_trace_manifest_qwen38_max_prime.json').write_text(json.dumps({'description':'sha256 of raw traces of qwen/qwen3.8-max-prime (runs/qwen38_max_prime/run*/logs/raw)','files':ext_m},indent=2)+'\n')
+ for t,d in ext_by.items():(out/f'final_trace_manifest_{t}.json').write_text(json.dumps({'description':f'sha256 of raw traces of extension model {t} (runs/{t}/run*/logs/raw)','files':d},indent=2)+'\n')
  with (root/'results/all_runs.csv').open('w',newline='') as h:
   keys=['run']+[k for k in rows[0] if k not in('run','verdict')];w=csv.DictWriter(h,fieldnames=keys,extrasaction='ignore');w.writeheader();w.writerows(rows)
  (out/'all_runs_summary.md').write_text(render(res)+'\n');(out/'all_runs_cost_projection.md').write_text(render_cost(res)+'\n')
  print(json.dumps({'rows':len(rows),'issues':len(issues),'ledger_total':res['ledger']['total_usd'],'legacy_checked':res['legacy_verification']['checked'],'legacy_mismatch':len(res['legacy_verification']['mismatch']),'legacy_missing':len(res['legacy_verification']['missing'])}))
  return res
 def render(res):
- per=res['models'];L=['# Análise combinada: 3 runs, 5 modelos principais + extensão Qwen3.8-max-prime (%d encontros)' % res['terminal_rows'] + '','',
+ per=res['models'];L=['# Análise combinada: 3 runs, 5 modelos principais + 2 modelos de extensão Qwen3.8 (%d encontros)' % res['terminal_rows'] + '','',
  f"Terminais: {res['terminal_rows']}/{res['expected_rows']}; problemas de integridade: {len(res['integrity_issues'])}. **Julgamento por LLM (Gemini 3.1 Flash-Lite); revisão médica pendente. O juiz não estabelece segurança clínica nem superioridade.** Encontros sem julgamento (falha operacional/sem diagnóstico) são mostrados à parte e não contam como erro nem acerto.","",
  'Repetições do mesmo caso **não são pacientes independentes**: o Wilson sobre os julgamentos agrupados é apenas descritivo e subestima a incerteza; o bootstrap por caso (10 casos, 10 000 reamostragens, semente 20261004) é mostrado como contraste, também descritivo.','',
  '## Placar por modelo','','| Modelo | Run 1 | Run 2 | Run 3 | Agregado (corretos/julgados) | Wilson 95% | Bootstrap por caso 95% | Sem julgamento |','|---|---:|---:|---:|---:|---|---|---:|']
  for m,x in per.items():
   b=[f"{x['by_run'][r]['correct']}/{x['by_run'][r]['judged']}" for r in RUNS];p=x['pooled'];L.append(f"| {m} | {b[0]} | {b[1]} | {b[2]} | {p['correct']}/{p['judged']} ({p['accuracy']:.1%}) | {fci(p['wilson95'])} | {fci(x['cluster_bootstrap95'])} | {p['unjudged']} |")
- a=res['pooled_all_models'];c5=res['pooled_core5_models'];L+=['',f"Todos os 6 modelos: {a['correct']}/{a['judged']} julgados ({a['accuracy']:.1%}); {a['unjudged']} sem julgamento em {a['attempts']} terminais. Cinco modelos principais: {c5['correct']}/{c5['judged']} ({c5['accuracy']:.1%}) em {c5['attempts']} terminais. `qwen/qwen3.8-max-prime` foi adicionado depois (mesmo protocolo e juiz, traces isolados em `runs/qwen38_max_prime/`; parâmetros de amostragem assumidos iguais aos do Qwen3.5).",'','## Consistência entre repetições (descritiva)','','Casos por número de runs corretas, casos estáveis (mesmo veredito nas três runs) e concordância média par a par. Adaptação descritiva; **não** é o ConsistencyDx do artigo.','','| Modelo | 0/3 | 1/3 | 2/3 | 3/3 | Estáveis | Concordância par a par |','|---|---:|---:|---:|---:|---:|---:|']
+ a=res['pooled_all_models'];c5=res['pooled_core5_models'];L+=['',f"Todos os 7 modelos: {a['correct']}/{a['judged']} julgados ({a['accuracy']:.1%}); {a['unjudged']} sem julgamento em {a['attempts']} terminais. Cinco modelos principais: {c5['correct']}/{c5['judged']} ({c5['accuracy']:.1%}) em {c5['attempts']} terminais. `qwen/qwen3.8-max-prime` e `qwen/qwen3.8-max-0902` foram adicionados depois (mesmo protocolo e juiz, rota Alibaba única, traces isolados em `runs/qwen38_max_prime/` e `runs/qwen38_max_0902/`; parâmetros de amostragem assumidos iguais aos do Qwen3.5).",'','## Consistência entre repetições (descritiva)','','Casos por número de runs corretas, casos estáveis (mesmo veredito nas três runs) e concordância média par a par. Adaptação descritiva; **não** é o ConsistencyDx do artigo.','','| Modelo | 0/3 | 1/3 | 2/3 | 3/3 | Estáveis | Concordância par a par |','|---|---:|---:|---:|---:|---:|---:|']
  for m,x in per.items():
   c=x['consistency'];d=c['correct_count_distribution'];ag=c['mean_pairwise_agreement'];L.append(f"| {m} | {d['0']} | {d['1']} | {d['2']} | {d['3']} | {c['stable_cases_all_same_verdict']}/{c['cases_with_3_judged_runs']} | {f'{ag:.1%}' if ag is not None else 'n/d'} |")
  L+=['','Casos com algum encontro sem julgamento ficam fora desta tabela.','','## Vereditos por caso (run 1, run 2, run 3; Y=correto, N=incorreto, ?=sem julgamento)','','| Caso | '+' | '.join(m.split('/')[-1] for m in MODELS)+' |','|---|'+'---|'*len(MODELS)]
@@ -146,7 +147,7 @@ def render(res):
  L+=['','A latência de encontros retomados após interrupção reflete tempo de parede e deve ser usada com cautela.','','## Parâmetros, provedores, commits e logprobs','',f"Commits por run: {res['commits_per_run']}. Provedores nos traces: {res['providers_in_traces']}.",'','| Execução | Modelo | Respostas do médico | Com logprobs recebidos |','|---|---|---:|---:|']
  for k,v in res['logprobs_doctor_responses'].items():
   r,m=k.split('|');L.append(f"| {r} | {m} | {v['doctor_responses']} | {v['with_logprobs']} |")
- L+=['','Logprobs foram solicitados quando suportados; ausentes ficam marcados como ausentes. Nenhum ProbScore foi calculado ou inventado.','','## Verificações','',f"Hashes legacy conferidos em `{res['legacy_verification']['root_checked']}`: {res['legacy_verification']['checked']}; divergentes: {len(res['legacy_verification']['mismatch'])}; ausentes: {len(res['legacy_verification']['missing'])}. Manifestos de traces: {res['trace_manifest_files']} arquivos no total (`reports/final_trace_manifest_runs123.json` para os 5 modelos principais e `reports/final_trace_manifest_qwen38_max_prime.json` para a extensão).",'','## Limites','','Revisão médica cega pendente. O juiz LLM usa temperatura 1 e pode variar. A comparação com o benchmark histórico lexical (Fase 1) não é equivalente (outros modelos, ferramentas, juiz e transporte). Nenhuma afirmação de acurácia clínica ou superioridade.']
+ L+=['','Logprobs foram solicitados quando suportados; ausentes ficam marcados como ausentes. Nenhum ProbScore foi calculado ou inventado.','','## Verificações','',f"Hashes legacy conferidos em `{res['legacy_verification']['root_checked']}`: {res['legacy_verification']['checked']}; divergentes: {len(res['legacy_verification']['mismatch'])}; ausentes: {len(res['legacy_verification']['missing'])}. Manifestos de traces: {res['trace_manifest_files']} arquivos no total (`reports/final_trace_manifest_runs123.json` para os 5 modelos principais e `reports/final_trace_manifest_qwen38_max_prime.json` / `..._qwen38_max_0902.json` para a extensão).",'','## Limites','','Revisão médica cega pendente. O juiz LLM usa temperatura 1 e pode variar. A comparação com o benchmark histórico lexical (Fase 1) não é equivalente (outros modelos, ferramentas, juiz e transporte). Nenhuma afirmação de acurácia clínica ou superioridade.']
  return '\n'.join(L)
 def render_cost(res):
  p=res['projection_5_runs'];L=['# Custos e projeção (runs 1 a 3)','',f"Custo real total (ledger = conta): US$ {res['ledger']['total_usd']}. Terminais por run: "+', '.join(f"run {k} US$ {v}" for k,v in res['cost_by_run_terminal_usd'].items())+'.','',f"Projeção para 5 repetições: média dos terminais observados US$ {float(p['mean_terminal_cost_per_run_usd']):.4f}/run × 5 = US$ {float(p['projected_5_runs_terminal_usd']):.2f} (duas runs adicionais ≈ US$ {float(p['additional_2_runs_estimate_usd']):.2f}). Exclui piloto invalidado, tentativas incompletas e custo não atribuído. **Estimativa, não autorização de nova execução.**",'','| Modelo | Custo médio/encontro US$ | 5 runs projetadas US$ |','|---|---:|---:|']

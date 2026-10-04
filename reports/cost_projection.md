@@ -26,3 +26,7 @@ Projeção linear baseada nas cinco tentativas terminais do caso 001, incluindo 
 ## Atualização após runs 2 e 3
 
 Custo real total US$ 4.274237323 (ledger = conta). Detalhes e projeção para 5 rodadas em [all_runs_cost_projection.md](all_runs_cost_projection.md). Esta seção substitui o gasto parcial citado acima; a projeção linear do piloto acima permanece como histórico.
+
+## Atualização após extensão Qwen3.8
+
+Custo real total US$ 8.356544873 (ledger = conta). A projeção para 5 repetições em [all_runs_cost_projection.md](all_runs_cost_projection.md) agora cobre 7 modelos.

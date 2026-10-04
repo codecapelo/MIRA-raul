@@ -1,5 +1,5 @@
 {
-  "description": "sha256 of raw traces of qwen/qwen3.8-max-prime (runs/qwen38_max_prime/run*/logs/raw)",
+  "description": "sha256 of raw traces of extension model qwen38_max_prime (runs/qwen38_max_prime/run*/logs/raw)",
   "files": {
     "runs/qwen38_max_prime/run1/logs/raw/qwen__qwen3.8-max-prime/case_001.jsonl": "c4506668214cbf33b78324774cd915e65378b3a036eeac4251af854ae72ae5ca",
     "runs/qwen38_max_prime/run1/logs/raw/qwen__qwen3.8-max-prime/case_002.jsonl": "cc138ea3374a6945eac289c56807461afae47109e3be6382401e837b91a4893f",

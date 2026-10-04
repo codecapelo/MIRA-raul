@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "terminal_rows": 180,
-  "expected_rows": 180,
+  "terminal_rows": 210,
+  "expected_rows": 210,
   "integrity_issues": [],
   "physician_review": "pending",
   "models": {
@@ -712,13 +712,131 @@
       "providers_csv": [
         "alibaba"
       ]
+    },
+    "qwen/qwen3.8-max-0902": {
+      "by_run": {
+        "1": {
+          "attempts": 10,
+          "unjudged": 0,
+          "judged": 10,
+          "correct": 9,
+          "accuracy": 0.9,
+          "wilson95": [
+            0.5958499732047615,
+            0.9821237869049271
+          ]
+        },
+        "2": {
+          "attempts": 10,
+          "unjudged": 0,
+          "judged": 10,
+          "correct": 8,
+          "accuracy": 0.8,
+          "wilson95": [
+            0.49016247153664183,
+            0.9433178485456247
+          ]
+        },
+        "3": {
+          "attempts": 10,
+          "unjudged": 0,
+          "judged": 10,
+          "correct": 7,
+          "accuracy": 0.7,
+          "wilson95": [
+            0.39677814746114537,
+            0.8922087325936989
+          ]
+        }
+      },
+      "pooled": {
+        "attempts": 30,
+        "unjudged": 0,
+        "judged": 30,
+        "correct": 24,
+        "accuracy": 0.8,
+        "wilson95": [
+          0.6269430358685175,
+          0.9049489282271013
+        ]
+      },
+      "cluster_bootstrap95": [
+        0.6,
+        1.0
+      ],
+      "consistency": {
+        "cases_with_3_judged_runs": 10,
+        "correct_count_distribution": {
+          "0": 0,
+          "1": 3,
+          "2": 0,
+          "3": 7
+        },
+        "stable_cases_all_same_verdict": 7,
+        "mean_pairwise_agreement": 0.8,
+        "note": "Descriptive agreement across repeated judged verdicts; not the original paper ConsistencyDx."
+      },
+      "usage": {
+        "prompt_tokens": {
+          "n": 30,
+          "median": 16121.5,
+          "q1": 11510.75,
+          "q3": 21600.25
+        },
+        "completion_tokens": {
+          "n": 30,
+          "median": 4650.0,
+          "q1": 3712.75,
+          "q3": 5617.75
+        },
+        "reasoning_tokens": {
+          "n": 30,
+          "median": 1678.0,
+          "q1": 1272.25,
+          "q3": 2231.75
+        },
+        "latency_s": {
+          "n": 30,
+          "median": 102.157057646,
+          "q1": 84.34399089550001,
+          "q3": 118.83510484400003
+        },
+        "n_turns": {
+          "n": 30,
+          "median": 1.0,
+          "q1": 1.0,
+          "q3": 1.0
+        },
+        "n_tool_calls": {
+          "n": 30,
+          "median": 9.0,
+          "q1": 7.25,
+          "q3": 10.0
+        },
+        "tool_errors": {
+          "n": 30,
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        }
+      },
+      "cost_terminal_usd": "1.320416220",
+      "cost_mean_per_encounter_usd": "0.044013874",
+      "by_run_cost_usd": {
+        "1": "0.422524240",
+        "2": "0.460603240",
+        "3": "0.437288740"
+      },
+      "providers_csv": [
+        "alibaba"
+      ]
     }
   },
   "ledger": {
     "states": {
-      "settled": 3664
+      "settled": 4196
     },
-    "total_usd": "7.036128653",
+    "total_usd": "8.356544873",
     "by_actor_and_run": {
       "doctor": {
         "run1_ou_historico": {
@@ -733,17 +851,29 @@
           "calls": 446,
           "cost_usd": "1.021165615"
         },
-        "qwen38_run1": {
+        "qwen38_max_prime_run1": {
           "calls": 51,
           "cost_usd": "0.839400"
         },
-        "qwen38_run2": {
+        "qwen38_max_prime_run2": {
           "calls": 49,
           "cost_usd": "0.781868"
         },
-        "qwen38_run3": {
+        "qwen38_max_prime_run3": {
           "calls": 51,
           "cost_usd": "1.027948"
+        },
+        "qwen38_max_0902_run1": {
+          "calls": 47,
+          "cost_usd": "0.403906"
+        },
+        "qwen38_max_0902_run2": {
+          "calls": 52,
+          "cost_usd": "0.444160"
+        },
+        "qwen38_max_0902_run3": {
+          "calls": 47,
+          "cost_usd": "0.427844"
         }
       },
       "patient": {
@@ -759,17 +889,25 @@
           "calls": 145,
           "cost_usd": "0.366156825"
         },
-        "qwen38_run1": {
+        "qwen38_max_prime_run1": {
           "calls": 1,
           "cost_usd": "0.0097"
         },
-        "qwen38_run2": {
+        "qwen38_max_prime_run2": {
           "calls": 2,
           "cost_usd": "0.018884"
         },
-        "qwen38_run3": {
+        "qwen38_max_prime_run3": {
           "calls": 4,
           "cost_usd": "0.052456"
+        },
+        "qwen38_max_0902_run1": {
+          "calls": 1,
+          "cost_usd": "0.009"
+        },
+        "qwen38_max_0902_run2": {
+          "calls": 1,
+          "cost_usd": "0.005636"
         }
       },
       "matcher": {
@@ -785,17 +923,29 @@
           "calls": 412,
           "cost_usd": "0.024514105"
         },
-        "qwen38_run1": {
+        "qwen38_max_prime_run1": {
           "calls": 111,
           "cost_usd": "0.006922745"
         },
-        "qwen38_run2": {
+        "qwen38_max_prime_run2": {
           "calls": 143,
           "cost_usd": "0.008655190"
         },
-        "qwen38_run3": {
+        "qwen38_max_prime_run3": {
           "calls": 107,
           "cost_usd": "0.006375895"
+        },
+        "qwen38_max_0902_run1": {
+          "calls": 110,
+          "cost_usd": "0.006350240"
+        },
+        "qwen38_max_0902_run2": {
+          "calls": 130,
+          "cost_usd": "0.007711740"
+        },
+        "qwen38_max_0902_run3": {
+          "calls": 114,
+          "cost_usd": "0.006357990"
         }
       },
       "judge": {
@@ -811,17 +961,29 @@
           "calls": 48,
           "cost_usd": "0.01516525"
         },
-        "qwen38_run1": {
+        "qwen38_max_prime_run1": {
           "calls": 10,
           "cost_usd": "0.00320200"
         },
-        "qwen38_run2": {
+        "qwen38_max_prime_run2": {
           "calls": 10,
           "cost_usd": "0.00319475"
         },
-        "qwen38_run3": {
+        "qwen38_max_prime_run3": {
           "calls": 10,
           "cost_usd": "0.00328475"
+        },
+        "qwen38_max_0902_run1": {
+          "calls": 10,
+          "cost_usd": "0.00326800"
+        },
+        "qwen38_max_0902_run2": {
+          "calls": 10,
+          "cost_usd": "0.00309550"
+        },
+        "qwen38_max_0902_run3": {
+          "calls": 10,
+          "cost_usd": "0.00308675"
         }
       },
       "unattributed_interrupted_calls": {
@@ -833,20 +995,20 @@
     }
   },
   "account_final": {
-    "total_usage_usd": "4.274237323",
+    "total_usage_usd": "8.356544873",
     "total_credits_usd": "20",
     "snapshots": [
-      "credits_run23_final_1.json",
-      "credits_run23_final_2.json",
-      "credits_run23_final_3.json"
+      "credits_qwen38_0902_final_1.json",
+      "credits_qwen38_0902_final_2.json",
+      "credits_qwen38_0902_final_3.json"
     ],
-    "equals_ledger": false
+    "equals_ledger": true
   },
-  "terminal_csv_cost_usd": "6.904420710",
+  "terminal_csv_cost_usd": "8.224836930",
   "cost_by_run_terminal_usd": {
-    "1": "2.261111555",
-    "2": "2.126242715",
-    "3": "2.517066440"
+    "1": "2.683635795",
+    "2": "2.586845955",
+    "3": "2.954355180"
   },
   "logprobs_doctor_responses": {
     "run1|openai/gpt-5.2": {
@@ -860,6 +1022,10 @@
     "run1|qwen/qwen3.5-397b-a17b": {
       "doctor_responses": 77,
       "with_logprobs": 73
+    },
+    "run1|qwen/qwen3.8-max-0902": {
+      "doctor_responses": 47,
+      "with_logprobs": 0
     },
     "run1|qwen/qwen3.8-max-prime": {
       "doctor_responses": 51,
@@ -885,6 +1051,10 @@
       "doctor_responses": 63,
       "with_logprobs": 63
     },
+    "run2|qwen/qwen3.8-max-0902": {
+      "doctor_responses": 52,
+      "with_logprobs": 0
+    },
     "run2|qwen/qwen3.8-max-prime": {
       "doctor_responses": 49,
       "with_logprobs": 0
@@ -908,6 +1078,10 @@
     "run3|qwen/qwen3.5-397b-a17b": {
       "doctor_responses": 64,
       "with_logprobs": 63
+    },
+    "run3|qwen/qwen3.8-max-0902": {
+      "doctor_responses": 47,
+      "with_logprobs": 0
     },
     "run3|qwen/qwen3.8-max-prime": {
       "doctor_responses": 51,
@@ -938,13 +1112,22 @@
     "run3": [
       "fa2dd4d76bb451acdd640993dd39e5f88b0182a8"
     ],
-    "runext1": [
+    "runextqwen38_max_09021": [
+      "ac1c90f5dbbe6b3aec7f1935bfec55dffdcacb00"
+    ],
+    "runextqwen38_max_09022": [
+      "ac1c90f5dbbe6b3aec7f1935bfec55dffdcacb00"
+    ],
+    "runextqwen38_max_09023": [
+      "ac1c90f5dbbe6b3aec7f1935bfec55dffdcacb00"
+    ],
+    "runextqwen38_max_prime1": [
       "6fac61957c9be0f1cb704e92a3c45efd03cef338"
     ],
-    "runext2": [
+    "runextqwen38_max_prime2": [
       "6fac61957c9be0f1cb704e92a3c45efd03cef338"
     ],
-    "runext3": [
+    "runextqwen38_max_prime3": [
       "6fac61957c9be0f1cb704e92a3c45efd03cef338"
     ]
   },
@@ -966,6 +1149,9 @@
     ],
     "qwen/qwen3.8-max-prime": [
       "Alibaba"
+    ],
+    "qwen/qwen3.8-max-0902": [
+      "Alibaba"
     ]
   },
   "verdict_triples_run1_run2_run3": {
@@ -975,7 +1161,8 @@
       "z-ai/glm-5": "NNN",
       "qwen/qwen3.5-397b-a17b": "YYN",
       "openai/gpt-5.2": "NNY",
-      "qwen/qwen3.8-max-prime": "NNY"
+      "qwen/qwen3.8-max-prime": "NNY",
+      "qwen/qwen3.8-max-0902": "YNN"
     },
     "case_002": {
       "openai/gpt-oss-120b": "NNN",
@@ -983,7 +1170,8 @@
       "z-ai/glm-5": "NNN",
       "qwen/qwen3.5-397b-a17b": "NNN",
       "openai/gpt-5.2": "YNY",
-      "qwen/qwen3.8-max-prime": "YNY"
+      "qwen/qwen3.8-max-prime": "YNY",
+      "qwen/qwen3.8-max-0902": "YNN"
     },
     "case_003": {
       "openai/gpt-oss-120b": "Y??",
@@ -991,7 +1179,8 @@
       "z-ai/glm-5": "YYY",
       "qwen/qwen3.5-397b-a17b": "YYY",
       "openai/gpt-5.2": "YYY",
-      "qwen/qwen3.8-max-prime": "YYY"
+      "qwen/qwen3.8-max-prime": "YYY",
+      "qwen/qwen3.8-max-0902": "YYY"
     },
     "case_004": {
       "openai/gpt-oss-120b": "YNN",
@@ -999,7 +1188,8 @@
       "z-ai/glm-5": "YYY",
       "qwen/qwen3.5-397b-a17b": "NNY",
       "openai/gpt-5.2": "YYY",
-      "qwen/qwen3.8-max-prime": "YYY"
+      "qwen/qwen3.8-max-prime": "YYY",
+      "qwen/qwen3.8-max-0902": "YYY"
     },
     "case_005": {
       "openai/gpt-oss-120b": "YYY",
@@ -1007,7 +1197,8 @@
       "z-ai/glm-5": "YYY",
       "qwen/qwen3.5-397b-a17b": "YYY",
       "openai/gpt-5.2": "YYY",
-      "qwen/qwen3.8-max-prime": "YYY"
+      "qwen/qwen3.8-max-prime": "YYY",
+      "qwen/qwen3.8-max-0902": "YYY"
     },
     "case_006": {
       "openai/gpt-oss-120b": "NN?",
@@ -1015,7 +1206,8 @@
       "z-ai/glm-5": "YYY",
       "qwen/qwen3.5-397b-a17b": "YYY",
       "openai/gpt-5.2": "YYY",
-      "qwen/qwen3.8-max-prime": "YYY"
+      "qwen/qwen3.8-max-prime": "YYY",
+      "qwen/qwen3.8-max-0902": "YYY"
     },
     "case_007": {
       "openai/gpt-oss-120b": "YYN",
@@ -1023,7 +1215,8 @@
       "z-ai/glm-5": "YYN",
       "qwen/qwen3.5-397b-a17b": "YNY",
       "openai/gpt-5.2": "YYY",
-      "qwen/qwen3.8-max-prime": "YYY"
+      "qwen/qwen3.8-max-prime": "YYY",
+      "qwen/qwen3.8-max-0902": "YYY"
     },
     "case_008": {
       "openai/gpt-oss-120b": "YYY",
@@ -1031,7 +1224,8 @@
       "z-ai/glm-5": "YYY",
       "qwen/qwen3.5-397b-a17b": "YYY",
       "openai/gpt-5.2": "YYY",
-      "qwen/qwen3.8-max-prime": "YYY"
+      "qwen/qwen3.8-max-prime": "YYY",
+      "qwen/qwen3.8-max-0902": "YYY"
     },
     "case_009": {
       "openai/gpt-oss-120b": "?NN",
@@ -1039,7 +1233,8 @@
       "z-ai/glm-5": "NYN",
       "qwen/qwen3.5-397b-a17b": "NNN",
       "openai/gpt-5.2": "NNN",
-      "qwen/qwen3.8-max-prime": "YYN"
+      "qwen/qwen3.8-max-prime": "YYN",
+      "qwen/qwen3.8-max-0902": "NYN"
     },
     "case_010": {
       "openai/gpt-oss-120b": "NNN",
@@ -1047,18 +1242,19 @@
       "z-ai/glm-5": "YYN",
       "qwen/qwen3.5-397b-a17b": "NYY",
       "openai/gpt-5.2": "NYY",
-      "qwen/qwen3.8-max-prime": "YYY"
+      "qwen/qwen3.8-max-prime": "YYY",
+      "qwen/qwen3.8-max-0902": "YYY"
     }
   },
   "pooled_all_models": {
-    "attempts": 180,
+    "attempts": 210,
     "unjudged": 6,
-    "judged": 174,
-    "correct": 117,
-    "accuracy": 0.6724137931034483,
+    "judged": 204,
+    "correct": 141,
+    "accuracy": 0.6911764705882353,
     "wilson95": [
-      0.5996107770375335,
-      0.7377683717721603
+      0.6247332998511074,
+      0.7505527496338079
     ]
   },
   "pooled_core5_models": {
@@ -1072,18 +1268,43 @@
       0.7063318901479992
     ]
   },
+  "pooled_extension_models": {
+    "qwen/qwen3.8-max-prime": {
+      "attempts": 30,
+      "unjudged": 0,
+      "judged": 30,
+      "correct": 26,
+      "accuracy": 0.8666666666666667,
+      "wilson95": [
+        0.703186733179637,
+        0.9469034451594526
+      ]
+    },
+    "qwen/qwen3.8-max-0902": {
+      "attempts": 30,
+      "unjudged": 0,
+      "judged": 30,
+      "correct": 24,
+      "accuracy": 0.8,
+      "wilson95": [
+        0.6269430358685175,
+        0.9049489282271013
+      ]
+    }
+  },
   "projection_5_runs": {
     "method": "mean terminal cost of the 3 observed runs x 5; excludes invalidated pilot, incomplete attempts and unattributed cost",
-    "mean_terminal_cost_per_run_usd": "2.301473570",
-    "projected_5_runs_terminal_usd": "11.507367850",
-    "additional_2_runs_estimate_usd": "4.602947140",
+    "mean_terminal_cost_per_run_usd": "2.741612310",
+    "projected_5_runs_terminal_usd": "13.708061550",
+    "additional_2_runs_estimate_usd": "5.483224620",
     "per_model_projected_5_runs_usd": {
       "openai/gpt-oss-120b": "0.345289675",
       "z-ai/glm-4.5-air": "0.2016864083333333333333333334",
       "z-ai/glm-5": "0.7807889333333333333333333335",
       "qwen/qwen3.5-397b-a17b": "1.824088516666666666666666666",
       "openai/gpt-5.2": "3.752362100",
-      "qwen/qwen3.8-max-prime": "4.603152216666666666666666666"
+      "qwen/qwen3.8-max-prime": "4.603152216666666666666666666",
+      "qwen/qwen3.8-max-0902": "2.200693700"
     },
     "not_an_authorization": true
   },
@@ -1093,5 +1314,5 @@
     "missing": [],
     "root_checked": "/Users/test/MIRA-RAUL"
   },
-  "trace_manifest_files": 180
+  "trace_manifest_files": 210
 }
