@@ -19,4 +19,11 @@ class ExtensionTests(unittest.TestCase):
             log=ext.target(root,1)/'logs/raw'/ext.MODEL.replace('/','__')/'case_001.jsonl';log.parent.mkdir(parents=True)
             log.write_text(json.dumps({'event':'case_complete','result':{'case_id':'case_001','model':ext.MODEL}})+'\n')
             self.assertEqual(len(ext.schedule(root,[1,2,3])),5)
+    def test_second_extension_model_is_isolated(self):
+        m='qwen/qwen3.8-max-0902';c=json.loads((ROOT/'config/run1.json').read_text())['models'][m]
+        self.assertEqual(c['usd_per_million'],{'input':2.0,'output':6.0});self.assertIn(m,SAMPLING);self.assertNotIn(m,MODELS)
+        with tempfile.TemporaryDirectory() as d:
+            root=Path(d);(root/'cases'/'case_001').mkdir(parents=True)
+            self.assertEqual(ext.target(root,1,m),root/'runs/qwen38_max_0902/run1');self.assertEqual(len(ext.schedule(root,[1,2,3],m)),3)
+            self.assertNotEqual(ext.target(root,1,m),ext.target(root,1))
 if __name__=='__main__':unittest.main()
