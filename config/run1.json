@@ -239,6 +239,38 @@
         "stop",
         "reasoning_effort"
       ]
+    },
+    "claude-sonnet-5-5": {
+      "provider": "claude-code-cli",
+      "provider_name": "Claude Code subscription",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 2.0,
+        "output": 10.0
+      },
+      "supports_logprobs": false,
+      "transport": "claude_code_subscription_cli_json_action",
+      "effort": "high",
+      "note": "doctor/patient via subscription CLI (no OpenRouter charge); prices are API-equivalent for reference only"
+    },
+    "claude-opus-5-5": {
+      "provider": "claude-code-cli",
+      "provider_name": "Claude Code subscription",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 4.0,
+        "output": 20.0
+      },
+      "supports_logprobs": false,
+      "transport": "claude_code_subscription_cli_json_action",
+      "effort": "high",
+      "note": "doctor/patient via subscription CLI (no OpenRouter charge); prices are API-equivalent for reference only"
     }
   }
 }

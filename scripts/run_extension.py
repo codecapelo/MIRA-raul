@@ -3,9 +3,9 @@ import argparse,csv,fcntl,json,os,subprocess,time
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 from mira_runner.runner import FIELDS,all_terminal_results,parallel_models,run_case
-from mira_runner.client import Client
+from mira_runner.cli_client import HybridClient
 from mira_runner.budget import Ledger
-TAGS={'qwen/qwen3.8-max-prime':'qwen38_max_prime','qwen/qwen3.8-max-0902':'qwen38_max_0902'}
+TAGS={'qwen/qwen3.8-max-prime':'qwen38_max_prime','qwen/qwen3.8-max-0902':'qwen38_max_0902','claude-sonnet-5-5':'claude_sonnet_5_5','claude-opus-5-5':'claude_opus_5_5'}
 MODEL='qwen/qwen3.8-max-prime';TAG=TAGS[MODEL]  # defaults kept for the first extension model
 
 def target(root,run,model=MODEL):return root/'runs'/TAGS[model]/('run'+str(run))
@@ -34,7 +34,7 @@ def export(root,run,model=MODEL):
 
 def worker(root,case,model,run,config,key,commit,transition):
     root=Path(root);ledger=Ledger(root/'logs/budget.sqlite',config['budget_usd'])
-    try:return run_case(target(root,run,model),Path(case),model,Client(ledger,config,key),commit,transition)
+    try:return run_case(target(root,run,model),Path(case),model,HybridClient(ledger,config,key),commit,transition)
     finally:ledger.db.close()
 
 def main():
