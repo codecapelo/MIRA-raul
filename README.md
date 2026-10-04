@@ -21,3 +21,6 @@ GPT-OSS usa Mancer FP8 (`mancer/fp8`, retornado como `Mancer 2`), selecionado ex
 **Limitação observada no piloto:** o paciente GPT-OSS inventou características clínicas que contaminaram a decisão do médico. O terminal permanece registrado; seu erro não representa uma falha isolada do médico. O prompt exige fidelidade, mas não a garante. Consulte `reports/patient_fidelity_case001_gptoss.md`; a revisão manual dos demais percursos é necessária.
 
 Código e prompts upstream: CC BY 4.0 conforme README do repositório; atribuição a KatherLab e autores do trabalho, commit `eea2386c665c9caaa7ee093c8cb092d1c337de88`. Este projeto registra alterações de transporte, dados, contagem de turnos e isolamento de tentativas. Os direitos sobre fontes clínicas públicas e modelos permanecem próprios de cada fonte.
+
+## Execução encerrada em04-10-2026
+50/50 terminais,48 julgados e2 falhas operacionais. Revisão médica pendente. Custos: ledgerUS$1,502941443; consulta final da contaUS$1,419923378. DiferençaUS$0,083018065 ainda em investigação; não considerar reconciliação financeira concluída. Nenhuma nova execução necessária. Histórico978arquivos verificado sem divergência;50combinações únicas e manifesto de traces em reports/final_trace_manifest.json.

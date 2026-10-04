@@ -70,3 +70,6 @@ Reconciliação dessa interrupção concluída: reports/parallel_interruption_re
 Checkpoint posterior:429 GPT5.2 new-account20RPM conciliadozero (reports/credits_gpt52_rpm_reconciliation.json); gasto US$0,465398503. Client agora espaça envios GPT5.2 em3,5segundos globalmente via SQLite. Prefixos pagos reaproveitados por hash, sem reexecutar terminais.
 
 Checkpoint25/50, US$0,658732568,674settled. Falha na ordenação de commit ausente em evento administrativo corrigida; eventos originais preservados.
+
+## Execução encerrada em04-10-2026
+50/50 terminais,48 julgados e2 falhas operacionais. Revisão médica pendente. Custos: ledgerUS$1,502941443; consulta final da contaUS$1,419923378. DiferençaUS$0,083018065 ainda em investigação; não considerar reconciliação financeira concluída. Nenhuma nova execução necessária. Histórico978arquivos verificado sem divergência;50combinações únicas e manifesto de traces em reports/final_trace_manifest.json.

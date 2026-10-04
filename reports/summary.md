@@ -114,3 +114,6 @@ Valores históricos são transcritos do relatório congelado, sem reexecução d
 **Falha documentada em GPT-OSS/case_001:** o paciente inventou características de dor, horário/intensidade, frequência de diálise e negativa de alergia; o médico usou elementos inventados na justificativa de STEMI. Zero erros de ferramenta não garante fidelidade narrativa. O erro e seu custo foram preservados; não foi excluído nem reexecutado.
 
 A conclusão deste episódio reflete contaminação da narrativa simulada e extrapolação do médico. A fidelidade dos demais modelos requer análise própria. Evidência detalhada: [patient_fidelity_case001_gptoss.md](patient_fidelity_case001_gptoss.md). Revisão documental; revisão médica assinada pendente.
+
+## Execução encerrada em04-10-2026
+50/50 terminais,48 julgados e2 falhas operacionais. Revisão médica pendente. Custos: ledgerUS$1,502941443; consulta final da contaUS$1,419923378. DiferençaUS$0,083018065 ainda em investigação; não considerar reconciliação financeira concluída. Nenhuma nova execução necessária. Histórico978arquivos verificado sem divergência;50combinações únicas e manifesto de traces em reports/final_trace_manifest.json.

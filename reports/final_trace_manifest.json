@@ -1,0 +1,202 @@
+[
+  {
+    "path": "logs/raw/z-ai__glm-4.5-air/case_010.jsonl",
+    "sha256": "23d30b198e9ae689da323626fdf1071511502c214d2af69a3669c7978d415b61"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-4.5-air/case_009.jsonl",
+    "sha256": "bcc81e040fc4a135237287dc92911488d0665511bcfb5771cc0d62052118bc16"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-4.5-air/case_008.jsonl",
+    "sha256": "fdc0567d0861fb37d8b99f8e000ae10513d552b9b07b3c6ffc1576deb9e494c1"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-4.5-air/case_004.jsonl",
+    "sha256": "284194cf62d591f7129e78d5586c5baac1d05bcc51d64f1f67f03320402edfe4"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-4.5-air/case_006.jsonl",
+    "sha256": "8322d74f464ff50dc029c41f589debe7f3f752205e16f47840c8942c5350899a"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-4.5-air/case_002.jsonl",
+    "sha256": "0c479b1e38c7ed73f7b06f1d57f0bdc961ff45ca4fcf0920ca1651a38723ecd3"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-4.5-air/case_007.jsonl",
+    "sha256": "b0cc8f82535ec2b1f50bbbc8ab6e872d8d373c32a975371198559df7ed1fd680"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-4.5-air/case_005.jsonl",
+    "sha256": "4ac18f137b37abfb41017e889ff5b2df4948c1064fda9ec9282102edb56c7791"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-4.5-air/case_001.jsonl",
+    "sha256": "eb304406940beb960c13ae12e8f471da2412bbbef2aea88c945ca2bee440a32b"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-4.5-air/case_003.jsonl",
+    "sha256": "73e5ae7ef5c901302ec3dffecebfd0b23c252c923cb9669ef0aaa339be22646a"
+  },
+  {
+    "path": "logs/raw/openai__gpt-oss-120b/case_010.jsonl",
+    "sha256": "bb8f746ff5f2538c3f1b604d4a4d2ad659b3676305951366b425054fde303844"
+  },
+  {
+    "path": "logs/raw/openai__gpt-oss-120b/case_009.jsonl",
+    "sha256": "84797b3b3819477405b944d900a48957f73c9b3a57158f9b93a1d147c8dafe12"
+  },
+  {
+    "path": "logs/raw/openai__gpt-oss-120b/case_008.jsonl",
+    "sha256": "45d9269f04c50ebaf89f89dc345ff773a8258fa1c798a3503f0bda1c7dc81360"
+  },
+  {
+    "path": "logs/raw/openai__gpt-oss-120b/case_004.jsonl",
+    "sha256": "53414a4cb714761b57b5b3fea09ff8a0321dc3ab331d1b8975b160d80e3e76e9"
+  },
+  {
+    "path": "logs/raw/openai__gpt-oss-120b/case_006.jsonl",
+    "sha256": "0c19181cb8de172d8489a4f91d8cd859e1a90d6cb18a58b1fe08bb816c3d5639"
+  },
+  {
+    "path": "logs/raw/openai__gpt-oss-120b/case_002.jsonl",
+    "sha256": "587c6e9262a5e54079129aed77c657e3f305cc6081629866d04461f3920325de"
+  },
+  {
+    "path": "logs/raw/openai__gpt-oss-120b/case_007.jsonl",
+    "sha256": "5c613a9930fb3d1568dabb24b8503ccfce2af6386cae02171b0ecd3698b0a1c3"
+  },
+  {
+    "path": "logs/raw/openai__gpt-oss-120b/case_005.jsonl",
+    "sha256": "2173e0574cf2d98541995a87ba79e126d252438167a9f2959154c18177efa410"
+  },
+  {
+    "path": "logs/raw/openai__gpt-oss-120b/case_001.jsonl",
+    "sha256": "b096c936f0ed2a05e1d2d26c7e661c931f609a263b69ac42667c5fede7e7e73f"
+  },
+  {
+    "path": "logs/raw/openai__gpt-oss-120b/case_003.jsonl",
+    "sha256": "96d4e39f4e1fbd11c8b4811e48dd89417f9e6add2de7ca0f19b2ab9103ef1435"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-5/case_010.jsonl",
+    "sha256": "a443260199da89ff2702f467e7313bc86842ece811a219f6d7c00b98160e6c88"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-5/case_009.jsonl",
+    "sha256": "dd7938f31d5859499df7017eca0c657e572c61af60527fc72d26d527aed86e23"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-5/case_008.jsonl",
+    "sha256": "ec8d6874549a5caeb4683a0cbce65f4b2e3427b381d92a5feea5cff1f7c2c75e"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-5/case_004.jsonl",
+    "sha256": "85f1cb86c33c9938af7e3898bb1bce0477f14150d0462a089c9662f0a40daf35"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-5/case_006.jsonl",
+    "sha256": "020a458c54aa1ceeb8311e1fd17ee25e732b7a17ed852cc8b800285a4576c308"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-5/case_002.jsonl",
+    "sha256": "5f7eda737c599ec4f1f9ed8d98c1357ae9a24b5a5d6a5426e9c1b8de465d4a79"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-5/case_007.jsonl",
+    "sha256": "e3fd6d37b17a9503297efe154d936f6d4ea3f9ad69938faad1e8113698fcb9d2"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-5/case_005.jsonl",
+    "sha256": "0bbe3d96aa02a7c686e6b39e825f88542d1a1eb788033afc2d55907edd3d67a0"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-5/case_001.jsonl",
+    "sha256": "1ff722f65d9342c36a8de2d61a820ddb69525981b48ae3dd1472e7707266f5e5"
+  },
+  {
+    "path": "logs/raw/z-ai__glm-5/case_003.jsonl",
+    "sha256": "37e45494307466fa444d4345694b772aaea349089635254e8b294ebe4c54bb17"
+  },
+  {
+    "path": "logs/raw/qwen__qwen3.5-397b-a17b/case_010.jsonl",
+    "sha256": "5ce8b0403c06a87656508b87337ceab048eef724928daf690bc1d6a3b7a16d9d"
+  },
+  {
+    "path": "logs/raw/qwen__qwen3.5-397b-a17b/case_009.jsonl",
+    "sha256": "01cec4ce44a800e73104bcd58cb7ca3afbfd3438d3057b9e2c35c51104f205d4"
+  },
+  {
+    "path": "logs/raw/qwen__qwen3.5-397b-a17b/case_008.jsonl",
+    "sha256": "538773182c83a8c4f8466d3d7648e1ed3bc404b97f83a2b9b2f39c21bc31ea9c"
+  },
+  {
+    "path": "logs/raw/qwen__qwen3.5-397b-a17b/case_004.jsonl",
+    "sha256": "5e2bb40c9484c2384d0020480de1d1f1f4169a6e82175682c92cf05d75225a2e"
+  },
+  {
+    "path": "logs/raw/qwen__qwen3.5-397b-a17b/case_006.jsonl",
+    "sha256": "d3d29d979d7d28a20f23fda1e04982089a3af3d02998a5fe06598cfbfb3b4106"
+  },
+  {
+    "path": "logs/raw/qwen__qwen3.5-397b-a17b/case_002.jsonl",
+    "sha256": "2f59e876cb3dba053e02d6ab310f703d8bb9e81a466b851134953dee93b48e06"
+  },
+  {
+    "path": "logs/raw/qwen__qwen3.5-397b-a17b/case_007.jsonl",
+    "sha256": "d9ac8cf12bee1f8e748d45f834e4c7e048a255678120c5594f5a4c3c30878773"
+  },
+  {
+    "path": "logs/raw/qwen__qwen3.5-397b-a17b/case_005.jsonl",
+    "sha256": "13b7a185bc7bdb95ef159fd2c4d92d01389dc4d4c55d3a71bcc472801751e2e1"
+  },
+  {
+    "path": "logs/raw/qwen__qwen3.5-397b-a17b/case_001.jsonl",
+    "sha256": "430ed9f3cb8f89b645849cb1c34e4cb3ec483c7a229e50ee6aa93f4456b9ee9b"
+  },
+  {
+    "path": "logs/raw/qwen__qwen3.5-397b-a17b/case_003.jsonl",
+    "sha256": "d1234730336aa4fb7d68061fbd7fb4dfb5e487a8571bdfc7459a60316130d00d"
+  },
+  {
+    "path": "logs/raw/openai__gpt-5.2/case_010.jsonl",
+    "sha256": "c4afe387ccba67a5841148a70a4b45881d739f62ae60122310f60eed6ac993e3"
+  },
+  {
+    "path": "logs/raw/openai__gpt-5.2/case_009.jsonl",
+    "sha256": "7c0e02f1d8f251ffdca1209a17b73516008a9a4f7f5e24452b0e67a044ebfe82"
+  },
+  {
+    "path": "logs/raw/openai__gpt-5.2/case_008.jsonl",
+    "sha256": "77c6c1124600bcdc2571865d5f3fb66aa7d70a745d98628bdd2606dbfa601ba1"
+  },
+  {
+    "path": "logs/raw/openai__gpt-5.2/case_004.jsonl",
+    "sha256": "56b093ae13bea3c959d6011a2b4b0171e559bed4e29ebb01c7f1caa5c836ec3d"
+  },
+  {
+    "path": "logs/raw/openai__gpt-5.2/case_006.jsonl",
+    "sha256": "c28f14a265d2a25e93422a1040e13dd56bec5e7d0024c9fa5ca242845f985e30"
+  },
+  {
+    "path": "logs/raw/openai__gpt-5.2/case_002.jsonl",
+    "sha256": "a0b0f03ad92d7a8de0467acc1f58fa6be5206c6988285f2804a905d8295ec858"
+  },
+  {
+    "path": "logs/raw/openai__gpt-5.2/case_007.jsonl",
+    "sha256": "b83e3b56c1e4ae5bfe3d04212fd25653528d431e79506a694cb67fa993a35d24"
+  },
+  {
+    "path": "logs/raw/openai__gpt-5.2/case_005.jsonl",
+    "sha256": "c95116207cb390a49022109a7f5d6cf0f2fd5cfae9117a41221c8ba49aa04959"
+  },
+  {
+    "path": "logs/raw/openai__gpt-5.2/case_001.jsonl",
+    "sha256": "1e256f301e253b3e1705617eaf0a6bb9b68dc1c2a1fe390e6f88b3b912e7ad88"
+  },
+  {
+    "path": "logs/raw/openai__gpt-5.2/case_003.jsonl",
+    "sha256": "1a23dcb344d7fd772ab22bf1377a6174f45ae1be54330344d6bcdd445bacaf92"
+  }
+]
