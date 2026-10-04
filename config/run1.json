@@ -175,6 +175,38 @@
         "tools",
         "reasoning_effort"
       ]
+    },
+    "qwen/qwen3.8-max-prime": {
+      "provider": "alibaba",
+      "provider_name": "Alibaba",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 4.0,
+        "output": 12.0
+      },
+      "supports_logprobs": true,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "seed",
+        "presence_penalty",
+        "response_format",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "logprobs",
+        "top_logprobs",
+        "top_k",
+        "frequency_penalty",
+        "stop",
+        "reasoning_effort"
+      ]
     }
   }
 }

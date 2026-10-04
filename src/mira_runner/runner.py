@@ -5,6 +5,9 @@ from .budget import Ledger
 from .client import AuditLog,Client
 from .tools import CaseTools,schemas,ToolArgumentsError
 MODELS={'openai/gpt-oss-120b':{'temperature':1,'top_p':1},'z-ai/glm-4.5-air':{'temperature':.01,'top_p':1},'z-ai/glm-5':{'temperature':1,'top_p':.95},'qwen/qwen3.5-397b-a17b':{'temperature':.6,'top_p':.95,'top_k':20},'openai/gpt-5.2':{}}
+# Extension models are scheduled only by scripts/run_extension.py; MODELS stays frozen for runs 1-3.
+EXTENSION_MODELS={'qwen/qwen3.8-max-prime':{'temperature':.6,'top_p':.95,'top_k':20}}
+SAMPLING={**MODELS,**EXTENSION_MODELS}
 JUDGE='google/gemini-3.1-flash-lite-preview'
 FIELDS='case_id model provider dx_agent reasoning dx_reference judge_correct judge_rationale n_turns n_tool_calls tool_errors prompt_tokens completion_tokens reasoning_tokens cost_usd latency_s commit timestamp physician_review'.split()
 def load_module(path):
@@ -60,7 +63,7 @@ def _run_case(root,case_dir,model,client,commit,allow_commit_transition=False):
     for turn in range(1,11):
         if turn==10:doctor.append({'role':'system','content':prompts.COMPLETION_PROMPT+' Call admission now.'})
         for subturn in range(40):
-            m=client.call(model,doctor,log,'doctor',MODELS[model],tools=schemas() if turn<10 else [schemas()[-1]],tool_choice='auto')
+            m=client.call(model,doctor,log,'doctor',SAMPLING[model],tools=schemas() if turn<10 else [schemas()[-1]],tool_choice='auto')
             doctor.append(m)
             calls=m.get('tool_calls',[])
             if not calls:break
@@ -109,7 +112,7 @@ def all_terminal_results(root):
         for line in lines:
             event=json.loads(line)
             if event['event']=='case_complete':rows.append(event['result']);break
-    return sorted(rows,key=lambda r:(list(MODELS).index(r['model']),r['case_id']))
+    return sorted(rows,key=lambda r:(list(SAMPLING).index(r['model']),r['case_id']))
 
 def worker(root,case_dir,model,config,key,commit,transition):
     root=Path(root);ledger=Ledger(root/'logs/budget.sqlite',config['budget_usd'])
@@ -137,7 +140,7 @@ def parallel_cases(jobs,max_workers,submit,terminal):
 def parallel_models(jobs,per_model,max_workers,submit,terminal):
     """Round-robin dispatch with a bounded global and per-model active set."""
     from collections import deque
-    groups={model:deque(job for job in jobs if job[1]==model) for model in MODELS}
+    groups={model:deque(job for job in jobs if job[1]==model) for model in SAMPLING}
     order=list(groups);cursor=0;counts={m:0 for m in groups};active={};failure=None
     def fill():
         nonlocal cursor

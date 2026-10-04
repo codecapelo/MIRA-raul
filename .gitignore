@@ -7,3 +7,10 @@ __pycache__/
 .DS_Store
 .venv/
 upstream/
+
+runs/**/cases
+runs/**/config
+runs/**/upstream
+runs/**/budget.sqlite
+case_locks/
+*.lock
