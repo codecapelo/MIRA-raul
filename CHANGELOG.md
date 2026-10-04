@@ -33,3 +33,6 @@ Duas chamadas inválidas de exame físico do GPT-OSS encerram o encontro como fa
 
 ## 2026-10-04 — encerramento compatível com o provedor e retomada
 No turno 10 do caso002 GPT-OSS, o provedor recusou a seleção forçada da função (HTTP404 de compatibilidade), embora aceite ferramentas automáticas. Passamos a oferecer apenas admission com tool_choice=auto e o mesmo pedido explícito de encerramento; o limite de dez turnos permanece. Ausência de admission encerra como falha terminal. A transição de commit é explícita; respostas já pagas só são reutilizadas quando o hash da requisição coincide integralmente. A chamada recusada foi conciliada sem custo e preservada. Não há reexecução dos passos concluídos.
+
+## 2026-10-04 — paralelismo autorizado
+A pedido do usuário, o agendador passa a executar até três casos independentes simultaneamente dentro de cada modelo, mantendo a ordem dos modelos. Conversas, parâmetros e critérios de encerramento não mudam. A contabilidade global reserva o pior custo permitido de cada chamada antes do envio e soma reservas em andamento; falhas incertas suspendem novos envios. Locks por caso e índice terminal impedem duplicatas. Latência sob concorrência poderá diferir da execução sequencial e será identificada na análise.

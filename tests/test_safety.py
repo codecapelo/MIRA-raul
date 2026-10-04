@@ -39,7 +39,7 @@ class SafetyTests(unittest.TestCase):
         self.assertEqual(str(ledger.total()),'18')
     def test_uncertain_persisted_and_no_replay(self):
         l=Ledger(self.root/'l.db');l.reserve('1',{})
-        l2=Ledger(self.root/'l.db')
+        l2=Ledger(self.root/'l.db');l2.recover_abandoned()
         with self.assertRaises(BudgetError):l2.reserve('.01',{})
     def test_missing_cost_blocks(self):
         l=Ledger(self.root/'l.db');rid=l.reserve('1',{})

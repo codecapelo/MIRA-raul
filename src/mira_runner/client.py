@@ -71,5 +71,6 @@ class Client:
                 raise BudgetError('Unexpected provider')
             return response['choices'][0]['message']
         except BaseException as e:
+            self.ledger.mark_uncertain(rid)
             log.append({'event':'halt','request_id':rid,'reason':type(e).__name__,**({'http_status':e.status,'http_body':e.body} if isinstance(e,HTTPFailure) else {})})
             raise

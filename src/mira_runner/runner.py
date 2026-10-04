@@ -1,4 +1,5 @@
 import argparse,ast,csv,fcntl,hashlib,importlib.util,json,os,subprocess,time
+from concurrent.futures import ProcessPoolExecutor,wait,FIRST_COMPLETED
 from pathlib import Path
 from .budget import Ledger
 from .client import AuditLog,Client
@@ -21,6 +22,13 @@ def terminal_failure(root,case_dir,model,log,commit,reason,turn,ntools,errors,la
     return result
 
 def run_case(root,case_dir,model,client,commit,allow_commit_transition=False):
+    locks=root/'logs/case_locks';locks.mkdir(parents=True,exist_ok=True)
+    with (locks/(model.replace('/','__')+'__'+case_dir.name+'.lock')).open('a') as lock:
+        try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        except BlockingIOError:raise RuntimeError('Case already has an active worker')
+        return _run_case(root,case_dir,model,client,commit,allow_commit_transition)
+
+def _run_case(root,case_dir,model,client,commit,allow_commit_transition=False):
     log=AuditLog(root/'logs/raw'/model.replace('/','__')/(case_dir.name+'.jsonl'),commit)
     previous=log.events()
     complete=next((e for e in previous if e['event']=='case_complete'),None)
@@ -93,10 +101,44 @@ def export(root,results):
         w=csv.DictWriter(f,fieldnames=FIELDS);w.writeheader();w.writerows(results);f.flush();os.fsync(f.fileno())
     os.replace(tmp,path)
 
+def all_terminal_results(root):
+    rows=[]
+    for path in (root/'logs/raw').glob('*/*.jsonl'):
+        content=path.read_text();lines=content.splitlines()
+        if content and not content.endswith('\n'):lines=lines[:-1]
+        for line in lines:
+            event=json.loads(line)
+            if event['event']=='case_complete':rows.append(event['result']);break
+    return sorted(rows,key=lambda r:(list(MODELS).index(r['model']),r['case_id']))
+
+def worker(root,case_dir,model,config,key,commit,transition):
+    root=Path(root);ledger=Ledger(root/'logs/budget.sqlite',config['budget_usd'])
+    try:return run_case(root,Path(case_dir),model,Client(ledger,config,key),commit,transition)
+    finally:ledger.db.close()
+
+def parallel_cases(jobs,max_workers,submit,terminal):
+    """Dynamic bounded queue: on first error drain active jobs without submitting more."""
+    iterator=iter(jobs);active={};failure=None
+    def fill():
+        while failure is None and len(active)<max_workers:
+            try:job=next(iterator)
+            except StopIteration:break
+            active[submit(job)]=job
+    fill()
+    while active:
+        done,_=wait(active,return_when=FIRST_COMPLETED)
+        for future in done:
+            job=active.pop(future)
+            try:terminal(future.result(),job)
+            except BaseException as e:failure=failure or e
+        fill()
+    if failure:raise failure
+
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[2]);parser.add_argument('--execute',action='store_true');parser.add_argument('--pilot-only',action='store_true');parser.add_argument('--max-cases',type=int);parser.add_argument('--allow-commit-transition',action='store_true');args=parser.parse_args();root=args.root
+    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[2]);parser.add_argument('--execute',action='store_true');parser.add_argument('--pilot-only',action='store_true');parser.add_argument('--max-cases',type=int);parser.add_argument('--allow-commit-transition',action='store_true');parser.add_argument('--parallel-cases',type=int,default=1);args=parser.parse_args();root=args.root
     config=json.loads((root/'config/run1.json').read_text()); cases=sorted((root/'cases').glob('case_*'))
     if not cases:raise RuntimeError('No cases')
+    if args.parallel_cases not in [1,2,3]:raise ValueError('--parallel-cases must be1,2,or3')
     schedule=[(cases[0],m) for m in MODELS]+([] if args.pilot_only else [(c,m) for m in MODELS for c in cases[1:]])
     if args.max_cases is not None:
         if args.max_cases<1:raise ValueError('--max-cases must be positive')
@@ -112,8 +154,16 @@ def main():
     lock=(root/'logs/run.lock').open('a')
     try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     except BlockingIOError:raise RuntimeError('Another runner holds the global process lock')
-    ledger=Ledger(root/'logs/budget.sqlite',config['budget_usd']);client=Client(ledger,config,key);results=[]
-    for c,m in schedule:
-        results.append(run_case(root,c,m,client,commit,args.allow_commit_transition));export(root,results)
-        print(json.dumps({'case_id':c.name,'model':m,'status':'complete','case_cost_usd':results[-1]['cost_usd'],'global_cost_usd':str(ledger.total())}),flush=True)
+    ledger=Ledger(root/'logs/budget.sqlite',config['budget_usd']);ledger.recover_abandoned()
+    existing={(r['case_id'],r['model']) for r in all_terminal_results(root)}
+    schedule=[(c,m) for c,m in schedule if (c.name,m) not in existing]
+    def terminal(result,job):
+        export(root,all_terminal_results(root))
+        print(json.dumps({'case_id':result['case_id'],'model':result['model'],'status':'complete','case_cost_usd':result['cost_usd'],'global_cost_usd':str(ledger.total())}),flush=True)
+    try:
+        with ProcessPoolExecutor(max_workers=args.parallel_cases) as pool:
+            for model in MODELS:
+                jobs=[(c,m) for c,m in schedule if m==model]
+                parallel_cases(jobs,args.parallel_cases,lambda job:pool.submit(worker,str(root),str(job[0]),job[1],config,key,commit,args.allow_commit_transition),terminal)
+    finally:export(root,all_terminal_results(root))
 if __name__=='__main__':main()
