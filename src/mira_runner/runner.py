@@ -134,11 +134,37 @@ def parallel_cases(jobs,max_workers,submit,terminal):
         fill()
     if failure:raise failure
 
+def parallel_models(jobs,per_model,max_workers,submit,terminal):
+    """Round-robin dispatch with a bounded global and per-model active set."""
+    from collections import deque
+    groups={model:deque(job for job in jobs if job[1]==model) for model in MODELS}
+    order=list(groups);cursor=0;counts={m:0 for m in groups};active={};failure=None
+    def fill():
+        nonlocal cursor
+        while failure is None and len(active)<max_workers:
+            chosen=None
+            for _ in order:
+                model=order[cursor];cursor=(cursor+1)%len(order)
+                if groups[model] and counts[model]<per_model:
+                    chosen=model;break
+            if chosen is None:break
+            job=groups[chosen].popleft();active[submit(job)]=job;counts[chosen]+=1
+    fill()
+    while active:
+        done,_=wait(active,return_when=FIRST_COMPLETED)
+        for future in done:
+            job=active.pop(future);counts[job[1]]-=1
+            try:terminal(future.result(),job)
+            except BaseException as e:failure=failure or e
+        fill()
+    if failure:raise failure
+
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[2]);parser.add_argument('--execute',action='store_true');parser.add_argument('--pilot-only',action='store_true');parser.add_argument('--max-cases',type=int);parser.add_argument('--allow-commit-transition',action='store_true');parser.add_argument('--parallel-cases',type=int,default=1);args=parser.parse_args();root=args.root
+    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[2]);parser.add_argument('--execute',action='store_true');parser.add_argument('--pilot-only',action='store_true');parser.add_argument('--max-cases',type=int);parser.add_argument('--allow-commit-transition',action='store_true');parser.add_argument('--parallel-cases',type=int,default=1);parser.add_argument('--parallel-models',action='store_true');parser.add_argument('--max-workers',type=int,default=12);args=parser.parse_args();root=args.root
     config=json.loads((root/'config/run1.json').read_text()); cases=sorted((root/'cases').glob('case_*'))
     if not cases:raise RuntimeError('No cases')
-    if args.parallel_cases not in [1,2,3]:raise ValueError('--parallel-cases must be1,2,or3')
+    if not 1<=args.parallel_cases<=10:raise ValueError('--parallel-cases must be between 1 and 10')
+    if not 1<=args.max_workers<=50:raise ValueError('--max-workers must be between 1 and 50')
     schedule=[(cases[0],m) for m in MODELS]+([] if args.pilot_only else [(c,m) for m in MODELS for c in cases[1:]])
     if args.max_cases is not None:
         if args.max_cases<1:raise ValueError('--max-cases must be positive')
@@ -161,9 +187,13 @@ def main():
         export(root,all_terminal_results(root))
         print(json.dumps({'case_id':result['case_id'],'model':result['model'],'status':'complete','case_cost_usd':result['cost_usd'],'global_cost_usd':str(ledger.total())}),flush=True)
     try:
-        with ProcessPoolExecutor(max_workers=args.parallel_cases) as pool:
-            for model in MODELS:
-                jobs=[(c,m) for c,m in schedule if m==model]
-                parallel_cases(jobs,args.parallel_cases,lambda job:pool.submit(worker,str(root),str(job[0]),job[1],config,key,commit,args.allow_commit_transition),terminal)
+        slots=args.max_workers if args.parallel_models else args.parallel_cases
+        with ProcessPoolExecutor(max_workers=slots) as pool:
+            submit=lambda job:pool.submit(worker,str(root),str(job[0]),job[1],config,key,commit,args.allow_commit_transition)
+            if args.parallel_models:parallel_models(schedule,args.parallel_cases,slots,submit,terminal)
+            else:
+                for model in MODELS:
+                    jobs=[(c,m) for c,m in schedule if m==model]
+                    parallel_cases(jobs,args.parallel_cases,submit,terminal)
     finally:export(root,all_terminal_results(root))
 if __name__=='__main__':main()

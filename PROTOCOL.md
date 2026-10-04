@@ -48,7 +48,7 @@ As estatísticas do artigo são referências externas: MIRA-v2 tinha 551 casos, 
 
 Preservar hashes de casos/prompts/configuração, commit do projeto, modelos, provedores, parâmetros, chamadas e respostas brutas, resultados finais e falhas. Manter credenciais fora de arquivos e logs. A revisão médica cega permanece necessária antes de qualquer afirmação clínica. A execução hospedada usa somente os casos públicos autorizados; não reproduz a privacidade integral da inferência local descrita no artigo.
 
-Artefatos da execução: configuração `config/run1.json`; livro de custos `logs/budget.sqlite`; chamadas e respostas `logs/raw/<modelo>/case_XXX.jsonl`. O orçamento global configurado é US$ 18,50; reservas pendentes impedem gastos sem reconciliação. A conferência do cronograma é feita por `PYTHONPATH=src python3 -m mira_runner.runner`; `--execute` inicia chamadas e `--pilot-only` restringe ao piloto. A execução e o teste local são estados separados e devem ser reportados separadamente.
+Artefatos da execução: configuração `config/run1.json`; livro de custos `logs/budget.sqlite`; chamadas e respostas `logs/raw/<modelo>/case_XXX.jsonl`. O orçamento global configurado é US$ 18,00; reservas pendentes impedem gastos sem reconciliação. A conferência do cronograma é feita por `PYTHONPATH=src python3 -m mira_runner.runner`; `--execute` inicia chamadas e `--pilot-only` restringe ao piloto. A execução e o teste local são estados separados e devem ser reportados separadamente.
 
 Fontes locais: `references/zhang.txt:1080–1206`, `:1290–1360`, `:1450–1492`; auditoria detalhada em `reports/upstream_audit.md`. O upstream declara CC BY 4.0; conservar atribuição e aviso das alterações. Licenças de artigos, modelos e dependências devem ser tratadas separadamente.
 

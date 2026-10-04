@@ -1,5 +1,5 @@
 {
-  "budget_usd": "18.50",
+  "budget_usd": "18.00",
   "models": {
     "openai/gpt-oss-120b": {
       "provider": "mancer/fp8",

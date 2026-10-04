@@ -36,3 +36,6 @@ No turno 10 do caso002 GPT-OSS, o provedor recusou a seleção forçada da funç
 
 ## 2026-10-04 — paralelismo autorizado
 A pedido do usuário, o agendador passa a executar até três casos independentes simultaneamente dentro de cada modelo, mantendo a ordem dos modelos. Conversas, parâmetros e critérios de encerramento não mudam. A contabilidade global reserva o pior custo permitido de cada chamada antes do envio e soma reservas em andamento; falhas incertas suspendem novos envios. Locks por caso e índice terminal impedem duplicatas. Latência sob concorrência poderá diferir da execução sequencial e será identificada na análise.
+
+## 2026-10-04 — todos os modelos simultâneos e teto reduzido
+O usuário autorizou execução simultânea dos modelos restantes. Após concluir os dez encontros GPT-OSS, serão até três casos por modelo e doze workers totais nos quatro modelos restantes. Isso substitui a ordem sequencial de modelos inicialmente solicitada. O teto global foi reduzido de US$18,50 para US$18,00 com US$0,300752618 já contabilizados. Conversas e parâmetros clínicos não mudam; latências refletem concorrência.
