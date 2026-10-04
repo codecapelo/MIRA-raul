@@ -46,3 +46,5 @@ Uma rejeição HTTP429 da Parasail revelou que HTTPFailure não era serializáve
 - 2026-10-04: após HTTP429 observado no lançamento de36 casos simultâneos, concorrência ajustada para3casos/modelo e12globais, mantendo todos os modelos ativos e fila automática. Impacto: tempo/latência operacional podem variar; prompts, parâmetros e stopping clínico preservados.
 
 - 2026-10-04: GPT-5.2 retornou429 com limite explícito20RPM para conta nova. Pacing compartilhado SQLite de3,5segundos entre envios adicionado sem mudar payload ou retry. Rejeição conciliada a zero por saldo US$0,465398503 igual ledger; prefixos pagos preservados. Latência inclui espera operacional.
+
+- 2026-10-04: retomada corrigida para ignorar commit ausente em evento administrativo de reconciliação ao ordenar commits anteriores. Evento original preservado; sem mudança de payload/protocolo. Checkpoint25/50, US$0,658732568;674settled.

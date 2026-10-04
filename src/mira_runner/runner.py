@@ -33,7 +33,7 @@ def _run_case(root,case_dir,model,client,commit,allow_commit_transition=False):
     previous=log.events()
     complete=next((e for e in previous if e['event']=='case_complete'),None)
     if complete:return complete['result']
-    old_commits=sorted({e.get('commit') for e in previous if e.get('commit')!=commit})
+    old_commits=sorted({e.get('commit') for e in previous if e.get('commit') is not None and e.get('commit')!=commit})
     if old_commits:
         if not allow_commit_transition:raise RuntimeError('Cannot resume under a different commit without --allow-commit-transition')
         log.append({'event':'commit_transition','previous_commits':old_commits,'new_commit':commit,'policy':'reuse only hash-identical settled responses; explicitly reconciled HTTP rejection can be replaced'})
