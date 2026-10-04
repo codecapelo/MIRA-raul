@@ -63,6 +63,20 @@ class Client:
             response=next((e['response'] for e in log.events() if e['event']=='response' and e['request_id']==rid),None)
             if response is None:raise BudgetError('Settled request missing durable response')
             return response['choices'][0]['message']
+        if model == 'openai/gpt-5.2':
+            # Shared pacing for the observed 20 RPM account limit; payload unchanged.
+            db=self.ledger.db
+            db.execute('CREATE TABLE IF NOT EXISTS request_pacing (model TEXT PRIMARY KEY, next_at REAL)')
+            db.execute('BEGIN IMMEDIATE')
+            try:
+                now=time.time()
+                row=db.execute('SELECT next_at FROM request_pacing WHERE model=?',(model,)).fetchone()
+                slot=max(now,row[0] if row else now)
+                db.execute('INSERT OR REPLACE INTO request_pacing VALUES (?,?)',(model,slot+3.5))
+                db.execute('COMMIT')
+            except BaseException:
+                db.execute('ROLLBACK'); raise
+            time.sleep(max(0,slot-time.time()))
         rid=self.ledger.reserve(reserve,{'model':model,'role':role,'log':str(log.path)})
         log.append({'event':'request','request_id':rid,'role':role,'payload':payload,'reservation_usd':str(reserve),'payload_hash':payload_hash,'ordinal':ordinal})
         try:

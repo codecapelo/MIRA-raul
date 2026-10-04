@@ -66,3 +66,5 @@ Ao haver 50 `case_complete` únicos (inclusive falhas):
 A primeira tentativa de 36 workers recebeu HTTP429 de Parasail. A exceção HTTPFailure não era serializável entre processos e derrubou o pool, deixando 36 custos sem resposta. Não retomar sem reconciliação registrada em reports/. Nenhum terminal deve ser repetido. A correção é operacional; não muda mensagens, modelos ou critérios clínicos.
 
 Reconciliação dessa interrupção concluída: reports/parallel_interruption_reconciliation.json e parallel_interruption_checkpoint.md. Três snapshots sem cache confirmaram gasto inalterado US$0,300752618;36 requests sem resposta arquivados com hashes em logs/incomplete/parallel_pool_interruption_v1, custo zero atribuído por conta (não usage.cost observado). Ledger486settled antes da retomada. HTTPFailure corrigido;33testes passaram.
+
+Checkpoint posterior:429 GPT5.2 new-account20RPM conciliadozero (reports/credits_gpt52_rpm_reconciliation.json); gasto US$0,465398503. Client agora espaça envios GPT5.2 em3,5segundos globalmente via SQLite. Prefixos pagos reaproveitados por hash, sem reexecutar terminais.
