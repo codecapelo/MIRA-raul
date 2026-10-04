@@ -9,6 +9,17 @@ FIELDS='case_id model provider dx_agent reasoning dx_reference judge_correct jud
 def load_module(path):
     spec=importlib.util.spec_from_file_location('official_'+path.stem,path); module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module); return module
 
+def terminal_failure(root,case_dir,model,log,commit,reason,turn,ntools,errors,latency=0):
+    reference=json.loads((case_dir/'reference.json').read_text())
+    responses=[e['response'] for e in log.events() if e['event']=='response'];usage=[r['usage'] for r in responses]
+    config=json.loads((root/'config/run1.json').read_text())
+    requests=[e for e in log.events() if e['event']=='request']
+    provider=next((e['payload']['provider']['order'][0] for e in requests if e['role']=='doctor'),config['models'][model]['provider'])
+    result={'case_id':case_dir.name,'model':model,'provider':provider,'dx_agent':'','reasoning':'','dx_reference':reference['correct_diagnosis'],'judge_correct':'','judge_rationale':'not judged: '+reason,'n_turns':turn,'n_tool_calls':ntools,'tool_errors':errors,'prompt_tokens':sum(u.get('prompt_tokens',0) for u in usage),'completion_tokens':sum(u.get('completion_tokens',0) for u in usage),'reasoning_tokens':sum(u.get('completion_tokens_details',{}).get('reasoning_tokens',0) for u in usage),'cost_usd':str(sum(__import__('decimal').Decimal(str(u['cost'])) for u in usage)),'latency_s':latency,'commit':commit,'timestamp':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'physician_review':''}
+    log.append({'event':'operational_failure','reason':reason,'status':'terminal_model_failure'})
+    log.append({'event':'case_complete','status':'terminal_model_failure','result':result})
+    return result
+
 def run_case(root,case_dir,model,client,commit):
     log=AuditLog(root/'logs/raw'/model.replace('/','__')/(case_dir.name+'.jsonl'),commit)
     previous=log.events()
@@ -49,19 +60,21 @@ def run_case(root,case_dir,model,client,commit):
                 except (json.JSONDecodeError,ToolArgumentsError):
                     tools.errors+=1; invalid=True
                     output='Invalid tool arguments. Retry this tool with valid JSON matching its schema; admission requires non-empty diagnosis and reasoning.'
-                    if tools.errors>1:raise RuntimeError('Exceeded one bounded corrective tool retry')
+                    if tools.errors>1:
+                        log.append({'event':'tool','name':f['name'],'arguments':args,'raw_arguments':f['arguments'],'output':output,'turn':turn,'invalid':True})
+                        return terminal_failure(root,case_dir,model,log,commit,'tool retry limit',turn,ntools,tools.errors,time.monotonic()-start)
                 log.append({'event':'tool','name':f['name'],'arguments':args,'output':output,'turn':turn})
                 doctor.append({'role':'tool','tool_call_id':tc['id'],'content':output})
                 if f['name']=='admission' and not invalid:final=args
             if final:break
-        else:raise RuntimeError('Exceeded official inner max_turns=40')
+        else:return terminal_failure(root,case_dir,model,log,commit,'inner max_turns limit',turn,ntools,tools.errors,time.monotonic()-start)
         if final:break
         text=m.get('content') or ''
         if text:
             patient_messages.append({'role':'user','content':text})
             p=client.call(model,patient_messages,log,'patient',{} if model=='openai/gpt-5.2' else {'temperature':.01},max_tokens=8192)
             patient_messages.append(p); doctor.append({'role':'user','content':p.get('content') or ''})
-    if final is None:raise RuntimeError('No admission within strict 10 doctor turns')
+    if final is None:return terminal_failure(root,case_dir,model,log,commit,'10-turn admission limit',turn,ntools,tools.errors,time.monotonic()-start)
     reference=json.loads((case_dir/'reference.json').read_text())
     builder=load_module(root/'upstream/onprem-medical-agents/src/eval/prompt_builders.py').PromptBuilder(reference.get('matching_criterion',reference['correct_diagnosis']))
     gold=reference.get('ground_truth'); gold=gold if isinstance(gold,dict) and 'gold_diagnoses' in gold else reference['correct_diagnosis']

@@ -78,3 +78,21 @@ class EndToEndMock(unittest.TestCase):
             result=run_case(root,case,model,c,'abc')
             self.assertEqual(result['n_turns'],2);self.assertEqual(result['prompt_tokens'],20);self.assertEqual(str(l.total()),'0.004');self.assertEqual(len(sent),4)
             self.assertEqual(run_case(root,case,model,c,'abc'),result);self.assertEqual(len(sent),4)
+
+class TerminalFailureTests(unittest.TestCase):
+    def test_two_invalid_tools_terminalize_without_judge(self):
+        import shutil
+        source=Path('/Users/test/MIRA-RAUL')
+        with tempfile.TemporaryDirectory() as t:
+            root=Path(t);(root/'upstream').mkdir();(root/'upstream/onprem-medical-agents').symlink_to(source/'upstream/onprem-medical-agents')
+            case=root/'cases/case_001';case.mkdir(parents=True)
+            for name in ['patient.json','investigations.json','reference.json']:shutil.copy(source/'cases/case_001'/name,case/name)
+            model='openai/gpt-oss-120b';cfg={'models':{model:{'provider':'pin','pricing_verified':True,'context_tokens':0,'max_tokens':24576,'usd_per_million':{'input':1,'output':1}}}}
+            (root/'config').mkdir();(root/'config/run1.json').write_text(json.dumps(cfg));sent=[]
+            def transport(p):
+                sent.append(p)
+                return {'choices':[{'message':{'role':'assistant','content':None,'tool_calls':[{'id':str(len(sent)),'type':'function','function':{'name':'request_physical_exam','arguments':'{"test_names":["all"]}'}}]}}],'usage':{'cost':.001,'prompt_tokens':5,'completion_tokens':3}}
+            client=Client(Ledger(root/'budget.db'),cfg,transport=transport)
+            result=run_case(root,case,model,client,'abc')
+            self.assertEqual(result['tool_errors'],2);self.assertEqual(result['dx_agent'],'');self.assertEqual(result['judge_correct'],'');self.assertEqual(result['judge_rationale'],'not judged: tool retry limit');self.assertEqual(len(sent),2);self.assertEqual(result['cost_usd'],'0.002')
+            self.assertEqual(run_case(root,case,model,None,'newcommit'),result)

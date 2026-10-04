@@ -1,0 +1,21 @@
+{
+  "case_id": "case_001",
+  "model": "openai/gpt-oss-120b",
+  "provider": "mancer/fp8",
+  "dx_agent": "",
+  "reasoning": "",
+  "dx_reference": "Infective coronary pseudoaneurysm with stent disruption causing cardiac tamponade in MRSA infective endocarditis",
+  "judge_correct": "",
+  "judge_rationale": "not judged: tool retry limit",
+  "n_turns": 1,
+  "n_tool_calls": 2,
+  "tool_errors": 2,
+  "prompt_tokens": 1736,
+  "completion_tokens": 122,
+  "reasoning_tokens": 79,
+  "cost_usd": "0.0001075",
+  "latency_s": 5.214970111846924,
+  "commit": "138a1a9ae8b853dd14e2809070ae5dba79069d31",
+  "timestamp": "2026-10-04T05:24:10Z",
+  "physician_review": ""
+}
