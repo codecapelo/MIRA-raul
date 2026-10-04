@@ -7,7 +7,7 @@ def save(**data):
     data.update(timestamp=time.time(),supervisor_pid=os.getpid())
     tmp=status.with_suffix('.tmp');tmp.write_text(json.dumps(data,indent=2));os.replace(tmp,status)
 env=dict(os.environ);env['PYTHONPATH']=str(root/'src')
-cmd=[sys.executable,'-u','-m','mira_runner.runner','--execute','--parallel-models','--parallel-cases','10','--max-workers','36','--allow-commit-transition']
+cmd=[sys.executable,'-u','-m','mira_runner.runner','--execute','--parallel-models','--parallel-cases','3','--max-workers','12','--allow-commit-transition']
 save(state='starting',command=cmd)
 p=subprocess.Popen(cmd,cwd=root,env=env)
 save(state='running',runner_pid=p.pid,command=cmd)

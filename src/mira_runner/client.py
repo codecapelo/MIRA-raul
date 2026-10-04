@@ -7,6 +7,9 @@ class HTTPFailure(RuntimeError):
     def __init__(self,status,body):
         self.status=status;self.body=body
         super().__init__('OpenRouter HTTP '+str(status))
+    def __reduce__(self):
+        # ProcessPool must reconstruct both constructor arguments, not only args.
+        return (type(self),(self.status,self.body))
 
 class AuditLog:
     def __init__(self,path,commit): self.path=Path(path); self.commit=commit; self.path.parent.mkdir(parents=True,exist_ok=True)

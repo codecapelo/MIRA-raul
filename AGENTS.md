@@ -24,9 +24,9 @@ O runner usa Python/HTTP OpenRouter, sem chamadas à assinatura Codex. Uma vez l
 Diretório: `/Users/test/MIRA-RAUL`.
 Comando autorizado atual:
 ```sh
-PYTHONPATH=src python3 -u -m mira_runner.runner --execute --parallel-models --parallel-cases 10 --max-workers 36 --allow-commit-transition
+PYTHONPATH=src python3 -u -m mira_runner.runner --execute --parallel-models --parallel-cases 3 --max-workers 12 --allow-commit-transition
 ```
-Isso coloca todos os 36 encontros restantes em execução concorrente (limites gerais: 10/modelo, 36 globais). O agendador pula terminais. Não lançar outra instância se houver executor/supervisor/worker vivo.
+Todos os encontros restantes entram na fila automática, com os modelos em paralelo (limites: 3 casos/modelo, 12 globais). O lançamento simultâneo de 36 encontrou HTTP429 no Parasail; a concorrência foi reduzida por esse limite observado. O agendador pula terminais. Não lançar outra instância se houver executor/supervisor/worker vivo.
 Preferir `python3 scripts/background_run.py` para supervisionar em background; o lançador deve ser iniciado com sessão independente, com saída em arquivo. Ele NÃO faz retries: encerra e registra falha, exporta relatórios. Não repetir lançamento automaticamente sem verificar logs/locks.
 O orçamento soma custos reais + reservas de todas as chamadas ativas antes de enviar novas. Estados incertos bloqueiam novos envios. Em erro, workers ativos terminam a chamada em andamento e o agendador não inicia novos trabalhos. Não matar processos apenas porque a conversa acabou.
 
@@ -61,3 +61,8 @@ Ao haver 50 `case_complete` únicos (inclusive falhas):
 5. Completar README, PROTOCOL, CHANGELOG, reports/summary.md, reports/cost_projection.md e results/run1.csv. Summary: Wilson95%, categorias, custos total/médio, tokens mediana/IQR, comparação histórica lexical rotulada não equivalente, projeção5runs.
 6. Revisão médica permanece pendente. Juiz LLM não estabelece segurança clínica ou superioridade. Um run não permite ConsistencyDx.
 7. Secret scan, commit e push origin main. Pausar automação `concluir-mira-raul-openrouter`. Avisar usuário com resultados operacionais, custo real e links, sem declarar acurácia clínica definitiva.
+
+## Interrupção do paralelismo em 04-10-2026
+A primeira tentativa de 36 workers recebeu HTTP429 de Parasail. A exceção HTTPFailure não era serializável entre processos e derrubou o pool, deixando 36 custos sem resposta. Não retomar sem reconciliação registrada em reports/. Nenhum terminal deve ser repetido. A correção é operacional; não muda mensagens, modelos ou critérios clínicos.
+
+Reconciliação dessa interrupção concluída: reports/parallel_interruption_reconciliation.json e parallel_interruption_checkpoint.md. Três snapshots sem cache confirmaram gasto inalterado US$0,300752618;36 requests sem resposta arquivados com hashes em logs/incomplete/parallel_pool_interruption_v1, custo zero atribuído por conta (não usage.cost observado). Ledger486settled antes da retomada. HTTPFailure corrigido;33testes passaram.

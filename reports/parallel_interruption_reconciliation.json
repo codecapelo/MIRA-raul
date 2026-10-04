@@ -1,0 +1,235 @@
+{
+  "timestamp": 1791127906.919898,
+  "reconciled_requests": 36,
+  "account_total_usage": "0.300752618",
+  "ledger_known_cost_usd": "0.300752618",
+  "states_after": {
+    "settled": 486
+  },
+  "snapshots_sha256": {
+    "reports/credits_after_parallel_interruption.json": "25ab9590f3516b5aa0613f509daa5c6d741bb4dedf2b2a5c7ea7153a8f1bae51",
+    "reports/credits_parallel_reconciliation_fresh.json": "acb80f046635688038732cf6f4688258e31115a4cbee1c735ed5aa7c7aeb12cd",
+    "reports/credits_parallel_reconciliation_confirm.json": "056ae32573ecc18242183a153890698cd04067c46f966d898eb327ef3eb48c7f"
+  },
+  "ledger_backup": "/Users/test/MIRA-RAUL/reports/budget_before_parallel_reconciliation.sqlite",
+  "archive": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1",
+  "provider_usage_cost_invented": false,
+  "archived_requests": [
+    {
+      "request_id": "6f44e0ba-1993-47b5-a67d-ab454d635e2b",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_002.jsonl",
+      "sha256": "7b511adf0928077558099f452e46593a118936307e7940705f8f91cfc18bc0c4"
+    },
+    {
+      "request_id": "d15679a3-89fa-41b4-b667-310f9b74740d",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_002.jsonl",
+      "sha256": "3f3bd3d49721181bdacf618b21aeb077dccececa9c142524c7651762b79f7c35"
+    },
+    {
+      "request_id": "93a8fc6f-33ba-4681-a4e5-7c89e8e088dd",
+      "original_state": "uncertain",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_002.jsonl",
+      "sha256": "c13a88adcc46dd07b584584361d5b635ec6be56d31581414e37a38f460c96d18"
+    },
+    {
+      "request_id": "3bde5ea3-860a-484c-b74f-96e2306a60c8",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_003.jsonl",
+      "sha256": "f2b200292e7fe03e6ae8f76a283ae104d2a34290acc628214970d96f64effd26"
+    },
+    {
+      "request_id": "a9ec2f2f-124d-4aac-bd7b-ad5d9dc5c703",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_003.jsonl",
+      "sha256": "7e89068e6f26396052606ffb113df76de90935001257b6f8ed6fae2b71903f1e"
+    },
+    {
+      "request_id": "00a7c619-385f-4b73-bc7c-1c77bbce534c",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_002.jsonl",
+      "sha256": "fe4a34cc73c19b22771cc7be61fa426debecf54159864cf82419a8bdb7c35af1"
+    },
+    {
+      "request_id": "cbb1231e-d313-4046-b0c3-522850d6252b",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_004.jsonl",
+      "sha256": "58fd3f2939cf2231a11f766eab784e2337d8bf335ee0997bc8d4483bd11532fa"
+    },
+    {
+      "request_id": "fd9a247a-d8a0-4f3f-9c49-f910bf31f6a4",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_003.jsonl",
+      "sha256": "e3ed084b495f4e4473ea2c94394476e82f2876b02a1ec390866e54f7259723bb"
+    },
+    {
+      "request_id": "52538d49-236d-4da2-8879-e078ebf6fc58",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_004.jsonl",
+      "sha256": "1e86f6025ab9efc158160c22b517795b35ae0ba47d6005590d62cae5437231be"
+    },
+    {
+      "request_id": "46c2800a-79d1-4411-8488-58331315ef83",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_004.jsonl",
+      "sha256": "b972527082343461bab9950d8b7fd316cfe5d0f947264dc6f5ece43f8e2d7c02"
+    },
+    {
+      "request_id": "2bab8532-e667-40da-80c5-23cbc2c726d8",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_005.jsonl",
+      "sha256": "5191ad11fb478a53a7f9e0446596d249233f6cabbea23b63fc504172e56eec7e"
+    },
+    {
+      "request_id": "cdcc00d7-88e1-462a-9032-ccfc1f13eb7c",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_006.jsonl",
+      "sha256": "b4af6467bf1f59164b2c6688d0ff9cb3c0af6bbe1045ce88255b74c186c5ec40"
+    },
+    {
+      "request_id": "510714de-24d9-4504-a329-61d94c8c19a1",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_005.jsonl",
+      "sha256": "da7632e1e6eaca81345e441bfd81b0ae820c75b3205cafe2ec96ec9601f58f45"
+    },
+    {
+      "request_id": "7a18d2a3-c04a-412a-8308-cacc0ce75038",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_006.jsonl",
+      "sha256": "631c14e42908f8a151733b88bee6b24bd118dd5c22b6f773cc46a0c201ce12a8"
+    },
+    {
+      "request_id": "45023e10-4208-4ab1-bc90-2765d282ac2f",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_005.jsonl",
+      "sha256": "03b01384197e76cee7b396eedfd4dd8103429e79902de59c0e05d0e63ea89937"
+    },
+    {
+      "request_id": "c9befb55-2e28-45a4-a811-0f8bb8023d6d",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_003.jsonl",
+      "sha256": "63d33c6eeeb345f22d2afcbc490c479099af2c653f00f2b5f74c7ce68a888c2f"
+    },
+    {
+      "request_id": "bb5994b2-44e1-4990-b451-903459d66d7f",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_007.jsonl",
+      "sha256": "f22cbbf10607c60a36e42f247fddc9b3d529603bf27b8e25bf5e0b8096964274"
+    },
+    {
+      "request_id": "4ffbd39f-200c-48b7-9930-d4f931315c85",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_007.jsonl",
+      "sha256": "0670d908490a1714fb6ef3b780b6a816b1f6edbf8c67627ab3caee9765f16d19"
+    },
+    {
+      "request_id": "e9bbbe1e-a309-44d0-90b8-8eccf30b6f00",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_005.jsonl",
+      "sha256": "548e527804cafe8d79cb280498c7e9a7b9647f9ebf06b5f24aed1c77a35b45fa"
+    },
+    {
+      "request_id": "7cd911c9-2655-4110-bffc-615f39c9fb90",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_006.jsonl",
+      "sha256": "80ee21cfeb9b121f0866c244c1fbbb34e92c5bf96984985197843b967df954ee"
+    },
+    {
+      "request_id": "bb012fbb-614a-4dfa-ba60-1ffe1b1b7d2b",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_007.jsonl",
+      "sha256": "3c3cdda06a1112ae46eff9223abb1e24fd50a70eeb9984b081b376360f1944ad"
+    },
+    {
+      "request_id": "642a32e0-5849-473c-9efe-47b9be6d2b6e",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_006.jsonl",
+      "sha256": "cc5d5e990837f3e5b42f139a18ed06b18516cfe3a82c54f38ddfd101639496f7"
+    },
+    {
+      "request_id": "f1b134ba-86f6-4e36-ab6d-ae1221f8a46e",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_008.jsonl",
+      "sha256": "7a9a2c9a8c4e410fa4f52ffdbd112e8f07cd9e4c27afa693ca7c65312006f220"
+    },
+    {
+      "request_id": "e1b0529a-1525-40a5-883e-0f62c4318858",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_008.jsonl",
+      "sha256": "78adca6b43e5d7598fe849fed31f110220a4cd9dad0422f223b9a0c75edfd320"
+    },
+    {
+      "request_id": "f5370111-08a9-4dd4-b2a4-da4b19aeb16f",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_009.jsonl",
+      "sha256": "9338b91974e02e14038967f8f673ad4c617f4a8f2cdaab9c5ea5685bf0858bdc"
+    },
+    {
+      "request_id": "0b2a103f-2748-4d49-b582-c876648075bc",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_004.jsonl",
+      "sha256": "af36e5e39e9ef2fafc874209b451ddb037eeab3573ff993a1e4e35351f8e4c1d"
+    },
+    {
+      "request_id": "3f5920cc-b5c7-4881-8693-de75b285289b",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_008.jsonl",
+      "sha256": "54addbde8da3c06163271e94b482c5d55dd280e66cc8d4c74cad63cc836d203e"
+    },
+    {
+      "request_id": "2bff6c17-b284-4045-8028-22a04c340986",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_009.jsonl",
+      "sha256": "0574425a65685617cb34bd5d2f0926ffc8829f22cae61a9377542131942982bb"
+    },
+    {
+      "request_id": "d7272c13-fde4-4d92-a6e2-edd2cb6b5ba1",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_009.jsonl",
+      "sha256": "bfd165931a683687108f970d75f6d116a55fc6f829dbc5ccee83f106845ea3d3"
+    },
+    {
+      "request_id": "97deb611-3a2c-4b44-9e0e-16fb2a6915ff",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_008.jsonl",
+      "sha256": "76eb3dede6356fe94e9088bf5b082d1f3aeafa17e47693fc9ab5b174e9b87a19"
+    },
+    {
+      "request_id": "ca411466-1aaa-4d62-af64-0c12a75391b0",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-4.5-air/case_010.jsonl",
+      "sha256": "c1bb57a7f81c76eaaf9e4a340edd22ae95397289d4cdc4955e1f20cf0dc7f611"
+    },
+    {
+      "request_id": "43210d03-eec9-49c0-958c-186ac4cc20b4",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/z-ai__glm-5/case_010.jsonl",
+      "sha256": "b0728baea63789f61907b9774b8a56ffa9ac36566cdca2b0da52ddbb5a949128"
+    },
+    {
+      "request_id": "da802a8a-7715-4e13-b67b-3dfb839f096f",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_009.jsonl",
+      "sha256": "8eec7be5854a9c7e416d9b4e8d3bc371e739b42949aa02ad08e6ac2992d8f8c4"
+    },
+    {
+      "request_id": "5ce6026a-9dda-4bc5-8393-d9fafcd49287",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_007.jsonl",
+      "sha256": "902aed6a76abcb516bdc0ed3acc9c7c8f6e5512aee3297a50dc0442a0883c6d3"
+    },
+    {
+      "request_id": "0501adca-83ad-4323-b2a0-c3ff969f175f",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/openai__gpt-5.2/case_010.jsonl",
+      "sha256": "549d84a19eb65e3f6c91e9a2d539a6be9a670d5603f9fdddf334fcd9873de4dd"
+    },
+    {
+      "request_id": "9f932b07-c489-4ca9-8621-de189f4f730a",
+      "original_state": "pending",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/parallel_pool_interruption_v1/qwen__qwen3.5-397b-a17b/case_010.jsonl",
+      "sha256": "b0255bd286abb45d93df14d978c5974cbb26ac977cc2a790c8049c581a7c4f3a"
+    }
+  ]
+}
