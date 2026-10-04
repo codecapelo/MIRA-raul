@@ -9,61 +9,89 @@
       "available_at": "time_zero",
       "name": "Skin",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam"
     },
     {
       "fact_id": "lab_004",
-      "domain": "lab",
+      "domain": "blood",
       "value": "Earlier ACTH 577.10 ng/L and cortisol 161.00 nmol/L; admission ACTH 365.80 ng/L and cortisol 139.00 nmol/L.",
       "available_at": "time_zero",
       "name": "ACTH and cortisol",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "adrenal_hormones",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "lab_005",
-      "domain": "lab",
+      "domain": "blood",
       "value": "Low fasting glucose and sodium were described, without numerical values.",
       "available_at": "time_zero",
       "name": "Metabolic blood testing",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "metabolic",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "lab_006",
-      "domain": "lab",
+      "domain": "microbiology",
       "value": "T-SPOT.TB positive.",
       "available_at": "time_zero",
       "name": "T-SPOT.TB",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "tspot",
+      "modality": "microbiology",
+      "routing_tool": "request_microbiology"
     },
     {
       "fact_id": "imaging_007",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "CT: bilateral adrenal nodules with calcification; old tuberculosis lesions in lungs and pleura.",
       "available_at": "time_zero",
       "name": "Adrenal CT",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "adrenal_ct",
+      "modality": "computed_tomography",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "imaging_008",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "Bilateral hypoechoic adrenal nodules with calcifications; largest left lesion about 2.7 × 2.2 cm; low-intensity enhancement.",
       "available_at": "time_zero",
       "name": "Adrenal ultrasound",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "adrenal_ultrasound",
+      "modality": "ultrasound",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "procedure_result_009",
-      "domain": "procedure_result",
+      "domain": "tissue",
       "value": "Ultrasound-guided left adrenal biopsy: necrotizing granulomatous inflammation. Acid-fast and silver stains negative.",
       "available_at": "time_zero",
       "name": "Adrenal biopsy",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "procedure_result",
+      "clinical_test": "adrenal_biopsy",
+      "modality": "histopathology",
+      "routing_tool": "request_other_investigation"
     },
     {
       "fact_id": "microbiology_010",
@@ -74,7 +102,11 @@
       "prerequisites": [
         "after_procedure:adrenal_biopsy"
       ],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "microbiology",
+      "clinical_test": "adrenal_tb_pcr",
+      "modality": "microbiology",
+      "routing_tool": "request_microbiology"
     }
   ],
   "temporal_events": [],

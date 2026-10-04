@@ -1,0 +1,59 @@
+{
+  "models": [
+    {
+      "model": "openai/gpt-oss-120b",
+      "pilot_completed": 1,
+      "pilot_providers": [
+        "mancer/fp8"
+      ],
+      "pilot_cost_usd": "0.009107370",
+      "projected_10x1_usd": "0.091073700",
+      "projected_10x5_usd": "0.455368500"
+    },
+    {
+      "model": "z-ai/glm-4.5-air",
+      "pilot_completed": 1,
+      "pilot_providers": [
+        "novita/bf16"
+      ],
+      "pilot_cost_usd": "0.002338995",
+      "projected_10x1_usd": "0.023389950",
+      "projected_10x5_usd": "0.116949750"
+    },
+    {
+      "model": "z-ai/glm-5",
+      "pilot_completed": 1,
+      "pilot_providers": [
+        "streamlake/fp8"
+      ],
+      "pilot_cost_usd": "0.008630000",
+      "projected_10x1_usd": "0.086300000",
+      "projected_10x5_usd": "0.431500000"
+    },
+    {
+      "model": "qwen/qwen3.5-397b-a17b",
+      "pilot_completed": 1,
+      "pilot_providers": [
+        "parasail/fp8"
+      ],
+      "pilot_cost_usd": "0.020238315",
+      "projected_10x1_usd": "0.202383150",
+      "projected_10x5_usd": "1.011915750"
+    },
+    {
+      "model": "openai/gpt-5.2",
+      "pilot_completed": 1,
+      "pilot_providers": [
+        "openai"
+      ],
+      "pilot_cost_usd": "0.049848790",
+      "projected_10x1_usd": "0.498487900",
+      "projected_10x5_usd": "2.492439500"
+    }
+  ],
+  "pilot_expected": 5,
+  "pilot_completed": 5,
+  "known_all_calls_usd": "0.098613803",
+  "unsettled_calls": [],
+  "assumption": "Linear extrapolation from case001 with patient/judge/matcher included; complexity differs. Projection is not execution authorization."
+}

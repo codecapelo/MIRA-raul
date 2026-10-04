@@ -1,0 +1,4123 @@
+{
+  "schema_version": "1.0.0",
+  "completed_rows": 0,
+  "expected_rows": 50,
+  "missing_pairs": [
+    [
+      "case_001",
+      "openai/gpt-oss-120b"
+    ],
+    [
+      "case_001",
+      "z-ai/glm-4.5-air"
+    ],
+    [
+      "case_001",
+      "z-ai/glm-5"
+    ],
+    [
+      "case_001",
+      "qwen/qwen3.5-397b-a17b"
+    ],
+    [
+      "case_001",
+      "openai/gpt-5.2"
+    ],
+    [
+      "case_002",
+      "openai/gpt-oss-120b"
+    ],
+    [
+      "case_002",
+      "z-ai/glm-4.5-air"
+    ],
+    [
+      "case_002",
+      "z-ai/glm-5"
+    ],
+    [
+      "case_002",
+      "qwen/qwen3.5-397b-a17b"
+    ],
+    [
+      "case_002",
+      "openai/gpt-5.2"
+    ],
+    [
+      "case_003",
+      "openai/gpt-oss-120b"
+    ],
+    [
+      "case_003",
+      "z-ai/glm-4.5-air"
+    ],
+    [
+      "case_003",
+      "z-ai/glm-5"
+    ],
+    [
+      "case_003",
+      "qwen/qwen3.5-397b-a17b"
+    ],
+    [
+      "case_003",
+      "openai/gpt-5.2"
+    ],
+    [
+      "case_004",
+      "openai/gpt-oss-120b"
+    ],
+    [
+      "case_004",
+      "z-ai/glm-4.5-air"
+    ],
+    [
+      "case_004",
+      "z-ai/glm-5"
+    ],
+    [
+      "case_004",
+      "qwen/qwen3.5-397b-a17b"
+    ],
+    [
+      "case_004",
+      "openai/gpt-5.2"
+    ],
+    [
+      "case_005",
+      "openai/gpt-oss-120b"
+    ],
+    [
+      "case_005",
+      "z-ai/glm-4.5-air"
+    ],
+    [
+      "case_005",
+      "z-ai/glm-5"
+    ],
+    [
+      "case_005",
+      "qwen/qwen3.5-397b-a17b"
+    ],
+    [
+      "case_005",
+      "openai/gpt-5.2"
+    ],
+    [
+      "case_006",
+      "openai/gpt-oss-120b"
+    ],
+    [
+      "case_006",
+      "z-ai/glm-4.5-air"
+    ],
+    [
+      "case_006",
+      "z-ai/glm-5"
+    ],
+    [
+      "case_006",
+      "qwen/qwen3.5-397b-a17b"
+    ],
+    [
+      "case_006",
+      "openai/gpt-5.2"
+    ],
+    [
+      "case_007",
+      "openai/gpt-oss-120b"
+    ],
+    [
+      "case_007",
+      "z-ai/glm-4.5-air"
+    ],
+    [
+      "case_007",
+      "z-ai/glm-5"
+    ],
+    [
+      "case_007",
+      "qwen/qwen3.5-397b-a17b"
+    ],
+    [
+      "case_007",
+      "openai/gpt-5.2"
+    ],
+    [
+      "case_008",
+      "openai/gpt-oss-120b"
+    ],
+    [
+      "case_008",
+      "z-ai/glm-4.5-air"
+    ],
+    [
+      "case_008",
+      "z-ai/glm-5"
+    ],
+    [
+      "case_008",
+      "qwen/qwen3.5-397b-a17b"
+    ],
+    [
+      "case_008",
+      "openai/gpt-5.2"
+    ],
+    [
+      "case_009",
+      "openai/gpt-oss-120b"
+    ],
+    [
+      "case_009",
+      "z-ai/glm-4.5-air"
+    ],
+    [
+      "case_009",
+      "z-ai/glm-5"
+    ],
+    [
+      "case_009",
+      "qwen/qwen3.5-397b-a17b"
+    ],
+    [
+      "case_009",
+      "openai/gpt-5.2"
+    ],
+    [
+      "case_010",
+      "openai/gpt-oss-120b"
+    ],
+    [
+      "case_010",
+      "z-ai/glm-4.5-air"
+    ],
+    [
+      "case_010",
+      "z-ai/glm-5"
+    ],
+    [
+      "case_010",
+      "qwen/qwen3.5-397b-a17b"
+    ],
+    [
+      "case_010",
+      "openai/gpt-5.2"
+    ]
+  ],
+  "duplicates": [],
+  "malformed_raw_log_lines": [],
+  "models": [
+    {
+      "model": "openai/gpt-oss-120b",
+      "expected": 10,
+      "completed": 0,
+      "judged": 0,
+      "correct": 0,
+      "judge_accuracy": null,
+      "wilson95": null,
+      "categories": {
+        "cardiovascular": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "endocrine_infectious": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "gastrointestinal": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "hematology": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "neurologic": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "obstetric": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "respiratory_oncology": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "urologic": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        }
+      },
+      "usage": {
+        "prompt_tokens": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        },
+        "completion_tokens": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        },
+        "reasoning_tokens": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        },
+        "latency_s": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        }
+      }
+    },
+    {
+      "model": "z-ai/glm-4.5-air",
+      "expected": 10,
+      "completed": 0,
+      "judged": 0,
+      "correct": 0,
+      "judge_accuracy": null,
+      "wilson95": null,
+      "categories": {
+        "cardiovascular": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "endocrine_infectious": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "gastrointestinal": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "hematology": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "neurologic": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "obstetric": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "respiratory_oncology": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "urologic": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        }
+      },
+      "usage": {
+        "prompt_tokens": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        },
+        "completion_tokens": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        },
+        "reasoning_tokens": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        },
+        "latency_s": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        }
+      }
+    },
+    {
+      "model": "z-ai/glm-5",
+      "expected": 10,
+      "completed": 0,
+      "judged": 0,
+      "correct": 0,
+      "judge_accuracy": null,
+      "wilson95": null,
+      "categories": {
+        "cardiovascular": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "endocrine_infectious": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "gastrointestinal": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "hematology": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "neurologic": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "obstetric": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "respiratory_oncology": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "urologic": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        }
+      },
+      "usage": {
+        "prompt_tokens": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        },
+        "completion_tokens": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        },
+        "reasoning_tokens": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        },
+        "latency_s": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        }
+      }
+    },
+    {
+      "model": "qwen/qwen3.5-397b-a17b",
+      "expected": 10,
+      "completed": 0,
+      "judged": 0,
+      "correct": 0,
+      "judge_accuracy": null,
+      "wilson95": null,
+      "categories": {
+        "cardiovascular": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "endocrine_infectious": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "gastrointestinal": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "hematology": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "neurologic": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "obstetric": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "respiratory_oncology": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "urologic": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        }
+      },
+      "usage": {
+        "prompt_tokens": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        },
+        "completion_tokens": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        },
+        "reasoning_tokens": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        },
+        "latency_s": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        }
+      }
+    },
+    {
+      "model": "openai/gpt-5.2",
+      "expected": 10,
+      "completed": 0,
+      "judged": 0,
+      "correct": 0,
+      "judge_accuracy": null,
+      "wilson95": null,
+      "categories": {
+        "cardiovascular": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "endocrine_infectious": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "gastrointestinal": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "hematology": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "neurologic": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "obstetric": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "respiratory_oncology": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        },
+        "urologic": {
+          "completed": 0,
+          "judged": 0,
+          "correct": 0,
+          "judge_accuracy": null,
+          "wilson95": null
+        }
+      },
+      "usage": {
+        "prompt_tokens": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        },
+        "completion_tokens": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        },
+        "reasoning_tokens": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        },
+        "latency_s": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null
+        }
+      }
+    }
+  ],
+  "actor_breakdown_including_incomplete": {
+    "doctor": {
+      "calls": 59,
+      "known_cost_usd": "0.074062954",
+      "unknown_cost_calls": 0,
+      "prompt_tokens": 144139,
+      "completion_tokens": 25808,
+      "reasoning_tokens": 7662
+    },
+    "patient": {
+      "calls": 21,
+      "known_cost_usd": "0.017845479",
+      "unknown_cost_calls": 0,
+      "prompt_tokens": 72524,
+      "completion_tokens": 9118,
+      "reasoning_tokens": 4553
+    },
+    "matcher": {
+      "calls": 31,
+      "known_cost_usd": "0.007396200",
+      "unknown_cost_calls": 0,
+      "prompt_tokens": 8812,
+      "completion_tokens": 8147,
+      "reasoning_tokens": 5326
+    },
+    "judge": {
+      "calls": 5,
+      "known_cost_usd": "0.00175000",
+      "unknown_cost_calls": 0,
+      "prompt_tokens": 3190,
+      "completion_tokens": 635,
+      "reasoning_tokens": 0
+    }
+  },
+  "ledger_known_cost_usd": "0.101054633",
+  "csv_known_cost_usd": "0",
+  "unsettled_calls": [],
+  "legacy_lexical_comparison": {
+    "path": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/results/frontier_addons_2026-09-29/summaries/frontier_addons_analysis.json",
+    "sha256": "023eeb5127236fd413d85bb039af4bb1acc70ca599c1bacc3c28265d45181c79",
+    "expected_trajectories": 300,
+    "observed_terminal_trajectories": 290,
+    "models_original": {
+      "qwen3.5:9b-mlx": {
+        "observed_runs": 30,
+        "expected_runs": 30,
+        "complete_panel": true,
+        "cases": {
+          "case_001": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              12,
+              13,
+              9
+            ],
+            "stopping_reasons": [
+              "repeated_unproductive_call",
+              "repeated_unproductive_call",
+              "repeated_unproductive_call"
+            ]
+          },
+          "case_002": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              4,
+              6,
+              5
+            ],
+            "stopping_reasons": [
+              "repeated_unproductive_call",
+              "repeated_unproductive_call",
+              "repeated_unproductive_call"
+            ]
+          },
+          "case_003": {
+            "runs": 3,
+            "completed": 1,
+            "concept_matches": 0,
+            "tool_calls": [
+              13,
+              11,
+              6
+            ],
+            "stopping_reasons": [
+              "completed",
+              "repeated_unproductive_call",
+              "repeated_unproductive_call"
+            ]
+          },
+          "case_004": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              3,
+              3,
+              10
+            ],
+            "stopping_reasons": [
+              "repeated_unproductive_call",
+              "repeated_unproductive_call",
+              "repeated_unproductive_call"
+            ]
+          },
+          "case_005": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              8,
+              8,
+              10
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_006": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              6,
+              6,
+              6
+            ],
+            "stopping_reasons": [
+              "repeated_unproductive_call",
+              "repeated_unproductive_call",
+              "repeated_unproductive_call"
+            ]
+          },
+          "case_007": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              17,
+              16,
+              40
+            ],
+            "stopping_reasons": [
+              "repeated_unproductive_call",
+              "repeated_unproductive_call",
+              "max_actions"
+            ]
+          },
+          "case_008": {
+            "runs": 3,
+            "completed": 2,
+            "concept_matches": 2,
+            "tool_calls": [
+              12,
+              11,
+              13
+            ],
+            "stopping_reasons": [
+              "repeated_unproductive_call",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_009": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              11,
+              12,
+              12
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_010": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              6,
+              6,
+              40
+            ],
+            "stopping_reasons": [
+              "repeated_unproductive_call",
+              "repeated_unproductive_call",
+              "max_actions"
+            ]
+          }
+        },
+        "metrics": {
+          "completed": {
+            "case_mean": 0.3,
+            "case_cluster_bootstrap_95": [
+              0.06666666666666667,
+              0.5666666666666667
+            ],
+            "evaluable_cases": 10,
+            "provisional": false
+          },
+          "published_diagnosis_exact_match": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_concept_match": {
+            "case_mean": 0.06666666666666667,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.2
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_top3_concept": {
+            "case_mean": 0.06666666666666667,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.2
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_concept_match": {
+            "case_mean": 0.06666666666666667,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.2
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_top3_concept": {
+            "case_mean": 0.06666666666666667,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.2
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "disposition_published_exact_match": {
+            "case_mean": 0.23809523809523808,
+            "case_cluster_bootstrap_95": null,
+            "evaluable_cases": 7,
+            "provisional": true
+          }
+        },
+        "total_tool_calls": 335,
+        "median_run_seconds": 54.6225,
+        "diagnosis_emitted_runs": 9,
+        "target_match_given_diagnosis": 0.2222222222222222,
+        "process": {
+          "mean_lab_requests": 1.0666666666666667,
+          "mean_imaging_requests": 0.5,
+          "mean_procedure_orders": 0.26666666666666666,
+          "mean_medication_orders": 0.13333333333333333,
+          "mean_steps_to_benchmark_diagnosis": 9.0,
+          "invalid_tool_calls": 3,
+          "failed_tool_calls": 3,
+          "reported_input_tokens": 874371.0,
+          "reported_cached_input_tokens": null,
+          "reported_cache_creation_input_tokens": null,
+          "reported_output_tokens": 27689.0,
+          "reported_reasoning_tokens": null,
+          "reported_cost_equivalent_usd": 0.0,
+          "mean_local_tokens_per_second": 18.282588645704777
+        },
+        "observed_match_count": 2,
+        "observed_run_target_rate": 0.06666666666666667
+      },
+      "qwen3:8b": {
+        "observed_runs": 30,
+        "expected_runs": 30,
+        "complete_panel": true,
+        "cases": {
+          "case_001": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              3,
+              3,
+              3
+            ],
+            "stopping_reasons": [
+              "repeated_unproductive_call",
+              "repeated_unproductive_call",
+              "repeated_unproductive_call"
+            ]
+          },
+          "case_002": {
+            "runs": 3,
+            "completed": 1,
+            "concept_matches": 0,
+            "tool_calls": [
+              7,
+              7,
+              10
+            ],
+            "stopping_reasons": [
+              "repeated_unproductive_call",
+              "repeated_unproductive_call",
+              "completed"
+            ]
+          },
+          "case_003": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              9,
+              9,
+              9
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_004": {
+            "runs": 3,
+            "completed": 2,
+            "concept_matches": 0,
+            "tool_calls": [
+              8,
+              8,
+              25
+            ],
+            "stopping_reasons": [
+              "repeated_unproductive_call",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_005": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              5,
+              11,
+              5
+            ],
+            "stopping_reasons": [
+              "repeated_unproductive_call",
+              "repeated_unproductive_call",
+              "repeated_unproductive_call"
+            ]
+          },
+          "case_006": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              14,
+              9,
+              15
+            ],
+            "stopping_reasons": [
+              "repeated_unproductive_call",
+              "repeated_unproductive_call",
+              "repeated_unproductive_call"
+            ]
+          },
+          "case_007": {
+            "runs": 3,
+            "completed": 1,
+            "concept_matches": 0,
+            "tool_calls": [
+              10,
+              20,
+              6
+            ],
+            "stopping_reasons": [
+              "repeated_unproductive_call",
+              "completed",
+              "repeated_unproductive_call"
+            ]
+          },
+          "case_008": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              7,
+              7,
+              7
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_009": {
+            "runs": 3,
+            "completed": 1,
+            "concept_matches": 0,
+            "tool_calls": [
+              6,
+              6,
+              6
+            ],
+            "stopping_reasons": [
+              "repeated_unproductive_call",
+              "repeated_unproductive_call",
+              "completed"
+            ]
+          },
+          "case_010": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              7,
+              7,
+              7
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          }
+        },
+        "metrics": {
+          "completed": {
+            "case_mean": 0.4666666666666667,
+            "case_cluster_bootstrap_95": [
+              0.2333333333333333,
+              0.7333333333333333
+            ],
+            "evaluable_cases": 10,
+            "provisional": false
+          },
+          "published_diagnosis_exact_match": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_concept_match": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_top3_concept": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_concept_match": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_top3_concept": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "disposition_published_exact_match": {
+            "case_mean": 0.09523809523809523,
+            "case_cluster_bootstrap_95": null,
+            "evaluable_cases": 7,
+            "provisional": true
+          }
+        },
+        "total_tool_calls": 256,
+        "median_run_seconds": 25.424500000000002,
+        "diagnosis_emitted_runs": 14,
+        "target_match_given_diagnosis": 0.0,
+        "process": {
+          "mean_lab_requests": 2.9,
+          "mean_imaging_requests": 0.9333333333333333,
+          "mean_procedure_orders": 0.03333333333333333,
+          "mean_medication_orders": 0.0,
+          "mean_steps_to_benchmark_diagnosis": null,
+          "invalid_tool_calls": 79,
+          "failed_tool_calls": 80,
+          "reported_input_tokens": 559641.0,
+          "reported_cached_input_tokens": null,
+          "reported_cache_creation_input_tokens": null,
+          "reported_output_tokens": 13546.0,
+          "reported_reasoning_tokens": null,
+          "reported_cost_equivalent_usd": 0.0,
+          "mean_local_tokens_per_second": 22.170880750539958
+        },
+        "observed_match_count": 0,
+        "observed_run_target_rate": 0.0
+      },
+      "llama3.1:8b": {
+        "observed_runs": 30,
+        "expected_runs": 30,
+        "complete_panel": true,
+        "cases": {
+          "case_001": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              4,
+              4,
+              4
+            ],
+            "stopping_reasons": [
+              "repeated_unproductive_call",
+              "repeated_unproductive_call",
+              "repeated_unproductive_call"
+            ]
+          },
+          "case_002": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              40,
+              40,
+              40
+            ],
+            "stopping_reasons": [
+              "max_actions",
+              "max_actions",
+              "max_actions"
+            ]
+          },
+          "case_003": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              40,
+              40,
+              40
+            ],
+            "stopping_reasons": [
+              "max_actions",
+              "max_actions",
+              "max_actions"
+            ]
+          },
+          "case_004": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              40,
+              12,
+              40
+            ],
+            "stopping_reasons": [
+              "max_actions",
+              "repeated_unproductive_call",
+              "max_actions"
+            ]
+          },
+          "case_005": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              6,
+              6,
+              6
+            ],
+            "stopping_reasons": [
+              "repeated_unproductive_call",
+              "repeated_unproductive_call",
+              "repeated_unproductive_call"
+            ]
+          },
+          "case_006": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              40,
+              40,
+              40
+            ],
+            "stopping_reasons": [
+              "max_actions",
+              "max_actions",
+              "max_actions"
+            ]
+          },
+          "case_007": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              40,
+              40,
+              40
+            ],
+            "stopping_reasons": [
+              "max_actions",
+              "max_actions",
+              "max_actions"
+            ]
+          },
+          "case_008": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              40,
+              8,
+              40
+            ],
+            "stopping_reasons": [
+              "max_actions",
+              "repeated_unproductive_call",
+              "max_actions"
+            ]
+          },
+          "case_009": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              40,
+              40,
+              40
+            ],
+            "stopping_reasons": [
+              "max_actions",
+              "max_actions",
+              "max_actions"
+            ]
+          },
+          "case_010": {
+            "runs": 3,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [
+              40,
+              40,
+              40
+            ],
+            "stopping_reasons": [
+              "max_actions",
+              "max_actions",
+              "max_actions"
+            ]
+          }
+        },
+        "metrics": {
+          "completed": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": false
+          },
+          "published_diagnosis_exact_match": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_concept_match": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_top3_concept": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_concept_match": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_top3_concept": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "disposition_published_exact_match": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": null,
+            "evaluable_cases": 7,
+            "provisional": true
+          }
+        },
+        "total_tool_calls": 930,
+        "median_run_seconds": 63.234,
+        "diagnosis_emitted_runs": 0,
+        "target_match_given_diagnosis": null,
+        "process": {
+          "mean_lab_requests": 9.366666666666667,
+          "mean_imaging_requests": 0.13333333333333333,
+          "mean_procedure_orders": 0.5,
+          "mean_medication_orders": 0.0,
+          "mean_steps_to_benchmark_diagnosis": null,
+          "invalid_tool_calls": 818,
+          "failed_tool_calls": 818,
+          "reported_input_tokens": 2594413.0,
+          "reported_cached_input_tokens": null,
+          "reported_cache_creation_input_tokens": null,
+          "reported_output_tokens": 29667.0,
+          "reported_reasoning_tokens": null,
+          "reported_cost_equivalent_usd": 0.0,
+          "mean_local_tokens_per_second": 25.440741539828124
+        },
+        "observed_match_count": 0,
+        "observed_run_target_rate": 0.0
+      },
+      "gpt-6-sol": {
+        "observed_runs": 30,
+        "expected_runs": 30,
+        "complete_panel": true,
+        "cases": {
+          "case_001": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 1,
+            "tool_calls": [
+              13,
+              13,
+              13
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_002": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              17,
+              17,
+              17
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_003": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              9,
+              12,
+              13
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_004": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              13,
+              14,
+              16
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_005": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 1,
+            "tool_calls": [
+              12,
+              12,
+              12
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_006": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              16,
+              16,
+              14
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_007": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 1,
+            "tool_calls": [
+              24,
+              17,
+              17
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_008": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              6,
+              8,
+              7
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_009": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 1,
+            "tool_calls": [
+              9,
+              11,
+              10
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_010": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 1,
+            "tool_calls": [
+              15,
+              14,
+              14
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          }
+        },
+        "metrics": {
+          "completed": {
+            "case_mean": 1.0,
+            "case_cluster_bootstrap_95": [
+              1.0,
+              1.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": false
+          },
+          "published_diagnosis_exact_match": {
+            "case_mean": 0.03333333333333333,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.1
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_concept_match": {
+            "case_mean": 0.4,
+            "case_cluster_bootstrap_95": [
+              0.19999999999999998,
+              0.6
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_top3_concept": {
+            "case_mean": 0.4,
+            "case_cluster_bootstrap_95": [
+              0.19999999999999998,
+              0.6
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_concept_match": {
+            "case_mean": 0.4666666666666666,
+            "case_cluster_bootstrap_95": [
+              0.23333333333333334,
+              0.7
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_top3_concept": {
+            "case_mean": 0.4666666666666666,
+            "case_cluster_bootstrap_95": [
+              0.23333333333333334,
+              0.7
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "disposition_published_exact_match": {
+            "case_mean": 0.5714285714285714,
+            "case_cluster_bootstrap_95": null,
+            "evaluable_cases": 7,
+            "provisional": true
+          }
+        },
+        "total_tool_calls": 401,
+        "median_run_seconds": 170.351,
+        "diagnosis_emitted_runs": 30,
+        "target_match_given_diagnosis": 0.4666666666666667,
+        "process": {
+          "mean_lab_requests": 1.5333333333333334,
+          "mean_imaging_requests": 1.5666666666666667,
+          "mean_procedure_orders": 1.7666666666666666,
+          "mean_medication_orders": 0.3333333333333333,
+          "mean_steps_to_benchmark_diagnosis": 8.333333333333334,
+          "invalid_tool_calls": 0,
+          "failed_tool_calls": 0,
+          "reported_input_tokens": 6703197.0,
+          "reported_cached_input_tokens": 5630592.0,
+          "reported_cache_creation_input_tokens": null,
+          "reported_output_tokens": 138480.0,
+          "reported_reasoning_tokens": 103778.0,
+          "reported_cost_equivalent_usd": null,
+          "mean_local_tokens_per_second": null
+        },
+        "observed_match_count": 14,
+        "observed_run_target_rate": 0.4666666666666667,
+        "computed_cost_proxy": {
+          "computed_api_equivalent_usd": 4.6561284,
+          "sensitivity_all_uncached_as_cache_writes_usd": 5.192430900000001,
+          "evaluable_runs": 30,
+          "observed_runs": 30,
+          "is_subscription_charge": false,
+          "is_proxy": true,
+          "source_artifact": "results/summaries/SOL_COST.json",
+          "source_sha256": "5ced1cfb04a3981bbec3eabac13c8400278df57362c5cf49c16547546bf49028",
+          "verified_usage_totals": {
+            "input_tokens_including_cached": 6703197,
+            "cached_input_tokens": 5630592,
+            "output_tokens_including_reasoning": 138480,
+            "reasoning_output_tokens_subset": 103778
+          },
+          "pricing_url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+          "pricing_checked_date": "2026-09-26"
+        }
+      },
+      "claude-opus-5-5": {
+        "observed_runs": 30,
+        "expected_runs": 30,
+        "complete_panel": true,
+        "cases": {
+          "case_001": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 2,
+            "tool_calls": [
+              12,
+              13,
+              13
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_002": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              16,
+              14,
+              14
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_003": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              13,
+              13,
+              13
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_004": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              10,
+              9,
+              8
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_005": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              7,
+              7,
+              10
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_006": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              12,
+              13,
+              10
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_007": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 1,
+            "tool_calls": [
+              27,
+              20,
+              17
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_008": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              8,
+              8,
+              8
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_009": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              10,
+              11,
+              10
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_010": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              12,
+              14,
+              15
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          }
+        },
+        "metrics": {
+          "completed": {
+            "case_mean": 1.0,
+            "case_cluster_bootstrap_95": [
+              1.0,
+              1.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": false
+          },
+          "published_diagnosis_exact_match": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_concept_match": {
+            "case_mean": 0.7999999999999999,
+            "case_cluster_bootstrap_95": [
+              0.5666666666666667,
+              1.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_top3_concept": {
+            "case_mean": 0.7999999999999999,
+            "case_cluster_bootstrap_95": [
+              0.5666666666666667,
+              1.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_concept_match": {
+            "case_mean": 0.7999999999999999,
+            "case_cluster_bootstrap_95": [
+              0.5666666666666667,
+              1.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_top3_concept": {
+            "case_mean": 0.7999999999999999,
+            "case_cluster_bootstrap_95": [
+              0.5666666666666667,
+              1.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "disposition_published_exact_match": {
+            "case_mean": 0.380952380952381,
+            "case_cluster_bootstrap_95": null,
+            "evaluable_cases": 7,
+            "provisional": true
+          }
+        },
+        "total_tool_calls": 367,
+        "median_run_seconds": 85.634,
+        "diagnosis_emitted_runs": 30,
+        "target_match_given_diagnosis": 0.8,
+        "process": {
+          "mean_lab_requests": 1.8333333333333333,
+          "mean_imaging_requests": 1.3333333333333333,
+          "mean_procedure_orders": 1.2,
+          "mean_medication_orders": 0.6,
+          "mean_steps_to_benchmark_diagnosis": 8.541666666666666,
+          "invalid_tool_calls": 0,
+          "failed_tool_calls": 0,
+          "reported_input_tokens": 744.0,
+          "reported_cached_input_tokens": 592596.0,
+          "reported_cache_creation_input_tokens": 1743447.0,
+          "reported_output_tokens": 205091.0,
+          "reported_reasoning_tokens": null,
+          "reported_cost_equivalent_usd": 18.170891199999996,
+          "mean_local_tokens_per_second": null
+        },
+        "observed_match_count": 24,
+        "observed_run_target_rate": 0.8
+      },
+      "claude-sonnet-5-5": {
+        "observed_runs": 30,
+        "expected_runs": 30,
+        "complete_panel": true,
+        "cases": {
+          "case_001": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              11,
+              10,
+              11
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_002": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              14,
+              11,
+              12
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_003": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              11,
+              12,
+              11
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_004": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 2,
+            "tool_calls": [
+              13,
+              10,
+              10
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_005": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              8,
+              8,
+              8
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_006": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              9,
+              11,
+              11
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_007": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              19,
+              17,
+              16
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_008": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              8,
+              8,
+              8
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_009": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              9,
+              11,
+              10
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_010": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              12,
+              15,
+              11
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          }
+        },
+        "metrics": {
+          "completed": {
+            "case_mean": 1.0,
+            "case_cluster_bootstrap_95": [
+              1.0,
+              1.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": false
+          },
+          "published_diagnosis_exact_match": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_concept_match": {
+            "case_mean": 0.6666666666666666,
+            "case_cluster_bootstrap_95": [
+              0.36666666666666664,
+              0.9
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_top3_concept": {
+            "case_mean": 0.6666666666666666,
+            "case_cluster_bootstrap_95": [
+              0.36666666666666664,
+              0.9
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_concept_match": {
+            "case_mean": 0.6666666666666666,
+            "case_cluster_bootstrap_95": [
+              0.36666666666666664,
+              0.9
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_top3_concept": {
+            "case_mean": 0.6666666666666666,
+            "case_cluster_bootstrap_95": [
+              0.36666666666666664,
+              0.9
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "disposition_published_exact_match": {
+            "case_mean": 0.7142857142857143,
+            "case_cluster_bootstrap_95": null,
+            "evaluable_cases": 7,
+            "provisional": true
+          }
+        },
+        "total_tool_calls": 335,
+        "median_run_seconds": 58.5595,
+        "diagnosis_emitted_runs": 30,
+        "target_match_given_diagnosis": 0.6666666666666666,
+        "process": {
+          "mean_lab_requests": 1.9666666666666666,
+          "mean_imaging_requests": 1.4333333333333333,
+          "mean_procedure_orders": 0.8666666666666667,
+          "mean_medication_orders": 0.5,
+          "mean_steps_to_benchmark_diagnosis": 8.05,
+          "invalid_tool_calls": 0,
+          "failed_tool_calls": 1,
+          "reported_input_tokens": 980.0,
+          "reported_cached_input_tokens": 1347916.0,
+          "reported_cache_creation_input_tokens": 1442387.0,
+          "reported_output_tokens": 153113.0,
+          "reported_reasoning_tokens": null,
+          "reported_cost_equivalent_usd": 7.572221199999999,
+          "mean_local_tokens_per_second": null
+        },
+        "observed_match_count": 20,
+        "observed_run_target_rate": 0.6666666666666666,
+        "identity_evidence": "observed_slug_in_each_response"
+      },
+      "gpt-6-luna": {
+        "observed_runs": 20,
+        "expected_runs": 30,
+        "complete_panel": false,
+        "cases": {
+          "case_001": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              10,
+              12,
+              9
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_002": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              17,
+              21,
+              11
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_003": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 2,
+            "tool_calls": [
+              11,
+              12,
+              10
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_004": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              10,
+              15,
+              13
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_005": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 1,
+            "tool_calls": [
+              15,
+              10,
+              11
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_006": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 2,
+            "tool_calls": [
+              14,
+              13,
+              13
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_007": {
+            "runs": 2,
+            "completed": 2,
+            "concept_matches": 1,
+            "tool_calls": [
+              15,
+              15
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed"
+            ]
+          },
+          "case_008": {
+            "runs": 0,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [],
+            "stopping_reasons": []
+          },
+          "case_009": {
+            "runs": 0,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [],
+            "stopping_reasons": []
+          },
+          "case_010": {
+            "runs": 0,
+            "completed": 0,
+            "concept_matches": 0,
+            "tool_calls": [],
+            "stopping_reasons": []
+          }
+        },
+        "metrics": {
+          "completed": {
+            "case_mean": 1.0,
+            "case_cluster_bootstrap_95": null,
+            "evaluable_cases": 7,
+            "provisional": false
+          },
+          "published_diagnosis_exact_match": {
+            "case_mean": 0.07142857142857142,
+            "case_cluster_bootstrap_95": null,
+            "evaluable_cases": 7,
+            "provisional": true
+          },
+          "published_diagnosis_concept_match": {
+            "case_mean": 0.2619047619047619,
+            "case_cluster_bootstrap_95": null,
+            "evaluable_cases": 7,
+            "provisional": true
+          },
+          "published_diagnosis_top3_concept": {
+            "case_mean": 0.2619047619047619,
+            "case_cluster_bootstrap_95": null,
+            "evaluable_cases": 7,
+            "provisional": true
+          },
+          "benchmark_target_concept_match": {
+            "case_mean": 0.3095238095238095,
+            "case_cluster_bootstrap_95": null,
+            "evaluable_cases": 7,
+            "provisional": true
+          },
+          "benchmark_target_top3_concept": {
+            "case_mean": 0.3095238095238095,
+            "case_cluster_bootstrap_95": null,
+            "evaluable_cases": 7,
+            "provisional": true
+          },
+          "disposition_published_exact_match": {
+            "case_mean": 0.75,
+            "case_cluster_bootstrap_95": null,
+            "evaluable_cases": 4,
+            "provisional": true
+          }
+        },
+        "total_tool_calls": 257,
+        "median_run_seconds": 348.451,
+        "diagnosis_emitted_runs": 20,
+        "target_match_given_diagnosis": 0.3,
+        "process": {
+          "mean_lab_requests": 1.5,
+          "mean_imaging_requests": 1.3,
+          "mean_procedure_orders": 0.95,
+          "mean_medication_orders": 0.25,
+          "mean_steps_to_benchmark_diagnosis": 8.666666666666666,
+          "invalid_tool_calls": 0,
+          "failed_tool_calls": 0,
+          "reported_input_tokens": 4734032.0,
+          "reported_cached_input_tokens": 3960320.0,
+          "reported_cache_creation_input_tokens": null,
+          "reported_output_tokens": 101796.0,
+          "reported_reasoning_tokens": 77852.0,
+          "reported_cost_equivalent_usd": null,
+          "mean_local_tokens_per_second": null
+        },
+        "observed_match_count": 6,
+        "observed_run_target_rate": 0.3,
+        "computed_cost_proxy": {
+          "computed_api_equivalent_usd": 0.1678724,
+          "sensitivity_all_uncached_as_cache_writes_usd": 0.1872152,
+          "evaluable_runs": 20,
+          "observed_runs": 20,
+          "per_run": [
+            {
+              "run_id": "04278e79-b247-4651-8b2b-1926de4b9b8b",
+              "estimated_usd": 0.00650642,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.007095069999999999,
+              "maximum_input_tokens_per_call": 33429,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 11
+            },
+            {
+              "run_id": "707e22a3-4635-4f1a-91ee-a331aaa62aa6",
+              "estimated_usd": 0.00717,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.0077901,
+              "maximum_input_tokens_per_call": 34285,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 12
+            },
+            {
+              "run_id": "b17165df-7a4f-41a2-866e-f83c82117df7",
+              "estimated_usd": 0.00427066,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.00464391,
+              "maximum_input_tokens_per_call": 17469,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "1876a093-c71a-403b-b2f9-8a590cb66321",
+              "estimated_usd": 0.01071152,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.011490720000000001,
+              "maximum_input_tokens_per_call": 33621,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 17
+            },
+            {
+              "run_id": "2e5c2934-3582-450a-8505-0640787fc713",
+              "estimated_usd": 0.02389048,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.027624105,
+              "maximum_input_tokens_per_call": 38715,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 21
+            },
+            {
+              "run_id": "add50f9b-2b03-4a27-a753-f673c317f0d6",
+              "estimated_usd": 0.0070536,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.0078482,
+              "maximum_input_tokens_per_call": 32243,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 11
+            },
+            {
+              "run_id": "21342c93-44bc-4a76-8f0a-3e03f7a44b71",
+              "estimated_usd": 0.012105320000000001,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.014681295,
+              "maximum_input_tokens_per_call": 17016,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "ab681970-da7f-412e-b584-8ae2c09e1ea3",
+              "estimated_usd": 0.01142312,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.013396745000000002,
+              "maximum_input_tokens_per_call": 34149,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 12
+            },
+            {
+              "run_id": "f6fad15f-3cf0-4caf-9af4-0c4335dec6ac",
+              "estimated_usd": 0.00749434,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.008858365,
+              "maximum_input_tokens_per_call": 16765,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 9
+            },
+            {
+              "run_id": "23d79bd8-a538-47be-8fec-41babdaee3b8",
+              "estimated_usd": 0.00461686,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.005010335,
+              "maximum_input_tokens_per_call": 32658,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "2eb3e0cb-8b9d-428f-89e6-f0d408452d08",
+              "estimated_usd": 0.00944818,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.010265604999999999,
+              "maximum_input_tokens_per_call": 36794,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 15
+            },
+            {
+              "run_id": "874ce27f-b144-4d41-9ed9-0b2f8c61fbd8",
+              "estimated_usd": 0.0061953600000000004,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.006689059999999999,
+              "maximum_input_tokens_per_call": 35222,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 13
+            },
+            {
+              "run_id": "43cc91fb-2216-433a-a994-e9003361209e",
+              "estimated_usd": 0.008319479999999999,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.00898343,
+              "maximum_input_tokens_per_call": 32810,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 15
+            },
+            {
+              "run_id": "7b8d3d1f-850b-457e-88f2-09cb93019ae4",
+              "estimated_usd": 0.00475234,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.0051560650000000005,
+              "maximum_input_tokens_per_call": 17152,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "b9c99679-2a79-4568-ad84-a822d2616fc5",
+              "estimated_usd": 0.00510532,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.005461720000000001,
+              "maximum_input_tokens_per_call": 32325,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 11
+            },
+            {
+              "run_id": "59fb95c6-9eab-40fb-9c01-11839478b69d",
+              "estimated_usd": 0.00817634,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.008916440000000001,
+              "maximum_input_tokens_per_call": 34618,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 15
+            },
+            {
+              "run_id": "acf51a86-774a-42e7-8310-19878d0928ad",
+              "estimated_usd": 0.0067956200000000005,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.0072990699999999995,
+              "maximum_input_tokens_per_call": 17867,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 15
+            },
+            {
+              "run_id": "654cae11-4bc0-43b7-bc24-a434ae74f50f",
+              "estimated_usd": 0.010589639999999999,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.011866165000000001,
+              "maximum_input_tokens_per_call": 35948,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 14
+            },
+            {
+              "run_id": "72ba1bad-dc88-4ffe-93ce-651b54f68f87",
+              "estimated_usd": 0.00712372,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.007577895,
+              "maximum_input_tokens_per_call": 36100,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 13
+            },
+            {
+              "run_id": "aca657ea-00ed-4b0f-86bd-8a7f64939e31",
+              "estimated_usd": 0.00612408,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.0065609050000000006,
+              "maximum_input_tokens_per_call": 33762,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 13
+            }
+          ],
+          "excluded_runs": [],
+          "pricing": {
+            "verified": true,
+            "as_of": "2026-09-28",
+            "source_url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+            "input_per_million": 0.1,
+            "cached_input_per_million": 0.01,
+            "cache_write_input_per_million": 0.125,
+            "output_per_million": 0.5,
+            "input_includes_cached": true,
+            "output_includes_reasoning": true,
+            "long_context_threshold": 272000,
+            "currency": "USD",
+            "basis": "hypothetical_API_Standard_not_subscription_charge"
+          },
+          "is_subscription_charge": false,
+          "is_proxy": true,
+          "missing_reason": null
+        },
+        "identity_evidence": "requested_and_inference_accepted_not_observed"
+      },
+      "gpt-5.6-terra": {
+        "observed_runs": 30,
+        "expected_runs": 30,
+        "complete_panel": true,
+        "cases": {
+          "case_001": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              12,
+              11,
+              9
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_002": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              9,
+              10,
+              12
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_003": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              8,
+              7,
+              6
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_004": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              10,
+              12,
+              11
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_005": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 1,
+            "tool_calls": [
+              10,
+              10,
+              9
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_006": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              11,
+              11,
+              10
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_007": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              16,
+              16,
+              18
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_008": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              6,
+              5,
+              6
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_009": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              6,
+              6,
+              6
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_010": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 1,
+            "tool_calls": [
+              14,
+              14,
+              14
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          }
+        },
+        "metrics": {
+          "completed": {
+            "case_mean": 1.0,
+            "case_cluster_bootstrap_95": [
+              1.0,
+              1.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": false
+          },
+          "published_diagnosis_exact_match": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_concept_match": {
+            "case_mean": 0.36666666666666664,
+            "case_cluster_bootstrap_95": [
+              0.1,
+              0.6333333333333334
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_top3_concept": {
+            "case_mean": 0.36666666666666664,
+            "case_cluster_bootstrap_95": [
+              0.1,
+              0.6333333333333334
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_concept_match": {
+            "case_mean": 0.4666666666666666,
+            "case_cluster_bootstrap_95": [
+              0.19999999999999998,
+              0.7333333333333334
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_top3_concept": {
+            "case_mean": 0.4666666666666666,
+            "case_cluster_bootstrap_95": [
+              0.19999999999999998,
+              0.7333333333333334
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "disposition_published_exact_match": {
+            "case_mean": 0.5714285714285714,
+            "case_cluster_bootstrap_95": null,
+            "evaluable_cases": 7,
+            "provisional": true
+          }
+        },
+        "total_tool_calls": 305,
+        "median_run_seconds": 128.2295,
+        "diagnosis_emitted_runs": 30,
+        "target_match_given_diagnosis": 0.4666666666666667,
+        "process": {
+          "mean_lab_requests": 0.9333333333333333,
+          "mean_imaging_requests": 1.5333333333333334,
+          "mean_procedure_orders": 1.4666666666666666,
+          "mean_medication_orders": 0.03333333333333333,
+          "mean_steps_to_benchmark_diagnosis": 5.357142857142857,
+          "invalid_tool_calls": 0,
+          "failed_tool_calls": 2,
+          "reported_input_tokens": 4929392.0,
+          "reported_cached_input_tokens": 4295680.0,
+          "reported_cache_creation_input_tokens": null,
+          "reported_output_tokens": 75997.0,
+          "reported_reasoning_tokens": 50011.0,
+          "reported_cost_equivalent_usd": null,
+          "mean_local_tokens_per_second": null
+        },
+        "observed_match_count": 14,
+        "observed_run_target_rate": 0.4666666666666667,
+        "computed_cost_proxy": {
+          "computed_api_equivalent_usd": 3.0385240000000007,
+          "sensitivity_all_uncached_as_cache_writes_usd": 3.35538,
+          "evaluable_runs": 30,
+          "observed_runs": 30,
+          "per_run": [
+            {
+              "run_id": "0b7b28e8-ffac-4dff-a6d8-ccf8cbe29d84",
+              "estimated_usd": 0.10413120000000001,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.11443120000000001,
+              "maximum_input_tokens_per_call": 17070,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 12
+            },
+            {
+              "run_id": "8cb985b8-03c7-4642-bb91-b1959d7d94fd",
+              "estimated_usd": 0.23245120000000002,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.2765322,
+              "maximum_input_tokens_per_call": 16872,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 11
+            },
+            {
+              "run_id": "9fff6cb8-0c60-43d1-9861-fe886991c2e1",
+              "estimated_usd": 0.15130760000000001,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.17969010000000002,
+              "maximum_input_tokens_per_call": 16593,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 9
+            },
+            {
+              "run_id": "0f05e6cb-7f1d-4d57-9b29-7292d010944f",
+              "estimated_usd": 0.1004936,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.1130366,
+              "maximum_input_tokens_per_call": 16634,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 9
+            },
+            {
+              "run_id": "3e713a05-3909-4d36-b3f3-3832d77f1974",
+              "estimated_usd": 0.08486160000000001,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.0909596,
+              "maximum_input_tokens_per_call": 16767,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "c5114be6-03cc-4a59-9f5b-ee17cb25e469",
+              "estimated_usd": 0.10376120000000001,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.10952970000000001,
+              "maximum_input_tokens_per_call": 17196,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 12
+            },
+            {
+              "run_id": "1004ca0a-ceda-443e-8717-4d7305ef1047",
+              "estimated_usd": 0.1530548,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.17120329999999997,
+              "maximum_input_tokens_per_call": 17581,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 14
+            },
+            {
+              "run_id": "84fbc723-3e19-4dd3-9fda-43210e9ddddb",
+              "estimated_usd": 0.1303148,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.1409123,
+              "maximum_input_tokens_per_call": 17544,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 14
+            },
+            {
+              "run_id": "e7e38db9-a2f0-45fc-9c0e-48c6c72fdb10",
+              "estimated_usd": 0.1212088,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.1315218,
+              "maximum_input_tokens_per_call": 17474,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 14
+            },
+            {
+              "run_id": "10920fb8-9b36-4da1-bdbf-7c6de97a07d6",
+              "estimated_usd": 0.1481416,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.1584056,
+              "maximum_input_tokens_per_call": 17583,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 16
+            },
+            {
+              "run_id": "7f2a2512-767b-4ace-94dc-fb89aa102784",
+              "estimated_usd": 0.1755912,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.1927442,
+              "maximum_input_tokens_per_call": 17650,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 16
+            },
+            {
+              "run_id": "d1798417-3ce8-41cd-9b03-c0e6a439472b",
+              "estimated_usd": 0.19633720000000002,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.2121907,
+              "maximum_input_tokens_per_call": 17955,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 18
+            },
+            {
+              "run_id": "15327adf-5491-4b67-a190-cfe8763be5fb",
+              "estimated_usd": 0.08051280000000001,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.08528580000000001,
+              "maximum_input_tokens_per_call": 17048,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "3fc47d04-5e81-4561-9196-5ca1d7b928ac",
+              "estimated_usd": 0.13398079999999998,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.14880379999999999,
+              "maximum_input_tokens_per_call": 17354,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 12
+            },
+            {
+              "run_id": "94ee5af0-52db-4847-bb5e-8cdc052a32cf",
+              "estimated_usd": 0.097342,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.1067715,
+              "maximum_input_tokens_per_call": 17200,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 11
+            },
+            {
+              "run_id": "17342811-4e64-4943-9ed3-c87abbe2a5cb",
+              "estimated_usd": 0.0776892,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.08341269999999999,
+              "maximum_input_tokens_per_call": 16938,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "21ebf373-6a40-40c8-8c33-2f3172f2ee60",
+              "estimated_usd": 0.0857844,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.09204989999999999,
+              "maximum_input_tokens_per_call": 16922,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "735d331b-1c48-4e9e-b74a-d06ed40a75ae",
+              "estimated_usd": 0.09371239999999999,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.1058799,
+              "maximum_input_tokens_per_call": 16750,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 9
+            },
+            {
+              "run_id": "32d4b0ad-8f0f-48a6-8059-271f7290f92b",
+              "estimated_usd": 0.041855199999999995,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.044797199999999995,
+              "maximum_input_tokens_per_call": 16232,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 6
+            },
+            {
+              "run_id": "caf64549-0738-4be7-bce1-a093d90f7dc2",
+              "estimated_usd": 0.0529104,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.058920400000000005,
+              "maximum_input_tokens_per_call": 16237,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 6
+            },
+            {
+              "run_id": "ecadf93c-88e9-443b-9037-41c623b26e12",
+              "estimated_usd": 0.048488,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.053491,
+              "maximum_input_tokens_per_call": 16243,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 6
+            },
+            {
+              "run_id": "547386a2-2acf-4971-8ce9-1130a2181359",
+              "estimated_usd": 0.1080028,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.1160833,
+              "maximum_input_tokens_per_call": 16929,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 11
+            },
+            {
+              "run_id": "63799037-f547-4497-84eb-33306b4e6ec8",
+              "estimated_usd": 0.11694,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.130689,
+              "maximum_input_tokens_per_call": 16928,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 11
+            },
+            {
+              "run_id": "e3721e9a-5a26-4da3-b1e4-c04123034dfb",
+              "estimated_usd": 0.0804808,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.0870108,
+              "maximum_input_tokens_per_call": 16770,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "6a9e1c62-fa63-4111-9573-baeb3cb02b2b",
+              "estimated_usd": 0.046009600000000005,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.05027260000000001,
+              "maximum_input_tokens_per_call": 16339,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 6
+            },
+            {
+              "run_id": "db2bd88d-7036-4e6b-8b56-1a944c32b812",
+              "estimated_usd": 0.051828400000000004,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.0593259,
+              "maximum_input_tokens_per_call": 15892,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 5
+            },
+            {
+              "run_id": "eb65d205-b811-4de9-9054-5dfd16aa41fc",
+              "estimated_usd": 0.0388768,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.0410258,
+              "maximum_input_tokens_per_call": 16294,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 6
+            },
+            {
+              "run_id": "7ee74c08-6468-47e2-a1ed-4cd1d8a5192e",
+              "estimated_usd": 0.060026,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.0649385,
+              "maximum_input_tokens_per_call": 16679,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 8
+            },
+            {
+              "run_id": "9794040c-dc21-410c-8ef3-72b1266b3fe2",
+              "estimated_usd": 0.0799804,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.0899459,
+              "maximum_input_tokens_per_call": 16568,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 7
+            },
+            {
+              "run_id": "d07d241a-e950-4928-987a-732432488c4c",
+              "estimated_usd": 0.0424492,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.045518699999999995,
+              "maximum_input_tokens_per_call": 16284,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 6
+            }
+          ],
+          "excluded_runs": [],
+          "pricing": {
+            "verified": true,
+            "as_of": "2026-09-28",
+            "source_url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+            "input_per_million": 2.0,
+            "cached_input_per_million": 0.2,
+            "cache_write_input_per_million": 2.5,
+            "cache_write_rate_source": "official page says 1.25x uncached input rate; 1.25 * USD2 = USD2.50/M",
+            "output_per_million": 12.0,
+            "input_includes_cached": true,
+            "output_includes_reasoning": true,
+            "long_context_threshold": 272000,
+            "currency": "USD",
+            "basis": "hypothetical_API_Standard_not_subscription_charge"
+          },
+          "is_subscription_charge": false,
+          "is_proxy": true,
+          "missing_reason": null
+        },
+        "identity_evidence": "requested_and_inference_accepted_not_observed"
+      },
+      "gpt-6-astra": {
+        "observed_runs": 30,
+        "expected_runs": 30,
+        "complete_panel": true,
+        "cases": {
+          "case_001": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 1,
+            "tool_calls": [
+              15,
+              14,
+              13
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_002": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              13,
+              13,
+              13
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_003": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              8,
+              11,
+              9
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_004": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              13,
+              14,
+              12
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_005": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              10,
+              9,
+              10
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_006": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              9,
+              11,
+              10
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_007": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 1,
+            "tool_calls": [
+              14,
+              14,
+              15
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_008": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              8,
+              8,
+              9
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_009": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 1,
+            "tool_calls": [
+              9,
+              9,
+              9
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_010": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              12,
+              11,
+              12
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          }
+        },
+        "metrics": {
+          "completed": {
+            "case_mean": 1.0,
+            "case_cluster_bootstrap_95": [
+              1.0,
+              1.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": false
+          },
+          "published_diagnosis_exact_match": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_concept_match": {
+            "case_mean": 0.4666666666666667,
+            "case_cluster_bootstrap_95": [
+              0.2333333333333333,
+              0.7333333333333332
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_top3_concept": {
+            "case_mean": 0.4666666666666667,
+            "case_cluster_bootstrap_95": [
+              0.2333333333333333,
+              0.7333333333333332
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_concept_match": {
+            "case_mean": 0.4999999999999999,
+            "case_cluster_bootstrap_95": [
+              0.2333333333333333,
+              0.7666666666666666
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_top3_concept": {
+            "case_mean": 0.4999999999999999,
+            "case_cluster_bootstrap_95": [
+              0.2333333333333333,
+              0.7666666666666666
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "disposition_published_exact_match": {
+            "case_mean": 0.5238095238095238,
+            "case_cluster_bootstrap_95": null,
+            "evaluable_cases": 7,
+            "provisional": true
+          }
+        },
+        "total_tool_calls": 337,
+        "median_run_seconds": 156.3835,
+        "diagnosis_emitted_runs": 30,
+        "target_match_given_diagnosis": 0.5,
+        "process": {
+          "mean_lab_requests": 1.2666666666666666,
+          "mean_imaging_requests": 1.2333333333333334,
+          "mean_procedure_orders": 1.4,
+          "mean_medication_orders": 0.06666666666666667,
+          "mean_steps_to_benchmark_diagnosis": 7.133333333333334,
+          "invalid_tool_calls": 0,
+          "failed_tool_calls": 0,
+          "reported_input_tokens": 5802790.0,
+          "reported_cached_input_tokens": 1965440.0,
+          "reported_cache_creation_input_tokens": null,
+          "reported_output_tokens": 57808.0,
+          "reported_reasoning_tokens": 25424.0,
+          "reported_cost_equivalent_usd": null,
+          "mean_local_tokens_per_second": null
+        },
+        "observed_match_count": 15,
+        "observed_run_target_rate": 0.5,
+        "computed_cost_proxy": {
+          "computed_api_equivalent_usd": 43.22933999999999,
+          "sensitivity_all_uncached_as_cache_writes_usd": 52.82271499999999,
+          "evaluable_runs": 30,
+          "observed_runs": 30,
+          "per_run": [
+            {
+              "run_id": "0b6a12cd-4b69-437a-ac44-8670724de555",
+              "estimated_usd": 1.081738,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.2956105,
+              "maximum_input_tokens_per_call": 18251,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 12
+            },
+            {
+              "run_id": "1a201ced-ea47-4ff8-9b9e-4fe0c6b1f82b",
+              "estimated_usd": 1.59777,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.9771125,
+              "maximum_input_tokens_per_call": 17465,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 9
+            },
+            {
+              "run_id": "207dd862-41b6-4657-9497-aa59bf8be0b1",
+              "estimated_usd": 0.995438,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.2184805,
+              "maximum_input_tokens_per_call": 17556,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 8
+            },
+            {
+              "run_id": "244308bd-1975-4498-b93f-d0baddacbdd6",
+              "estimated_usd": 1.624644,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.998489,
+              "maximum_input_tokens_per_call": 17783,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 11
+            },
+            {
+              "run_id": "336a76c0-22e0-4d77-9e4b-a40950442b0a",
+              "estimated_usd": 0.529264,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.621804,
+              "maximum_input_tokens_per_call": 17566,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 8
+            },
+            {
+              "run_id": "38e6d537-2e37-4d05-a0d7-fe79b2c5afaa",
+              "estimated_usd": 2.431884,
+              "sensitivity_all_uncached_as_cache_writes_usd": 3.001624,
+              "maximum_input_tokens_per_call": 18736,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 15
+            },
+            {
+              "run_id": "3ed27f46-d3bb-48a8-936b-0920b70bede5",
+              "estimated_usd": 1.485704,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.7955565,
+              "maximum_input_tokens_per_call": 18360,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 14
+            },
+            {
+              "run_id": "4d84f282-8e0d-424c-a00c-d61e2776d27e",
+              "estimated_usd": 1.274614,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.558584,
+              "maximum_input_tokens_per_call": 18083,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "581a9d07-3b3a-4fd7-ac7d-ea460767d584",
+              "estimated_usd": 2.269158,
+              "sensitivity_all_uncached_as_cache_writes_usd": 2.8027255,
+              "maximum_input_tokens_per_call": 18531,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 13
+            },
+            {
+              "run_id": "5a0a9b2a-de2e-412e-8dce-cdf75702f1d5",
+              "estimated_usd": 1.196112,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.4517345,
+              "maximum_input_tokens_per_call": 18085,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 11
+            },
+            {
+              "run_id": "605b44a9-03fc-4e43-a21c-0e4895affa96",
+              "estimated_usd": 1.436524,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.731604,
+              "maximum_input_tokens_per_call": 18302,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 14
+            },
+            {
+              "run_id": "60974fec-c02f-46d8-a64e-16f78064d5e4",
+              "estimated_usd": 1.56029,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.91539,
+              "maximum_input_tokens_per_call": 17850,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 11
+            },
+            {
+              "run_id": "6da6a411-d69c-44e6-9f7e-a2373f278841",
+              "estimated_usd": 1.56232,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.9106675,
+              "maximum_input_tokens_per_call": 23275,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 12
+            },
+            {
+              "run_id": "6df4a5f1-9b4b-4c19-8ecd-8487069cfbde",
+              "estimated_usd": 2.211764,
+              "sensitivity_all_uncached_as_cache_writes_usd": 2.7244765,
+              "maximum_input_tokens_per_call": 18459,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 14
+            },
+            {
+              "run_id": "74e64c89-0b30-46b4-bde7-8155fa245836",
+              "estimated_usd": 1.297044,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.5848315,
+              "maximum_input_tokens_per_call": 17627,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "75e5bec7-d1b8-4fe8-b4aa-2fa45af560eb",
+              "estimated_usd": 1.44164,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.77925,
+              "maximum_input_tokens_per_call": 17582,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 9
+            },
+            {
+              "run_id": "78d4eae2-0a52-453e-a128-ca3981d567a0",
+              "estimated_usd": 1.525798,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.884688,
+              "maximum_input_tokens_per_call": 21857,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 9
+            },
+            {
+              "run_id": "806ecefb-9ca9-4a78-8abb-edfc860d6215",
+              "estimated_usd": 0.90564,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.102715,
+              "maximum_input_tokens_per_call": 21138,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 8
+            },
+            {
+              "run_id": "986acafa-cd9f-4837-a31e-35f6a515add3",
+              "estimated_usd": 1.374176,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.652671,
+              "maximum_input_tokens_per_call": 18628,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 14
+            },
+            {
+              "run_id": "bbfe70f4-78f7-4bb7-9a9a-1baa77fc774f",
+              "estimated_usd": 1.58894,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.9695,
+              "maximum_input_tokens_per_call": 17706,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 9
+            },
+            {
+              "run_id": "c11b6224-86bc-455c-93a4-9eec52de0fe9",
+              "estimated_usd": 0.729144,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.8664415,
+              "maximum_input_tokens_per_call": 17809,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 9
+            },
+            {
+              "run_id": "c202398a-a545-42da-95c0-4b6f34585290",
+              "estimated_usd": 1.328402,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.6078445,
+              "maximum_input_tokens_per_call": 18330,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 12
+            },
+            {
+              "run_id": "c4951c52-74fb-4ddb-935e-c367945c63d6",
+              "estimated_usd": 0.917738,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.1120905,
+              "maximum_input_tokens_per_call": 17499,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 9
+            },
+            {
+              "run_id": "d17d1f16-b7a0-4889-a5ec-b9106c5913b4",
+              "estimated_usd": 2.00148,
+              "sensitivity_all_uncached_as_cache_writes_usd": 2.4462675,
+              "maximum_input_tokens_per_call": 23628,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 15
+            },
+            {
+              "run_id": "d5fee3a9-2983-4ae0-a10f-3a7a4859643b",
+              "estimated_usd": 1.81235,
+              "sensitivity_all_uncached_as_cache_writes_usd": 2.2208775,
+              "maximum_input_tokens_per_call": 18457,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 13
+            },
+            {
+              "run_id": "dae63fb8-5c25-4573-8f67-a235fc2d3ca8",
+              "estimated_usd": 1.233028,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.504423,
+              "maximum_input_tokens_per_call": 17989,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "f7fecd56-4674-47f3-8800-3789836b3ef2",
+              "estimated_usd": 1.19394,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.4278425,
+              "maximum_input_tokens_per_call": 18691,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 13
+            },
+            {
+              "run_id": "f973b950-984a-4cd2-a6e5-9e4f57a65291",
+              "estimated_usd": 1.816192,
+              "sensitivity_all_uncached_as_cache_writes_usd": 2.229662,
+              "maximum_input_tokens_per_call": 18265,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 13
+            },
+            {
+              "run_id": "fa76e8fd-04aa-4b1b-a427-94e6ea12c85c",
+              "estimated_usd": 1.15207,
+              "sensitivity_all_uncached_as_cache_writes_usd": 1.4121975,
+              "maximum_input_tokens_per_call": 21342,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 9
+            },
+            {
+              "run_id": "fd57e788-fb69-48a3-97e0-864d523d2f62",
+              "estimated_usd": 1.654534,
+              "sensitivity_all_uncached_as_cache_writes_usd": 2.017554,
+              "maximum_input_tokens_per_call": 18386,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 13
+            }
+          ],
+          "excluded_runs": [],
+          "pricing": {
+            "verified": true,
+            "as_of": "2026-09-29",
+            "source_url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+            "input_per_million": 10.0,
+            "cached_input_per_million": 1.0,
+            "cache_write_input_per_million": 12.5,
+            "output_per_million": 50.0,
+            "input_includes_cached": true,
+            "output_includes_reasoning": true,
+            "long_context_threshold": 272000,
+            "currency": "USD",
+            "basis": "hypothetical_API_Standard_not_subscription_charge"
+          },
+          "is_subscription_charge": false,
+          "is_proxy": true,
+          "missing_reason": null
+        },
+        "identity_evidence": "requested_and_inference_accepted_not_observed"
+      },
+      "gpt-6.1-sol": {
+        "observed_runs": 30,
+        "expected_runs": 30,
+        "complete_panel": true,
+        "cases": {
+          "case_001": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              13,
+              12,
+              14
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_002": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              13,
+              14,
+              14
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_003": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              11,
+              12,
+              10
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_004": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 1,
+            "tool_calls": [
+              10,
+              13,
+              13
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_005": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 2,
+            "tool_calls": [
+              11,
+              10,
+              10
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_006": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              10,
+              11,
+              11
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_007": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 0,
+            "tool_calls": [
+              19,
+              13,
+              15
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_008": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              8,
+              8,
+              8
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_009": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 3,
+            "tool_calls": [
+              9,
+              9,
+              7
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          },
+          "case_010": {
+            "runs": 3,
+            "completed": 3,
+            "concept_matches": 2,
+            "tool_calls": [
+              12,
+              12,
+              13
+            ],
+            "stopping_reasons": [
+              "completed",
+              "completed",
+              "completed"
+            ]
+          }
+        },
+        "metrics": {
+          "completed": {
+            "case_mean": 1.0,
+            "case_cluster_bootstrap_95": [
+              1.0,
+              1.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": false
+          },
+          "published_diagnosis_exact_match": {
+            "case_mean": 0.0,
+            "case_cluster_bootstrap_95": [
+              0.0,
+              0.0
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_concept_match": {
+            "case_mean": 0.5333333333333333,
+            "case_cluster_bootstrap_95": [
+              0.29999999999999993,
+              0.7666666666666667
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "published_diagnosis_top3_concept": {
+            "case_mean": 0.5333333333333333,
+            "case_cluster_bootstrap_95": [
+              0.29999999999999993,
+              0.7666666666666667
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_concept_match": {
+            "case_mean": 0.5666666666666667,
+            "case_cluster_bootstrap_95": [
+              0.3,
+              0.8333333333333333
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "benchmark_target_top3_concept": {
+            "case_mean": 0.5666666666666667,
+            "case_cluster_bootstrap_95": [
+              0.3,
+              0.8333333333333333
+            ],
+            "evaluable_cases": 10,
+            "provisional": true
+          },
+          "disposition_published_exact_match": {
+            "case_mean": 0.42857142857142855,
+            "case_cluster_bootstrap_95": null,
+            "evaluable_cases": 7,
+            "provisional": true
+          }
+        },
+        "total_tool_calls": 345,
+        "median_run_seconds": 217.197,
+        "diagnosis_emitted_runs": 30,
+        "target_match_given_diagnosis": 0.5666666666666667,
+        "process": {
+          "mean_lab_requests": 1.6666666666666667,
+          "mean_imaging_requests": 1.3666666666666667,
+          "mean_procedure_orders": 1.4333333333333333,
+          "mean_medication_orders": 0.06666666666666667,
+          "mean_steps_to_benchmark_diagnosis": 7.529411764705882,
+          "invalid_tool_calls": 0,
+          "failed_tool_calls": 0,
+          "reported_input_tokens": 5962683.0,
+          "reported_cached_input_tokens": 3034240.0,
+          "reported_cache_creation_input_tokens": null,
+          "reported_output_tokens": 84311.0,
+          "reported_reasoning_tokens": 51763.0,
+          "reported_cost_equivalent_usd": null,
+          "mean_local_tokens_per_second": null
+        },
+        "observed_match_count": 17,
+        "observed_run_target_rate": 0.5666666666666667,
+        "computed_cost_proxy": {
+          "computed_api_equivalent_usd": 7.003420000000001,
+          "sensitivity_all_uncached_as_cache_writes_usd": 8.4676415,
+          "evaluable_runs": 30,
+          "observed_runs": 30,
+          "per_run": [
+            {
+              "run_id": "1020fc88-01e8-492f-b4f3-aa26eec5c8c3",
+              "estimated_usd": 0.33081879999999997,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.4069328,
+              "maximum_input_tokens_per_call": 17482,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "11b48e99-8e0e-4e50-9adf-07d514f5d2ef",
+              "estimated_usd": 0.1278756,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.1460976,
+              "maximum_input_tokens_per_call": 18463,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 13
+            },
+            {
+              "run_id": "123f80e6-393f-4032-864b-48f58b48a321",
+              "estimated_usd": 0.2115672,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.2549677,
+              "maximum_input_tokens_per_call": 18205,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 12
+            },
+            {
+              "run_id": "1ab76221-6089-478d-b29f-9bf768e1d979",
+              "estimated_usd": 0.3518372,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.4224462,
+              "maximum_input_tokens_per_call": 23963,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 19
+            },
+            {
+              "run_id": "260709dd-c7fa-48b3-81fc-b80c2bded97a",
+              "estimated_usd": 0.2687548,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.3267293,
+              "maximum_input_tokens_per_call": 18207,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 12
+            },
+            {
+              "run_id": "3a096bd0-f32b-484d-94c0-a7ee6ddd6d67",
+              "estimated_usd": 0.3157492,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.3881907,
+              "maximum_input_tokens_per_call": 17889,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "47ccda25-e9f3-4e97-9d86-f5fd3c09014e",
+              "estimated_usd": 0.200438,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.238046,
+              "maximum_input_tokens_per_call": 18424,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 13
+            },
+            {
+              "run_id": "49b74961-c9b7-4c8d-8788-cfc1eec18646",
+              "estimated_usd": 0.2614512,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.3216257,
+              "maximum_input_tokens_per_call": 22104,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 8
+            },
+            {
+              "run_id": "4c7ec579-32a9-4242-90c1-9b49ce8e47f9",
+              "estimated_usd": 0.2599068,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.31328079999999997,
+              "maximum_input_tokens_per_call": 18149,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 13
+            },
+            {
+              "run_id": "4d1db95d-1f48-4680-8e85-6c11b5db4658",
+              "estimated_usd": 0.26603879999999996,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.3248878,
+              "maximum_input_tokens_per_call": 18040,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 11
+            },
+            {
+              "run_id": "514f13dc-82fe-4c4b-bb8b-8829471164a7",
+              "estimated_usd": 0.08139919999999999,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.0949057,
+              "maximum_input_tokens_per_call": 17531,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 8
+            },
+            {
+              "run_id": "52a7a3c3-09ab-4657-b9aa-39d8e613de60",
+              "estimated_usd": 0.15901520000000002,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.1843342,
+              "maximum_input_tokens_per_call": 22271,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 14
+            },
+            {
+              "run_id": "56e81707-834d-40c1-be3b-833f8d682910",
+              "estimated_usd": 0.11728,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.1355535,
+              "maximum_input_tokens_per_call": 22988,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 12
+            },
+            {
+              "run_id": "67044e35-3124-4d00-b259-9d4f215a3de4",
+              "estimated_usd": 0.35758959999999995,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.4361001,
+              "maximum_input_tokens_per_call": 18248,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 13
+            },
+            {
+              "run_id": "8aca9ad5-35a1-4283-ac57-ecc5c8523dca",
+              "estimated_usd": 0.2059272,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.2511587,
+              "maximum_input_tokens_per_call": 17656,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 9
+            },
+            {
+              "run_id": "8baec07e-9bbf-4ec5-b8e0-7614f988186e",
+              "estimated_usd": 0.2279564,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.2750339,
+              "maximum_input_tokens_per_call": 18008,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 12
+            },
+            {
+              "run_id": "91ad462a-784d-430f-ae43-93c983c93971",
+              "estimated_usd": 0.34028040000000004,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.41298890000000005,
+              "maximum_input_tokens_per_call": 21581,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 15
+            },
+            {
+              "run_id": "933d760b-187a-4b46-9b84-888fd721c2ce",
+              "estimated_usd": 0.3555,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.436624,
+              "maximum_input_tokens_per_call": 21196,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 11
+            },
+            {
+              "run_id": "a4b29c41-d1dd-4435-b796-99bf2bf772d4",
+              "estimated_usd": 0.241558,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.2908445,
+              "maximum_input_tokens_per_call": 18473,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 13
+            },
+            {
+              "run_id": "a8b576b6-5765-4389-b693-ce99a2fbcdc6",
+              "estimated_usd": 0.25583079999999997,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.3108923,
+              "maximum_input_tokens_per_call": 18124,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 11
+            },
+            {
+              "run_id": "b3d2078d-dabc-4f73-bafa-da57693ba506",
+              "estimated_usd": 0.22303320000000001,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.2688282,
+              "maximum_input_tokens_per_call": 17794,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 11
+            },
+            {
+              "run_id": "b5784a09-2b28-4c54-be35-bcd709d512d9",
+              "estimated_usd": 0.1749568,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.2108503,
+              "maximum_input_tokens_per_call": 18010,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "c0df8b3e-0f1c-48b1-92a4-0577fc8e02d9",
+              "estimated_usd": 0.3101528,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.3759818,
+              "maximum_input_tokens_per_call": 18457,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 13
+            },
+            {
+              "run_id": "c52a62ab-f10e-4385-9cb3-ed1aaef72c0e",
+              "estimated_usd": 0.178064,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.216658,
+              "maximum_input_tokens_per_call": 21196,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 8
+            },
+            {
+              "run_id": "d1c3c05c-5772-47fb-90f9-0867d6a305ba",
+              "estimated_usd": 0.1771864,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.2082919,
+              "maximum_input_tokens_per_call": 21190,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 14
+            },
+            {
+              "run_id": "e15c436f-506b-45cb-baf3-2f5ad9dcb83f",
+              "estimated_usd": 0.1892104,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.22348189999999998,
+              "maximum_input_tokens_per_call": 18379,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 14
+            },
+            {
+              "run_id": "ede8e9cf-c91a-4232-91b6-026cf37e5188",
+              "estimated_usd": 0.1633508,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.1960738,
+              "maximum_input_tokens_per_call": 18060,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "f63831fe-ae61-4929-83b4-e914f7e51f24",
+              "estimated_usd": 0.18856679999999998,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.22928379999999998,
+              "maximum_input_tokens_per_call": 17545,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 9
+            },
+            {
+              "run_id": "f766f461-b344-491a-9a44-2c1502e75f12",
+              "estimated_usd": 0.26829440000000004,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.3289089,
+              "maximum_input_tokens_per_call": 18014,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 10
+            },
+            {
+              "run_id": "fbd2ce4e-db39-4340-8c38-4582e91734ab",
+              "estimated_usd": 0.19383,
+              "sensitivity_all_uncached_as_cache_writes_usd": 0.2376425,
+              "maximum_input_tokens_per_call": 17226,
+              "cache_write_input_tokens_reported": 0,
+              "usage_event_count": 7
+            }
+          ],
+          "excluded_runs": [],
+          "pricing": {
+            "verified": true,
+            "as_of": "2026-09-29",
+            "source_url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+            "input_per_million": 2.0,
+            "cached_input_per_million": 0.1,
+            "cache_write_input_per_million": 2.5,
+            "output_per_million": 10.0,
+            "input_includes_cached": true,
+            "output_includes_reasoning": true,
+            "long_context_threshold": 272000,
+            "currency": "USD",
+            "basis": "hypothetical_API_Standard_not_subscription_charge"
+          },
+          "is_subscription_charge": false,
+          "is_proxy": true,
+          "missing_reason": null
+        },
+        "identity_evidence": "requested_and_inference_accepted_not_observed"
+      }
+    },
+    "evaluation_original": {
+      "version": "evaluation-v2",
+      "scorer_sha256": "c9975c7ca126de8b1eb8fa7a3bdaa33cd48f755cdc803498e04c2639514e1172",
+      "diagnosis_ruleset_version": "diagnostic-concepts-2026-09-26-v2",
+      "diagnosis_ruleset_sha256": "b2da153cd8d65df6658f45e715b0287cc4956a040bf62fbb8ddeb09d261df9fc",
+      "analyzer_sha256": "6c763a14690603f6f68b6be2ccfd352117eb4ce16a855376fb3947fa1099802d"
+    },
+    "physician_review_state_original": "pending"
+  },
+  "physician_review": "pending",
+  "input_sha256": {
+    "logs/incomplete/akash_before_matcher_fix/case_001.jsonl": "bef8a3e5797cf1038e3e9195b064aa96b3cbb962d7b4d29080ea2d98f8f7e5c3",
+    "logs/incomplete/dekallm_rate_limited/case_001.jsonl": "b8a7d675a375cc8370653ffb58b5ed420374fc0c03b35e3027192e2dc9f58c6f",
+    "logs/incomplete/initial_429/case_001.jsonl": "49a052563e5a173a25d08b4ee85b9af2aab92bbd0a7942b73e9d596f5e4f659d",
+    "logs/incomplete/technical_invalid_v1/openai__gpt-5.2/case_001.jsonl": "375cda65c6e0b1b345d8ac2eeeb96ac51a6c53cface427ea5c588dadf3b2631d",
+    "logs/incomplete/technical_invalid_v1/openai__gpt-oss-120b/case_001.jsonl": "bfd426c65109c1f66b2901664cd6badd0a78beaf8d6e5019b01b246a0dfac960",
+    "logs/incomplete/technical_invalid_v1/openai__gpt-oss-120b/case_002.jsonl": "64510c2c4ee112240361fb9351cfcb07fd1fc91e28bba698495b98f55c31b8d9",
+    "logs/incomplete/technical_invalid_v1/qwen__qwen3.5-397b-a17b/case_001.jsonl": "c2dfaf527c0a8ad402d45f7a59139305bd1dcddd0e339dea69f0bcbe44692ccf",
+    "logs/incomplete/technical_invalid_v1/z-ai__glm-4.5-air/case_001.jsonl": "5cfdc3563eb1afb973a6c0ead52c2ae987423274e5e6c6c5cdfd54f403427c0e",
+    "logs/incomplete/technical_invalid_v1/z-ai__glm-5/case_001.jsonl": "9330884067b024667a43d373dca87d6feaaf0bc403e349e36adfa72a7de33c6f"
+  },
+  "category_note": "Manually assigned broad descriptive groups, not upstream strata.",
+  "patient_fidelity_warning": {
+    "path": "/Users/test/MIRA-RAUL/reports/patient_fidelity_case001_gptoss.md",
+    "sha256": "5711946b1796459e8fa94b4a64a672d6572c0803431cf8fb620586516ffbacf6",
+    "case_id": "case_001",
+    "model": "openai/gpt-oss-120b",
+    "observed_failure": true
+  }
+}

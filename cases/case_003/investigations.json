@@ -9,83 +9,119 @@
       "available_at": "time_zero",
       "name": "Hemodynamics",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam"
     },
     {
       "fact_id": "imaging_005",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "Urgent contrast CT with retrograde pouch contrast: large left laterodorsal reservoir defect, contrast leakage into peritoneum and free intraperitoneal fluid.",
       "available_at": "time_zero",
       "name": "Abdominal CT",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "ct_abdomen",
+      "modality": "computed_tomography",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "imaging_006",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "Chest CT excluded pulmonary embolism and right-heart strain.",
       "available_at": "time_zero",
       "name": "Chest CT",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "ct_chest",
+      "modality": "computed_tomography",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "lab_007",
-      "domain": "lab",
+      "domain": "blood",
       "value": "Before surgery: WBC 15.3×10^9/L, hemoglobin 143 g/L, platelets 513×10^9/L.",
       "available_at": "time_zero",
       "name": "Complete blood count",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "cbc",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "lab_008",
-      "domain": "lab",
+      "domain": "blood",
       "value": "Before surgery: sodium 138 mmol/L, creatinine 1.08 mg/dL, eGFR 68 mL/min/1.73 m².",
       "available_at": "time_zero",
       "name": "Blood chemistry",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "chemistry",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "lab_009",
-      "domain": "lab",
+      "domain": "blood",
       "value": "CRP 1.7 mg/L before surgery.",
       "available_at": "time_zero",
       "name": "Inflammatory markers",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "inflammation",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "lab_010",
-      "domain": "lab",
+      "domain": "blood",
       "value": "CRP 361 mg/L and procalcitonin 4.7 ng/mL on ICU day 2.",
       "available_at": "day_2",
       "name": "Follow-up inflammatory markers",
       "prerequisites": [
         "day_2"
       ],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "inflammation_followup",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "lab_011",
-      "domain": "lab",
+      "domain": "blood",
       "value": "Postoperative ICU day 1 lactate 4.7 mmol/L.",
       "available_at": "after_procedure:laparotomy",
       "name": "Lactate",
       "prerequisites": [
         "after_procedure:laparotomy"
       ],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "lactate",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "procedure_result_012",
-      "domain": "procedure_result",
+      "domain": "other",
       "value": "Emergency laparotomy confirmed pouch rupture, which was repaired; pouch catheter fixed and nasogastric tube placed.",
       "available_at": "time_zero",
       "name": "Exploratory laparotomy",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "procedure_result",
+      "clinical_test": "laparotomy",
+      "modality": "invasive_procedure",
+      "routing_tool": "request_other_investigation"
     },
     {
       "fact_id": "physical_exam_013",
@@ -96,7 +132,11 @@
       "prerequisites": [
         "after_procedure:laparotomy"
       ],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam"
     },
     {
       "fact_id": "microbiology_014",
@@ -107,7 +147,11 @@
       "prerequisites": [
         "day_7"
       ],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "microbiology",
+      "clinical_test": "blood_cultures",
+      "modality": "microbiology",
+      "routing_tool": "request_microbiology"
     },
     {
       "fact_id": "microbiology_015",
@@ -118,7 +162,11 @@
       "prerequisites": [
         "followup"
       ],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "microbiology",
+      "clinical_test": "drain_culture",
+      "modality": "microbiology",
+      "routing_tool": "request_microbiology"
     },
     {
       "fact_id": "microbiology_016",
@@ -129,29 +177,41 @@
       "prerequisites": [
         "day_9"
       ],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "microbiology",
+      "clinical_test": "urine_culture",
+      "modality": "microbiology",
+      "routing_tool": "request_microbiology"
     },
     {
       "fact_id": "other_test_017",
-      "domain": "other_test",
+      "domain": "other",
       "value": "Research plasma microbial cfDNA identified Klebsiella and Pseudomonas retrospectively; result was not available for immediate care.",
       "available_at": "retrospective",
       "name": "Retrospective research microbial cell-free DNA",
       "prerequisites": [
         "retrospective"
       ],
-      "unavailable_for_immediate_care": true
+      "unavailable_for_immediate_care": true,
+      "original_domain": "other_test",
+      "clinical_test": "research_cfdna",
+      "modality": "retrospective_research",
+      "routing_tool": "request_other_investigation"
     },
     {
       "fact_id": "allergies_018",
-      "domain": "allergies",
+      "domain": "other",
       "value": "ICU day 2: pruritus, flushing, wheeze and agitation shortly after meropenem plus fluconazole; a second reaction followed piperacillin–tazobactam re-challenge. The offending component was not established.",
       "available_at": "day_2",
       "name": "Drug reaction",
       "prerequisites": [
         "day_2"
       ],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "allergies",
+      "clinical_test": "drug_reaction",
+      "modality": "followup_observation",
+      "routing_tool": "request_other_investigation"
     }
   ],
   "temporal_events": [],

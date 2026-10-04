@@ -102,7 +102,104 @@
       ]
     }
   ],
-  "conversion_edits": [],
+  "conversion_edits": [
+    {
+      "fact_id": "physical_exam_004",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "physical_exam",
+      "domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "routing_tool": "request_physical_exam"
+    },
+    {
+      "fact_id": "ecg_005",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "ecg",
+      "domain": "bedside",
+      "clinical_test": "electrocardiogram",
+      "routing_tool": "request_bedside_test"
+    },
+    {
+      "fact_id": "lab_006",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "lab",
+      "domain": "blood",
+      "clinical_test": "nt_probnp",
+      "routing_tool": "request_blood_test"
+    },
+    {
+      "fact_id": "lab_007",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "lab",
+      "domain": "blood",
+      "clinical_test": "troponin",
+      "routing_tool": "request_blood_test"
+    },
+    {
+      "fact_id": "lab_008",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "lab",
+      "domain": "blood",
+      "clinical_test": "d_dimer",
+      "routing_tool": "request_blood_test"
+    },
+    {
+      "fact_id": "ecg_009",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "ecg",
+      "domain": "bedside",
+      "clinical_test": "transthoracic_echocardiography",
+      "routing_tool": "request_bedside_test"
+    },
+    {
+      "fact_id": "imaging_010",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "imaging",
+      "domain": "radiology",
+      "clinical_test": "ctpa",
+      "routing_tool": "request_radiology"
+    },
+    {
+      "fact_id": "imaging_011",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "imaging",
+      "domain": "radiology",
+      "clinical_test": "coronary_ct",
+      "routing_tool": "request_radiology"
+    },
+    {
+      "fact_id": "procedure_result_012",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "procedure_result",
+      "domain": "other",
+      "clinical_test": "rhc",
+      "routing_tool": "request_other_investigation"
+    },
+    {
+      "fact_id": "ecg_013",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "ecg",
+      "domain": "bedside",
+      "clinical_test": "transesophageal_echocardiography",
+      "routing_tool": "request_bedside_test"
+    },
+    {
+      "fact_id": "imaging_014",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "imaging",
+      "domain": "radiology",
+      "clinical_test": "cardiac_mri",
+      "routing_tool": "request_radiology"
+    },
+    {
+      "fact_id": "ecg_015",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "ecg",
+      "domain": "other",
+      "clinical_test": "electrophysiology",
+      "routing_tool": "request_other_investigation"
+    }
+  ],
   "original_fact_count": 15,
   "history_fact_count": 3,
   "observation_count": 12,

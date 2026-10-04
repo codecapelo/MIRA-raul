@@ -1,0 +1,10 @@
+{
+  "snapshot_utc": "2026-10-03T21:42:41.251918+00:00",
+  "scope": "five case_001 terminal pilot traces only; read-only; no paid calls",
+  "patient_fidelity_states": {
+    "yes": "unsupported narrative observed",
+    "no_reviewed": "no clear unsupported fact in reviewed response; not guarantee",
+    "unknown": "no patient response available"
+  },
+  "models": []
+}

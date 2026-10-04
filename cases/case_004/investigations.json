@@ -9,34 +9,50 @@
       "available_at": "time_zero",
       "name": "Respiratory",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam"
     },
     {
       "fact_id": "imaging_004",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "Imaging at ED return showed recurrent right pleural effusion.",
       "available_at": "time_zero",
       "name": "Chest radiograph",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "chest_xray",
+      "modality": "radiograph",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "procedure_result_005",
-      "domain": "procedure_result",
+      "domain": "other",
       "value": "Repeat thoracentesis on ED return removed 1.2 L of fluid with characteristics similar to the initial milky effusion.",
       "available_at": "time_zero",
       "name": "Thoracentesis and fluid examination",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "procedure_result",
+      "clinical_test": "thoracentesis",
+      "modality": "invasive_procedure",
+      "routing_tool": "request_other_investigation"
     },
     {
       "fact_id": "lab_006",
-      "domain": "lab",
+      "domain": "other_fluid",
       "value": "Initial thoracentesis pleural fluid (available as prior record): triglycerides 434 mg/dL, cholesterol 154 mg/dL, 82% lymphocytes, pH 7.48, protein 2.4 g/dL, LDH 83 U/L; cytology without malignant cells.",
       "available_at": "time_zero",
       "name": "Pleural fluid studies",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "pleural_fluid_studies",
+      "modality": "pleural_fluid_laboratory",
+      "routing_tool": "request_other_investigation"
     },
     {
       "fact_id": "microbiology_007",
@@ -45,25 +61,37 @@
       "available_at": "time_zero",
       "name": "Pleural fluid culture",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "microbiology",
+      "clinical_test": "pleural_culture",
+      "modality": "microbiology",
+      "routing_tool": "request_microbiology"
     },
     {
       "fact_id": "imaging_008",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "CT: bilateral hilar and mediastinal adenopathy, severe right-middle-lobe bronchial narrowing, partial atelectasis and infiltrates.",
       "available_at": "time_zero",
       "name": "Chest CT",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "ct_chest",
+      "modality": "computed_tomography",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "procedure_result_009",
-      "domain": "procedure_result",
+      "domain": "tissue",
       "value": "Bronchoscopy with endobronchial ultrasound guided biopsy established extensive-stage small cell lung carcinoma.",
       "available_at": "time_zero",
       "name": "Endobronchial ultrasound guided biopsy",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "procedure_result",
+      "clinical_test": "ebus_biopsy",
+      "modality": "histopathology",
+      "routing_tool": "request_other_investigation"
     },
     {
       "fact_id": "microbiology_010",
@@ -74,7 +102,11 @@
       "prerequisites": [
         "followup"
       ],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "microbiology",
+      "clinical_test": "blood_cultures",
+      "modality": "microbiology",
+      "routing_tool": "request_microbiology"
     }
   ],
   "temporal_events": [],

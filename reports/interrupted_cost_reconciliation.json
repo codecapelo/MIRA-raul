@@ -1,0 +1,8 @@
+{
+  "request_id": "b494b21d-828c-4273-9575-a33b650b9b82",
+  "method": "account_credit_delta_after_interruption",
+  "attributed_cost_usd": "0.000382500",
+  "usage_cost_response_available": false,
+  "evidence": "reports/credits_current.json",
+  "note": "Only one unresolved request; delta stable against prior credits_post_interrupt_fresh.json. Account-derived attribution, not returned usage.cost."
+}

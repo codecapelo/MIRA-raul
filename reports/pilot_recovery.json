@@ -1,0 +1,10 @@
+{
+  "first_rejection_request": "83ba253b-dcbb-4c23-a5e1-f457196b80bf",
+  "recovered_request": "83ba253b-dcbb-4c23-a5e1-f457196b80bf",
+  "cost": 6.213e-05,
+  "identical_payload_sha256": "b527d21d178f2c9ecc9877c3ae5ce2eeed159daac96ca1eff6d5ff7fb05b6939",
+  "old_commit": "762044ff37046f8abc2df8f34779b81a61446884",
+  "new_commit": "762044ff37046f8abc2df8f34779b81a61446884",
+  "credits_evidence": "credits_after_rejected_request.json",
+  "note": "No clinical terminal repeated. First physician response reused after transport rejection."
+}

@@ -1,4 +1,5 @@
 import json,re
+from .semantics import compatible,result_value,identity
 NAMES=['request_physical_exam','request_blood_test','request_urine_test','request_bedside_test','request_radiology','request_microbiology','request_other_investigation','admission']
 def schemas():
     result=[]
@@ -26,19 +27,39 @@ class CaseTools:
         if name=='admission':
             if not all(isinstance(args.get(k),str) and args[k].strip() for k in ['diagnosis','reasoning']): raise ToolArgumentsError('Empty admission diagnosis/reasoning')
             return 'Case admitted.'
-        domains={'request_physical_exam':['physical_exam','exam','physical','vitals'],'request_blood_test':['blood','lab','laboratory'],'request_urine_test':['urine'],'request_bedside_test':['bedside','ecg','imaging'],'request_radiology':['radiology','imaging'],'request_microbiology':['microbiology'],'request_other_investigation':['other','tissue','csf','genetic','other_fluid','procedure_result','other_test']}
-        pool=[o for o in self.observations if o['domain'] in domains[name] and not o.get('unavailable_for_immediate_care')]
-        if name=='request_bedside_test':pool=[o for o in pool if o['domain']!='imaging' or 'echo' in norm(o['name'])]
-        requested=args.get('test_names',[args.get('study_name','')])
-        if name=='request_physical_exam': selected=pool
+        domains={'request_physical_exam':['physical_exam','exam','physical','vitals'],'request_blood_test':['blood','lab','laboratory'],'request_urine_test':['urine'],'request_bedside_test':['bedside','ecg'],'request_radiology':['radiology','imaging'],'request_microbiology':['microbiology'],'request_other_investigation':['other','tissue','csf','genetic','other_fluid','procedure_result','other_test']}
+        def routed(o):
+            route=o.get('routing_tool')
+            if route==name or (route is None and o['domain'] in domains[name]):return True
+            # Explicit clinically valid shared routes; original_domain/fact_id
+            # never participates in eligibility.
+            test=identity(o['name'])
+            if name=='request_radiology' and o.get('modality')=='echocardiography':return True
+            if name=='request_urine_test' and test=='urine culture':return True
+            if name=='request_blood_test' and test in ['peripheral blood film','t spot tb']:return True
+            if name=='request_microbiology' and test=='t spot tb':return True
+            if name=='request_other_investigation' and test=='peripheral blood film':return True
+            return False
+        pool=[o for o in self.observations if routed(o) and not o.get('unavailable_for_immediate_care')]
+        if name=='request_physical_exam':
+            pool=[o for o in pool if o.get('available_at','time_zero') in ['time_zero','admission','baseline','initial','presentation'] and not o.get('prerequisites')]
+            selected=[{'name':o['name'],'value':o['value']} for o in pool]
+            self.returned.update(o['fact_id'] for o in pool)
         else:
-            # Case labels are not placed in the doctor prompt. Only a requested test's
-            # exact normalized name is resolved, avoiding broad accidental disclosure.
-            selected=[o for o in pool if norm(o['name']) in [norm(q) for q in requested]]
-        unresolved=[q for q in requested if norm(q) not in [norm(o['name']) for o in selected]]
-        if unresolved and pool and self.matcher and name!='request_physical_exam':
-            ids=self.matcher(unresolved,pool)
-            selected += [o for o in pool if o['fact_id'] in ids and o not in selected]
-        if not selected: return 'Requested findings are not available in this published case.'
-        self.returned.update(o['fact_id'] for o in selected)
-        return json.dumps([{'name':o['name'],'value':o['value']} for o in selected],ensure_ascii=False)
+            requested=args.get('test_names',[args.get('study_name','')])
+            selected=[]
+            for query in requested:
+                # The LLM sees only clinically compatible candidates, and every
+                # returned identifier is revalidated against the specific query.
+                eligible=[o for o in pool if compatible(query,o)]
+                exact=[o for o in eligible if identity(query)==identity(o['name'])]
+                matched=exact
+                if not exact and eligible:
+                    ids=self.matcher([query],eligible) if self.matcher else [o['fact_id'] for o in eligible]
+                    matched=[o for o in eligible if o['fact_id'] in ids and compatible(query,o)]
+                for o in matched:
+                    item={'name':o['name'],'value':result_value(query,o)}
+                    if item not in selected:selected.append(item)
+                    self.returned.add(o['fact_id'])
+        if not selected:return 'Requested findings are not available in this published case.'
+        return json.dumps(selected,ensure_ascii=False)

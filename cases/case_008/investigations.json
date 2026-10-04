@@ -9,7 +9,11 @@
       "available_at": "time_zero",
       "name": "Neurologic",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam"
     },
     {
       "fact_id": "physical_exam_004",
@@ -18,52 +22,76 @@
       "available_at": "time_zero",
       "name": "Vitals",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam"
     },
     {
       "fact_id": "lab_005",
-      "domain": "lab",
+      "domain": "blood",
       "value": "WBC 13,000/µL with 85% neutrophils; platelets 250,000/µL.",
       "available_at": "time_zero",
       "name": "Complete blood count",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "cbc",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "lab_006",
-      "domain": "lab",
+      "domain": "blood",
       "value": "PT 12 s, INR 1.0, aPTT 30 s, fibrinogen 300 mg/dL.",
       "available_at": "time_zero",
       "name": "Coagulation studies",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "coagulation",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "imaging_007",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "Brain and brainstem MRI normal.",
       "available_at": "time_zero",
       "name": "Brain MRI",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "brain_mri",
+      "modality": "magnetic_resonance",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "imaging_008",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "Cervicothoracic spine MRI: epidural hematoma compressing the cord and posterior thecal sac from C6 to T2; no traumatic or structural lesion described.",
       "available_at": "time_zero",
       "name": "Spinal MRI",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "spine_mri",
+      "modality": "magnetic_resonance",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "procedure_result_009",
-      "domain": "procedure_result",
+      "domain": "other",
       "value": "Emergency hemilaminotomy/laminotomy with epidural hematoma evacuation.",
       "available_at": "time_zero",
       "name": "Spinal surgery",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "procedure_result",
+      "clinical_test": "hematoma_evacuation",
+      "modality": "invasive_procedure",
+      "routing_tool": "request_other_investigation"
     }
   ],
   "temporal_events": [],

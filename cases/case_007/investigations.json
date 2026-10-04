@@ -9,61 +9,89 @@
       "available_at": "time_zero",
       "name": "General",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam"
     },
     {
       "fact_id": "lab_006",
-      "domain": "lab",
+      "domain": "blood",
       "value": "Hemoglobin 45 g/L, down from 123 g/L baseline.",
       "available_at": "time_zero",
       "name": "Hemoglobin",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "hemoglobin",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "lab_007",
-      "domain": "lab",
+      "domain": "blood",
       "value": "LDH 1214 U/L, haptoglobin <0.3 g/L, total bilirubin 61 µmol/L with 72% unconjugated; reticulocytes 261.7×10^9/L (23.7%).",
       "available_at": "time_zero",
       "name": "Hemolysis studies",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "hemolysis",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "lab_008",
-      "domain": "lab",
+      "domain": "blood",
       "value": "Lactate 4.2 mmol/L.",
       "available_at": "time_zero",
       "name": "Lactate",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "lactate",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "lab_009",
-      "domain": "lab",
+      "domain": "other",
       "value": "Peripheral blood film: reticulocytosis, spherocytes and reactive neutrophilia.",
       "available_at": "time_zero",
       "name": "Peripheral blood film",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "peripheral_blood_film",
+      "modality": "blood_morphology",
+      "routing_tool": "request_other_investigation"
     },
     {
       "fact_id": "lab_010",
-      "domain": "lab",
+      "domain": "blood",
       "value": "Direct antiglobulin test IgG 2+ and complement C3d 5+; indirect antiglobulin test panreactive, no underlying alloantibodies detected.",
       "available_at": "time_zero",
       "name": "Direct antiglobulin test",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "dat",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "imaging_011",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "Triple-phase CT abdomen/pelvis found no hemorrhage or intra-abdominal collection.",
       "available_at": "time_zero",
       "name": "Abdominal CT",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "ct_abdomen",
+      "modality": "computed_tomography",
+      "routing_tool": "request_radiology"
     }
   ],
   "temporal_events": [],

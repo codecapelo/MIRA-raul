@@ -9,7 +9,11 @@
       "available_at": "time_zero",
       "name": "Respiratory",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam"
     },
     {
       "fact_id": "physical_exam_005",
@@ -18,52 +22,76 @@
       "available_at": "time_zero",
       "name": "General",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam"
     },
     {
       "fact_id": "lab_006",
-      "domain": "lab",
+      "domain": "blood",
       "value": "Mild thrombocytosis; inflammatory markers not significantly elevated; liver, thyroid and kidney tests unremarkable.",
       "available_at": "time_zero",
       "name": "Blood panel",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "blood_panel",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "imaging_007",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "Moderate to large homogeneous left pleural effusion.",
       "available_at": "time_zero",
       "name": "Thoracic ultrasound",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "thoracic_ultrasound",
+      "modality": "ultrasound",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "imaging_008",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "Postcontrast chest CT: moderate left effusion and nodular circumferential pleural thickening, including mediastinal pleura.",
       "available_at": "time_zero",
       "name": "Chest CT",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "ct_chest",
+      "modality": "computed_tomography",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "procedure_result_009",
-      "domain": "procedure_result",
+      "domain": "tissue",
       "value": "High-volume thoracentesis: atypical epithelioid and spindle cells; SOX10, Melan-A and S100 positive; calretinin, EMA, p40 and WT1 negative.",
       "available_at": "time_zero",
-      "name": "Thoracentesis and fluid examination",
+      "name": "Pleural fluid cytology and immunohistochemistry",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "procedure_result",
+      "clinical_test": "pleural_fluid_cytology_immunohistochemistry",
+      "modality": "cytopathology",
+      "routing_tool": "request_other_investigation"
     },
     {
       "fact_id": "procedure_result_010",
-      "domain": "procedure_result",
+      "domain": "tissue",
       "value": "CT-guided pleural biopsy confirmed cells positive for SOX10 and Melan-A.",
       "available_at": "time_zero",
       "name": "Pleural biopsy",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "procedure_result",
+      "clinical_test": "pleural_biopsy",
+      "modality": "histopathology",
+      "routing_tool": "request_other_investigation"
     },
     {
       "fact_id": "physical_exam_011",
@@ -72,29 +100,41 @@
       "available_at": "time_zero",
       "name": "Skin eye",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam"
     },
     {
       "fact_id": "imaging_012",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "PET: intensely FDG-avid circumferential pleural disease; no cutaneous or subcutaneous primary identified.",
       "available_at": "after_procedure:pleural_biopsy",
       "name": "PET imaging",
       "prerequisites": [
         "after_procedure:pleural_biopsy"
       ],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "pet",
+      "modality": "positron_emission_tomography",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "other_test_013",
-      "domain": "other_test",
+      "domain": "genetic",
       "value": "BRAF and KIT wild type.",
       "available_at": "after_procedure:pleural_biopsy",
       "name": "Tumor genetic testing",
       "prerequisites": [
         "after_procedure:pleural_biopsy"
       ],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "other_test",
+      "clinical_test": "tumor_genetics",
+      "modality": "molecular_genetics",
+      "routing_tool": "request_other_investigation"
     }
   ],
   "temporal_events": [],

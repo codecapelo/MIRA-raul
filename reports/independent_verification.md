@@ -1,5 +1,7 @@
 # Verificação independente — piloto em andamento
 
+**Atualização após terminal Mancer:** o piloto GPT-OSS/case_001 foi concluído sob nova condição documentada. Houve alucinação do paciente simulado que contaminou a conclusão STEMI. A análise terminal está em `reports/patient_fidelity_case001_gptoss.md`; o texto abaixo preserva a fotografia anterior AkashML interrompida e não deve ser atribuído ao terminal Mancer.
+
 Escopo: leitura de código, configuração, casos e rastros existentes; nenhuma chamada paga, execução do runner ou alteração em código/configuração/casos. A documentação foi atualizada para registrar AkashML BF16 e a compressão temporal. Este relatório é uma fotografia parcial do piloto GPT-OSS/case_001 e não certifica a execução completa.
 
 ## Achado crítico observado

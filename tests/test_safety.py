@@ -28,10 +28,10 @@ class SafetyTests(unittest.TestCase):
     def test_backend_error_is_not_physician_argument_error(self):
         from mira_runner.tools import ToolArgumentsError
         with self.assertRaises(ToolArgumentsError):CaseTools([]).execute('request_physical_exam',{'':{}})
-        pool=[{'fact_id':'a','domain':'lab','name':'CBC','value':'x'}]
+        pool=[{'fact_id':'a','domain':'lab','name':'CBC','value':'WBC 4'}]
         def broken(q,p):raise RuntimeError('backend failure')
         tools=CaseTools(pool,broken)
-        with self.assertRaises(RuntimeError):tools.execute('request_blood_test',{'test_names':['unmatched']})
+        with self.assertRaises(RuntimeError):tools.execute('request_blood_test',{'test_names':['WBC']})
         self.assertEqual(tools.errors,0)
     def test_cap(self):
         ledger=Ledger(self.root/'l.db');rid=ledger.reserve('18',{});ledger.settle(rid,'18')

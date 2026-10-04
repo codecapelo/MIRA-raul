@@ -1,0 +1,49 @@
+{
+  "models": [
+    {
+      "model": "openai/gpt-oss-120b",
+      "pilot_completed": 0,
+      "pilot_providers": [],
+      "pilot_cost_usd": null,
+      "projected_10x1_usd": null,
+      "projected_10x5_usd": null
+    },
+    {
+      "model": "z-ai/glm-4.5-air",
+      "pilot_completed": 0,
+      "pilot_providers": [],
+      "pilot_cost_usd": null,
+      "projected_10x1_usd": null,
+      "projected_10x5_usd": null
+    },
+    {
+      "model": "z-ai/glm-5",
+      "pilot_completed": 0,
+      "pilot_providers": [],
+      "pilot_cost_usd": null,
+      "projected_10x1_usd": null,
+      "projected_10x5_usd": null
+    },
+    {
+      "model": "qwen/qwen3.5-397b-a17b",
+      "pilot_completed": 0,
+      "pilot_providers": [],
+      "pilot_cost_usd": null,
+      "projected_10x1_usd": null,
+      "projected_10x5_usd": null
+    },
+    {
+      "model": "openai/gpt-5.2",
+      "pilot_completed": 0,
+      "pilot_providers": [],
+      "pilot_cost_usd": null,
+      "projected_10x1_usd": null,
+      "projected_10x5_usd": null
+    }
+  ],
+  "pilot_expected": 5,
+  "pilot_completed": 0,
+  "known_all_calls_usd": "0.101054633",
+  "unsettled_calls": [],
+  "assumption": "Linear extrapolation from case001 with patient/judge/matcher included; complexity differs. Projection is not execution authorization."
+}

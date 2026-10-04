@@ -90,7 +90,80 @@
       ]
     }
   ],
-  "conversion_edits": [],
+  "conversion_edits": [
+    {
+      "fact_id": "physical_exam_005",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "physical_exam",
+      "domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "routing_tool": "request_physical_exam"
+    },
+    {
+      "fact_id": "lab_006",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "lab",
+      "domain": "blood",
+      "clinical_test": "inflammation",
+      "routing_tool": "request_blood_test"
+    },
+    {
+      "fact_id": "lab_007",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "lab",
+      "domain": "blood",
+      "clinical_test": "coagulation",
+      "routing_tool": "request_blood_test"
+    },
+    {
+      "fact_id": "ecg_008",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "ecg",
+      "domain": "bedside",
+      "clinical_test": "transthoracic_echocardiography",
+      "routing_tool": "request_bedside_test"
+    },
+    {
+      "fact_id": "imaging_009",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "imaging",
+      "domain": "radiology",
+      "clinical_test": "coronary_angiography",
+      "routing_tool": "request_radiology"
+    },
+    {
+      "fact_id": "ecg_010",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "ecg",
+      "domain": "radiology",
+      "clinical_test": "intravascular_imaging",
+      "routing_tool": "request_radiology"
+    },
+    {
+      "fact_id": "procedure_result_011",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "procedure_result",
+      "domain": "other",
+      "clinical_test": "pericardiocentesis",
+      "routing_tool": "request_other_investigation"
+    },
+    {
+      "fact_id": "procedure_result_012",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "procedure_result",
+      "domain": "other",
+      "clinical_test": "device_exploration",
+      "routing_tool": "request_other_investigation"
+    },
+    {
+      "fact_id": "microbiology_013",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "microbiology",
+      "domain": "microbiology",
+      "clinical_test": "blood_cultures",
+      "routing_tool": "request_microbiology"
+    }
+  ],
   "original_fact_count": 13,
   "history_fact_count": 4,
   "observation_count": 9,

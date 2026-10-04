@@ -9,74 +9,106 @@
       "available_at": "time_zero",
       "name": "Hemodynamics",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam"
     },
     {
       "fact_id": "lab_006",
-      "domain": "lab",
+      "domain": "blood",
       "value": "High inflammatory response; exact analyte values were not reported.",
       "available_at": "time_zero",
       "name": "Inflammatory markers",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "inflammation",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "lab_007",
-      "domain": "lab",
+      "domain": "blood",
       "value": "Disseminated intravascular coagulation was reported; exact values were not provided.",
       "available_at": "time_zero",
       "name": "Coagulation studies",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "coagulation",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "ecg_008",
-      "domain": "ecg",
+      "domain": "bedside",
       "value": "Echocardiography showed new left-ventricular wall-motion abnormalities and pericardial effusion, then tamponade.",
       "available_at": "time_zero",
       "name": "Transthoracic echocardiography",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "ecg",
+      "clinical_test": "transthoracic_echocardiography",
+      "modality": "echocardiography",
+      "routing_tool": "request_bedside_test"
     },
     {
       "fact_id": "imaging_009",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "After emergency pericardiocentesis, coronary angiography showed disruption of the prior stent and rapidly enlarging coronary pseudoaneurysm.",
       "available_at": "after_procedure:pericardiocentesis",
       "name": "Coronary angiography",
       "prerequisites": [
         "after_procedure:pericardiocentesis"
       ],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "coronary_angiography",
+      "modality": "angiography",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "ecg_010",
-      "domain": "ecg",
+      "domain": "radiology",
       "value": "Optical coherence tomography and intravascular ultrasound showed loss of the arterial wall three-layer structure, consistent with pseudoaneurysm.",
       "available_at": "after_procedure:pericardiocentesis",
       "name": "Optical coherence tomography and intravascular ultrasound",
       "prerequisites": [
         "after_procedure:pericardiocentesis"
       ],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "ecg",
+      "clinical_test": "intravascular_imaging",
+      "modality": "intravascular_optical_and_ultrasound",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "procedure_result_011",
-      "domain": "procedure_result",
+      "domain": "other",
       "value": "Emergency pericardiocentesis yielded yellowish, turbid pericardial fluid.",
       "available_at": "time_zero",
       "name": "Pericardiocentesis",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "procedure_result",
+      "clinical_test": "pericardiocentesis",
+      "modality": "invasive_procedure",
+      "routing_tool": "request_other_investigation"
     },
     {
       "fact_id": "procedure_result_012",
-      "domain": "procedure_result",
+      "domain": "other",
       "value": "Surgical exploration of the leadless pacemaker revealed vegetation.",
       "available_at": "time_zero",
       "name": "Cardiac device surgical exploration",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "procedure_result",
+      "clinical_test": "device_exploration",
+      "modality": "invasive_procedure",
+      "routing_tool": "request_other_investigation"
     },
     {
       "fact_id": "microbiology_013",
@@ -85,7 +117,11 @@
       "available_at": "time_zero",
       "name": "Blood cultures",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "microbiology",
+      "clinical_test": "blood_cultures",
+      "modality": "microbiology",
+      "routing_tool": "request_microbiology"
     }
   ],
   "temporal_events": [],

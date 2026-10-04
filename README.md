@@ -16,6 +16,8 @@ O escore lexical anterior não é diretamente comparável ao novo juiz clínico.
 
 A configuração de rotas fica em `config/run1.json`, construída a partir dos registros de endpoints em `reports/endpoints/`. A simulação está em `src/mira_runner/runner.py`; a execução sem `--execute` faz somente a conferência do cronograma. A opção `--pilot-only`, combinada com execução explícita, restringe a rodada ao piloto. A execução completa deve ocorrer apenas após a validação e autorização já registradas pelo responsável.
 
-GPT-OSS usa AkashML BF16 (`akashml/bf16`), selecionado explicitamente após rejeições HTTP 429 da rota Deka BF16. Essa mudança está registrada no protocolo e no relatório de recuperação; não habilita fallback automático.
+GPT-OSS usa Mancer FP8 (`mancer/fp8`, retornado como `Mancer 2`), selecionado explicitamente após rejeições HTTP 429 das rotas Deka BF16 e AkashML BF16. A mudança de provedor e precisão está registrada no protocolo; não habilita fallback automático. Percursos interrompidos são preservados separadamente.
+
+**Limitação observada no piloto:** o paciente GPT-OSS inventou características clínicas que contaminaram a decisão do médico. O terminal permanece registrado; seu erro não representa uma falha isolada do médico. O prompt exige fidelidade, mas não a garante. Consulte `reports/patient_fidelity_case001_gptoss.md`; a revisão manual dos demais percursos é necessária.
 
 Código e prompts upstream: CC BY 4.0 conforme README do repositório; atribuição a KatherLab e autores do trabalho, commit `eea2386c665c9caaa7ee093c8cb092d1c337de88`. Este projeto registra alterações de transporte, dados, contagem de turnos e isolamento de tentativas. Os direitos sobre fontes clínicas públicas e modelos permanecem próprios de cada fonte.

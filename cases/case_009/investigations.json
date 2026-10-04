@@ -9,45 +9,65 @@
       "available_at": "time_zero",
       "name": "Abdomen",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam"
     },
     {
       "fact_id": "imaging_005",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "Upright abdominal radiograph: multiple small-bowel air–fluid levels.",
       "available_at": "time_zero",
       "name": "Abdominal radiograph",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "abdominal_xray",
+      "modality": "radiograph",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "imaging_006",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "CT: multiple small-bowel air–fluid levels and a linear hyperdense intraluminal structure consistent with a foreign body; mechanical obstruction suspected.",
       "available_at": "time_zero",
       "name": "Abdominal CT",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "ct_abdomen",
+      "modality": "computed_tomography",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "procedure_result_007",
-      "domain": "procedure_result",
+      "domain": "other",
       "value": "Emergency laparoscopy converted to open operation because of purulent fluid and adhesions. A Meckel diverticulum ~40 cm proximal to ileocecal valve contained a biliary stent; its distal end perforated adjacent ileum.",
       "available_at": "time_zero",
       "name": "Diagnostic laparoscopy / Exploratory laparotomy",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "procedure_result",
+      "clinical_test": "laparoscopy / laparotomy",
+      "modality": "invasive_procedure",
+      "routing_tool": "request_other_investigation"
     },
     {
       "fact_id": "procedure_result_008",
-      "domain": "procedure_result",
+      "domain": "other",
       "value": "About 20 cm of small bowel, including diverticulum and perforation, was resected with side-to-side anastomosis, irrigation and drainage.",
       "available_at": "after_any_procedure:laparoscopy|laparotomy",
       "name": "Operative resection",
       "prerequisites": [
         "after_any_procedure:laparoscopy|laparotomy"
       ],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "procedure_result",
+      "clinical_test": "resection",
+      "modality": "invasive_procedure",
+      "routing_tool": "request_other_investigation"
     }
   ],
   "temporal_events": [],

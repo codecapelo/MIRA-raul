@@ -9,108 +9,156 @@
       "available_at": "time_zero",
       "name": "Cardiovascular",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam"
     },
     {
       "fact_id": "ecg_005",
-      "domain": "ecg",
+      "domain": "bedside",
       "value": "No P waves; narrow-QRS escape rhythm at 42/min.",
       "available_at": "time_zero",
       "name": "Electrocardiogram",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "ecg",
+      "clinical_test": "electrocardiogram",
+      "modality": "electrocardiography",
+      "routing_tool": "request_bedside_test"
     },
     {
       "fact_id": "lab_006",
-      "domain": "lab",
+      "domain": "blood",
       "value": "NT-proBNP 432 pg/mL (reference ≤125).",
       "available_at": "time_zero",
       "name": "NT-proBNP",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "nt_probnp",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "lab_007",
-      "domain": "lab",
+      "domain": "blood",
       "value": "High-sensitivity troponin T 31 ng/L (reference ≤14).",
       "available_at": "time_zero",
       "name": "Troponin",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "troponin",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "lab_008",
-      "domain": "lab",
+      "domain": "blood",
       "value": "D-dimer 2.94 µg/mL (reference <0.5 µg/mL).",
       "available_at": "time_zero",
       "name": "D-dimer",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "d_dimer",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "ecg_009",
-      "domain": "ecg",
+      "domain": "bedside",
       "value": "TTE: preserved LV systolic function; dilated LA and RV; impaired RV function; severe tricuspid regurgitation; estimated systolic PA pressure 58 mm Hg; only mild mitral regurgitation.",
       "available_at": "time_zero",
       "name": "Transthoracic echocardiography",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "ecg",
+      "clinical_test": "transthoracic_echocardiography",
+      "modality": "echocardiography",
+      "routing_tool": "request_bedside_test"
     },
     {
       "fact_id": "imaging_010",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "CT pulmonary angiography: no pulmonary embolus; RV dilatation, bilateral pleural effusions and contrast reflux into hepatic veins.",
       "available_at": "time_zero",
       "name": "CT pulmonary angiography",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "ctpa",
+      "modality": "computed_tomography",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "imaging_011",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "Coronary CT: minimal proximal LAD stenosis only.",
       "available_at": "time_zero",
       "name": "Coronary CT",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "coronary_ct",
+      "modality": "computed_tomography",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "procedure_result_012",
-      "domain": "procedure_result",
+      "domain": "other",
       "value": "Right-heart catheterization: giant wedge V waves to 65 mm Hg, no clear A wave, mPAP 35, mean wedge 28 mm Hg, cardiac output 5.8 L/min, PVR 1.2 WU.",
       "available_at": "time_zero",
       "name": "Right-heart catheterization",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "procedure_result",
+      "clinical_test": "rhc",
+      "modality": "invasive_procedure",
+      "routing_tool": "request_other_investigation"
     },
     {
       "fact_id": "ecg_013",
-      "domain": "ecg",
+      "domain": "bedside",
       "value": "TEE confirmed only mild mitral regurgitation.",
       "available_at": "time_zero",
       "name": "Transesophageal echocardiography",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "ecg",
+      "clinical_test": "transesophageal_echocardiography",
+      "modality": "echocardiography",
+      "routing_tool": "request_bedside_test"
     },
     {
       "fact_id": "imaging_014",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "Cardiac MRI: left atrial late gadolinium enhancement and borderline T1/T2 edema; no substantial ventricular scar.",
       "available_at": "time_zero",
       "name": "Cardiac MRI",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "cardiac_mri",
+      "modality": "magnetic_resonance",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "ecg_015",
-      "domain": "ecg",
+      "domain": "other",
       "value": "Subsequent study: electrically silent right atrium, limited septal capture and complete AV block; no response to coronary-sinus pacing.",
       "available_at": "followup",
       "name": "Electrophysiology study",
       "prerequisites": [
         "followup"
       ],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "ecg",
+      "clinical_test": "electrophysiology",
+      "modality": "invasive_procedure",
+      "routing_tool": "request_other_investigation"
     }
   ],
   "temporal_events": [],

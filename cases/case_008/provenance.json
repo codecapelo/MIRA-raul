@@ -66,7 +66,64 @@
       ]
     }
   ],
-  "conversion_edits": [],
+  "conversion_edits": [
+    {
+      "fact_id": "physical_exam_003",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "physical_exam",
+      "domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "routing_tool": "request_physical_exam"
+    },
+    {
+      "fact_id": "physical_exam_004",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "physical_exam",
+      "domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "routing_tool": "request_physical_exam"
+    },
+    {
+      "fact_id": "lab_005",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "lab",
+      "domain": "blood",
+      "clinical_test": "cbc",
+      "routing_tool": "request_blood_test"
+    },
+    {
+      "fact_id": "lab_006",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "lab",
+      "domain": "blood",
+      "clinical_test": "coagulation",
+      "routing_tool": "request_blood_test"
+    },
+    {
+      "fact_id": "imaging_007",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "imaging",
+      "domain": "radiology",
+      "clinical_test": "brain_mri",
+      "routing_tool": "request_radiology"
+    },
+    {
+      "fact_id": "imaging_008",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "imaging",
+      "domain": "radiology",
+      "clinical_test": "spine_mri",
+      "routing_tool": "request_radiology"
+    },
+    {
+      "fact_id": "procedure_result_009",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "procedure_result",
+      "domain": "other",
+      "clinical_test": "hematoma_evacuation",
+      "routing_tool": "request_other_investigation"
+    }
+  ],
   "original_fact_count": 9,
   "history_fact_count": 2,
   "observation_count": 7,

@@ -120,7 +120,128 @@
       ]
     }
   ],
-  "conversion_edits": [],
+  "conversion_edits": [
+    {
+      "fact_id": "physical_exam_004",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "physical_exam",
+      "domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "routing_tool": "request_physical_exam"
+    },
+    {
+      "fact_id": "imaging_005",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "imaging",
+      "domain": "radiology",
+      "clinical_test": "ct_abdomen",
+      "routing_tool": "request_radiology"
+    },
+    {
+      "fact_id": "imaging_006",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "imaging",
+      "domain": "radiology",
+      "clinical_test": "ct_chest",
+      "routing_tool": "request_radiology"
+    },
+    {
+      "fact_id": "lab_007",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "lab",
+      "domain": "blood",
+      "clinical_test": "cbc",
+      "routing_tool": "request_blood_test"
+    },
+    {
+      "fact_id": "lab_008",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "lab",
+      "domain": "blood",
+      "clinical_test": "chemistry",
+      "routing_tool": "request_blood_test"
+    },
+    {
+      "fact_id": "lab_009",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "lab",
+      "domain": "blood",
+      "clinical_test": "inflammation",
+      "routing_tool": "request_blood_test"
+    },
+    {
+      "fact_id": "lab_010",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "lab",
+      "domain": "blood",
+      "clinical_test": "inflammation_followup",
+      "routing_tool": "request_blood_test"
+    },
+    {
+      "fact_id": "lab_011",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "lab",
+      "domain": "blood",
+      "clinical_test": "lactate",
+      "routing_tool": "request_blood_test"
+    },
+    {
+      "fact_id": "procedure_result_012",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "procedure_result",
+      "domain": "other",
+      "clinical_test": "laparotomy",
+      "routing_tool": "request_other_investigation"
+    },
+    {
+      "fact_id": "physical_exam_013",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "physical_exam",
+      "domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "routing_tool": "request_physical_exam"
+    },
+    {
+      "fact_id": "microbiology_014",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "microbiology",
+      "domain": "microbiology",
+      "clinical_test": "blood_cultures",
+      "routing_tool": "request_microbiology"
+    },
+    {
+      "fact_id": "microbiology_015",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "microbiology",
+      "domain": "microbiology",
+      "clinical_test": "drain_culture",
+      "routing_tool": "request_microbiology"
+    },
+    {
+      "fact_id": "microbiology_016",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "microbiology",
+      "domain": "microbiology",
+      "clinical_test": "urine_culture",
+      "routing_tool": "request_microbiology"
+    },
+    {
+      "fact_id": "other_test_017",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "other_test",
+      "domain": "other",
+      "clinical_test": "research_cfdna",
+      "routing_tool": "request_other_investigation"
+    },
+    {
+      "fact_id": "allergies_018",
+      "action": "Classify actual test modality independently of legacy domain",
+      "original_domain": "allergies",
+      "domain": "other",
+      "clinical_test": "drug_reaction",
+      "routing_tool": "request_other_investigation"
+    }
+  ],
   "original_fact_count": 18,
   "history_fact_count": 3,
   "observation_count": 15,

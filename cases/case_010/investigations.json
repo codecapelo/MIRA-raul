@@ -4,7 +4,11 @@
   "observations": [
     {
       "fact_id": "hpi_001_prior_ct",
-      "domain": "imaging",
+      "domain": "radiology",
+      "original_domain": "hpi",
+      "clinical_test": "prior_noncontrast_abdominal_ct",
+      "modality": "computed_tomography",
+      "routing_tool": "request_radiology",
       "name": "Prior noncontrast abdominal CT",
       "value": "Initial noncontrast CT showed a 21 × 19 × 10 mm indeterminate lesion.",
       "available_at": "time_zero",
@@ -18,7 +22,11 @@
       "available_at": "time_zero",
       "name": "Vitals",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam"
     },
     {
       "fact_id": "physical_exam_005",
@@ -27,54 +35,78 @@
       "available_at": "time_zero",
       "name": "Abdomen pelvis",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam"
     },
     {
       "fact_id": "lab_006",
-      "domain": "lab",
+      "domain": "blood",
       "value": "Serum hCG 10,130.28 IU/L.",
       "available_at": "time_zero",
       "name": "Serum hCG",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "lab",
+      "clinical_test": "pregnancy_test",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test"
     },
     {
       "fact_id": "imaging_007",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "No intrauterine gestational sac; endometrium 8 mm; no adnexal abnormality.",
       "available_at": "time_zero",
       "name": "Pelvic ultrasound",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "pelvic_ultrasound",
+      "modality": "ultrasound",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "imaging_008",
-      "domain": "imaging",
+      "domain": "radiology",
       "value": "Contrast CT showed a vascular left upper abdominal mass about 46 × 40 × 56 mm.",
       "available_at": "time_zero",
       "name": "Abdominal CT",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "imaging",
+      "clinical_test": "ct_abdomen",
+      "modality": "computed_tomography",
+      "routing_tool": "request_radiology"
     },
     {
       "fact_id": "procedure_result_009",
-      "domain": "procedure_result",
+      "domain": "other",
       "value": "Diagnostic laparoscopy: ~300 mL hemoperitoneum and actively bleeding 6 × 4 × 5 cm lesion between spleen and descending colon, involving omentum; uterus, ovaries and tubes appeared normal.",
       "available_at": "time_zero",
       "name": "Diagnostic laparoscopy",
       "prerequisites": [],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "procedure_result",
+      "clinical_test": "laparoscopy",
+      "modality": "invasive_procedure",
+      "routing_tool": "request_other_investigation"
     },
     {
       "fact_id": "procedure_result_010",
-      "domain": "procedure_result",
+      "domain": "tissue",
       "value": "Resected lesion and partial omentum contained products of conception on pathology.",
       "available_at": "after_procedure:laparoscopy",
       "name": "Surgical pathology",
       "prerequisites": [
         "after_procedure:laparoscopy"
       ],
-      "unavailable_for_immediate_care": false
+      "unavailable_for_immediate_care": false,
+      "original_domain": "procedure_result",
+      "clinical_test": "pathology",
+      "modality": "histopathology",
+      "routing_tool": "request_other_investigation"
     }
   ],
   "temporal_events": [],
