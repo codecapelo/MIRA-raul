@@ -60,3 +60,21 @@ O piloto técnico v1 foi invalidado por associação ECG→imagem; seus cinco te
 
 ## Extensão autorizada —04-10-2026
 Usuário autorizou runs2e3:100encontros novos, total150 (5modelos×10casos×3). Preservar run1. Mesmo protocolo/params/provedores; orçamento globalUS$18 compartilhado incluindo primeira rodada e custos técnicos. Consulta posterior credits_before_repetitions.json confirma contaUS$1,502941443 igual ledger: diferença anterior era transitória na contabilização da conta. Não reclassificar custos antigos. Projeção100novos baseada run1:US$2,803773620, estimativa não garantia. Revisão médica pendente.
+
+## Rodadas 2 e 3 concluídas — 04-10-2026
+150/150 encontros terminais (50 por rodada; 5 modelos × 10 casos × 3), sem pares duplicados ou ausentes. 144 julgados e 6 sem julgamento (falha operacional/sem diagnóstico: GPT-OSS 5, GLM-4.5-Air 1), mantidos como terminais e fora do denominador do juiz. **Julgamento por LLM; revisão médica cega pendente; sem afirmação de acurácia clínica ou superioridade.** Repetições do mesmo caso não são pacientes independentes: Wilson é descritivo.
+
+| Modelo | Run 1 | Run 2 | Run 3 | Agregado | Wilson 95% (descritivo) | Sem julgamento |
+|---|---:|---:|---:|---:|---|---:|
+| openai/gpt-oss-120b | 5/8 | 3/9 | 2/8 | 10/25 | 23.4%–59.3% | 5 |
+| z-ai/glm-4.5-air | 7/10 | 6/9 | 6/10 | 19/29 | 47.3%–80.1% | 1 |
+| z-ai/glm-5 | 7/10 | 8/10 | 5/10 | 20/30 | 48.8%–80.8% | 0 |
+| qwen/qwen3.5-397b-a17b | 6/10 | 6/10 | 7/10 | 19/30 | 45.5%–78.1% | 0 |
+| openai/gpt-5.2 | 7/10 | 7/10 | 9/10 | 23/30 | 59.1%–88.2% | 0 |
+
+Custo real total (ledger = conta, três snapshots sem cache): US$ 4.274237323. Terminais por rodada: US$ 1.401886810 / 1.313640775 / 1.427001795. Projeção para 5 rodadas ≈ US$ 6.90 em terminais (estimativa, não autorização).
+
+Intercorrências (ver [reports/runs23_incidents.md](reports/runs23_incidents.md)): timeout de rede com 13 chamadas perdidas (US$ 0,030653310 não atribuível a nenhuma individualmente, registrado em linha própria do ledger) e um HTTP 429 do Qwen/Parasail sem cobrança. Nenhum terminal foi repetido; cada chamada perdida foi refeita uma vez após reconciliação. Análise: [reports/all_runs_summary.md](reports/all_runs_summary.md), `results/all_runs.csv`, manifesto `reports/final_trace_manifest_runs123.json`. Legacy: 978 arquivos verificados, 0 divergências.
+
+### Procedimento aplicado nas runs 2 e 3
+Um único agendador (`scripts/run_repetitions.py`, via `scripts/background_repetitions.py`) com limite de 3 encontros por modelo e 15 globais, ledger e locks compartilhados com a run 1, traces em `runs/run2` e `runs/run3`. Em erro, o agendador drena os encontros ativos e encerra; não há retry automático. Chamadas em voo ficam `uncertain` e bloqueiam novos envios até reconciliação explícita com `scripts/reconcile_timeout_interruption.py` (simulação por padrão; exige três snapshots de créditos estáveis, traces com cauda `request+halt` por timeout ou HTTP 429, prefixos pagos intactos e diferença conta-ledger dentro das reservas; arquiva o trace integral com hash, remove apenas a cauda e registra a diferença, se houver, em linha própria do ledger). Os prompts, parâmetros e provedores permaneceram os da run 1.

@@ -76,3 +76,6 @@ Checkpoint25/50, US$0,658732568,674settled. Falha na ordenação de commit ausen
 
 ## Extensão autorizada —04-10-2026
 Usuário autorizou runs2e3:100encontros novos, total150 (5modelos×10casos×3). Preservar run1. Mesmo protocolo/params/provedores; orçamento globalUS$18 compartilhado incluindo primeira rodada e custos técnicos. Consulta posterior credits_before_repetitions.json confirma contaUS$1,502941443 igual ledger: diferença anterior era transitória na contabilização da conta. Não reclassificar custos antigos. Projeção100novos baseada run1:US$2,803773620, estimativa não garantia. Revisão médica pendente.
+
+## Runs 2 e 3 concluídas — 04-10-2026
+150/150 terminais (run1+run2+run3), 144 julgados, 6 sem julgamento. Gasto real US$4,274237323 = ledger = conta (snapshots sem cache em reports/credits_run23_final_*.json); teto US$18 mantido, ~US$13,7 restantes, sem nova execução autorizada. Nada ativo; não relançar. Intercorrências (timeout de rede com 13 chamadas e US$0,030653310 não atribuível; um HTTP429 Qwen sem cobrança) reconciliadas conforme reports/runs23_incidents.md com scripts/reconcile_timeout_interruption.py. Análise: scripts/analyze_all_runs.py → reports/all_runs_summary.md/json, results/all_runs.csv. Revisão médica pendente. `runs/run*/` não guarda links simbólicos no git; scripts/run_repetitions.py os recria.

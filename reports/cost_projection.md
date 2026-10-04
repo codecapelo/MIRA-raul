@@ -22,3 +22,7 @@ Custo total conhecido, incluindo tentativas arquivadas/incompletas: US$ 1.502941
 Chamadas não liquidadas: 0; detalhes e reservas no JSON. Logs atuais e logs/incomplete são agregados por request_id, sem duplicar chamadas presentes nos dois locais.
 
 Projeção linear baseada nas cinco tentativas terminais do caso 001, incluindo falhas sem diagnóstico; não exige cinco diagnósticos nem representa custo de sucesso clínico. Inclui médico, paciente, juiz e matcher quando usados. Casos mais complexos e alterações de preço/provedor modificam o custo. Projeções futuras não incorporam novamente custos históricos de tentativas incompletas e não autorizam novas execuções. Provedor observado vem do CSV de cada episódio.
+
+## Atualização após runs 2 e 3
+
+Custo real total US$ 4.274237323 (ledger = conta). Detalhes e projeção para 5 rodadas em [all_runs_cost_projection.md](all_runs_cost_projection.md). Esta seção substitui o gasto parcial citado acima; a projeção linear do piloto acima permanece como histórico.

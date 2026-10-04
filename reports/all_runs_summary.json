@@ -1,0 +1,885 @@
+{
+  "schema_version": "1.0.0",
+  "terminal_rows": 150,
+  "expected_rows": 150,
+  "integrity_issues": [],
+  "physician_review": "pending",
+  "models": {
+    "openai/gpt-oss-120b": {
+      "by_run": {
+        "1": {
+          "attempts": 10,
+          "unjudged": 2,
+          "judged": 8,
+          "correct": 5,
+          "accuracy": 0.625,
+          "wilson95": [
+            0.30574239460262737,
+            0.8631557141764026
+          ]
+        },
+        "2": {
+          "attempts": 10,
+          "unjudged": 1,
+          "judged": 9,
+          "correct": 3,
+          "accuracy": 0.3333333333333333,
+          "wilson95": [
+            0.1205838183869109,
+            0.6457978644196036
+          ]
+        },
+        "3": {
+          "attempts": 10,
+          "unjudged": 2,
+          "judged": 8,
+          "correct": 2,
+          "accuracy": 0.25,
+          "wilson95": [
+            0.071479212752109,
+            0.5907245696898311
+          ]
+        }
+      },
+      "pooled": {
+        "attempts": 30,
+        "unjudged": 5,
+        "judged": 25,
+        "correct": 10,
+        "accuracy": 0.4,
+        "wilson95": [
+          0.23403302377747973,
+          0.5926054264103301
+        ]
+      },
+      "cluster_bootstrap95": [
+        0.13043478260869565,
+        0.6785714285714286
+      ],
+      "consistency": {
+        "cases_with_3_judged_runs": 6,
+        "correct_count_distribution": {
+          "0": 2,
+          "1": 1,
+          "2": 1,
+          "3": 2
+        },
+        "stable_cases_all_same_verdict": 4,
+        "mean_pairwise_agreement": 0.7777777777777778,
+        "note": "Descriptive agreement across repeated judged verdicts; not the original paper ConsistencyDx."
+      },
+      "usage": {
+        "prompt_tokens": {
+          "n": 30,
+          "median": 62810.0,
+          "q1": 34292.75,
+          "q3": 130236.0
+        },
+        "completion_tokens": {
+          "n": 30,
+          "median": 10311.5,
+          "q1": 4777.0,
+          "q3": 17374.25
+        },
+        "reasoning_tokens": {
+          "n": 30,
+          "median": 2390.5,
+          "q1": 1860.5,
+          "q3": 3081.0
+        },
+        "latency_s": {
+          "n": 30,
+          "median": 120.06800575,
+          "q1": 58.41994489600002,
+          "q3": 206.7856698435
+        },
+        "n_turns": {
+          "n": 30,
+          "median": 7.0,
+          "q1": 6.0,
+          "q3": 10.0
+        },
+        "n_tool_calls": {
+          "n": 30,
+          "median": 7.0,
+          "q1": 5.0,
+          "q3": 7.75
+        },
+        "tool_errors": {
+          "n": 30,
+          "median": 1.0,
+          "q1": 0.0,
+          "q3": 1.0
+        }
+      },
+      "cost_terminal_usd": "0.207173805",
+      "cost_mean_per_encounter_usd": "0.0069057935",
+      "by_run_cost_usd": {
+        "1": "0.085939110",
+        "2": "0.071921690",
+        "3": "0.049313005"
+      },
+      "providers_csv": [
+        "mancer/fp8"
+      ]
+    },
+    "z-ai/glm-4.5-air": {
+      "by_run": {
+        "1": {
+          "attempts": 10,
+          "unjudged": 0,
+          "judged": 10,
+          "correct": 7,
+          "accuracy": 0.7,
+          "wilson95": [
+            0.39677814746114537,
+            0.8922087325936989
+          ]
+        },
+        "2": {
+          "attempts": 10,
+          "unjudged": 1,
+          "judged": 9,
+          "correct": 6,
+          "accuracy": 0.6666666666666666,
+          "wilson95": [
+            0.3542021355803963,
+            0.879416181613089
+          ]
+        },
+        "3": {
+          "attempts": 10,
+          "unjudged": 0,
+          "judged": 10,
+          "correct": 6,
+          "accuracy": 0.6,
+          "wilson95": [
+            0.31267376973365824,
+            0.8318196702937638
+          ]
+        }
+      },
+      "pooled": {
+        "attempts": 30,
+        "unjudged": 1,
+        "judged": 29,
+        "correct": 19,
+        "accuracy": 0.6551724137931034,
+        "wilson95": [
+          0.47345104090476137,
+          0.80059281473325
+        ]
+      },
+      "cluster_bootstrap95": [
+        0.4482758620689655,
+        0.8620689655172413
+      ],
+      "consistency": {
+        "cases_with_3_judged_runs": 9,
+        "correct_count_distribution": {
+          "0": 0,
+          "1": 3,
+          "2": 2,
+          "3": 4
+        },
+        "stable_cases_all_same_verdict": 4,
+        "mean_pairwise_agreement": 0.6296296296296297,
+        "note": "Descriptive agreement across repeated judged verdicts; not the original paper ConsistencyDx."
+      },
+      "usage": {
+        "prompt_tokens": {
+          "n": 30,
+          "median": 16173.0,
+          "q1": 14285.0,
+          "q3": 27931.25
+        },
+        "completion_tokens": {
+          "n": 30,
+          "median": 3157.0,
+          "q1": 2591.0,
+          "q3": 3808.25
+        },
+        "reasoning_tokens": {
+          "n": 30,
+          "median": 1863.0,
+          "q1": 1554.5,
+          "q3": 2198.75
+        },
+        "latency_s": {
+          "n": 30,
+          "median": 45.360778500500004,
+          "q1": 33.66721184325,
+          "q3": 67.11749318724999
+        },
+        "n_turns": {
+          "n": 30,
+          "median": 2.0,
+          "q1": 2.0,
+          "q3": 2.75
+        },
+        "n_tool_calls": {
+          "n": 30,
+          "median": 5.5,
+          "q1": 5.0,
+          "q3": 8.0
+        },
+        "tool_errors": {
+          "n": 30,
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        }
+      },
+      "cost_terminal_usd": "0.121011845",
+      "cost_mean_per_encounter_usd": "0.004033728166666666666666666667",
+      "by_run_cost_usd": {
+        "1": "0.036397920",
+        "2": "0.042180240",
+        "3": "0.042433685"
+      },
+      "providers_csv": [
+        "novita/bf16"
+      ]
+    },
+    "z-ai/glm-5": {
+      "by_run": {
+        "1": {
+          "attempts": 10,
+          "unjudged": 0,
+          "judged": 10,
+          "correct": 7,
+          "accuracy": 0.7,
+          "wilson95": [
+            0.39677814746114537,
+            0.8922087325936989
+          ]
+        },
+        "2": {
+          "attempts": 10,
+          "unjudged": 0,
+          "judged": 10,
+          "correct": 8,
+          "accuracy": 0.8,
+          "wilson95": [
+            0.49016247153664183,
+            0.9433178485456247
+          ]
+        },
+        "3": {
+          "attempts": 10,
+          "unjudged": 0,
+          "judged": 10,
+          "correct": 5,
+          "accuracy": 0.5,
+          "wilson95": [
+            0.236593090512564,
+            0.7634069094874361
+          ]
+        }
+      },
+      "pooled": {
+        "attempts": 30,
+        "unjudged": 0,
+        "judged": 30,
+        "correct": 20,
+        "accuracy": 0.6666666666666666,
+        "wilson95": [
+          0.4878005164454384,
+          0.8076950191632386
+        ]
+      },
+      "cluster_bootstrap95": [
+        0.4,
+        0.9
+      ],
+      "consistency": {
+        "cases_with_3_judged_runs": 10,
+        "correct_count_distribution": {
+          "0": 2,
+          "1": 1,
+          "2": 2,
+          "3": 5
+        },
+        "stable_cases_all_same_verdict": 7,
+        "mean_pairwise_agreement": 0.8,
+        "note": "Descriptive agreement across repeated judged verdicts; not the original paper ConsistencyDx."
+      },
+      "usage": {
+        "prompt_tokens": {
+          "n": 30,
+          "median": 21065.5,
+          "q1": 13685.25,
+          "q3": 29937.75
+        },
+        "completion_tokens": {
+          "n": 30,
+          "median": 5211.0,
+          "q1": 3827.25,
+          "q3": 6635.5
+        },
+        "reasoning_tokens": {
+          "n": 30,
+          "median": 2760.5,
+          "q1": 2181.5,
+          "q3": 4110.5
+        },
+        "latency_s": {
+          "n": 30,
+          "median": 77.7919887495,
+          "q1": 51.23960637499999,
+          "q3": 99.21868216675
+        },
+        "n_turns": {
+          "n": 30,
+          "median": 3.0,
+          "q1": 2.0,
+          "q3": 4.0
+        },
+        "n_tool_calls": {
+          "n": 30,
+          "median": 6.0,
+          "q1": 5.0,
+          "q3": 8.0
+        },
+        "tool_errors": {
+          "n": 30,
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        }
+      },
+      "cost_terminal_usd": "0.468473360",
+      "cost_mean_per_encounter_usd": "0.01561577866666666666666666667",
+      "by_run_cost_usd": {
+        "1": "0.141192515",
+        "2": "0.145501150",
+        "3": "0.181779695"
+      },
+      "providers_csv": [
+        "streamlake/fp8"
+      ]
+    },
+    "qwen/qwen3.5-397b-a17b": {
+      "by_run": {
+        "1": {
+          "attempts": 10,
+          "unjudged": 0,
+          "judged": 10,
+          "correct": 6,
+          "accuracy": 0.6,
+          "wilson95": [
+            0.31267376973365824,
+            0.8318196702937638
+          ]
+        },
+        "2": {
+          "attempts": 10,
+          "unjudged": 0,
+          "judged": 10,
+          "correct": 6,
+          "accuracy": 0.6,
+          "wilson95": [
+            0.31267376973365824,
+            0.8318196702937638
+          ]
+        },
+        "3": {
+          "attempts": 10,
+          "unjudged": 0,
+          "judged": 10,
+          "correct": 7,
+          "accuracy": 0.7,
+          "wilson95": [
+            0.39677814746114537,
+            0.8922087325936989
+          ]
+        }
+      },
+      "pooled": {
+        "attempts": 30,
+        "unjudged": 0,
+        "judged": 30,
+        "correct": 19,
+        "accuracy": 0.6333333333333333,
+        "wilson95": [
+          0.4551356365479487,
+          0.7812607919389929
+        ]
+      },
+      "cluster_bootstrap95": [
+        0.36666666666666664,
+        0.8333333333333334
+      ],
+      "consistency": {
+        "cases_with_3_judged_runs": 10,
+        "correct_count_distribution": {
+          "0": 2,
+          "1": 1,
+          "2": 3,
+          "3": 4
+        },
+        "stable_cases_all_same_verdict": 6,
+        "mean_pairwise_agreement": 0.7333333333333333,
+        "note": "Descriptive agreement across repeated judged verdicts; not the original paper ConsistencyDx."
+      },
+      "usage": {
+        "prompt_tokens": {
+          "n": 30,
+          "median": 17696.5,
+          "q1": 13224.75,
+          "q3": 27991.75
+        },
+        "completion_tokens": {
+          "n": 30,
+          "median": 7942.5,
+          "q1": 6200.75,
+          "q3": 9735.75
+        },
+        "reasoning_tokens": {
+          "n": 30,
+          "median": 5790.0,
+          "q1": 4277.0,
+          "q3": 7827.75
+        },
+        "latency_s": {
+          "n": 30,
+          "median": 105.4670906045,
+          "q1": 62.3983926565,
+          "q3": 139.06646268799997
+        },
+        "n_turns": {
+          "n": 30,
+          "median": 3.0,
+          "q1": 2.0,
+          "q3": 3.0
+        },
+        "n_tool_calls": {
+          "n": 30,
+          "median": 6.0,
+          "q1": 5.0,
+          "q3": 7.0
+        },
+        "tool_errors": {
+          "n": 30,
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        }
+      },
+      "cost_terminal_usd": "1.094453110",
+      "cost_mean_per_encounter_usd": "0.03648177033333333333333333333",
+      "by_run_cost_usd": {
+        "1": "0.412583570",
+        "2": "0.332728435",
+        "3": "0.349141105"
+      },
+      "providers_csv": [
+        "parasail/fp8"
+      ]
+    },
+    "openai/gpt-5.2": {
+      "by_run": {
+        "1": {
+          "attempts": 10,
+          "unjudged": 0,
+          "judged": 10,
+          "correct": 7,
+          "accuracy": 0.7,
+          "wilson95": [
+            0.39677814746114537,
+            0.8922087325936989
+          ]
+        },
+        "2": {
+          "attempts": 10,
+          "unjudged": 0,
+          "judged": 10,
+          "correct": 7,
+          "accuracy": 0.7,
+          "wilson95": [
+            0.39677814746114537,
+            0.8922087325936989
+          ]
+        },
+        "3": {
+          "attempts": 10,
+          "unjudged": 0,
+          "judged": 10,
+          "correct": 9,
+          "accuracy": 0.9,
+          "wilson95": [
+            0.5958499732047615,
+            0.9821237869049271
+          ]
+        }
+      },
+      "pooled": {
+        "attempts": 30,
+        "unjudged": 0,
+        "judged": 30,
+        "correct": 23,
+        "accuracy": 0.7666666666666667,
+        "wilson95": [
+          0.5907167384187784,
+          0.8820761185551049
+        ]
+      },
+      "cluster_bootstrap95": [
+        0.5333333333333333,
+        0.9666666666666667
+      ],
+      "consistency": {
+        "cases_with_3_judged_runs": 10,
+        "correct_count_distribution": {
+          "0": 1,
+          "1": 1,
+          "2": 2,
+          "3": 6
+        },
+        "stable_cases_all_same_verdict": 7,
+        "mean_pairwise_agreement": 0.8,
+        "note": "Descriptive agreement across repeated judged verdicts; not the original paper ConsistencyDx."
+      },
+      "usage": {
+        "prompt_tokens": {
+          "n": 30,
+          "median": 21692.0,
+          "q1": 15363.75,
+          "q3": 28446.0
+        },
+        "completion_tokens": {
+          "n": 30,
+          "median": 3949.0,
+          "q1": 3300.75,
+          "q3": 4784.25
+        },
+        "reasoning_tokens": {
+          "n": 30,
+          "median": 2055.5,
+          "q1": 1522.25,
+          "q3": 2256.25
+        },
+        "latency_s": {
+          "n": 30,
+          "median": 94.50822522949997,
+          "q1": 75.55684158324999,
+          "q3": 121.48379072899999
+        },
+        "n_turns": {
+          "n": 30,
+          "median": 4.0,
+          "q1": 4.0,
+          "q3": 5.0
+        },
+        "n_tool_calls": {
+          "n": 30,
+          "median": 9.0,
+          "q1": 7.25,
+          "q3": 10.75
+        },
+        "tool_errors": {
+          "n": 30,
+          "median": 0.0,
+          "q1": 0.0,
+          "q3": 0.0
+        }
+      },
+      "cost_terminal_usd": "2.251417260",
+      "cost_mean_per_encounter_usd": "0.075047242",
+      "by_run_cost_usd": {
+        "1": "0.725773695",
+        "2": "0.721309260",
+        "3": "0.804334305"
+      },
+      "providers_csv": [
+        "openai"
+      ]
+    }
+  },
+  "ledger": {
+    "states": {
+      "settled": 3115
+    },
+    "total_usd": "4.274237323",
+    "by_actor_and_run": {
+      "doctor": {
+        "run1_ou_historico": {
+          "calls": 549,
+          "cost_usd": "1.029856654"
+        },
+        "run2": {
+          "calls": 437,
+          "cost_usd": "0.946386615"
+        },
+        "run3": {
+          "calls": 446,
+          "cost_usd": "1.021165615"
+        }
+      },
+      "patient": {
+        "run1_ou_historico": {
+          "calls": 178,
+          "cost_usd": "0.429592389"
+        },
+        "run2": {
+          "calls": 162,
+          "cost_usd": "0.334922890"
+        },
+        "run3": {
+          "calls": 145,
+          "cost_usd": "0.366156825"
+        }
+      },
+      "matcher": {
+        "run1_ou_historico": {
+          "calls": 354,
+          "cost_usd": "0.026940900"
+        },
+        "run2": {
+          "calls": 282,
+          "cost_usd": "0.017171270"
+        },
+        "run3": {
+          "calls": 412,
+          "cost_usd": "0.024514105"
+        }
+      },
+      "judge": {
+        "run1_ou_historico": {
+          "calls": 53,
+          "cost_usd": "0.01655150"
+        },
+        "run2": {
+          "calls": 48,
+          "cost_usd": "0.01516000"
+        },
+        "run3": {
+          "calls": 48,
+          "cost_usd": "0.01516525"
+        }
+      },
+      "unattributed_interrupted_calls": {
+        "run1_ou_historico": {
+          "calls": 1,
+          "cost_usd": "0.030653310"
+        }
+      }
+    }
+  },
+  "account_final": {
+    "total_usage_usd": "4.274237323",
+    "total_credits_usd": "20",
+    "snapshots": [
+      "credits_run23_final_1.json",
+      "credits_run23_final_2.json",
+      "credits_run23_final_3.json"
+    ],
+    "equals_ledger": true
+  },
+  "terminal_csv_cost_usd": "4.142529380",
+  "cost_by_run_terminal_usd": {
+    "1": "1.401886810",
+    "2": "1.313640775",
+    "3": "1.427001795"
+  },
+  "logprobs_doctor_responses": {
+    "run1|openai/gpt-5.2": {
+      "doctor_responses": 87,
+      "with_logprobs": 0
+    },
+    "run1|openai/gpt-oss-120b": {
+      "doctor_responses": 136,
+      "with_logprobs": 0
+    },
+    "run1|qwen/qwen3.5-397b-a17b": {
+      "doctor_responses": 77,
+      "with_logprobs": 73
+    },
+    "run1|z-ai/glm-4.5-air": {
+      "doctor_responses": 81,
+      "with_logprobs": 0
+    },
+    "run1|z-ai/glm-5": {
+      "doctor_responses": 72,
+      "with_logprobs": 0
+    },
+    "run2|openai/gpt-5.2": {
+      "doctor_responses": 90,
+      "with_logprobs": 0
+    },
+    "run2|openai/gpt-oss-120b": {
+      "doctor_responses": 124,
+      "with_logprobs": 0
+    },
+    "run2|qwen/qwen3.5-397b-a17b": {
+      "doctor_responses": 63,
+      "with_logprobs": 63
+    },
+    "run2|z-ai/glm-4.5-air": {
+      "doctor_responses": 80,
+      "with_logprobs": 0
+    },
+    "run2|z-ai/glm-5": {
+      "doctor_responses": 69,
+      "with_logprobs": 0
+    },
+    "run3|openai/gpt-5.2": {
+      "doctor_responses": 88,
+      "with_logprobs": 0
+    },
+    "run3|openai/gpt-oss-120b": {
+      "doctor_responses": 111,
+      "with_logprobs": 0
+    },
+    "run3|qwen/qwen3.5-397b-a17b": {
+      "doctor_responses": 64,
+      "with_logprobs": 63
+    },
+    "run3|z-ai/glm-4.5-air": {
+      "doctor_responses": 83,
+      "with_logprobs": 0
+    },
+    "run3|z-ai/glm-5": {
+      "doctor_responses": 100,
+      "with_logprobs": 0
+    }
+  },
+  "commits_per_run": {
+    "run1": [
+      "0a6636bc635aa87988e5b0ee5d5de6fb47eb9324",
+      "138a1a9ae8b853dd14e2809070ae5dba79069d31",
+      "7ae4460a51a33221c21f48a2fdf6e68720f13d7f",
+      "9028e00d577d4e1ab83101577bcf4c2c165a394c",
+      "9d45442ede86e805ae719d26c0989d70b9716527",
+      "a4b9ed3984c4b5bcd77af0b64fe08dc0480fd79b",
+      "cacbf96b5ff3f699a9e342173303f46b3fe14026"
+    ],
+    "run2": [
+      "fa2dd4d76bb451acdd640993dd39e5f88b0182a8"
+    ],
+    "run3": [
+      "fa2dd4d76bb451acdd640993dd39e5f88b0182a8"
+    ]
+  },
+  "providers_in_traces": {
+    "openai/gpt-5.2": [
+      "OpenAI"
+    ],
+    "openai/gpt-oss-120b": [
+      "Mancer 2"
+    ],
+    "qwen/qwen3.5-397b-a17b": [
+      "Parasail"
+    ],
+    "z-ai/glm-4.5-air": [
+      "Novita"
+    ],
+    "z-ai/glm-5": [
+      "StreamLake"
+    ]
+  },
+  "verdict_triples_run1_run2_run3": {
+    "case_001": {
+      "openai/gpt-oss-120b": "?NN",
+      "z-ai/glm-4.5-air": "N?N",
+      "z-ai/glm-5": "NNN",
+      "qwen/qwen3.5-397b-a17b": "YYN",
+      "openai/gpt-5.2": "NNY"
+    },
+    "case_002": {
+      "openai/gpt-oss-120b": "NNN",
+      "z-ai/glm-4.5-air": "YNY",
+      "z-ai/glm-5": "NNN",
+      "qwen/qwen3.5-397b-a17b": "NNN",
+      "openai/gpt-5.2": "YNY"
+    },
+    "case_003": {
+      "openai/gpt-oss-120b": "Y??",
+      "z-ai/glm-4.5-air": "YYY",
+      "z-ai/glm-5": "YYY",
+      "qwen/qwen3.5-397b-a17b": "YYY",
+      "openai/gpt-5.2": "YYY"
+    },
+    "case_004": {
+      "openai/gpt-oss-120b": "YNN",
+      "z-ai/glm-4.5-air": "YYY",
+      "z-ai/glm-5": "YYY",
+      "qwen/qwen3.5-397b-a17b": "NNY",
+      "openai/gpt-5.2": "YYY"
+    },
+    "case_005": {
+      "openai/gpt-oss-120b": "YYY",
+      "z-ai/glm-4.5-air": "NYN",
+      "z-ai/glm-5": "YYY",
+      "qwen/qwen3.5-397b-a17b": "YYY",
+      "openai/gpt-5.2": "YYY"
+    },
+    "case_006": {
+      "openai/gpt-oss-120b": "NN?",
+      "z-ai/glm-4.5-air": "YYY",
+      "z-ai/glm-5": "YYY",
+      "qwen/qwen3.5-397b-a17b": "YYY",
+      "openai/gpt-5.2": "YYY"
+    },
+    "case_007": {
+      "openai/gpt-oss-120b": "YYN",
+      "z-ai/glm-4.5-air": "YNN",
+      "z-ai/glm-5": "YYN",
+      "qwen/qwen3.5-397b-a17b": "YNY",
+      "openai/gpt-5.2": "YYY"
+    },
+    "case_008": {
+      "openai/gpt-oss-120b": "YYY",
+      "z-ai/glm-4.5-air": "YYY",
+      "z-ai/glm-5": "YYY",
+      "qwen/qwen3.5-397b-a17b": "YYY",
+      "openai/gpt-5.2": "YYY"
+    },
+    "case_009": {
+      "openai/gpt-oss-120b": "?NN",
+      "z-ai/glm-4.5-air": "YYN",
+      "z-ai/glm-5": "NYN",
+      "qwen/qwen3.5-397b-a17b": "NNN",
+      "openai/gpt-5.2": "NNN"
+    },
+    "case_010": {
+      "openai/gpt-oss-120b": "NNN",
+      "z-ai/glm-4.5-air": "NNY",
+      "z-ai/glm-5": "YYN",
+      "qwen/qwen3.5-397b-a17b": "NYY",
+      "openai/gpt-5.2": "NYY"
+    }
+  },
+  "pooled_all_models": {
+    "attempts": 150,
+    "unjudged": 6,
+    "judged": 144,
+    "correct": 91,
+    "accuracy": 0.6319444444444444,
+    "wilson95": [
+      0.5507002056059215,
+      0.7063318901479992
+    ]
+  },
+  "projection_5_runs": {
+    "method": "mean terminal cost of the 3 observed runs x 5; excludes invalidated pilot, incomplete attempts and unattributed cost",
+    "mean_terminal_cost_per_run_usd": "1.380843126666666666666666667",
+    "projected_5_runs_terminal_usd": "6.904215633333333333333333335",
+    "additional_2_runs_estimate_usd": "2.761686253333333333333333334",
+    "per_model_projected_5_runs_usd": {
+      "openai/gpt-oss-120b": "0.345289675",
+      "z-ai/glm-4.5-air": "0.2016864083333333333333333334",
+      "z-ai/glm-5": "0.7807889333333333333333333335",
+      "qwen/qwen3.5-397b-a17b": "1.824088516666666666666666666",
+      "openai/gpt-5.2": "3.752362100"
+    },
+    "not_an_authorization": true
+  },
+  "legacy_verification": {
+    "checked": 978,
+    "mismatch": [],
+    "missing": [],
+    "root_checked": "/Users/test/MIRA-RAUL"
+  },
+  "trace_manifest_files": 150
+}

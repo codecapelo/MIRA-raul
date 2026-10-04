@@ -1,0 +1,112 @@
+{
+  "timestamp": 1791132095.502392,
+  "reconciled_requests": 13,
+  "unattributed_row": "39f808da-4c05-4b14-9fbf-b9fd122232b4",
+  "unattributed_usd": "0.030653310",
+  "account_total_usage": "2.479821028",
+  "ledger_total_after": "2.479821028",
+  "states_after": {
+    "settled": 1583
+  },
+  "snapshots_sha256": {
+    "reports/credits_run23_timeout_1.json": "3dcc3cdf4799f86968d9e84fc4e63e871fadaca788d9bfe5873646025df8c512",
+    "reports/credits_run23_timeout_2.json": "fca524d528fa51d564b5b1d5eab95ce6e160a67df3c14356dfc7bd68146b8138",
+    "reports/credits_run23_timeout_3.json": "7ccce191a4f38a06b1d890adbfb9c17f98128a4b9d6890b0d32fb137ec94052d"
+  },
+  "ledger_backup": "/Users/test/MIRA-RAUL/reports/budget_before_timeout_reconciliation.sqlite",
+  "archive": "/Users/test/MIRA-RAUL/logs/incomplete/run23_socket_timeout_v1",
+  "provider_usage_cost_invented": false,
+  "archived": [
+    {
+      "request_id": "48141e40-038f-4b6d-a228-0c6c444f163c",
+      "role": "patient",
+      "model": "openai/gpt-oss-120b",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/run23_socket_timeout_v1/runs/run2/logs/raw/openai__gpt-oss-120b/case_004.jsonl",
+      "sha256": "4d2ed2d09539b3b7120ecc4e8fb814075a37010b858696bf0c2e85e1d9c2d52f"
+    },
+    {
+      "request_id": "97f38853-dc9f-4eb8-897d-c438397e657c",
+      "role": "doctor",
+      "model": "openai/gpt-5.2",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/run23_socket_timeout_v1/runs/run2/logs/raw/openai__gpt-5.2/case_001.jsonl",
+      "sha256": "218d4684c8aca94c515998709ca18f17d363aef8c740359895a50690bba32373"
+    },
+    {
+      "request_id": "466e2aea-0917-4b2d-946d-4fc71487d9b2",
+      "role": "doctor",
+      "model": "qwen/qwen3.5-397b-a17b",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/run23_socket_timeout_v1/runs/run2/logs/raw/qwen__qwen3.5-397b-a17b/case_003.jsonl",
+      "sha256": "0e10283ade005c1dceaeef75ba721c7cce88d37f445c41a322372f521537be9c"
+    },
+    {
+      "request_id": "cfd617f4-7b6c-492e-8897-965b5ba33396",
+      "role": "doctor",
+      "model": "openai/gpt-oss-120b",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/run23_socket_timeout_v1/runs/run2/logs/raw/openai__gpt-oss-120b/case_002.jsonl",
+      "sha256": "44200e4dd865d41d2a41621b9373fa5b72c13191aa36034edafd05de22d63f83"
+    },
+    {
+      "request_id": "660c9b26-3b1a-4a6e-8273-c55ef3293ea2",
+      "role": "doctor",
+      "model": "qwen/qwen3.5-397b-a17b",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/run23_socket_timeout_v1/runs/run2/logs/raw/qwen__qwen3.5-397b-a17b/case_004.jsonl",
+      "sha256": "db954ca38c3439396869bf1f792fdc458ee174ba9935b5f1b972348860019f98"
+    },
+    {
+      "request_id": "6e39cc04-ccc2-4675-8118-2359b790f67b",
+      "role": "doctor",
+      "model": "z-ai/glm-4.5-air",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/run23_socket_timeout_v1/runs/run2/logs/raw/z-ai__glm-4.5-air/case_003.jsonl",
+      "sha256": "d13c47e0295477a365407d22e9e34f9219a1a42e2cbb799760e3174e6bd79315"
+    },
+    {
+      "request_id": "92611efa-6864-4c25-8e1e-c441cc6acfa0",
+      "role": "doctor",
+      "model": "z-ai/glm-5",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/run23_socket_timeout_v1/runs/run2/logs/raw/z-ai__glm-5/case_004.jsonl",
+      "sha256": "69d6ccabb2bb416e2bd959c9118a3274ab277a9829fe318e3ec7c68495069f7d"
+    },
+    {
+      "request_id": "0c3f6199-d937-41b3-8447-bd87b65ae2bd",
+      "role": "doctor",
+      "model": "z-ai/glm-5",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/run23_socket_timeout_v1/runs/run2/logs/raw/z-ai__glm-5/case_002.jsonl",
+      "sha256": "f7a96aa391c5c2f438e0f55520823fb7710e6df9fb5a9970958efb2f05cd287e"
+    },
+    {
+      "request_id": "4afc15fc-e849-4278-af58-a3ff4d1863b4",
+      "role": "doctor",
+      "model": "z-ai/glm-4.5-air",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/run23_socket_timeout_v1/runs/run2/logs/raw/z-ai__glm-4.5-air/case_004.jsonl",
+      "sha256": "f6a16d85e1374381a6af05a3b771b82ebfaa57171f44da0681180a3b5814505c"
+    },
+    {
+      "request_id": "abd7f4af-802c-4b61-a610-2c31775da1d3",
+      "role": "patient",
+      "model": "qwen/qwen3.5-397b-a17b",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/run23_socket_timeout_v1/runs/run2/logs/raw/qwen__qwen3.5-397b-a17b/case_002.jsonl",
+      "sha256": "9a95575e8e85d0e5bf3edb622621f6c5a4c7aff388ed4c90bf6a8519d59a0636"
+    },
+    {
+      "request_id": "e6405b17-8cd9-4608-a6f6-133c525c7dc2",
+      "role": "doctor",
+      "model": "openai/gpt-5.2",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/run23_socket_timeout_v1/runs/run2/logs/raw/openai__gpt-5.2/case_002.jsonl",
+      "sha256": "92f7a8d2a5e0b4e52c0dc27a46555b322cc6aaf664bfb3eb443154c7c1258ff3"
+    },
+    {
+      "request_id": "fe8c5f99-78bc-41e1-bbc3-6723bc5d8120",
+      "role": "doctor",
+      "model": "openai/gpt-oss-120b",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/run23_socket_timeout_v1/runs/run2/logs/raw/openai__gpt-oss-120b/case_001.jsonl",
+      "sha256": "5ad3a1749890e48ae7505a15206f774844d1f70a5688c6a32d6ae097bff7a4bf"
+    },
+    {
+      "request_id": "5064a38d-1757-42d6-b39c-cc8a7ef44182",
+      "role": "doctor",
+      "model": "z-ai/glm-4.5-air",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/run23_socket_timeout_v1/runs/run2/logs/raw/z-ai__glm-4.5-air/case_002.jsonl",
+      "sha256": "4809e608fac1994c43725b96448ebbba86ec537d56a83deda5ea5bc4d3c3e1c9"
+    }
+  ]
+}

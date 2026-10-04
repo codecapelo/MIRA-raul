@@ -1,0 +1,28 @@
+{
+  "timestamp": 1791133267.011966,
+  "reconciled_requests": 1,
+  "unattributed_row": null,
+  "unattributed_usd": "0E-9",
+  "account_total_usage": "3.736168178",
+  "ledger_total_after": "3.736168178",
+  "states_after": {
+    "settled": 2559
+  },
+  "snapshots_sha256": {
+    "reports/credits_run23_429_1.json": "68a4b50faa776c5d2c2ccfe59855999d287fd0665b70c895bfd93537b7ba101b",
+    "reports/credits_run23_429_2.json": "2d07a77bdb6dcd0f26c5eca47e1bf6958ce454183bf801be3d993658ca390371",
+    "reports/credits_run23_429_3.json": "2fb018470906c1b4acb16ff2c69a73b8402a8514a7ae70efd4f63cc694039156"
+  },
+  "ledger_backup": "/Users/test/MIRA-RAUL/reports/budget_before_http429_reconciliation.sqlite",
+  "archive": "/Users/test/MIRA-RAUL/logs/incomplete/run23_http429_v1",
+  "provider_usage_cost_invented": false,
+  "archived": [
+    {
+      "request_id": "3493cbca-ea94-4368-8107-e9fa0f85041c",
+      "role": "patient",
+      "model": "qwen/qwen3.5-397b-a17b",
+      "path": "/Users/test/MIRA-RAUL/logs/incomplete/run23_http429_v1/runs/run3/logs/raw/qwen__qwen3.5-397b-a17b/case_002.jsonl",
+      "sha256": "64f230f3349c399120474009eed641a026769d2ddacb5431faa0f56eedec7062"
+    }
+  ]
+}
