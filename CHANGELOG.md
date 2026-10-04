@@ -30,3 +30,6 @@ A chamada interrompida custou US$0,0003825 por diferença estável de saldo da c
 
 ## 2026-10-04 — encerramento de falhas de formato
 Duas chamadas inválidas de exame físico do GPT-OSS encerram o encontro como falha operacional terminal; não há diagnóstico nem julgamento LLM. O executor registra os custos e segue a próxima combinação, preservando o limite de correção já congelado. A primeira falha foi finalizada offline com as duas respostas originais e seu commit, sem novas chamadas. Falhas de transporte/custo continuam bloqueando toda execução até reconciliação.
+
+## 2026-10-04 — encerramento compatível com o provedor e retomada
+No turno 10 do caso002 GPT-OSS, o provedor recusou a seleção forçada da função (HTTP404 de compatibilidade), embora aceite ferramentas automáticas. Passamos a oferecer apenas admission com tool_choice=auto e o mesmo pedido explícito de encerramento; o limite de dez turnos permanece. Ausência de admission encerra como falha terminal. A transição de commit é explícita; respostas já pagas só são reutilizadas quando o hash da requisição coincide integralmente. A chamada recusada foi conciliada sem custo e preservada. Não há reexecução dos passos concluídos.

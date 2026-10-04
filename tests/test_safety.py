@@ -96,3 +96,21 @@ class TerminalFailureTests(unittest.TestCase):
             result=run_case(root,case,model,client,'abc')
             self.assertEqual(result['tool_errors'],2);self.assertEqual(result['dx_agent'],'');self.assertEqual(result['judge_correct'],'');self.assertEqual(result['judge_rationale'],'not judged: tool retry limit');self.assertEqual(len(sent),2);self.assertEqual(result['cost_usd'],'0.002')
             self.assertEqual(run_case(root,case,model,None,'newcommit'),result)
+            path=root/'logs/raw'/model.replace('/','__')/'case_001.jsonl'
+            events=[json.loads(x) for x in path.read_text().splitlines()]
+            path.write_text(''.join(json.dumps(x)+'\n' for x in events if x['event'] not in ['operational_failure','case_complete']))
+            resumed=run_case(root,case,model,client,'newcommit',allow_commit_transition=True)
+            self.assertEqual(resumed['commit'],'newcommit');self.assertEqual(len(sent),2)
+            self.assertTrue(any(e['event']=='commit_transition' for e in AuditLog(path,'newcommit').events()))
+
+class CommitResumeTests(unittest.TestCase):
+    def test_rejected_request_excluded_paid_prefix_hash_checked(self):
+        from mira_runner.budget import BudgetError
+        with tempfile.TemporaryDirectory() as t:
+            root=Path(t);l=Ledger(root/'l.db');log=AuditLog(root/'raw.jsonl','old');cfg={'models':{'m':{'provider':'p','pricing_verified':True,'context_tokens':0,'max_tokens':10,'usd_per_million':{'input':1,'output':1}}}};sent=[]
+            def transport(p):sent.append(p);return {'choices':[{'message':{'role':'assistant','content':'ok'}}],'usage':{'cost':.001}}
+            c=Client(l,cfg,transport=transport);msg=[{'role':'user','content':'prefix'}];c.call('m',msg,log,'doctor')
+            rid=l.reserve('.1',{});log.append({'event':'request','request_id':rid,'role':'doctor','payload_hash':'rejectedhash'});log.append({'event':'halt','request_id':rid,'http_status':404});l.settle(rid,0);l.db.execute('UPDATE calls SET metadata=? WHERE id=?',(json.dumps({'reconciliation':{'confirmed_zero_cost':True}}),rid));log.append({'event':'request_rejected','request_id':rid,'confirmed_zero_cost':True})
+            new=AuditLog(root/'raw.jsonl','new');self.assertEqual(c.call('m',msg,new,'doctor')['content'],'ok');self.assertEqual(len(sent),1)
+            c.call('m',[{'role':'user','content':'new finalrequest'}],new,'doctor');self.assertEqual(len(sent),2)
+            with self.assertRaises(BudgetError):c.call('m',[{'role':'user','content':'alteredprefix'}],AuditLog(root/'raw.jsonl','third'),'doctor')

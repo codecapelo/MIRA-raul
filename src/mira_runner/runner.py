@@ -20,12 +20,15 @@ def terminal_failure(root,case_dir,model,log,commit,reason,turn,ntools,errors,la
     log.append({'event':'case_complete','status':'terminal_model_failure','result':result})
     return result
 
-def run_case(root,case_dir,model,client,commit):
+def run_case(root,case_dir,model,client,commit,allow_commit_transition=False):
     log=AuditLog(root/'logs/raw'/model.replace('/','__')/(case_dir.name+'.jsonl'),commit)
     previous=log.events()
     complete=next((e for e in previous if e['event']=='case_complete'),None)
     if complete:return complete['result']
-    if previous and any(e.get('commit') != commit for e in previous): raise RuntimeError('Cannot resume under a different commit')
+    old_commits=sorted({e.get('commit') for e in previous if e.get('commit')!=commit})
+    if old_commits:
+        if not allow_commit_transition:raise RuntimeError('Cannot resume under a different commit without --allow-commit-transition')
+        log.append({'event':'commit_transition','previous_commits':old_commits,'new_commit':commit,'policy':'reuse only hash-identical settled responses; explicitly reconciled HTTP rejection can be replaced'})
     patient=json.loads((case_dir/'patient.json').read_text()); inv=json.loads((case_dir/'investigations.json').read_text())
     # Reference is deliberately opened only after the diagnostic interaction.
     prompts=load_module(root/'upstream/onprem-medical-agents/src/prompts_vivabench.py')
@@ -49,7 +52,7 @@ def run_case(root,case_dir,model,client,commit):
     for turn in range(1,11):
         if turn==10:doctor.append({'role':'system','content':prompts.COMPLETION_PROMPT+' Call admission now.'})
         for subturn in range(40):
-            m=client.call(model,doctor,log,'doctor',MODELS[model],tools=schemas() if turn<10 else [schemas()[-1]],tool_choice='auto' if turn<10 else {'type':'function','function':{'name':'admission'}})
+            m=client.call(model,doctor,log,'doctor',MODELS[model],tools=schemas() if turn<10 else [schemas()[-1]],tool_choice='auto')
             doctor.append(m)
             calls=m.get('tool_calls',[])
             if not calls:break
@@ -91,7 +94,7 @@ def export(root,results):
     os.replace(tmp,path)
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[2]);parser.add_argument('--execute',action='store_true');parser.add_argument('--pilot-only',action='store_true');parser.add_argument('--max-cases',type=int);args=parser.parse_args();root=args.root
+    parser=argparse.ArgumentParser();parser.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[2]);parser.add_argument('--execute',action='store_true');parser.add_argument('--pilot-only',action='store_true');parser.add_argument('--max-cases',type=int);parser.add_argument('--allow-commit-transition',action='store_true');args=parser.parse_args();root=args.root
     config=json.loads((root/'config/run1.json').read_text()); cases=sorted((root/'cases').glob('case_*'))
     if not cases:raise RuntimeError('No cases')
     schedule=[(cases[0],m) for m in MODELS]+([] if args.pilot_only else [(c,m) for m in MODELS for c in cases[1:]])
@@ -111,6 +114,6 @@ def main():
     except BlockingIOError:raise RuntimeError('Another runner holds the global process lock')
     ledger=Ledger(root/'logs/budget.sqlite',config['budget_usd']);client=Client(ledger,config,key);results=[]
     for c,m in schedule:
-        results.append(run_case(root,c,m,client,commit));export(root,results)
+        results.append(run_case(root,c,m,client,commit,args.allow_commit_transition));export(root,results)
         print(json.dumps({'case_id':c.name,'model':m,'status':'complete','case_cost_usd':results[-1]['cost_usd'],'global_cost_usd':str(ledger.total())}),flush=True)
 if __name__=='__main__':main()

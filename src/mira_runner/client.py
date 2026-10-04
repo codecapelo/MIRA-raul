@@ -45,7 +45,12 @@ class Client:
         rates=cfg['usd_per_million']; reserve=(Decimal(input_bound)*Decimal(str(rates['input']))+Decimal(payload['max_tokens'])*Decimal(str(rates['output'])))/Decimal(1000000)+Decimal(str(cfg.get('request_fee_usd','0')))
         payload_hash=hashlib.sha256(json.dumps(payload,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
         ordinal=getattr(log,'call_ordinal',0); log.call_ordinal=ordinal+1
-        requests=[e for e in log.events() if e['event']=='request']
+        events=log.events();requests=[]
+        for event in events:
+            if event['event']!='request':continue
+            rid=event['request_id'];row=self.ledger.db.execute('SELECT state,cost,metadata FROM calls WHERE id=?',(rid,)).fetchone()
+            rejected=(row and row[0]=='settled' and Decimal(row[1])==0 and (json.loads(row[2]).get('operator_zero_cost_reconciliation') or json.loads(row[2]).get('reconciliation',{}).get('confirmed_zero_cost')) and any(e['event']=='request_rejected' and e.get('request_id')==rid and e.get('confirmed_zero_cost') is True for e in events) and not any(e['event']=='response' and e['request_id']==rid for e in events) and any(e['event']=='halt' and e.get('request_id')==rid and e.get('http_status') in [400,401,402,403,404,429] for e in events))
+            if not rejected:requests.append(event)
         if ordinal < len(requests):
             old=requests[ordinal]
             if old.get('payload_hash') != payload_hash: raise BudgetError('Resume payload differs; cannot continue safely')
