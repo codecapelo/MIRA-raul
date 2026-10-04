@@ -60,3 +60,6 @@ O piloto técnico v1 foi invalidado por associação ECG→imagem; seus cinco te
 
 ## Extensão autorizada —04-10-2026
 Usuário autorizou runs2e3:100encontros novos, total150 (5modelos×10casos×3). Preservar run1. Mesmo protocolo/params/provedores; orçamento globalUS$18 compartilhado incluindo primeira rodada e custos técnicos. Consulta posterior credits_before_repetitions.json confirma contaUS$1,502941443 igual ledger: diferença anterior era transitória na contabilização da conta. Não reclassificar custos antigos. Projeção100novos baseada run1:US$2,803773620, estimativa não garantia. Revisão médica pendente.
+
+## Consolidação das três repetições —04-10-2026
+150/150 terminais; custo globalUS$4.274237323 conciliado com conta. Nenhuma chamada pendente. Run1 e978 arquivos históricos verificados por hashes. Relatório: reports/repetitions_summary.md; manifesto: reports/all150_trace_manifest.json. Não executar novos encontros sem nova autorização. Revisão médica pendente.

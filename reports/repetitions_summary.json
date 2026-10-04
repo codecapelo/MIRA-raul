@@ -1,0 +1,47 @@
+{
+  "openai/gpt-oss-120b": {
+    "terminal": 30,
+    "judged": 25,
+    "correct": 10,
+    "operational_failures": 5,
+    "cases_correct_all_three": 2,
+    "cost": "0.207173805",
+    "median_tokens": 73395.0
+  },
+  "z-ai/glm-4.5-air": {
+    "terminal": 30,
+    "judged": 29,
+    "correct": 19,
+    "operational_failures": 1,
+    "cases_correct_all_three": 4,
+    "cost": "0.121011845",
+    "median_tokens": 19049.0
+  },
+  "z-ai/glm-5": {
+    "terminal": 30,
+    "judged": 30,
+    "correct": 20,
+    "operational_failures": 0,
+    "cases_correct_all_three": 5,
+    "cost": "0.468473360",
+    "median_tokens": 26497.0
+  },
+  "qwen/qwen3.5-397b-a17b": {
+    "terminal": 30,
+    "judged": 30,
+    "correct": 19,
+    "operational_failures": 0,
+    "cases_correct_all_three": 4,
+    "cost": "1.094453110",
+    "median_tokens": 25924.0
+  },
+  "openai/gpt-5.2": {
+    "terminal": 30,
+    "judged": 30,
+    "correct": 23,
+    "operational_failures": 0,
+    "cases_correct_all_three": 6,
+    "cost": "2.251417260",
+    "median_tokens": 25815.0
+  }
+}
