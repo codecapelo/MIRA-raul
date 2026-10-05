@@ -23,7 +23,7 @@ archive=r/'logs/incomplete'/a.tag;plan=[]
 for x in rows:
     meta=json.loads(x['metadata']);path=Path(meta['log']);lines=path.read_bytes().splitlines(keepends=True);ev=[json.loads(l) for l in lines]
     req,halt=ev[-2],ev[-1]
-    if not(req['event']=='request' and req['request_id']==x['id'] and halt['event']=='halt' and halt['request_id']==x['id'] and (halt['reason']=='timeout' or (halt['reason']=='HTTPFailure' and halt.get('http_status') in (429,503)))):raise RuntimeError('Trace tail mismatch: '+str(path))
+    if not(req['event']=='request' and req['request_id']==x['id'] and halt['event']=='halt' and halt['request_id']==x['id'] and (halt['reason']=='timeout' or (halt['reason']=='HTTPFailure' and halt.get('http_status') in (403,429,503)))):raise RuntimeError('Trace tail mismatch: '+str(path))
     if any(e.get('event')=='response' and e.get('request_id')==x['id'] for e in ev):raise RuntimeError('Response exists: '+str(path))
     # Every earlier request must be settled with a durable response (paid prefix intact).
     for e in ev[:-2]:
@@ -44,7 +44,7 @@ agg=str(uuid.uuid4());now=time.time()
 db.execute('BEGIN IMMEDIATE')
 try:
     for x,meta,path,dest,h,prefix,_ in plan:
-        meta['operator_timeout_reconciliation']={'reason':'In-flight request ended without usable response (socket timeout or HTTP 429/503 per halt event); per-call usage.cost unobservable','halt_reason':[e for e in [json.loads(l) for l in path.read_text().splitlines()[-1:]]][0].get('reason'),'attribution':'per-call cost 0; account-level difference (may be 0) recorded in unattributed row '+agg if diff>0 else 'per-call cost 0; account usage equals ledger sum, zero cost confirmed','archived_trace':str(dest),'trace_sha256':h,'snapshots_sha256':evidence,'provider_usage_cost_available':False,'timestamp':now}
+        meta['operator_timeout_reconciliation']={'reason':'In-flight request ended without usable response (socket timeout or HTTP 403/429/503 per halt event); per-call usage.cost unobservable','halt_reason':[e for e in [json.loads(l) for l in path.read_text().splitlines()[-1:]]][0].get('reason'),'attribution':'per-call cost 0; account-level difference (may be 0) recorded in unattributed row '+agg if diff>0 else 'per-call cost 0; account usage equals ledger sum, zero cost confirmed','archived_trace':str(dest),'trace_sha256':h,'snapshots_sha256':evidence,'provider_usage_cost_available':False,'timestamp':now}
         c=db.execute("UPDATE calls SET state='settled',cost='0',metadata=? WHERE id=? AND state='uncertain' AND cost IS NULL",(json.dumps(meta),x['id']));assert c.rowcount==1
     if diff>0:db.execute("INSERT INTO calls VALUES (?,?,?,?,?)",(agg,'settled','0',str(diff),json.dumps({'model':'multiple','role':'unattributed_interrupted_calls','reason':'Account total_usage exceeded ledger sum after 13 requests lost to socket timeout; cannot be assigned to individual calls','request_ids':[x['id'] for x,*_ in plan],'account_total_usage':str(usage),'ledger_known_before_usd':str(known),'snapshots_sha256':evidence,'provider_usage_cost_invented':False,'timestamp':now})))
     assert db.execute('SELECT sum(cast(cost as real)) FROM calls').fetchone()[0] is not None
