@@ -3,12 +3,12 @@
   "runner_exit_code": 0,
   "args": [
     "--model",
-    "qwen/qwen3.8-max-0902",
+    "claude-opus-5-5",
     "--runs",
     "1",
-    "2",
-    "3"
+    "--parallel-cases",
+    "2"
   ],
-  "supervisor_pid": 93924,
-  "timestamp": 1791141207.952514
+  "supervisor_pid": 2646,
+  "timestamp": 1791158951.5253608
 }
