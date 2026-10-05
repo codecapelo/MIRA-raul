@@ -90,3 +90,6 @@ Sem rerodar encontros: `scripts/fidelity_eval.py` refez o juiz (Flash-Lite temp 
 
 ## Rodada-teste v3 (Qwen3.8 Max 0902, 10 casos × 1, sem e com JEF) — 05-10-2026
 Paciente fixo Sonnet 5.5 com regras estritas, exames bloqueados até 3 trocas, resultado atrasado, resposta por exame, juiz Gemini 3.1 Pro; braço B com guarda JEF (retentativa do paciente). Resultado: 8/10 nos dois braços (runs antigas rejulgadas com o mesmo juiz: 21/30), conversa com o paciente em 10/10 encontros (antes 2/30), custo cerca de 2× por encontro (US$ 0,09 a 0,10); a guarda reduziu em cerca de 6 pontos as respostas marcadas como invenção e não mudou diagnósticos. Gasto US$ 1,88 (ledger = conta US$ 11,846702103). Detalhes em [reports/v3_pilot_qwen38_0902.md](reports/v3_pilot_qwen38_0902.md). Sem revisão médica.
+
+## v3 com exame físico junto da queixa, N=1 e N=2, Qwen3.8 0902 e GLM-5 — 05-10-2026
+`--exam-first` (exame inicial na primeira mensagem) e `--min-exchanges` N=1/2; 4 variantes × 10 casos × 1. Qwen: N=1 8/10 (US$ 0,79), N=2 9/10 (US$ 0,82), contra N=3 8/10 (US$ 0,90); GLM-5: N=1 5/10 (US$ 0,16), N=2 7/10 (US$ 0,18). Verificação offline do JEF (AUC 0,85 para diagnósticos errados em 60 encontros). Gasto US$ 1,96 (ledger = conta US$ 13,916311638). Detalhes em [reports/v3_n_variants_glm5.md](reports/v3_n_variants_glm5.md). Sem revisão médica.
