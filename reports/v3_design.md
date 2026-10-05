@@ -33,6 +33,12 @@ O usuário observou exames que existiam no caso sem retorno por nome e repetiç�
 3. Repetição só é "já pedido" se o mesmo dado (mesmo fato e mesmo analito) já foi retornado; outro analito do mesmo agrupamento conta como informação nova.
 Limite: o resto da associação continua com o GLM-4.5-Air (v1/v2 idêntico); casos como "Abdominal CT" → "Adrenal CT" não são resolvidos aqui.
 
+## Braço com JEF (guarda do paciente) — 05-10-2026
+JEF (TypeSafe Jev, `jev-latest` → `jev-1.13.0`) devolve probabilidades tipadas, não texto. Validação offline sobre os dados gravados (custo US$ 0,03 para 224 + 440 itens):
+- **Juiz:** a probabilidade de "mesma condição que a referência" concorda com o Gemini 3.1 Pro em 97% dos 224 (AUC 0,999) e com o juiz original em 89% (AUC 0,976). Escalonando ao Opus (assinatura) os 38 itens incertos ou em que o JEF diverge do Pro, o Opus arbitrou 55 itens no total: Pro concorda com o Opus em 50/55, JEF em 44/55, juiz original em 35/55, Flash-Lite temp 0 em 37/55. Veredito em cascata: 141/224 corretos (Pro 143, original 160); só 4 decisões mudam em relação ao Pro. Esse subconjunto foi escolhido por ser difícil; o Opus não é verdade de referência.
+- **Paciente:** detecta "inventa detalhe fora do registro" com AUC 0,90 contra as marcações do Opus (270 positivas, 170 negativas); no limiar 0,30: precisão 0,88, recall 0,82. Deriva para linguagem de equipe: 2 positivos apenas.
+**Guarda na v3 (`--jef`, braço separado `*_jef`):** após cada fala do paciente o JEF estima invenção e deriva; se invenção ≥ 0,30 ou deriva ≥ 0,50, o paciente (Sonnet) é chamado **uma vez** de novo com um lembrete e a segunda resposta substitui a primeira. Falha do JEF não bloqueia o encontro (resposta aceita, contada em `jef_failures`). Checagens ficam no log e são reaproveitadas na retomada. Colunas: `jef_guard, jef_checks, jef_retries, jef_failures`. Limite de gasto do JEF: US$ 5 (contabilidade a 6× o preço documentado de US$ 0,042 por milhão de tokens de entrada).
+
 ## Pontos em aberto
 - Se o limite de 10 turnos deve subir para 12 depois de ver a rodada-teste (as regras gastam turnos).
 - Quais modelos e quantas repetições entram na v3.

@@ -14,13 +14,14 @@ from .client import AuditLog
 from .runner import FIELDS,SAMPLING,load_module,terminal_failure
 from .tools import schemas,ToolArgumentsError,NAMES
 from .tools_v3 import V3CaseTools
+from .jef import INVENTS_THRESHOLD,DRIFT_THRESHOLD,RETRY_NOTE
 
 PROTOCOL='v3'
 PATIENT_MODEL='claude-sonnet-5-5'
 MIN_EXCHANGES=3
 JUDGE_V3='google/gemini-3.1-pro-preview'
 JUDGE_PARAMS={'temperature':0,'top_p':1,'reasoning':{'effort':'low'}}
-FIELDS_V3=FIELDS+['protocol','patient_model','judge_model','patient_exchanges','gated_requests','investigation_orders','unread_orders']
+FIELDS_V3=FIELDS+['protocol','patient_model','judge_model','patient_exchanges','gated_requests','investigation_orders','unread_orders','jef_guard','jef_checks','jef_retries','jef_failures']
 PATIENT_RULES=('\n\nStrict rules for this role-play: use only the facts listed above. If a detail is not listed (onset time, intensity, frequency, '
                'doses, allergies, vital signs, results), say you do not know or do not remember it; never estimate or invent it. Answer in plain '
                'lay language, first person, in at most 80 words, as a patient and not as clinical staff. Do not use lists, headings or numbered '
@@ -62,14 +63,29 @@ class V3Tools:
         lines=[f"- {p['tool']} {json.dumps(p['request'],ensure_ascii=False)}: {p['result']}" for p in self.pending];self.pending=[]
         return '[Results of the tests ordered earlier, now available]\n'+'\n'.join(lines)
 
-def run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False):
+def run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False,guard=None):
     locks=root/'logs/case_locks';locks.mkdir(parents=True,exist_ok=True)
     with (locks/(model.replace('/','__')+'__'+case_dir.name+'.lock')).open('a') as lock:
         try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         except BlockingIOError:raise RuntimeError('Case already has an active worker')
-        return _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition)
+        return _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition,guard)
 
-def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False):
+def guarded_patient_answer(log,guard,client,record,messages,text,answer,stats):
+    """JEF check of one patient answer; at most one patient retry. Check results are logged and replayed on resume."""
+    seq=stats['checks'];stats['checks']+=1;prior=[e for e in log.events() if e['event']=='jef_check']
+    if seq<len(prior):event=prior[seq]
+    else:
+        try:res=guard.check(record,text,answer.get('content') or '')
+        except Exception as e:event={'event':'jef_check','seq':seq,'failed':type(e).__name__}
+        else:event={'event':'jef_check','seq':seq,'invents':res['invents'],'drift':res['drift'],'usage':res['usage'],'model':res['model']}
+        log.append(event)
+    if event.get('failed'):stats['failures']+=1;return answer
+    if event['invents']>=INVENTS_THRESHOLD or event['drift']>=DRIFT_THRESHOLD:
+        stats['retries']+=1
+        return client.call(PATIENT_MODEL,messages[:-1]+[{'role':'user','content':text+RETRY_NOTE}],log,'patient_retry',{},max_tokens=8192)
+    return answer
+
+def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False,guard=None):
     log=AuditLog(root/'logs/raw'/model.replace('/','__')/(case_dir.name+'.jsonl'),commit)
     previous=log.events()
     complete=next((e for e in previous if e['event']=='case_complete'),None)
@@ -79,7 +95,7 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
         if not allow_commit_transition:raise RuntimeError('Cannot resume under a different commit without --allow-commit-transition')
         log.append({'event':'commit_transition','previous_commits':old_commits,'new_commit':commit,'policy':'reuse only hash-identical settled responses'})
     if not any(e['event']=='protocol_config' for e in previous):
-        log.append({'event':'protocol_config','protocol':PROTOCOL,'patient_model':PATIENT_MODEL,'min_exchanges':MIN_EXCHANGES,'judge_model':JUDGE_V3,'judge_params':JUDGE_PARAMS,'max_external_turns':10})
+        log.append({'event':'protocol_config','protocol':PROTOCOL,'patient_model':PATIENT_MODEL,'min_exchanges':MIN_EXCHANGES,'judge_model':JUDGE_V3,'judge_params':JUDGE_PARAMS,'max_external_turns':10,'jef_guard':guard is not None})
     patient=json.loads((case_dir/'patient.json').read_text());inv=json.loads((case_dir/'investigations.json').read_text())
     prompts=load_module(root/'upstream/onprem-medical-agents/src/prompts_vivabench.py')
     medprompt=prompts.VIVABENCH_MEDICAL_SYSTEM_PROMPT.replace('`finish`','`admission`')+DOCTOR_RULES
@@ -97,7 +113,7 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
         except (json.JSONDecodeError,TypeError,AttributeError,KeyError):
             log.append({'event':'backend_error','role':'matcher','reason':'settled malformed matcher output','fallback':'unavailable'})
             return []
-    tools=V3Tools(V3CaseTools(inv['observations'],matcher));ntools=0;final=None;start=time.monotonic()
+    tools=V3Tools(V3CaseTools(inv['observations'],matcher));ntools=0;final=None;start=time.monotonic();jstats={'checks':0,'retries':0,'failures':0}
     for turn in range(1,11):
         if turn==10:doctor.append({'role':'system','content':prompts.COMPLETION_PROMPT+' Call admission now.'})
         for subturn in range(40):
@@ -124,6 +140,7 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
         if text:
             patient_messages.append({'role':'user','content':text})
             p=client.call(PATIENT_MODEL,patient_messages,log,'patient',{},max_tokens=8192)
+            if guard is not None:p=guarded_patient_answer(log,guard,client,patient,patient_messages,text,p,jstats)
             patient_messages.append(p);tools.patient_replied();released=tools.release()
             doctor.append({'role':'user','content':(p.get('content') or '')+('\n\n'+released if released else '')})
         else:  # silent turn: never deadlock on pending results
@@ -139,5 +156,5 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
     except (json.JSONDecodeError,TypeError,KeyError,AssertionError):
         log.append({'event':'backend_error','role':'judge','reason':'settled malformed judge output'});verdict,rationale='','not judged: malformed judge output'
     responses=[e['response'] for e in log.events() if e['event'] in ('response','cli_call')];usage=[r['usage'] for r in responses]
-    result={'case_id':case_dir.name,'model':model,'provider':client.config['models'][model]['provider'],'dx_agent':final['diagnosis'],'reasoning':final['reasoning'],'dx_reference':reference['correct_diagnosis'],'judge_correct':verdict,'judge_rationale':rationale,'n_turns':turn,'n_tool_calls':ntools,'tool_errors':tools.errors,'prompt_tokens':sum(u.get('prompt_tokens',0) for u in usage),'completion_tokens':sum(u.get('completion_tokens',0) for u in usage),'reasoning_tokens':sum(u.get('completion_tokens_details',{}).get('reasoning_tokens',0) for u in usage),'cost_usd':str(sum(Decimal(str(u['cost'])) for u in usage)),'latency_s':time.monotonic()-start,'commit':commit,'timestamp':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'physician_review':'','protocol':PROTOCOL,'patient_model':PATIENT_MODEL,'judge_model':JUDGE_V3,'patient_exchanges':tools.exchanges,'gated_requests':tools.gated,'investigation_orders':tools.orders,'unread_orders':len(tools.pending)}
+    result={'case_id':case_dir.name,'model':model,'provider':client.config['models'][model]['provider'],'dx_agent':final['diagnosis'],'reasoning':final['reasoning'],'dx_reference':reference['correct_diagnosis'],'judge_correct':verdict,'judge_rationale':rationale,'n_turns':turn,'n_tool_calls':ntools,'tool_errors':tools.errors,'prompt_tokens':sum(u.get('prompt_tokens',0) for u in usage),'completion_tokens':sum(u.get('completion_tokens',0) for u in usage),'reasoning_tokens':sum(u.get('completion_tokens_details',{}).get('reasoning_tokens',0) for u in usage),'cost_usd':str(sum(Decimal(str(u['cost'])) for u in usage)),'latency_s':time.monotonic()-start,'commit':commit,'timestamp':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'physician_review':'','protocol':PROTOCOL,'patient_model':PATIENT_MODEL,'judge_model':JUDGE_V3,'patient_exchanges':tools.exchanges,'gated_requests':tools.gated,'investigation_orders':tools.orders,'unread_orders':len(tools.pending),'jef_guard':guard is not None,'jef_checks':jstats['checks'],'jef_retries':jstats['retries'],'jef_failures':jstats['failures']}
     log.append({'event':'case_complete','result':result});return result

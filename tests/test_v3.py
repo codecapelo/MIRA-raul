@@ -6,6 +6,9 @@ from mira_runner.runner import MODELS,SAMPLING
 from mira_runner.tools import CaseTools,ToolArgumentsError
 import run_v3
 from mira_runner.tools_v3 import V3CaseTools,specimen
+from mira_runner.runner_v3 import guarded_patient_answer
+from mira_runner.jef import RETRY_NOTE,PATIENT_Q
+from mira_runner.client import AuditLog
 ROOT=Path(__file__).resolve().parents[1]
 MODEL='z-ai/glm-4.5-air'
 
@@ -21,6 +24,7 @@ class Fake:
     def call(self,model,messages,log,role,params=None,**kw):
         self.calls.append((role,model,[dict(m) for m in messages],params,kw))
         if role=='doctor':return self.script.pop(0)
+        if role=='patient_retry':return {'role':'assistant','content':'retried answer'}
         if role=='patient':return {'role':'assistant','content':'patient says %d'%sum(c[0]=='patient' for c in self.calls)}
         if role=='matcher':return {'content':'{"matched":[]}'}
         if role=='judge':return {'content':'{"decision":true,"reasoning":"ok"}'}
@@ -107,4 +111,39 @@ class V3ToolTests(unittest.TestCase):
         self.assertEqual(out,{'not_available_in_this_case':['Urine bilirubin']})
     def test_physical_exam_and_admission_unchanged(self):
         t=self.tools('case_007');self.assertTrue(t.execute('request_physical_exam',{}).startswith('['));self.assertEqual(t.execute('admission',{'diagnosis':'a','reasoning':'b'}),'Case admitted.')
+
+class FakeGuard:
+    def __init__(self,invents=0.0,drift=0.0,fail=False):self.p=(invents,drift);self.fail=fail;self.calls=0
+    def check(self,record,question,answer):
+        self.calls+=1
+        if self.fail:raise RuntimeError('down')
+        return {'invents':self.p[0],'drift':self.p[1],'usage':{'input_tokens':10,'output_tokens':1},'model':'jev-test'}
+
+class GuardTests(unittest.TestCase):
+    def run_guard(self,guard,script=None):
+        with tempfile.TemporaryDirectory() as d:
+            root=make_root(d);fake=Fake(script or [{'role':'assistant','content':'How are you?'},{'role':'assistant','content':None,'tool_calls':[tc(1,'admission',{'diagnosis':'X','reasoning':'Y'})]}])
+            return run_case_v3(root,root/'cases/case_001',MODEL,fake,'abc',guard=guard),fake
+    def test_flagged_answer_is_retried_once_and_replaces_the_first(self):
+        res,fake=self.run_guard(FakeGuard(invents=0.9))
+        retry=[c for c in fake.calls if c[0]=='patient_retry'];self.assertEqual(len(retry),1)
+        self.assertTrue(retry[0][2][-1]['content'].endswith(RETRY_NOTE));self.assertNotIn('Benchmark reminder',retry[0][2][1]['content'])
+        doctor=[c for c in fake.calls if c[0]=='doctor'][-1];self.assertTrue(any(m['role']=='user' and m['content']=='retried answer' for m in doctor[2]))
+        self.assertEqual((res['jef_guard'],res['jef_checks'],res['jef_retries'],res['jef_failures']),(True,1,1,0))
+    def test_clean_answer_is_kept(self):
+        res,fake=self.run_guard(FakeGuard(invents=0.05,drift=0.1))
+        self.assertFalse([c for c in fake.calls if c[0]=='patient_retry']);self.assertEqual((res['jef_checks'],res['jef_retries']),(1,0))
+    def test_jef_failure_never_blocks_the_encounter(self):
+        res,fake=self.run_guard(FakeGuard(fail=True))
+        self.assertEqual((res['jef_failures'],res['jef_retries']),(1,0));self.assertEqual(res['dx_agent'],'X')
+    def test_no_guard_is_the_plain_v3_arm(self):
+        res,fake=self.run_guard(None);self.assertEqual((res['jef_guard'],res['jef_checks']),(False,0))
+    def test_resume_replays_logged_checks_without_calling_jef_again(self):
+        with tempfile.TemporaryDirectory() as d:
+            log=AuditLog(Path(d)/'x.jsonl','c');log.append({'event':'jef_check','seq':0,'invents':0.9,'drift':0.0,'usage':{},'model':'m'})
+            g=FakeGuard();stats={'checks':0,'retries':0,'failures':0}
+            out=guarded_patient_answer(log,g,Fake([]),{},[{'role':'user','content':'q'}],'q',{'role':'assistant','content':'orig'},stats)
+            self.assertEqual(g.calls,0);self.assertEqual(out['content'],'retried answer');self.assertEqual(stats['retries'],1)
+    def test_questions_are_the_validated_ones(self):
+        self.assertEqual(set(PATIENT_Q),{'invents','drift'})
 if __name__=='__main__':unittest.main()

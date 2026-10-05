@@ -21,10 +21,7 @@ JUDGE_Q={'match':{'type':'noul','instructions':'The `proposed_diagnosis` identif
                   'criteria':{'true':'Same condition with the same specific etiology or mechanism, even if worded differently.','false':'A different condition, a broader category, a partial overlap, or a missing key element (specific drug, organism, mechanism or anatomical origin).'}},
          'generic':{'type':'noul','instructions':'The `proposed_diagnosis` is a broader or less specific version of the `reference_diagnosis`: right syndrome or organ system, but without the specific cause.',
                     'criteria':{'true':'Correct general direction but missing the specific cause or mechanism.','false':'Either fully specific and matching, or a different condition.'}}}
-PATIENT_Q={'invents':{'type':'noul','instructions':'The `patient_answer` states at least one specific clinical detail that is NOT supported by `patient_record`: onset time, duration, intensity, character, location, radiation, frequency, dose, allergy or negative finding, vital sign, result, or family/social history.',
-                      'criteria':{'true':'Contains a specific detail absent from the record.','false':'Uses only facts in the record, restates them, or says it does not know or remember. Generic wording is not an invention.'}},
-           'drift':{'type':'noul','instructions':'The `patient_answer` sounds like clinical staff (instructions, checklists, care plans, protocols) instead of a patient speaking about their own experience.',
-                    'criteria':{'true':'Staff-like language or content.','false':'A lay patient speaking in first person.'}}}
+from mira_runner.jef import PATIENT_Q
 
 class Jef:
     def __init__(self,root,cache):
