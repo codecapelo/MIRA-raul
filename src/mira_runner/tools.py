@@ -24,11 +24,7 @@ class CaseTools:
         if name not in ['admission','request_physical_exam','request_radiology']:
             if not isinstance(args.get('test_names'),list) or not all(isinstance(x,str) for x in args['test_names']):raise ToolArgumentsError('test_names must be a string array')
         if name=='request_radiology' and any(not isinstance(v,(str,type(None))) for v in args.values()):raise ToolArgumentsError('Radiology arguments must be strings')
-    def execute(self,name,args):
-        self.validate(name,args)
-        if name=='admission':
-            if not all(isinstance(args.get(k),str) and args[k].strip() for k in ['diagnosis','reasoning']): raise ToolArgumentsError('Empty admission diagnosis/reasoning')
-            return 'Case admitted.'
+    def pool_for(self,name):
         domains={'request_physical_exam':['physical_exam','exam','physical','vitals'],'request_blood_test':['blood','lab','laboratory'],'request_urine_test':['urine'],'request_bedside_test':['bedside','ecg'],'request_radiology':['radiology','imaging'],'request_microbiology':['microbiology'],'request_other_investigation':['other','tissue','csf','genetic','other_fluid','procedure_result','other_test']}
         def routed(o):
             route=o.get('routing_tool')
@@ -42,7 +38,13 @@ class CaseTools:
             if name=='request_microbiology' and test=='t spot tb':return True
             if name=='request_other_investigation' and test=='peripheral blood film':return True
             return False
-        pool=[o for o in self.observations if routed(o) and not o.get('unavailable_for_immediate_care')]
+        return [o for o in self.observations if routed(o) and not o.get('unavailable_for_immediate_care')]
+    def execute(self,name,args):
+        self.validate(name,args)
+        if name=='admission':
+            if not all(isinstance(args.get(k),str) and args[k].strip() for k in ['diagnosis','reasoning']): raise ToolArgumentsError('Empty admission diagnosis/reasoning')
+            return 'Case admitted.'
+        pool=self.pool_for(name)
         if name=='request_physical_exam':
             pool=[o for o in pool if o.get('available_at','time_zero') in ['time_zero','admission','baseline','initial','presentation'] and not o.get('prerequisites')]
             selected=[{'name':o['name'],'value':o['value']} for o in pool]

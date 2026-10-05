@@ -20,6 +20,19 @@
 ## Implementação
 `src/mira_runner/runner_v3.py` (protocolo), `scripts/run_v3.py` (agendador isolado, dry-run por padrão), `tests/test_v3.py`; `CaseTools.validate` foi extraído de `execute` sem mudar comportamento. Resultados em `runs/v3/<modelo>/runN` e `results/v3_<modelo>_runN.csv`, com colunas extras `protocol, patient_model, judge_model, patient_exchanges, gated_requests, investigation_orders, unread_orders`. O Opus como árbitro do juiz continua sendo uma etapa offline separada (`fidelity_eval.py`), a adaptar quando houver resultados.
 
+## Correção das respostas de exame (apontada pelo usuário em 05-10-2026)
+O usuário observou exames que existiam no caso sem retorno por nome e repetições sem aviso. Auditoria dos 1.349 pedidos de investigação nas 230 execuções (v1/v2 e extensões, heurística offline):
+- **623 (46%)** voltaram como "Requested findings are not available" genérico, sem dizer quais exames; em pedidos com vários exames, os não encontrados simplesmente **sumiam** da resposta (ex.: pedido de hemograma e metabólico respondido só com troponina e NT-proBNP).
+- **158 pedidos repetidos** de um mesmo exame, sem nenhum aviso de que já tinham sido pedidos.
+- **Falsos negativos reais:** no caso 007, 'Hemolysis studies' contém bilirrubina e reticulócitos, mas pedidos de bilirrubina total/direta e de reticulócitos voltaram "não disponível" ou omitidos porque o associador LLM (GLM-4.5-Air) não os ligou: 54 ocorrências em 12 encontros. Outros casos de associação fraca existem (por exemplo, "Abdominal CT" da região adrenal não ligado a "Adrenal CT" no caso 006) e dependem do associador.
+- **v1/v2 não são corrigidas** (permanecem como foram executadas); o efeito mais provável é no caso 007 (menos evidência de hemólise para o médico).
+
+**v3** (`src/mira_runner/tools_v3.py`, `V3CaseTools`; `CaseTools` da v1/v2 só ganhou `validate` e `pool_for`, extraídos sem mudar comportamento):
+1. Resposta **por exame pedido**: `findings` (com o nome pedido e o exame correspondente), `already_ordered_earlier` (não repete o dado) e `not_available_in_this_case` (cada exame ausente citado por nome). Mencionado no prompt do médico.
+2. Analito literalmente presente num exame agrupado (ex.: bilirrubina em 'Hemolysis studies') volta **de forma determinística**, sem depender do associador; guarda de espécime impede pedido de urina/líquido de casar com valor sérico. Reprodução offline sobre os pedidos gravados: só 7 pedidos distintos mudam (todos no caso 007) e nenhum falso positivo novo apareceu.
+3. Repetição só é "já pedido" se o mesmo dado (mesmo fato e mesmo analito) já foi retornado; outro analito do mesmo agrupamento conta como informação nova.
+Limite: o resto da associação continua com o GLM-4.5-Air (v1/v2 idêntico); casos como "Abdominal CT" → "Adrenal CT" não são resolvidos aqui.
+
 ## Pontos em aberto
 - Se o limite de 10 turnos deve subir para 12 depois de ver a rodada-teste (as regras gastam turnos).
 - Quais modelos e quantas repetições entram na v3.

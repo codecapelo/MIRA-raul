@@ -12,7 +12,8 @@ from decimal import Decimal
 from pathlib import Path
 from .client import AuditLog
 from .runner import FIELDS,SAMPLING,load_module,terminal_failure
-from .tools import CaseTools,schemas,ToolArgumentsError,NAMES
+from .tools import schemas,ToolArgumentsError,NAMES
+from .tools_v3 import V3CaseTools
 
 PROTOCOL='v3'
 PATIENT_MODEL='claude-sonnet-5-5'
@@ -27,6 +28,7 @@ PATIENT_RULES=('\n\nStrict rules for this role-play: use only the facts listed a
 DOCTOR_RULES=('\n\nBenchmark workflow rules (v3):\n'
               f'- Investigations (blood, urine, bedside/ECG, radiology, microbiology, other) are locked until you have exchanged at least {MIN_EXCHANGES} messages with the patient AND requested the physical examination. An earlier request is refused: keep talking to the patient.\n'
               '- Results are not instant: tests you order are reported only after your next exchange with the patient. After ordering, speak to the patient (explain what you ordered and ask what the tests cannot tell you: medications, exposures, family and social history, timeline), then read the results when they arrive.\n'
+              '- Every requested test is answered by name: `findings`, `already_ordered_earlier` (not repeated; do not ask again) or `not_available_in_this_case`.\n'
               '- Prefer asking before testing: onset, character, associated symptoms, past history, current and recent medications, allergies, family and social history, exposures and travel.\n'
               '- Finalize with `admission` only when the evidence gathered supports your diagnosis.')
 
@@ -95,7 +97,7 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
         except (json.JSONDecodeError,TypeError,AttributeError,KeyError):
             log.append({'event':'backend_error','role':'matcher','reason':'settled malformed matcher output','fallback':'unavailable'})
             return []
-    tools=V3Tools(CaseTools(inv['observations'],matcher));ntools=0;final=None;start=time.monotonic()
+    tools=V3Tools(V3CaseTools(inv['observations'],matcher));ntools=0;final=None;start=time.monotonic()
     for turn in range(1,11):
         if turn==10:doctor.append({'role':'system','content':prompts.COMPLETION_PROMPT+' Call admission now.'})
         for subturn in range(40):

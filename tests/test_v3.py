@@ -5,6 +5,7 @@ from mira_runner.runner_v3 import run_case_v3,V3Tools,PATIENT_MODEL,MIN_EXCHANGE
 from mira_runner.runner import MODELS,SAMPLING
 from mira_runner.tools import CaseTools,ToolArgumentsError
 import run_v3
+from mira_runner.tools_v3 import V3CaseTools,specimen
 ROOT=Path(__file__).resolve().parents[1]
 MODEL='z-ai/glm-4.5-air'
 
@@ -82,4 +83,28 @@ class V3Tests(unittest.TestCase):
             m='qwen/qwen3.8-max-0902';self.assertEqual(len(run_v3.schedule(root,[1],m)),2)
             log=run_v3.target(root,1,m)/'logs/raw'/m.replace('/','__')/'case_001.jsonl';log.parent.mkdir(parents=True)
             log.write_text(json.dumps({'event':'case_complete','result':{'case_id':'case_001','model':m}})+'\n');self.assertEqual(len(run_v3.schedule(root,[1],m)),1)
+
+class V3ToolTests(unittest.TestCase):
+    def tools(self,case):
+        inv=json.loads((ROOT/'cases'/case/'investigations.json').read_text())['observations']
+        return V3CaseTools(inv,lambda requested,pool:[])  # matcher that accepts nothing: only deterministic paths can answer
+    def test_bundled_analyte_is_found_without_the_llm_matcher(self):
+        out=json.loads(self.tools('case_007').execute('request_blood_test',{'test_names':['Total bilirubin','Reticulocyte count']}))
+        self.assertEqual({f['requested'] for f in out['findings']},{'Total bilirubin','Reticulocyte count'})
+        self.assertTrue(all(f['name']=='Hemolysis studies' for f in out['findings']));self.assertNotIn('not_available_in_this_case',out)
+    def test_every_missing_test_is_named_and_mixed_requests_keep_findings(self):
+        out=json.loads(self.tools('case_007').execute('request_blood_test',{'test_names':['Total bilirubin','Serum amylase','Lipase']}))
+        self.assertEqual(out['not_available_in_this_case'],['Serum amylase','Lipase']);self.assertEqual(len(out['findings']),1)
+    def test_repeats_are_flagged_not_resent(self):
+        t=self.tools('case_007');first=json.loads(t.execute('request_blood_test',{'test_names':['Total bilirubin']}))
+        again=json.loads(t.execute('request_blood_test',{'test_names':['Total bilirubin']}))
+        self.assertIn('findings',first);self.assertNotIn('findings',again);self.assertEqual(again['already_ordered_earlier'][0]['requested'],'Total bilirubin')
+        other=json.loads(t.execute('request_blood_test',{'test_names':['Reticulocyte count']}))  # different analyte of the same bundle is new information
+        self.assertIn('findings',other)
+    def test_specimen_guard_blocks_urine_or_fluid_requests_on_serum_bundles(self):
+        self.assertEqual(specimen('urine bilirubin'),frozenset({'urine'}));self.assertEqual(specimen('Total bilirubin'),frozenset())
+        out=json.loads(self.tools('case_007').execute('request_blood_test',{'test_names':['Urine bilirubin']}))
+        self.assertEqual(out,{'not_available_in_this_case':['Urine bilirubin']})
+    def test_physical_exam_and_admission_unchanged(self):
+        t=self.tools('case_007');self.assertTrue(t.execute('request_physical_exam',{}).startswith('['));self.assertEqual(t.execute('admission',{'diagnosis':'a','reasoning':'b'}),'Case admitted.')
 if __name__=='__main__':unittest.main()
