@@ -39,6 +39,14 @@ JEF (TypeSafe Jev, `jev-latest` → `jev-1.13.0`) devolve probabilidades tipadas
 - **Paciente:** detecta "inventa detalhe fora do registro" com AUC 0,90 contra as marcações do Opus (270 positivas, 170 negativas); no limiar 0,30: precisão 0,88, recall 0,82. Deriva para linguagem de equipe: 2 positivos apenas.
 **Guarda na v3 (`--jef`, braço separado `*_jef`):** após cada fala do paciente o JEF estima invenção e deriva; se invenção ≥ 0,30 ou deriva ≥ 0,50, o paciente (Sonnet) é chamado **uma vez** de novo com um lembrete e a segunda resposta substitui a primeira. Falha do JEF não bloqueia o encontro (resposta aceita, contada em `jef_failures`). Checagens ficam no log e são reaproveitadas na retomada. Colunas: `jef_guard, jef_checks, jef_retries, jef_failures`. Limite de gasto do JEF: US$ 5 (contabilidade a 6× o preço documentado de US$ 0,042 por milhão de tokens de entrada).
 
+## Escalonamento GLM-5 → JEF → Qwen → Sonnet/Opus (`--cascade`, 05-10-2026)
+Meta do usuário: manter os benefícios e reduzir o **custo por caso resolvido**. Implementado em `src/mira_runner/cascade.py` (braço novo, `*_cas`; as variantes v3 comuns não mudam):
+1. **GLM-5 conduz a entrevista** como na v3 (exame junto, N=2). A chamada `admission` vira apenas uma **proposta**.
+2. **Triagem pelo JEF** (cerca de US$ 0,001): escore combinado de "sustentado", "causa específica" e "sem alternativas relevantes" sobre a transcrição e a proposta. Se ≥ 0,90, a proposta é aceita e nenhum modelo mais forte é chamado (nos dados anteriores, esse corte aceitava 29 de 60 encontros com 1 erro).
+3. **Qwen3.8 revisa em uma chamada** (sem ferramentas): concorda ou propõe outro diagnóstico e lista perguntas e exames que faltam. Aceita se concordar com confiança ≥ 0,70 e o JEF disser que é a mesma condição.
+4. **Sonnet 5.5 (assinatura Pro, CLI)** vê as duas propostas e pode pedir **uma rodada** de perguntas ao paciente e exames antes de decidir; o **Opus 5.5 (assinatura Pro)** só desempata se o diagnóstico do Sonnet não coincidir com nenhum dos anteriores.
+Os revisores veem só a transcrição, nunca a referência. Cada encontro grava o caminho percorrido (`cascade_path`), a proposta original e se ela estaria correta (`proposal_correct`, julgada à parte quando o final difere), e o **custo de implantação** (`deploy_cost_usd` = médico + associador + Qwen + JEF + custo equivalente de API dos Claude; o paciente simulado e o juiz são sobrecarga do benchmark e ficam fora). Resultado final julgado pelo Gemini Pro como nas demais variantes.
+
 ## Pontos em aberto
 - Se o limite de 10 turnos deve subir para 12 depois de ver a rodada-teste (as regras gastam turnos).
 - Quais modelos e quantas repetições entram na v3.
