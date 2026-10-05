@@ -22,6 +22,7 @@ RETRY_NOTE=('\n\n[Benchmark reminder: your previous reply stated details that ar
 VERIFY_Q={'supported':{'type':'noul','instructions':'The `final_diagnosis` is explicitly supported by findings that appear in `conversation`, not merely compatible with them.','criteria':{'true':'Key findings in the conversation point directly to this diagnosis.','false':'The diagnosis rests on assumptions, on findings that are not in the conversation, or is only one of several fitting options.'}},
           'specific_cause':{'type':'noul','instructions':'The `final_diagnosis` names a specific underlying cause or mechanism (for example a drug, an organism, an anatomical origin or a precipitating event), not only a syndrome or a category.','criteria':{'true':'Names the specific cause or mechanism.','false':'Only a syndrome, organ-level problem or broad category.'}},
           'alternatives':{'type':'noul','instructions':'Important alternative diagnoses remain unexcluded: the findings in `conversation` fit another diagnosis as well as or better than `final_diagnosis`.','criteria':{'true':'A credible alternative explains the findings equally well or better.','false':'The findings clearly favor the final diagnosis over alternatives.'}}}
+MISSING_Q={'missing_definitive':{'type':'noul','instructions':'A definitive confirmatory study that is relevant to `final_diagnosis` (targeted imaging of the specific lesion, biopsy, culture, angiography, or operative/pathology findings) has not been obtained in `conversation`.','criteria':{'true':'A relevant definitive study has not been obtained.','false':'The relevant definitive studies are already in the conversation.'}}}
 SAME_Q={'same':{'type':'noul','instructions':'`diagnosis_a` and `diagnosis_b` describe the same underlying disease process. Extra detail, extra complications, a different level of specificity or different wording in one of them does not make them different.','criteria':{'true':'Same core disease or cause (for example one adds a complication, a mechanism or more detail to the other).','false':'Different root diseases, or they contradict each other on the key cause or organ system.'}}}
 
 class JefChecker:
@@ -45,9 +46,9 @@ class JefChecker:
         resp=self._post({'patient_record':record,'doctor_question':question,'patient_answer':answer},PATIENT_Q,'v3_guard')
         a=resp['answers'];return {'invents':a['invents']['noul'],'drift':a['drift']['noul'],'usage':resp['usage'],'model':resp['model']}
     def verify(self,conversation,diagnosis,rationale):
-        resp=self._post({'conversation':conversation,'final_diagnosis':diagnosis,'final_rationale':rationale},VERIFY_Q,'cascade_verify');a=resp['answers']
+        resp=self._post({'conversation':conversation,'final_diagnosis':diagnosis,'final_rationale':rationale},{**VERIFY_Q,**MISSING_Q},'cascade_verify');a=resp['answers']
         s,sp,alt=a['supported']['noul'],a['specific_cause']['noul'],a['alternatives']['noul']
-        return {'supported':s,'specific':sp,'alternatives':alt,'combined':(s+sp+(1-alt))/3,'usage':resp['usage'],'model':resp['model']}
+        return {'supported':s,'specific':sp,'alternatives':alt,'missing_definitive':a['missing_definitive']['noul'],'combined':(s+sp+(1-alt))/3,'usage':resp['usage'],'model':resp['model']}
     def same(self,diagnosis_a,diagnosis_b):
         resp=self._post({'diagnosis_a':diagnosis_a,'diagnosis_b':diagnosis_b},SAME_Q,'cascade_same')
         return {'same':resp['answers']['same']['noul'],'usage':resp['usage']}
