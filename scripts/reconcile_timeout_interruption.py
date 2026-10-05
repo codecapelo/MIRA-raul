@@ -5,9 +5,9 @@ import argparse,hashlib,json,shutil,sqlite3,subprocess,time,uuid
 from decimal import Decimal
 from pathlib import Path
 p=argparse.ArgumentParser();p.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1])
-p.add_argument('--snapshots',nargs=3,type=Path,required=True);p.add_argument('--tag',default='run23_socket_timeout_v1');p.add_argument('--report',default='run23_timeout_reconciliation.json');p.add_argument('--backup',default='budget_before_timeout_reconciliation.sqlite');p.add_argument('--apply',action='store_true');a=p.parse_args()
+p.add_argument('--snapshots',nargs=3,type=Path,required=True);p.add_argument('--tag',default='run23_socket_timeout_v1');p.add_argument('--report',default='run23_timeout_reconciliation.json');p.add_argument('--backup',default='budget_before_timeout_reconciliation.sqlite');p.add_argument('--apply',action='store_true');p.add_argument('--killed',action='store_true',help='also accept PENDING rows whose trace ends in the bare request (runner killed mid-flight by the operator)');a=p.parse_args()
 r=a.root.resolve();sha=lambda b:hashlib.sha256(b).hexdigest()
-if subprocess.run(['pgrep','-f','run_repetitions|mira_runner|background_'],capture_output=True).stdout.strip():raise RuntimeError('A runner/supervisor is alive')
+if subprocess.run(['pgrep','-f','run_repetitions|mira_runner|background_|run_v3|run_extension'],capture_output=True).stdout.strip():raise RuntimeError('A runner/supervisor is alive')
 snaps=[json.loads(x.read_text()) for x in a.snapshots]
 usage={Decimal(str(s['response']['data']['total_usage'])) for s in snaps};credits={Decimal(str(s['response']['data']['total_credits'])) for s in snaps}
 if len(usage)!=1 or len(credits)!=1:raise RuntimeError('Account usage/credits not stable across snapshots')
@@ -15,22 +15,26 @@ usage=usage.pop()
 if snaps[0]['timestamp']>=snaps[1]['timestamp'] or snaps[1]['timestamp']>=snaps[2]['timestamp']:raise RuntimeError('Snapshots must be chronological')
 db=sqlite3.connect(r/'logs/budget.sqlite',isolation_level=None);db.row_factory=sqlite3.Row
 rows=[dict(x) for x in db.execute("SELECT * FROM calls WHERE state!='settled'")]
-if any(x['state']!='uncertain' for x in rows) or not rows:raise RuntimeError('Expected only uncertain rows')
+if any(x['state']!='uncertain' and not(a.killed and x['state']=='pending') for x in rows) or not rows:raise RuntimeError('Expected only uncertain rows (or pending rows with --killed)')
 known=sum((Decimal(x[0]) for x in db.execute('SELECT cost FROM calls WHERE cost IS NOT NULL')),Decimal(0))
 diff=usage-known;reserved=sum((Decimal(x['reserved']) for x in rows),Decimal(0))
 if diff<0 or diff>reserved:raise RuntimeError('Unexplained account/ledger difference: '+str(diff))
-archive=r/'logs/incomplete'/a.tag;plan=[]
+archive=r/'logs/incomplete'/a.tag;plan=[];killed_ids=set()
 for x in rows:
     meta=json.loads(x['metadata']);path=Path(meta['log']);lines=path.read_bytes().splitlines(keepends=True);ev=[json.loads(l) for l in lines]
-    req,halt=ev[-2],ev[-1]
-    if not(req['event']=='request' and req['request_id']==x['id'] and halt['event']=='halt' and halt['request_id']==x['id'] and (halt['reason']=='timeout' or (halt['reason']=='HTTPFailure' and halt.get('http_status') in (403,429,503)))):raise RuntimeError('Trace tail mismatch: '+str(path))
+    if a.killed and x['state']=='pending' and ev[-1]['event']=='request' and ev[-1]['request_id']==x['id'] and not any(e.get('event')=='response' and e.get('request_id')==x['id'] for e in ev):
+        killed_ids.add(x['id']);tail=1
+    else:
+        tail=2
+        req,halt=ev[-2],ev[-1]
+    if tail==2 and not(req['event']=='request' and req['request_id']==x['id'] and halt['event']=='halt' and halt['request_id']==x['id'] and (halt['reason']=='timeout' or (halt['reason']=='HTTPFailure' and halt.get('http_status') in (403,429,503)))):raise RuntimeError('Trace tail mismatch: '+str(path))
     if any(e.get('event')=='response' and e.get('request_id')==x['id'] for e in ev):raise RuntimeError('Response exists: '+str(path))
     # Every earlier request must be settled with a durable response (paid prefix intact).
-    for e in ev[:-2]:
+    for e in ev[:-tail]:
         if e['event']=='request':
             st=db.execute('SELECT state FROM calls WHERE id=?',(e['request_id'],)).fetchone()
             if not st or st[0]!='settled' or not any(f.get('event')=='response' and f['request_id']==e['request_id'] for f in ev):raise RuntimeError('Prefix not settled/durable: '+str(path))
-    rel=path.relative_to(r);plan.append((x,meta,path,archive/rel,sha(path.read_bytes()),b''.join(lines[:-2]),sorted(rel.parts)))
+    rel=path.relative_to(r);plan.append((x,meta,path,archive/rel,sha(path.read_bytes()),b''.join(lines[:-tail]),sorted(rel.parts)))
 print(json.dumps({'mode':'apply' if a.apply else 'dry-run','uncertain_calls':len(rows),'ledger_known_usd':str(known),'account_usage_usd':str(usage),'unattributed_usd':str(diff),'reservations_usd':str(reserved),'traces':[str(t[3].relative_to(r)) for t in plan]},indent=2))
 if not a.apply:raise SystemExit(0)
 backup=r/'reports'/a.backup
@@ -44,8 +48,8 @@ agg=str(uuid.uuid4());now=time.time()
 db.execute('BEGIN IMMEDIATE')
 try:
     for x,meta,path,dest,h,prefix,_ in plan:
-        meta['operator_timeout_reconciliation']={'reason':'In-flight request ended without usable response (socket timeout or HTTP 403/429/503 per halt event); per-call usage.cost unobservable','halt_reason':[e for e in [json.loads(l) for l in path.read_text().splitlines()[-1:]]][0].get('reason'),'attribution':'per-call cost 0; account-level difference (may be 0) recorded in unattributed row '+agg if diff>0 else 'per-call cost 0; account usage equals ledger sum, zero cost confirmed','archived_trace':str(dest),'trace_sha256':h,'snapshots_sha256':evidence,'provider_usage_cost_available':False,'timestamp':now}
-        c=db.execute("UPDATE calls SET state='settled',cost='0',metadata=? WHERE id=? AND state='uncertain' AND cost IS NULL",(json.dumps(meta),x['id']));assert c.rowcount==1
+        meta['operator_timeout_reconciliation']={'reason':'In-flight request ended without usable response (socket timeout or HTTP 403/429/503 per halt event); per-call usage.cost unobservable','halt_reason':'killed_in_flight' if x['id'] in killed_ids else [e for e in [json.loads(l) for l in path.read_text().splitlines()[-1:]]][0].get('reason'),'attribution':'per-call cost 0; account-level difference (may be 0) recorded in unattributed row '+agg if diff>0 else 'per-call cost 0; account usage equals ledger sum, zero cost confirmed','archived_trace':str(dest),'trace_sha256':h,'snapshots_sha256':evidence,'provider_usage_cost_available':False,'timestamp':now}
+        c=db.execute("UPDATE calls SET state='settled',cost='0',metadata=? WHERE id=? AND state IN ('uncertain','pending') AND cost IS NULL",(json.dumps(meta),x['id']));assert c.rowcount==1
     if diff>0:db.execute("INSERT INTO calls VALUES (?,?,?,?,?)",(agg,'settled','0',str(diff),json.dumps({'model':'multiple','role':'unattributed_interrupted_calls','reason':'Account total_usage exceeded ledger sum after 13 requests lost to socket timeout; cannot be assigned to individual calls','request_ids':[x['id'] for x,*_ in plan],'account_total_usage':str(usage),'ledger_known_before_usd':str(known),'snapshots_sha256':evidence,'provider_usage_cost_invented':False,'timestamp':now})))
     assert db.execute('SELECT sum(cast(cost as real)) FROM calls').fetchone()[0] is not None
     db.execute('COMMIT')

@@ -158,4 +158,30 @@ class ThresholdTests(unittest.TestCase):
             self.assertIn('Order placed',t.execute('request_blood_test',{'test_names':['x']}))
     def test_tags_keep_arms_separate(self):
         m='qwen/qwen3.8-max-0902';self.assertEqual(run_v3.tag(m),'qwen38_max_0902');self.assertEqual(run_v3.tag(m,False,1),'qwen38_max_0902_n1');self.assertEqual(run_v3.tag(m,True,2),'qwen38_max_0902_jef_n2')
+
+class ExamFirstTests(unittest.TestCase):
+    def run_script(self,script,n=1,exam_first=True):
+        with tempfile.TemporaryDirectory() as d:
+            root=make_root(d);fake=Fake(script);res=run_case_v3(root,root/'cases/case_001',MODEL,fake,'abc',min_exchanges=n,exam_first=exam_first)
+            return res,fake
+    def test_exam_is_in_the_first_message_and_gate_needs_only_exchanges(self):
+        name=blood_name()
+        script=[{'role':'assistant','content':'Tell me more.'},
+                {'role':'assistant','content':None,'tool_calls':[tc(1,'request_blood_test',{'test_names':[name]})]},   # exchange 1 done, N=1: allowed immediately (no exam request needed)
+                {'role':'assistant','content':'I ordered blood tests; any travel?'},
+                {'role':'assistant','content':None,'tool_calls':[tc(2,'admission',{'diagnosis':'X','reasoning':'Y'})]}]
+        res,fake=self.run_script(script,1)
+        first=[c for c in fake.calls if c[0]=='doctor'][0][2]
+        self.assertIn('[Initial physical examination findings recorded at presentation]',first[1]['content']);self.assertIn('Hemodynamics',first[1]['content'])
+        self.assertIn('already provided with the presenting complaint',first[0]['content'].replace('The initial physical examination findings are provided together with the presenting complaint; do not request them again.','already provided with the presenting complaint'))
+        self.assertEqual((res['gated_requests'],res['investigation_orders'],res['exam_first'],res['min_exchanges']),(0,1,True,1))
+        patient=[c for c in fake.calls if c[0]=='patient'][0];self.assertNotIn('Initial physical examination',json.dumps(patient[2]))  # the patient never sees the exam
+    def test_repeated_exam_request_is_not_repeated_and_default_is_unchanged(self):
+        t=V3Tools(CaseTools([],None));t.exam_provided=True
+        self.assertIn('already provided',t.execute('request_physical_exam',{}))
+        res,fake=self.run_script([{'role':'assistant','content':'hello'},{'role':'assistant','content':None,'tool_calls':[tc(1,'admission',{'diagnosis':'X','reasoning':'Y'})]}],3,False)
+        self.assertNotIn('Initial physical examination',[c for c in fake.calls if c[0]=='doctor'][0][2][1]['content']);self.assertFalse(res['exam_first'])
+    def test_rules_text_and_tags(self):
+        self.assertIn('AND requested the physical examination',doctor_rules(3));self.assertNotIn('AND requested',doctor_rules(2,True));self.assertEqual(doctor_rules(3),DOCTOR_RULES)
+        m='z-ai/glm-5';self.assertEqual(run_v3.tag(m,False,1,True),'glm5_xf_n1');self.assertEqual(run_v3.tag(m),'glm5')
 if __name__=='__main__':unittest.main()

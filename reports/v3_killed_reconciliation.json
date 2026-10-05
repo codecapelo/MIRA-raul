@@ -1,0 +1,35 @@
+{
+  "timestamp": 1791214384.204764,
+  "reconciled_requests": 2,
+  "unattributed_row": "4dbb6715-85ba-4372-bbac-0c002563a586",
+  "unattributed_usd": "0.019244000",
+  "account_total_usage": "11.957197408",
+  "ledger_total_after": "11.957197408",
+  "states_after": {
+    "settled": 6274
+  },
+  "snapshots_sha256": {
+    "reports/credits_v3_killed_1.json": "c830c8f7dff03167376d8aa73446917be7fe1f26689d1c60f68be304a25d8370",
+    "reports/credits_v3_killed_2.json": "3a53bc002bd06ee1d5ff8ce356cff769945cb41b2ddf845d416565ace351ac2d",
+    "reports/credits_v3_killed_3.json": "1b92a38f97cc75e3b6fb8f322721153be83ae8603e6e8aa0651c90617ccff332"
+  },
+  "ledger_backup": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/reports/budget_before_v3_killed_reconciliation.sqlite",
+  "archive": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/incomplete/v3_killed_n1_v1",
+  "provider_usage_cost_invented": false,
+  "archived": [
+    {
+      "request_id": "b4bde854-ee53-48f1-8429-34e5604e212d",
+      "role": "doctor",
+      "model": "qwen/qwen3.8-max-0902",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/incomplete/v3_killed_n1_v1/runs/v3/qwen38_max_0902_n1/run1/logs/raw/qwen__qwen3.8-max-0902/case_001.jsonl",
+      "sha256": "5ba8a18345156297f61c8215477f4a3f023ba0ef1635a8d5728eb91c520f101f"
+    },
+    {
+      "request_id": "063f9788-7b65-423c-bcb9-a551776043a5",
+      "role": "doctor",
+      "model": "qwen/qwen3.8-max-0902",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/incomplete/v3_killed_n1_v1/runs/v3/qwen38_max_0902_n1/run1/logs/raw/qwen__qwen3.8-max-0902/case_003.jsonl",
+      "sha256": "c87c273442022ad64ebf9864bdae23779b99a9ffd3a749cce10ae97705d8f819"
+    }
+  ]
+}
