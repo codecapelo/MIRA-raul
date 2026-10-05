@@ -71,6 +71,14 @@ class V3CaseTools(CaseTools):
         out={}
         if findings:out['findings']=findings
         if already:out['already_ordered_earlier']=already
+        if missing and self.enforce:  # a request sent to the wrong tool: say which tool holds it (no content is revealed)
+            wrong=[]
+            for q in list(missing):
+                for tool in ('request_blood_test','request_urine_test','request_bedside_test','request_radiology','request_microbiology','request_other_investigation'):
+                    if tool==name:continue
+                    if any(len(norm(q))>=5 and (identity(q)==identity(o['name']) or norm(q) in norm(o['name']) or norm(o['name']) in norm(q)) for o in self.pool_for(tool)):
+                        wrong.append({'requested':q,'use_tool':tool});missing.remove(q);break
+            if wrong:out['wrong_tool']=wrong
         if needs:out['requires_prior_procedure']=needs
         if missing:out['not_available_in_this_case']=missing
         return json.dumps(out,ensure_ascii=False)

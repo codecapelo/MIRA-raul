@@ -76,6 +76,13 @@ class ConsultTests(unittest.TestCase):
         self.assertEqual(len(unmet_decisive({'decisive':[{'tool':'t','test_names':['Cardiac MRI']}]},['Troponin'])),1);self.assertEqual(unmet_decisive({'decisive':[{'tool':'t','test_names':['Cardiac MRI']}]},['cardiac MRI with contrast']),[])
         self.assertIn('Before admission',nudge_text([{'tool':'t','test_names':['a']}]))
 
+class WrongToolTests(unittest.TestCase):
+    def test_request_sent_to_the_wrong_tool_names_the_right_one(self):
+        t=tools('case_001');o=json.loads(t.execute('request_other_investigation',{'test_names':['Coronary angiography']}))
+        self.assertEqual(o['wrong_tool'],[{'requested':'Coronary angiography','use_tool':'request_radiology'}]);self.assertNotIn('not_available_in_this_case',o)
+        o=json.loads(t.execute('request_blood_test',{'test_names':['Serum amylase']}));self.assertEqual(o,{'not_available_in_this_case':['Serum amylase']})  # absent everywhere: still just unavailable
+        t2=tools('case_001',enforce=False);self.assertEqual(json.loads(t2.execute('request_other_investigation',{'test_names':['Coronary angiography']})),{'not_available_in_this_case':['Coronary angiography']})
+
 class OverrideTests(unittest.TestCase):
     def test_judge_override_applies_only_to_case_009_and_only_when_enabled(self):
         script=[{'role':'assistant','content':'hi'},ADMIT(1)]

@@ -32,7 +32,8 @@ REVIEW_BLIND=('You are a senior physician giving an independent second opinion o
               'Use only what is in the transcript; never invent findings. Give your most likely diagnosis with its specific cause or mechanism and a confidence. '
               'List at most 3 patient questions and at most 4 tests that would materially change your decision, or empty lists if the transcript already suffices. '
               'Tests use these tools: request_blood_test, request_urine_test, request_bedside_test, request_radiology, request_microbiology, request_other_investigation. '
-              'If your diagnosis names a mechanism, site or cause that only an operation or a biopsy can confirm, request the operative or pathology findings (a biopsy of a site that needs a procedure first requires that procedure first, for example laparoscopy or laparotomy).')
+              'If your diagnosis names a mechanism, site or cause that only an operation or a biopsy can confirm, request the operative or pathology findings (a biopsy of a site that needs a procedure first requires that procedure first, for example laparoscopy or laparotomy). '
+              'If it names a vascular, structural or anatomical lesion, ALSO request the targeted imaging or angiography that would show that lesion (for example coronary angiography, CT angiography, MRI) in the same list.')
 QWEN_FORMAT_OLD=('Return one JSON object: {"verdict":"agree"|"disagree"|"unsure","diagnosis":str,"confidence":number 0-1,"reasoning":str,'
              '"missing_questions":[str],"missing_tests":[{"tool":str,"test_names":[str]}]}')
 CLAUDE_FORMAT=('Put ONE JSON object, serialized as a string, in the "content" field: {"decision":"accept_proposal"|"accept_reviewer"|"own","diagnosis":str,"reasoning":str,'
