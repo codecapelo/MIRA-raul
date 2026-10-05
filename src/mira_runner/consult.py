@@ -11,28 +11,28 @@ import json,re
 from .cascade import parse_json,clean_requests
 from .semantics import identity
 
-CONSULT_SYSTEM=('You are a senior emergency and internal-medicine consultant giving a consultation map to a colleague who will interview the patient and order tests. '
-                'You see ONLY the presenting complaint and the initial physical examination findings: no history and no test results. Do not claim certainty. '
-                'Return one JSON object: {"urgency":"emergency"|"urgent"|"routine","urgency_reason":str,'
-                '"differentials":[exactly 5 objects {"diagnosis":str,"confirm_with":str}],'
-                '"decisive_investigations":[at most 6 objects {"tool":str,"test_names":[str],"why":str}],'
-                '"key_questions":[at most 6 str],"plan":[at most 5 short ordered steps]}. '
+CONSULT_SYSTEM=('You are a senior emergency and internal-medicine consultant giving a SHORT consultation map to a colleague who will interview the patient and order tests. '
+                'You see ONLY the presenting complaint and the initial physical examination findings: no history and no test results. Do not claim certainty. Be concise: the whole answer under 300 words. '
+                'Return one JSON object: {"urgency":"emergency"|"urgent"|"routine","urgency_reason":str (max 15 words),'
+                '"differentials":[exactly 5 objects {"diagnosis":str,"confirm_with":str (max 10 words)}],'
+                '"decisive_investigations":[at most 4 objects {"tool":str,"test_names":[at most 2 short names],"why":str (max 12 words)}],'
+                '"key_questions":[at most 4 str],"plan":[at most 4 short ordered steps]}. '
                 '"emergency" means an immediately life-threatening or time-critical picture (shock, hemodynamic instability, acute neurological deficit, acute abdomen with peritonism, tamponade, etc.). '
-                'Decisive investigations are the studies that would confirm or exclude the leading differentials, including definitive ones (targeted imaging of the lesion, cultures, angiography, '
-                'operative or pathology findings). Tools: request_blood_test, request_urine_test, request_bedside_test, request_radiology, request_microbiology, request_other_investigation '
+                'DECISIVE investigations are only the confirmatory or discriminating studies that separate the leading differentials (targeted imaging of the suspected lesion, culture, angiography, '
+                'biopsy, operative or pathology findings). Do NOT list routine baseline labs or generic screening. Tools: request_blood_test, request_urine_test, request_bedside_test, request_radiology, request_microbiology, request_other_investigation '
                 '(procedures such as laparoscopy, laparotomy, thoracentesis, biopsy go through request_other_investigation; a biopsy of a site that needs a procedure first requires that procedure first).')
 CLAUDE_FORMAT=' Put the JSON object, serialized as a string, in the "content" field.'
 
 def consult_map(client,log,model,complaint,exam_text):
     user=f'PRESENTING COMPLAINT: {complaint}\n\nINITIAL PHYSICAL EXAMINATION:\n{exam_text or "(none recorded)"}'
-    m=client.call(model,[{'role':'system','content':CONSULT_SYSTEM+(CLAUDE_FORMAT if model.startswith('claude') else '')},{'role':'user','content':user}],log,'consult_map',{},max_tokens=8192)
+    m=client.call(model,[{'role':'system','content':CONSULT_SYSTEM+(CLAUDE_FORMAT if model.startswith('claude') else '')},{'role':'user','content':user}],log,'consult_map',{},max_tokens=2500)
     out=parse_json(m.get('content') or '')
     if not isinstance(out,dict):log.append({'event':'backend_error','role':'consult_map','reason':'unparseable consultation map'});return None
     diffs=[d for d in (out.get('differentials') or []) if isinstance(d,dict) and isinstance(d.get('diagnosis'),str)][:5]
     items=[]
-    for t in (out.get('decisive_investigations') or [])[:6]:
+    for t in (out.get('decisive_investigations') or [])[:4]:
         _,ts=clean_requests([],[t] if isinstance(t,dict) else [])
-        if ts:items.append({**ts[0],'why':str(t.get('why',''))[:200]})
+        if ts:items.append({**ts[0],'test_names':ts[0]['test_names'][:2],'why':str(t.get('why',''))[:120]})
     urg=out.get('urgency') if out.get('urgency') in ('emergency','urgent','routine') else 'urgent'
     return {'urgency':urg,'urgency_reason':str(out.get('urgency_reason',''))[:300],'differentials':diffs,'decisive':items,'questions':[q for q in (out.get('key_questions') or []) if isinstance(q,str)][:6],'plan':[q for q in (out.get('plan') or []) if isinstance(q,str)][:5]}
 

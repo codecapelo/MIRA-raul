@@ -48,6 +48,11 @@ class ConsultTests(unittest.TestCase):
         c=consult_map(MapFake([],{}),L(),OPUS,'complaint','- a: b')
         self.assertEqual((len(c['differentials']),len(c['decisive'])),(5,1));self.assertEqual(c['urgency'],'emergency')
         text=format_map(c);self.assertIn('Urgency: emergency (shock)',text);self.assertIn('unlocked immediately',text);self.assertIn('Decisive investigations',text)
+    def test_map_is_clamped_to_four_items_with_two_names(self):
+        class L:
+            def append(self,e):pass
+        big={**MAP,'decisive_investigations':[{'tool':'request_blood_test','test_names':['a','b','c','d'],'why':'w'*500} for _ in range(9)]}
+        c=consult_map(MapFake([],{},big),L(),OPUS,'c','e');self.assertEqual(len(c['decisive']),4);self.assertTrue(all(len(t['test_names'])<=2 and len(t['why'])<=120 for t in c['decisive']))
     def test_map_uses_only_complaint_and_exam_and_reaches_the_doctor(self):
         r,f=run([{'role':'assistant','content':'hi'},ADMIT(1)],cmap={**MAP,'decisive_investigations':[]})
         m=[c for c in f.calls if c[0]=='consult_map'][0];self.assertEqual(m[1],OPUS);u=m[2][1]['content'];self.assertIn('PRESENTING COMPLAINT',u);self.assertIn('INITIAL PHYSICAL EXAMINATION',u);self.assertNotIn('patient says',u)

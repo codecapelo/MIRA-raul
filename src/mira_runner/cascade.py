@@ -53,10 +53,10 @@ def transcript(msgs):
     return '\n'.join(lines)
 
 def parse_json(text):
-    try:return json.loads(text)
+    try:return json.loads(text,strict=False)
     except (json.JSONDecodeError,TypeError):
         m=re.search(r'\{.*\}',text or '',re.S)
-        try:return json.loads(m.group(0)) if m else None
+        try:return json.loads(m.group(0),strict=False) if m else None
         except json.JSONDecodeError:return None
 
 def clean_requests(questions,tests):
