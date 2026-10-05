@@ -3,12 +3,12 @@
   "runner_exit_code": 0,
   "args": [
     "--model",
-    "claude-sonnet-5-5",
+    "claude-opus-5-5",
     "--runs",
     "1",
     "--parallel-cases",
     "2"
   ],
-  "supervisor_pid": 931,
-  "timestamp": 1791158107.6490471
+  "supervisor_pid": 2646,
+  "timestamp": 1791158951.5253608
 }
