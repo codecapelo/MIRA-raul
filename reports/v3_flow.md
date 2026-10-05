@@ -33,4 +33,4 @@ Gemini 3.1 Pro, temperatura 0, com o critério do caso 009 ("obstrução por ste
 Mapa US$ 0,015; entrevista do GLM-5 mais associador cerca de US$ 0,013; JEF US$ 0,001; cada chamada do Sonnet de revisão cerca de US$ 0,048 (em geral duas por caso revisado). Aceitos pelo JEF custam cerca de US$ 0,03; revisados, US$ 0,10 a 0,24.
 
 ## Estado dos testes
-Rodado: o fluxo até a versão v3.2b (9/10, US$ 0,089 por encontro). **Ainda sem rodar:** o auto-resolver de "ferramenta errada" e de pré-requisito dentro da rodada do revisor, a dica `wrong_tool` para o médico e a instrução que manda o revisor pedir também a imagem ou angiografia da lesão nomeada (as três corrigem o caso 001 em tese; 105 testes passam, nenhum com modelos reais).
+Rodado nos 10 casos, uma vez por caso: v3.2b (9/10, US$ 0,089 por encontro) e v3.2c, com as correções (dica `wrong_tool`, auto-resolver de pré-requisito na rodada do revisor, instrução de pedir também a imagem da lesão): **10/10, US$ 0,070 por encontro**. O caso 001 passou a acertar já na primeira camada, graças à dica de ferramenta e aos pré-requisitos de procedimento.
