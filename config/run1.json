@@ -271,6 +271,33 @@
       "transport": "claude_code_subscription_cli_json_action",
       "effort": "high",
       "note": "doctor/patient via subscription CLI (no OpenRouter charge); prices are API-equivalent for reference only"
+    },
+    "google/gemini-3.1-pro-preview": {
+      "provider": "google-ai-studio",
+      "provider_name": "Google AI Studio",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1048576,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 2.0,
+        "output": 12.0
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "note": "fidelity/judge offline evaluation only; never a doctor or run judge"
     }
   }
 }
