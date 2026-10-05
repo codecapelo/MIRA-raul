@@ -1,0 +1,189 @@
+{
+ "1_case_001": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>adjudicate:claude-opus-5-5>chose_blind",
+  "blind_dx": "Coronary stent infection (MRSA) with stent disruption and rapidly enlarging mycotic coronary pseudoaneurysm, rupturing into the pericardium causing hemopericardium/cardiac tamponade and cardiogenic shock, in the setting of MRSA bacteremia/endovascular infection (possible pacemaker lead or valve endocarditis as source)",
+  "blind_conf": 0.85,
+  "sonnet_cost": 0.0725786,
+  "adj_cost": 0.053439999999999994,
+  "final_ok": true,
+  "prop_ok": false,
+  "n_adj": 1,
+  "rationale_reasoning": "Hospitalized dialysis-dependent diabetic with MRSA bacteremia and prior coronary stent plus pacemaker develops new chest pain and shock. Echo showed new LV wall-motion abnormalities and pericardial effusion progressing to tamponade. After pericardiocentesis, angiography showed disruption of the prior stent and a rapidly enlarging coronary pseudoaneurysm. This unifies all findings: seeding of the stent by MRSA caused infected stent/arterial wall destruction (mycotic pseudoaneurysm), with regional ischemia/wall-motion abnormality and rupture into the pericardial space causing tamponade. The earlier proposed perivalvular abscess rupture or septic embolus is less likely, since angiography directly showed the stent and coronary pathology. Mechanism is infected stent with coronary perforation/rupture, not simple stent thrombosis. Management: drainage, emergent surgical repair (CABG/ligation/resection of infected segment and stent removal), continued MRSA therapy, and search for other endovascular foci including the pacemaker lead and valves."
+ },
+ "1_case_002": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>adjudicate:claude-opus-5-5>chose_blind",
+  "blind_dx": "Acute isolated/predominantly atrial myocarditis (post-viral, with mesalazine hypersensitivity myocarditis as the main alternative trigger). It has caused sinus node failure or atrial standstill with a junctional escape rhythm at 42/min. The result is right-sided heart failure with severe tricuspid regurgitation and a dilated RV and LA.",
+  "blind_conf": 0.5,
+  "sonnet_cost": 0.09538079999999999,
+  "adj_cost": 0.0713294,
+  "final_ok": true,
+  "prop_ok": false,
+  "n_adj": 1,
+  "rationale_reasoning": "Symptoms began about 2 weeks after a respiratory infection. The ECG shows no P waves and a narrow-QRS escape rhythm at 42/min, so sinus or atrial activity has failed. High-sensitivity troponin is mildly raised at 31 ng/L, and NT-proBNP is raised at 432 pg/mL. Echo shows preserved LV function, a dilated LA and RV, impaired RV function, severe TR and PASP 58 mmHg, with only mild MR. CT pulmonary angiography excludes PE. It shows RV dilatation, bilateral pleural effusions and hepatic vein contrast reflux, which indicates systemic venous congestion. That fits the leg edema and abdominal pain, probably from hepatic congestion. Cardiac MRI shows left atrial late gadolinium enhancement with borderline T1/T2 edema and no substantial ventricular scar. That points to an inflammatory process centred on the atria, not classic LV myocarditis or a cardiomyopathy. Atrial myocarditis would explain the sinus node and atrial dysfunction and the atrial dilatation. Severe TR with RV failure follows from this, along with loss of atrial transport and bradycardia-related congestion. The D-dimer of 2.94 µg/mL is nonspecific, and it is raised in heart failure and effusions. PE is excluded on CT. The prior working diagnosis of 'viral myocarditis' is plausible but incomplete, because the lesion is atrial rather than ventricular. Mesalazine is a recognised cause of hypersensitivity myopericarditis, and it is the patient's only drug, so it needs to be considered. Other possibilities are less likely. Lyme carditis is unlikely with no tick exposure and no rash, though this has not been tested. Thyroid disease and an electrolyte disturbance such as hyperkalemia are not yet excluded, because TSH, potassium and creatinine were unavailable. Cardiac sarcoidosis or amyloidosis (atrial involvement) is a differential to keep in mind. Chronic thromboembolic or primary pulmonary hypertension is less likely given the acute course and the negative CT."
+ },
+ "1_case_004": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>accept_blind",
+  "blind_dx": "Extensive-stage small cell lung carcinoma (biopsy-proven by EBUS) with bulky bilateral hilar/mediastinal adenopathy compressing the right middle lobe bronchus, causing recurrent right milky (presumed chylous) pleural effusion via lymphatic/thoracic duct obstruction by nodal disease",
+  "blind_conf": 0.85,
+  "sonnet_cost": 0.0489056,
+  "adj_cost": 0,
+  "final_ok": true,
+  "prop_ok": true,
+  "n_adj": 0,
+  "rationale_reasoning": "A heavy smoker (45 pack-years) had about 2 weeks of cough and dyspnea. He had a right effusion with milky fluid that recurred days after drainage. No trauma or surgery was reported. CT showed bilateral hilar and mediastinal adenopathy, severe right middle lobe bronchial narrowing, atelectasis and infiltrates. EBUS-guided biopsy established extensive-stage small cell lung cancer. Mediastinal nodal infiltration can obstruct lymphatic drainage or the thoracic duct, which fits a recurrent chylothorax. The recurrent dyspnea is explained by the re-accumulating effusion plus atelectasis from bronchial obstruction. Gram stain and culture of the initial pleural fluid were negative, which argues against infection or empyema. Uncertainty remains. Chylous nature was never confirmed, because pleural triglycerides were unavailable. A malignant or paraneoplastic effusion, or a post-obstructive pneumonia component, could coexist. Pleural cytology and staging for metastases, including brain, were not available. The extensive stage is stated by the biopsy report, but its basis was not shown."
+ },
+ "1_case_007": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>accept_blind",
+  "blind_dx": "Pembrolizumab-induced (immune checkpoint inhibitor-related) warm/mixed autoimmune hemolytic anemia: DAT positive for IgG and C3d, with severe anemia (Hb 45 g/L)",
+  "blind_conf": 0.88,
+  "sonnet_cost": 0.0508436,
+  "adj_cost": 0,
+  "final_ok": true,
+  "prop_ok": true,
+  "n_adj": 0,
+  "rationale_reasoning": "Progressive jaundice, pallor, lethargy and lightheadedness began about 14 days after the first pembrolizumab infusion. Bilirubin is 61 µmol/L and 72% unconjugated. LDH is 1214 U/L, haptoglobin is <0.3 g/L, and reticulocytes are 23.7% (261.7×10^9/L). The film shows spherocytes and reticulocytosis. The DAT is IgG 2+ and C3d 5+, which confirms immune-mediated hemolysis with a warm/mixed pattern. Hb 45 g/L explains the tachycardia and symptoms. Against hepatic or obstructive jaundice: the bilirubin is mainly unconjugated, there is no pain, and the patient is post-cholecystectomy. Liver enzymes and ALP were not available, so immune hepatitis and liver metastases are not fully excluded. The dark stools are non-specific and could be GI bleeding from gastritis, but the hemolysis pattern and reticulocytosis explain the anemia without needing blood loss. Other causes to consider are drug-induced immune hemolysis from other medications the patient could not recall, and cold agglutinin disease given the strong C3d. Differential: Evans syndrome (needs platelet count), other drug-induced AIHA, malignancy-associated AIHA. Management: stop pembrolizumab, give high-dose corticosteroids, transfuse cautiously with compatible blood, give folate, and involve hematology."
+ },
+ "1_case_008": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>adjudicate:claude-opus-5-5>chose_proposal",
+  "blind_dx": "Spontaneous (non-traumatic) spinal epidural hematoma at C6-T2 causing acute compressive myelopathy, most likely from rupture of the posterior epidural venous plexus (idiopathic), with an underlying spinal vascular malformation (epidural AVM or cavernous malformation) as the main alternative source",
+  "blind_conf": 0.6,
+  "sonnet_cost": 0.07065740000000001,
+  "adj_cost": 0.0539694,
+  "final_ok": true,
+  "prop_ok": true,
+  "n_adj": 1,
+  "rationale_reasoning": "Interscapular pain came first, followed over about 2 days by progressive paraplegia (legs 0/5, arms 5/5), loss of perianal sensation and sphincter dysfunction. MRI shows an epidural hematoma compressing the cord and posterior thecal sac from C6 to T2. This is the diagnosis, so it does not need to be inferred. Platelets (250,000), PT/INR (12 s/1.0), aPTT (30 s) and fibrinogen (300 mg/dL) are all normal. The patient takes no anticoagulants and reports no trauma, injections or surgery, so there is no coagulopathic or iatrogenic cause. This pattern fits spontaneous bleeding from the fragile valveless epidural venous plexus, possibly after an unnoticed Valsalva-type strain. A vascular malformation is the main alternative. Leg-predominant weakness with arms spared is somewhat unusual for a C6-T2 lesion, but it is plausible with compression of the posterior and ventral cord and early central cord or corticospinal involvement. Another possibility is that the thoracic extent is longer than reported. Preserved bulbocavernosus reflex with absent perianal sensation points to an upper motor neuron (cord) lesion, not conus or cauda equina. Neutrophilic leukocytosis (13,000, 85% neutrophils) is probably a stress response. I cannot fully exclude an infected or abscess-related collection, because ESR/CRP and cultures were unavailable and the patient does not know about IV drug use or infection. Management is emergent decompressive laminectomy with hematoma evacuation, and the sooner the better. Hematoma tissue should go for pathology and culture."
+ },
+ "1_case_010": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>accept_blind",
+  "blind_dx": "Ectopic pregnancy in an unusual location: abdominal (likely splenic or left upper quadrant peritoneal) ectopic pregnancy. It is a growing vascular left upper abdominal mass, with a positive hCG and no intrauterine sac.",
+  "blind_conf": 0.7,
+  "sonnet_cost": 0.070491,
+  "adj_cost": 0,
+  "final_ok": true,
+  "prop_ok": false,
+  "n_adj": 0,
+  "rationale_reasoning": "She is about 5 weeks pregnant with hCG 10,130 IU/L. Transvaginal ultrasound shows no intrauterine sac, a thin 8 mm endometrium and no adnexal abnormality, so the pregnancy is of unknown location and ectopic until proven otherwise. The pelvis is non-tender, the cervix is closed, and there is no bleeding or cervical motion tenderness. The symptoms are 8 days of progressive isolated left upper quadrant pain with nausea and vomiting that did not respond to treatment for gastroenteritis. CT shows a left upper abdominal lesion that grew from 21 mm to a vascular mass of about 46x40x56 mm. Together this fits an extrauterine implantation in the left upper quadrant, such as the spleen or omentum, with trophoblastic vascularity. A negative adnexal scan makes a tubal ectopic less likely to explain the pain. Alternatives are a splenic lesion (hemangioma, splenic artery aneurysm, or a tumor with pregnancy-related bleeding), a pancreatic or gastric mass, and an adrenal or renal lesion. These are less likely given the hCG and the absence of an intrauterine pregnancy. She is hemodynamically stable now (BP 107/77, HR 89), but the vascular mass carries a high risk of catastrophic hemorrhage. She needs urgent surgical and gynecology involvement. Methotrexate is a poor choice for a large vascular abdominal ectopic, and surgical excision or splenectomy is usually needed. Hemoglobin and blood group are not available in this case and should be obtained urgently."
+ },
+ "2_case_001": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>accept_blind",
+  "blind_dx": "Infected (mycotic) coronary stent pseudoaneurysm due to MRSA bacteremia/endovascular infection, with stent disruption and rupture into the pericardium causing hemorrhagic/purulent cardiac tamponade and cardiogenic shock",
+  "blind_conf": 0.85,
+  "sonnet_cost": 0.0505756,
+  "adj_cost": 0,
+  "final_ok": true,
+  "prop_ok": true,
+  "n_adj": 0,
+  "rationale_reasoning": "The patient has MRSA bacteremia with reported cardiac involvement. She/he is on dialysis and diabetic, with a prior coronary stent and a pacemaker. New chest pain and shock followed. Echo showed new LV wall-motion abnormalities, a pericardial effusion and then tamponade. After pericardiocentesis, coronary angiography showed disruption of the prior stent and a rapidly enlarging coronary pseudoaneurysm. The pericardial fluid was yellowish and turbid, which fits purulent or infected fluid. Together these point to hematogenous seeding of the stent with MRSA, arterial wall destruction, a pseudoaneurysm and rupture or leak into the pericardium. The new wall-motion abnormalities fit regional ischemia or compromised flow from the stent and vessel disruption. Alternatives are a ruptured annular or myocardial abscess, purulent pericarditis from lead or device infection, and septic coronary embolism. The angiographic stent disruption and pseudoaneurysm make these less likely as the main cause, though they could coexist. Troponin, ECG, cultures of the pericardial fluid, TEE and the susceptibility data were unavailable, so the organism in the pericardium and the status of the valves and leads are unconfirmed."
+ },
+ "2_case_002": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>adjudicate:claude-opus-5-5>chose_blind",
+  "blind_dx": "Acute atrial-predominant myocarditis (probably post-viral) with atrial standstill or high-grade AV block. This gives a narrow-complex junctional escape rhythm at 42/min with no P waves. The slow rate and loss of atrial contribution have led to right-sided heart failure: RV dilatation and dysfunction, severe functional tricuspid regurgitation, hepatic and systemic venous congestion, and pleural effusions. Mesalazine hypersensitivity myocarditis is a less likely alternative trigger.",
+  "blind_conf": 0.5,
+  "sonnet_cost": 0.11621379999999999,
+  "adj_cost": 0.0740094,
+  "final_ok": true,
+  "prop_ok": false,
+  "n_adj": 1,
+  "rationale_reasoning": "Symptoms began about 2 weeks after a viral illness. The ECG shows no P waves and a narrow-QRS escape rhythm at 42/min, so there is a conduction or atrial problem. hs-troponin T is mildly raised (31 ng/L) and NT-proBNP is modestly raised (432 pg/mL). These point to limited myocardial injury, not a large ventricular myocarditis. Echo shows preserved LV systolic function, dilated LA and RV, impaired RV function, severe TR and PASP 58 mmHg, with only mild MR. Cardiac MRI shows left atrial late gadolinium enhancement and borderline T1/T2 edema, with no substantial ventricular scar. That supports atrial myocarditis. CT pulmonary angiography excludes pulmonary embolism and shows RV dilatation, bilateral pleural effusions and contrast reflux into the hepatic veins. This fits right heart failure with venous congestion, which explains the leg edema and abdominal pain (hepatic congestion). The echo pulmonary pressure is probably secondary to the RV and TR picture. The left-sided pathology is mild, so chronic pulmonary hypertension and a primary pulmonary cause are less likely. The earlier 'LV myocarditis' framing does not fit, because LV function is preserved and there is no ventricular scar. Cardiac sarcoidosis is possible in a patient with inflammatory bowel disease and conduction disease, but it is unproven. FDG-PET, CT chest, ACE and calcium were not available. Mesalazine is a known cause of hypersensitivity myocarditis and pericarditis. However, the patient reports no rash or drug reaction, and eosinophil count and CRP were not obtainable. The viral trigger is unconfirmed because viral PCR and serology were not available. Management is admission with telemetry, a temporary pacing wire if the patient is unstable or the rhythm does not recover, careful diuresis, and consideration of stopping mesalazine if there is a hypersensitivity concern. Anti-inflammatory or immunosuppressive therapy should be decided after further workup. The case is still unresolved because most discriminating tests were unavailable."
+ },
+ "2_case_005": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>accept_blind",
+  "blind_dx": "Metastatic malignant melanoma of unknown primary involving the pleura (primary pleural/pleuro-pulmonary presentation with malignant left effusion and nodular circumferential pleural thickening), mimicking asbestos-related mesothelioma; occurring in an immunosuppressed RA patient on methotrexate and baricitinib",
+  "blind_conf": 0.8,
+  "sonnet_cost": 0.0501056,
+  "adj_cost": 0,
+  "final_ok": true,
+  "prop_ok": true,
+  "n_adj": 0,
+  "rationale_reasoning": "Subacute dyspnea, dry cough and hypoxemia with a moderate left effusion and nodular circumferential pleural thickening including mediastinal pleura on CT; PET shows intensely FDG-avid circumferential pleural disease. Cytology and CT-guided biopsy show atypical epithelioid and spindle cells that are SOX10, Melan-A and S100 positive, and negative for calretinin, WT1, EMA and p40. This excludes mesothelioma, carcinoma (p40 negative) and sarcomatoid mesothelioma, and is a melanocytic lineage profile. No cutaneous, subcutaneous or ocular primary was found, so this is melanoma of unknown primary. Possible primaries are a regressed cutaneous lesion, a mucosal or uveal site, or a rare primary pleural melanoma. Mucosal and dilated eye examinations were not available. Immunosuppression (JAK inhibitor and methotrexate) may contribute to tumor risk or growth. The stable RA-ILD and the diffuse crackles may add to the hypoxemia, but the pleural process explains the presentation. Infection and drug pneumonitis are less likely given normal inflammatory markers and a diagnostic biopsy. Some alternatives remain: clear cell sarcoma and other SOX10-positive tumors, though these are much rarer. Staging and mutation status are still incomplete."
+ },
+ "2_case_006": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>accept_blind",
+  "blind_dx": "Primary adrenal insufficiency (Addison's disease) due to tuberculous adrenalitis (Mycobacterium tuberculosis infection of both adrenal glands, with granulomatous destruction and calcification)",
+  "blind_conf": 0.8,
+  "sonnet_cost": 0.045127600000000004,
+  "adj_cost": 0,
+  "final_ok": true,
+  "prop_ok": true,
+  "n_adj": 0,
+  "rationale_reasoning": "Skin hyperpigmentation over the knuckles and knees, very high ACTH (365-577 ng/L) with low cortisol (139-161 nmol/L), and low sodium and glucose together indicate primary adrenal failure. CT shows bilateral adrenal nodules with calcification, plus old TB lesions in the lungs and pleura. T-SPOT.TB is positive. Adrenal biopsy shows necrotizing granulomatous inflammation. Necrotizing (caseating-type) granulomas with calcification in bilateral adrenals and old pulmonary or pleural TB make TB the most likely cause. Negative AFB and silver stains do not exclude TB, because adrenal biopsy has low smear sensitivity in paucibacillary disease. They argue against fungal infection (histoplasmosis, which also causes calcified bilateral adrenal disease) and are less supportive of it. Sarcoidosis is unlikely because its granulomas are non-necrotizing. Autoimmune adrenalitis does not cause calcified necrotizing granulomas. Remaining uncertainty: the biopsy was not culture- or PCR-confirmed, the T-SPOT only shows TB infection, potassium, renin and aldosterone were not available, and no symptoms or history were obtainable."
+ },
+ "2_case_008": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>accept_blind",
+  "blind_dx": "Spontaneous (idiopathic) cervicothoracic spinal epidural hematoma (C6-T2) causing acute cord compression with paraplegia and sphincter dysfunction; probable bleed from epidural venous plexus or an underlying occult vascular malformation",
+  "blind_conf": 0.85,
+  "sonnet_cost": 0.0409216,
+  "adj_cost": 0,
+  "final_ok": true,
+  "prop_ok": true,
+  "n_adj": 0,
+  "rationale_reasoning": "Acute interscapular pain followed over hours to days by progressive paraplegia (legs 0/5, arms preserved) and bowel/bladder incontinence with absent perianal sensation. MRI shows an epidural hematoma compressing the cord from C6 to T2. There was no trauma, no anticoagulants or antiplatelets, and no known coagulopathy. PT, INR, aPTT, fibrinogen and platelets were normal, so a bleeding disorder is unlikely. Preserved bulbocavernosus reflex and normal arm strength fit a cord-level lesion, not cauda equina. The lesion is probably an upper-level compression with spinal-shock-like or evolving deficits. Mild leukocytosis with neutrophilia (13,000, 85% neutrophils) is probably a stress response. It does not clearly support an abscess, since there is no fever and the MRI describes a hematoma. CRP, ESR and cultures were unavailable, so infection cannot be fully excluded. An underlying AVM or cavernoma is possible but unproven. This is a neurosurgical emergency: urgent decompressive laminectomy and hematoma evacuation, because outcome depends on how soon decompression happens. Intraoperative findings and histology will help exclude an abscess or tumor."
+ },
+ "2_case_009": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>accept_blind",
+  "blind_dx": "Small-bowel obstruction with perforation and purulent peritonitis caused by a migrated plastic biliary stent that lodged in a Meckel diverticulum ~40 cm proximal to the ileocecal valve, with the distal end of the stent perforating the adjacent ileum.",
+  "blind_conf": 0.93,
+  "sonnet_cost": 0.0386456,
+  "adj_cost": 0,
+  "final_ok": true,
+  "prop_ok": false,
+  "n_adj": 0,
+  "rationale_reasoning": "The patient has progressive diffuse abdominal pain, distension, nausea and peritoneal signs. A plastic biliary stent was left in place a year ago with no follow-up or planned removal, so it was retained and likely migrated. CT shows multiple small-bowel air-fluid levels and a linear hyperdense intraluminal foreign body, which fits mechanical obstruction from the stent. Surgery confirmed the diagnosis: purulent fluid, adhesions, and a stent inside a Meckel diverticulum with its distal end perforating adjacent ileum. The patient needed bowel resection with anastomosis. The mechanism is a forgotten plastic stent that migrated distally, became lodged in a Meckel diverticulum, and caused pressure-related perforation. AF-related mesenteric ischemia was a reasonable differential, but the operative findings explain the picture without it. Lab results (CBC, lactate, CMP, lipase) were unavailable, so they did not contribute to the diagnosis."
+ },
+ "2_case_010": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>adjudicate:claude-opus-5-5>chose_blind",
+  "blind_dx": "Extra-tubal (abdominal) ectopic pregnancy implanted in the left upper abdomen, most likely on the splenic surface or omentum/peritoneum. It is enlarging and vascular, with a risk of haemorrhage.",
+  "blind_conf": 0.6,
+  "sonnet_cost": 0.0754122,
+  "adj_cost": 0.0583734,
+  "final_ok": true,
+  "prop_ok": false,
+  "n_adj": 1,
+  "rationale_reasoning": "She is about 5 weeks pregnant with serum hCG of 10,130 IU/L. Transvaginal ultrasound shows no intrauterine gestational sac, an 8 mm endometrium and normal adnexa. That is a pregnancy of unknown location above the discriminatory zone, so an ectopic is the working diagnosis. The pelvis is clear: the cervix is closed, there is no adnexal mass or cervical motion tenderness, and there is no vaginal bleeding. The pain is left upper quadrant, which fits an ectopic outside the tube. Imaging gives the key finding. An earlier noncontrast CT showed a 21 mm indeterminate lesion. Contrast CT then showed a vascular left upper abdominal mass of about 46x40x56 mm. This is rapid growth with high vascularity, which is typical of trophoblastic tissue invading a well-perfused site such as the spleen or omentum. The 8-day progressive pain with nausea and vomiting fits a growing mass with local irritation or contained bleeding. Vitals are stable, so there is no frank rupture yet. Alternatives are a splenic artery aneurysm or pseudoaneurysm, a splenic tumour or haemangioma with coincidental pregnancy, a hCG-secreting tumour, or a pancreatic lesion. None of these explains the combination of positive hCG, empty uterus and a rapidly growing vascular mass as well. The history cannot confirm risk factors for ectopic pregnancy. She does not recall shoulder pain, syncope or vaginal bleeding. CBC, type and screen, FAST and lipase are all unavailable, so haemoperitoneum is not excluded."
+ },
+ "3_case_001": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>adjudicate:claude-opus-5-5>chose_blind",
+  "blind_dx": "Infected (mycotic) coronary stent infection by MRSA causing stent disruption and rapidly enlarging coronary pseudoaneurysm, with rupture into the pericardium (hemopericardium/purulent effusion) causing cardiac tamponade and shock, in MRSA bacteremia/endocarditis",
+  "blind_conf": 0.8,
+  "sonnet_cost": 0.07131680000000001,
+  "adj_cost": 0.053825399999999995,
+  "final_ok": true,
+  "prop_ok": false,
+  "n_adj": 1,
+  "rationale_reasoning": "Hemodialysis-dependent diabetic with prior coronary stent and pacemaker, on treatment for MRSA bacteremia with presumed cardiac involvement, develops new chest pain and shock. Echo shows new LV wall-motion abnormalities, then pericardial effusion progressing to tamponade. After emergency pericardiocentesis, coronary angiography showed disruption of the prior stent and a rapidly enlarging coronary pseudoaneurysm. This fits a stent infection with a mycotic pseudoaneurysm and leak or rupture into the pericardial space. That explains both the regional wall-motion abnormality (ischemia or compromised flow in the stented territory) and the tamponade. The shock is obstructive (tamponade), not primary pump failure. Alternatives are less likely: valvular perivalvular abscess extending to the pericardium, septic coronary embolism, pacemaker lead perforation or lead infection, and uremic pericarditis. None of these explains the stent disruption and pseudoaneurysm seen at angiography. Gaps: ECG, troponin, CBC, coagulation, pericardial fluid analysis and TEE were unavailable. Heparin use at dialysis may have worsened the bleeding, and this is unknown."
+ },
+ "3_case_002": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>adjudicate:claude-opus-5-5>own",
+  "blind_dx": "Infiltrative/inflammatory cardiomyopathy, most likely cardiac sarcoidosis (granulomatous myocarditis), causing complete heart block and predominant RV failure with severe TR. The main alternatives are post-viral or mesalazine hypersensitivity myocarditis, giant cell myocarditis and Lyme carditis.",
+  "blind_conf": 0.35,
+  "sonnet_cost": 0.0680016,
+  "adj_cost": 0.0741214,
+  "final_ok": true,
+  "prop_ok": false,
+  "n_adj": 1,
+  "rationale_reasoning": "The patient has symptomatic complete AV block (no P waves, narrow-QRS escape at 42/min), a mild troponin rise, a modest NT-proBNP rise and signs of right heart failure. Echo shows preserved LV function, dilated and impaired RV, dilated LA, severe TR and PASP 58. CTPA excludes PE and shows RV dilatation, bilateral pleural effusions and hepatic vein reflux, which fits systemic venous congestion. High-grade AV block with RV-predominant involvement and preserved LV function is a typical pattern for cardiac sarcoidosis. It is also seen in other infiltrative or inflammatory processes. The preceding cold-like illness suggests viral myocarditis, but a low troponin, an indolent course over weeks and a conduction-heavy picture argue for a granulomatous or infiltrative process. Mesalazine hypersensitivity myocarditis is possible, but the patient has long-standing stable dosing and no reported eosinophilia, rash or fever. Lyme carditis is possible, but there are no tick or outdoor exposures reported. Pulmonary hypertension is probably secondary to the severe TR and RV failure, or to sarcoid or chronic thromboembolic disease. The diagnosis is not confirmed, because CMR, FDG-PET, biopsy, electrolytes, TSH and CBC are all unavailable. Immediate management is temporary pacing, then a permanent pacemaker or ICD evaluation, and diuresis."
+ },
+ "3_case_005": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>accept_blind",
+  "blind_dx": "Metastatic malignant melanoma of the pleura (melanoma of unknown primary) presenting as a left malignant pleural effusion with nodular circumferential pleural thickening, in a patient with RA-ILD on baricitinib (JAK inhibitor) and methotrexate. Asbestos-related mesothelioma is excluded by the immunophenotype.",
+  "blind_conf": 0.88,
+  "sonnet_cost": 0.0520196,
+  "adj_cost": 0,
+  "final_ok": true,
+  "prop_ok": true,
+  "n_adj": 0,
+  "rationale_reasoning": "One week of dyspnea and dry cough with hypoxemia, diminished left basal breath sounds, and chronic ILD crackles. Inflammatory markers are not elevated and there are no fever or infectious features, so infection or an acute ILD flare is unlikely to be the main driver. CT shows a moderate left effusion with nodular circumferential pleural thickening that includes the mediastinal pleura, which suggests pleural malignancy. Pleural fluid cytology shows atypical epithelioid and spindle cells that are SOX10, Melan-A and S100 positive. Calretinin, WT1, EMA and p40 are negative, which argues against mesothelioma and against squamous or epithelial carcinoma. CT-guided pleural biopsy confirmed SOX10 and Melan-A positivity. PET shows intensely FDG-avid circumferential pleural disease with no cutaneous or subcutaneous primary. The exam found no skin or ocular primary. This fits melanoma of unknown primary, which may be a regressed cutaneous primary, a mucosal primary, or primary pleural melanoma (very rare). Immunosuppression with a JAK inhibitor and methotrexate may have contributed to tumor development or progression. Remaining uncertainty is the primary site and the possibility of other metastases such as brain."
+ },
+ "3_case_008": {
+  "path": "glm>blind:claude-sonnet-5-5>followup>accept_blind",
+  "blind_dx": "Spontaneous (idiopathic) spinal epidural hematoma at C6–T2, causing acute cord compression with paraplegia and sphincter dysfunction. The likely mechanism is rupture of the valveless internal vertebral venous plexus, with no anticoagulant use, trauma or coagulopathy.",
+  "blind_conf": 0.8,
+  "sonnet_cost": 0.0604016,
+  "adj_cost": 0,
+  "final_ok": true,
+  "prop_ok": true,
+  "n_adj": 0,
+  "rationale_reasoning": "Interscapular pain began suddenly and was followed over two days by progressive paraplegia (legs 0/5), saddle anesthesia and bowel and bladder incontinence. This is the classic sequence for a spinal epidural hematoma. MRI shows an epidural hematoma compressing the cord and posterior thecal sac from C6 to T2. The patient reports no anticoagulants, no trauma and no heavy lifting. PT 12 s, INR 1.0, aPTT 30 s, fibrinogen 300 mg/dL and platelets 250,000/µL are all normal, so there is no coagulopathy. A preserved bulbocavernosus reflex with absent perianal sensation suggests the cord injury is not in spinal shock. Neutrophilic leukocytosis (WBC 13,000, 85% neutrophils) with no fever reported is nonspecific. It could be a stress response, but an epidural abscess with hemorrhage cannot be fully excluded, because CRP, ESR and blood cultures were unavailable. An underlying vascular malformation (AVM or cavernoma) or a tumor with hemorrhage is also not fully excluded. Contrast MRI and angiography results were not available. Whole-spine MRI was ordered, and its result is not shown. The odd feature is that the arms are 5/5 despite a C6–T2 lesion. This may reflect a lesion centered on the thoracic segment, or incomplete documentation of the extent. Management is emergency neurosurgical decompression (laminectomy and evacuation) without delay, since outcome depends on the interval to surgery. The patient needs close neurological monitoring and reversal of any bleeding tendency. Blood should be crossmatched, and the specimen sent for histology and culture at surgery."
+ }
+}
