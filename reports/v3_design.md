@@ -1,6 +1,6 @@
 # Protocolo v3 — rascunho de projeto (05-10-2026)
 
-**Status: não implementado e não executado.** Este documento só registra as decisões tomadas até agora. As rodadas v1 (run 1), v2 (runs 2 e 3) e as extensões ficam congeladas e comparáveis entre si; a v3 é uma condição experimental nova, com diretórios e CSVs próprios (`runs/v3/<modelo>/runN`, `results/v3_<modelo>_runN.csv`), sem alterar `MODELS` nem os resultados existentes. Execução só depois da autorização do usuário, quando todos os ajustes estiverem prontos.
+**Status: implementado e testado (51 testes), nenhuma rodada executada.** Este documento registra as decisões e o plano. As rodadas v1 (run 1), v2 (runs 2 e 3) e as extensões ficam congeladas e comparáveis entre si; a v3 é uma condição experimental nova, com diretórios e CSVs próprios (`runs/v3/<modelo>/runN`, `results/v3_<modelo>_runN.csv`), sem alterar `MODELS` nem os resultados existentes. Execução só depois da autorização do usuário, quando todos os ajustes estiverem prontos.
 
 ## Decisões confirmadas
 1. **Paciente com regras estritas.** O prompt do upstream fica inalterado e o texto `RULES` de `scripts/fidelity_eval.py` é anexado ao final (usar só os fatos do registro; dizer que não sabe; no máximo 80 palavras; linguagem leiga; sem listas; sem diagnóstico). Medido offline: invenção de detalhes cai em todos os modelos (ver `fidelity_eval.md`).
@@ -11,8 +11,17 @@
    - Exame físico e admissão não são bloqueados. O prompt do médico ganha um parágrafo explicando essas duas regras.
 4. **Juiz:** Gemini 3.1 Pro, temperatura 0, reasoning baixo, para todos os encontros; Opus 5.5 (assinatura) como árbitro das divergências, sobretudo nos casos 001, 002, 007 e 009 e quando um segundo juiz barato (Flash-Lite temp 0) discordar. Julgamento por LLM; revisão médica continua pendente.
 
+## Decisões de 05-10-2026 (segunda rodada de ajustes)
+- **N = 3** trocas com o paciente (mais o exame físico) para liberar exames; a admissão não é bloqueada; limite de 10 turnos mantido.
+- **Qwen3.8 Max Prime fora** da v3 (o mais caro).
+- **Rodada-teste primeiro:** um modelo barato de bom desempenho anterior, 10 casos × 1 execução, para medir se melhora e quanto. Modelo proposto: **Qwen3.8 Max 0902** (cerca de US$ 0,044 por encontro nas runs antigas; 24/30 pelo juiz original e 21/30 com o Gemini Pro; quase não conversava com o paciente, 7% dos encontros, então é o que mais deve mudar). Comparação de base: suas 30 execuções anteriores, rejulgadas com o mesmo juiz Pro.
+- Custo estimado da rodada-teste: cerca de US$ 0,6 a 0,9 (OpenRouter), mais uma centena de falas de paciente pelo limite do plano Pro.
+
+## Implementação
+`src/mira_runner/runner_v3.py` (protocolo), `scripts/run_v3.py` (agendador isolado, dry-run por padrão), `tests/test_v3.py`; `CaseTools.validate` foi extraído de `execute` sem mudar comportamento. Resultados em `runs/v3/<modelo>/runN` e `results/v3_<modelo>_runN.csv`, com colunas extras `protocol, patient_model, judge_model, patient_exchanges, gated_requests, investigation_orders, unread_orders`. O Opus como árbitro do juiz continua sendo uma etapa offline separada (`fidelity_eval.py`), a adaptar quando houver resultados.
+
 ## Pontos em aberto
-- Valor de N (3?) e se a admissão também exige N trocas; se o limite de 10 turnos fica (as regras gastam turnos) ou sobe para 12 (não escolhido pelo usuário; mantido em 10 até decisão).
+- Se o limite de 10 turnos deve subir para 12 depois de ver a rodada-teste (as regras gastam turnos).
 - Quais modelos e quantas repetições entram na v3.
 - Se algum candidato a médico novo deve entrar.
 - Lista de ajustes adicionais que o usuário ainda quer fazer antes de rodar.
