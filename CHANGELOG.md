@@ -93,3 +93,6 @@ Paciente fixo Sonnet 5.5 com regras estritas, exames bloqueados até 3 trocas, r
 
 ## v3 com exame físico junto da queixa, N=1 e N=2, Qwen3.8 0902 e GLM-5 — 05-10-2026
 `--exam-first` (exame inicial na primeira mensagem) e `--min-exchanges` N=1/2; 4 variantes × 10 casos × 1. Qwen: N=1 8/10 (US$ 0,79), N=2 9/10 (US$ 0,82), contra N=3 8/10 (US$ 0,90); GLM-5: N=1 5/10 (US$ 0,16), N=2 7/10 (US$ 0,18). Verificação offline do JEF (AUC 0,85 para diagnósticos errados em 60 encontros). Gasto US$ 1,96 (ledger = conta US$ 13,916311638). Detalhes em [reports/v3_n_variants_glm5.md](reports/v3_n_variants_glm5.md). Sem revisão médica.
+
+## Escalonamento v2 — 05-10-2026
+Revisor às cegas, rodada de pedidos antes de aceitar, pergunta "mesmo diagnóstico" tolerante, Sonnet no nível 2 e Opus como árbitro (assinatura Pro), resultados de exame imediatos. 10 casos × 1: `cas` 8/10 (propostas do GLM-5: 5/10; corrigiu 001, 002 e 010), US$ 0,068 por encontro de implantação (OpenRouter US$ 0,009); `casq` (Qwen baixo no nível 2) 7/10, sem ganho. Gasto US$ 0,462 (ledger = conta US$ 14,815209133). Detalhes em [reports/v3_cascade_v2.md](reports/v3_cascade_v2.md). Sem revisão médica.
