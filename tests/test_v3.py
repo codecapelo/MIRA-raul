@@ -6,7 +6,7 @@ from mira_runner.runner import MODELS,SAMPLING
 from mira_runner.tools import CaseTools,ToolArgumentsError
 import run_v3
 from mira_runner.tools_v3 import V3CaseTools,specimen
-from mira_runner.runner_v3 import guarded_patient_answer
+from mira_runner.runner_v3 import guarded_patient_answer,doctor_rules
 from mira_runner.jef import RETRY_NOTE,PATIENT_Q
 from mira_runner.client import AuditLog
 ROOT=Path(__file__).resolve().parents[1]
@@ -146,4 +146,16 @@ class GuardTests(unittest.TestCase):
             self.assertEqual(g.calls,0);self.assertEqual(out['content'],'retried answer');self.assertEqual(stats['retries'],1)
     def test_questions_are_the_validated_ones(self):
         self.assertEqual(set(PATIENT_Q),{'invents','drift'})
+
+class ThresholdTests(unittest.TestCase):
+    def test_default_rules_are_n3_and_n_is_parameterized(self):
+        self.assertEqual(DOCTOR_RULES,doctor_rules(3));self.assertIn('at least 3 messages',doctor_rules(3));self.assertIn('at least 1 message with',doctor_rules(1))
+    def test_gate_opens_at_n(self):
+        for n in (1,2,3):
+            t=V3Tools(CaseTools([],None),n);t.exam_done=True
+            for _ in range(n-1):t.patient_replied()
+            self.assertIn('locked',t.execute('request_blood_test',{'test_names':['x']}));t.patient_replied()
+            self.assertIn('Order placed',t.execute('request_blood_test',{'test_names':['x']}))
+    def test_tags_keep_arms_separate(self):
+        m='qwen/qwen3.8-max-0902';self.assertEqual(run_v3.tag(m),'qwen38_max_0902');self.assertEqual(run_v3.tag(m,False,1),'qwen38_max_0902_n1');self.assertEqual(run_v3.tag(m,True,2),'qwen38_max_0902_jef_n2')
 if __name__=='__main__':unittest.main()
