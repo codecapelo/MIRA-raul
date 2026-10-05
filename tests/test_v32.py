@@ -76,6 +76,23 @@ class ConsultTests(unittest.TestCase):
         self.assertEqual(len(unmet_decisive({'decisive':[{'tool':'t','test_names':['Cardiac MRI']}]},['Troponin'])),1);self.assertEqual(unmet_decisive({'decisive':[{'tool':'t','test_names':['Cardiac MRI']}]},['cardiac MRI with contrast']),[])
         self.assertIn('Before admission',nudge_text([{'tool':'t','test_names':['a']}]))
 
+class ReviewerFollowUpTests(unittest.TestCase):
+    def follow(self,case,tests):
+        from mira_runner.tools_v3 import V3CaseTools
+        inv=json.loads((ROOT/'cases'/case/'investigations.json').read_text())['observations']
+        class T:pass
+        ctx={'tools':type('X',(),{'inner':V3CaseTools(inv,lambda r,p:[],True)})(),'stats':{'review_exchanges':0},'patient_messages':[],'log':None}
+        return Cascade(FakeJef(),(SONNET,SONNET)).follow_up(ctx,[],tests)
+    def test_prerequisite_procedure_is_done_first_inside_the_single_round(self):
+        text=self.follow('case_001',[{'tool':'request_radiology','test_names':['Coronary angiography']}])
+        self.assertIn("Reviewer procedure first (needed for 'Coronary angiography')",text);self.assertIn('pseudoaneurysm',text);self.assertNotIn('requires_prior_procedure": [',text.split("Reviewer test")[-1])
+    def test_wrong_tool_is_resent_to_the_right_tool(self):
+        text=self.follow('case_001',[{'tool':'request_other_investigation','test_names':['Transthoracic echocardiography']}])
+        self.assertIn('re-sent',text);self.assertIn('findings',text.split("Reviewer test")[-1])
+    def test_biopsy_that_needs_a_procedure_triggers_the_procedure_then_the_biopsy_request(self):
+        text=self.follow('case_009',[{'tool':'request_other_investigation','test_names':['Abdominal biopsy']}])
+        self.assertIn('Meckel',text)
+
 class WrongToolTests(unittest.TestCase):
     def test_request_sent_to_the_wrong_tool_names_the_right_one(self):
         t=tools('case_001');o=json.loads(t.execute('request_other_investigation',{'test_names':['Coronary angiography']}))

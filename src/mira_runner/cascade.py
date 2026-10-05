@@ -99,12 +99,27 @@ class Cascade:
             p=ctx['client'].call(ctx['patient_model'],ctx['patient_messages'],ctx['log'],'patient_review',{},max_tokens=8192)
             ctx['patient_messages'].append(p);stats['review_exchanges']+=1
             parts.append('Patient answers to the reviewer: '+(p.get('content') or '').strip())
+        tools=ctx['tools'].inner
+        def run(tool,name):
+            args={'study_name':name} if tool=='request_radiology' else {'test_names':[name]}
+            try:return tools.execute(tool,args)
+            except ToolArgumentsError:return 'invalid request'
         for t in tests:
             for name in t['test_names']:
-                args={'study_name':name} if t['tool']=='request_radiology' else {'test_names':[name]}
-                try:out=ctx['tools'].inner.execute(t['tool'],args)
-                except ToolArgumentsError:out='invalid request'
-                parts.append(f"Reviewer test {t['tool']} '{name}': {out}")
+                tool=t['tool'];out=run(tool,name)
+                for _ in range(2):  # the reviewer has one round: resolve a wrong tool or a prerequisite procedure by itself (and say so)
+                    try:o=json.loads(out)
+                    except (json.JSONDecodeError,TypeError):break
+                    if not isinstance(o,dict):break
+                    wt=[w for w in o.get('wrong_tool',[]) if isinstance(w,dict) and w.get('use_tool')]
+                    pre=[r for r in o.get('requires_prior_procedure',[]) if isinstance(r,dict) and r.get('needs_prior_procedure')]
+                    if wt:
+                        tool=wt[0]['use_tool'];parts.append(f"(re-sent '{name}' to {tool})");out=run(tool,name);continue
+                    if pre:
+                        proc=re.split(r' or | / ',pre[0]['needs_prior_procedure'])[0].strip()
+                        pout=run('request_other_investigation',proc);parts.append(f"Reviewer procedure first (needed for '{name}') request_other_investigation '{proc}': {pout}");out=run(tool,name);continue
+                    break
+                parts.append(f"Reviewer test {tool} '{name}': {out}")
         stats['followup']=True;return '\n'.join(parts)
     def __call__(self,ctx):
         stats=ctx['stats'];stats.update(path=['glm'],jef_c1=None,tier2_verdict='',tier3_model='',review_exchanges=0,followup=False)
