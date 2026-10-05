@@ -1,6 +1,6 @@
 # v3 com exame junto da queixa: N=1 e N=2, Qwen3.8 Max 0902 e GLM-5 (05-10-2026)
 
-Mudança: as achados do exame físico inicial entram na primeira mensagem do médico (`--exam-first`, sufixo `_xf`); o paciente nunca os vê; a ferramenta de exame devolve só um aviso de que já foram fornecidos; a trava de exames passa a exigir apenas N trocas. Demais regras da v3 inalteradas (paciente Sonnet 5.5 com regras estritas, resultado só após a próxima troca, resposta por exame, juiz Gemini 3.1 Pro). 10 casos × 1 execução por variante, sem JEF na guarda. **Julgamento por LLM, sem revisão médica; uma execução por caso não separa o efeito de N do ruído de amostragem.**
+Mudança: os achados do exame físico inicial entram na primeira mensagem do médico (`--exam-first`, sufixo `_xf`); o paciente nunca os vê; a ferramenta de exame devolve só um aviso de que já foram fornecidos; a trava de exames passa a exigir apenas N trocas. Demais regras da v3 inalteradas (paciente Sonnet 5.5 com regras estritas, resultado só após a próxima troca, resposta por exame, juiz Gemini 3.1 Pro). 10 casos × 1 execução por variante, sem JEF na guarda. **Julgamento por LLM, sem revisão médica; uma execução por caso não separa o efeito de N do ruído de amostragem.**
 
 ## Resultado
 | Variante | Corretos | Custo OpenRouter | Trocas | Turnos | Chamadas do médico | Tokens de entrada | Erros |
