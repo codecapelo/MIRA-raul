@@ -9,14 +9,15 @@ from mira_runner.runner_v3 import FIELDS_V3,run_case_v3
 from mira_runner.cli_client import HybridClient
 from mira_runner.budget import Ledger
 from mira_runner.jef import JefChecker
-from mira_runner.cascade import Cascade
+from mira_runner.cascade import Cascade,SONNET,OPUS,QWEN
+REVIEWERS={'cas':(SONNET,OPUS),'casq':(QWEN,SONNET,OPUS)}
 TAGS={'z-ai/glm-4.5-air':'glm45_air','z-ai/glm-5':'glm5','openai/gpt-oss-120b':'gpt_oss','qwen/qwen3.5-397b-a17b':'qwen35','openai/gpt-5.2':'gpt52','qwen/qwen3.8-max-0902':'qwen38_max_0902','claude-sonnet-5-5':'claude_sonnet_5_5','claude-opus-5-5':'claude_opus_5_5'}
 
-def tag(model,jef=False,n=3,xf=False,cas=False):return TAGS[model]+('_jef' if jef else '')+('_xf' if xf else '')+('_cas' if cas else '')+('' if n==3 else '_n'+str(n))
-def target(root,run,model,jef=False,n=3,xf=False,cas=False):return root/'runs/v3'/tag(model,jef,n,xf,cas)/('run'+str(run))
+def tag(model,jef=False,n=3,xf=False,cas=None,imm=False):return TAGS[model]+('_jef' if jef else '')+('_xf' if xf else '')+('_imm' if imm else '')+(('_'+cas) if cas else '')+('' if n==3 else '_n'+str(n))
+def target(root,run,model,jef=False,n=3,xf=False,cas=None,imm=False):return root/'runs/v3'/tag(model,jef,n,xf,cas,imm)/('run'+str(run))
 
-def prepare(root,run,model,jef=False,n=3,xf=False,cas=False):
-    t=target(root,run,model,jef,n,xf,cas);t.mkdir(parents=True,exist_ok=True)
+def prepare(root,run,model,jef=False,n=3,xf=False,cas=None,imm=False):
+    t=target(root,run,model,jef,n,xf,cas,imm);t.mkdir(parents=True,exist_ok=True)
     for name in ('cases','config','upstream'):
         link=t/name
         if link.exists() or link.is_symlink():
@@ -24,42 +25,43 @@ def prepare(root,run,model,jef=False,n=3,xf=False,cas=False):
         else:link.symlink_to(Path('../../../..')/name,target_is_directory=True)
     (t/'logs').mkdir(exist_ok=True);return t
 
-def schedule(root,runs,model,cases=None,jef=False,n=3,xf=False,cas=False):
+def schedule(root,runs,model,cases=None,jef=False,n=3,xf=False,cas=None,imm=False):
     jobs=[]
     for run in runs:
-        done={(r['case_id'],r['model']) for r in all_terminal_results(target(root,run,model,jef,n,xf,cas))}
+        done={(r['case_id'],r['model']) for r in all_terminal_results(target(root,run,model,jef,n,xf,cas,imm))}
         jobs+=[(case,model,run) for case in sorted((root/'cases').glob('case_*')) if (case.name,model) not in done and (not cases or case.name in cases)]
     return jobs
 
-def export(root,run,model,jef=False,n=3,xf=False,cas=False):
-    rows=all_terminal_results(target(root,run,model,jef,n,xf,cas));path=root/'results'/('v3_'+tag(model,jef,n,xf,cas)+'_run'+str(run)+'.csv');path.parent.mkdir(exist_ok=True);tmp=path.with_suffix('.tmp')
+def export(root,run,model,jef=False,n=3,xf=False,cas=None,imm=False):
+    rows=all_terminal_results(target(root,run,model,jef,n,xf,cas,imm));path=root/'results'/('v3_'+tag(model,jef,n,xf,cas,imm)+'_run'+str(run)+'.csv');path.parent.mkdir(exist_ok=True);tmp=path.with_suffix('.tmp')
     with tmp.open('w') as h:
         w=csv.DictWriter(h,fieldnames=FIELDS_V3,restval='');w.writeheader()
         for r in rows:w.writerow({'protocol':'v3',**r})
         h.flush();os.fsync(h.fileno())
     os.replace(tmp,path)
 
-def worker(root,case,model,run,config,key,commit,transition,jef_key=None,n=3,xf=False,cas=False):
+def worker(root,case,model,run,config,key,commit,transition,jef_key=None,n=3,xf=False,cas=None,imm=False):
     root=Path(root);ledger=Ledger(root/'logs/budget.sqlite',config['budget_usd'])
     usage=root/'runs/fidelity/jef/usage.jsonl'
     try:
         guard=JefChecker(jef_key,usage) if (jef_key and not cas) else None
-        cascade=Cascade(JefChecker(jef_key,usage)) if cas else None
-        return run_case_v3(target(root,run,model,bool(jef_key) and not cas,n,xf,cas),Path(case),model,HybridClient(ledger,config,key),commit,transition,guard,n,xf,cascade)
+        cascade=Cascade(JefChecker(jef_key,usage),REVIEWERS[cas]) if cas else None
+        return run_case_v3(target(root,run,model,bool(jef_key) and not cas,n,xf,cas,imm),Path(case),model,HybridClient(ledger,config,key),commit,transition,guard,n,xf,cascade,not imm)
     finally:ledger.db.close()
 
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);ap.add_argument('--execute',action='store_true')
-    ap.add_argument('--model',required=True,choices=sorted(TAGS));ap.add_argument('--runs',nargs='+',type=int,default=[1]);ap.add_argument('--cases',nargs='*');ap.add_argument('--parallel-cases',type=int,default=3);ap.add_argument('--allow-commit-transition',action='store_true');ap.add_argument('--min-exchanges',type=int,default=3,choices=[1,2,3]);ap.add_argument('--exam-first',action='store_true',help='physical examination findings are given with the presenting complaint');ap.add_argument('--cascade',action='store_true',help='GLM-5 proposes, JEF triages, Qwen reviews, Sonnet/Opus (subscription CLI) check; separate traces/CSVs');ap.add_argument('--jef',action='store_true',help='arm with the JEF patient-answer guard (separate traces/CSVs)')
+    ap.add_argument('--model',required=True,choices=sorted(TAGS));ap.add_argument('--runs',nargs='+',type=int,default=[1]);ap.add_argument('--cases',nargs='*');ap.add_argument('--parallel-cases',type=int,default=3);ap.add_argument('--allow-commit-transition',action='store_true');ap.add_argument('--min-exchanges',type=int,default=3,choices=[1,2,3]);ap.add_argument('--exam-first',action='store_true',help='physical examination findings are given with the presenting complaint');ap.add_argument('--immediate-results',action='store_true',help='test results are returned in the tool response (no wait for the next patient exchange)');ap.add_argument('--cascade-tier2',choices=['sonnet','qwen'],default='sonnet',help='blind reviewer of the cascade');ap.add_argument('--cascade',action='store_true',help='GLM-5 proposes, JEF triages, Qwen reviews, Sonnet/Opus (subscription CLI) check; separate traces/CSVs');ap.add_argument('--jef',action='store_true',help='arm with the JEF patient-answer guard (separate traces/CSVs)')
     a=ap.parse_args();root=a.root.resolve()
     if a.cascade and (a.model!='z-ai/glm-5' or a.jef):raise ValueError('--cascade starts with z-ai/glm-5 and is not combined with --jef')
+    a.cas=('cas' if a.cascade_tier2=='sonnet' else 'casq') if a.cascade else None;a.imm=a.immediate_results
     if not a.runs or len(set(a.runs))!=len(a.runs) or any(r not in (1,2,3) for r in a.runs):raise ValueError('Only distinct runs 1, 2 and 3 are allowed')
     if not 1<=a.parallel_cases<=3:raise ValueError('Maximum 3 concurrent cases for the model')
-    jobs=schedule(root,a.runs,a.model,a.cases,a.jef,a.min_exchanges,a.exam_first,a.cascade)
-    if not a.execute:print(json.dumps({'protocol':'v3','jef_guard':a.jef,'min_exchanges':a.min_exchanges,'exam_first':a.exam_first,'cascade':a.cascade,'model':a.model,'pending':len(jobs),'requests_not_sent':True,'runs':a.runs}));return
+    jobs=schedule(root,a.runs,a.model,a.cases,a.jef,a.min_exchanges,a.exam_first,a.cas,a.imm)
+    if not a.execute:print(json.dumps({'protocol':'v3','jef_guard':a.jef,'min_exchanges':a.min_exchanges,'exam_first':a.exam_first,'cascade':a.cas,'immediate_results':a.imm,'model':a.model,'pending':len(jobs),'requests_not_sent':True,'runs':a.runs}));return
     handles=[]
     try:
-        paths=[root/'logs/run.lock']+[prepare(root,r,a.model,a.jef,a.min_exchanges,a.exam_first,a.cascade)/'logs/run.lock' for r in a.runs]
+        paths=[root/'logs/run.lock']+[prepare(root,r,a.model,a.jef,a.min_exchanges,a.exam_first,a.cas,a.imm)/'logs/run.lock' for r in a.runs]
         for p in paths:
             h=p.open('a');handles.append(h)
             try:fcntl.flock(h,fcntl.LOCK_EX|fcntl.LOCK_NB)
@@ -76,16 +78,16 @@ def main():
             jp=root/'.secrets/jef.key'
             if jp.stat().st_mode & 0o077:raise RuntimeError('JEF key file must be mode0600')
             jef_key=jp.read_text().strip()
-        commit=subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip();jobs=schedule(root,a.runs,a.model,a.cases,a.jef,a.min_exchanges,a.exam_first,a.cascade)
+        commit=subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip();jobs=schedule(root,a.runs,a.model,a.cases,a.jef,a.min_exchanges,a.exam_first,a.cas,a.imm)
         def terminal(result,job):
-            export(root,job[2],a.model,a.jef,a.min_exchanges,a.exam_first,a.cascade)
+            export(root,job[2],a.model,a.jef,a.min_exchanges,a.exam_first,a.cas,a.imm)
             print(json.dumps({'protocol':'v3','run':job[2],'case_id':result['case_id'],'model':result['model'],'judge_correct':result['judge_correct'],'exchanges':result.get('patient_exchanges'),'orders':result.get('investigation_orders'),'gated':result.get('gated_requests'),'jef_retries':result.get('jef_retries'),'case_cost_usd':result['cost_usd'],'global_cost_usd':str(ledger.total()),'timestamp':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())}),flush=True)
         try:
             with ProcessPoolExecutor(max_workers=a.parallel_cases) as pool:
-                submit=lambda job:pool.submit(worker,str(root),str(job[0]),job[1],job[2],config,key,commit,a.allow_commit_transition,jef_key,a.min_exchanges,a.exam_first,a.cascade)
+                submit=lambda job:pool.submit(worker,str(root),str(job[0]),job[1],job[2],config,key,commit,a.allow_commit_transition,jef_key,a.min_exchanges,a.exam_first,a.cas,a.imm)
                 parallel_models(jobs,a.parallel_cases,a.parallel_cases,submit,terminal)
         finally:
-            for r in a.runs:export(root,r,a.model,a.jef,a.min_exchanges,a.exam_first,a.cascade)
+            for r in a.runs:export(root,r,a.model,a.jef,a.min_exchanges,a.exam_first,a.cas,a.imm)
             ledger.db.close()
     finally:
         for h in reversed(handles):h.close()
