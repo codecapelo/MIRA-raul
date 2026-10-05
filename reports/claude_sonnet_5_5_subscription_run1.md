@@ -18,7 +18,7 @@ Braço de assinatura executado a pedido do usuário para medir consumo antes de 
 | Custo equivalente de API (referência, não é cobrança) | US$ 1,19 (médico 1,06; paciente 0,13) |
 | Gasto no OpenRouter (associador + juiz) | US$ 0,0063; conta = ledger = US$ 8,362879588 |
 
-Cerca de 4,7 mil tokens de entrada por chamada são sobrecarga fixa do CLI (em cache): 62 chamadas × 4,7 mil ≈ 290 mil dos 408 mil. Por isso `prompt_tokens` do Claude no CSV **não é comparável** com o dos outros modelos. O uso exato do limite do plano **não é legível pelo CLI**: o percentual consumido deve ser conferido no medidor de uso da conta (Pro).
+Cada chamada do CLI reenvia o contexto inteiro (prompt de sistema, definições de ferramentas e conversa) mais a sobrecarga do próprio CLI; o menor prompt observado foi de cerca de 2 mil tokens (paciente) e 3 mil (médico) e a média das chamadas do médico foi de 7,4 mil no Sonnet e 4,2 mil no Opus, quase tudo vindo de cache. Por isso `prompt_tokens` dos modelos Claude no CSV não é comparável com o dos demais.
 
 ## Para decidir o Opus 5.5
 Mesma forma de execução com o Opus 5.5 deve produzir tokens parecidos (um pouco mais de raciocínio) e custo equivalente de API da ordem de 2× o do Sonnet (cerca de US$ 2–3); o Opus pesa mais no limite do plano que o Sonnet, então o percentual do Sonnet no medidor é um piso, não uma proporção. Sem retries automáticos: se o limite estourar, a execução para e retoma depois sem repetir chamadas já respondidas.

@@ -30,7 +30,7 @@ Com 10 casos e uma execução, a diferença entre os dois **não é conclusiva**
 ## Consumo medido
 - Opus: 49 chamadas, 194 mil tokens de entrada e 38,5 mil de saída, cerca de 5 minutos; consumiu o limite do plano em proporção que o CLI não expõe (conferir no medidor da conta Pro, antes e depois).
 - OpenRouter (associador e juiz): US$ 0,0078 no Opus e US$ 0,0063 no Sonnet. Conta = ledger = US$ 8,370711103. Os dois primeiros snapshots finais ficaram 0,0008 abaixo (defasagem transitória da conta); os dois seguintes bateram exatamente.
-- O CLI inclui cerca de 4,7 mil tokens fixos de sistema por chamada (em cache); `prompt_tokens` dos modelos Claude no CSV não é comparável com o dos demais.
+- Cada chamada do CLI reenvia o contexto inteiro (prompt de sistema, definições de ferramentas e conversa) mais a sobrecarga do próprio CLI; o menor prompt observado foi de cerca de 2 mil tokens (paciente) e 3 mil (médico) e a média das chamadas do médico foi de 7,4 mil no Sonnet e 4,2 mil no Opus, quase tudo vindo de cache. Por isso `prompt_tokens` dos modelos Claude no CSV não é comparável com o dos demais.
 
 ## Observação
 O Opus fechou com menos chamadas ao CLI e menos tokens de entrada que o Sonnet, pedindo mais ferramentas por chamada (média de 7,0 chamadas de ferramenta por encontro contra 6,0 no Sonnet). A leitura "formato novo é compatível com os resultados da Fase 1" (Opus 27/30 e Sonnet 26/30 pela releitura) só se sustenta como ordem de grandeza: formatos, réguas e transportes são diferentes.
