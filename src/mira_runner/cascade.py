@@ -69,8 +69,8 @@ def clean_requests(questions,tests):
 
 class Cascade:
     """reviewers = (tier2, tier3[, tiebreak]) model names; defaults to the Sonnet-first, Opus-adjudicates design."""
-    def __init__(self,jef,reviewers=(SONNET,OPUS),accept=ACCEPT_C1,triage='jef',audit_rate=0.0,definitive_trigger=False):
-        self.jef=jef;self.reviewers=tuple(reviewers);self.accept=accept;self.triage=triage;self.audit_rate=audit_rate;self.definitive_trigger=definitive_trigger
+    def __init__(self,jef,reviewers=(SONNET,OPUS),accept=ACCEPT_C1,triage='jef',audit_rate=0.0,definitive_trigger=False,rescue=False):
+        self.rescue=rescue;self.jef=jef;self.reviewers=tuple(reviewers);self.accept=accept;self.triage=triage;self.audit_rate=audit_rate;self.definitive_trigger=definitive_trigger
     def step(self,ctx,key,fn):
         for e in ctx['log'].events():
             if e['event']=='cascade_step' and e['key']==key:return e['value']
@@ -108,6 +108,10 @@ class Cascade:
     def __call__(self,ctx):
         stats=ctx['stats'];stats.update(path=['glm'],jef_c1=None,tier2_verdict='',tier3_model='',review_exchanges=0,followup=False)
         prop=ctx['proposal'];conv=transcript(ctx['doctor']);dx0,r0=prop['diagnosis'],prop['reasoning'];r2=self.reviewers[0]
+        if ctx.get('rescue'):  # the first physician failed operationally: the blind reviewer takes over from the transcript so far
+            stats['path'].append('rescue:'+r2);b=self.blind(ctx,r2,conv);qs,ts=clean_requests(b.get('missing_questions'),b.get('missing_tests'))
+            if qs or ts:stats['path'].append('followup');conv=conv+'\n'+self.follow_up(ctx,qs,ts);b=self.blind(ctx,r2,conv)
+            return {'diagnosis':(b.get('diagnosis') or '').strip(),'reasoning':b.get('reasoning') or ''}
         v=self.step(ctx,'verify',lambda:self.jef.verify(conv,dx0,r0))
         stats['audited']=False
         if not v.get('failed'):

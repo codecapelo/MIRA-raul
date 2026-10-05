@@ -110,6 +110,28 @@ class CascadeV32Tests(unittest.TestCase):
         from mira_runner.cascade import deploy_costs
         d=deploy_costs([{'event':'cli_call','role':'consult_map','response':{'usage':{'api_equivalent_cost_usd':0.04}}},{'event':'cli_call','role':'patient','response':{'usage':{'api_equivalent_cost_usd':9}}}]);self.assertEqual(d['claude_api_equiv_usd'],'0.04')
 
+class RescueTests(unittest.TestCase):
+    BAD=lambda i:{'role':'assistant','content':None,'tool_calls':[{'id':f'c{i}','type':'function','function':{'name':'request_blood_test','arguments':'{"test_names": FDG-PET cardiac}'}}]}
+    def go(self,cascade):
+        with tempfile.TemporaryDirectory() as d:
+            root=make_root(d);f=MapFake([{'role':'assistant','content':'hello'},RescueTests.BAD(1),RescueTests.BAD(2)],{'review_claude':[{'diagnosis':'RESCUED DX','confidence':0.8,'reasoning':'br','missing_questions':[],'missing_tests':[]}]})
+            return run_case_v3(root,root/'cases/case_001',MODEL,f,'abc',min_exchanges=2,exam_first=True,cascade=cascade,delay_results=False,consult=OPUS),f
+    def test_operational_failure_is_rescued_by_the_blind_reviewer(self):
+        r,f=self.go(Cascade(FakeJef(),(SONNET,SONNET),triage='jef',rescue=True))
+        self.assertEqual((r['rescued'],r['failure_reason'],r['dx_agent']),(True,'tool retry limit','RESCUED DX'));self.assertEqual(r['cascade_path'],'glm>rescue:'+SONNET);self.assertEqual(r['proposal_correct'],'')
+        self.assertNotIn('judge_proposal',roles(f));self.assertTrue(r['judge_correct'] is True)
+    def test_without_rescue_the_failure_stays_terminal(self):
+        r,f=self.go(Cascade(FakeJef(),(SONNET,SONNET),rescue=False));self.assertEqual(r['judge_correct'],'');self.assertIn('not judged: tool retry limit',r['judge_rationale'])
+        r,f=self.go(None);self.assertEqual(r['judge_correct'],'')
+    def test_accept_threshold_is_a_parameter(self):
+        sc=[{'role':'assistant','content':'a'},{'role':'assistant','content':'b'},ADMIT(1,'PROPOSAL')]
+        with tempfile.TemporaryDirectory() as d:
+            root=make_root(d);r=run_case_v3(root,root/'cases/case_001',MODEL,MapFake(sc,{},{**MAP,'decisive_investigations':[]}),'abc',min_exchanges=2,exam_first=True,cascade=Cascade(FakeJef(combined=0.87),(SONNET,SONNET),accept=0.86,triage='jef'),delay_results=False,consult=OPUS)
+        self.assertIn('jef_accept',r['cascade_path'])
+        with tempfile.TemporaryDirectory() as d:
+            root=make_root(d);f=MapFake(sc,{'review_claude':[dict(CascadeV32Tests.BLIND)]},{**MAP,'decisive_investigations':[]});r=run_case_v3(root,root/'cases/case_001',MODEL,f,'abc',min_exchanges=2,exam_first=True,cascade=Cascade(FakeJef(combined=0.85,same=0.9),(SONNET,SONNET),accept=0.86,triage='jef'),delay_results=False,consult=OPUS)
+        self.assertNotIn('jef_accept',r['cascade_path'])
+
 class TagTests(unittest.TestCase):
     def test_v32_tags_keep_arms_apart(self):
         m='z-ai/glm-5';self.assertEqual(run_v3.tag(m,False,2,True,'cas',True,'v32none'),'glm5_xf_imm_cas_v32none_n2');self.assertEqual(run_v3.tag(m,False,2,True,'cas',True),'glm5_xf_imm_cas_n2')

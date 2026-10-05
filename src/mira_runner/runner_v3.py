@@ -23,7 +23,7 @@ PATIENT_MODEL='claude-sonnet-5-5'
 MIN_EXCHANGES=3
 JUDGE_V3='google/gemini-3.1-pro-preview'
 JUDGE_PARAMS={'temperature':0,'top_p':1,'reasoning':{'effort':'low'}}
-FIELDS_V3=FIELDS+['audited','consult_model','consult_urgency','nudged','prereq_blocks','rubric','delay_results','cascade','cascade_path','proposal_dx','proposal_correct','jef_c1','tier2_verdict','tier3_model','review_exchanges','deploy_cost_usd','cost_openrouter_deploy_usd','claude_api_equiv_usd','jef_usd','min_exchanges','exam_first','protocol','patient_model','judge_model','patient_exchanges','gated_requests','investigation_orders','unread_orders','jef_guard','jef_checks','jef_retries','jef_failures']
+FIELDS_V3=FIELDS+['rescued','failure_reason','audited','consult_model','consult_urgency','nudged','prereq_blocks','rubric','delay_results','cascade','cascade_path','proposal_dx','proposal_correct','jef_c1','tier2_verdict','tier3_model','review_exchanges','deploy_cost_usd','cost_openrouter_deploy_usd','claude_api_equiv_usd','jef_usd','min_exchanges','exam_first','protocol','patient_model','judge_model','patient_exchanges','gated_requests','investigation_orders','unread_orders','jef_guard','jef_checks','jef_retries','jef_failures']
 PATIENT_RULES=('\n\nStrict rules for this role-play: use only the facts listed above. If a detail is not listed (onset time, intensity, frequency, '
                'doses, allergies, vital signs, results), say you do not know or do not remember it; never estimate or invent it. Answer in plain '
                'lay language, first person, in at most 80 words, as a patient and not as clinical staff. Do not use lists, headings or numbered '
@@ -139,6 +139,34 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
             doctor[1]['content']+='\n\n'+format_map(cmap)
             if cmap['urgency']=='emergency':tools.min_exchanges=0
     ntools=0;final=None;start=time.monotonic();jstats={'checks':0,'retries':0,'failures':0}
+    def finish(proposal,turn,ntools,failure=None):
+        cstats={'path':['glm']};final=proposal
+        if cascade is not None:
+            final=cascade({'log':log,'client':client,'doctor':doctor,'proposal':proposal,'tools':tools,'patient_messages':patient_messages,'patient_model':PATIENT_MODEL,'stats':cstats,'consult_map':cmap,'map_text':format_map(cmap) if cmap else '','rescue':failure is not None})
+        reference=json.loads((case_dir/'reference.json').read_text())
+        criterion=reference.get('matching_criterion',reference['correct_diagnosis']);override=None
+        if judge_override and (root/'config/judge_overrides_v3.json').exists():
+            override=json.loads((root/'config/judge_overrides_v3.json').read_text()).get(case_dir.name)
+            if override:criterion=override['matching_criterion']
+        builder=load_module(root/'upstream/onprem-medical-agents/src/eval/prompt_builders.py').PromptBuilder(criterion)
+        gold=reference.get('ground_truth');gold=gold if isinstance(gold,dict) and 'gold_diagnoses' in gold else reference['correct_diagnosis']
+        def judge_dx(dx,reasoning,role):
+            judge=client.call(JUDGE_V3,[{'role':'user','content':builder.build(gold,dx,reasoning)}],log,role,JUDGE_PARAMS,max_tokens=8192,response_format={'type':'json_object'})
+            try:
+                judgment=json.loads(judge['content']);assert isinstance(judgment['decision'],bool);return judgment['decision'],judgment.get('reasoning','')
+            except (json.JSONDecodeError,TypeError,KeyError,AssertionError):
+                log.append({'event':'backend_error','role':role,'reason':'settled malformed judge output'});return '','not judged: malformed judge output'
+        verdict,rationale=judge_dx(final['diagnosis'],final['reasoning'],'judge')
+        extra={}
+        if cascade is not None:
+            pv='' if failure else (verdict if final['diagnosis']==proposal['diagnosis'] else judge_dx(proposal['diagnosis'],proposal['reasoning'],'judge_proposal')[0])
+            extra={'cascade':True,'cascade_path':'>'.join(cstats['path']),'proposal_dx':proposal['diagnosis'],'proposal_correct':pv,'jef_c1':cstats.get('jef_c1'),'audited':cstats.get('audited',False),'tier2_verdict':cstats.get('tier2_verdict',''),'tier3_model':cstats.get('tier3_model',''),'review_exchanges':cstats.get('review_exchanges',0),'rescued':failure is not None,'failure_reason':failure or '',**deploy_costs(log.events())}
+        responses=[e['response'] for e in log.events() if e['event'] in ('response','cli_call')];usage=[r['usage'] for r in responses]
+        result={'case_id':case_dir.name,'model':model,'provider':client.config['models'][model]['provider'],'dx_agent':final['diagnosis'],'reasoning':final['reasoning'],'dx_reference':reference['correct_diagnosis'],'judge_correct':verdict,'judge_rationale':rationale,'n_turns':turn,'n_tool_calls':ntools,'tool_errors':tools.errors,'prompt_tokens':sum(u.get('prompt_tokens',0) for u in usage),'completion_tokens':sum(u.get('completion_tokens',0) for u in usage),'reasoning_tokens':sum(u.get('completion_tokens_details',{}).get('reasoning_tokens',0) for u in usage),'cost_usd':str(sum(Decimal(str(u['cost'])) for u in usage)),'latency_s':time.monotonic()-start,'commit':commit,'timestamp':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'physician_review':'','min_exchanges':min_exchanges,'exam_first':exam_first,'delay_results':delay_results,'protocol':PROTOCOL,'patient_model':PATIENT_MODEL,'judge_model':JUDGE_V3,'patient_exchanges':tools.exchanges,'gated_requests':tools.gated,'investigation_orders':tools.orders,**extra,'consult_model':consult or '','consult_urgency':cmap['urgency'] if cmap else '','nudged':nudged,'prereq_blocks':tools.inner.prereq_blocks,'rubric':'override' if override else 'reference','unread_orders':len(tools.pending),'jef_guard':guard is not None,'jef_checks':jstats['checks'],'jef_retries':jstats['retries'],'jef_failures':jstats['failures']}
+        log.append({'event':'case_complete','result':result});return result
+    def operational(reason,turn,ntools):
+        if cascade is None or not getattr(cascade,'rescue',False):return terminal_failure(root,case_dir,model,log,commit,reason,turn,ntools,tools.errors,time.monotonic()-start)
+        log.append({'event':'rescue','reason':reason});return finish({'diagnosis':'','reasoning':'(no proposal: the first physician failed: '+reason+')'},turn,ntools,failure=reason)
     for turn in range(1,11):
         if turn==10:doctor.append({'role':'system','content':prompts.COMPLETION_PROMPT+' Call admission now.'})
         for subturn in range(40):
@@ -162,12 +190,12 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
                     output='Invalid tool arguments. Retry this tool with valid JSON matching its schema; admission requires non-empty diagnosis and reasoning.'
                     if tools.errors>1:
                         log.append({'event':'tool','name':f['name'],'arguments':args,'raw_arguments':f['arguments'],'output':output,'turn':turn,'invalid':True})
-                        return terminal_failure(root,case_dir,model,log,commit,'tool retry limit',turn,ntools,tools.errors,time.monotonic()-start)
+                        return operational('tool retry limit',turn,ntools)
                 log.append({'event':'tool','name':f['name'],'arguments':args,'output':output,'turn':turn,'exchanges':tools.exchanges})
                 doctor.append({'role':'tool','tool_call_id':tc['id'],'content':output})
                 if f['name']=='admission' and not invalid:final=args
             if final:break
-        else:return terminal_failure(root,case_dir,model,log,commit,'inner max_turns limit',turn,ntools,tools.errors,time.monotonic()-start)
+        else:return operational('inner max_turns limit',turn,ntools)
         if final:break
         text=m.get('content') or ''
         if text:
@@ -179,28 +207,5 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
         else:  # silent turn: never deadlock on pending results
             released=tools.release()
             doctor.append({'role':'user','content':released or 'Please speak to the patient or use a tool.'})
-    if final is None:return terminal_failure(root,case_dir,model,log,commit,'10-turn admission limit',turn,ntools,tools.errors,time.monotonic()-start)
-    cstats={'path':['glm']};proposal=final
-    if cascade is not None:
-        final=cascade({'log':log,'client':client,'doctor':doctor,'proposal':proposal,'tools':tools,'patient_messages':patient_messages,'patient_model':PATIENT_MODEL,'stats':cstats,'consult_map':cmap,'map_text':format_map(cmap) if cmap else ''})
-    reference=json.loads((case_dir/'reference.json').read_text())
-    criterion=reference.get('matching_criterion',reference['correct_diagnosis']);override=None
-    if judge_override and (root/'config/judge_overrides_v3.json').exists():
-        override=json.loads((root/'config/judge_overrides_v3.json').read_text()).get(case_dir.name)
-        if override:criterion=override['matching_criterion']
-    builder=load_module(root/'upstream/onprem-medical-agents/src/eval/prompt_builders.py').PromptBuilder(criterion)
-    gold=reference.get('ground_truth');gold=gold if isinstance(gold,dict) and 'gold_diagnoses' in gold else reference['correct_diagnosis']
-    def judge_dx(dx,reasoning,role):
-        judge=client.call(JUDGE_V3,[{'role':'user','content':builder.build(gold,dx,reasoning)}],log,role,JUDGE_PARAMS,max_tokens=8192,response_format={'type':'json_object'})
-        try:
-            judgment=json.loads(judge['content']);assert isinstance(judgment['decision'],bool);return judgment['decision'],judgment.get('reasoning','')
-        except (json.JSONDecodeError,TypeError,KeyError,AssertionError):
-            log.append({'event':'backend_error','role':role,'reason':'settled malformed judge output'});return '','not judged: malformed judge output'
-    verdict,rationale=judge_dx(final['diagnosis'],final['reasoning'],'judge')
-    extra={}
-    if cascade is not None:
-        pv=verdict if final['diagnosis']==proposal['diagnosis'] else judge_dx(proposal['diagnosis'],proposal['reasoning'],'judge_proposal')[0]
-        extra={'cascade':True,'cascade_path':'>'.join(cstats['path']),'proposal_dx':proposal['diagnosis'],'proposal_correct':pv,'jef_c1':cstats.get('jef_c1'),'audited':cstats.get('audited',False),'tier2_verdict':cstats.get('tier2_verdict',''),'tier3_model':cstats.get('tier3_model',''),'review_exchanges':cstats.get('review_exchanges',0),**deploy_costs(log.events())}
-    responses=[e['response'] for e in log.events() if e['event'] in ('response','cli_call')];usage=[r['usage'] for r in responses]
-    result={'case_id':case_dir.name,'model':model,'provider':client.config['models'][model]['provider'],'dx_agent':final['diagnosis'],'reasoning':final['reasoning'],'dx_reference':reference['correct_diagnosis'],'judge_correct':verdict,'judge_rationale':rationale,'n_turns':turn,'n_tool_calls':ntools,'tool_errors':tools.errors,'prompt_tokens':sum(u.get('prompt_tokens',0) for u in usage),'completion_tokens':sum(u.get('completion_tokens',0) for u in usage),'reasoning_tokens':sum(u.get('completion_tokens_details',{}).get('reasoning_tokens',0) for u in usage),'cost_usd':str(sum(Decimal(str(u['cost'])) for u in usage)),'latency_s':time.monotonic()-start,'commit':commit,'timestamp':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'physician_review':'','min_exchanges':min_exchanges,'exam_first':exam_first,'delay_results':delay_results,'protocol':PROTOCOL,'patient_model':PATIENT_MODEL,'judge_model':JUDGE_V3,'patient_exchanges':tools.exchanges,'gated_requests':tools.gated,'investigation_orders':tools.orders,**extra,'consult_model':consult or '','consult_urgency':cmap['urgency'] if cmap else '','nudged':nudged,'prereq_blocks':tools.inner.prereq_blocks,'rubric':'override' if override else 'reference','unread_orders':len(tools.pending),'jef_guard':guard is not None,'jef_checks':jstats['checks'],'jef_retries':jstats['retries'],'jef_failures':jstats['failures']}
-    log.append({'event':'case_complete','result':result});return result
+    if final is None:return operational('10-turn admission limit',turn,ntools)
+    return finish(final,turn,ntools)
