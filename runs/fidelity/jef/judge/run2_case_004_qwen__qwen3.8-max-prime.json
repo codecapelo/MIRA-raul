@@ -1,0 +1,1 @@
+{"id": "run2_case_004_qwen__qwen3.8-max-prime", "request_sha256": "2dbe00347edfa6f7dee1cb626c83fda25c4d5c9a6736910b2ab508dab69f81c6", "model": "jev-1.13.0", "usage": {"input_tokens": 1296, "output_tokens": 36}, "answers": {"match": {"type": "noul", "noul": 0.97}, "generic": {"type": "noul", "noul": 0.02}}, "timestamp": 1791209875.364635}

@@ -1,0 +1,1152 @@
+{"kind": "judge", "id": "run1_case_002_openai__gpt-oss-120b", "input_tokens": 786, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_003_openai__gpt-oss-120b", "input_tokens": 751, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_004_openai__gpt-oss-120b", "input_tokens": 677, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_007_openai__gpt-oss-120b", "input_tokens": 629, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_001_z-ai__glm-4.5-air", "input_tokens": 671, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_008_openai__gpt-oss-120b", "input_tokens": 626, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_010_openai__gpt-oss-120b", "input_tokens": 689, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_005_openai__gpt-oss-120b", "input_tokens": 798, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_006_openai__gpt-oss-120b", "input_tokens": 624, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_002_z-ai__glm-4.5-air", "input_tokens": 668, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_003_z-ai__glm-4.5-air", "input_tokens": 698, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_005_z-ai__glm-4.5-air", "input_tokens": 658, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_006_z-ai__glm-4.5-air", "input_tokens": 704, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_004_z-ai__glm-4.5-air", "input_tokens": 702, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_007_z-ai__glm-4.5-air", "input_tokens": 658, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_010_z-ai__glm-4.5-air", "input_tokens": 597, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_009_z-ai__glm-4.5-air", "input_tokens": 650, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_001_z-ai__glm-5", "input_tokens": 722, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_002_z-ai__glm-5", "input_tokens": 766, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_008_z-ai__glm-4.5-air", "input_tokens": 651, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_003_z-ai__glm-5", "input_tokens": 699, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_004_z-ai__glm-5", "input_tokens": 697, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_007_z-ai__glm-5", "input_tokens": 701, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_006_z-ai__glm-5", "input_tokens": 744, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_009_z-ai__glm-5", "input_tokens": 726, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_005_z-ai__glm-5", "input_tokens": 756, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_008_z-ai__glm-5", "input_tokens": 733, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_010_z-ai__glm-5", "input_tokens": 638, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_001_qwen__qwen3.5-397b-a17b", "input_tokens": 720, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_002_qwen__qwen3.5-397b-a17b", "input_tokens": 724, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_004_qwen__qwen3.5-397b-a17b", "input_tokens": 728, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_003_qwen__qwen3.5-397b-a17b", "input_tokens": 743, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_005_qwen__qwen3.5-397b-a17b", "input_tokens": 719, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_007_qwen__qwen3.5-397b-a17b", "input_tokens": 699, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_010_qwen__qwen3.5-397b-a17b", "input_tokens": 645, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_008_qwen__qwen3.5-397b-a17b", "input_tokens": 691, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_009_qwen__qwen3.5-397b-a17b", "input_tokens": 677, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_001_openai__gpt-5.2", "input_tokens": 752, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_006_qwen__qwen3.5-397b-a17b", "input_tokens": 672, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_002_openai__gpt-5.2", "input_tokens": 756, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_004_openai__gpt-5.2", "input_tokens": 715, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_007_openai__gpt-5.2", "input_tokens": 660, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_006_openai__gpt-5.2", "input_tokens": 644, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_005_openai__gpt-5.2", "input_tokens": 723, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_003_openai__gpt-5.2", "input_tokens": 692, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_008_openai__gpt-5.2", "input_tokens": 682, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_009_openai__gpt-5.2", "input_tokens": 674, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_001_qwen__qwen3.8-max-prime", "input_tokens": 1220, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_002_qwen__qwen3.8-max-prime", "input_tokens": 1853, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_010_openai__gpt-5.2", "input_tokens": 716, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_003_qwen__qwen3.8-max-prime", "input_tokens": 1413, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_007_qwen__qwen3.8-max-prime", "input_tokens": 1644, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_008_qwen__qwen3.8-max-prime", "input_tokens": 1402, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_004_qwen__qwen3.8-max-prime", "input_tokens": 1498, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_005_qwen__qwen3.8-max-prime", "input_tokens": 1115, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_006_qwen__qwen3.8-max-prime", "input_tokens": 1050, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_009_qwen__qwen3.8-max-prime", "input_tokens": 1253, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_010_qwen__qwen3.8-max-prime", "input_tokens": 1140, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_002_qwen__qwen3.8-max-0902", "input_tokens": 1245, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_003_qwen__qwen3.8-max-0902", "input_tokens": 1133, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_001_qwen__qwen3.8-max-0902", "input_tokens": 1103, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_004_qwen__qwen3.8-max-0902", "input_tokens": 1324, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_005_qwen__qwen3.8-max-0902", "input_tokens": 1379, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_006_qwen__qwen3.8-max-0902", "input_tokens": 1095, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_007_qwen__qwen3.8-max-0902", "input_tokens": 1263, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_009_qwen__qwen3.8-max-0902", "input_tokens": 1393, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_008_qwen__qwen3.8-max-0902", "input_tokens": 1401, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_001_openai__gpt-oss-120b", "input_tokens": 681, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run1_case_010_qwen__qwen3.8-max-0902", "input_tokens": 1115, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_004_openai__gpt-oss-120b", "input_tokens": 649, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_002_openai__gpt-oss-120b", "input_tokens": 620, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_005_openai__gpt-oss-120b", "input_tokens": 785, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_006_openai__gpt-oss-120b", "input_tokens": 583, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_007_openai__gpt-oss-120b", "input_tokens": 653, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_008_openai__gpt-oss-120b", "input_tokens": 734, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_009_openai__gpt-oss-120b", "input_tokens": 692, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_010_openai__gpt-oss-120b", "input_tokens": 652, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_002_z-ai__glm-4.5-air", "input_tokens": 681, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_004_z-ai__glm-4.5-air", "input_tokens": 667, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_003_z-ai__glm-4.5-air", "input_tokens": 696, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_006_z-ai__glm-4.5-air", "input_tokens": 705, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_005_z-ai__glm-4.5-air", "input_tokens": 701, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_007_z-ai__glm-4.5-air", "input_tokens": 614, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_008_z-ai__glm-4.5-air", "input_tokens": 669, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_009_z-ai__glm-4.5-air", "input_tokens": 654, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_010_z-ai__glm-4.5-air", "input_tokens": 639, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_001_z-ai__glm-5", "input_tokens": 739, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_002_z-ai__glm-5", "input_tokens": 787, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_003_z-ai__glm-5", "input_tokens": 718, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_004_z-ai__glm-5", "input_tokens": 697, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_005_z-ai__glm-5", "input_tokens": 762, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_006_z-ai__glm-5", "input_tokens": 743, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_008_z-ai__glm-5", "input_tokens": 791, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_007_z-ai__glm-5", "input_tokens": 742, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_009_z-ai__glm-5", "input_tokens": 684, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_010_z-ai__glm-5", "input_tokens": 719, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_002_qwen__qwen3.5-397b-a17b", "input_tokens": 725, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_001_qwen__qwen3.5-397b-a17b", "input_tokens": 718, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_005_qwen__qwen3.5-397b-a17b", "input_tokens": 707, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_004_qwen__qwen3.5-397b-a17b", "input_tokens": 765, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_003_qwen__qwen3.5-397b-a17b", "input_tokens": 743, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_006_qwen__qwen3.5-397b-a17b", "input_tokens": 667, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_007_qwen__qwen3.5-397b-a17b", "input_tokens": 718, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_008_qwen__qwen3.5-397b-a17b", "input_tokens": 694, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_009_qwen__qwen3.5-397b-a17b", "input_tokens": 687, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_010_qwen__qwen3.5-397b-a17b", "input_tokens": 662, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_001_openai__gpt-5.2", "input_tokens": 769, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_002_openai__gpt-5.2", "input_tokens": 790, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_003_openai__gpt-5.2", "input_tokens": 717, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_004_openai__gpt-5.2", "input_tokens": 690, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_006_openai__gpt-5.2", "input_tokens": 664, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_007_openai__gpt-5.2", "input_tokens": 727, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_008_openai__gpt-5.2", "input_tokens": 690, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_005_openai__gpt-5.2", "input_tokens": 762, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_009_openai__gpt-5.2", "input_tokens": 700, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_010_openai__gpt-5.2", "input_tokens": 659, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_001_qwen__qwen3.8-max-prime", "input_tokens": 1271, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_002_qwen__qwen3.8-max-prime", "input_tokens": 1568, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_003_qwen__qwen3.8-max-prime", "input_tokens": 1300, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_004_qwen__qwen3.8-max-prime", "input_tokens": 1296, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_005_qwen__qwen3.8-max-prime", "input_tokens": 1120, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_006_qwen__qwen3.8-max-prime", "input_tokens": 1069, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_007_qwen__qwen3.8-max-prime", "input_tokens": 1189, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_008_qwen__qwen3.8-max-prime", "input_tokens": 1127, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_010_qwen__qwen3.8-max-prime", "input_tokens": 1267, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_009_qwen__qwen3.8-max-prime", "input_tokens": 1087, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_002_qwen__qwen3.8-max-0902", "input_tokens": 1663, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_001_qwen__qwen3.8-max-0902", "input_tokens": 1139, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_003_qwen__qwen3.8-max-0902", "input_tokens": 1382, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_004_qwen__qwen3.8-max-0902", "input_tokens": 1190, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_005_qwen__qwen3.8-max-0902", "input_tokens": 1052, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_006_qwen__qwen3.8-max-0902", "input_tokens": 1059, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_007_qwen__qwen3.8-max-0902", "input_tokens": 1310, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_008_qwen__qwen3.8-max-0902", "input_tokens": 1452, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_009_qwen__qwen3.8-max-0902", "input_tokens": 1069, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_001_openai__gpt-oss-120b", "input_tokens": 711, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run2_case_010_qwen__qwen3.8-max-0902", "input_tokens": 1094, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_002_openai__gpt-oss-120b", "input_tokens": 660, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_004_openai__gpt-oss-120b", "input_tokens": 622, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_005_openai__gpt-oss-120b", "input_tokens": 687, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_007_openai__gpt-oss-120b", "input_tokens": 643, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_008_openai__gpt-oss-120b", "input_tokens": 631, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_009_openai__gpt-oss-120b", "input_tokens": 624, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_001_z-ai__glm-4.5-air", "input_tokens": 672, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_010_openai__gpt-oss-120b", "input_tokens": 738, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_002_z-ai__glm-4.5-air", "input_tokens": 714, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_003_z-ai__glm-4.5-air", "input_tokens": 678, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_004_z-ai__glm-4.5-air", "input_tokens": 669, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_005_z-ai__glm-4.5-air", "input_tokens": 661, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_006_z-ai__glm-4.5-air", "input_tokens": 725, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_007_z-ai__glm-4.5-air", "input_tokens": 660, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_008_z-ai__glm-4.5-air", "input_tokens": 662, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_009_z-ai__glm-4.5-air", "input_tokens": 618, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_010_z-ai__glm-4.5-air", "input_tokens": 647, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_001_z-ai__glm-5", "input_tokens": 719, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_002_z-ai__glm-5", "input_tokens": 779, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_004_z-ai__glm-5", "input_tokens": 688, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_003_z-ai__glm-5", "input_tokens": 722, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_005_z-ai__glm-5", "input_tokens": 783, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_006_z-ai__glm-5", "input_tokens": 692, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_007_z-ai__glm-5", "input_tokens": 748, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_008_z-ai__glm-5", "input_tokens": 736, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_010_z-ai__glm-5", "input_tokens": 767, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_009_z-ai__glm-5", "input_tokens": 688, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_001_qwen__qwen3.5-397b-a17b", "input_tokens": 766, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_002_qwen__qwen3.5-397b-a17b", "input_tokens": 681, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_003_qwen__qwen3.5-397b-a17b", "input_tokens": 720, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_004_qwen__qwen3.5-397b-a17b", "input_tokens": 638, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_005_qwen__qwen3.5-397b-a17b", "input_tokens": 668, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_006_qwen__qwen3.5-397b-a17b", "input_tokens": 657, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_007_qwen__qwen3.5-397b-a17b", "input_tokens": 746, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_008_qwen__qwen3.5-397b-a17b", "input_tokens": 699, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_009_qwen__qwen3.5-397b-a17b", "input_tokens": 692, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_010_qwen__qwen3.5-397b-a17b", "input_tokens": 675, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_001_openai__gpt-5.2", "input_tokens": 736, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_002_openai__gpt-5.2", "input_tokens": 780, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_003_openai__gpt-5.2", "input_tokens": 733, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_004_openai__gpt-5.2", "input_tokens": 688, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_005_openai__gpt-5.2", "input_tokens": 745, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_006_openai__gpt-5.2", "input_tokens": 622, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_007_openai__gpt-5.2", "input_tokens": 725, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_009_openai__gpt-5.2", "input_tokens": 696, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_010_openai__gpt-5.2", "input_tokens": 681, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_008_openai__gpt-5.2", "input_tokens": 657, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_001_qwen__qwen3.8-max-prime", "input_tokens": 1390, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_002_qwen__qwen3.8-max-prime", "input_tokens": 1737, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_003_qwen__qwen3.8-max-prime", "input_tokens": 1329, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_004_qwen__qwen3.8-max-prime", "input_tokens": 1813, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_005_qwen__qwen3.8-max-prime", "input_tokens": 1217, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_006_qwen__qwen3.8-max-prime", "input_tokens": 1508, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_008_qwen__qwen3.8-max-prime", "input_tokens": 1433, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_007_qwen__qwen3.8-max-prime", "input_tokens": 1238, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_009_qwen__qwen3.8-max-prime", "input_tokens": 1272, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_001_qwen__qwen3.8-max-0902", "input_tokens": 1003, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_002_qwen__qwen3.8-max-0902", "input_tokens": 1425, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_010_qwen__qwen3.8-max-prime", "input_tokens": 1341, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_004_qwen__qwen3.8-max-0902", "input_tokens": 1294, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_003_qwen__qwen3.8-max-0902", "input_tokens": 1300, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_005_qwen__qwen3.8-max-0902", "input_tokens": 1179, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_007_qwen__qwen3.8-max-0902", "input_tokens": 1374, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_006_qwen__qwen3.8-max-0902", "input_tokens": 1231, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_008_qwen__qwen3.8-max-0902", "input_tokens": 1194, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_009_qwen__qwen3.8-max-0902", "input_tokens": 1202, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "run3_case_010_qwen__qwen3.8-max-0902", "input_tokens": 1234, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_sonnet_5_5_case_001", "input_tokens": 823, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_sonnet_5_5_case_003", "input_tokens": 765, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_sonnet_5_5_case_004", "input_tokens": 722, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_sonnet_5_5_case_002", "input_tokens": 819, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_sonnet_5_5_case_005", "input_tokens": 888, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_sonnet_5_5_case_006", "input_tokens": 710, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_sonnet_5_5_case_007", "input_tokens": 740, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_sonnet_5_5_case_008", "input_tokens": 832, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_sonnet_5_5_case_009", "input_tokens": 782, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_sonnet_5_5_case_010", "input_tokens": 745, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_opus_5_5_case_002", "input_tokens": 846, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_opus_5_5_case_003", "input_tokens": 863, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_opus_5_5_case_001", "input_tokens": 1001, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_opus_5_5_case_004", "input_tokens": 854, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_opus_5_5_case_005", "input_tokens": 951, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_opus_5_5_case_006", "input_tokens": 728, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_opus_5_5_case_008", "input_tokens": 872, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_opus_5_5_case_009", "input_tokens": 897, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_opus_5_5_case_010", "input_tokens": 853, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "judge", "id": "claude_opus_5_5_case_007", "input_tokens": 918, "output_tokens": 36, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q1__gpt-oss_rules", "input_tokens": 1204, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q1__gpt-5.2_base", "input_tokens": 1196, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q1__gpt-oss_base", "input_tokens": 1236, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q1__sonnet_rules", "input_tokens": 1175, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q1__flash-lite_rules", "input_tokens": 1172, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q1__flash-lite_base", "input_tokens": 1197, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q1__gpt-5.2_rules", "input_tokens": 1197, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q1__glm-air_rules", "input_tokens": 1190, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q1__glm-5_base", "input_tokens": 1250, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q1__sonnet_base", "input_tokens": 1181, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q1__glm-air_base", "input_tokens": 1199, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q2__gpt-5.2_rules", "input_tokens": 1141, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q2__gpt-oss_rules", "input_tokens": 1157, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q2__sonnet_base", "input_tokens": 1131, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q2__gpt-5.2_base", "input_tokens": 1166, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q2__glm-5_base", "input_tokens": 1237, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q2__glm-air_rules", "input_tokens": 1139, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q2__flash-lite_base", "input_tokens": 1117, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q2__glm-air_base", "input_tokens": 1157, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q2__flash-lite_rules", "input_tokens": 1145, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q2__sonnet_rules", "input_tokens": 1137, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q2__gpt-oss_base", "input_tokens": 1104, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q3__gpt-5.2_base", "input_tokens": 1282, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q3__sonnet_base", "input_tokens": 1196, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q3__gpt-oss_base", "input_tokens": 1311, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q3__flash-lite_rules", "input_tokens": 1189, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q3__glm-air_rules", "input_tokens": 1186, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q3__gpt-5.2_rules", "input_tokens": 1196, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q3__gpt-oss_rules", "input_tokens": 1206, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q3__flash-lite_base", "input_tokens": 1270, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q4__glm-air_rules", "input_tokens": 1200, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q3__glm-5_base", "input_tokens": 1286, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q3__sonnet_rules", "input_tokens": 1178, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q3__glm-air_base", "input_tokens": 1266, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q4__gpt-oss_base", "input_tokens": 1373, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q4__sonnet_rules", "input_tokens": 1221, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q4__sonnet_base", "input_tokens": 1307, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q4__flash-lite_rules", "input_tokens": 1227, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q4__glm-air_base", "input_tokens": 1291, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q4__flash-lite_base", "input_tokens": 1270, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q4__gpt-5.2_base", "input_tokens": 1277, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q4__gpt-oss_rules", "input_tokens": 1246, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q4__gpt-5.2_rules", "input_tokens": 1253, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_001_q4__glm-5_base", "input_tokens": 1303, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q1__sonnet_base", "input_tokens": 1119, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q1__glm-air_rules", "input_tokens": 1048, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q1__gpt-oss_base", "input_tokens": 1105, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q1__flash-lite_base", "input_tokens": 1132, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q1__gpt-oss_rules", "input_tokens": 1069, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q1__gpt-5.2_base", "input_tokens": 1152, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q1__sonnet_rules", "input_tokens": 1065, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q1__flash-lite_rules", "input_tokens": 1071, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q1__gpt-5.2_rules", "input_tokens": 1079, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q1__glm-5_base", "input_tokens": 1169, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q2__sonnet_rules", "input_tokens": 1080, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q1__glm-air_base", "input_tokens": 1079, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q2__gpt-oss_rules", "input_tokens": 1097, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q2__gpt-5.2_rules", "input_tokens": 1085, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q2__gpt-5.2_base", "input_tokens": 1157, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q2__glm-air_rules", "input_tokens": 1098, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q2__glm-5_base", "input_tokens": 1203, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q2__gpt-oss_base", "input_tokens": 1198, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q2__flash-lite_base", "input_tokens": 1145, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q2__sonnet_base", "input_tokens": 1121, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q2__glm-air_base", "input_tokens": 1148, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q3__sonnet_base", "input_tokens": 1034, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q2__flash-lite_rules", "input_tokens": 1090, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q3__glm-air_base", "input_tokens": 1044, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q3__gpt-oss_rules", "input_tokens": 1017, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q3__gpt-5.2_rules", "input_tokens": 1023, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q3__glm-air_rules", "input_tokens": 1034, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q3__sonnet_rules", "input_tokens": 1026, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q3__glm-5_base", "input_tokens": 1086, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q3__gpt-5.2_base", "input_tokens": 1039, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q3__gpt-oss_base", "input_tokens": 1033, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q3__flash-lite_base", "input_tokens": 1034, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q3__flash-lite_rules", "input_tokens": 1010, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q4__gpt-5.2_base", "input_tokens": 1134, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q4__glm-5_base", "input_tokens": 1218, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q4__flash-lite_base", "input_tokens": 1129, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q4__gpt-5.2_rules", "input_tokens": 1097, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q4__sonnet_rules", "input_tokens": 1114, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q4__sonnet_base", "input_tokens": 1148, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q4__flash-lite_rules", "input_tokens": 1113, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q4__gpt-oss_rules", "input_tokens": 1101, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q4__glm-air_base", "input_tokens": 1108, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q4__glm-air_rules", "input_tokens": 1087, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_002_q4__gpt-oss_base", "input_tokens": 1119, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q1__glm-air_rules", "input_tokens": 1123, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q1__flash-lite_base", "input_tokens": 1183, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q1__flash-lite_rules", "input_tokens": 1144, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q1__sonnet_base", "input_tokens": 1195, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q1__gpt-5.2_base", "input_tokens": 1186, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q1__glm-5_base", "input_tokens": 1196, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q1__gpt-oss_base", "input_tokens": 1222, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q1__glm-air_base", "input_tokens": 1182, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q1__gpt-5.2_rules", "input_tokens": 1153, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q1__gpt-oss_rules", "input_tokens": 1143, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q1__sonnet_rules", "input_tokens": 1136, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q2__gpt-5.2_rules", "input_tokens": 1191, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q2__sonnet_base", "input_tokens": 1237, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q2__glm-air_rules", "input_tokens": 1163, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q2__glm-5_base", "input_tokens": 1263, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q2__sonnet_rules", "input_tokens": 1166, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q2__flash-lite_rules", "input_tokens": 1177, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q2__glm-air_base", "input_tokens": 1160, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q2__gpt-oss_base", "input_tokens": 1332, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q2__flash-lite_base", "input_tokens": 1163, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q2__gpt-oss_rules", "input_tokens": 1188, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q3__sonnet_rules", "input_tokens": 1219, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q2__gpt-5.2_base", "input_tokens": 1234, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q3__sonnet_base", "input_tokens": 1332, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q3__gpt-5.2_base", "input_tokens": 1303, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q3__flash-lite_base", "input_tokens": 1351, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q3__gpt-oss_rules", "input_tokens": 1246, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q3__glm-5_base", "input_tokens": 1389, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q3__gpt-oss_base", "input_tokens": 1457, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q3__glm-air_base", "input_tokens": 1343, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q3__flash-lite_rules", "input_tokens": 1237, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q3__gpt-5.2_rules", "input_tokens": 1240, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q3__glm-air_rules", "input_tokens": 1222, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q4__gpt-oss_base", "input_tokens": 1372, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q4__glm-air_base", "input_tokens": 1258, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q4__sonnet_rules", "input_tokens": 1209, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q4__gpt-5.2_rules", "input_tokens": 1216, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q4__glm-air_rules", "input_tokens": 1189, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q4__flash-lite_base", "input_tokens": 1247, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q4__flash-lite_rules", "input_tokens": 1217, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q4__glm-5_base", "input_tokens": 1298, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q4__gpt-5.2_base", "input_tokens": 1253, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q4__gpt-oss_rules", "input_tokens": 1213, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q1__gpt-5.2_rules", "input_tokens": 1129, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q1__sonnet_rules", "input_tokens": 1119, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q1__gpt-5.2_base", "input_tokens": 1139, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q1__gpt-oss_base", "input_tokens": 1279, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_003_q4__sonnet_base", "input_tokens": 1294, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q1__glm-air_base", "input_tokens": 1145, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q1__glm-air_rules", "input_tokens": 1111, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q1__gpt-oss_rules", "input_tokens": 1119, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q1__sonnet_base", "input_tokens": 1156, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q1__glm-5_base", "input_tokens": 1224, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q1__flash-lite_base", "input_tokens": 1160, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q1__flash-lite_rules", "input_tokens": 1119, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q2__glm-air_rules", "input_tokens": 1024, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q2__gpt-5.2_base", "input_tokens": 1105, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q2__flash-lite_rules", "input_tokens": 1046, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q2__gpt-5.2_rules", "input_tokens": 1016, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q2__gpt-oss_base", "input_tokens": 1130, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q2__flash-lite_base", "input_tokens": 1117, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q2__glm-5_base", "input_tokens": 1139, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q2__sonnet_rules", "input_tokens": 1026, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q2__gpt-oss_rules", "input_tokens": 1020, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q2__sonnet_base", "input_tokens": 1046, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q2__glm-air_base", "input_tokens": 1037, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q3__gpt-oss_rules", "input_tokens": 974, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q3__glm-air_base", "input_tokens": 1006, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q3__gpt-5.2_rules", "input_tokens": 992, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q3__gpt-oss_base", "input_tokens": 1001, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q3__glm-5_base", "input_tokens": 1026, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q3__flash-lite_rules", "input_tokens": 1020, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q3__sonnet_rules", "input_tokens": 999, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q3__gpt-5.2_base", "input_tokens": 973, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q3__sonnet_base", "input_tokens": 1021, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q3__flash-lite_base", "input_tokens": 980, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q3__glm-air_rules", "input_tokens": 1011, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q4__sonnet_rules", "input_tokens": 1070, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q4__gpt-oss_base", "input_tokens": 1139, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q4__sonnet_base", "input_tokens": 1117, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q4__glm-air_rules", "input_tokens": 1049, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q4__flash-lite_base", "input_tokens": 1113, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q4__gpt-oss_rules", "input_tokens": 1067, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q4__glm-air_base", "input_tokens": 1157, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q4__glm-5_base", "input_tokens": 1190, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q4__gpt-5.2_rules", "input_tokens": 1083, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q4__flash-lite_rules", "input_tokens": 1055, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_004_q4__gpt-5.2_base", "input_tokens": 1103, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q1__gpt-oss_rules", "input_tokens": 1113, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q1__glm-5_base", "input_tokens": 1111, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q1__flash-lite_base", "input_tokens": 1114, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q1__sonnet_base", "input_tokens": 1153, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q1__glm-air_rules", "input_tokens": 1128, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q1__glm-air_base", "input_tokens": 1119, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q1__gpt-oss_base", "input_tokens": 1112, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q1__flash-lite_rules", "input_tokens": 1123, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q1__gpt-5.2_base", "input_tokens": 1114, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q1__sonnet_rules", "input_tokens": 1121, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q1__gpt-5.2_rules", "input_tokens": 1125, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q2__sonnet_rules", "input_tokens": 1039, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q2__sonnet_base", "input_tokens": 1059, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q2__flash-lite_base", "input_tokens": 1063, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q2__gpt-oss_rules", "input_tokens": 1043, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q2__flash-lite_rules", "input_tokens": 1062, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q2__glm-5_base", "input_tokens": 1097, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q2__gpt-5.2_rules", "input_tokens": 1049, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q2__gpt-oss_base", "input_tokens": 1125, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q2__gpt-5.2_base", "input_tokens": 1079, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q3__gpt-oss_rules", "input_tokens": 1101, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q2__glm-air_base", "input_tokens": 1050, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q2__glm-air_rules", "input_tokens": 1038, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q3__glm-air_rules", "input_tokens": 1058, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q3__gpt-oss_base", "input_tokens": 1155, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q3__sonnet_base", "input_tokens": 1115, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q3__flash-lite_rules", "input_tokens": 1095, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q3__gpt-5.2_base", "input_tokens": 1117, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q3__glm-air_base", "input_tokens": 1126, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q3__gpt-5.2_rules", "input_tokens": 1098, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q3__glm-5_base", "input_tokens": 1118, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q3__sonnet_rules", "input_tokens": 1081, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q3__flash-lite_base", "input_tokens": 1101, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q4__glm-air_base", "input_tokens": 1287, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q4__gpt-oss_base", "input_tokens": 1307, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q4__sonnet_rules", "input_tokens": 1163, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q4__flash-lite_base", "input_tokens": 1220, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q4__gpt-5.2_rules", "input_tokens": 1191, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q4__gpt-oss_rules", "input_tokens": 1201, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q4__sonnet_base", "input_tokens": 1216, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q4__flash-lite_rules", "input_tokens": 1187, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q4__gpt-5.2_base", "input_tokens": 1242, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q4__glm-5_base", "input_tokens": 1243, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_005_q4__glm-air_rules", "input_tokens": 1159, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q1__gpt-oss_base", "input_tokens": 1309, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q1__sonnet_base", "input_tokens": 1174, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q1__flash-lite_base", "input_tokens": 1219, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q1__gpt-5.2_rules", "input_tokens": 1118, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q1__glm-5_base", "input_tokens": 1237, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q1__gpt-oss_rules", "input_tokens": 1119, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q1__sonnet_rules", "input_tokens": 1103, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q1__gpt-5.2_base", "input_tokens": 1212, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q1__flash-lite_rules", "input_tokens": 1101, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q1__glm-air_base", "input_tokens": 1117, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q1__glm-air_rules", "input_tokens": 1116, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q2__gpt-oss_rules", "input_tokens": 1153, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q2__flash-lite_rules", "input_tokens": 1155, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q2__gpt-5.2_base", "input_tokens": 1193, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q2__glm-air_rules", "input_tokens": 1144, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q2__sonnet_base", "input_tokens": 1207, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q2__flash-lite_base", "input_tokens": 1222, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q2__glm-air_base", "input_tokens": 1174, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q2__gpt-5.2_rules", "input_tokens": 1161, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q2__gpt-oss_base", "input_tokens": 1298, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q2__glm-5_base", "input_tokens": 1279, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q2__sonnet_rules", "input_tokens": 1153, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q3__gpt-5.2_base", "input_tokens": 1065, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q3__gpt-5.2_rules", "input_tokens": 1030, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q3__gpt-oss_rules", "input_tokens": 1031, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q3__sonnet_base", "input_tokens": 1010, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q3__gpt-oss_base", "input_tokens": 1098, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q3__glm-5_base", "input_tokens": 1057, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q3__sonnet_rules", "input_tokens": 1024, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q3__flash-lite_rules", "input_tokens": 1026, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q3__flash-lite_base", "input_tokens": 1023, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q3__glm-air_rules", "input_tokens": 1047, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q3__glm-air_base", "input_tokens": 1067, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q4__sonnet_rules", "input_tokens": 1048, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q4__glm-air_rules", "input_tokens": 1057, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q4__gpt-5.2_base", "input_tokens": 1154, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q4__gpt-5.2_rules", "input_tokens": 1064, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q4__glm-5_base", "input_tokens": 1159, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q4__gpt-oss_rules", "input_tokens": 1044, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q4__glm-air_base", "input_tokens": 1150, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q4__flash-lite_base", "input_tokens": 1142, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q4__flash-lite_rules", "input_tokens": 1072, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q4__sonnet_base", "input_tokens": 1075, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_006_q4__gpt-oss_base", "input_tokens": 1153, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q1__gpt-oss_rules", "input_tokens": 1150, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q1__glm-air_rules", "input_tokens": 1137, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q1__glm-5_base", "input_tokens": 1170, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q1__gpt-oss_base", "input_tokens": 1205, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q1__gpt-5.2_rules", "input_tokens": 1154, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q1__sonnet_rules", "input_tokens": 1143, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q1__sonnet_base", "input_tokens": 1154, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q1__flash-lite_rules", "input_tokens": 1165, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q1__flash-lite_base", "input_tokens": 1165, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q1__glm-air_base", "input_tokens": 1151, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q1__gpt-5.2_base", "input_tokens": 1175, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q2__gpt-5.2_rules", "input_tokens": 1186, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q2__flash-lite_base", "input_tokens": 1196, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q2__gpt-oss_base", "input_tokens": 1257, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q2__flash-lite_rules", "input_tokens": 1185, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q2__gpt-5.2_base", "input_tokens": 1219, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q2__gpt-oss_rules", "input_tokens": 1169, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q2__glm-air_base", "input_tokens": 1188, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q2__sonnet_rules", "input_tokens": 1190, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q2__sonnet_base", "input_tokens": 1205, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q2__glm-air_rules", "input_tokens": 1175, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q3__sonnet_base", "input_tokens": 1297, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q2__glm-5_base", "input_tokens": 1272, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q3__gpt-oss_base", "input_tokens": 1416, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q3__glm-air_base", "input_tokens": 1260, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q3__gpt-5.2_base", "input_tokens": 1294, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q3__sonnet_rules", "input_tokens": 1225, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q3__glm-5_base", "input_tokens": 1346, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q3__glm-air_rules", "input_tokens": 1205, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q3__gpt-5.2_rules", "input_tokens": 1239, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q3__flash-lite_rules", "input_tokens": 1221, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q3__gpt-oss_rules", "input_tokens": 1243, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q3__flash-lite_base", "input_tokens": 1253, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q4__glm-5_base", "input_tokens": 1291, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q4__sonnet_rules", "input_tokens": 1249, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q4__flash-lite_base", "input_tokens": 1256, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q4__gpt-5.2_rules", "input_tokens": 1259, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q4__gpt-oss_base", "input_tokens": 1290, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q4__glm-air_base", "input_tokens": 1291, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q4__gpt-5.2_base", "input_tokens": 1312, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q4__gpt-oss_rules", "input_tokens": 1253, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q4__sonnet_base", "input_tokens": 1302, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q4__glm-air_rules", "input_tokens": 1253, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_007_q4__flash-lite_rules", "input_tokens": 1250, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q1__gpt-5.2_rules", "input_tokens": 1235, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q1__glm-air_base", "input_tokens": 1212, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q1__glm-air_rules", "input_tokens": 1199, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q1__sonnet_rules", "input_tokens": 1221, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q1__flash-lite_base", "input_tokens": 1251, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q1__flash-lite_rules", "input_tokens": 1206, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q1__gpt-oss_base", "input_tokens": 1313, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q1__glm-5_base", "input_tokens": 1287, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q1__sonnet_base", "input_tokens": 1259, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q1__gpt-5.2_base", "input_tokens": 1261, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q1__gpt-oss_rules", "input_tokens": 1206, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q2__gpt-oss_rules", "input_tokens": 1018, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q2__sonnet_base", "input_tokens": 1067, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q2__flash-lite_rules", "input_tokens": 1035, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q2__gpt-5.2_base", "input_tokens": 1041, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q2__sonnet_rules", "input_tokens": 1021, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q2__gpt-oss_base", "input_tokens": 1020, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q2__glm-air_rules", "input_tokens": 1020, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q2__glm-5_base", "input_tokens": 1073, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q2__flash-lite_base", "input_tokens": 1035, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q2__gpt-5.2_rules", "input_tokens": 1006, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q2__glm-air_base", "input_tokens": 1014, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q3__gpt-oss_base", "input_tokens": 1125, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q3__flash-lite_rules", "input_tokens": 1068, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q3__gpt-5.2_rules", "input_tokens": 1068, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q3__gpt-oss_rules", "input_tokens": 1050, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q3__sonnet_rules", "input_tokens": 1059, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q3__glm-5_base", "input_tokens": 1137, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q3__sonnet_base", "input_tokens": 1088, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q3__flash-lite_base", "input_tokens": 1094, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q3__glm-air_rules", "input_tokens": 1057, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q3__glm-air_base", "input_tokens": 1053, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q3__gpt-5.2_base", "input_tokens": 1137, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q4__gpt-oss_base", "input_tokens": 1188, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q4__glm-air_rules", "input_tokens": 1120, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q4__sonnet_rules", "input_tokens": 1151, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q4__flash-lite_base", "input_tokens": 1178, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q4__gpt-oss_rules", "input_tokens": 1138, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q4__sonnet_base", "input_tokens": 1239, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q4__gpt-5.2_base", "input_tokens": 1199, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q4__glm-5_base", "input_tokens": 1154, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q1__glm-air_base", "input_tokens": 1022, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q4__flash-lite_rules", "input_tokens": 1151, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q4__gpt-5.2_rules", "input_tokens": 1155, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_008_q4__glm-air_base", "input_tokens": 1140, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q1__glm-air_rules", "input_tokens": 1011, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q1__flash-lite_base", "input_tokens": 1021, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q1__glm-5_base", "input_tokens": 1022, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q1__gpt-oss_rules", "input_tokens": 1016, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q1__flash-lite_rules", "input_tokens": 1028, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q1__gpt-5.2_base", "input_tokens": 1021, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q1__sonnet_rules", "input_tokens": 1021, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q1__gpt-oss_base", "input_tokens": 1041, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q1__gpt-5.2_rules", "input_tokens": 1012, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q1__sonnet_base", "input_tokens": 1029, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q2__glm-air_rules", "input_tokens": 1051, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q2__flash-lite_rules", "input_tokens": 1070, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q2__flash-lite_base", "input_tokens": 1028, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q2__gpt-oss_base", "input_tokens": 1104, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q2__sonnet_base", "input_tokens": 1058, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q2__glm-air_base", "input_tokens": 1052, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q2__gpt-5.2_rules", "input_tokens": 1048, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q2__glm-5_base", "input_tokens": 1085, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q2__gpt-5.2_base", "input_tokens": 1038, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q2__sonnet_rules", "input_tokens": 1044, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q2__gpt-oss_rules", "input_tokens": 1046, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q3__gpt-oss_base", "input_tokens": 1121, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q3__glm-air_base", "input_tokens": 1046, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q3__flash-lite_base", "input_tokens": 1065, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q3__gpt-oss_rules", "input_tokens": 1057, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q3__flash-lite_rules", "input_tokens": 1069, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q3__gpt-5.2_base", "input_tokens": 1082, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q3__sonnet_base", "input_tokens": 1061, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q3__gpt-5.2_rules", "input_tokens": 1052, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q3__sonnet_rules", "input_tokens": 1061, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q3__glm-air_rules", "input_tokens": 1048, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q3__glm-5_base", "input_tokens": 1109, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q4__gpt-oss_rules", "input_tokens": 1085, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q4__glm-air_rules", "input_tokens": 1073, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q4__glm-5_base", "input_tokens": 1106, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q4__glm-air_base", "input_tokens": 1093, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q4__flash-lite_base", "input_tokens": 1082, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q4__gpt-oss_base", "input_tokens": 1178, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q4__sonnet_rules", "input_tokens": 1072, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q4__sonnet_base", "input_tokens": 1107, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q4__flash-lite_rules", "input_tokens": 1074, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q4__gpt-5.2_base", "input_tokens": 1072, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_009_q4__gpt-5.2_rules", "input_tokens": 1081, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q1__sonnet_base", "input_tokens": 1257, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q1__flash-lite_rules", "input_tokens": 1191, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q1__glm-air_rules", "input_tokens": 1186, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q1__sonnet_rules", "input_tokens": 1182, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q1__gpt-oss_base", "input_tokens": 1343, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q1__gpt-5.2_rules", "input_tokens": 1208, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q1__gpt-5.2_base", "input_tokens": 1272, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q1__gpt-oss_rules", "input_tokens": 1202, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q1__flash-lite_base", "input_tokens": 1220, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q1__glm-air_base", "input_tokens": 1218, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q1__glm-5_base", "input_tokens": 1250, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q2__gpt-oss_rules", "input_tokens": 1070, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q2__gpt-5.2_rules", "input_tokens": 1090, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q2__glm-air_base", "input_tokens": 1097, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q2__sonnet_base", "input_tokens": 1107, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q2__gpt-oss_base", "input_tokens": 1267, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q2__glm-5_base", "input_tokens": 1132, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q2__sonnet_rules", "input_tokens": 1069, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q2__flash-lite_rules", "input_tokens": 1082, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q2__glm-air_rules", "input_tokens": 1071, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q2__flash-lite_base", "input_tokens": 1096, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q2__gpt-5.2_base", "input_tokens": 1119, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q3__glm-air_rules", "input_tokens": 1104, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q3__glm-air_base", "input_tokens": 1110, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q3__flash-lite_base", "input_tokens": 1147, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q3__gpt-oss_base", "input_tokens": 1233, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q3__glm-5_base", "input_tokens": 1205, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q3__sonnet_base", "input_tokens": 1160, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q3__flash-lite_rules", "input_tokens": 1105, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q3__sonnet_rules", "input_tokens": 1092, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q3__gpt-5.2_base", "input_tokens": 1110, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q3__gpt-5.2_rules", "input_tokens": 1100, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q3__gpt-oss_rules", "input_tokens": 1102, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q4__gpt-5.2_rules", "input_tokens": 1118, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q4__gpt-oss_base", "input_tokens": 1191, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q4__glm-5_base", "input_tokens": 1177, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q4__glm-air_base", "input_tokens": 1092, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q4__flash-lite_base", "input_tokens": 1155, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q4__gpt-oss_rules", "input_tokens": 1107, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q4__flash-lite_rules", "input_tokens": 1111, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q4__sonnet_rules", "input_tokens": 1106, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q4__glm-air_rules", "input_tokens": 1104, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q4__sonnet_base", "input_tokens": 1138, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "patient", "id": "case_010_q4__gpt-5.2_base", "input_tokens": 1145, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1103, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1235, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1298, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1170, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1251, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1389, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1141, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1138, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1204, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1439, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1103, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1487, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1261, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1146, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1271, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1271, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1169, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1219, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1100, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1125, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1415, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1199, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1312, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1270, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1180, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1107, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1168, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1068, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1290, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1333, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1161, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1280, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1099, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1301, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1321, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1108, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1128, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1077, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1151, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1289, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1160, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1169, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1152, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1233, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1136, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1159, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1094, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1268, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1219, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1170, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1127, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1422, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1316, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1112, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1138, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1122, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1158, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1177, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1186, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1082, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1249, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1264, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1276, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1454, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1152, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1142, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1019, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1317, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1220, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1070, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1255, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1173, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1344, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1331, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1278, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1165, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1096, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1392, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1330, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1487, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1337, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1404, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1183, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1108, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1202, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1391, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1058, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1087, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1063, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1126, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1124, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1228, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1192, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1322, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1230, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1289, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1235, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1251, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1141, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1439, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1261, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1103, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1092, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1170, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1138, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1103, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1102, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1100, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1090, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1099, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1298, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1389, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1204, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1487, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1146, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1271, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1169, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1415, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1312, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1271, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1275, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1219, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1125, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1131, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1199, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1270, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1168, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1180, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1107, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1068, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1161, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1290, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1333, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1280, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1301, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1321, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1128, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1077, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1289, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1108, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1106, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1160, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1169, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1233, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1241, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1151, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1152, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1136, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1159, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1094, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_guard", "input_tokens": 1268, "output_tokens": 38, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 4636, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 6366, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 5087, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 4830, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 4715, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 4447, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 5211, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 5707, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 5730, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 4237, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 2715, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 6017, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 4620, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 5748, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3945, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 7036, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3718, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3570, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3626, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 6736, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 5605, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 4129, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 4471, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 5836, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 4200, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3902, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3899, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3321, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 2805, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3006, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 7244, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 5737, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 4132, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3841, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 6676, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 4487, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3369, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 4517, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 4824, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 2182, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3232, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3772, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 1902, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 2825, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3396, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3256, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 2353, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 2427, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 2482, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 2390, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 2118, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 2417, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3320, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3141, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3436, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3176, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3141, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3135, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 3553, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "v3_verify", "input_tokens": 2009, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2858, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2917, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 3073, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 3021, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2729, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 453, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2718, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2538, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 3123, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 414, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 428, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 390, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2023, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2853, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 370, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2053, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 508, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2589, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2728, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2525, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 485, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 468, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2558, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2133, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 1723, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2536, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 482, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 439, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2267, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 437, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2519, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 472, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2742, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 1970, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 424, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2282, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 450, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2243, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2441, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 426, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2576, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 409, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2377, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 418, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 1880, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 408, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2511, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 410, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 5172, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4978, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 6049, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 5429, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 6708, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 5553, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 5057, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3057, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4789, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 6072, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4579, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 6359, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4962, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 7378, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 6090, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4471, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4287, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4060, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 5947, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3912, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3947, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 7057, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4241, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4813, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4542, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 6178, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4244, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3642, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3147, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4183, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3348, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 7586, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 6058, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4474, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 7018, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4114, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3711, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4829, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4838, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 5166, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2524, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2223, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3553, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3125, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3738, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3598, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2769, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2695, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2439, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2738, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2824, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3462, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2690, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3662, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3778, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3518, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3483, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3477, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2330, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3895, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3211, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2996, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2907, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2825, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3051, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2670, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3202, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2595, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2154, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2923, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2152, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2763, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2617, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2622, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2597, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2660, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2202, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 1913, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2359, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2114, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2807, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2629, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2356, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2494, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2306, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2541, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2084, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2570, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2584, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4978, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 5429, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 6049, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 6708, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 5172, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 5553, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 5057, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4789, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3057, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 6072, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4962, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4579, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 6359, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 6090, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 7378, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4471, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4287, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4060, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3912, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 5947, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3947, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4241, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 7057, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4813, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 6178, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4542, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4244, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3642, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3147, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4183, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3348, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 7586, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 6058, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4474, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 7018, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4829, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4114, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3711, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 4838, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 5166, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2524, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3553, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2223, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3125, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3738, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2695, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3598, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2769, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2439, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3462, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2824, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2738, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2690, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3662, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3518, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3778, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3477, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2330, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3483, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3895, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3211, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2996, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2907, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3051, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2825, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2670, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3202, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2595, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2154, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2152, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2923, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2763, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2617, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2597, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2660, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2622, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2202, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 1913, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2359, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2114, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2629, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2807, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2356, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2494, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2306, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2570, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2541, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2584, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2084, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2399, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2480, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 3030, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 520, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2514, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 517, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2517, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2058, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 498, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 449, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2694, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2014, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 1919, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 462, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 479, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2263, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 440, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2222, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2394, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 469, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 469, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2146, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 3042, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2529, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2504, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 478, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2383, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 1802, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2196, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 481, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2656, "output_tokens": 56, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2553, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2572, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3058, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2578, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2113, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2777, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2540, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2176, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2351, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2489, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2039, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2248, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2592, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2509, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2280, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2592, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 3155, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 1968, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2378, "output_tokens": 129, "model": "jev-1.13.0"}
+{"kind": "triage_study", "input_tokens": 2718, "output_tokens": 129, "model": "jev-1.13.0"}

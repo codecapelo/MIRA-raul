@@ -1,0 +1,1 @@
+{"id": "case_003_q3__glm-air_rules", "request_sha256": "5c8cbd8c37bedae4ecf7415a1378c243bda5f240f729de5ec71b3232a641eefd", "model": "jev-1.13.0", "usage": {"input_tokens": 1222, "output_tokens": 38}, "answers": {"invents": {"type": "noul", "noul": 0.72}, "drift": {"type": "noul", "noul": 0.05}}, "timestamp": 1791209891.141335}
