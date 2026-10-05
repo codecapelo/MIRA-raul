@@ -1,0 +1,1 @@
+{"id": "run3_case_010_z-ai__glm-4.5-air", "request_sha256": "34f9dd6f10d38afc59ff8ba02c9f4fb536b37b6a494af45c4c4456cbdd2deedd", "model": "jev-1.13.0", "usage": {"input_tokens": 647, "output_tokens": 36}, "answers": {"match": {"type": "noul", "noul": 0.28}, "generic": {"type": "noul", "noul": 0.79}}, "timestamp": 1791209877.554678}

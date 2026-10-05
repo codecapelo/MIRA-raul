@@ -1,0 +1,1 @@
+{"id": "case_004_q2__sonnet_rules", "request_sha256": "ab96d64bad61eaa4ebb0956173f2f9edb0bc4a3990bf955789c975c1427d5163", "model": "jev-1.13.0", "usage": {"input_tokens": 1026, "output_tokens": 38}, "answers": {"invents": {"type": "noul", "noul": 0.08}, "drift": {"type": "noul", "noul": 0.04}}, "timestamp": 1791209893.127573}

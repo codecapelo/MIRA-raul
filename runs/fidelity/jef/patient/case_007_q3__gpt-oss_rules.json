@@ -1,0 +1,1 @@
+{"id": "case_007_q3__gpt-oss_rules", "request_sha256": "cfa603cdbbeae6cb5cd6ee74390837e4e36cc8fdaff78ea76942e66a414894cf", "model": "jev-1.13.0", "usage": {"input_tokens": 1243, "output_tokens": 38}, "answers": {"invents": {"type": "noul", "noul": 0.73}, "drift": {"type": "noul", "noul": 0.06}}, "timestamp": 1791209902.5349388}

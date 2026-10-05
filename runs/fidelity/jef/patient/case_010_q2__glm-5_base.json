@@ -1,0 +1,1 @@
+{"id": "case_010_q2__glm-5_base", "request_sha256": "551f764ce65d34d1b74e2fb3c4f52ddf584952c991003ac9b844597f985ba34e", "model": "jev-1.13.0", "usage": {"input_tokens": 1132, "output_tokens": 38}, "answers": {"invents": {"type": "noul", "noul": 0.59}, "drift": {"type": "noul", "noul": 0.04}}, "timestamp": 1791209910.12235}
