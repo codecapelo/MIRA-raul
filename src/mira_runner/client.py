@@ -63,8 +63,8 @@ class Client:
             response=next((e['response'] for e in log.events() if e['event']=='response' and e['request_id']==rid),None)
             if response is None:raise BudgetError('Settled request missing durable response')
             return response['choices'][0]['message']
-        if model == 'openai/gpt-5.2':
-            # Shared pacing for the observed 20 RPM account limit; payload unchanged.
+        if model in ('openai/gpt-5.2','google/gemini-3.1-pro-preview'):
+            # Shared pacing for the observed 20 RPM new-account limit (GPT-5.2, Gemini 3.1 Pro); payload unchanged.
             db=self.ledger.db
             db.execute('CREATE TABLE IF NOT EXISTS request_pacing (model TEXT PRIMARY KEY, next_at REAL)')
             db.execute('BEGIN IMMEDIATE')
