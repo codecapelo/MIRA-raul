@@ -1,0 +1,6 @@
+{
+  "case_009": {
+    "matching_criterion": "Accept as correct any diagnosis that identifies a small bowel obstruction (or perforation or diverticulitis) caused by a migrated biliary stent. Naming the Meckel diverticulum or the exact impaction site is NOT required. This is a user decision for protocol v3; physician review of this criterion is pending.",
+    "reason": "User decision 05-10-2026: 'obstrução por stent migrado' is a clinically adequate diagnosis; applies only to v3 runs with the judge override enabled."
+  }
+}

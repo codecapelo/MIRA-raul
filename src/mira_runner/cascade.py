@@ -31,7 +31,9 @@ CLAUDE_BLIND_FORMAT=('Put ONE JSON object, serialized as a string, in the "conte
 REVIEW_BLIND=('You are a senior physician giving an independent second opinion on an emergency case. You see the conversation with the patient and every finding obtained. '
               'Use only what is in the transcript; never invent findings. Give your most likely diagnosis with its specific cause or mechanism and a confidence. '
               'List at most 3 patient questions and at most 4 tests that would materially change your decision, or empty lists if the transcript already suffices. '
-              'Tests use these tools: request_blood_test, request_urine_test, request_bedside_test, request_radiology, request_microbiology, request_other_investigation.')
+              'Tests use these tools: request_blood_test, request_urine_test, request_bedside_test, request_radiology, request_microbiology, request_other_investigation. '
+              'If your diagnosis names a mechanism, site or cause that only an operation or a biopsy can confirm, request the operative or pathology findings (a biopsy of a site that needs a procedure first requires that procedure first, for example laparoscopy or laparotomy). '
+              'If it names a vascular, structural or anatomical lesion, ALSO request the targeted imaging or angiography that would show that lesion (for example coronary angiography, CT angiography, MRI) in the same list.')
 QWEN_FORMAT_OLD=('Return one JSON object: {"verdict":"agree"|"disagree"|"unsure","diagnosis":str,"confidence":number 0-1,"reasoning":str,'
              '"missing_questions":[str],"missing_tests":[{"tool":str,"test_names":[str]}]}')
 CLAUDE_FORMAT=('Put ONE JSON object, serialized as a string, in the "content" field: {"decision":"accept_proposal"|"accept_reviewer"|"own","diagnosis":str,"reasoning":str,'
@@ -52,10 +54,10 @@ def transcript(msgs):
     return '\n'.join(lines)
 
 def parse_json(text):
-    try:return json.loads(text)
+    try:return json.loads(text,strict=False)
     except (json.JSONDecodeError,TypeError):
         m=re.search(r'\{.*\}',text or '',re.S)
-        try:return json.loads(m.group(0)) if m else None
+        try:return json.loads(m.group(0),strict=False) if m else None
         except json.JSONDecodeError:return None
 
 def clean_requests(questions,tests):
@@ -68,7 +70,8 @@ def clean_requests(questions,tests):
 
 class Cascade:
     """reviewers = (tier2, tier3[, tiebreak]) model names; defaults to the Sonnet-first, Opus-adjudicates design."""
-    def __init__(self,jef,reviewers=(SONNET,OPUS),accept=ACCEPT_C1):self.jef=jef;self.reviewers=tuple(reviewers);self.accept=accept
+    def __init__(self,jef,reviewers=(SONNET,OPUS),accept=ACCEPT_C1,triage='jef',audit_rate=0.0,definitive_trigger=False,rescue=False):
+        self.rescue=rescue;self.jef=jef;self.reviewers=tuple(reviewers);self.accept=accept;self.triage=triage;self.audit_rate=audit_rate;self.definitive_trigger=definitive_trigger
     def step(self,ctx,key,fn):
         for e in ctx['log'].events():
             if e['event']=='cascade_step' and e['key']==key:return e['value']
@@ -85,7 +88,8 @@ class Cascade:
         return out
     def blind(self,ctx,model,conv):
         fmt=CLAUDE_BLIND_FORMAT if model.startswith('claude') else BLIND_FORMAT
-        return self.llm_json(ctx,model,REVIEW_BLIND+' '+fmt,f'CONVERSATION AND FINDINGS:\n{conv}')
+        cm=ctx.get('map_text') or ''
+        return self.llm_json(ctx,model,REVIEW_BLIND+' '+fmt,(f'CONSULTATION MAP FROM A SENIOR CONSULTANT (made before the interview; use it as guidance, it may be wrong):\n{cm}\n\n' if cm else '')+f'CONVERSATION AND FINDINGS:\n{conv}')
     def follow_up(self,ctx,questions,tests):
         """One round only: extra patient questions (patient model) and tests (case tools, no gate); returns text appended to the transcript."""
         parts=[];stats=ctx['stats']
@@ -95,21 +99,45 @@ class Cascade:
             p=ctx['client'].call(ctx['patient_model'],ctx['patient_messages'],ctx['log'],'patient_review',{},max_tokens=8192)
             ctx['patient_messages'].append(p);stats['review_exchanges']+=1
             parts.append('Patient answers to the reviewer: '+(p.get('content') or '').strip())
+        tools=ctx['tools'].inner
+        def run(tool,name):
+            args={'study_name':name} if tool=='request_radiology' else {'test_names':[name]}
+            try:return tools.execute(tool,args)
+            except ToolArgumentsError:return 'invalid request'
         for t in tests:
             for name in t['test_names']:
-                args={'study_name':name} if t['tool']=='request_radiology' else {'test_names':[name]}
-                try:out=ctx['tools'].inner.execute(t['tool'],args)
-                except ToolArgumentsError:out='invalid request'
-                parts.append(f"Reviewer test {t['tool']} '{name}': {out}")
+                tool=t['tool'];out=run(tool,name)
+                for _ in range(2):  # the reviewer has one round: resolve a wrong tool or a prerequisite procedure by itself (and say so)
+                    try:o=json.loads(out)
+                    except (json.JSONDecodeError,TypeError):break
+                    if not isinstance(o,dict):break
+                    wt=[w for w in o.get('wrong_tool',[]) if isinstance(w,dict) and w.get('use_tool')]
+                    pre=[r for r in o.get('requires_prior_procedure',[]) if isinstance(r,dict) and r.get('needs_prior_procedure')]
+                    if wt:
+                        tool=wt[0]['use_tool'];parts.append(f"(re-sent '{name}' to {tool})");out=run(tool,name);continue
+                    if pre:
+                        proc=re.split(r' or | / ',pre[0]['needs_prior_procedure'])[0].strip()
+                        pout=run('request_other_investigation',proc);parts.append(f"Reviewer procedure first (needed for '{name}') request_other_investigation '{proc}': {pout}");out=run(tool,name);continue
+                    break
+                parts.append(f"Reviewer test {tool} '{name}': {out}")
         stats['followup']=True;return '\n'.join(parts)
     def __call__(self,ctx):
         stats=ctx['stats'];stats.update(path=['glm'],jef_c1=None,tier2_verdict='',tier3_model='',review_exchanges=0,followup=False)
         prop=ctx['proposal'];conv=transcript(ctx['doctor']);dx0,r0=prop['diagnosis'],prop['reasoning'];r2=self.reviewers[0]
+        if ctx.get('rescue'):  # the first physician failed operationally: the blind reviewer takes over from the transcript so far
+            stats['path'].append('rescue:'+r2);b=self.blind(ctx,r2,conv);qs,ts=clean_requests(b.get('missing_questions'),b.get('missing_tests'))
+            if qs or ts:stats['path'].append('followup');conv=conv+'\n'+self.follow_up(ctx,qs,ts);b=self.blind(ctx,r2,conv)
+            return {'diagnosis':(b.get('diagnosis') or '').strip(),'reasoning':b.get('reasoning') or ''}
         v=self.step(ctx,'verify',lambda:self.jef.verify(conv,dx0,r0))
+        stats['audited']=False
         if not v.get('failed'):
-            stats['jef_c1']=round(v['combined'],3)
-            if v['combined']>=self.accept:stats['path'].append('jef_accept');return prop
-        else:stats['path'].append('jef_failed')
+            stats['jef_c1']=round(v['combined'],3);stats['jef_missing_definitive']=v.get('missing_definitive')
+            confident=v['combined']>=self.accept and not (self.definitive_trigger and (v.get('missing_definitive') or 0)>=0.5)
+            if self.triage=='jef' and confident:
+                import hashlib
+                if self.audit_rate>0 and int(hashlib.sha256(str(ctx['log'].path).encode()).hexdigest(),16)%100<self.audit_rate*100:stats['audited']=True;stats['path'].append('audit')
+                else:stats['path'].append('jef_accept');return prop
+        elif self.triage=='jef':stats['path'].append('jef_failed')
         # Tier 2: blind review, with one follow-up round if the reviewer asks for something
         stats['path'].append('blind:'+r2);b=self.blind(ctx,r2,conv);extra=''
         qs,ts=clean_requests(b.get('missing_questions'),b.get('missing_tests'))
@@ -125,7 +153,7 @@ class Cascade:
         if not bdx and len(self.reviewers)==1:stats['path'].append('fallback_proposal');return prop
         # Tier 3: adjudicator between the proposal and the blind reviewer
         r3=self.reviewers[1];stats['path'].append('adjudicate:'+r3);stats['tier3_model']=r3
-        base=f'CONVERSATION AND FINDINGS:\n{conv}\n\nCANDIDATE A (first physician): {dx0}\nReasoning: {r0}\n\nCANDIDATE B (blind reviewer): {bdx or "(none)"}\nReasoning: {b.get("reasoning","")}'
+        base=(f'CONSULTATION MAP FROM A SENIOR CONSULTANT:\n{ctx.get("map_text")}\n\n' if ctx.get('map_text') else '')+f'CONVERSATION AND FINDINGS:\n{conv}\n\nCANDIDATE A (first physician): {dx0}\nReasoning: {r0}\n\nCANDIDATE B (blind reviewer): {bdx or "(none)"}\nReasoning: {b.get("reasoning","")}'
         s=self.llm_json(ctx,r3,REVIEW_RULES+' '+CLAUDE_FORMAT,base)
         if s.get('ready') is False and not stats['followup']:
             sq,st=clean_requests(s.get('questions'),s.get('tests'))
@@ -149,8 +177,8 @@ def deploy_costs(events):
     """What a deployment would pay (the simulated patient and the judge are benchmark overhead and are excluded)."""
     oc=Decimal(0);claude=Decimal(0);jef_tokens=0
     for e in events:
-        if e['event']=='response' and e['role'] in ('doctor','matcher','review_qwen') and not isinstance(e['response'],str):oc+=Decimal(str(e['response'].get('usage',{}).get('cost',0)))
-        elif e['event']=='cli_call' and e['role']=='review_claude':claude+=Decimal(str(e['response']['usage'].get('api_equivalent_cost_usd') or 0))
+        if e['event']=='response' and e['role'] in ('doctor','matcher','review_qwen','consult_map') and not isinstance(e['response'],str):oc+=Decimal(str(e['response'].get('usage',{}).get('cost',0)))
+        elif e['event']=='cli_call' and e['role'] in ('review_claude','consult_map'):claude+=Decimal(str(e['response']['usage'].get('api_equivalent_cost_usd') or 0))
         elif e['event']=='cascade_step' and isinstance(e['value'],dict) and 'usage' in e['value']:jef_tokens+=e['value']['usage'].get('input_tokens',0)
     jef=Decimal(jef_tokens)*JEF_PRICE/Decimal(1000000)
     return {'cost_openrouter_deploy_usd':str(oc),'claude_api_equiv_usd':str(claude),'jef_usd':str(jef),'deploy_cost_usd':str(oc+claude+jef)}

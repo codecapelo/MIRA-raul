@@ -47,6 +47,18 @@ Meta do usuário: manter os benefícios e reduzir o **custo por caso resolvido**
 4. **Sonnet 5.5 (assinatura Pro, CLI)** vê as duas propostas e pode pedir **uma rodada** de perguntas ao paciente e exames antes de decidir; o **Opus 5.5 (assinatura Pro)** só desempata se o diagnóstico do Sonnet não coincidir com nenhum dos anteriores.
 Os revisores veem só a transcrição, nunca a referência. Cada encontro grava o caminho percorrido (`cascade_path`), a proposta original e se ela estaria correta (`proposal_correct`, julgada à parte quando o final difere), e o **custo de implantação** (`deploy_cost_usd` = médico + associador + Qwen + JEF + custo equivalente de API dos Claude; o paciente simulado e o juiz são sobrecarga do benchmark e ficam fora). Resultado final julgado pelo Gemini Pro como nas demais variantes.
 
+## Protocolo v3.2 (`--cascade --v32`, 05-10-2026)
+Correções dos 7 pontos do relatório `v3_cascade_3runs_resolutions.md` e de dois pedidos do usuário. Tudo novo é opcional e as variantes anteriores não mudam.
+1. **Exame definitivo antes da admissão:** o Opus faz um **mapa da consulta** no começo, com pouco contexto (só a queixa e o exame físico inicial; sem história, exames nem referência): urgência, 5 diagnósticos diferenciais com o que confirmaria cada um, exames decisivos (procedimentos e biópsias incluídos) e perguntas-chave. O GLM-5 recebe o mapa na primeira mensagem. Antes de admitir, se algum exame decisivo do mapa não foi pedido, o médico é lembrado **uma vez** (`nudged`).
+2. **Achados operatórios e de patologia:** os revisores são instruídos a pedi-los quando o diagnóstico nomeia um mecanismo que só cirurgia ou biópsia confirma. Para isso funcionarem, os **pré-requisitos de procedimento** dos casos (`after_procedure:...`) agora são aplicados: uma biópsia ou um exame que exige procedimento antes é recusado e o médico é **informado de qual procedimento** pedir primeiro (por exemplo laparoscopia ou laparotomia antes de biópsia no abdome; pericardiocentese antes da angiografia coronariana). Só nas variantes com `--v32`.
+3. **Auditoria aleatória dos aceites do JEF** (`--audit-rate`, sorteio determinístico por encontro).
+4. **Gatilho extra do JEF** "falta exame definitivo relevante" ≥ 0,5 (`--definitive-trigger`), com a pergunta nova no `verify`.
+5. **Revisor às cegas em todos os casos:** `--triage none` (padrão do `--v32`); `--triage jef` mantém a triagem. O revisor às cegas vê o mapa, não a proposta.
+6. **Opus só na discordância:** o árbitro (Opus) é chamado apenas quando o Sonnet às cegas discorda da proposta ou tem confiança baixa, como antes, mais a chamada única do mapa. Isso muda o custo: o mapa custa uma chamada curta em **todos** os casos; a arbitragem custava uma chamada longa em cerca de 1 de cada 4. O saldo só se mede rodando.
+7. **Gabarito do caso 009:** por decisão do usuário, "obstrução por stent migrado" passa a valer como correto nas rodadas v3.2 (`config/judge_overrides_v3.json`, `--v32`); o nome do divertículo de Meckel deixa de ser exigido. Vale só para essas rodadas (campo `rubric`), as anteriores permanecem como foram julgadas; revisão médica do critério segue pendente.
+8. **Emergência sem N mínimo:** se o mapa do Opus marcar a urgência como `emergency`, os exames ficam liberados desde o início (sem exigir N trocas); nos demais casos o N=2 continua.
+Campos novos nas tabelas: `consult_model, consult_urgency, nudged, prereq_blocks, rubric, audited`.
+
 ## Pontos em aberto
 - Se o limite de 10 turnos deve subir para 12 depois de ver a rodada-teste (as regras gastam turnos).
 - Quais modelos e quantas repetições entram na v3.
