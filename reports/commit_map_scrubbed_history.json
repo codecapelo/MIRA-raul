@@ -1,0 +1,45 @@
+{
+ "note": "The local commits of 06-10-2026 were rewritten once, before the first push, to remove the diagnosis name and a laboratory value of one private (non-open-access) case from three text files. File contents are otherwise identical. Run traces record the OLD hashes in their `commit` field; use this map to find the corresponding commit.",
+ "commits": [
+  {
+   "subject": "Record the exact reviewer round (followup_result), encounter viewer module, sanitized repo",
+   "old": "746db704b23306b23d544148735fdc026ac37500",
+   "new": "2f7516a19d29fed0e08d9971465274fc05b08f26"
+  },
+  {
+   "subject": "v3.5 results: 10/10 public regression at USD 0.099 per case; reconciliation of two HTTP 42",
+   "old": "3ecde8bf1e267719b7b198139b9da8f41f3c5cc0",
+   "new": "a8c535f8bdf8f0378b4634630e57ff08b8b0a37a"
+  },
+  {
+   "subject": "v3.5: accept the blind reviewer at confidence 0.5 when it agrees with the proposal (--agre",
+   "old": "cde83e807da226f1d043b35c86ad5b22cdd0cddd",
+   "new": "9b0e08c718cb43716f068855c67a463a3f411a2c"
+  },
+  {
+   "subject": "v3.5: feature-driven Opus read on low confidence with its own follow-up round, accepted wi",
+   "old": "c9619b248246a3259b587b5dd00f01be04e85dd7",
+   "new": "c5d55d902505b6e480de9e52009760302efd8c38"
+  },
+  {
+   "subject": "v3.4: imaging equivalence and compound requests in the strict matcher, exposure sweep, Opu",
+   "old": "f3e641da7e9671548487843076b79f45bad9e935",
+   "new": "dbdbc9660f902441d5315344d9047d8acc6b3521"
+  },
+  {
+   "subject": "v3.3 matcher evaluation: strict matchers 51/56 and 34/35 with zero false accepts vs 35/56 ",
+   "old": "e1b3c116f4d8256fc38188cd0cd238c2f39cdd0d",
+   "new": "020d9311af56717667c31f29a98dfad36faf019c"
+  },
+  {
+   "subject": "v3.3 strict exam matching (deliver what was requested), --private, --opus-tiebreak",
+   "old": "02b8b34ee3e86d90748444cf6ff00f859929408a",
+   "new": "5a1dcbbf080259b49b125749224e1faaba2b4fdb"
+  },
+  {
+   "subject": "Claude API arm: Sonnet 5.5 / Opus 5.5 through OpenRouter at real price (--claude-api); pri",
+   "old": "0c680e8f0a27b72171ffe7982524704ef441fb7a",
+   "new": "0c680e8f0a27b72171ffe7982524704ef441fb7a"
+  }
+ ]
+}

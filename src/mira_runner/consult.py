@@ -8,7 +8,8 @@ An `emergency` flag opens investigations immediately (no minimum number of excha
 of decisive investigations from the map that were not requested yet.
 """
 import json,re
-from .cascade import parse_json,clean_requests
+from .cli_client import CLI_MODELS
+from .cascade import parse_json,clean_requests,claude_kw,for_api,is_claude
 from .semantics import identity
 
 CONSULT_SYSTEM=('You are a senior emergency and internal-medicine consultant giving a SHORT consultation map to a colleague who will interview the patient and order tests. '
@@ -25,7 +26,7 @@ CLAUDE_FORMAT=' Put the JSON object, serialized as a string, in the "content" fi
 
 def consult_map(client,log,model,complaint,exam_text):
     user=f'PRESENTING COMPLAINT: {complaint}\n\nINITIAL PHYSICAL EXAMINATION:\n{exam_text or "(none recorded)"}'
-    m=client.call(model,[{'role':'system','content':CONSULT_SYSTEM+(CLAUDE_FORMAT if model.startswith('claude') else '')},{'role':'user','content':user}],log,'consult_map',{},max_tokens=2500)
+    m=client.call(model,[{'role':'system','content':CONSULT_SYSTEM+(CLAUDE_FORMAT if model in CLI_MODELS else '')},{'role':'user','content':user}],log,'consult_map',{},**claude_kw(model,2500))
     out=parse_json(m.get('content') or '')
     if not isinstance(out,dict):log.append({'event':'backend_error','role':'consult_map','reason':'unparseable consultation map'});return None
     diffs=[d for d in (out.get('differentials') or []) if isinstance(d,dict) and isinstance(d.get('diagnosis'),str)][:5]

@@ -298,6 +298,56 @@
         "top_p"
       ],
       "note": "fidelity/judge offline evaluation only; never a doctor or run judge"
+    },
+    "anthropic/claude-sonnet-5.5": {
+      "provider": "anthropic",
+      "provider_name": "Anthropic",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 2.0,
+        "output": 10.0
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "stop",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "response_format",
+        "verbosity",
+        "reasoning_effort"
+      ]
+    },
+    "anthropic/claude-opus-5.5": {
+      "provider": "anthropic",
+      "provider_name": "Anthropic",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 4.0,
+        "output": 20.0
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "stop",
+        "tool_choice",
+        "tools",
+        "structured_outputs",
+        "response_format",
+        "verbosity",
+        "reasoning_effort"
+      ]
     }
   }
 }

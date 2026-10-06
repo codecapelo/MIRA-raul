@@ -162,3 +162,24 @@ class TagTests(unittest.TestCase):
     def test_doctor_rules_mention_the_new_features_only_when_enabled(self):
         self.assertIn('consultation map',doctor_rules(2,True,False,True,False));self.assertNotIn('consultation map',doctor_rules(2,True,False));self.assertIn('requires a prior procedure',doctor_rules(2,True,False,False,True));self.assertEqual(doctor_rules(3),doctor_rules(3,False,True,False,False))
 if __name__=='__main__':unittest.main()
+
+
+class ClaudeApiArm(unittest.TestCase):
+    """Sonnet/Opus through OpenRouter (real cost) instead of the subscription CLI."""
+    def test_call_arguments(self):
+        from mira_runner.cascade import claude_kw,for_api,SONNET,SONNET_API
+        self.assertEqual(claude_kw(SONNET,8192),{'max_tokens':8192})  # CLI unchanged
+        kw=claude_kw(SONNET_API,2500)
+        self.assertEqual(kw['reasoning'],{'effort':'high'});self.assertGreaterEqual(kw['max_tokens'],16000)
+        self.assertEqual(claude_kw('z-ai/glm-5',6000),{'max_tokens':6000})
+        text='Put ONE JSON object, serialized as a string, in the "content" field: {"a":1}'
+        self.assertEqual(for_api(SONNET,text),text);self.assertNotIn('"content" field',for_api(SONNET_API,text))
+
+    def test_deploy_costs_split(self):
+        from mira_runner.cascade import deploy_costs
+        ev=[{'event':'response','role':'doctor','response':{'model':'z-ai/glm-5','usage':{'cost':0.01}}},
+            {'event':'response','role':'consult_map','response':{'model':'anthropic/claude-sonnet-5.5','usage':{'cost':0.02}}},
+            {'event':'response','role':'review_claude','response':{'model':'anthropic/claude-opus-5.5','usage':{'cost':0.03}}},
+            {'event':'response','role':'patient','response':{'model':'anthropic/claude-sonnet-5.5','usage':{'cost':0.5}}}]
+        from decimal import Decimal as D
+        d=deploy_costs(ev);self.assertEqual(D(d['cost_openrouter_deploy_usd']),D('0.01'));self.assertEqual(D(d['claude_api_usd']),D('0.05'));self.assertEqual(D(d['deploy_cost_usd']),D('0.06'))

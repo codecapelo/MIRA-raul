@@ -14,22 +14,24 @@ from .client import AuditLog
 from .runner import FIELDS,SAMPLING,load_module,terminal_failure
 from .tools import schemas,ToolArgumentsError,NAMES
 from .tools_v3 import V3CaseTools
+from .matcher_v3 import strict_match
 from .jef import INVENTS_THRESHOLD,DRIFT_THRESHOLD,RETRY_NOTE
-from .cascade import deploy_costs,INVESTIGATIONS
+from .cascade import deploy_costs,INVESTIGATIONS,claude_kw,PATIENT_EFFORT
 from .consult import consult_map,format_map,unmet_decisive,nudge_text
 
 PROTOCOL='v3'
 PATIENT_MODEL='claude-sonnet-5-5'
 MIN_EXCHANGES=3
 JUDGE_V3='google/gemini-3.1-pro-preview'
+STRICT_MATCHER='google/gemini-3.1-flash-lite-preview'
 JUDGE_PARAMS={'temperature':0,'top_p':1,'reasoning':{'effort':'low'}}
-FIELDS_V3=FIELDS+['rescued','failure_reason','audited','consult_model','consult_urgency','nudged','prereq_blocks','rubric','delay_results','cascade','cascade_path','proposal_dx','proposal_correct','jef_c1','tier2_verdict','tier3_model','review_exchanges','deploy_cost_usd','cost_openrouter_deploy_usd','claude_api_equiv_usd','jef_usd','min_exchanges','exam_first','protocol','patient_model','judge_model','patient_exchanges','gated_requests','investigation_orders','unread_orders','jef_guard','jef_checks','jef_retries','jef_failures']
+FIELDS_V3=FIELDS+['rescued','failure_reason','audited','consult_model','consult_urgency','nudged','prereq_blocks','rubric','delay_results','cascade','cascade_path','proposal_dx','proposal_correct','jef_c1','tier2_verdict','tier3_model','review_exchanges','deploy_cost_usd','cost_openrouter_deploy_usd','claude_api_equiv_usd','jef_usd','claude_api_usd','min_exchanges','exam_first','protocol','patient_model','judge_model','patient_exchanges','gated_requests','investigation_orders','unread_orders','jef_guard','jef_checks','jef_retries','jef_failures','claude_all_equiv_usd','strict_exams','exam_stats','opening']
 PATIENT_RULES=('\n\nStrict rules for this role-play: use only the facts listed above. If a detail is not listed (onset time, intensity, frequency, '
                'doses, allergies, vital signs, results), say you do not know or do not remember it; never estimate or invent it. Answer in plain '
                'lay language, first person, in at most 80 words, as a patient and not as clinical staff. Do not use lists, headings or numbered '
                'answers: if several questions are asked, answer in one short paragraph. Never name or hint at a diagnosis.')
 old_wait=('- Results are not instant: tests you order are reported only after your next exchange with the patient. After ordering, speak to the patient (explain what you ordered and ask what the tests cannot tell you: medications, exposures, family and social history, timeline), then read the results when they arrive.\n')
-def doctor_rules(n=MIN_EXCHANGES,exam_first=False,delay=True,consult=False,prereqs=False):
+def doctor_rules(n=MIN_EXCHANGES,exam_first=False,delay=True,consult=False,prereqs=False,strict=False):
     gate=(f'- Investigations (blood, urine, bedside/ECG, radiology, microbiology, other) are locked until you have exchanged at least {n} message{"s" if n!=1 else ""} with the patient. An earlier request is refused: keep talking to the patient.\n'
           '- The initial physical examination findings are provided together with the presenting complaint; do not request them again.\n') if exam_first else (
           f'- Investigations (blood, urine, bedside/ECG, radiology, microbiology, other) are locked until you have exchanged at least {n} message{"s" if n!=1 else ""} with the patient AND requested the physical examination. An earlier request is refused: keep talking to the patient.\n')
@@ -39,7 +41,8 @@ def doctor_rules(n=MIN_EXCHANGES,exam_first=False,delay=True,consult=False,prere
             '- Prefer asking before testing: onset, character, associated symptoms, past history, current and recent medications, allergies, family and social history, exposures and travel.\n'
             '- Finalize with `admission` only when the evidence gathered supports your diagnosis.'+
             (' A consultation map from a senior consultant comes with the first message (urgency, 5 differentials, decisive investigations, key questions): use it to organize the interview and the investigations, and obtain the decisive investigations before admitting when they are available; you remain responsible for the diagnosis. If the map says the case is an emergency, investigations are unlocked immediately.' if consult else '')+
-            (' A finding that requires a prior procedure (for example a biopsy that needs laparoscopy or laparotomy first) is refused with the required procedure named: request that procedure first.' if prereqs else ''))
+            (' A finding that requires a prior procedure (for example a biopsy that needs laparoscopy or laparotomy first) is refused with the required procedure named: request that procedure first.' if prereqs else '')+
+            (' A test is answered only when it is the very test you requested: a broader request is never replaced by a more specific test, a different specimen, organism, antigen or assay is a different test, and a request that is too nonspecific (a category or workup, or a test class without its target, specimen or site) comes back as `ambiguous_request` asking you to specify: answer by naming the exact test. Name each test precisely (specimen, target antigen or organism); if a test you need is not reported it comes back as not available.' if strict else ''))
 DOCTOR_RULES=doctor_rules(MIN_EXCHANGES)
 
 class V3Tools:
@@ -74,14 +77,14 @@ class V3Tools:
         lines=[f"- {p['tool']} {json.dumps(p['request'],ensure_ascii=False)}: {p['result']}" for p in self.pending];self.pending=[]
         return '[Results of the tests ordered earlier, now available]\n'+'\n'.join(lines)
 
-def run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False,guard=None,min_exchanges=MIN_EXCHANGES,exam_first=False,cascade=None,delay_results=True,consult=None,prereqs=False,judge_override=False):
+def run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False,guard=None,min_exchanges=MIN_EXCHANGES,exam_first=False,cascade=None,delay_results=True,consult=None,prereqs=False,judge_override=False,patient_model=PATIENT_MODEL,strict_exams=False,opening=0):
     locks=root/'logs/case_locks';locks.mkdir(parents=True,exist_ok=True)
     with (locks/(model.replace('/','__')+'__'+case_dir.name+'.lock')).open('a') as lock:
         try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         except BlockingIOError:raise RuntimeError('Case already has an active worker')
-        return _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition,guard,min_exchanges,exam_first,cascade,delay_results,consult,prereqs,judge_override)
+        return _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition,guard,min_exchanges,exam_first,cascade,delay_results,consult,prereqs,judge_override,patient_model,strict_exams,opening)
 
-def guarded_patient_answer(log,guard,client,record,messages,text,answer,stats):
+def guarded_patient_answer(log,guard,client,record,messages,text,answer,stats,patient_model=PATIENT_MODEL):
     """JEF check of one patient answer; at most one patient retry. Check results are logged and replayed on resume."""
     seq=stats['checks'];stats['checks']+=1;prior=[e for e in log.events() if e['event']=='jef_check']
     if seq<len(prior):event=prior[seq]
@@ -93,10 +96,10 @@ def guarded_patient_answer(log,guard,client,record,messages,text,answer,stats):
     if event.get('failed'):stats['failures']+=1;return answer
     if event['invents']>=INVENTS_THRESHOLD or event['drift']>=DRIFT_THRESHOLD:
         stats['retries']+=1
-        return client.call(PATIENT_MODEL,messages[:-1]+[{'role':'user','content':text+RETRY_NOTE}],log,'patient_retry',{},max_tokens=8192)
+        return client.call(patient_model,messages[:-1]+[{'role':'user','content':text+RETRY_NOTE}],log,'patient_retry',{},**claude_kw(patient_model,8192,PATIENT_EFFORT))
     return answer
 
-def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False,guard=None,min_exchanges=MIN_EXCHANGES,exam_first=False,cascade=None,delay_results=True,consult=None,prereqs=False,judge_override=False):
+def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False,guard=None,min_exchanges=MIN_EXCHANGES,exam_first=False,cascade=None,delay_results=True,consult=None,prereqs=False,judge_override=False,patient_model=PATIENT_MODEL,strict_exams=False,opening=0):
     log=AuditLog(root/'logs/raw'/model.replace('/','__')/(case_dir.name+'.jsonl'),commit)
     previous=log.events()
     complete=next((e for e in previous if e['event']=='case_complete'),None)
@@ -106,11 +109,14 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
         if not allow_commit_transition:raise RuntimeError('Cannot resume under a different commit without --allow-commit-transition')
         log.append({'event':'commit_transition','previous_commits':old_commits,'new_commit':commit,'policy':'reuse only hash-identical settled responses'})
     if not any(e['event']=='protocol_config' for e in previous):
-        log.append({'event':'protocol_config','min_exchanges':min_exchanges,'exam_first':exam_first,'delay_results':delay_results,'consult':consult,'prereqs':prereqs,'judge_override':judge_override,'protocol':PROTOCOL,'patient_model':PATIENT_MODEL,'min_exchanges':min_exchanges,'exam_first':exam_first,'cascade':cascade is not None,'delay_results':delay_results,'judge_model':JUDGE_V3,'judge_params':JUDGE_PARAMS,'max_external_turns':10,'jef_guard':guard is not None})
+        log.append({'event':'protocol_config','min_exchanges':min_exchanges,'exam_first':exam_first,'delay_results':delay_results,'consult':consult,'prereqs':prereqs,'judge_override':judge_override,'protocol':PROTOCOL,'patient_model':patient_model,'min_exchanges':min_exchanges,'exam_first':exam_first,'cascade':cascade is not None,'delay_results':delay_results,'judge_model':JUDGE_V3,'judge_params':JUDGE_PARAMS,'max_external_turns':10,'jef_guard':guard is not None,'strict_exams':strict_exams,'opening':opening})
     patient=json.loads((case_dir/'patient.json').read_text());inv=json.loads((case_dir/'investigations.json').read_text())
     prompts=load_module(root/'upstream/onprem-medical-agents/src/prompts_vivabench.py')
-    medprompt=prompts.VIVABENCH_MEDICAL_SYSTEM_PROMPT.replace('`finish`','`admission`')+doctor_rules(min_exchanges,exam_first,delay_results,bool(consult),prereqs)
-    complaint=patient['presenting_complaint'];primary='primary symptom: '+complaint;starter='My '+primary
+    medprompt=prompts.VIVABENCH_MEDICAL_SYSTEM_PROMPT.replace('`finish`','`admission`')+doctor_rules(min_exchanges,exam_first,delay_results,bool(consult),prereqs,strict_exams)
+    complaint=patient['presenting_complaint'];hx=[h['value'] for h in patient['history_facts']]
+    # opening statement: the complaint plus the first lines of the history (0 none, 1 first fact, 2 first two, 3 all); it is the patient's first message and the only input of the consultation map besides the initial examination
+    complaint=complaint+(' '+{1:' '.join(hx[:1])[:350],2:' '.join(hx[:2])[:700],3:' '.join(hx)}.get(opening,'') if opening else '')
+    primary='primary symptom: '+complaint;starter='My '+primary
     doctor=[{'role':'system','content':medprompt},{'role':'user','content':starter}]
     patient_messages=[{'role':'system','content':prompts.VIVABENCH_PATIENT_SYSTEM_PROMPT.format(primary_symptom=primary,anamnesis_summary=json.dumps(patient,ensure_ascii=False))+PATIENT_RULES},{'role':'assistant','content':starter}]
     def matcher(requested,pool):
@@ -124,7 +130,8 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
         except (json.JSONDecodeError,TypeError,AttributeError,KeyError):
             log.append({'event':'backend_error','role':'matcher','reason':'settled malformed matcher output','fallback':'unavailable'})
             return []
-    tools=V3Tools(V3CaseTools(inv['observations'],matcher,prereqs),min_exchanges,delay_results);
+    strict=(lambda queries,cands:strict_match(client,log,STRICT_MATCHER,queries,cands)) if strict_exams else None
+    tools=V3Tools(V3CaseTools(inv['observations'],matcher,prereqs,strict),min_exchanges,delay_results);
     findings=[]
     if exam_first:
         try:findings=json.loads(tools.inner.execute('request_physical_exam',{}))
@@ -142,7 +149,7 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
     def finish(proposal,turn,ntools,failure=None):
         cstats={'path':['glm']};final=proposal
         if cascade is not None:
-            final=cascade({'log':log,'client':client,'doctor':doctor,'proposal':proposal,'tools':tools,'patient_messages':patient_messages,'patient_model':PATIENT_MODEL,'stats':cstats,'consult_map':cmap,'map_text':format_map(cmap) if cmap else '','rescue':failure is not None})
+            final=cascade({'log':log,'client':client,'doctor':doctor,'proposal':proposal,'tools':tools,'patient_messages':patient_messages,'patient_model':patient_model,'stats':cstats,'consult_map':cmap,'map_text':format_map(cmap) if cmap else '','rescue':failure is not None})
         reference=json.loads((case_dir/'reference.json').read_text())
         criterion=reference.get('matching_criterion',reference['correct_diagnosis']);override=None
         if judge_override and (root/'config/judge_overrides_v3.json').exists():
@@ -162,7 +169,7 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
             pv='' if failure else (verdict if final['diagnosis']==proposal['diagnosis'] else judge_dx(proposal['diagnosis'],proposal['reasoning'],'judge_proposal')[0])
             extra={'cascade':True,'cascade_path':'>'.join(cstats['path']),'proposal_dx':proposal['diagnosis'],'proposal_correct':pv,'jef_c1':cstats.get('jef_c1'),'audited':cstats.get('audited',False),'tier2_verdict':cstats.get('tier2_verdict',''),'tier3_model':cstats.get('tier3_model',''),'review_exchanges':cstats.get('review_exchanges',0),'rescued':failure is not None,'failure_reason':failure or '',**deploy_costs(log.events())}
         responses=[e['response'] for e in log.events() if e['event'] in ('response','cli_call')];usage=[r['usage'] for r in responses]
-        result={'case_id':case_dir.name,'model':model,'provider':client.config['models'][model]['provider'],'dx_agent':final['diagnosis'],'reasoning':final['reasoning'],'dx_reference':reference['correct_diagnosis'],'judge_correct':verdict,'judge_rationale':rationale,'n_turns':turn,'n_tool_calls':ntools,'tool_errors':tools.errors,'prompt_tokens':sum(u.get('prompt_tokens',0) for u in usage),'completion_tokens':sum(u.get('completion_tokens',0) for u in usage),'reasoning_tokens':sum(u.get('completion_tokens_details',{}).get('reasoning_tokens',0) for u in usage),'cost_usd':str(sum(Decimal(str(u['cost'])) for u in usage)),'latency_s':time.monotonic()-start,'commit':commit,'timestamp':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'physician_review':'','min_exchanges':min_exchanges,'exam_first':exam_first,'delay_results':delay_results,'protocol':PROTOCOL,'patient_model':PATIENT_MODEL,'judge_model':JUDGE_V3,'patient_exchanges':tools.exchanges,'gated_requests':tools.gated,'investigation_orders':tools.orders,**extra,'consult_model':consult or '','consult_urgency':cmap['urgency'] if cmap else '','nudged':nudged,'prereq_blocks':tools.inner.prereq_blocks,'rubric':'override' if override else 'reference','unread_orders':len(tools.pending),'jef_guard':guard is not None,'jef_checks':jstats['checks'],'jef_retries':jstats['retries'],'jef_failures':jstats['failures']}
+        result={'case_id':case_dir.name,'model':model,'provider':client.config['models'][model]['provider'],'dx_agent':final['diagnosis'],'reasoning':final['reasoning'],'dx_reference':reference['correct_diagnosis'],'judge_correct':verdict,'judge_rationale':rationale,'n_turns':turn,'n_tool_calls':ntools,'tool_errors':tools.errors,'prompt_tokens':sum(u.get('prompt_tokens',0) for u in usage),'completion_tokens':sum(u.get('completion_tokens',0) for u in usage),'reasoning_tokens':sum(u.get('completion_tokens_details',{}).get('reasoning_tokens',0) for u in usage),'cost_usd':str(sum(Decimal(str(u['cost'])) for u in usage)),'latency_s':time.monotonic()-start,'commit':commit,'timestamp':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'physician_review':'','min_exchanges':min_exchanges,'exam_first':exam_first,'delay_results':delay_results,'protocol':PROTOCOL,'patient_model':patient_model,'judge_model':JUDGE_V3,'patient_exchanges':tools.exchanges,'gated_requests':tools.gated,'investigation_orders':tools.orders,**extra,'consult_model':consult or '','consult_urgency':cmap['urgency'] if cmap else '','nudged':nudged,'prereq_blocks':tools.inner.prereq_blocks,'rubric':'override' if override else 'reference','unread_orders':len(tools.pending),'jef_guard':guard is not None,'jef_checks':jstats['checks'],'jef_retries':jstats['retries'],'jef_failures':jstats['failures'],'opening':opening,'claude_all_equiv_usd':str(sum(Decimal(str(u.get('api_equivalent_cost_usd') or 0)) for u in usage)),'strict_exams':strict_exams,'exam_stats':json.dumps(tools.inner.stats) if strict_exams else ''}
         log.append({'event':'case_complete','result':result});return result
     def operational(reason,turn,ntools):
         if cascade is None or not getattr(cascade,'rescue',False):return terminal_failure(root,case_dir,model,log,commit,reason,turn,ntools,tools.errors,time.monotonic()-start)
@@ -200,8 +207,8 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
         text=m.get('content') or ''
         if text:
             patient_messages.append({'role':'user','content':text})
-            p=client.call(PATIENT_MODEL,patient_messages,log,'patient',{},max_tokens=8192)
-            if guard is not None:p=guarded_patient_answer(log,guard,client,patient,patient_messages,text,p,jstats)
+            p=client.call(patient_model,patient_messages,log,'patient',{},**claude_kw(patient_model,8192,PATIENT_EFFORT))
+            if guard is not None:p=guarded_patient_answer(log,guard,client,patient,patient_messages,text,p,jstats,patient_model)
             patient_messages.append(p);tools.patient_replied();released=tools.release()
             doctor.append({'role':'user','content':(p.get('content') or '')+('\n\n'+released if released else '')})
         else:  # silent turn: never deadlock on pending results

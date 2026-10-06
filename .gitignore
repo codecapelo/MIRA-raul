@@ -14,3 +14,13 @@ runs/**/upstream
 runs/**/budget.sqlite
 case_locks/
 *.lock
+
+# Private (non-open-access) NEJM case: facts, traces and results must never be published
+cases/case_01[1-9]/
+cases/case_0[2-9][0-9]/
+runs/v3/*api*/
+results/v3_*api*
+runs/v3/*prv*/
+results/v3_*prv*
+results/matcher_eval_private*
+runs/matcher_eval/*private*

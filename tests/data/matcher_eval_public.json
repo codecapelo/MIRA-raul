@@ -1,0 +1,506 @@
+[
+ {
+  "case": "case_001",
+  "tool": "request_radiology",
+  "items": [
+   {
+    "q": "Cardiac CT",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "Coronary angiogram",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "imaging_009"
+    ]
+   },
+   {
+    "q": "IVUS",
+    "expect": [
+     "same",
+     "component"
+    ],
+    "keys": [
+     "ecg_010"
+    ]
+   },
+   {
+    "q": "CT coronary angiography",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "Cardiac MRI",
+    "expect": [
+     "none"
+    ]
+   }
+  ]
+ },
+ {
+  "case": "case_001",
+  "tool": "request_other_investigation",
+  "items": [
+   {
+    "q": "Pericardiocentesis with fluid analysis",
+    "expect": [
+     "same",
+     "component"
+    ],
+    "keys": [
+     "procedure_result_011"
+    ]
+   },
+   {
+    "q": "Transesophageal echocardiography for device and valve assessment",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "Pacemaker interrogation",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "Surgical exploration of the pacemaker",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "procedure_result_012"
+    ]
+   }
+  ]
+ },
+ {
+  "case": "case_001",
+  "tool": "request_bedside_test",
+  "items": [
+   {
+    "q": "Bedside echocardiogram",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "ecg_008"
+    ]
+   },
+   {
+    "q": "Transesophageal echocardiogram",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "12-lead ECG",
+    "expect": [
+     "none"
+    ]
+   }
+  ]
+ },
+ {
+  "case": "case_003",
+  "tool": "request_blood_test",
+  "items": [
+   {
+    "q": "CBC",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "lab_007"
+    ]
+   },
+   {
+    "q": "Basic metabolic panel",
+    "expect": [
+     "same",
+     "panel_part"
+    ],
+    "keys": [
+     "lab_008"
+    ]
+   },
+   {
+    "q": "Creatinine",
+    "expect": [
+     "component"
+    ],
+    "keys": [
+     "lab_008"
+    ]
+   },
+   {
+    "q": "Potassium",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "Venous blood gas",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "CRP",
+    "expect": [
+     "component",
+     "same"
+    ],
+    "keys": [
+     "lab_009"
+    ]
+   },
+   {
+    "q": "Lactate",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "lab_011"
+    ]
+   },
+   {
+    "q": "Liver function tests",
+    "expect": [
+     "none"
+    ]
+   }
+  ]
+ },
+ {
+  "case": "case_003",
+  "tool": "request_microbiology",
+  "items": [
+   {
+    "q": "Urinalysis",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "Urine culture",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "microbiology_016"
+    ]
+   },
+   {
+    "q": "Blood cultures x2",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "microbiology_014"
+    ]
+   },
+   {
+    "q": "Stool culture",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "Infectious workup",
+    "expect": [
+     "too_generic"
+    ]
+   }
+  ]
+ },
+ {
+  "case": "case_003",
+  "tool": "request_radiology",
+  "items": [
+   {
+    "q": "CT abdomen/pelvis with IV contrast",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "imaging_005"
+    ]
+   },
+   {
+    "q": "Abdominal ultrasound",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "Chest CT",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "imaging_006"
+    ]
+   },
+   {
+    "q": "MRI abdomen",
+    "expect": [
+     "none"
+    ]
+   }
+  ]
+ },
+ {
+  "case": "case_004",
+  "tool": "request_other_investigation",
+  "items": [
+   {
+    "q": "Medical thoracoscopy with pleural biopsy",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "Thoracentesis",
+    "expect": [
+     "same",
+     "component"
+    ],
+    "keys": [
+     "procedure_result_005"
+    ]
+   },
+   {
+    "q": "Pleural fluid triglycerides",
+    "expect": [
+     "component",
+     "same"
+    ],
+    "keys": [
+     "lab_006"
+    ]
+   },
+   {
+    "q": "Bone marrow biopsy",
+    "expect": [
+     "none"
+    ]
+   }
+  ]
+ },
+ {
+  "case": "case_004",
+  "tool": "request_microbiology",
+  "items": [
+   {
+    "q": "Pleural fluid culture",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "microbiology_007"
+    ]
+   },
+   {
+    "q": "Blood cultures",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "microbiology_010"
+    ]
+   },
+   {
+    "q": "Sputum culture",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "AFB smear and TB PCR of pleural fluid",
+    "expect": [
+     "none"
+    ]
+   }
+  ]
+ },
+ {
+  "case": "case_005",
+  "tool": "request_blood_test",
+  "items": [
+   {
+    "q": "Troponin",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "Beta-D-glucan",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "NT-proBNP",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "Liver function tests",
+    "expect": [
+     "component",
+     "panel_part"
+    ],
+    "keys": [
+     "lab_006"
+    ]
+   },
+   {
+    "q": "Tumor markers",
+    "expect": [
+     "too_generic"
+    ]
+   }
+  ]
+ },
+ {
+  "case": "case_005",
+  "tool": "request_other_investigation",
+  "items": [
+   {
+    "q": "Pleural biopsy",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "procedure_result_010"
+    ]
+   },
+   {
+    "q": "Pleural fluid cytology",
+    "expect": [
+     "same",
+     "component"
+    ],
+    "keys": [
+     "procedure_result_009"
+    ]
+   },
+   {
+    "q": "Bone scan",
+    "expect": [
+     "none"
+    ]
+   }
+  ]
+ },
+ {
+  "case": "case_007",
+  "tool": "request_blood_test",
+  "items": [
+   {
+    "q": "Group and cross-match",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "Lactate dehydrogenase",
+    "expect": [
+     "component",
+     "same"
+    ],
+    "keys": [
+     "lab_007"
+    ]
+   },
+   {
+    "q": "Haptoglobin",
+    "expect": [
+     "component"
+    ],
+    "keys": [
+     "lab_007"
+    ]
+   },
+   {
+    "q": "Reticulocyte count",
+    "expect": [
+     "component"
+    ],
+    "keys": [
+     "lab_007"
+    ]
+   },
+   {
+    "q": "Direct Coombs test",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "lab_010"
+    ]
+   },
+   {
+    "q": "Hemoglobin",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "lab_006"
+    ]
+   },
+   {
+    "q": "Lactate",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "lab_008"
+    ]
+   },
+   {
+    "q": "Hemolysis panel",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "lab_007"
+    ]
+   }
+  ]
+ },
+ {
+  "case": "case_007",
+  "tool": "request_radiology",
+  "items": [
+   {
+    "q": "CT abdomen with contrast",
+    "expect": [
+     "same"
+    ],
+    "keys": [
+     "imaging_011"
+    ]
+   },
+   {
+    "q": "MRI abdomen",
+    "expect": [
+     "none"
+    ]
+   },
+   {
+    "q": "Abdominal ultrasound",
+    "expect": [
+     "none"
+    ]
+   }
+  ]
+ }
+]

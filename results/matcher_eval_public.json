@@ -1,0 +1,2459 @@
+{
+ "baseline": {
+  "counts": {
+   "ok": 35,
+   "false_accept": 15,
+   "wrong_relation": 2,
+   "wrong_key": 2,
+   "miss": 2
+  },
+  "rows": [
+   {
+    "case": "case_001",
+    "tool": "request_radiology",
+    "q": "Cardiac CT",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_radiology",
+    "q": "Coronary angiogram",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "imaging_009"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_radiology",
+    "q": "IVUS",
+    "expect": [
+     "same",
+     "component"
+    ],
+    "got": "same",
+    "keys": [
+     "ecg_010"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_radiology",
+    "q": "CT coronary angiography",
+    "expect": [
+     "none"
+    ],
+    "got": "same",
+    "keys": [
+     "imaging_009"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "false_accept"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_radiology",
+    "q": "Cardiac MRI",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_other_investigation",
+    "q": "Pericardiocentesis with fluid analysis",
+    "expect": [
+     "same",
+     "component"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_011"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_other_investigation",
+    "q": "Transesophageal echocardiography for device and valve assessment",
+    "expect": [
+     "none"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_012"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "false_accept"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_other_investigation",
+    "q": "Pacemaker interrogation",
+    "expect": [
+     "none"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_012"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "false_accept"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_other_investigation",
+    "q": "Surgical exploration of the pacemaker",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_012"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_bedside_test",
+    "q": "Bedside echocardiogram",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "ecg_008"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_bedside_test",
+    "q": "Transesophageal echocardiogram",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_bedside_test",
+    "q": "12-lead ECG",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "CBC",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_007"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Basic metabolic panel",
+    "expect": [
+     "same",
+     "panel_part"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_008"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Creatinine",
+    "expect": [
+     "component"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_008"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "wrong_relation"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Potassium",
+    "expect": [
+     "none"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_008"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "false_accept"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Venous blood gas",
+    "expect": [
+     "none"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_008"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "false_accept"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "CRP",
+    "expect": [
+     "component",
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_009"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Lactate",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_011"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Liver function tests",
+    "expect": [
+     "none"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_008"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "false_accept"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_microbiology",
+    "q": "Urinalysis",
+    "expect": [
+     "none"
+    ],
+    "got": "same",
+    "keys": [
+     "microbiology_016"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "false_accept"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_microbiology",
+    "q": "Urine culture",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "microbiology_016"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_microbiology",
+    "q": "Blood cultures x2",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "microbiology_014"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_microbiology",
+    "q": "Stool culture",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_microbiology",
+    "q": "Infectious workup",
+    "expect": [
+     "too_generic"
+    ],
+    "got": "same",
+    "keys": [
+     "microbiology_014",
+     "microbiology_015",
+     "microbiology_016"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "false_accept"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_radiology",
+    "q": "CT abdomen/pelvis with IV contrast",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "imaging_005"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_radiology",
+    "q": "Abdominal ultrasound",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_radiology",
+    "q": "Chest CT",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "imaging_006"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_radiology",
+    "q": "MRI abdomen",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_other_investigation",
+    "q": "Medical thoracoscopy with pleural biopsy",
+    "expect": [
+     "none"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_005",
+     "procedure_result_009"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "false_accept"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_other_investigation",
+    "q": "Thoracentesis",
+    "expect": [
+     "same",
+     "component"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_005",
+     "lab_006"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "wrong_key"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_other_investigation",
+    "q": "Pleural fluid triglycerides",
+    "expect": [
+     "component",
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_006"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_other_investigation",
+    "q": "Bone marrow biopsy",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_microbiology",
+    "q": "Pleural fluid culture",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "microbiology_007"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_microbiology",
+    "q": "Blood cultures",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "microbiology_010"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_microbiology",
+    "q": "Sputum culture",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_microbiology",
+    "q": "AFB smear and TB PCR of pleural fluid",
+    "expect": [
+     "none"
+    ],
+    "got": "same",
+    "keys": [
+     "microbiology_007"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "false_accept"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_blood_test",
+    "q": "Troponin",
+    "expect": [
+     "none"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_006"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "false_accept"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_blood_test",
+    "q": "Beta-D-glucan",
+    "expect": [
+     "none"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_006"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "false_accept"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_blood_test",
+    "q": "NT-proBNP",
+    "expect": [
+     "none"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_006"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "false_accept"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_blood_test",
+    "q": "Liver function tests",
+    "expect": [
+     "component",
+     "panel_part"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_006"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "wrong_relation"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_blood_test",
+    "q": "Tumor markers",
+    "expect": [
+     "too_generic"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_006"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "false_accept"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_other_investigation",
+    "q": "Pleural biopsy",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_010"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_other_investigation",
+    "q": "Pleural fluid cytology",
+    "expect": [
+     "same",
+     "component"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_009"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_other_investigation",
+    "q": "Bone scan",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Group and cross-match",
+    "expect": [
+     "none"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_010"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "false_accept"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Lactate dehydrogenase",
+    "expect": [
+     "component",
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_008"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "wrong_key"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Haptoglobin",
+    "expect": [
+     "component"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": null,
+    "reason": "",
+    "grade": "miss"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Reticulocyte count",
+    "expect": [
+     "component"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": null,
+    "reason": "",
+    "grade": "miss"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Direct Coombs test",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_010"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Hemoglobin",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_006"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Lactate",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_008"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Hemolysis panel",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_007"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_radiology",
+    "q": "CT abdomen with contrast",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "imaging_011"
+    ],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_radiology",
+    "q": "MRI abdomen",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_radiology",
+    "q": "Abdominal ultrasound",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": null,
+    "reason": "",
+    "grade": "ok"
+   }
+  ]
+ },
+ "z-ai/glm-4.5-air": {
+  "counts": {
+   "ok": 50,
+   "miss": 4,
+   "extract_ok": 6,
+   "wrong_relation": 2
+  },
+  "rows": [
+   {
+    "case": "case_001",
+    "tool": "request_radiology",
+    "q": "Cardiac CT",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No cardiac CT candidate found",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_radiology",
+    "q": "Coronary angiogram",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "imaging_009"
+    ],
+    "extract": [],
+    "reason": "Exact match",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_radiology",
+    "q": "IVUS",
+    "expect": [
+     "same",
+     "component"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No standalone IVUS candidate found",
+    "grade": "miss"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_radiology",
+    "q": "CT coronary angiography",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No CT coronary angiography candidate found",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_radiology",
+    "q": "Cardiac MRI",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No cardiac MRI candidate found",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_other_investigation",
+    "q": "Pericardiocentesis with fluid analysis",
+    "expect": [
+     "same",
+     "component"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_011"
+    ],
+    "extract": [],
+    "reason": "Exact match including fluid analysis",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_other_investigation",
+    "q": "Transesophageal echocardiography for device and valve assessment",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No matching candidate record",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_other_investigation",
+    "q": "Pacemaker interrogation",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No matching candidate record",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_other_investigation",
+    "q": "Surgical exploration of the pacemaker",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_012"
+    ],
+    "extract": [],
+    "reason": "Exact match for pacemaker exploration",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_bedside_test",
+    "q": "Bedside echocardiogram",
+    "expect": [
+     "same"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "different echocardiogram type",
+    "grade": "miss"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_bedside_test",
+    "q": "Transesophageal echocardiogram",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "different echocardiogram type",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_bedside_test",
+    "q": "12-lead ECG",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "different test (ECG vs echo)",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "CBC",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_007"
+    ],
+    "extract": [],
+    "reason": "Complete blood count is synonymous with CBC",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Basic metabolic panel",
+    "expect": [
+     "same",
+     "panel_part"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No candidate matches basic metabolic panel",
+    "grade": "miss"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Creatinine",
+    "expect": [
+     "component"
+    ],
+    "got": "component",
+    "keys": [
+     "lab_008"
+    ],
+    "extract": [
+     "creatinine 1.08 mg/dL"
+    ],
+    "reason": "Creatinine is a component of blood chemistry",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Potassium",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No candidate reports potassium",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Venous blood gas",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No candidate matches venous blood gas",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "CRP",
+    "expect": [
+     "component",
+     "same"
+    ],
+    "got": "component",
+    "keys": [
+     "lab_009"
+    ],
+    "extract": [
+     "CRP 1.7 mg/L before surgery"
+    ],
+    "reason": "CRP is a component of inflammatory markers",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Lactate",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_011"
+    ],
+    "extract": [],
+    "reason": "Lactate test matches exactly",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Liver function tests",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No candidate matches liver function tests",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_microbiology",
+    "q": "Urinalysis",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No urinalysis test found",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_microbiology",
+    "q": "Urine culture",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "microbiology_016"
+    ],
+    "extract": [],
+    "reason": "Exact match found",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_microbiology",
+    "q": "Blood cultures x2",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "microbiology_014"
+    ],
+    "extract": [],
+    "reason": "Exact match found",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_microbiology",
+    "q": "Stool culture",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No stool culture test found",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_microbiology",
+    "q": "Infectious workup",
+    "expect": [
+     "too_generic"
+    ],
+    "got": "too_generic",
+    "keys": [],
+    "extract": [],
+    "reason": "Workup is too broad, needs specification",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_radiology",
+    "q": "CT abdomen/pelvis with IV contrast",
+    "expect": [
+     "same"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "candidate is abdominal CT only, not pelvis",
+    "grade": "miss"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_radiology",
+    "q": "Abdominal ultrasound",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "no ultrasound candidate available",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_radiology",
+    "q": "Chest CT",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "imaging_006"
+    ],
+    "extract": [],
+    "reason": "exact match",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_radiology",
+    "q": "MRI abdomen",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "no MRI candidate available",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_other_investigation",
+    "q": "Medical thoracoscopy with pleural biopsy",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No matching procedure found",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_other_investigation",
+    "q": "Thoracentesis",
+    "expect": [
+     "same",
+     "component"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_005"
+    ],
+    "extract": [],
+    "reason": "Exact match for procedure",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_other_investigation",
+    "q": "Pleural fluid triglycerides",
+    "expect": [
+     "component",
+     "same"
+    ],
+    "got": "component",
+    "keys": [
+     "lab_006"
+    ],
+    "extract": [
+     "triglycerides 434 mg/dL"
+    ],
+    "reason": "Specific analyte in panel",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_other_investigation",
+    "q": "Bone marrow biopsy",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No matching procedure found",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_microbiology",
+    "q": "Pleural fluid culture",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "microbiology_007"
+    ],
+    "extract": [],
+    "reason": "Exact match for pleural fluid culture",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_microbiology",
+    "q": "Blood cultures",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "microbiology_010"
+    ],
+    "extract": [],
+    "reason": "Exact match for blood cultures",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_microbiology",
+    "q": "Sputum culture",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No sputum culture candidate available",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_microbiology",
+    "q": "AFB smear and TB PCR of pleural fluid",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "Not reported in pleural fluid culture candidate",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_blood_test",
+    "q": "Troponin",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "Not in candidate record",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_blood_test",
+    "q": "Beta-D-glucan",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "Not in candidate record",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_blood_test",
+    "q": "NT-proBNP",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "Not in candidate record",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_blood_test",
+    "q": "Liver function tests",
+    "expect": [
+     "component",
+     "panel_part"
+    ],
+    "got": "panel_part",
+    "keys": [
+     "lab_006"
+    ],
+    "extract": [],
+    "reason": "Candidate reports liver tests as part of panel",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_blood_test",
+    "q": "Tumor markers",
+    "expect": [
+     "too_generic"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "Not in candidate record",
+    "grade": "wrong_relation"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_other_investigation",
+    "q": "Pleural biopsy",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_010"
+    ],
+    "extract": [],
+    "reason": "Exact match for requested procedure",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_other_investigation",
+    "q": "Pleural fluid cytology",
+    "expect": [
+     "same",
+     "component"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_009"
+    ],
+    "extract": [],
+    "reason": "Exact match for requested procedure",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_other_investigation",
+    "q": "Bone scan",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No matching candidate record",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Group and cross-match",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "not in candidate records",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Lactate dehydrogenase",
+    "expect": [
+     "component",
+     "same"
+    ],
+    "got": "component",
+    "keys": [
+     "lab_007"
+    ],
+    "extract": [
+     "LDH 1214 U/L"
+    ],
+    "reason": "LDH is part of hemolysis studies",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Haptoglobin",
+    "expect": [
+     "component"
+    ],
+    "got": "component",
+    "keys": [
+     "lab_007"
+    ],
+    "extract": [
+     "haptoglobin <0.3 g/L"
+    ],
+    "reason": "haptoglobin is part of hemolysis studies",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Reticulocyte count",
+    "expect": [
+     "component"
+    ],
+    "got": "component",
+    "keys": [
+     "lab_007"
+    ],
+    "extract": [
+     "reticulocytes 261.7×10^9/L (23.7%)"
+    ],
+    "reason": "reticulocyte count is part of hemolysis studies",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Direct Coombs test",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_010"
+    ],
+    "extract": [],
+    "reason": "Direct antiglobulin test is same as Direct Coombs test",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Hemoglobin",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_006"
+    ],
+    "extract": [],
+    "reason": "exact match",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Lactate",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_008"
+    ],
+    "extract": [],
+    "reason": "exact match",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Hemolysis panel",
+    "expect": [
+     "same"
+    ],
+    "got": "too_generic",
+    "keys": [],
+    "extract": [],
+    "reason": "not a standard defined panel",
+    "grade": "wrong_relation"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_radiology",
+    "q": "CT abdomen with contrast",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "imaging_011"
+    ],
+    "extract": [],
+    "reason": "Abdominal CT with contrast is equivalent",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_radiology",
+    "q": "MRI abdomen",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "Different imaging modality",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_radiology",
+    "q": "Abdominal ultrasound",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "Different imaging modality",
+    "grade": "ok"
+   }
+  ]
+ },
+ "google/gemini-3.1-flash-lite-preview": {
+  "counts": {
+   "ok": 52,
+   "extract_ok": 7,
+   "miss": 3,
+   "wrong_key": 1
+  },
+  "rows": [
+   {
+    "case": "case_001",
+    "tool": "request_radiology",
+    "q": "Cardiac CT",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "Cardiac CT is a different imaging modality than coronary angiography or IVUS.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_radiology",
+    "q": "Coronary angiogram",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "imaging_009"
+    ],
+    "extract": [],
+    "reason": "Coronary angiogram is synonymous with coronary angiography.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_radiology",
+    "q": "IVUS",
+    "expect": [
+     "same",
+     "component"
+    ],
+    "got": "component",
+    "keys": [
+     "ecg_010"
+    ],
+    "extract": [
+     "intravascular ultrasound"
+    ],
+    "reason": "IVUS is an abbreviation for intravascular ultrasound, which is reported in the candidate.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_radiology",
+    "q": "CT coronary angiography",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "CT coronary angiography is a non-invasive imaging modality, distinct from invasive coronary angiography.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_radiology",
+    "q": "Cardiac MRI",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "Cardiac MRI is a different imaging modality not present in the records.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_other_investigation",
+    "q": "Pericardiocentesis with fluid analysis",
+    "expect": [
+     "same",
+     "component"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "The candidate only reports the procedure, not the fluid analysis results.",
+    "grade": "miss"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_other_investigation",
+    "q": "Transesophageal echocardiography for device and valve assessment",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No candidate record matches transesophageal echocardiography.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_other_investigation",
+    "q": "Pacemaker interrogation",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No candidate record matches pacemaker interrogation.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_other_investigation",
+    "q": "Surgical exploration of the pacemaker",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_012"
+    ],
+    "extract": [],
+    "reason": "The candidate record matches the requested surgical exploration.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_bedside_test",
+    "q": "Bedside echocardiogram",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "ecg_008"
+    ],
+    "extract": [],
+    "reason": "Transthoracic echocardiography is the standard bedside echocardiogram procedure.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_bedside_test",
+    "q": "Transesophageal echocardiogram",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "Transesophageal echocardiogram is a distinct procedure from transthoracic echocardiography.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_001",
+    "tool": "request_bedside_test",
+    "q": "12-lead ECG",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "An electrocardiogram is a different diagnostic modality than an echocardiogram.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "CBC",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_007"
+    ],
+    "extract": [],
+    "reason": "CBC is a standard abbreviation for Complete blood count.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Basic metabolic panel",
+    "expect": [
+     "same",
+     "panel_part"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No candidate record matches the Basic metabolic panel.",
+    "grade": "miss"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Creatinine",
+    "expect": [
+     "component"
+    ],
+    "got": "component",
+    "keys": [
+     "lab_008"
+    ],
+    "extract": [
+     "creatinine 1.08 mg/dL"
+    ],
+    "reason": "Creatinine is explicitly reported within the blood chemistry panel.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Potassium",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "Potassium is not reported in any available candidate record.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Venous blood gas",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No candidate record matches the venous blood gas test.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "CRP",
+    "expect": [
+     "component",
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_009",
+     "lab_010"
+    ],
+    "extract": [],
+    "reason": "CRP is explicitly reported in both inflammatory marker records.",
+    "grade": "wrong_key"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Lactate",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_011"
+    ],
+    "extract": [],
+    "reason": "The candidate record matches the requested lactate test.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_blood_test",
+    "q": "Liver function tests",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No candidate record contains liver function test results.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_microbiology",
+    "q": "Urinalysis",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No urinalysis record is available in the provided candidate list.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_microbiology",
+    "q": "Urine culture",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "microbiology_016"
+    ],
+    "extract": [],
+    "reason": "The requested test matches the candidate record for urine culture.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_microbiology",
+    "q": "Blood cultures x2",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "microbiology_014"
+    ],
+    "extract": [],
+    "reason": "The requested blood cultures match the candidate record.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_microbiology",
+    "q": "Stool culture",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No stool culture record is available in the provided candidate list.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_microbiology",
+    "q": "Infectious workup",
+    "expect": [
+     "too_generic"
+    ],
+    "got": "too_generic",
+    "keys": [],
+    "extract": [],
+    "reason": "Infectious workup is a category and is too nonspecific to be performed.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_radiology",
+    "q": "CT abdomen/pelvis with IV contrast",
+    "expect": [
+     "same"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "The candidate is an abdominal CT, but the request specifies abdomen/pelvis and IV contrast.",
+    "grade": "miss"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_radiology",
+    "q": "Abdominal ultrasound",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No ultrasound imaging record is available in the candidate list.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_radiology",
+    "q": "Chest CT",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "imaging_006"
+    ],
+    "extract": [],
+    "reason": "The requested test matches the candidate record exactly.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_003",
+    "tool": "request_radiology",
+    "q": "MRI abdomen",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No MRI imaging record is available in the candidate list.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_other_investigation",
+    "q": "Medical thoracoscopy with pleural biopsy",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No record of medical thoracoscopy or pleural biopsy exists.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_other_investigation",
+    "q": "Thoracentesis",
+    "expect": [
+     "same",
+     "component"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_005"
+    ],
+    "extract": [],
+    "reason": "The candidate record explicitly reports the thoracentesis procedure.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_other_investigation",
+    "q": "Pleural fluid triglycerides",
+    "expect": [
+     "component",
+     "same"
+    ],
+    "got": "component",
+    "keys": [
+     "lab_006"
+    ],
+    "extract": [
+     "triglycerides 434 mg/dL"
+    ],
+    "reason": "The candidate record reports pleural fluid triglycerides as part of the fluid studies.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_other_investigation",
+    "q": "Bone marrow biopsy",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No record of a bone marrow biopsy exists.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_microbiology",
+    "q": "Pleural fluid culture",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "microbiology_007"
+    ],
+    "extract": [],
+    "reason": "The requested test matches the candidate record exactly.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_microbiology",
+    "q": "Blood cultures",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "microbiology_010"
+    ],
+    "extract": [],
+    "reason": "The requested test matches the candidate record exactly.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_microbiology",
+    "q": "Sputum culture",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No candidate record exists for a sputum culture.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_004",
+    "tool": "request_microbiology",
+    "q": "AFB smear and TB PCR of pleural fluid",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No candidate record exists for AFB smear or TB PCR.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_blood_test",
+    "q": "Troponin",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "The candidate record does not contain troponin results.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_blood_test",
+    "q": "Beta-D-glucan",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "The candidate record does not contain beta-D-glucan results.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_blood_test",
+    "q": "NT-proBNP",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "The candidate record does not contain NT-proBNP results.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_blood_test",
+    "q": "Liver function tests",
+    "expect": [
+     "component",
+     "panel_part"
+    ],
+    "got": "component",
+    "keys": [
+     "lab_006"
+    ],
+    "extract": [
+     "liver"
+    ],
+    "reason": "The candidate record reports liver tests as part of a blood panel.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_blood_test",
+    "q": "Tumor markers",
+    "expect": [
+     "too_generic"
+    ],
+    "got": "too_generic",
+    "keys": [],
+    "extract": [],
+    "reason": "Tumor markers is a broad category requiring specification of the target marker.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_other_investigation",
+    "q": "Pleural biopsy",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_010"
+    ],
+    "extract": [],
+    "reason": "The candidate record matches the requested procedure exactly.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_other_investigation",
+    "q": "Pleural fluid cytology",
+    "expect": [
+     "same",
+     "component"
+    ],
+    "got": "same",
+    "keys": [
+     "procedure_result_009"
+    ],
+    "extract": [],
+    "reason": "The candidate record is a pleural fluid cytology report.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_005",
+    "tool": "request_other_investigation",
+    "q": "Bone scan",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No candidate record corresponds to a bone scan.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Group and cross-match",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "No candidate record matches the requested blood typing and cross-matching procedure.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Lactate dehydrogenase",
+    "expect": [
+     "component",
+     "same"
+    ],
+    "got": "component",
+    "keys": [
+     "lab_007"
+    ],
+    "extract": [
+     "LDH"
+    ],
+    "reason": "Lactate dehydrogenase is a component of the hemolysis studies panel.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Haptoglobin",
+    "expect": [
+     "component"
+    ],
+    "got": "component",
+    "keys": [
+     "lab_007"
+    ],
+    "extract": [
+     "haptoglobin"
+    ],
+    "reason": "Haptoglobin is a component of the hemolysis studies panel.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Reticulocyte count",
+    "expect": [
+     "component"
+    ],
+    "got": "component",
+    "keys": [
+     "lab_007"
+    ],
+    "extract": [
+     "reticulocytes"
+    ],
+    "reason": "Reticulocyte count is a component of the hemolysis studies panel.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Direct Coombs test",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_010"
+    ],
+    "extract": [],
+    "reason": "Direct Coombs test is a synonym for the direct antiglobulin test.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Hemoglobin",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_006"
+    ],
+    "extract": [],
+    "reason": "The requested test matches the hemoglobin record.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Lactate",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_008"
+    ],
+    "extract": [],
+    "reason": "The requested test matches the lactate record.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_blood_test",
+    "q": "Hemolysis panel",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "lab_007"
+    ],
+    "extract": [],
+    "reason": "Hemolysis studies is equivalent to the requested hemolysis panel.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_radiology",
+    "q": "CT abdomen with contrast",
+    "expect": [
+     "same"
+    ],
+    "got": "same",
+    "keys": [
+     "imaging_011"
+    ],
+    "extract": [],
+    "reason": "The candidate is a CT abdomen, which matches the requested imaging modality and region.",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_radiology",
+    "q": "MRI abdomen",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "The requested modality (MRI) differs from the available candidate (CT).",
+    "grade": "ok"
+   },
+   {
+    "case": "case_007",
+    "tool": "request_radiology",
+    "q": "Abdominal ultrasound",
+    "expect": [
+     "none"
+    ],
+    "got": "none",
+    "keys": [],
+    "extract": [],
+    "reason": "The requested modality (ultrasound) differs from the available candidate (CT).",
+    "grade": "ok"
+   }
+  ]
+ }
+}

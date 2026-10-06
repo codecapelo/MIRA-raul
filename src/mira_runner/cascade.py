@@ -16,9 +16,21 @@ from decimal import Decimal
 from .tools import ToolArgumentsError
 from .runner import SAMPLING
 from .jef import CAP_TOKENS
+from .cli_client import CLI_MODELS
 
 ACCEPT_C1=0.90;QWEN_CONF=0.70;SAME_TH=0.50;JEF_PRICE=Decimal('0.042')
 QWEN='qwen/qwen3.8-max-0902';SONNET='claude-sonnet-5-5';OPUS='claude-opus-5-5';TIER3=SONNET;TIER4=OPUS
+SONNET_API='anthropic/claude-sonnet-5.5';OPUS_API='anthropic/claude-opus-5.5'  # same models through OpenRouter (real, ledgered cost) instead of the subscription CLI
+EFFORT_API='high'  # same reasoning effort as the CLI arm
+PATIENT_EFFORT='high'
+def is_claude(model):return 'claude' in model
+def claude_kw(model,max_tokens,effort=None):
+    """Call arguments for a Claude model: unchanged for the subscription CLI; through the API the reasoning effort is explicit and the token ceiling leaves room for the answer after the thinking."""
+    if model in CLI_MODELS or not is_claude(model):return {'max_tokens':max_tokens}
+    return {'max_tokens':max(max_tokens,16000),'reasoning':{'effort':effort or EFFORT_API}}
+def for_api(model,text):
+    """The CLI arm wraps the JSON object in a `content` field; a plain API reply does not."""
+    return text if (model in CLI_MODELS or not is_claude(model)) else text.replace('Put ONE JSON object, serialized as a string, in the "content" field:','Return ONLY one JSON object (no markdown fence):')
 INVESTIGATIONS=['request_blood_test','request_urine_test','request_bedside_test','request_radiology','request_microbiology','request_other_investigation']
 MARK='[Results of the tests ordered earlier, now available]'
 
@@ -68,10 +80,25 @@ def clean_requests(questions,tests):
             if names:ts.append({'tool':t['tool'],'test_names':names})
     return qs,ts
 
+SWEEP_Q=('Briefly, and only from what you know: what is your occupation and what do you do in your free time; where have you travelled; have you had any insect, tick or animal bites or contact (pets, wildlife, farm animals); '
+         'did you eat or drink anything unusual or new (meat, dairy, shellfish, raw foods); are you taking any new medicines, supplements or drugs; and did you swallow anything unusual (bones, objects)?')
+
+FEATURE_BLIND=("You are the most senior physician, reading a colleague's case blind. You see the conversation with the patient and every finding obtained. Use only what is in the transcript; never invent findings. "
+  "Work feature by feature, not diagnosis by diagnosis. Step 1: pick the 5 most DISTINCTIVE features: unusual timing or triggers (for example the delay between a meal or an exposure and the symptoms), specific exposures, laboratory or imaging oddities, and what is notably normal. "
+  "Step 2: for each feature, name the diseases or mechanisms classically characterised by it, including uncommon allergic, immune, toxic, iatrogenic, mechanical and environmental causes, before ranking anything. "
+  "Step 3: choose the diagnosis that explains the largest number of distinctive features TOGETHER and say which features it leaves unexplained: a common diagnosis that explains few of them loses to a rarer one that explains most. "
+  "Then list at most 3 patient questions and at most 4 tests that would separate your diagnosis from its best alternative. "
+  "Tests use these tools: request_blood_test, request_urine_test, request_bedside_test, request_radiology, request_microbiology, request_other_investigation; name each test precisely (specimen or site, target antigen or organism, modality and region).")
+FEATURE_SHAPE='{"features":[{"feature":str,"candidates":[str]}],"diagnosis":str,"confidence":number 0-1,"unexplained":[str],"reasoning":str,"missing_questions":[str],"missing_tests":[{"tool":str,"test_names":[str]}]}. Be brief: features of at most 20 words with at most 4 candidates, reasoning under 80 words, no text outside the JSON.'
+FEATURE_FORMAT='Return ONE JSON object: '+FEATURE_SHAPE
+FEATURE_FORMAT_CLI='Put ONE JSON object, serialized as a string, in the "content" field: '+FEATURE_SHAPE
+AGREE_CONF=0.5  # confidence the blind reviewer needs when it agrees with the proposal
+ESCALATION_CONF=0.5  # confidence an escalated read needs to be accepted without the adjudicator
+
 class Cascade:
     """reviewers = (tier2, tier3[, tiebreak]) model names; defaults to the Sonnet-first, Opus-adjudicates design."""
-    def __init__(self,jef,reviewers=(SONNET,OPUS),accept=ACCEPT_C1,triage='jef',audit_rate=0.0,definitive_trigger=False,rescue=False):
-        self.rescue=rescue;self.jef=jef;self.reviewers=tuple(reviewers);self.accept=accept;self.triage=triage;self.audit_rate=audit_rate;self.definitive_trigger=definitive_trigger
+    def __init__(self,jef,reviewers=(SONNET,OPUS),accept=ACCEPT_C1,triage='jef',audit_rate=0.0,definitive_trigger=False,rescue=False,sweep=False,low_conf=None,agree_accept=False):
+        self.agree_accept=agree_accept;self.sweep=sweep;self.low_conf=low_conf;self.rescue=rescue;self.jef=jef;self.reviewers=tuple(reviewers);self.accept=accept;self.triage=triage;self.audit_rate=audit_rate;self.definitive_trigger=definitive_trigger
     def step(self,ctx,key,fn):
         for e in ctx['log'].events():
             if e['event']=='cascade_step' and e['key']==key:return e['value']
@@ -81,22 +108,29 @@ class Cascade:
     def same(self,ctx,key,a,b):
         v=self.step(ctx,key,lambda:self.jef.same(a,b));return None if v.get('failed') else v['same']
     def llm_json(self,ctx,model,system,user):
-        if model.startswith('claude'):role='review_claude';m=ctx['client'].call(model,[{'role':'system','content':system},{'role':'user','content':user}],ctx['log'],role,{},max_tokens=8192)
+        if is_claude(model):role='review_claude';m=ctx['client'].call(model,[{'role':'system','content':for_api(model,system)},{'role':'user','content':user}],ctx['log'],role,{},**claude_kw(model,8192))
         else:role='review_qwen';m=ctx['client'].call(model,[{'role':'system','content':system},{'role':'user','content':user}],ctx['log'],role,SAMPLING[model],max_tokens=6000,response_format={'type':'json_object'},reasoning={'effort':'low'})
         out=parse_json(m.get('content') or '')
         if not isinstance(out,dict):ctx['log'].append({'event':'backend_error','role':role,'reason':'unparseable review output'});return {}
         return out
     def blind(self,ctx,model,conv):
-        fmt=CLAUDE_BLIND_FORMAT if model.startswith('claude') else BLIND_FORMAT
+        fmt=CLAUDE_BLIND_FORMAT if model in CLI_MODELS else BLIND_FORMAT
         cm=ctx.get('map_text') or ''
         return self.llm_json(ctx,model,REVIEW_BLIND+' '+fmt,(f'CONSULTATION MAP FROM A SENIOR CONSULTANT (made before the interview; use it as guidance, it may be wrong):\n{cm}\n\n' if cm else '')+f'CONVERSATION AND FINDINGS:\n{conv}')
+    def feature_read(self,ctx,model,conv):
+        """Blind read of the strongest model, driven by the distinctive features of the case; one retry with a different payload if the JSON is unreadable."""
+        fmt=FEATURE_FORMAT_CLI if model in CLI_MODELS else FEATURE_FORMAT;cm=ctx.get('map_text') or ''
+        user=(f'CONSULTATION MAP FROM A SENIOR CONSULTANT (made before the interview; it may be wrong):\n{cm}\n\n' if cm else '')+f'CONVERSATION AND FINDINGS:\n{conv}'
+        out=self.llm_json(ctx,model,FEATURE_BLIND+' '+fmt,user)
+        if not (out.get('diagnosis') or '').strip():out=self.llm_json(ctx,model,FEATURE_BLIND+' '+fmt+' Output strictly valid JSON: one object, every string closed, nothing outside it.',user)
+        return out
     def follow_up(self,ctx,questions,tests):
         """One round only: extra patient questions (patient model) and tests (case tools, no gate); returns text appended to the transcript."""
         parts=[];stats=ctx['stats']
         if questions:
             text='The reviewing physician asks:\n'+'\n'.join('- '+q for q in questions)
             ctx['patient_messages'].append({'role':'user','content':text})
-            p=ctx['client'].call(ctx['patient_model'],ctx['patient_messages'],ctx['log'],'patient_review',{},max_tokens=8192)
+            p=ctx['client'].call(ctx['patient_model'],ctx['patient_messages'],ctx['log'],'patient_review',{},**claude_kw(ctx['patient_model'],8192,PATIENT_EFFORT))
             ctx['patient_messages'].append(p);stats['review_exchanges']+=1
             parts.append('Patient answers to the reviewer: '+(p.get('content') or '').strip())
         tools=ctx['tools'].inner
@@ -120,7 +154,9 @@ class Cascade:
                         pout=run('request_other_investigation',proc);parts.append(f"Reviewer procedure first (needed for '{name}') request_other_investigation '{proc}': {pout}");out=run(tool,name);continue
                     break
                 parts.append(f"Reviewer test {tool} '{name}': {out}")
-        stats['followup']=True;return '\n'.join(parts)
+        stats['followup']=True;text='\n'.join(parts)
+        if ctx.get('log') is not None:ctx['log'].append({'event':'followup_result','questions':list(questions),'tests':tests,'text':text})  # exactly what the reviewer received (read by the encounter viewer; never replayed)
+        return text
     def __call__(self,ctx):
         stats=ctx['stats'];stats.update(path=['glm'],jef_c1=None,tier2_verdict='',tier3_model='',review_exchanges=0,followup=False)
         prop=ctx['proposal'];conv=transcript(ctx['doctor']);dx0,r0=prop['diagnosis'],prop['reasoning'];r2=self.reviewers[0]
@@ -141,14 +177,26 @@ class Cascade:
         # Tier 2: blind review, with one follow-up round if the reviewer asks for something
         stats['path'].append('blind:'+r2);b=self.blind(ctx,r2,conv);extra=''
         qs,ts=clean_requests(b.get('missing_questions'),b.get('missing_tests'))
+        if self.sweep:qs=qs+[SWEEP_Q]  # every reviewed case gets one standard exposure/ingestion/medication sweep on top of the reviewer's own questions
         if qs or ts:
-            stats['path'].append('followup');extra=self.follow_up(ctx,qs,ts);conv=conv+'\n'+extra;b=self.blind(ctx,r2,conv)
+            stats['path'].append('followup'+('+sweep' if self.sweep else ''));extra=self.follow_up(ctx,qs,ts);conv=conv+'\n'+extra;b=self.blind(ctx,r2,conv)
         bdx=(b.get('diagnosis') or '').strip()
         try:bconf=float(b.get('confidence',0))
         except (TypeError,ValueError):bconf=0.0
+        if self.low_conf and bconf<self.low_conf and len(self.reviewers)>2:  # an unsure reviewer is replaced by the strongest model, who reads the same evidence blind
+            ro=self.reviewers[2];stats['path'].append('escalate:'+ro);o=self.feature_read(ctx,ro,conv);odx=(o.get('diagnosis') or '').strip()
+            q2,t2=clean_requests(o.get('missing_questions'),o.get('missing_tests'))
+            if odx and (q2 or t2):  # the strongest reader gets its own round of questions and tests, then reads again
+                stats['path'].append('followup2');conv=conv+'\n'+self.follow_up(ctx,q2,t2);o2=self.feature_read(ctx,ro,conv)
+                if (o2.get('diagnosis') or '').strip():o=o2;odx=(o.get('diagnosis') or '').strip()
+            if odx:
+                b=o;bdx=odx;stats['tier3_model']=ro
+                try:bconf=float(o.get('confidence',0))
+                except (TypeError,ValueError):bconf=0.0
+                if bconf>=ESCALATION_CONF:stats['tier2_verdict']='escalated';stats['path'].append('accept_escalation');return {'diagnosis':bdx,'reasoning':b.get('reasoning') or ''}
         bsame=self.same(ctx,'same_prop_blind',dx0,bdx) if bdx else None
         stats['tier2_verdict']='agree' if (bdx and bsame is not None and bsame>=SAME_TH) else ('disagree' if bdx else 'none')
-        if bdx and bconf>=QWEN_CONF and bsame is not None and bsame>=SAME_TH:
+        if bdx and bconf>=(AGREE_CONF if self.agree_accept else QWEN_CONF) and bsame is not None and bsame>=SAME_TH:  # two independent readers (the doctor and the blind reviewer) agree: no adjudicator needed
             stats['path'].append('accept_blind');return {'diagnosis':bdx,'reasoning':b.get('reasoning') or r0}
         if not bdx and len(self.reviewers)==1:stats['path'].append('fallback_proposal');return prop
         # Tier 3: adjudicator between the proposal and the blind reviewer
@@ -175,10 +223,13 @@ class Cascade:
 
 def deploy_costs(events):
     """What a deployment would pay (the simulated patient and the judge are benchmark overhead and are excluded)."""
-    oc=Decimal(0);claude=Decimal(0);jef_tokens=0
+    oc=Decimal(0);claude=Decimal(0);capi=Decimal(0);jef_tokens=0
     for e in events:
-        if e['event']=='response' and e['role'] in ('doctor','matcher','review_qwen','consult_map') and not isinstance(e['response'],str):oc+=Decimal(str(e['response'].get('usage',{}).get('cost',0)))
+        if e['event']=='response' and e['role'] in ('doctor','matcher','review_qwen','consult_map','review_claude') and not isinstance(e['response'],str):
+            cost=Decimal(str(e['response'].get('usage',{}).get('cost',0)))
+            if is_claude(str(e['response'].get('model',''))) or e['role']=='review_claude':capi+=cost  # Claude through OpenRouter: real cost
+            else:oc+=cost
         elif e['event']=='cli_call' and e['role'] in ('review_claude','consult_map'):claude+=Decimal(str(e['response']['usage'].get('api_equivalent_cost_usd') or 0))
         elif e['event']=='cascade_step' and isinstance(e['value'],dict) and 'usage' in e['value']:jef_tokens+=e['value']['usage'].get('input_tokens',0)
     jef=Decimal(jef_tokens)*JEF_PRICE/Decimal(1000000)
-    return {'cost_openrouter_deploy_usd':str(oc),'claude_api_equiv_usd':str(claude),'jef_usd':str(jef),'deploy_cost_usd':str(oc+claude+jef)}
+    return {'cost_openrouter_deploy_usd':str(oc),'claude_api_usd':str(capi),'claude_api_equiv_usd':str(claude),'jef_usd':str(jef),'deploy_cost_usd':str(oc+capi+claude+jef)}

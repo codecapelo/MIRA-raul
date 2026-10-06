@@ -110,3 +110,54 @@ class ImmediateResultsTests(unittest.TestCase):
         last=[c for c in f.calls if c[0]=='doctor'][-1][2];self.assertFalse(any(m['role']=='tool' and 'Order placed' in m['content'] for m in last));self.assertFalse(any('Results of the tests ordered earlier' in (m.get('content') or '') for m in last))
         self.assertEqual((res['investigation_orders'],res['unread_orders'],res['delay_results']),(1,0,False))
 if __name__=='__main__':unittest.main()
+
+
+class SweepAndEscalation(unittest.TestCase):
+    UNSURE={'diagnosis':'SONNET DX','confidence':0.3,'reasoning':'s','missing_questions':[],'missing_tests':[]}
+    OPUS_READ={'diagnosis':'OPUS DX','confidence':0.7,'reasoning':'o','missing_questions':[],'missing_tests':[]}
+    def test_sweep_adds_one_standard_question_even_when_the_reviewer_asks_nothing(self):
+        from mira_runner.cascade import SWEEP_Q
+        res,f=run(Cascade(FakeJef(combined=0.4,same=0.9),(SONNET,SONNET),sweep=True),{'review_claude':[dict(CascadeTests.BLIND_OK),dict(CascadeTests.BLIND_OK)]})
+        self.assertIn('followup+sweep',res['cascade_path']);ask=[c for c in f.calls if c[0]=='patient_review'][0];self.assertIn(SWEEP_Q,json.dumps(ask[2]));self.assertEqual(res['review_exchanges'],1)
+    def test_without_sweep_nothing_changes(self):
+        res,f=run(Cascade(FakeJef(combined=0.4,same=0.9),(SONNET,SONNET)),{'review_claude':[dict(CascadeTests.BLIND_OK)]})
+        self.assertEqual(res['cascade_path'],'glm>blind:'+SONNET+'>accept_blind');self.assertFalse([c for c in f.calls if c[0]=='patient_review'])
+    def test_low_confidence_escalates_to_opus_who_reads_the_same_evidence_blind(self):
+        res,f=run(Cascade(FakeJef(combined=0.4,same=0.9),(SONNET,SONNET,OPUS),low_conf=0.5),{'review_claude':[dict(self.UNSURE),dict(self.OPUS_READ)]})
+        self.assertIn('escalate:'+OPUS,res['cascade_path']);self.assertTrue(res['cascade_path'].endswith('accept_escalation'));self.assertEqual(res['dx_agent'],'OPUS DX');calls=[c for c in f.calls if c[0]=='review_claude'];self.assertEqual([c[1] for c in calls],[SONNET,OPUS])
+        self.assertNotIn('PROPOSAL',json.dumps(calls[1][2]));self.assertEqual(res['tier3_model'],OPUS)
+    def test_escalated_reader_gets_its_own_round_and_reads_again(self):
+        asks=dict(self.OPUS_READ,confidence=0.4,missing_questions=['Any ticks?'],missing_tests=[])
+        res,f=run(Cascade(FakeJef(combined=0.4,same=0.9),(SONNET,SONNET,OPUS),low_conf=0.5),{'review_claude':[dict(self.UNSURE),asks,dict(self.OPUS_READ)]})
+        self.assertIn('followup2',res['cascade_path']);self.assertTrue(res['cascade_path'].endswith('accept_escalation'));calls=[c for c in f.calls if c[0]=='review_claude'];self.assertEqual([c[1] for c in calls],[SONNET,OPUS,OPUS])
+        self.assertIn('feature',json.dumps(calls[1][2]).lower());self.assertEqual(len([c for c in f.calls if c[0]=='patient_review']),1)
+    def test_unsure_escalated_read_falls_back_to_the_adjudicator(self):
+        weak=dict(self.OPUS_READ,confidence=0.3)
+        res,f=run(Cascade(FakeJef(combined=0.4,same=0.1),(SONNET,SONNET,OPUS),low_conf=0.5),{'review_claude':[dict(self.UNSURE),weak,{'decision':'accept_reviewer','diagnosis':'x','reasoning':'o','ready':True}]})
+        self.assertNotIn('accept_escalation',res['cascade_path']);self.assertIn('adjudicate',res['cascade_path'])
+    def test_agreement_at_moderate_confidence_skips_the_adjudicator_only_when_enabled(self):
+        mid=dict(CascadeTests.BLIND_OK,confidence=0.55)
+        res,f=run(Cascade(FakeJef(combined=0.4,same=0.9),(SONNET,SONNET),agree_accept=True),{'review_claude':[dict(mid)]})
+        self.assertTrue(res['cascade_path'].endswith('accept_blind'));self.assertEqual(len([c for c in f.calls if c[0]=='review_claude']),1)
+        res,f=run(Cascade(FakeJef(combined=0.4,same=0.9),(SONNET,SONNET)),{'review_claude':[dict(mid),{'decision':'accept_proposal','diagnosis':'x','reasoning':'o','ready':True}]})
+        self.assertIn('adjudicate',res['cascade_path'])
+        low=dict(CascadeTests.BLIND_OK,confidence=0.4)
+        res,f=run(Cascade(FakeJef(combined=0.4,same=0.9),(SONNET,SONNET),agree_accept=True),{'review_claude':[dict(low),{'decision':'accept_proposal','diagnosis':'x','reasoning':'o','ready':True}]})
+        self.assertIn('adjudicate',res['cascade_path'])
+    def test_confident_reviewer_is_not_escalated(self):
+        res,f=run(Cascade(FakeJef(combined=0.4,same=0.9),(SONNET,SONNET,OPUS),low_conf=0.5),{'review_claude':[dict(CascadeTests.BLIND_OK)]})
+        self.assertNotIn('escalate',res['cascade_path'])
+
+
+class FollowUpIsRecorded(unittest.TestCase):
+    def test_exact_reviewer_round_is_logged_and_the_viewer_can_rebuild_a_trace(self):
+        class L:
+            def __init__(self):self.events=[]
+            def append(self,e):self.events.append(e)
+        name=[o for o in json.loads((ROOT/'cases/case_001/investigations.json').read_text())['observations'] if o['domain'] in ('blood','lab','laboratory')][0]['name']
+        with tempfile.TemporaryDirectory() as d:
+            root=make_root(d);inv=json.loads((root/'cases/case_001/investigations.json').read_text())['observations']
+            from mira_runner.tools_v3 import V3CaseTools
+            tools=V3CaseTools(inv,None,False);log=L();ctx={'tools':type('T',(),{'inner':tools})(),'stats':{'review_exchanges':0},'client':None,'log':log,'patient_messages':[],'patient_model':''}
+            text=Cascade(None).follow_up(ctx,[],[{'tool':'request_blood_test','test_names':[name]}])
+        ev=[e for e in log.events if e['event']=='followup_result'];self.assertEqual(len(ev),1);self.assertEqual(ev[0]['text'],text);self.assertIn(name,ev[0]['text']);self.assertEqual(ev[0]['tests'][0]['tool'],'request_blood_test')
