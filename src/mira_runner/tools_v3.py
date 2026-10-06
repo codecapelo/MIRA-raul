@@ -20,6 +20,14 @@ def specimen_ok(query,o):
     if q and n:return bool(q&n)
     if q and not n and not specimen(o['name']) and o.get('domain') in NO_SPECIMEN_DOMAINS:return False
     return True
+COMPOUND_RE=re.compile(r'\s+/\s+|\s+\+\s+')
+def split_compound(requested):
+    out=[]
+    for r in requested:
+        for part in COMPOUND_RE.split(str(r)):
+            part=part.strip()
+            if part and part not in out:out.append(part)
+    return out
 OTHER_TOOLS=('request_blood_test','request_urine_test','request_bedside_test','request_radiology','request_microbiology','request_other_investigation')
 
 def prereq_groups(o):
@@ -108,6 +116,7 @@ class V3CaseTools(CaseTools):
     def execute_strict(self,name,pool,requested):
         """Protocol v3.3: one relation per request decided by the strict matcher; generic -> specific, other specimens and different tests are never released."""
         decided={};pending=[];missing=[];generic=[];extracts={};unisolated=[]
+        requested=split_compound(requested)  # a request that lists several tests ("A / B", "A + B") is decided test by test
         for query in requested:
             def compat(o):  # a single-analyte record is eligible when its NAME is the requested analyte, even if the result text does not repeat the name
                 return compatible(query,o) or bool(requested_analytes(query)&requested_analytes(o['name']))

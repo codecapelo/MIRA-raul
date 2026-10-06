@@ -48,6 +48,14 @@ class StrictTools(unittest.TestCase):
     def test_keys_outside_the_pool_are_ignored(self):
         out,s,_=run({'Antigen-X IgE':{'relation':'same','keys':['mic_5'],'reason':''}},'request_blood_test',{'test_names':['Antigen-X IgE']});self.assertNotIn('findings',out)
 
+class CompoundRequests(unittest.TestCase):
+    def test_split(self):
+        from mira_runner.tools_v3 import split_compound
+        self.assertEqual(split_compound(['CT angiography of chest / CT venography of SVC','CBC + ESR','CT abdomen/pelvis with contrast']),['CT angiography of chest','CT venography of SVC','CBC','ESR','CT abdomen/pelvis with contrast'])
+    def test_each_part_is_answered_by_itself(self):
+        out,s,_=run({},'request_blood_test',{'test_names':['CBC / Serum IgE']})
+        self.assertEqual(out['findings'][0]['requested'],'CBC');self.assertEqual(out['not_available_in_this_case'],['Serum IgE'])
+
 class SingleAnalyteRecords(unittest.TestCase):
     def test_retrievable_by_alias_and_by_name_without_llm(self):
         obs=[ob('lab_9','C-reactive protein','325.2 mg/liter.','blood','request_blood_test'),ob('lab_8','D-dimer','1960 ng/ml.','blood','request_blood_test')]

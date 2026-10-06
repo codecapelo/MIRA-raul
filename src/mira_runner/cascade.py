@@ -80,10 +80,13 @@ def clean_requests(questions,tests):
             if names:ts.append({'tool':t['tool'],'test_names':names})
     return qs,ts
 
+SWEEP_Q=('Briefly, and only from what you know: what is your occupation and what do you do in your free time; where have you travelled; have you had any insect, tick or animal bites or contact (pets, wildlife, farm animals); '
+         'did you eat or drink anything unusual or new (meat, dairy, shellfish, raw foods); are you taking any new medicines, supplements or drugs; and did you swallow anything unusual (bones, objects)?')
+
 class Cascade:
     """reviewers = (tier2, tier3[, tiebreak]) model names; defaults to the Sonnet-first, Opus-adjudicates design."""
-    def __init__(self,jef,reviewers=(SONNET,OPUS),accept=ACCEPT_C1,triage='jef',audit_rate=0.0,definitive_trigger=False,rescue=False):
-        self.rescue=rescue;self.jef=jef;self.reviewers=tuple(reviewers);self.accept=accept;self.triage=triage;self.audit_rate=audit_rate;self.definitive_trigger=definitive_trigger
+    def __init__(self,jef,reviewers=(SONNET,OPUS),accept=ACCEPT_C1,triage='jef',audit_rate=0.0,definitive_trigger=False,rescue=False,sweep=False,low_conf=None):
+        self.sweep=sweep;self.low_conf=low_conf;self.rescue=rescue;self.jef=jef;self.reviewers=tuple(reviewers);self.accept=accept;self.triage=triage;self.audit_rate=audit_rate;self.definitive_trigger=definitive_trigger
     def step(self,ctx,key,fn):
         for e in ctx['log'].events():
             if e['event']=='cascade_step' and e['key']==key:return e['value']
@@ -153,11 +156,18 @@ class Cascade:
         # Tier 2: blind review, with one follow-up round if the reviewer asks for something
         stats['path'].append('blind:'+r2);b=self.blind(ctx,r2,conv);extra=''
         qs,ts=clean_requests(b.get('missing_questions'),b.get('missing_tests'))
+        if self.sweep:qs=qs+[SWEEP_Q]  # every reviewed case gets one standard exposure/ingestion/medication sweep on top of the reviewer's own questions
         if qs or ts:
-            stats['path'].append('followup');extra=self.follow_up(ctx,qs,ts);conv=conv+'\n'+extra;b=self.blind(ctx,r2,conv)
+            stats['path'].append('followup'+('+sweep' if self.sweep else ''));extra=self.follow_up(ctx,qs,ts);conv=conv+'\n'+extra;b=self.blind(ctx,r2,conv)
         bdx=(b.get('diagnosis') or '').strip()
         try:bconf=float(b.get('confidence',0))
         except (TypeError,ValueError):bconf=0.0
+        if self.low_conf and bconf<self.low_conf and len(self.reviewers)>2:  # an unsure reviewer is replaced by the strongest model, who reads the same evidence blind
+            ro=self.reviewers[2];stats['path'].append('escalate:'+ro);o=self.blind(ctx,ro,conv);odx=(o.get('diagnosis') or '').strip()
+            if odx:
+                b=o;bdx=odx;stats['tier3_model']=ro
+                try:bconf=float(o.get('confidence',0))
+                except (TypeError,ValueError):bconf=0.0
         bsame=self.same(ctx,'same_prop_blind',dx0,bdx) if bdx else None
         stats['tier2_verdict']='agree' if (bdx and bsame is not None and bsame>=SAME_TH) else ('disagree' if bdx else 'none')
         if bdx and bconf>=QWEN_CONF and bsame is not None and bsame>=SAME_TH:
