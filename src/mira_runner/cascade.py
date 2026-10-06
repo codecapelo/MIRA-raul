@@ -83,6 +83,17 @@ def clean_requests(questions,tests):
 SWEEP_Q=('Briefly, and only from what you know: what is your occupation and what do you do in your free time; where have you travelled; have you had any insect, tick or animal bites or contact (pets, wildlife, farm animals); '
          'did you eat or drink anything unusual or new (meat, dairy, shellfish, raw foods); are you taking any new medicines, supplements or drugs; and did you swallow anything unusual (bones, objects)?')
 
+FEATURE_BLIND=("You are the most senior physician, reading a colleague's case blind. You see the conversation with the patient and every finding obtained. Use only what is in the transcript; never invent findings. "
+  "Work feature by feature, not diagnosis by diagnosis. Step 1: pick the 5 most DISTINCTIVE features: unusual timing or triggers (for example the delay between a meal or an exposure and the symptoms), specific exposures, laboratory or imaging oddities, and what is notably normal. "
+  "Step 2: for each feature, name the diseases or mechanisms classically characterised by it, including uncommon allergic, immune, toxic, iatrogenic, mechanical and environmental causes, before ranking anything. "
+  "Step 3: choose the diagnosis that explains the largest number of distinctive features TOGETHER and say which features it leaves unexplained: a common diagnosis that explains few of them loses to a rarer one that explains most. "
+  "Then list at most 3 patient questions and at most 4 tests that would separate your diagnosis from its best alternative. "
+  "Tests use these tools: request_blood_test, request_urine_test, request_bedside_test, request_radiology, request_microbiology, request_other_investigation; name each test precisely (specimen or site, target antigen or organism, modality and region).")
+FEATURE_SHAPE='{"features":[{"feature":str,"candidates":[str]}],"diagnosis":str,"confidence":number 0-1,"unexplained":[str],"reasoning":str,"missing_questions":[str],"missing_tests":[{"tool":str,"test_names":[str]}]}. Be brief: features of at most 20 words with at most 4 candidates, reasoning under 80 words, no text outside the JSON.'
+FEATURE_FORMAT='Return ONE JSON object: '+FEATURE_SHAPE
+FEATURE_FORMAT_CLI='Put ONE JSON object, serialized as a string, in the "content" field: '+FEATURE_SHAPE
+ESCALATION_CONF=0.5  # confidence an escalated read needs to be accepted without the adjudicator
+
 class Cascade:
     """reviewers = (tier2, tier3[, tiebreak]) model names; defaults to the Sonnet-first, Opus-adjudicates design."""
     def __init__(self,jef,reviewers=(SONNET,OPUS),accept=ACCEPT_C1,triage='jef',audit_rate=0.0,definitive_trigger=False,rescue=False,sweep=False,low_conf=None):
@@ -105,6 +116,13 @@ class Cascade:
         fmt=CLAUDE_BLIND_FORMAT if model in CLI_MODELS else BLIND_FORMAT
         cm=ctx.get('map_text') or ''
         return self.llm_json(ctx,model,REVIEW_BLIND+' '+fmt,(f'CONSULTATION MAP FROM A SENIOR CONSULTANT (made before the interview; use it as guidance, it may be wrong):\n{cm}\n\n' if cm else '')+f'CONVERSATION AND FINDINGS:\n{conv}')
+    def feature_read(self,ctx,model,conv):
+        """Blind read of the strongest model, driven by the distinctive features of the case; one retry with a different payload if the JSON is unreadable."""
+        fmt=FEATURE_FORMAT_CLI if model in CLI_MODELS else FEATURE_FORMAT;cm=ctx.get('map_text') or ''
+        user=(f'CONSULTATION MAP FROM A SENIOR CONSULTANT (made before the interview; it may be wrong):\n{cm}\n\n' if cm else '')+f'CONVERSATION AND FINDINGS:\n{conv}'
+        out=self.llm_json(ctx,model,FEATURE_BLIND+' '+fmt,user)
+        if not (out.get('diagnosis') or '').strip():out=self.llm_json(ctx,model,FEATURE_BLIND+' '+fmt+' Output strictly valid JSON: one object, every string closed, nothing outside it.',user)
+        return out
     def follow_up(self,ctx,questions,tests):
         """One round only: extra patient questions (patient model) and tests (case tools, no gate); returns text appended to the transcript."""
         parts=[];stats=ctx['stats']
@@ -163,11 +181,16 @@ class Cascade:
         try:bconf=float(b.get('confidence',0))
         except (TypeError,ValueError):bconf=0.0
         if self.low_conf and bconf<self.low_conf and len(self.reviewers)>2:  # an unsure reviewer is replaced by the strongest model, who reads the same evidence blind
-            ro=self.reviewers[2];stats['path'].append('escalate:'+ro);o=self.blind(ctx,ro,conv);odx=(o.get('diagnosis') or '').strip()
+            ro=self.reviewers[2];stats['path'].append('escalate:'+ro);o=self.feature_read(ctx,ro,conv);odx=(o.get('diagnosis') or '').strip()
+            q2,t2=clean_requests(o.get('missing_questions'),o.get('missing_tests'))
+            if odx and (q2 or t2):  # the strongest reader gets its own round of questions and tests, then reads again
+                stats['path'].append('followup2');conv=conv+'\n'+self.follow_up(ctx,q2,t2);o2=self.feature_read(ctx,ro,conv)
+                if (o2.get('diagnosis') or '').strip():o=o2;odx=(o.get('diagnosis') or '').strip()
             if odx:
                 b=o;bdx=odx;stats['tier3_model']=ro
                 try:bconf=float(o.get('confidence',0))
                 except (TypeError,ValueError):bconf=0.0
+                if bconf>=ESCALATION_CONF:stats['tier2_verdict']='escalated';stats['path'].append('accept_escalation');return {'diagnosis':bdx,'reasoning':b.get('reasoning') or ''}
         bsame=self.same(ctx,'same_prop_blind',dx0,bdx) if bdx else None
         stats['tier2_verdict']='agree' if (bdx and bsame is not None and bsame>=SAME_TH) else ('disagree' if bdx else 'none')
         if bdx and bconf>=QWEN_CONF and bsame is not None and bsame>=SAME_TH:

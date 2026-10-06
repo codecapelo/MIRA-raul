@@ -124,8 +124,17 @@ class SweepAndEscalation(unittest.TestCase):
         self.assertEqual(res['cascade_path'],'glm>blind:'+SONNET+'>accept_blind');self.assertFalse([c for c in f.calls if c[0]=='patient_review'])
     def test_low_confidence_escalates_to_opus_who_reads_the_same_evidence_blind(self):
         res,f=run(Cascade(FakeJef(combined=0.4,same=0.9),(SONNET,SONNET,OPUS),low_conf=0.5),{'review_claude':[dict(self.UNSURE),dict(self.OPUS_READ)]})
-        self.assertIn('escalate:'+OPUS,res['cascade_path']);self.assertEqual(res['dx_agent'],'OPUS DX');calls=[c for c in f.calls if c[0]=='review_claude'];self.assertEqual([c[1] for c in calls],[SONNET,OPUS])
+        self.assertIn('escalate:'+OPUS,res['cascade_path']);self.assertTrue(res['cascade_path'].endswith('accept_escalation'));self.assertEqual(res['dx_agent'],'OPUS DX');calls=[c for c in f.calls if c[0]=='review_claude'];self.assertEqual([c[1] for c in calls],[SONNET,OPUS])
         self.assertNotIn('PROPOSAL',json.dumps(calls[1][2]));self.assertEqual(res['tier3_model'],OPUS)
+    def test_escalated_reader_gets_its_own_round_and_reads_again(self):
+        asks=dict(self.OPUS_READ,confidence=0.4,missing_questions=['Any ticks?'],missing_tests=[])
+        res,f=run(Cascade(FakeJef(combined=0.4,same=0.9),(SONNET,SONNET,OPUS),low_conf=0.5),{'review_claude':[dict(self.UNSURE),asks,dict(self.OPUS_READ)]})
+        self.assertIn('followup2',res['cascade_path']);self.assertTrue(res['cascade_path'].endswith('accept_escalation'));calls=[c for c in f.calls if c[0]=='review_claude'];self.assertEqual([c[1] for c in calls],[SONNET,OPUS,OPUS])
+        self.assertIn('feature',json.dumps(calls[1][2]).lower());self.assertEqual(len([c for c in f.calls if c[0]=='patient_review']),1)
+    def test_unsure_escalated_read_falls_back_to_the_adjudicator(self):
+        weak=dict(self.OPUS_READ,confidence=0.3)
+        res,f=run(Cascade(FakeJef(combined=0.4,same=0.1),(SONNET,SONNET,OPUS),low_conf=0.5),{'review_claude':[dict(self.UNSURE),weak,{'decision':'accept_reviewer','diagnosis':'x','reasoning':'o','ready':True}]})
+        self.assertNotIn('accept_escalation',res['cascade_path']);self.assertIn('adjudicate',res['cascade_path'])
     def test_confident_reviewer_is_not_escalated(self):
         res,f=run(Cascade(FakeJef(combined=0.4,same=0.9),(SONNET,SONNET,OPUS),low_conf=0.5),{'review_claude':[dict(CascadeTests.BLIND_OK)]})
         self.assertNotIn('escalate',res['cascade_path'])
