@@ -92,12 +92,13 @@ FEATURE_BLIND=("You are the most senior physician, reading a colleague's case bl
 FEATURE_SHAPE='{"features":[{"feature":str,"candidates":[str]}],"diagnosis":str,"confidence":number 0-1,"unexplained":[str],"reasoning":str,"missing_questions":[str],"missing_tests":[{"tool":str,"test_names":[str]}]}. Be brief: features of at most 20 words with at most 4 candidates, reasoning under 80 words, no text outside the JSON.'
 FEATURE_FORMAT='Return ONE JSON object: '+FEATURE_SHAPE
 FEATURE_FORMAT_CLI='Put ONE JSON object, serialized as a string, in the "content" field: '+FEATURE_SHAPE
+AGREE_CONF=0.5  # confidence the blind reviewer needs when it agrees with the proposal
 ESCALATION_CONF=0.5  # confidence an escalated read needs to be accepted without the adjudicator
 
 class Cascade:
     """reviewers = (tier2, tier3[, tiebreak]) model names; defaults to the Sonnet-first, Opus-adjudicates design."""
-    def __init__(self,jef,reviewers=(SONNET,OPUS),accept=ACCEPT_C1,triage='jef',audit_rate=0.0,definitive_trigger=False,rescue=False,sweep=False,low_conf=None):
-        self.sweep=sweep;self.low_conf=low_conf;self.rescue=rescue;self.jef=jef;self.reviewers=tuple(reviewers);self.accept=accept;self.triage=triage;self.audit_rate=audit_rate;self.definitive_trigger=definitive_trigger
+    def __init__(self,jef,reviewers=(SONNET,OPUS),accept=ACCEPT_C1,triage='jef',audit_rate=0.0,definitive_trigger=False,rescue=False,sweep=False,low_conf=None,agree_accept=False):
+        self.agree_accept=agree_accept;self.sweep=sweep;self.low_conf=low_conf;self.rescue=rescue;self.jef=jef;self.reviewers=tuple(reviewers);self.accept=accept;self.triage=triage;self.audit_rate=audit_rate;self.definitive_trigger=definitive_trigger
     def step(self,ctx,key,fn):
         for e in ctx['log'].events():
             if e['event']=='cascade_step' and e['key']==key:return e['value']
@@ -193,7 +194,7 @@ class Cascade:
                 if bconf>=ESCALATION_CONF:stats['tier2_verdict']='escalated';stats['path'].append('accept_escalation');return {'diagnosis':bdx,'reasoning':b.get('reasoning') or ''}
         bsame=self.same(ctx,'same_prop_blind',dx0,bdx) if bdx else None
         stats['tier2_verdict']='agree' if (bdx and bsame is not None and bsame>=SAME_TH) else ('disagree' if bdx else 'none')
-        if bdx and bconf>=QWEN_CONF and bsame is not None and bsame>=SAME_TH:
+        if bdx and bconf>=(AGREE_CONF if self.agree_accept else QWEN_CONF) and bsame is not None and bsame>=SAME_TH:  # two independent readers (the doctor and the blind reviewer) agree: no adjudicator needed
             stats['path'].append('accept_blind');return {'diagnosis':bdx,'reasoning':b.get('reasoning') or r0}
         if not bdx and len(self.reviewers)==1:stats['path'].append('fallback_proposal');return prop
         # Tier 3: adjudicator between the proposal and the blind reviewer

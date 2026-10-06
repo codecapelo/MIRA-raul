@@ -135,6 +135,15 @@ class SweepAndEscalation(unittest.TestCase):
         weak=dict(self.OPUS_READ,confidence=0.3)
         res,f=run(Cascade(FakeJef(combined=0.4,same=0.1),(SONNET,SONNET,OPUS),low_conf=0.5),{'review_claude':[dict(self.UNSURE),weak,{'decision':'accept_reviewer','diagnosis':'x','reasoning':'o','ready':True}]})
         self.assertNotIn('accept_escalation',res['cascade_path']);self.assertIn('adjudicate',res['cascade_path'])
+    def test_agreement_at_moderate_confidence_skips_the_adjudicator_only_when_enabled(self):
+        mid=dict(CascadeTests.BLIND_OK,confidence=0.55)
+        res,f=run(Cascade(FakeJef(combined=0.4,same=0.9),(SONNET,SONNET),agree_accept=True),{'review_claude':[dict(mid)]})
+        self.assertTrue(res['cascade_path'].endswith('accept_blind'));self.assertEqual(len([c for c in f.calls if c[0]=='review_claude']),1)
+        res,f=run(Cascade(FakeJef(combined=0.4,same=0.9),(SONNET,SONNET)),{'review_claude':[dict(mid),{'decision':'accept_proposal','diagnosis':'x','reasoning':'o','ready':True}]})
+        self.assertIn('adjudicate',res['cascade_path'])
+        low=dict(CascadeTests.BLIND_OK,confidence=0.4)
+        res,f=run(Cascade(FakeJef(combined=0.4,same=0.9),(SONNET,SONNET),agree_accept=True),{'review_claude':[dict(low),{'decision':'accept_proposal','diagnosis':'x','reasoning':'o','ready':True}]})
+        self.assertIn('adjudicate',res['cascade_path'])
     def test_confident_reviewer_is_not_escalated(self):
         res,f=run(Cascade(FakeJef(combined=0.4,same=0.9),(SONNET,SONNET,OPUS),low_conf=0.5),{'review_claude':[dict(CascadeTests.BLIND_OK)]})
         self.assertNotIn('escalate',res['cascade_path'])
