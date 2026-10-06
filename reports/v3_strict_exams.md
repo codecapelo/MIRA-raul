@@ -31,3 +31,10 @@ Falso aceite = devolveu um exame que não era o pedido. Os erros restantes do es
 
 ## Sonnet e Opus
 Pela assinatura Pro (CLI) por padrão; `--opus-tiebreak` põe o Opus 5.5 no desempate de três vias, como no braço por API. O custo estimado se fosse pela API vem dos eventos `cli_call`: `claude_api_equiv_usd` (revisores e mapa, parte da implantação) e `claude_all_equiv_usd` (inclui o paciente).
+
+## v3.4 e v3.5 (06-10-2026): melhorias e resultados
+Mudanças: associador com equivalência de imagem (mesma modalidade e região é o mesmo exame) e pedidos compostos decididos exame a exame (24/24 pedidos de imagem certos na avaliação offline); varredura de exposições (`--sweep`); escalada ao Opus quando a confiança do revisor às cegas é menor que 0,5 (`--low-conf`), com leitura guiada pelos achados distintivos, rodada própria de perguntas e aceite sem árbitro; aceitar o revisor que concorda com a proposta em confiança 0,5 (`--agree-accept`); apresentação inicial maior para o mapa (`--opening`, nível 2 adotado: 10/15 diferenciais com o diagnóstico verdadeiro, contra 8/15 só com a queixa; nos três casos mais difíceis o mapa erra em todos os níveis).
+
+Casos externos privados (5 casos, uma execução, juiz LLM): rodada 1 (v3.3) 3/5; rodada 2 (v3.4) 4/5; rodada 3 (v3.5) 5/5; rodada 4 (+ `--agree-accept`) 5/5, com implantação de US$ 0,236 a 0,307 por caso (Claude pela estimativa de preço da API). Casos públicos (regressão, mesmo fluxo): 10/10, propostas do GLM-5 9/10, US$ 0,099 por caso. Teste offline com a mesma conversa: o Opus com o prompt original não corrigiu os dois casos errados da rodada 1; com a leitura guiada pelos achados, corrigiu o mais difícil. Limite: o fluxo foi ajustado nos mesmos 5 casos externos; falta validar em casos novos e repetir. A conversa e os resultados dos casos privados não estão no repositório.
+
+Incidente: HTTP 429 (GLM-5) em duas chamadas dos casos 009 e 010; reconciliadas com 3 snapshots estáveis, custo zero (`reports/public_429_reconciliation.json`).
