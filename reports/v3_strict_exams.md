@@ -1,7 +1,7 @@
 # v3.3: exame estrito ("entregar o que foi pedido") e casos privados
 
 ## Por que
-No caso externo 011 o médico pediu "Serum IgE" e a ferramenta devolveu a IgE específica para o antígeno do diagnóstico. Nas rodadas anteriores o mesmo comportamento aparece em outros casos (por exemplo "Cardiac CT" devolvendo angiografia coronariana, "Urinalysis" devolvendo urocultura, "Stool ova and parasites" devolvendo sorologia). O prompt do associador original manda mapear "um pedido a vários candidatos quando clinicamente apropriado".
+Em um caso externo privado o médico pediu "Serum IgE" e a ferramenta devolveu a IgE específica para o antígeno do diagnóstico. Nas rodadas anteriores o mesmo comportamento aparece em outros casos (por exemplo "Cardiac CT" devolvendo angiografia coronariana, "Urinalysis" devolvendo urocultura, "Stool ova and parasites" devolvendo sorologia). O prompt do associador original manda mapear "um pedido a vários candidatos quando clinicamente apropriado".
 
 ## Regra
 O associador entrega o que foi pedido, nem mais nem outro exame. Uma relação por pedido (`src/mira_runner/matcher_v3.py`):

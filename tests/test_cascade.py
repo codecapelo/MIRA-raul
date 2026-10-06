@@ -147,3 +147,17 @@ class SweepAndEscalation(unittest.TestCase):
     def test_confident_reviewer_is_not_escalated(self):
         res,f=run(Cascade(FakeJef(combined=0.4,same=0.9),(SONNET,SONNET,OPUS),low_conf=0.5),{'review_claude':[dict(CascadeTests.BLIND_OK)]})
         self.assertNotIn('escalate',res['cascade_path'])
+
+
+class FollowUpIsRecorded(unittest.TestCase):
+    def test_exact_reviewer_round_is_logged_and_the_viewer_can_rebuild_a_trace(self):
+        class L:
+            def __init__(self):self.events=[]
+            def append(self,e):self.events.append(e)
+        name=[o for o in json.loads((ROOT/'cases/case_001/investigations.json').read_text())['observations'] if o['domain'] in ('blood','lab','laboratory')][0]['name']
+        with tempfile.TemporaryDirectory() as d:
+            root=make_root(d);inv=json.loads((root/'cases/case_001/investigations.json').read_text())['observations']
+            from mira_runner.tools_v3 import V3CaseTools
+            tools=V3CaseTools(inv,None,False);log=L();ctx={'tools':type('T',(),{'inner':tools})(),'stats':{'review_exchanges':0},'client':None,'log':log,'patient_messages':[],'patient_model':''}
+            text=Cascade(None).follow_up(ctx,[],[{'tool':'request_blood_test','test_names':[name]}])
+        ev=[e for e in log.events if e['event']=='followup_result'];self.assertEqual(len(ev),1);self.assertEqual(ev[0]['text'],text);self.assertIn(name,ev[0]['text']);self.assertEqual(ev[0]['tests'][0]['tool'],'request_blood_test')

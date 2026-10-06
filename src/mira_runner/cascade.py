@@ -154,7 +154,9 @@ class Cascade:
                         pout=run('request_other_investigation',proc);parts.append(f"Reviewer procedure first (needed for '{name}') request_other_investigation '{proc}': {pout}");out=run(tool,name);continue
                     break
                 parts.append(f"Reviewer test {tool} '{name}': {out}")
-        stats['followup']=True;return '\n'.join(parts)
+        stats['followup']=True;text='\n'.join(parts)
+        if ctx.get('log') is not None:ctx['log'].append({'event':'followup_result','questions':list(questions),'tests':tests,'text':text})  # exactly what the reviewer received (read by the encounter viewer; never replayed)
+        return text
     def __call__(self,ctx):
         stats=ctx['stats'];stats.update(path=['glm'],jef_c1=None,tier2_verdict='',tier3_model='',review_exchanges=0,followup=False)
         prop=ctx['proposal'];conv=transcript(ctx['doctor']);dx0,r0=prop['diagnosis'],prop['reasoning'];r2=self.reviewers[0]
