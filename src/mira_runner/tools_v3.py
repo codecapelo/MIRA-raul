@@ -93,12 +93,17 @@ class V3CaseTools(CaseTools):
         return json.dumps(out,ensure_ascii=False)
 
     @staticmethod
-    def isolate(text,fragments):
-        """The requested part of a bundled result: only fragments that are verbatim parts of the record are accepted."""
+    def isolate(text,fragments,answer=''):
+        """The requested part of a bundled result. Verbatim fragments of the record that carry a number are used as they are; otherwise a short statement is accepted only if every number in it occurs in the record. Anything else is refused (fail closed)."""
         squash=lambda x:' '.join(str(x).split()).lower();base=squash(text);ok=[]
         for f in fragments:
             if squash(f) and squash(f) in base and f.strip() not in ok:ok.append(f.strip())
-        return '; '.join(ok)
+        verbatim='; '.join(ok)
+        if verbatim and re.search(r'\d',verbatim):return verbatim
+        nums=lambda x:set(re.findall(r'\d+(?:[.,]\d+)?',str(x)))
+        answer=' '.join(str(answer or '').split())
+        if answer and len(answer)<=300 and nums(answer)<=nums(text):return answer
+        return ''
 
     def execute_strict(self,name,pool,requested):
         """Protocol v3.3: one relation per request decided by the strict matcher; generic -> specific, other specimens and different tests are never released."""
@@ -121,7 +126,7 @@ class V3CaseTools(CaseTools):
             dec=self.strict([q for q,_ in pending],list(cand.values()))
             for q,el in pending:
                 d=dec.get(q) or {'relation':'none','keys':[]};ids={o['fact_id'] for o in el}&set(d['keys'])
-                if d['relation'] in ('same','component','panel_part') and ids:decided[q]=([o for o in el if o['fact_id'] in ids],d['relation']);extracts[q]=d.get('extract') or []
+                if d['relation'] in ('same','component','panel_part') and ids:decided[q]=([o for o in el if o['fact_id'] in ids],d['relation']);extracts[q]=(d.get('extract') or [],d.get('answer') or '')
                 elif d['relation']=='too_generic':generic.append(q);self.stats['too_generic']+=1
                 else:missing.append(q);self.stats['none']+=1
         findings=[];already=[];needs=[]
@@ -138,7 +143,7 @@ class V3CaseTools(CaseTools):
             for o in matched:
                 value=result_value(query,o)
                 if rel=='component' and len(matched)==1 and not requested_analytes(query):  # release only the requested part of a bundle
-                    part=self.isolate(o['value'],extracts.get(query) or [])
+                    part=self.isolate(o['value'],*(extracts.get(query) or ([],'')))
                     if part:value=part;self.stats['component_isolated']+=1
                     else:  # fail closed: never release the rest of the bundle
                         self.stats['component_unisolated']+=1

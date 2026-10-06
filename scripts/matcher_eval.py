@@ -43,7 +43,10 @@ def main():
             qs=[i['q'] for i in g['items']]
             dec=baseline(client,log,root,qs,pool) if arm=='baseline' else strict_match(client,log,arm,qs,pool)
             for i in g['items']:
-                d=dec[i['q']];r=grade(i,d);counts[r]=counts.get(r,0)+1;rows.append({'case':g['case'],'tool':g['tool'],'q':i['q'],'expect':i['expect'],'got':d['relation'],'keys':d['keys'],'reason':d['reason'],'grade':r})
+                d=dec[i['q']];r=grade(i,d);counts[r]=counts.get(r,0)+1
+                if d['relation']=='component':  # only the requested part may be released: the extract must be verbatim text of the record
+                    from mira_runner.tools_v3 import V3CaseTools;ok=bool(V3CaseTools.isolate(' '.join(o['value'] for o in pool if o['fact_id'] in d['keys']),d.get('extract') or [],d.get('answer') or ''));counts['extract_ok' if ok else 'extract_bad']=counts.get('extract_ok' if ok else 'extract_bad',0)+1
+                rows.append({'case':g['case'],'tool':g['tool'],'q':i['q'],'expect':i['expect'],'got':d['relation'],'keys':d['keys'],'extract':d.get('extract'),'answer':d.get('answer'),'reason':d['reason'],'grade':r})
         result[arm]={'counts':counts,'rows':rows};print(arm,counts,flush=True)
     Path(a.out).write_text(json.dumps(result,indent=1,ensure_ascii=False));print('ledger',ledger.total())
 if __name__=='__main__':main()

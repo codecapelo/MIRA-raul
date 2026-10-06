@@ -59,13 +59,19 @@ class SingleAnalyteRecords(unittest.TestCase):
 
 class OnlyWhatWasRequested(unittest.TestCase):
     def test_component_releases_only_the_requested_fragment(self):
-        out,s,t=run({'White cell differential':{'relation':'component','keys':['lab_1'],'extract':['eosinophils 1700'],'reason':''}},'request_blood_test',{'test_names':['White cell differential']})
+        out,s,t=run({'White cell differential':{'relation':'component','keys':['lab_1'],'extract':['eosinophils 1700'],'answer':'','reason':''}},'request_blood_test',{'test_names':['White cell differential']})
         self.assertEqual(out['findings'][0]['value'],'eosinophils 1700');self.assertNotIn('Hemoglobin',json.dumps(out));self.assertEqual(t.stats['component_isolated'],1)
     def test_invented_extract_is_rejected_and_counted(self):
         out,s,t=run({'White cell differential':{'relation':'component','keys':['lab_1'],'extract':['eosinophils 99999'],'reason':''}},'request_blood_test',{'test_names':['White cell differential']})
         self.assertEqual(t.stats['component_unisolated'],1);self.assertNotIn('findings',out);self.assertEqual(out['not_available_in_this_case'],['White cell differential'])
     def test_isolate_is_verbatim_only(self):
         self.assertEqual(V3CaseTools.isolate('Hemoglobin 14.9; platelets 240000.',['Platelets  240000','made up']),'Platelets  240000')
+    def test_name_only_extract_needs_a_valid_statement(self):
+        rec='ALT, AST and bilirubin were normal (numeric values not reported).'
+        self.assertEqual(V3CaseTools.isolate(rec,['ALT']),'')
+        self.assertEqual(V3CaseTools.isolate(rec,['ALT'],'ALT: within normal limits (numeric value not reported)'),'ALT: within normal limits (numeric value not reported)')
+        self.assertEqual(V3CaseTools.isolate(rec,['ALT'],'ALT 45 U/liter'),'')  # a number that is not in the record is never accepted
+        self.assertEqual(V3CaseTools.isolate('Both negative.',[],'Giardia stool antigen: negative'),'Giardia stool antigen: negative')
 
 class FakeClient:
     def __init__(self,content):self.content=content;self.sent=None
@@ -77,7 +83,7 @@ class StrictMatch(unittest.TestCase):
     def test_parses_and_validates(self):
         c=FakeClient(json.dumps({'decisions':[{'request':'A','relation':'same','keys':['lab_1','zzz']},{'request':'B','relation':'same','keys':['zzz']},{'request':'C','relation':'bogus','keys':['lab_1']},{'request':'D','relation':'too_generic','keys':[]}]}))
         out=strict_match(c,Log(),'m',['A','B','C','D','E'],OBS)
-        self.assertEqual(out['A'],{'relation':'same','keys':['lab_1'],'extract':[],'reason':''});self.assertEqual(out['B']['relation'],'none');self.assertEqual(out['C']['relation'],'none');self.assertEqual(out['D']['relation'],'too_generic');self.assertEqual(out['E']['relation'],'none')
+        self.assertEqual(out['A'],{'relation':'same','keys':['lab_1'],'extract':[],'answer':'','reason':''});self.assertEqual(out['B']['relation'],'none');self.assertEqual(out['C']['relation'],'none');self.assertEqual(out['D']['relation'],'too_generic');self.assertEqual(out['E']['relation'],'none')
     def test_malformed_output_fails_closed(self):
         log=Log();out=strict_match(FakeClient('not json'),log,'m',['A'],OBS);self.assertEqual(out['A']['relation'],'none');self.assertEqual(log.events[0]['event'],'backend_error')
     def test_prompt_shows_reported_text_not_other_cases(self):

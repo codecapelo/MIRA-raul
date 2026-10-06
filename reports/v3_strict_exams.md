@@ -13,7 +13,18 @@ O associador entrega o que foi pedido, nem mais nem outro exame. Uma relação p
 Pedido de hemograma completo devolve o hemograma completo (eosinófilos incluídos). Pedido de uma amostra de fezes nunca é respondido com sorologia ou exame de sangue. A dica de ferramenta errada vem da mesma decisão estrita. Exame de analito único é recuperável pelo próprio nome (PCR, D-dímero, LDH, VHS).
 
 ## Como usar
-`--strict-exams` (junto de `--v32`): tag com sufixo `sx`; as variantes anteriores não mudam. O texto do prompt do médico ganha uma frase sobre a regra. Estado: 18 testes novos (sem custo) passam; a avaliação paga do associador (`scripts/matcher_eval.py`, 56 pedidos rotulados em casos públicos) ainda não foi executada.
+`--strict-exams` (junto de `--v32`): tag com sufixo `sx`; as variantes anteriores não mudam. O texto do prompt do médico ganha uma frase sobre a regra. Estado: 21 testes novos (sem custo) passam.
+
+## Avaliação do associador (06-10-2026, `scripts/matcher_eval.py`)
+Rótulos de minha autoria (julgamento clínico, não verdade absoluta): 56 pedidos em casos públicos (`tests/data/matcher_eval_public.json`) e 35 no caso privado 011, cada grupo equivalente a uma chamada de ferramenta, contra o conjunto inteiro de registros da ferramenta (mais difícil que o fluxo real, que filtra por nome, apelido e espécime antes). Custo total da avaliação: US$ 0,034.
+
+| Associador | Casos públicos (56) | Falsos aceites | Caso 011 (35) | Falsos aceites |
+|---|---:|---:|---:|---:|
+| Original (GLM-4.5-Air, prompt do upstream) | 35 | 15 | 17 | 11 |
+| Estrito, GLM-4.5-Air | 51 | 0 | 30 | 0 |
+| Estrito, Gemini 3.1 Flash-Lite | 51 | 0 | 34 | 0 |
+
+Falso aceite = devolveu um exame que não era o pedido. Os erros restantes do estrito são omissões conservadoras (o exame existe e não foi liberado, por exemplo "Basic metabolic panel" contra "Blood chemistry", que o apelido do fluxo real já resolve) e um pedido de CRP que casou com dois registros (CRP inicial e de seguimento). Nos pedidos de componente, todos os enunciados entregues continham só a parte pedida e números presentes no registro. Escolhido: Gemini 3.1 Flash-Lite (`STRICT_MATCHER`). Limites: rótulos meus, poucos pedidos, um único caso privado, sem medir o efeito no desempenho do médico.
 
 ## Casos privados (não open access)
 `cases/case_011` a `case_015`, `runs/v3/*api*`, `runs/v3/*prv*`, `results/v3_*api*` e `results/v3_*prv*` ficam fora do git. `--private` põe traces e resultados em pastas `prv`. Cada caso guarda a procedência (DOI e sha256 do PDF) em `provenance.json`; as discussões e resultados que só existem depois do diagnóstico ou do tratamento não foram usados como fatos.
