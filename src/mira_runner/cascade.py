@@ -16,9 +16,21 @@ from decimal import Decimal
 from .tools import ToolArgumentsError
 from .runner import SAMPLING
 from .jef import CAP_TOKENS
+from .cli_client import CLI_MODELS
 
 ACCEPT_C1=0.90;QWEN_CONF=0.70;SAME_TH=0.50;JEF_PRICE=Decimal('0.042')
 QWEN='qwen/qwen3.8-max-0902';SONNET='claude-sonnet-5-5';OPUS='claude-opus-5-5';TIER3=SONNET;TIER4=OPUS
+SONNET_API='anthropic/claude-sonnet-5.5';OPUS_API='anthropic/claude-opus-5.5'  # same models through OpenRouter (real, ledgered cost) instead of the subscription CLI
+EFFORT_API='high'  # same reasoning effort as the CLI arm
+PATIENT_EFFORT='high'
+def is_claude(model):return 'claude' in model
+def claude_kw(model,max_tokens,effort=None):
+    """Call arguments for a Claude model: unchanged for the subscription CLI; through the API the reasoning effort is explicit and the token ceiling leaves room for the answer after the thinking."""
+    if model in CLI_MODELS or not is_claude(model):return {'max_tokens':max_tokens}
+    return {'max_tokens':max(max_tokens,16000),'reasoning':{'effort':effort or EFFORT_API}}
+def for_api(model,text):
+    """The CLI arm wraps the JSON object in a `content` field; a plain API reply does not."""
+    return text if (model in CLI_MODELS or not is_claude(model)) else text.replace('Put ONE JSON object, serialized as a string, in the "content" field:','Return ONLY one JSON object (no markdown fence):')
 INVESTIGATIONS=['request_blood_test','request_urine_test','request_bedside_test','request_radiology','request_microbiology','request_other_investigation']
 MARK='[Results of the tests ordered earlier, now available]'
 
@@ -81,13 +93,13 @@ class Cascade:
     def same(self,ctx,key,a,b):
         v=self.step(ctx,key,lambda:self.jef.same(a,b));return None if v.get('failed') else v['same']
     def llm_json(self,ctx,model,system,user):
-        if model.startswith('claude'):role='review_claude';m=ctx['client'].call(model,[{'role':'system','content':system},{'role':'user','content':user}],ctx['log'],role,{},max_tokens=8192)
+        if is_claude(model):role='review_claude';m=ctx['client'].call(model,[{'role':'system','content':for_api(model,system)},{'role':'user','content':user}],ctx['log'],role,{},**claude_kw(model,8192))
         else:role='review_qwen';m=ctx['client'].call(model,[{'role':'system','content':system},{'role':'user','content':user}],ctx['log'],role,SAMPLING[model],max_tokens=6000,response_format={'type':'json_object'},reasoning={'effort':'low'})
         out=parse_json(m.get('content') or '')
         if not isinstance(out,dict):ctx['log'].append({'event':'backend_error','role':role,'reason':'unparseable review output'});return {}
         return out
     def blind(self,ctx,model,conv):
-        fmt=CLAUDE_BLIND_FORMAT if model.startswith('claude') else BLIND_FORMAT
+        fmt=CLAUDE_BLIND_FORMAT if model in CLI_MODELS else BLIND_FORMAT
         cm=ctx.get('map_text') or ''
         return self.llm_json(ctx,model,REVIEW_BLIND+' '+fmt,(f'CONSULTATION MAP FROM A SENIOR CONSULTANT (made before the interview; use it as guidance, it may be wrong):\n{cm}\n\n' if cm else '')+f'CONVERSATION AND FINDINGS:\n{conv}')
     def follow_up(self,ctx,questions,tests):
@@ -96,7 +108,7 @@ class Cascade:
         if questions:
             text='The reviewing physician asks:\n'+'\n'.join('- '+q for q in questions)
             ctx['patient_messages'].append({'role':'user','content':text})
-            p=ctx['client'].call(ctx['patient_model'],ctx['patient_messages'],ctx['log'],'patient_review',{},max_tokens=8192)
+            p=ctx['client'].call(ctx['patient_model'],ctx['patient_messages'],ctx['log'],'patient_review',{},**claude_kw(ctx['patient_model'],8192,PATIENT_EFFORT))
             ctx['patient_messages'].append(p);stats['review_exchanges']+=1
             parts.append('Patient answers to the reviewer: '+(p.get('content') or '').strip())
         tools=ctx['tools'].inner
@@ -175,10 +187,13 @@ class Cascade:
 
 def deploy_costs(events):
     """What a deployment would pay (the simulated patient and the judge are benchmark overhead and are excluded)."""
-    oc=Decimal(0);claude=Decimal(0);jef_tokens=0
+    oc=Decimal(0);claude=Decimal(0);capi=Decimal(0);jef_tokens=0
     for e in events:
-        if e['event']=='response' and e['role'] in ('doctor','matcher','review_qwen','consult_map') and not isinstance(e['response'],str):oc+=Decimal(str(e['response'].get('usage',{}).get('cost',0)))
+        if e['event']=='response' and e['role'] in ('doctor','matcher','review_qwen','consult_map','review_claude') and not isinstance(e['response'],str):
+            cost=Decimal(str(e['response'].get('usage',{}).get('cost',0)))
+            if is_claude(str(e['response'].get('model',''))) or e['role']=='review_claude':capi+=cost  # Claude through OpenRouter: real cost
+            else:oc+=cost
         elif e['event']=='cli_call' and e['role'] in ('review_claude','consult_map'):claude+=Decimal(str(e['response']['usage'].get('api_equivalent_cost_usd') or 0))
         elif e['event']=='cascade_step' and isinstance(e['value'],dict) and 'usage' in e['value']:jef_tokens+=e['value']['usage'].get('input_tokens',0)
     jef=Decimal(jef_tokens)*JEF_PRICE/Decimal(1000000)
-    return {'cost_openrouter_deploy_usd':str(oc),'claude_api_equiv_usd':str(claude),'jef_usd':str(jef),'deploy_cost_usd':str(oc+claude+jef)}
+    return {'cost_openrouter_deploy_usd':str(oc),'claude_api_usd':str(capi),'claude_api_equiv_usd':str(claude),'jef_usd':str(jef),'deploy_cost_usd':str(oc+capi+claude+jef)}
