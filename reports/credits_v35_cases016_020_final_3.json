@@ -1,0 +1,10 @@
+{
+  "timestamp": 1791376270.05357,
+  "endpoint": "GET /api/v1/credits (cache-busted, no-cache)",
+  "response": {
+    "data": {
+      "total_credits": 20,
+      "total_usage": 17.343389863
+    }
+  }
+}
