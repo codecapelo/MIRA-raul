@@ -79,12 +79,21 @@ def write_note(client,model,src,log,role='chart_note',params=None,max_tokens=120
     m=client.call(model,[{'role':'system','content':NOTE_SYSTEM+(CLAUDE_FORMAT if cli else '')},{'role':'user','content':'SOURCE:\n'+source_text(src)}],log,role,params or {},max_tokens=max_tokens)
     note,repaired=parse_note(m.get('content') or '');return note,m,repaired
 
+def sid(x):
+    """Source id as 'S<n>' whatever the model wrote (3, '3', 'S3', ' s3 ')."""
+    t=str(x).strip().upper()
+    return t if t.startswith('S') else ('S'+t if t.isdigit() else t)
+def sids(x):
+    if not isinstance(x,dict):return []
+    v=x.get('src') or [];v=[v] if isinstance(v,(str,int)) else v
+    return [sid(i) for i in v if isinstance(i,(str,int)) and not isinstance(i,bool)]
+
 def _items(note):
     """All (text, src) statements of a note."""
     out=[]
     if not isinstance(note,dict):return out
     def one(x,key='text'):
-        if isinstance(x,dict):out.append((' '.join(str(x.get(k,'')) for k in (key,'result','for','against') if x.get(k)),[s for s in (x.get('src') or []) if isinstance(s,str)]))
+        if isinstance(x,dict):out.append((' '.join(str(x.get(k,'')) for k in (key,'result','for','against') if x.get(k)),sids(x)))
     one(note.get('chief_complaint'))
     for k in ('history_of_present_illness','background','physical_exam','plan'):
         for x in note.get(k) or []:one(x)
@@ -122,14 +131,14 @@ def render_note(note):
     if not isinstance(note,dict):return ''
     def lines(title,xs):
         xs=[x for x in xs or [] if x]
-        return [f'{title}']+['  - '+(x['text'] if isinstance(x,dict) else str(x))+(f" [{', '.join(x.get('src',[]))}]" if isinstance(x,dict) and x.get('src') else '') for x in xs] if xs else []
-    cc=note.get('chief_complaint') or {};out=['CHIEF COMPLAINT',f"  {cc.get('text','')}"+(f" [{', '.join(cc.get('src',[]))}]" if cc.get('src') else '')]
+        return [f'{title}']+['  - '+(x['text'] if isinstance(x,dict) else str(x))+(f" [{', '.join(sids(x))}]" if isinstance(x,dict) and x.get('src') else '') for x in xs] if xs else []
+    cc=note.get('chief_complaint') or {};out=['CHIEF COMPLAINT',f"  {cc.get('text','')}"+(f" [{', '.join(sids(cc))}]" if cc.get('src') else '')]
     out+=lines('HISTORY OF PRESENT ILLNESS',note.get('history_of_present_illness'))+lines('BACKGROUND',note.get('background'))+lines('PHYSICAL EXAM',note.get('physical_exam'))
     inv=note.get('investigations') or []
-    if inv:out+=['INVESTIGATIONS']+[f"  - {x.get('test','')}: {x.get('result','')} [{', '.join(x.get('src',[]))}]" for x in inv if isinstance(x,dict)]
+    if inv:out+=['INVESTIGATIONS']+[f"  - {x.get('test','')}: {x.get('result','')} [{', '.join(sids(x))}]" for x in inv if isinstance(x,dict)]
     a=note.get('assessment') or {}
     out+=['ASSESSMENT',f"  Leading diagnosis: {a.get('leading_diagnosis','')}"]
-    out+=['  Reasoning:']+[f"    - {x.get('text','')} [{', '.join(x.get('src',[]))}]" for x in a.get('reasoning') or [] if isinstance(x,dict)]
+    out+=['  Reasoning:']+[f"    - {x.get('text','')} [{', '.join(sids(x))}]" for x in a.get('reasoning') or [] if isinstance(x,dict)]
     d=[x for x in a.get('differentials') or [] if isinstance(x,dict)]
     if d:out+=['  Differentials:']+[f"    - {x.get('diagnosis','')}: for: {x.get('for','')}; against: {x.get('against','')}" for x in d]
     out+=lines('PLAN',note.get('plan'))
