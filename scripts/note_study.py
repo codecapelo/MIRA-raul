@@ -18,6 +18,7 @@ from mira_runner.cascade import parse_json,claude_kw,SONNET
 from mira_runner.consult import CLAUDE_FORMAT
 from mira_runner.chart_note import source_record,source_text,write_note,check_note,render_note,speech_check,SPEECH_FORMAT
 HAIKU='claude-haiku-5-5';GLM='z-ai/glm-5'
+VARIANTS=[('glm',GLM),('haiku',HAIKU)]  # --effort X replaces them with a single Haiku variant at that effort (compared with the saved high-effort note)
 TRACE=ROOT/'runs/v3/glm5_xf_imm_cas_v32sjeft86a20dsxotswaglc50op5cbam1evxprv_n2/run1/logs/raw/z-ai__glm-5'
 OUT=ROOT/'runs/note_study';OUT.mkdir(parents=True,exist_ok=True)
 AUDIT=('You audit a clinical record against the SOURCE it was written from. The SOURCE lines are [Sn mm:ss KIND] text. List: "unsupported": statements or numbers of the record that are NOT in the source (quote them briefly); '
@@ -52,11 +53,11 @@ def turns(ev):
 
 def stage_notes(case,client,ledger):
     ev=load_events(case);src=source_record(ev);res={}
-    for var,model in (('glm',GLM),('haiku',HAIKU)):
+    for var,model in VARIANTS:
         f=OUT/f'{case}_{var}.json'
         if f.exists():res[var]=json.loads(f.read_text());continue
         log=AuditLog(OUT/'logs'/f'{case}_{var}.jsonl','note_study');t0=time.monotonic()
-        note,m,rep=write_note(client,model,src,log,params={'temperature':.2,'top_p':.95} if var=='glm' else {},cli=var=='haiku')
+        note,m,rep=write_note(client,model,src,log,params={'temperature':.2,'top_p':.95} if var=='glm' else {},cli=var.startswith('haiku'))
         d={'case':case,'var':var,'model':model,'latency_s':round(sum(e['latency_s'] for e in log.events() if e['event']=='cli_call') or time.monotonic()-t0,1),'cost_openrouter_usd':round(sum(float(e['response'].get('usage',{}).get('cost') or 0) for e in log.events() if e['event']=='response'),5),'repaired_json':rep,'note':note,'check':check_note(note,[(i,t,k,x) for i,t,k,x in src]),'text':render_note(note)}
         f.write_text(json.dumps(d,ensure_ascii=False,indent=1));res[var]=d
     return src,res
@@ -65,12 +66,15 @@ def cj(client,system,user,log,role,cli=True):
     m=client.call(SONNET,[{'role':'system','content':system+CLAUDE_FORMAT},{'role':'user','content':user}],log,role,{},**claude_kw(SONNET,4000));return parse_json(m.get('content') or '')
 
 def stage_audit(case,src,res,client):
-    log=AuditLog(OUT/'logs'/f'{case}_audit.jsonl','note_study');rng=random.Random(case);s=source_text(src);out={}
-    for var in ('glm','haiku'):
+    log=AuditLog(OUT/'logs'/f'{case}_audit{TAG}.jsonl','note_study');rng=random.Random(case);s=source_text(src);out={}
+    for var in res:
         out[var]=cj(client,AUDIT,'SOURCE:\n'+s+'\n\nRECORD (JSON):\n'+json.dumps(res[var]['note'],ensure_ascii=False),log,'note_audit')
-    order=['glm','haiku'];rng.shuffle(order)
-    pj=cj(client,PAIR,'SOURCE:\n'+s+'\n\nRECORD X:\n'+res[order[0]]['text']+'\n\nRECORD Y:\n'+res[order[1]]['text'],log,'note_pair') or {}
-    p=pj.get('preferred');out['pair']={'order':order,'preferred':{'X':order[0],'Y':order[1]}.get(p,'tie'),'reason':pj.get('reason','')}
+    names=list(res)
+    if len(names)==1 and (OUT/f'{case}_haiku.json').exists():res={**res,'haiku':json.loads((OUT/f'{case}_haiku.json').read_text())};names=[names[0],'haiku']
+    if len(names)==2:
+        order=names[:];rng.shuffle(order)
+        pj=cj(client,PAIR,'SOURCE:\n'+s+'\n\nRECORD X:\n'+res[order[0]]['text']+'\n\nRECORD Y:\n'+res[order[1]]['text'],log,'note_pair') or {}
+        p=pj.get('preferred');out['pair']={'order':order,'preferred':{'X':order[0],'Y':order[1]}.get(p,'tie'),'reason':pj.get('reason','')}
     return out
 
 def stage_speech(case,client):
@@ -87,9 +91,11 @@ def stage_speech(case,client):
         for r in rows:r['audit']=by.get(r['turn'])
     return rows
 
+def VARIANTS_NAMES():return [v for v,_ in VARIANTS]
+TAG=''
 def summarize(notes,audits,speech):
     s={'cases':len(notes)}
-    for var in ('glm','haiku'):
+    for var in VARIANTS_NAMES():
         c=[n[var]['check'] for n in notes.values()];d=[n[var] for n in notes.values()];a=[audits[k][var] for k in audits if isinstance(audits[k].get(var),dict)]
         s[var]={'json_repaired':sum(bool(x.get('repaired_json')) for x in d),'parsed':sum(x.get('parsed',False) for x in c),'sections_mean':round(st.mean(x.get('sections',0) for x in c),1),'cited_share':round(sum(x.get('cited_statements',0) for x in c)/max(sum(x.get('statements',0) for x in c),1),2),
                 'invalid_ids':sum(x.get('invalid_ids',0) for x in c),'numbers_not_in_cited_source':sum(x.get('numbers_not_in_cited_source',0) for x in c),'numbers':sum(x.get('numbers',0) for x in c),
@@ -97,7 +103,7 @@ def summarize(notes,audits,speech):
                 'latency_s_median':st.median(x['latency_s'] for x in d),'openrouter_usd_per_note':round(st.mean(x['cost_openrouter_usd'] for x in d),5),
                 'audit_unsupported':sum(len(x.get('unsupported') or []) for x in a),'audit_contradictions':sum(len(x.get('contradictions') or []) for x in a),'audit_omissions':sum(len(x.get('omissions') or []) for x in a),
                 'organization':round(st.mean(x.get('organization',0) for x in a),2) if a else None,'record_style':round(st.mean(x.get('record_style',0) for x in a),2) if a else None,'traceability':round(st.mean(x.get('traceability',0) for x in a),2) if a else None}
-    pr=[a['pair']['preferred'] for a in audits.values() if 'pair' in a];s['pairwise']={k:pr.count(k) for k in ('glm','haiku','tie')}
+    pr=[a['pair']['preferred'] for a in audits.values() if 'pair' in a];s['pairwise']={k:pr.count(k) for k in [v for v,_ in VARIANTS]+(['haiku'] if len(VARIANTS)==1 else [])+['tie']}
     rows=[r for v in speech.values() for r in v]
     if rows:
         s['speech']={'turns':len(rows),'baseline_ok':sum(r['baseline']['ok'] for r in rows),'baseline_plain':sum(r['baseline']['plain'] for r in rows),'baseline_words':sum(r['baseline']['words'] for r in rows),'baseline_questions':sum(r['baseline']['questions'] for r in rows),
@@ -106,7 +112,12 @@ def summarize(notes,audits,speech):
     return s
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--cases',nargs='+',required=True);ap.add_argument('--stage',default='all');ap.add_argument('--workers',type=int,default=3);a=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--cases',nargs='+',required=True);ap.add_argument('--stage',default='all');ap.add_argument('--workers',type=int,default=3);ap.add_argument('--effort',default=None);a=ap.parse_args()
+    global VARIANTS,TAG
+    if a.effort:
+        import mira_runner.cli_client as cc
+        if a.stage=='notes':cc.EFFORT=a.effort  # the audit stage keeps the default effort so the auditor is the same for every variant
+        VARIANTS=[('haiku_'+a.effort,HAIKU)];TAG='_'+a.effort
     _,ledger=clients();notes={};audits={};speech={};srcs={}
     def work(case):
         out={};client,ledger=clients()
@@ -122,6 +133,6 @@ def main():
             if 'speech' in out:speech[case]=out['speech']
             print(case,'done',flush=True)
     s=summarize(notes,audits,speech) if notes else {}
-    Path(ROOT/'results/note_study_private.json').write_text(json.dumps({'summary':s,'audits':audits,'speech':speech,'checks':{c:{v:notes[c][v]['check'] for v in notes[c]} for c in notes}},ensure_ascii=False,indent=1))
+    Path(ROOT/f'results/note_study_{a.stage}{TAG}_private.json').write_text(json.dumps({'summary':s,'audits':audits,'speech':speech,'checks':{c:{v:notes[c][v]['check'] for v in notes[c]} for c in notes}},ensure_ascii=False,indent=1))
     print(json.dumps(s,indent=1));print('ledger',ledger.total())
 if __name__=='__main__':main()

@@ -64,12 +64,25 @@ NOTE_SYSTEM=('You write the clinical record (prontuário) of an AI physician for
              '"assessment":{"leading_diagnosis":str,"reasoning":[{"text","src"}],"differentials":[{"diagnosis":str,"for":str,"against":str,"src":[ids]}]},'
              '"plan":[{"text","src"}],"not_obtained":[str] (relevant information the physician did not ask for or that the patient did not know)}. At most 6 history statements, 5 reasoning statements and 4 differentials.')
 
+def close_json(t):
+    """Closes the strings, arrays and objects a truncated reply left open (only appends closers)."""
+    stack=[];inside=False;esc=False
+    for ch in t:
+        if inside:
+            if esc:esc=False
+            elif ch=='\\':esc=True
+            elif ch=='"':inside=False
+        elif ch=='"':inside=True
+        elif ch in '{[':stack.append('}' if ch=='{' else ']')
+        elif ch in '}]' and stack:stack.pop()
+    return t+('"' if inside else '')+''.join(reversed(stack))
+
 def parse_note(text):
     """(object, repaired): strict parse first; some replies arrive with the quotes escaped twice (\\\"), which is undone once and parsed again."""
     out=parse_json(text)
     if isinstance(out,dict):return out,False
     t=(text or '').strip()
-    for fix in (lambda x:json.loads('"'+x+'"'),lambda x:x.replace('\\"','"').replace('\\n','\n')):
+    for fix in (lambda x:json.loads('"'+x+'"'),lambda x:x.replace('\\"','"').replace('\\n','\n'),close_json):
         try:out=parse_json(fix(t))
         except (json.JSONDecodeError,TypeError):continue
         if isinstance(out,dict):return out,True
@@ -152,13 +165,36 @@ SPEECH_FORMAT=('\n\nFormat of every message you address to the patient (plain te
                '(b) then, only if you still need information, the words "I need to ask:" followed by at most three numbered questions (1. 2. 3.), each about a single fact and none already answered; '
                '(c) last, only if you ordered tests in this turn, one sentence beginning "I am ordering" that names them in plain words.')
 
-EMOJI=re.compile('[\U0001F000-\U0001FFFF☀-➿]')
+EMOJI=re.compile('[\U0001F000-\U0001FFFF\u2600-\u27BF]')
 def speech_check(text,ordered=False):
-    """Mechanical compliance of a physician message with SPEECH_FORMAT; returns a dict of booleans and the overall verdict."""
+    """Mechanical compliance of a physician message with SPEECH_FORMAT. `ok` covers the core of the format (plain text, at most 110 words, a first sentence, at most three numbered questions
+    after "I need to ask:"); whether the message says it is ordering tests is reported as `orders_stated` only, because with immediate results or locked tests it is not always owed."""
     t=(text or '').strip();words=len(t.split());nq=len(re.findall(r'^\s*\d+[.)]\s',t,re.M))
     plain=not (re.search(r'\*\*|__|^#|`|^\s*[*•-]\s',t,re.M) or EMOJI.search(t))
     asks='I need to ask:' in t;lines=[l for l in t.split('\n') if l.strip()]
     first_ok=bool(lines) and not re.match(r'\s*\d+[.)]\s',lines[0]) and not lines[0].strip().startswith('I need to ask')
-    order_ok=('I am ordering' in t)==bool(ordered)
-    res={'plain':plain,'words':words<=110,'questions':nq<=3 and (nq==0 or asks),'first_sentence':first_ok,'orders':order_ok}
-    res['ok']=all(res.values());return res
+    res={'plain':plain,'words':words<=110,'questions':nq<=3 and (nq==0 or asks),'first_sentence':first_ok}
+    res['ok']=all(res.values());res['orders_stated']='I am ordering' in t;return res
+
+ENUM=re.compile(r'\s*\(?\b([1-9])[.)]\)?\s+(?=\S)')
+def normalize_speech(text):
+    """Deterministic clean-up of the physician's message to the patient (no model): removes markdown emphasis, headings, bullets and emoji, and puts inline enumerations
+    "(1) ... (2) ... (3) ..." one per line as "1. ...". It never adds, drops or rewrites words."""
+    t=(text or '').replace('\r','')
+    t=re.sub(r'\*\*(.+?)\*\*',r'\1',t,flags=re.S);t=re.sub(r'__(.+?)__',r'\1',t,flags=re.S);t=t.replace('`','')
+    t=re.sub(r'(?m)^\s{0,3}#{1,6}\s*','',t);t=re.sub(r'(?m)^\s*[*•-]\s+','',t);t=EMOJI.sub('',t)
+    out=[]
+    for para in t.split('\n'):
+        marks=[(m.start(),m.end(),m.group(1)) for m in re.finditer(r'\((\d)\)\s*',para)]
+        if len(marks)>=2 and [m[2] for m in marks[:2]]==['1','2']:
+            head=para[:marks[0][0]].rstrip();items=[]
+            for k,(a,b,n) in enumerate(marks):items.append(f"{n}. "+para[b:(marks[k+1][0] if k+1<len(marks) else len(para))].strip())
+            tail=''
+            m=re.search(r'\?\s+(?=[A-Z])',items[-1])  # text after the last question is a new paragraph, not part of the question
+            if m:tail=items[-1][m.end():];items[-1]=items[-1][:m.end()].rstrip()
+            if head:out.append(head)
+            out.extend(items)
+            if tail:out+=['',tail]
+        else:out.append(para)
+    t='\n'.join(out);t=re.sub(r'(I need to ask:)[ \t]+(?=\S)',r'\\1\n',t);t=re.sub(r'\n{3,}','\n\n',t)
+    return t.strip()

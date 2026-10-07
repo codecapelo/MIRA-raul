@@ -1,7 +1,7 @@
 import json,sys,tempfile,unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from mira_runner.chart_note import source_record,check_note,parse_note,render_note,speech_check,sid,SPEECH_FORMAT
+from mira_runner.chart_note import source_record,check_note,parse_note,render_note,speech_check,sid,SPEECH_FORMAT,normalize_speech,close_json
 from replay_events import build
 
 def trace():
@@ -35,9 +35,18 @@ class ChartNoteTests(unittest.TestCase):
         self.assertEqual(parse_note('{"a":1}'),({'a':1},False));self.assertEqual(parse_note('not json'),(None,False))
     def test_speech_format_rule(self):
         good="I understand the pain started two hours ago.\n\nI need to ask:\n1. Do you take aspirin?\n2. Any allergies?\n\nI am ordering a troponin and an ECG."
-        self.assertTrue(speech_check(good,True)['ok']);self.assertFalse(speech_check(good,False)['ok'])  # says ordering when nothing was ordered
+        r=speech_check(good,True);self.assertTrue(r['ok']);self.assertTrue(r['orders_stated'])  # stating the orders is informational, not part of ok
         self.assertFalse(speech_check('**Bold** question?',False)['plain']);self.assertFalse(speech_check('1. a\n2. b\n3. c\n4. d',False)['ok'])
         self.assertFalse(speech_check(' '.join(['word']*120),False)['ok']);self.assertIn('plain text only',SPEECH_FORMAT)
+    def test_normalizer_formats_without_changing_words(self):
+        raw="**Thanks.** I am worried. I need to ask: (1) Any blood thinners? (2) Any fever? (3) Any trauma? I am ordering an ECG."
+        out=normalize_speech(raw);self.assertTrue(speech_check(out)['ok']);self.assertFalse(speech_check(raw)['ok'])
+        self.assertEqual(out.split('\n')[1:4],['1. Any blood thinners?','2. Any fever?','3. Any trauma?'])
+        words=lambda x:[w for w in x.replace('**','').replace('(','').replace(')','').replace('.',' ').replace('?',' ').split() if not w.isdigit()]
+        self.assertEqual(words(raw),words(out));self.assertEqual(normalize_speech('Already plain.\n\n1. A?\n2. B?'),'Already plain.\n\n1. A?\n2. B?')
+        self.assertEqual(normalize_speech('- one\n- two'),'one\ntwo')
+    def test_close_json_repairs_truncation(self):
+        self.assertEqual(json.loads(close_json('{"a":[1,{"b":"x')),{'a':[1,{'b':'x'}]})
     def test_replay_cuts_long_pause_and_marks_actors(self):
         ev,meta=build_from(trace());self.assertLess(meta['total_s'],60);self.assertEqual(len(meta['paused']),1);self.assertGreater(meta['paused'][0]['removed_s'],3000)
         actors=[x['actor'] for x in ev];self.assertEqual(actors[:3],['glm','patient','sys']);self.assertIn('jef',actors)

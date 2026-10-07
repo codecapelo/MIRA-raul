@@ -20,7 +20,7 @@ from .cascade import deploy_costs,INVESTIGATIONS,claude_kw,PATIENT_EFFORT
 from .consult import consult_map,format_map,unmet_decisive,nudge_text
 from .exam_policy import OrderPolicy,classify
 from .semantics import norm
-from .chart_note import SPEECH_FORMAT
+from .chart_note import SPEECH_FORMAT,normalize_speech,source_record,write_note,check_note,render_note
 
 PROTOCOL='v3'
 PATIENT_MODEL='claude-sonnet-5-5'
@@ -148,6 +148,15 @@ def guarded_patient_answer(log,guard,client,record,messages,text,answer,stats,pa
         return client.call(patient_model,messages[:-1]+[{'role':'user','content':text+RETRY_NOTE}],log,'patient_retry',{},**claude_kw(patient_model,8192,PATIENT_EFFORT))
     return answer
 
+def write_chart_note(client,log,model):
+    """Clinical record of the encounter (clinician's chart) written AFTER the result is final, from the trace: it never feeds the physician, the reviewers or the judge, and a failure cannot change the encounter."""
+    try:
+        events=log.events();src=source_record(events);t0=time.monotonic()
+        note,_,repaired=write_note(client,model,src,log,role='chart_note',cli=True)
+        log.append({'event':'chart_note','model':model,'note':note,'repaired_json':repaired,'check':check_note(note,src),'text':render_note(note),'latency_s':round(time.monotonic()-t0,1)})
+    except Exception as exc:  # the record is a view of the encounter, not part of it
+        log.append({'event':'chart_note_failed','model':model,'error':type(exc).__name__+': '+str(exc)[:200]})
+
 def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False,guard=None,min_exchanges=MIN_EXCHANGES,exam_first=False,cascade=None,delay_results=True,consult=None,prereqs=False,judge_override=False,patient_model=PATIENT_MODEL,strict_exams=False,opening=0,extras=None):
     extras=extras or {};log=AuditLog(root/'logs/raw'/model.replace('/','__')/(case_dir.name+'.jsonl'),commit)
     previous=log.events()
@@ -226,7 +235,9 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
             extra={'cascade':True,'cascade_path':'>'.join(cstats['path']),'proposal_dx':proposal['diagnosis'],'proposal_correct':pv,'jef_c1':cstats.get('jef_c1'),'audited':cstats.get('audited',False),'tier2_verdict':cstats.get('tier2_verdict',''),'tier3_model':cstats.get('tier3_model',''),'review_exchanges':cstats.get('review_exchanges',0),'rescued':failure is not None,'failure_reason':failure or '',**deploy_costs(log.events())}
         responses=[e['response'] for e in log.events() if e['event'] in ('response','cli_call')];usage=[r['usage'] for r in responses]
         result={'case_id':case_dir.name,'model':model,'provider':client.config['models'][model]['provider'],'dx_agent':final['diagnosis'],'reasoning':final['reasoning'],'dx_reference':reference['correct_diagnosis'],'judge_correct':verdict,'judge_rationale':rationale,'n_turns':turn,'n_tool_calls':ntools,'tool_errors':tools.errors,'prompt_tokens':sum(u.get('prompt_tokens',0) for u in usage),'completion_tokens':sum(u.get('completion_tokens',0) for u in usage),'reasoning_tokens':sum(u.get('completion_tokens_details',{}).get('reasoning_tokens',0) for u in usage),'cost_usd':str(sum(Decimal(str(u['cost'])) for u in usage)),'latency_s':time.monotonic()-start,'commit':commit,'timestamp':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'physician_review':'','min_exchanges':min_exchanges,'exam_first':exam_first,'delay_results':delay_results,'protocol':PROTOCOL,'patient_model':patient_model,'judge_model':JUDGE_V3,'patient_exchanges':tools.exchanges,'gated_requests':tools.gated,'investigation_orders':tools.orders,**extra,'consult_model':consult or '','consult_urgency':cmap['urgency'] if cmap else '','nudged':nudged,'prereq_blocks':tools.inner.prereq_blocks,'rubric':'override' if override else 'reference','unread_orders':len(tools.pending),'jef_guard':guard is not None,'jef_checks':jstats['checks'],'jef_retries':jstats['retries'],'jef_failures':jstats['failures'],'opening':opening,'claude_all_equiv_usd':str(sum(Decimal(str(u.get('api_equivalent_cost_usd') or 0)) for u in usage)),'strict_exams':strict_exams,'exam_stats':json.dumps(tools.inner.stats) if strict_exams else '','order_policy':json.dumps(tools.policy.stats) if tools.policy is not None else '','exam_cost_usd':tools.policy.spent if tools.policy is not None else '','admit_blocked':tools.admit_blocked,'v36':json.dumps({k:v for k,v in extras.items() if v}) if extras else ''}
-        log.append({'event':'case_complete','result':result});return result
+        log.append({'event':'case_complete','result':result})
+        if extras.get('chart_note'):write_chart_note(client,log,extras['chart_note'])
+        return result
     def operational(reason,turn,ntools):
         if cascade is None or not getattr(cascade,'rescue',False):return terminal_failure(root,case_dir,model,log,commit,reason,turn,ntools,tools.errors,time.monotonic()-start)
         log.append({'event':'rescue','reason':reason});return finish({'diagnosis':'','reasoning':'(no proposal: the first physician failed: '+reason+')'},turn,ntools,failure=reason)
@@ -266,6 +277,9 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
         else:return operational('inner max_turns limit',turn,ntools)
         if final:break
         text=m.get('content') or ''
+        if text and extras.get('speech_format'):  # format only (no model): the raw message stays in the doctor's own history and in the trace
+            norm=normalize_speech(text)
+            if norm!=text:log.append({'event':'speech_format','raw':text,'normalized':norm});text=norm
         if text:
             patient_messages.append({'role':'user','content':text})
             p=client.call(patient_model,patient_messages,log,'patient',{},**claude_kw(patient_model,8192,PATIENT_EFFORT))
