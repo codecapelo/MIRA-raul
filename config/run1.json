@@ -348,6 +348,22 @@
         "verbosity",
         "reasoning_effort"
       ]
+    },
+    "claude-haiku-latest": {
+      "provider": "claude-code-cli",
+      "provider_name": "Claude Code subscription",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 1.0,
+        "output": 5.0
+      },
+      "supports_logprobs": false,
+      "transport": "claude_code_subscription_cli_json_action",
+      "effort": "high",
+      "note": "doctor via subscription CLI alias 'haiku' (newest Haiku served by the CLI; version recorded per call); no OpenRouter charge; prices are API-equivalent (Haiku 4.5) for reference only"
     }
   }
 }

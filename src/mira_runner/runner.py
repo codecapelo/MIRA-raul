@@ -6,7 +6,7 @@ from .client import AuditLog,Client
 from .tools import CaseTools,schemas,ToolArgumentsError
 MODELS={'openai/gpt-oss-120b':{'temperature':1,'top_p':1},'z-ai/glm-4.5-air':{'temperature':.01,'top_p':1},'z-ai/glm-5':{'temperature':1,'top_p':.95},'qwen/qwen3.5-397b-a17b':{'temperature':.6,'top_p':.95,'top_k':20},'openai/gpt-5.2':{}}
 # Extension models are scheduled only by scripts/run_extension.py; MODELS stays frozen for runs 1-3.
-EXTENSION_MODELS={'qwen/qwen3.8-max-prime':{'temperature':.6,'top_p':.95,'top_k':20},'qwen/qwen3.8-max-0902':{'temperature':.6,'top_p':.95,'top_k':20},'claude-sonnet-5-5':{},'claude-opus-5-5':{}}
+EXTENSION_MODELS={'qwen/qwen3.8-max-prime':{'temperature':.6,'top_p':.95,'top_k':20},'qwen/qwen3.8-max-0902':{'temperature':.6,'top_p':.95,'top_k':20},'claude-sonnet-5-5':{},'claude-opus-5-5':{},'claude-haiku-latest':{}}
 SAMPLING={**MODELS,**EXTENSION_MODELS}
 JUDGE='google/gemini-3.1-flash-lite-preview'
 FIELDS='case_id model provider dx_agent reasoning dx_reference judge_correct judge_rationale n_turns n_tool_calls tool_errors prompt_tokens completion_tokens reasoning_tokens cost_usd latency_s commit timestamp physician_review'.split()
