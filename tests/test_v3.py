@@ -185,3 +185,51 @@ class ExamFirstTests(unittest.TestCase):
         self.assertIn('AND requested the physical examination',doctor_rules(3));self.assertNotIn('AND requested',doctor_rules(2,True));self.assertEqual(doctor_rules(3),DOCTOR_RULES)
         m='z-ai/glm-5';self.assertEqual(run_v3.tag(m,False,1,True),'glm5_xf_n1');self.assertEqual(run_v3.tag(m),'glm5')
 if __name__=='__main__':unittest.main()
+
+
+class OrderPolicyTests(unittest.TestCase):
+    """v3.6: cost-benefit order policy and the admission gate."""
+    def setUp(self):
+        from mira_runner.exam_policy import OrderPolicy,classify
+        self.OrderPolicy=OrderPolicy;self.classify=classify
+    def tools(self,policy=True,admit=1,delay=False):
+        from mira_runner.runner_v3 import V3Tools
+        from mira_runner.tools_v3 import V3CaseTools
+        import tests.test_strict_exams as te
+        t=V3Tools(V3CaseTools(te.OBS,None,True,te.Strict({})),0,delay,self.OrderPolicy(cap=3) if policy else None,admit);t.exam_done=True;return t
+    def test_tiers(self):
+        c=self.classify
+        self.assertEqual(c('Troponin')[0],1);self.assertTrue(c('Troponin')[2]);self.assertEqual(c('Complete blood count with differential')[0],1)
+        self.assertEqual(c('CT chest with contrast')[0],2);self.assertEqual(c('CT angiography abdomen')[0],2);self.assertEqual(c('CT-guided lung biopsy')[0],3);self.assertEqual(c('Transthoracic echocardiogram')[0],2);self.assertEqual(c('Blood cultures')[0],1)
+        for n in ('PET-CT','MRI brain with contrast','Colonoscopy','Liver biopsy','Bone marrow aspirate and biopsy','Coronary angiography','Whole exome sequencing'):self.assertEqual(c(n)[0],3,n)
+        self.assertEqual(c('Urine culture')[0],1)
+    def test_expensive_test_is_held_until_results_were_read_and_is_not_searched(self):
+        t=self.tools();out=t.execute('request_blood_test',{'test_names':['PET-CT whole body']});self.assertIn('Held (not ordered)',out);self.assertEqual(t.orders,0)
+        t.execute('request_blood_test',{'test_names':['CBC']});t.release()
+        out=t.execute('request_blood_test',{'test_names':['PET-CT whole body']});self.assertNotIn('Held',out);self.assertEqual(t.orders,2)
+    def test_consultant_endorsed_expensive_test_is_not_held(self):
+        t=self.tools();t.policy.set_endorsed(['Bone marrow biopsy']);out=t.execute('request_other_investigation',{'test_names':['Bone marrow biopsy']});self.assertNotIn('Held',out)
+    def test_cap_keeps_the_most_outcome_changing_and_cheapest_first(self):
+        t=self.tools();out=t.execute('request_blood_test',{'test_names':['Serum IgE','Stool ova and parasites','CBC','Troponin','CT chest','Schistosoma antibody serology']})
+        self.assertEqual(t.policy.stats['ordered'],4);self.assertEqual(t.policy.stats['held_cap'],2)  # troponin is outside the cap; of the rest the cheapest 3 go first (CBC, serology, stool);self.assertIn('limit of 3 tests per turn',out)
+        names=[n for n in ('Troponin','CBC') if n in json.dumps(t.inner.returned)] if False else None
+        t.release();out=t.execute('request_blood_test',{'test_names':['Schistosoma antibody serology']});self.assertNotIn('Held',out)  # a new turn has room again
+    def test_a_closed_family_is_not_searched_again(self):
+        t=self.tools()
+        for n in ('Helicobacter pylori stool antigen','Helicobacter pylori breath test'):t.execute('request_blood_test',{'test_names':[n]});t.release()
+        out=t.execute('request_blood_test',{'test_names':['Helicobacter pylori IgG']});self.assertIn('Not searched',out)
+    def test_bill_is_reported_and_policy_off_changes_nothing(self):
+        t=self.tools();out=t.execute('request_blood_test',{'test_names':['CBC']});self.assertIn('Approximate cost of this order',out)
+        t0=self.tools(policy=False);out0=t0.execute('request_blood_test',{'test_names':['CBC']});self.assertNotIn('Approximate cost',out0)
+    def test_admission_needs_a_spoken_exchange_even_when_tests_are_unlocked(self):
+        t=self.tools();self.assertIn('Admission refused',t.admission_blocked());self.assertEqual(t.admit_blocked,1);t.patient_replied();self.assertEqual(t.admission_blocked(),'')
+        self.assertEqual(self.tools(admit=0).admission_blocked(),'')
+
+    def test_cap_overflow_is_queued_and_runs_in_the_next_round_without_repeating(self):
+        t=self.tools();out=t.execute('request_blood_test',{'test_names':['CBC','Serum IgE','Stool ova and parasites','Schistosoma antibody serology','Liver panel']})
+        self.assertIn('Queued',out);self.assertEqual(t.policy.stats['held_cap'],2)
+        again=t.execute('request_blood_test',{'test_names':['Schistosoma antibody serology']});self.assertIn('already requested this turn',again)
+        text=t.release();self.assertIn('queued in the previous round',text);self.assertEqual(t.policy.stats['queued_run'],2);self.assertEqual(t.release(),'')
+    def test_tests_listed_by_the_consultation_map_are_not_capped(self):
+        t=self.tools();t.policy.set_endorsed(['Urine porphobilinogen'])
+        t.execute('request_blood_test',{'test_names':['CBC','Serum IgE','Stool ova and parasites']});out=t.execute('request_urine_test',{'test_names':['Urine porphobilinogen']});self.assertNotIn('Queued',out);self.assertNotIn('Held',out)

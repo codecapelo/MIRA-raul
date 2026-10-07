@@ -24,3 +24,6 @@ runs/v3/*prv*/
 results/v3_*prv*
 results/matcher_eval_private*
 runs/matcher_eval/*private*
+results/*private*
+results/exam_eval_*
+runs/opening_study*/

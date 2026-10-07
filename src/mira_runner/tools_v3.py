@@ -6,7 +6,7 @@ Every requested test gets an explicit status by name: reported (with the finding
 LLM matcher; a specimen guard keeps urine/fluid requests from matching serum values. v1/v2 CaseTools is unchanged.
 """
 import json,re
-from .semantics import compatible,identity,norm,requested_analytes,result_value
+from .semantics import family, compatible,identity,norm,requested_analytes,result_value,analytes_in,modality
 from .tools import CaseTools
 
 PROC_RE=re.compile(r'laparo|thoraco|explor|surg|endoscop|bronchoscop|centesis')
@@ -16,17 +16,29 @@ def specimen(text):return frozenset(set(norm(text).split())&SPECIMENS)
 NO_SPECIMEN_DOMAINS={'blood','lab','laboratory','radiology','physical_exam','bedside','ecg'}
 def specimen_ok(query,o):
     """A request that names a specimen (stool, urine, pleural fluid...) is never answered by a record of another specimen, nor by a blood/imaging record that names none."""
+    if modality(query) in ('ct','mri','ultrasound','echo','xray','oct'):return True  # an imaging study of the pleura or chest wall is not a fluid sample: the specimen guard does not apply
     q=specimen(query)-{'fluid'};n=specimen(o['name'])-{'fluid'}
     if q and n:return bool(q&n)
     if q and not n and not specimen(o['name']) and o.get('domain') in NO_SPECIMEN_DOMAINS:return False
     return True
+CBC_AN={'hemoglobin','white blood cells','platelets','hematocrit','mcv','neutrophils','lymphocytes','monocytes','eosinophils','basophils'}
+BMP_AN={'sodium','potassium','chloride','bicarbonate','urea nitrogen','creatinine','glucose','calcium','egfr'}
+PANEL_NAME={'complete blood count':None,'blood chemistry':re.compile(r'electrolyte|metabolic|renal|kidney|chemistry')}
+CMP_NAME=re.compile(r'electrolyte|metabolic|renal|kidney|chemistry|liver')
 COMPOUND_RE=re.compile(r'\s+/\s+|\s+\+\s+')
+TESTWORD=re.compile(r'\b(ct|mri|ultrasound|ultrasonography|x ray|radiograph|angiograph\w*|pet|scan|echo\w*|biopsy|culture|serology|pcr|antibody|antigen|endoscopy|enterography|duplex|doppler|smear|panel)\b')
+def split_and(part):
+    """'CT angiography abdomen and CT enterography' is two requests; 'bacterial and fungal' or 'Gram stain and culture' are not (each side must be a test of at least two words)."""
+    pieces=[x.strip() for x in re.split(r'\s+and\s+',part)]
+    if len(pieces)==2 and all(TESTWORD.search(norm(x)) and len(norm(x).split())>=2 for x in pieces):return pieces
+    return [part]
 def split_compound(requested):
     out=[]
     for r in requested:
         for part in COMPOUND_RE.split(str(r)):
-            part=part.strip()
-            if part and part not in out:out.append(part)
+            for piece in split_and(part.strip()):
+                piece=piece.strip()
+                if piece and piece not in out:out.append(piece)
     return out
 OTHER_TOOLS=('request_blood_test','request_urine_test','request_bedside_test','request_radiology','request_microbiology','request_other_investigation')
 
@@ -41,7 +53,7 @@ def prereq_groups(o):
 
 class V3CaseTools(CaseTools):
     def __init__(self,observations,matcher=None,enforce_prereqs=False,strict=None):
-        super().__init__(observations,matcher);self.reported=set();self.enforce=enforce_prereqs;self.prereq_blocks=0;self.strict=strict;self.stats={'same':0,'component':0,'panel_part':0,'too_generic':0,'none':0,'wrong_tool_hint':0,'specimen_blocked':0,'component_isolated':0,'component_unisolated':0}
+        super().__init__(observations,matcher);self.reported=set();self.enforce=enforce_prereqs;self.prereq_blocks=0;self.strict=strict;self.stats={'rerouted':0,'same':0,'component':0,'panel_part':0,'too_generic':0,'none':0,'wrong_tool_hint':0,'specimen_blocked':0,'component_isolated':0,'component_unisolated':0}
         self.names={o['fact_id']:o['name'].lower() for o in observations}
     def unmet(self,o):
         done=[self.names[i] for i in self.returned if i in self.names]
@@ -113,6 +125,15 @@ class V3CaseTools(CaseTools):
         if answer and len(answer)<=300 and nums(answer)<=nums(text):return answer
         return ''
 
+    @staticmethod
+    def panel_parts(query,ok):
+        """A defined standard panel (blood count, basic or comprehensive metabolic panel) is answered by the records that hold only some of its components (a record named after one component, a liver or electrolyte panel); decided here, not by the LLM."""
+        key=identity(query)
+        if key=='complete blood count':return [o for o in ok if analytes_in(o['name']) and analytes_in(o['name'])<=CBC_AN]
+        if key=='blood chemistry':
+            comp=bool(re.search(r'\bcomprehensive\b|\bcmp\b',norm(query)));rx=CMP_NAME if comp else PANEL_NAME['blood chemistry']
+            return [o for o in ok if (analytes_in(o['name']) and analytes_in(o['name'])<=BMP_AN) or rx.search(norm(o['name']))]
+        return []
     def execute_strict(self,name,pool,requested):
         """Protocol v3.3: one relation per request decided by the strict matcher; generic -> specific, other specimens and different tests are never released."""
         decided={};pending=[];missing=[];generic=[];extracts={};unisolated=[]
@@ -123,8 +144,10 @@ class V3CaseTools(CaseTools):
             eligible=[o for o in pool if compat(o)]
             ok=[o for o in eligible if specimen_ok(query,o)]
             self.stats['specimen_blocked']+=len(eligible)-len(ok)
-            exact=[o for o in pool if identity(query)==identity(o['name']) and specimen_ok(query,o)]
+            exact=[o for o in pool if family(identity(query))==family(identity(o['name'])) and specimen_ok(query,o)]
             if exact:decided[query]=(exact,'same');continue
+            part=self.panel_parts(query,ok)
+            if part and not exact:decided[query]=(part,'panel_part');continue
             if requested_analytes(query):
                 comp=[o for o in ok if specimen(query)==specimen(o['name'])]  # compatible() already required the analyte in the result text
                 if comp:decided[query]=(comp,'component');continue
@@ -138,6 +161,16 @@ class V3CaseTools(CaseTools):
                 if d['relation'] in ('same','component','panel_part') and ids:decided[q]=([o for o in el if o['fact_id'] in ids],d['relation']);extracts[q]=(d.get('extract') or [],d.get('answer') or '')
                 elif d['relation']=='too_generic':generic.append(q);self.stats['too_generic']+=1
                 else:missing.append(q);self.stats['none']+=1
+        rerouted={}
+        if missing:  # a request sent to the wrong tool is the same test requested: the same strict decision against the other tools' records finds it and it is released from there
+            tools={o['fact_id']:t for t in OTHER_TOOLS if t!=name for o in self.pool_for(t)};others={o['fact_id']:o for t in OTHER_TOOLS if t!=name for o in self.pool_for(t)}
+            pend2=[(q,[o for o in others.values() if (compatible(q,o) or requested_analytes(q)&requested_analytes(o['name'])) and specimen_ok(q,o)]) for q in missing];pend2=[(q,el) for q,el in pend2 if el]
+            if pend2:
+                dec=self.strict([q for q,_ in pend2],list({o['fact_id']:o for _,el in pend2 for o in el}.values()))
+                for q,el in pend2:
+                    d=dec.get(q) or {'relation':'none','keys':[]};ids=[k for k in d['keys'] if k in {o['fact_id'] for o in el}]
+                    if d['relation'] in ('same','component','panel_part') and ids:
+                        decided[q]=([others[k] for k in ids],d['relation']);extracts[q]=(d.get('extract') or [],d.get('answer') or '');rerouted[q]=tools[ids[0]];missing.remove(q);self.stats['rerouted']+=1
         findings=[];already=[];needs=[]
         for query in requested:
             if query not in decided:continue
@@ -166,6 +199,7 @@ class V3CaseTools(CaseTools):
                 self.reported.add(key);self.returned.add(o['fact_id'])
                 item={'requested':query,'name':o['name'],'value':value}
                 if rel=='panel_part':item['note']='Only these components of the requested panel are reported in this case.'
+                if query in rerouted:item['rerouted']=rerouted[query];item['note']=(item.get('note','')+' ' if item.get('note') else '')+f'Requested through {name}; this test is held under {rerouted[query]}: use that tool next time.'
                 if item not in findings:findings.append(item)
         if self.enforce:
             for q in list(missing):  # a procedure-gated tissue sample at a site that needs a procedure first
@@ -175,14 +209,6 @@ class V3CaseTools(CaseTools):
                         needs.append({'requested':q,'needs_prior_procedure':' or '.join(procs[:3]),'note':'tissue sampling at this site requires a procedure first; request the procedure'});self.prereq_blocks+=1;missing.remove(q)
         missing+=[q for q in unisolated if q not in missing and not any(f['requested']==q for f in findings)]
         wrong=[]
-        if self.enforce and missing:  # the same strict decision against the other tools' records says which tool holds it
-            tools={o['fact_id']:t for t in OTHER_TOOLS if t!=name for o in self.pool_for(t)};others={o['fact_id']:o for t in OTHER_TOOLS if t!=name for o in self.pool_for(t)}
-            pend=[(q,[o for o in others.values() if (compatible(q,o) or requested_analytes(q)&requested_analytes(o['name'])) and specimen_ok(q,o)]) for q in missing];pend=[(q,el) for q,el in pend if el]
-            if pend:
-                dec=self.strict([q for q,_ in pend],list({o['fact_id']:o for _,el in pend for o in el}.values()))
-                for q,el in pend:
-                    d=dec.get(q) or {'relation':'none','keys':[]};ids=[k for k in d['keys'] if k in {o['fact_id'] for o in el}]
-                    if d['relation'] in ('same','component','panel_part') and ids:wrong.append({'requested':q,'use_tool':tools[ids[0]]});missing.remove(q);self.stats['wrong_tool_hint']+=1
         out={}
         if findings:out['findings']=findings
         if already:out['already_ordered_earlier']=already
