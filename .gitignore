@@ -27,3 +27,5 @@ runs/matcher_eval/*private*
 results/*private*
 results/exam_eval_*
 runs/opening_study*/
+runs/note_study*/
+results/note_study*

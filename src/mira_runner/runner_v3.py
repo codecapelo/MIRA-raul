@@ -20,6 +20,7 @@ from .cascade import deploy_costs,INVESTIGATIONS,claude_kw,PATIENT_EFFORT
 from .consult import consult_map,format_map,unmet_decisive,nudge_text
 from .exam_policy import OrderPolicy,classify
 from .semantics import norm
+from .chart_note import SPEECH_FORMAT
 
 PROTOCOL='v3'
 PATIENT_MODEL='claude-sonnet-5-5'
@@ -33,7 +34,7 @@ PATIENT_RULES=('\n\nStrict rules for this role-play: use only the facts listed a
                'lay language, first person, in at most 80 words, as a patient and not as clinical staff. Do not use lists, headings or numbered '
                'answers: if several questions are asked, answer in one short paragraph. Never name or hint at a diagnosis.')
 old_wait=('- Results are not instant: tests you order are reported only after your next exchange with the patient. After ordering, speak to the patient (explain what you ordered and ask what the tests cannot tell you: medications, exposures, family and social history, timeline), then read the results when they arrive.\n')
-def doctor_rules(n=MIN_EXCHANGES,exam_first=False,delay=True,consult=False,prereqs=False,strict=False,policy=False,admit=0):
+def doctor_rules(n=MIN_EXCHANGES,exam_first=False,delay=True,consult=False,prereqs=False,strict=False,policy=False,admit=0,speech=False):
     gate=(f'- Investigations (blood, urine, bedside/ECG, radiology, microbiology, other) are locked until you have exchanged at least {n} message{"s" if n!=1 else ""} with the patient. An earlier request is refused: keep talking to the patient.\n'
           '- The initial physical examination findings are provided together with the presenting complaint; do not request them again.\n') if exam_first else (
           f'- Investigations (blood, urine, bedside/ECG, radiology, microbiology, other) are locked until you have exchanged at least {n} message{"s" if n!=1 else ""} with the patient AND requested the physical examination. An earlier request is refused: keep talking to the patient.\n')
@@ -46,7 +47,7 @@ def doctor_rules(n=MIN_EXCHANGES,exam_first=False,delay=True,consult=False,prere
             '- Finalize with `admission` only when the evidence gathered supports your diagnosis.'+
             (' A consultation map from a senior consultant comes with the first message (urgency, 5 differentials, decisive investigations, key questions): use it to organize the interview and the investigations, and obtain the decisive investigations before admitting when they are available; you remain responsible for the diagnosis. If the map says the case is an emergency, investigations are unlocked immediately.' if consult else '')+
             (' A finding that requires a prior procedure (for example a biopsy that needs laparoscopy or laparotomy first) is refused with the required procedure named: request that procedure first.' if prereqs else '')+
-            (' A test is answered only when it is the very test you requested: a broader request is never replaced by a more specific test, a different specimen, organism, antigen or assay is a different test, and a request that is too nonspecific (a category or workup, or a test class without its target, specimen or site) comes back as `ambiguous_request` asking you to specify: answer by naming the exact test. Name each test precisely (specimen, target antigen or organism); if a test you need is not reported it comes back as not available.' if strict else ''))
+            (' A test is answered only when it is the very test you requested: a broader request is never replaced by a more specific test, a different specimen, organism, antigen or assay is a different test, and a request that is too nonspecific (a category or workup, or a test class without its target, specimen or site) comes back as `ambiguous_request` asking you to specify: answer by naming the exact test. Name each test precisely (specimen, target antigen or organism); if a test you need is not reported it comes back as not available.' if strict else '')+(SPEECH_FORMAT if speech else ''))
 DOCTOR_RULES=doctor_rules(MIN_EXCHANGES)
 EMERGENCY_VOICE=('\n\nThe consultation map flagged this encounter as an EMERGENCY: the patient is acutely and seriously unwell right now. Answer in at most 30 words, in short, breathless or tired '
                  'fragments, giving only the most urgent answer to what was asked (what happened, how it started, what hurts, allergies, medicines). If the facts say you are confused or too weak to give a history, say so in a few words. Still use only the listed facts.')
@@ -160,7 +161,7 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
         log.append({'event':'protocol_config','min_exchanges':min_exchanges,'exam_first':exam_first,'delay_results':delay_results,'consult':consult,'prereqs':prereqs,'judge_override':judge_override,'protocol':PROTOCOL,'patient_model':patient_model,'min_exchanges':min_exchanges,'exam_first':exam_first,'cascade':cascade is not None,'delay_results':delay_results,'judge_model':JUDGE_V3,'judge_params':JUDGE_PARAMS,'max_external_turns':10,'jef_guard':guard is not None,'strict_exams':strict_exams,'opening':opening})
     patient=json.loads((case_dir/'patient.json').read_text());inv=json.loads((case_dir/'investigations.json').read_text())
     prompts=load_module(root/'upstream/onprem-medical-agents/src/prompts_vivabench.py')
-    medprompt=prompts.VIVABENCH_MEDICAL_SYSTEM_PROMPT.replace('`finish`','`admission`')+doctor_rules(min_exchanges,exam_first,delay_results,bool(consult),prereqs,strict_exams,bool(extras.get('order_policy')),int(extras.get('admit_min') or 0))
+    medprompt=prompts.VIVABENCH_MEDICAL_SYSTEM_PROMPT.replace('`finish`','`admission`')+doctor_rules(min_exchanges,exam_first,delay_results,bool(consult),prereqs,strict_exams,bool(extras.get('order_policy')),int(extras.get('admit_min') or 0),bool(extras.get('speech_format')))
     complaint=patient['presenting_complaint'];hx=[h['value'] for h in patient['history_facts']]
     # opening statement: the complaint plus the first lines of the history (0 none, 1 first fact, 2 first two, 3 all); it is the patient's first message and the only input of the consultation map besides the initial examination
     if opening in (5,6):  # first visit as a clinician receives it: the recorded complaint and, as any doctor knows, age and sex (6 adds the first history fact)
