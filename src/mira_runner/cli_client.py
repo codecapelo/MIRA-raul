@@ -11,7 +11,7 @@ Only sanitized metadata is persisted (never raw CLI envelopes, stderr or account
 import hashlib,json,shutil,subprocess,tempfile,time,uuid
 from .client import Client
 
-CLI_MODELS={'claude-opus-5-5':'opus-5-5','claude-sonnet-5-5':'sonnet-5-5','claude-haiku-latest':'haiku'}  # 'haiku' is the CLI alias of the newest Haiku; the version actually served is recorded in every cli_call (models_reported)
+CLI_MODELS={'claude-opus-5-5':'opus-5-5','claude-sonnet-5-5':'sonnet-5-5','claude-haiku-5-5':'haiku-5-5'}  # the CLI prints an unrecognized_model notice for this id but serves it; the served model is checked in every cli_call (models_reported)
 EFFORT='high'
 TIMEOUT_S=900
 

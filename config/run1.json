@@ -349,7 +349,7 @@
         "reasoning_effort"
       ]
     },
-    "claude-haiku-latest": {
+    "claude-haiku-5-5": {
       "provider": "claude-code-cli",
       "provider_name": "Claude Code subscription",
       "pricing_verified": true,
