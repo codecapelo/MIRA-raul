@@ -145,7 +145,10 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
     medprompt=prompts.VIVABENCH_MEDICAL_SYSTEM_PROMPT.replace('`finish`','`admission`')+doctor_rules(min_exchanges,exam_first,delay_results,bool(consult),prereqs,strict_exams,bool(extras.get('order_policy')),int(extras.get('admit_min') or 0))
     complaint=patient['presenting_complaint'];hx=[h['value'] for h in patient['history_facts']]
     # opening statement: the complaint plus the first lines of the history (0 none, 1 first fact, 2 first two, 3 all); it is the patient's first message and the only input of the consultation map besides the initial examination
-    if opening==4:complaint=json.loads((case_dir/'presentation.json').read_text())['text']  # curated first-visit statement (see scripts/make_presentations.py)
+    if opening in (5,6):  # first visit as a clinician receives it: the recorded complaint and, as any doctor knows, age and sex (6 adds the first history fact)
+        ini=patient['initial'];who=(f"{ini['age_years']}-year-old " if ini.get('age_years') else '')+('man' if ini.get('sex_recorded')=='male' else 'woman')
+        complaint=complaint+(' '+hx[0][:350] if opening==6 and hx else '')+f' (I am a {who}.)'
+    elif opening==4:complaint=json.loads((case_dir/'presentation.json').read_text())['text']  # curated first-visit statement (see scripts/make_presentations.py)
     else:complaint=complaint+(' '+{1:' '.join(hx[:1])[:350],2:' '.join(hx[:2])[:700],3:' '.join(hx)}.get(opening,'') if opening else '')
     primary='primary symptom: '+complaint;starter='My '+primary
     doctor=[{'role':'system','content':medprompt},{'role':'user','content':starter}]
