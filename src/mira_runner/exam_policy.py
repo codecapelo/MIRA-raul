@@ -5,7 +5,7 @@ cultures in sepsis), targeted tests that answer a question raised by the finding
 biopsy, angiography) only after the first results were read and with a reason. This module classifies a requested test name into a tier with an
 approximate price and applies four rules to the primary doctor (the reviewers are not subject to them):
 
-  1. at most `cap` tests per doctor turn; when more are requested the most outcome-changing and cheapest go first, the rest are held;
+  1. at most `cap` tests per doctor turn, not counting the outcome-changing first-line ones (they are never held); when more are requested the cheapest first-line and targeted tests go first and the rest are held;
   2. tier-3 tests are held until the doctor has read at least one round of results, unless the senior consultation map listed them as decisive;
   3. a request that repeats a family of tests already answered "not in this case" at least twice comes back without being searched again;
   4. the doctor is told the approximate cost of what was ordered.
@@ -50,9 +50,11 @@ DEFAULT=(2,150,False)
 TIER_NAMES={1:'first-line',2:'targeted',3:'expensive or invasive'}
 COMPILED=[(re.compile(rx),t,usd,p1) for rx,t,usd,p1 in CATALOG]
 
+CT_RX=re.compile(r'\b(ct|cta|ctpa)\b|computed tomograph|cat scan');PROCEDURE_RX=re.compile(r'biops|aspirat|guided|drain|catheteri|resection|\bpet\b|positron|scintigra|spect|nuclear')
 def classify(name):
     """(tier, approximate USD, outcome-changing) of a requested test name."""
     n=norm(name)
+    if CT_RX.search(n) and not PROCEDURE_RX.search(n):return 2,(900 if re.search(r'angio|cta|ctpa|venogra|enterogra',n) else 700),False  # CT angiography is a CT, not an invasive angiogram
     for rx,tier,usd,p1 in COMPILED:
         if rx.search(n):return tier,usd,p1
     return DEFAULT
@@ -89,8 +91,8 @@ class OrderPolicy:
             if tier==3 and self.rounds<1 and not self.is_endorsed(n):held.append({'requested':n,'why':'tier3','tier':tier,'usd':usd});self.stats['held_tier3']+=1;continue
             cand.append((n,tier,usd,p1))
         room=max(self.cap-self.turn_tests,0)
-        ranked=sorted(range(len(cand)),key=lambda i:(not cand[i][3],cand[i][1],cand[i][2],i))
-        keep=set(ranked[:room])
+        ranked=sorted((i for i in range(len(cand)) if not cand[i][3]),key=lambda i:(cand[i][1],cand[i][2],i))
+        keep=set(ranked[:room])|{i for i in range(len(cand)) if cand[i][3]}  # outcome-changing first-line tests (ECG, troponin, lactate, cultures, gases, coagulation, glucose, type and screen) are never held by the cap
         for i,(n,tier,usd,p1) in enumerate(cand):
             if i in keep:allowed.append(n);self.stats['tier%d'%tier]+=1;self.stats['ordered']+=1;self.stats['spent_usd']+=usd;self.spent+=usd;self.turn_tests+=1
             else:held.append({'requested':n,'why':'cap','tier':tier,'usd':usd});self.stats['held_cap']+=1
@@ -100,6 +102,6 @@ class OrderPolicy:
         if allowed:parts.append((f'Approximate cost of this order: US$ {spent_this_call} (total so far US$ {self.spent}).' if immediate else f'Order placed for {len(allowed)} test(s), approximate cost US$ {spent_this_call} (total so far US$ {self.spent}).'))
         for h in held:
             if h['why']=='tier3':parts.append(f"Held (not ordered): '{h['requested']}' is an expensive or invasive study (about US$ {h['usd']}). Read the results of your first-line tests first, then request it again if a finding justifies it.")
-            elif h['why']=='cap':parts.append(f"Held (not ordered): '{h['requested']}': limit of {self.cap} tests per turn reached; the most outcome-changing and cheapest were ordered first. Talk to the patient, read the results, then request it again if still needed.")
+            elif h['why']=='cap':parts.append(f"Held (not ordered): '{h['requested']}': limit of {self.cap} tests per turn reached; the cheapest first-line and targeted tests were ordered first. Talk to the patient, read the results, then request it again if still needed.")
             else:parts.append(f"Not searched: '{h['requested']}' belongs to a family of tests already answered as not in this case ({'; '.join(h['detail'])}); treat it as not performed.")
         return ' '.join(parts)

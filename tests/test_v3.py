@@ -200,7 +200,7 @@ class OrderPolicyTests(unittest.TestCase):
     def test_tiers(self):
         c=self.classify
         self.assertEqual(c('Troponin')[0],1);self.assertTrue(c('Troponin')[2]);self.assertEqual(c('Complete blood count with differential')[0],1)
-        self.assertEqual(c('CT chest with contrast')[0],2);self.assertEqual(c('Transthoracic echocardiogram')[0],2);self.assertEqual(c('Blood cultures')[0],1)
+        self.assertEqual(c('CT chest with contrast')[0],2);self.assertEqual(c('CT angiography abdomen')[0],2);self.assertEqual(c('CT-guided lung biopsy')[0],3);self.assertEqual(c('Transthoracic echocardiogram')[0],2);self.assertEqual(c('Blood cultures')[0],1)
         for n in ('PET-CT','MRI brain with contrast','Colonoscopy','Liver biopsy','Bone marrow aspirate and biopsy','Coronary angiography','Whole exome sequencing'):self.assertEqual(c(n)[0],3,n)
         self.assertEqual(c('Urine culture')[0],1)
     def test_expensive_test_is_held_until_results_were_read_and_is_not_searched(self):
@@ -211,7 +211,7 @@ class OrderPolicyTests(unittest.TestCase):
         t=self.tools();t.policy.set_endorsed(['Bone marrow biopsy']);out=t.execute('request_other_investigation',{'test_names':['Bone marrow biopsy']});self.assertNotIn('Held',out)
     def test_cap_keeps_the_most_outcome_changing_and_cheapest_first(self):
         t=self.tools();out=t.execute('request_blood_test',{'test_names':['Serum IgE','Stool ova and parasites','CBC','Troponin','CT chest','Schistosoma antibody serology']})
-        self.assertEqual(t.policy.stats['ordered'],3);self.assertEqual(t.policy.stats['held_cap'],3);self.assertIn('limit of 3 tests per turn',out)
+        self.assertEqual(t.policy.stats['ordered'],4);self.assertEqual(t.policy.stats['held_cap'],2)  # troponin is outside the cap; of the rest the cheapest 3 go first (CBC, serology, stool);self.assertIn('limit of 3 tests per turn',out)
         names=[n for n in ('Troponin','CBC') if n in json.dumps(t.inner.returned)] if False else None
         t.release();out=t.execute('request_blood_test',{'test_names':['Schistosoma antibody serology']});self.assertNotIn('Held',out)  # a new turn has room again
     def test_a_closed_family_is_not_searched_again(self):
