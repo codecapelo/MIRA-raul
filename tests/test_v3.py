@@ -224,3 +224,12 @@ class OrderPolicyTests(unittest.TestCase):
     def test_admission_needs_a_spoken_exchange_even_when_tests_are_unlocked(self):
         t=self.tools();self.assertIn('Admission refused',t.admission_blocked());self.assertEqual(t.admit_blocked,1);t.patient_replied();self.assertEqual(t.admission_blocked(),'')
         self.assertEqual(self.tools(admit=0).admission_blocked(),'')
+
+    def test_cap_overflow_is_queued_and_runs_in_the_next_round_without_repeating(self):
+        t=self.tools();out=t.execute('request_blood_test',{'test_names':['CBC','Serum IgE','Stool ova and parasites','Schistosoma antibody serology','Liver panel']})
+        self.assertIn('Queued',out);self.assertEqual(t.policy.stats['held_cap'],2)
+        again=t.execute('request_blood_test',{'test_names':['Schistosoma antibody serology']});self.assertIn('already requested this turn',again)
+        text=t.release();self.assertIn('queued in the previous round',text);self.assertEqual(t.policy.stats['queued_run'],2);self.assertEqual(t.release(),'')
+    def test_tests_listed_by_the_consultation_map_are_not_capped(self):
+        t=self.tools();t.policy.set_endorsed(['Urine porphobilinogen'])
+        t.execute('request_blood_test',{'test_names':['CBC','Serum IgE','Stool ova and parasites']});out=t.execute('request_urine_test',{'test_names':['Urine porphobilinogen']});self.assertNotIn('Queued',out);self.assertNotIn('Held',out)

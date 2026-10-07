@@ -5,7 +5,7 @@ cultures in sepsis), targeted tests that answer a question raised by the finding
 biopsy, angiography) only after the first results were read and with a reason. This module classifies a requested test name into a tier with an
 approximate price and applies four rules to the primary doctor (the reviewers are not subject to them):
 
-  1. at most `cap` tests per doctor turn, not counting the outcome-changing first-line ones (they are never held); when more are requested the cheapest first-line and targeted tests go first and the rest are held;
+  1. at most `cap` tests per doctor turn, not counting the outcome-changing first-line ones or the ones the consultation map listed as decisive; when more are requested the cheapest first-line and targeted tests go first and the rest are queued for the next round (no need to repeat the request);
   2. tier-3 tests are held until the doctor has read at least one round of results, unless the senior consultation map listed them as decisive;
   3. a request that repeats a family of tests already answered "not in this case" at least twice comes back without being searched again;
   4. the doctor is told the approximate cost of what was ordered.
@@ -66,7 +66,7 @@ def overlap(a,b):
 class OrderPolicy:
     def __init__(self,cap=8,endorsed=None):
         self.cap=cap;self.endorsed=list(endorsed or []);self.turn_tests=0;self.rounds=0;self.seen_na=[];self.spent=0;self.turn_na=[]
-        self.stats={'ordered':0,'held_tier3':0,'held_cap':0,'family_blocked':0,'tier1':0,'tier2':0,'tier3':0,'spent_usd':0}
+        self.stats={'ordered':0,'held_tier3':0,'held_cap':0,'queued_run':0,'family_blocked':0,'tier1':0,'tier2':0,'tier3':0,'spent_usd':0}
     def set_endorsed(self,names):self.endorsed=[n for n in names if isinstance(n,str) and n]
     def is_endorsed(self,name):return any(overlap(name,e)>=0.6 for e in self.endorsed)
     def record(self,na_names=()):
@@ -91,8 +91,9 @@ class OrderPolicy:
             if tier==3 and self.rounds<1 and not self.is_endorsed(n):held.append({'requested':n,'why':'tier3','tier':tier,'usd':usd});self.stats['held_tier3']+=1;continue
             cand.append((n,tier,usd,p1))
         room=max(self.cap-self.turn_tests,0)
-        ranked=sorted((i for i in range(len(cand)) if not cand[i][3]),key=lambda i:(cand[i][1],cand[i][2],i))
-        keep=set(ranked[:room])|{i for i in range(len(cand)) if cand[i][3]}  # outcome-changing first-line tests (ECG, troponin, lactate, cultures, gases, coagulation, glucose, type and screen) are never held by the cap
+        free=lambda i:cand[i][3] or self.is_endorsed(cand[i][0])
+        ranked=sorted((i for i in range(len(cand)) if not free(i)),key=lambda i:(cand[i][1],cand[i][2],i))
+        keep=set(ranked[:room])|{i for i in range(len(cand)) if free(i)}  # outcome-changing first-line tests (ECG, troponin, lactate, cultures, gases, coagulation, glucose, type and screen) are never held by the cap
         for i,(n,tier,usd,p1) in enumerate(cand):
             if i in keep:allowed.append(n);self.stats['tier%d'%tier]+=1;self.stats['ordered']+=1;self.stats['spent_usd']+=usd;self.spent+=usd;self.turn_tests+=1
             else:held.append({'requested':n,'why':'cap','tier':tier,'usd':usd});self.stats['held_cap']+=1
@@ -102,6 +103,7 @@ class OrderPolicy:
         if allowed:parts.append((f'Approximate cost of this order: US$ {spent_this_call} (total so far US$ {self.spent}).' if immediate else f'Order placed for {len(allowed)} test(s), approximate cost US$ {spent_this_call} (total so far US$ {self.spent}).'))
         for h in held:
             if h['why']=='tier3':parts.append(f"Held (not ordered): '{h['requested']}' is an expensive or invasive study (about US$ {h['usd']}). Read the results of your first-line tests first, then request it again if a finding justifies it.")
-            elif h['why']=='cap':parts.append(f"Held (not ordered): '{h['requested']}': limit of {self.cap} tests per turn reached; the cheapest first-line and targeted tests were ordered first. Talk to the patient, read the results, then request it again if still needed.")
+            elif h['why']=='cap':parts.append(f"Queued: '{h['requested']}': limit of {self.cap} tests per turn reached; the cheapest first-line and targeted tests were ordered first. It will be performed and reported after your next exchange with the patient; do not request it again.")
+            elif h['why']=='dup':parts.append(f"'{h['requested']}' was already requested this turn (queued or held): do not repeat it; talk to the patient and read the results first.")
             else:parts.append(f"Not searched: '{h['requested']}' belongs to a family of tests already answered as not in this case ({'; '.join(h['detail'])}); treat it as not performed.")
         return ' '.join(parts)

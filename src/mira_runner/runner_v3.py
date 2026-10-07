@@ -19,6 +19,7 @@ from .jef import INVENTS_THRESHOLD,DRIFT_THRESHOLD,RETRY_NOTE
 from .cascade import deploy_costs,INVESTIGATIONS,claude_kw,PATIENT_EFFORT
 from .consult import consult_map,format_map,unmet_decisive,nudge_text
 from .exam_policy import OrderPolicy,classify
+from .semantics import norm
 
 PROTOCOL='v3'
 PATIENT_MODEL='claude-sonnet-5-5'
@@ -61,7 +62,7 @@ class V3Tools:
     """Gate and delay wrapper around CaseTools; matcher/routing behavior is unchanged."""
     INVESTIGATIONS=set(NAMES)-{'admission','request_physical_exam'}
     def __init__(self,inner,min_exchanges=MIN_EXCHANGES,delay=True,policy=None,admit_min=0):
-        self.policy=policy;self.admit_min=admit_min;self.admit_blocked=0;self.delay=delay;self.inner=inner;self.min_exchanges=min_exchanges;self.exchanges=0;self.exam_done=False;self.exam_provided=False;self.pending=[];self.gated=0;self.orders=0
+        self.policy=policy;self.queue=[];self.queued_names=set();self.held_turn=set();self.admit_min=admit_min;self.admit_blocked=0;self.delay=delay;self.inner=inner;self.min_exchanges=min_exchanges;self.exchanges=0;self.exam_done=False;self.exam_provided=False;self.pending=[];self.gated=0;self.orders=0
     @property
     def errors(self):return self.inner.errors
     @errors.setter
@@ -78,9 +79,15 @@ class V3Tools:
             held=[];spent=0
             if self.policy is not None:  # cost-benefit order policy (v3.6): rank, cap and hold; the held tests are never searched
                 names=args.get('test_names') if name!='request_radiology' else [args.get('study_name')]
-                allowed,held=self.policy.plan([n for n in (names or []) if isinstance(n,str) and n])
+                names=[n for n in (names or []) if isinstance(n,str) and n];dup=[n for n in names if norm(n) in self.queued_names or norm(n) in self.held_turn]
+                allowed,held=self.policy.plan([n for n in names if n not in dup])
+                held=[{'requested':n,'why':'dup'} for n in dup]+held
+                for h in held:
+                    if h['why']=='cap':self.queue.append((name,h['requested']));self.queued_names.add(norm(h['requested']))
+                    elif h['why']=='tier3':self.held_turn.add(norm(h['requested']))
                 spent=sum(classify(n)[1] for n in allowed)
                 if not allowed:return self.policy.message([],held,0,not self.delay)
+
                 args=({**args,'study_name':allowed[0]} if name=='request_radiology' else {**args,'test_names':allowed})
             result=self.inner.execute(name,args);self.orders+=1
             note=self.policy.message(allowed,held,spent,not self.delay) if self.policy is not None else ''
@@ -102,7 +109,18 @@ class V3Tools:
         return ('Admission refused: you have not spoken to the patient yet. Even in an emergency, where tests are unlocked at once, you must speak to the patient at least once before admitting: '
                 'say what you are doing and ask the most urgent questions (what happened, onset, medications, allergies), then read the answer and the results.')
     def release(self):
-        if self.policy is not None:self.policy.end_turn()
+        extra=[]
+        if self.policy is not None:
+            self.policy.end_turn();self.held_turn=set();queued,self.queue=self.queue,[];self.queued_names=set()
+            for tool,item in queued:  # tests queued by the per-turn cap run now (they count for this new turn) and are reported with the next message
+                args={'study_name':item} if tool=='request_radiology' else {'test_names':[item]}
+                res=self.inner.execute(tool,args);self.orders+=1;usd=classify(item)[1]
+                self.policy.turn_tests+=1;self.policy.spent+=usd;self.policy.stats['ordered']+=1;self.policy.stats['queued_run']+=1;self.policy.stats['spent_usd']+=usd;self.policy.stats['tier%d'%classify(item)[0]]+=1
+                try:self.policy.record(json.loads(res).get('not_available_in_this_case',[]))
+                except (json.JSONDecodeError,TypeError,AttributeError):pass
+                extra.append(f"- {tool} {json.dumps(args,ensure_ascii=False)}: {res}")
+        if extra and not self.delay:return '[Results of the tests queued in the previous round, now available]\n'+'\n'.join(extra)
+        if extra:self.pending+=[{'tool':'queued','request':{},'result':x[2:]} for x in extra]
         if not self.pending:return ''
         lines=[f"- {p['tool']} {json.dumps(p['request'],ensure_ascii=False)}: {p['result']}" for p in self.pending];self.pending=[]
         return '[Results of the tests ordered earlier, now available]\n'+'\n'.join(lines)
