@@ -1,7 +1,7 @@
 # MIRA-RAUL — instruções de continuidade
 
 ## Objetivo e autorização
-Concluir 10 casos publicados × 5 modelos × 1 execução = 50 encontros terminais, com pipeline adaptado de Zhang et al., DOI 10.1038/s41591-026-04609-x. O usuário autorizou OpenRouter pago, paralelismo de todos os casos, retomada automática e publicação em git@github.com:codecapelo/MIRA-raul.git. **Teto global atual: US$18,00**, incluindo pilotos invalidados, paciente, associador, juiz e falhas. Não aumentar o teto ou comprar créditos. Não repetir terminais, mesmo falhas operacionais.
+Concluir 10 casos publicados × 5 modelos × 1 execução = 50 encontros terminais, com pipeline adaptado de Zhang et al., DOI 10.1038/s41591-026-04609-x. O usuário autorizou OpenRouter pago, paralelismo de todos os casos, retomada automática e publicação em git@github.com:codecapelo/MIRA-raul.git. **Teto global atual: US$20,00** (elevado de US$18,00 em 07-10-2026 por autorização explícita do usuário; igual ao crédito total da conta, nada foi comprado; evidência em `reports/budget_cap_raise_20usd.json`), incluindo pilotos invalidados, paciente, associador, juiz e falhas. Não aumentar o teto de novo ou comprar créditos sem nova autorização. Não repetir terminais, mesmo falhas operacionais.
 
 ## Fonte de verdade (ler antes de agir)
 - `logs/raw/<model>/<case>.jsonl`: eventos `case_complete` são terminais; falha operacional tem diagnóstico/juiz vazios.
@@ -94,3 +94,6 @@ Usuário autorizou rodar `claude-sonnet-5-5` em high, 10 casos × 1 execução, 
 
 ## Resultado do Opus 5.5 pela assinatura — 05-10-2026
 `claude-opus-5-5` em high, mesmo braço de assinatura do Sonnet (ferramentas emuladas em JSON, não equivalente aos demais): 10/10 terminais, **10 corretos pelo juiz** (7 a 8 de 10 sob leitura rigorosa: 007 sem o fármaco, 002 sem miocardite, 009 sem Meckel), 0 sem julgamento, conversa com o paciente em 6 de 10 encontros. Consumo: 49 chamadas ao CLI, 194 mil tokens de entrada (194,1 mil em cache), 38,5 mil de saída, cerca de 5 minutos, custo equivalente de API US$ 1,85; gasto no OpenRouter US$ 0,0078; conta = ledger = US$ 8,370711103. O percentual consumido do limite do plano Pro não é legível pelo CLI. Detalhes e comparação com o Sonnet em [reports/claude_opus_5_5_subscription_run1.md](reports/claude_opus_5_5_subscription_run1.md). Revisão médica pendente; uma execução por caso, sem afirmação de superioridade.
+
+## Validação do fluxo v3.5 em 5 casos novos fechados — 07-10-2026
+Teto elevado para US$20 por autorização do usuário (`reports/budget_cap_raise_20usd.json`). Casos privados 016 a 020 (NEJM, fora do git) rodados uma vez com o fluxo v3.5 congelado (tag `...op2vprv_n2`, commit 19792dc): 5/5 corretos pelo juiz, propostas do GLM-5 4/5, US$ 0,201 por caso de implantação, US$ 0,2269 reais no OpenRouter. Ledger = conta = US$ 17,362345863 (9339 chamadas settled; três snapshots convergidos), restam US$ 2,64. Resumo sem dados dos casos em `reports/v3_validation_new_closed_cases.md`; detalhes só no painel privado (artifact versão 9). Uma execução por caso, juiz LLM, sem revisão médica; pendente repetir 3 vezes e validar com mais casos.
