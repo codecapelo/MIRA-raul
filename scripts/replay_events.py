@@ -117,6 +117,8 @@ def build(path):
             if v.get('failed'):add('jef',None,'jef','Triagem do JEF','falhou',tm,tm)
             else:add('jef',v.get('model'),'jef','Triagem do JEF: a proposta se sustenta?',f"sustentado {v['supported']:.2f} · causa específica {v['specific']:.2f} · alternativas não excluídas {v['alternatives']:.2f} · escore combinado {v['combined']:.2f}",tm,tm,[],['aceitou a proposta' if 'jef_accept' in tokens else 'chamou a revisão'])
         elif k=='cascade_step' and e['key']=='same_prop_blind':add('jef',None,'jef','JEF: o revisor concorda com a proposta?',f"mesma doença (0 a 1): {e['value'].get('same',0):.2f}",tm,tm)
+        elif k=='chart_note':
+            lat=float(e.get('latency_s') or 0);add(actor_of(e['model']),e['model'],'note','Prontuário (escrito depois do resultado; não entra na decisão)',clip(e.get('text'),7000),tm,tm-lat,[],['JSON reparado'] if e.get('repaired_json') else [])
         elif k=='followup_result':
             det=[];qs=e.get('questions') or [];ts=e.get('tests') or []
             if qs:det.append(['Perguntas ao paciente','\n'.join('- '+q for q in qs)])
@@ -129,5 +131,6 @@ def build(path):
     adm=next((x['t'] for x in out if x['kind']=='admission'),None)
     spent={}
     for x in out:
-        if x['kind'] in('doctor','patient','review','judge','map'):spent[x['actor']]=round(spent.get(x['actor'],0)+x['t']-x['t0'],1)
-    return out,{'total_s':total,'admission_s':adm,'paused':pauses,'busy_s':spent,'n':len(out)}
+        if x['kind'] in('doctor','patient','review','judge','map','note'):spent[x['actor']]=round(spent.get(x['actor'],0)+x['t']-x['t0'],1)
+    result=next((x['t'] for x in out if x['kind']=='result'),total)
+    return out,{'result_s':result,'total_s':total,'admission_s':adm,'paused':pauses,'busy_s':spent,'n':len(out)}
