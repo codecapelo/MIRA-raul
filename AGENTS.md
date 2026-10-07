@@ -1,7 +1,7 @@
 # MIRA-RAUL — instruções de continuidade
 
 ## Objetivo e autorização
-Concluir 10 casos publicados × 5 modelos × 1 execução = 50 encontros terminais, com pipeline adaptado de Zhang et al., DOI 10.1038/s41591-026-04609-x. O usuário autorizou OpenRouter pago, paralelismo de todos os casos, retomada automática e publicação em git@github.com:codecapelo/MIRA-raul.git. **Teto global atual: US$18,00**, incluindo pilotos invalidados, paciente, associador, juiz e falhas. Não aumentar o teto ou comprar créditos. Não repetir terminais, mesmo falhas operacionais.
+Concluir 10 casos publicados × 5 modelos × 1 execução = 50 encontros terminais, com pipeline adaptado de Zhang et al., DOI 10.1038/s41591-026-04609-x. O usuário autorizou OpenRouter pago, paralelismo de todos os casos, retomada automática e publicação em git@github.com:codecapelo/MIRA-raul.git. **Teto global atual: US$20,00** (elevado de US$18,00 em 07-10-2026 por autorização explícita do usuário; igual ao crédito total da conta, nada foi comprado; evidência em `reports/budget_cap_raise_20usd.json`), incluindo pilotos invalidados, paciente, associador, juiz e falhas. Não aumentar o teto de novo ou comprar créditos sem nova autorização. Não repetir terminais, mesmo falhas operacionais.
 
 ## Fonte de verdade (ler antes de agir)
 - `logs/raw/<model>/<case>.jsonl`: eventos `case_complete` são terminais; falha operacional tem diagnóstico/juiz vazios.

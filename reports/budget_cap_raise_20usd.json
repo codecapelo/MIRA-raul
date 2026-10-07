@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-07",
+  "change": "global OpenRouter budget cap raised from US$18.00 to US$20.00",
+  "authorized_by": "user, in chat: \"PODE AUMENTAR O TETO PARA 20$\"",
+  "reason": "run the 5 new private NEJM cases (016-020) with protocol v3.5",
+  "ledger_state_before": "9168 calls, all settled, total US$17.135478913",
+  "account_snapshots": [
+    "reports/credits_cap20_before_1.json",
+    "reports/credits_cap20_before_2.json",
+    "reports/credits_cap20_before_3.json"
+  ],
+  "account_total_credits_usd": 20,
+  "account_usage_usd": 17.135478913,
+  "ledger_backup": "reports/budget_before_cap20.sqlite",
+  "remaining_after_raise_usd": 2.864521087,
+  "note": "The cap equals the total credit purchased on the account; no credits were added."
+}
