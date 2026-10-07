@@ -1,0 +1,49 @@
+{"protocol": "v3", "run": 1, "case_id": "case_003", "model": "z-ai/glm-5", "judge_correct": true, "exchanges": 2, "orders": 4, "gated": 0, "jef_retries": 0, "case_cost_usd": "0.02405424", "global_cost_usd": "17.855295983", "timestamp": "2026-10-07T15:31:33Z"}
+{"protocol": "v3", "run": 1, "case_id": "case_001", "model": "z-ai/glm-5", "judge_correct": true, "exchanges": 1, "orders": 12, "gated": 0, "jef_retries": 0, "case_cost_usd": "0.04706093", "global_cost_usd": "17.888474793", "timestamp": "2026-10-07T15:32:38Z"}
+{"protocol": "v3", "run": 1, "case_id": "case_002", "model": "z-ai/glm-5", "judge_correct": true, "exchanges": 1, "orders": 15, "gated": 0, "jef_retries": 0, "case_cost_usd": "0.03720062", "global_cost_usd": "17.912229513", "timestamp": "2026-10-07T15:33:17Z"}
+{"protocol": "v3", "run": 1, "case_id": "case_005", "model": "z-ai/glm-5", "judge_correct": true, "exchanges": 2, "orders": 6, "gated": 0, "jef_retries": 0, "case_cost_usd": "0.03092301", "global_cost_usd": "17.986635943", "timestamp": "2026-10-07T15:35:12Z"}
+{"protocol": "v3", "run": 1, "case_id": "case_006", "model": "z-ai/glm-5", "judge_correct": true, "exchanges": 3, "orders": 7, "gated": 0, "jef_retries": 0, "case_cost_usd": "0.03107617", "global_cost_usd": "18.020347623", "timestamp": "2026-10-07T15:36:13Z"}
+{"protocol": "v3", "run": 1, "case_id": "case_004", "model": "z-ai/glm-5", "judge_correct": true, "exchanges": 3, "orders": 19, "gated": 0, "jef_retries": 0, "case_cost_usd": "0.06758454", "global_cost_usd": "18.024481623", "timestamp": "2026-10-07T15:36:17Z"}
+{"protocol": "v3", "run": 1, "case_id": "case_007", "model": "z-ai/glm-5", "judge_correct": true, "exchanges": 3, "orders": 5, "gated": 0, "jef_retries": 0, "case_cost_usd": "0.02442865", "global_cost_usd": "18.066724183", "timestamp": "2026-10-07T15:37:23Z"}
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/process.py", line 243, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/scripts/run_v3.py", line 50, in worker
+    return run_case_v3(target(root,run,model,bool(jef_key) and not cas,n,xf,cas,imm,v32),Path(case),model,HybridClient(ledger,config,key),commit,transition,guard,n,xf,cascade,not imm,opts.get('consult_model') if opts.get('consult') else None,bool(opts.get('prereqs')),bool(opts.get('judge_override')),opts.get('patient_model') or PATIENT_MODEL,bool(opts.get('strict_exams')),int(opts.get('opening') or 0),{k:opts.get(k) for k in ('order_policy','admit_min','emergency_voice','map_refresh')})
+  File "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/src/mira_runner/runner_v3.py", line 133, in run_case_v3
+    return _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition,guard,min_exchanges,exam_first,cascade,delay_results,consult,prereqs,judge_override,patient_model,strict_exams,opening,extras)
+  File "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/src/mira_runner/runner_v3.py", line 284, in _run_case_v3
+    return finish(final,turn,ntools)
+  File "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/src/mira_runner/runner_v3.py", line 207, in finish
+    final=cascade({'log':log,'client':client,'doctor':doctor,'proposal':proposal,'tools':tools,'patient_messages':patient_messages,'patient_model':patient_model,'stats':cstats,'consult_map':cmap,'map_text':format_map(cmap) if cmap else '','rescue':failure is not None})
+  File "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/src/mira_runner/cascade.py", line 182, in __call__
+    stats['path'].append('followup'+('+sweep' if self.sweep else ''));extra=self.follow_up(ctx,qs,ts);conv=conv+'\n'+extra;b=self.blind(ctx,r2,conv)
+  File "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/src/mira_runner/cascade.py", line 119, in blind
+    return self.llm_json(ctx,model,REVIEW_BLIND+' '+fmt,(f'CONSULTATION MAP FROM A SENIOR CONSULTANT (made before the interview; use it as guidance, it may be wrong):\n{cm}\n\n' if cm else '')+f'CONVERSATION AND FINDINGS:\n{conv}')
+  File "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/src/mira_runner/cascade.py", line 111, in llm_json
+    if is_claude(model):role='review_claude';m=ctx['client'].call(model,[{'role':'system','content':for_api(model,system)},{'role':'user','content':user}],ctx['log'],role,{},**claude_kw(model,8192))
+  File "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/src/mira_runner/cli_client.py", line 88, in call
+    env,latency=run_cli(model,sysprompt,prompt,bool(tools))
+  File "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/src/mira_runner/cli_client.py", line 55, in run_cli
+    raise CLIFailure(f'claude CLI failed: category={cat}, api_error_status={status}, exit_code={done.returncode}')
+mira_runner.cli_client.CLIFailure: claude CLI failed: category=rate_or_usage_limit, api_error_status=429, exit_code=1
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/scripts/run_v3.py", line 104, in <module>
+    if __name__=='__main__':main()
+  File "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/scripts/run_v3.py", line 98, in main
+    parallel_models(jobs,a.parallel_cases,a.parallel_cases,submit,terminal)
+  File "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/src/mira_runner/runner.py", line 163, in parallel_models
+    if failure:raise failure
+  File "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/src/mira_runner/runner.py", line 160, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+mira_runner.cli_client.CLIFailure: claude CLI failed: category=rate_or_usage_limit, api_error_status=429, exit_code=1
