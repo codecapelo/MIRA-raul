@@ -50,7 +50,7 @@ class NaturalLanguageTests(unittest.TestCase):
         def matcher(q,p):sent.append((q,p));return ['procedure_result_009']
         t=CaseTools(observations('case_004'),matcher)
         out=t.execute('request_other_investigation',{'test_names':['Bronchoscopy with EBUS-guided mediastinal/hilar node sampling']})
-        self.assertEqual(t.returned,{'procedure_result_009'});self.assertTrue(sent);self.assertNotIn('not available',out)
+        self.assertEqual(t.returned,{'procedure_result_009'});self.assertNotIn('not available',out)  # EBUS is now an alias family: found without the semantic matcher
     def test_natural_unknown_ct_request_reaches_matcher(self):
         sent=[]
         def matcher(q,p):sent.append(p);return ['imaging_008']

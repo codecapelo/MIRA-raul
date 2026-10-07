@@ -34,9 +34,10 @@ class StrictTools(unittest.TestCase):
         self.assertFalse(specimen_ok('Stool ova and parasites',OBS[3]));self.assertTrue(specimen_ok('Stool ova and parasites',OBS[4]))
         out,s,_=run({},'request_blood_test',{'test_names':['Stool ova and parasites']})
         self.assertTrue(all('lab_4' not in c for _,c in s.calls));self.assertNotIn('findings',out)
-    def test_wrong_tool_hint_comes_from_the_same_strict_decision(self):
-        out,s,t=run({'Stool Giardia antigen':{'relation':'component','keys':['mic_6'],'reason':''}},'request_other_investigation',{'test_names':['Stool Giardia antigen']})
-        self.assertEqual(out['wrong_tool'],[{'requested':'Stool Giardia antigen','use_tool':'request_microbiology'}]);self.assertNotIn('not_available_in_this_case',out);self.assertEqual(t.stats['wrong_tool_hint'],1)
+    def test_wrong_tool_is_rerouted_by_the_same_strict_decision(self):
+        out,s,t=run({'Stool Giardia antigen':{'relation':'component','keys':['mic_6'],'reason':'','extract':['Both negative.'],'answer':'Giardia stool antigen: negative'}},'request_other_investigation',{'test_names':['Stool Giardia antigen']})
+        self.assertNotIn('wrong_tool',out);self.assertNotIn('not_available_in_this_case',out)
+        f=out['findings'][0];self.assertEqual(f['rerouted'],'request_microbiology');self.assertIn('use that tool next time',f['note']);self.assertEqual(t.stats['rerouted'],1)
     def test_category_request_is_ambiguous(self):
         out,s,_=run({'Parasitic infection panel':{'relation':'too_generic','keys':[],'reason':''}},'request_blood_test',{'test_names':['Parasitic infection panel']})
         self.assertEqual(out['ambiguous_request'][0]['requested'],'Parasitic infection panel');self.assertIn('specify',out['ambiguous_request'][0]['note']);self.assertNotIn('findings',out)
@@ -46,7 +47,7 @@ class StrictTools(unittest.TestCase):
     def test_repeat_is_not_reported_twice(self):
         s=Strict({});t=V3CaseTools(OBS,None,True,s);t.execute('request_blood_test',{'test_names':['CBC']});out=json.loads(t.execute('request_blood_test',{'test_names':['CBC']}));self.assertIn('already_ordered_earlier',out);self.assertNotIn('findings',out)
     def test_keys_outside_the_pool_are_ignored(self):
-        out,s,_=run({'Antigen-X IgE':{'relation':'same','keys':['mic_5'],'reason':''}},'request_blood_test',{'test_names':['Antigen-X IgE']});self.assertNotIn('findings',out)
+        out,s,_=run({'Antigen-X IgE':{'relation':'same','keys':['not_a_record'],'reason':''}},'request_blood_test',{'test_names':['Antigen-X IgE']});self.assertNotIn('findings',out)
 
 class CompoundRequests(unittest.TestCase):
     def test_split(self):
@@ -97,3 +98,27 @@ class StrictMatch(unittest.TestCase):
     def test_prompt_shows_reported_text_not_other_cases(self):
         c=FakeClient('{"decisions":[]}');strict_match(c,Log(),'m',['A'],OBS);self.assertIn('9.9 kU',c.sent[1]['content']);self.assertIn('specific',c.sent[0]['content'])
 if __name__=='__main__':unittest.main()
+
+
+class OrderDeskFixes(unittest.TestCase):
+    """Found by the offline audit of 206 refused requests (07-10-2026)."""
+    def test_ldh_is_not_lactate(self):
+        from mira_runner.semantics import requested_analytes,fragments
+        self.assertEqual(requested_analytes('Lactate dehydrogenase'),{'ldh'});self.assertEqual(requested_analytes('Lactate'),{'lactate'})
+        self.assertEqual(fragments('Lactate','LDH 1214 U/L; lactate 4.2 mmol/L; lactate dehydrogenase 747'),['lactate 4.2 mmol/L'])
+        obs=[ob('l1','Hemolysis studies','LDH 1214 U/L; haptoglobin 20.','blood','request_blood_test'),ob('l2','Lactate','Lactate 4.2 mmol/L.','blood','request_blood_test')]
+        t=V3CaseTools(obs,None,True,Strict({}));out=json.loads(t.execute('request_blood_test',{'test_names':['Lactate dehydrogenase']}))
+        self.assertEqual([f['name'] for f in out['findings']],['Hemolysis studies']);self.assertIn('LDH',out['findings'][0]['value']);self.assertNotIn('lactate 4.2',out['findings'][0]['value'].lower())
+    def test_white_cell_count_is_a_component_of_the_blood_count(self):
+        obs=[ob('l1','Complete blood count with differential','Hemoglobin 6.5 g/dl, white-cell count 3170 per microliter, platelets 144,000.','blood','request_blood_test')]
+        out=json.loads(V3CaseTools(obs,None,True,Strict({})).execute('request_blood_test',{'test_names':['White blood cell count']}))
+        self.assertIn('3170',out['findings'][0]['value']);self.assertNotIn('144,000',out['findings'][0]['value'])
+    def test_chest_ct_family_and_echo_ultrasound_reach_the_matcher(self):
+        from mira_runner.semantics import compatible
+        self.assertTrue(compatible('CT chest with contrast',{'name':'CT pulmonary angiography','value':'x'}))
+        self.assertTrue(compatible('Point-of-care echocardiogram',{'name':'Bedside cardiac ultrasonography (on arrival in the ICU)','value':'x'}))
+        self.assertFalse(compatible('CT chest with contrast',{'name':'MRI of the chest','value':'x'}))
+    def test_and_splits_two_tests_only(self):
+        from mira_runner.tools_v3 import split_compound
+        self.assertEqual(split_compound(['CT angiography abdomen and CT enterography']),['CT angiography abdomen','CT enterography'])
+        self.assertEqual(split_compound(['Sputum culture bacterial and fungal','Sputum Gram stain and culture','Hepatitis B serology and PCR']),['Sputum culture bacterial and fungal','Sputum Gram stain and culture','Hepatitis B serology and PCR'])

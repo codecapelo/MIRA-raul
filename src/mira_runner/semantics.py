@@ -17,11 +17,14 @@ ALIASES={
  'pleural biopsy':['pleural biopsy','pleural tissue biopsy'],
  'adrenal biopsy':['adrenal biopsy','adrenal tissue biopsy'],
  'electrocardiogram':['ecg','ekg','electrocardiogram','12 lead ecg','12 lead electrocardiogram'],
- 'echocardiography':['echo','echocardiogram','echocardiography','tte','transthoracic echocardiography','transthoracic echocardiogram'],
+ 'echocardiography':['echo','echocardiogram','echocardiography','tte','transthoracic echocardiography','transthoracic echocardiogram','point of care echocardiogram','point of care echo','pocus','bedside echo','bedside echocardiogram','focused cardiac ultrasound','cardiac ultrasound','cardiac ultrasonography','bedside cardiac ultrasound','bedside cardiac ultrasonography'],
  'transesophageal echocardiography':['tee','transesophageal echocardiography','transesophageal echocardiogram'],
  'direct antiglobulin test':['dat','direct coombs','direct coombs test','direct antiglobulin test'],
  'indirect antiglobulin test':['iat','indirect coombs test','indirect antiglobulin test'],
  'complete blood count':['cbc','fbc','full blood count','complete blood count','blood count'],
+ 'thoracic ultrasound':['thoracic ultrasound','pleural ultrasound','lung ultrasound','chest ultrasound','chest wall ultrasound','pleural us','thoracic us'],
+ 'leg venous duplex':['leg venous duplex','lower limb venous duplex','lower extremity venous duplex','venous duplex of the legs','duplex ultrasonography of the right leg','duplex ultrasonography of the left leg','duplex ultrasonography of the legs','duplex ultrasound of the legs','leg doppler','venous doppler of the legs'],
+ 'ebus biopsy':['ebus','ebus tbna','ebus guided biopsy','endobronchial ultrasound','endobronchial ultrasound guided biopsy','transbronchial needle aspiration','tbna'],
  'hemolysis studies':['hemolysis panel','haemolysis panel','hemolysis labs','hemolysis studies'],
  'blood chemistry':['renal function','renal function tests','renal panel','metabolic panel','bmp','basic metabolic panel','blood chemistry'],
  'inflammatory markers':['inflammatory markers','inflammatory panel'],
@@ -39,7 +42,13 @@ ALIASES={
 LOOKUP={norm(alias):key for key,aliases in ALIASES.items() for alias in aliases}
 ANALYTES={
  'hemoglobin':['hemoglobin','haemoglobin','hgb','hb'],
- 'white blood cells':['wbc','white blood cell count','white blood cells'],
+ 'white blood cells':['wbc','wbc count','white blood cell count','white blood cells','white cell count','white cells','leukocyte count','leucocyte count','leukocytes','wcc'],
+ 'neutrophils':['neutrophils','neutrophil count','absolute neutrophil count','anc'],'lymphocytes':['lymphocytes','lymphocyte count'],'monocytes':['monocytes','monocyte count'],'eosinophils':['eosinophils','eosinophil count'],'basophils':['basophils','basophil count'],
+ 'hematocrit':['hematocrit','haematocrit','hct'],'mcv':['mcv','mean corpuscular volume'],
+ 'potassium':['potassium'],'chloride':['chloride'],'bicarbonate':['bicarbonate','carbon dioxide','hco3'],'urea nitrogen':['urea nitrogen','blood urea nitrogen','bun'],
+ 'glucose':['glucose','blood glucose','fasting glucose','blood sugar'],'calcium':['calcium'],'magnesium':['magnesium'],'albumin':['albumin'],'total protein':['total protein'],
+ 'alt':['alt','alanine aminotransferase','sgpt'],'ast':['ast','aspartate aminotransferase','sgot'],'alp':['alp','alkaline phosphatase'],
+ 'ferritin':['ferritin'],'tsh':['tsh','thyrotropin','thyroid stimulating hormone'],'troponin':['troponin','hs troponin','high sensitivity troponin','cardiac troponin'],
  'platelets':['platelets','platelet count'],
  'sodium':['sodium','na'], 'creatinine':['creatinine'], 'egfr':['egfr'],
  'ldh':['ldh','lactate dehydrogenase'], 'haptoglobin':['haptoglobin'],
@@ -55,12 +64,23 @@ ANALYTES={
 }
 ANALYTE={norm(v):key for key,values in ANALYTES.items() for v in values}
 
+def _spans(n,aliases):
+    out=[]
+    for alias,key in aliases.items():
+        for m in re.finditer(r'(?<![a-z0-9])'+re.escape(alias)+r'(?![a-z0-9])',n):out.append((m.start(),m.end(),key))
+    return out
+def analytes_in(text):
+    """Analyte keys named in a text; an alias inside a longer alias of another analyte does not count (lactate dehydrogenase is not lactate)."""
+    n=norm(text);spans=_spans(n,ANALYTE)
+    return {k for a,b,k in spans if not any((c<=a and b<=d and (d-c)>(b-a)) for c,d,_ in spans)}
 def recognize(text,lookup):
     n=norm(text)
     if n in lookup:return lookup[n]
     matches=[(len(alias),value) for alias,value in lookup.items() if re.search(r'(?<![a-z0-9])'+re.escape(alias)+r'(?![a-z0-9])',n)]
     return max(matches)[1] if matches else None
 
+FAMILY={'ct pulmonary angiography':'chest ct'}  # same modality and region (contrast/protocol do not change what is done)
+def family(key):return FAMILY.get(key,key)
 def identity(text):return recognize(text,LOOKUP) or norm(text)
 def modality(text):
     n=' '+norm(text)+' '
@@ -73,28 +93,21 @@ def compatible(query,obs):
     # Hard negative guards establish only known contradictions. Freeform and
     # unfamiliar terms remain eligible for the official semantic matcher.
     qm=modality(query);om=modality(obs['name'])
-    if qm and om and qm!=om:return False
+    if qm and om and qm!=om and {qm,om}!={'echo','ultrasound'}:return False
     if qm=='ecg' and identity(obs['name'])!='electrocardiogram':return False
     if q in ['direct antiglobulin test','indirect antiglobulin test'] and name not in [q]:return False
     a=recognize(query,ANALYTE)
     if a:return bool(fragments(query,obs['value']))
-    if q and name and q!=name:return False
+    if q and name and family(q)!=family(name):return False
     return True
 
-def requested_analytes(query):
-    n=norm(query)
-    return {key for alias,key in ANALYTE.items() if re.search(r'(?<![a-z0-9])'+re.escape(alias)+r'(?![a-z0-9])',n)}
+def requested_analytes(query):return analytes_in(query)
 
 def fragments(query,value):
     keys=requested_analytes(query)
     if not keys or not isinstance(value,str):return []
-    aliases=[norm(x) for key in keys for x in ANALYTES[key]]
     parts=re.split(r';|,(?!\d)|(?<=[.!?])\s+(?=[A-Z])',value)
-    result=[]
-    for part in parts:
-        n=' '+norm(part)+' '
-        if any(' '+a+' ' in n for a in aliases):result.append(part.strip())
-    return result
+    return [part.strip() for part in parts if keys&analytes_in(part)]
 
 def result_value(query,obs):
     if identity(query)==identity(obs['name']) and identity(query) not in ['direct antiglobulin test','indirect antiglobulin test']:return obs['value']
