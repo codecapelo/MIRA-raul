@@ -6,7 +6,7 @@ Every requested test gets an explicit status by name: reported (with the finding
 LLM matcher; a specimen guard keeps urine/fluid requests from matching serum values. v1/v2 CaseTools is unchanged.
 """
 import json,re
-from .semantics import family, compatible,identity,norm,requested_analytes,result_value,analytes_in,modality
+from .semantics import family, compatible,identity,norm,requested_analytes,result_value,analytes_in,modality,fragments as analyte_fragments
 from .tools import CaseTools
 
 PROC_RE=re.compile(r'laparo|thoraco|explor|surg|endoscop|bronchoscop|centesis')
@@ -52,8 +52,9 @@ def prereq_groups(o):
     return out
 
 class V3CaseTools(CaseTools):
-    def __init__(self,observations,matcher=None,enforce_prereqs=False,strict=None):
+    def __init__(self,observations,matcher=None,enforce_prereqs=False,strict=None,literal_components=False):
         super().__init__(observations,matcher);self.reported=set();self.enforce=enforce_prereqs;self.prereq_blocks=0;self.strict=strict;self.stats={'rerouted':0,'same':0,'component':0,'panel_part':0,'too_generic':0,'none':0,'wrong_tool_hint':0,'specimen_blocked':0,'component_isolated':0,'component_unisolated':0}
+        self.literal_components=literal_components
         self.names={o['fact_id']:o['name'].lower() for o in observations}
     def unmet(self,o):
         done=[self.names[i] for i in self.returned if i in self.names]
@@ -126,6 +127,27 @@ class V3CaseTools(CaseTools):
         return ''
 
     @staticmethod
+    def isolate_literal(text,fragments,answer=''):
+        """Opt-in source fidelity: release only literal source excerpts.
+
+        Whitespace and case differences are tolerated. A qualitative statement
+        needs the same source support as a numeric one; matching numbers alone
+        never establishes that the statement was reported.
+        """
+        if not isinstance(text,str) or not text.strip():return ''
+        squash=lambda x:' '.join(x.split()).casefold()
+        base=squash(text);ok=[]
+        for fragment in fragments if isinstance(fragments,(list,tuple)) else []:
+            if not isinstance(fragment,str):continue
+            literal=fragment.strip()
+            if literal and squash(literal) in base and literal not in ok:ok.append(literal)
+        if ok:return '; '.join(ok)
+        if isinstance(answer,str):
+            literal=' '.join(answer.split())
+            if literal and squash(literal) in base:return literal
+        return ''
+
+    @staticmethod
     def panel_parts(query,ok):
         """A defined standard panel (blood count, basic or comprehensive metabolic panel) is answered by the records that hold only some of its components (a record named after one component, a liver or electrolyte panel); decided here, not by the LLM."""
         key=identity(query)
@@ -184,7 +206,18 @@ class V3CaseTools(CaseTools):
                 if not matched:continue
             for o in matched:
                 value=result_value(query,o)
-                if rel=='component' and len(matched)==1 and not requested_analytes(query):  # release only the requested part of a bundle
+                if rel=='component' and self.literal_components:
+                    if requested_analytes(query):
+                        # Do not use result_value's full-record fallback when a
+                        # requested analyte has no isolatable source fragment.
+                        part=self.isolate_literal(o['value'],analyte_fragments(query,o['value']))
+                    else:part=self.isolate_literal(o['value'],*(extracts.get(query) or ([],'')))
+                    if part:value=part;self.stats['component_isolated']+=1
+                    else:
+                        self.stats['component_unisolated']+=1
+                        if query not in unisolated:unisolated.append(query)
+                        continue
+                elif rel=='component' and len(matched)==1 and not requested_analytes(query):  # historical extraction remains the default
                     part=self.isolate(o['value'],*(extracts.get(query) or ([],'')))
                     if part:value=part;self.stats['component_isolated']+=1
                     else:  # fail closed: never release the rest of the bundle

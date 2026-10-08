@@ -102,3 +102,7 @@ Variante `cas` (GLM-5 → triagem JEF → Sonnet às cegas → Opus, Claude pela
 
 ## v3.2 com Sonnet no lugar do Opus e correções (execuções 1 e 2) — 05-10-2026
 Mapa da consulta, pré-requisitos de procedimento, emergência sem N mínimo, critério v3 do caso 009, triagem do JEF 0,86 com auditoria e gatilho, resgate de falhas, dica de ferramenta errada e revisor que resolve pré-requisitos sozinho. v3.2b 9/10 (US$ 0,089 por encontro); v3.2c (correções) **10/10, US$ 0,070 por encontro**, caso 001 resolvido já na primeira camada. Gasto da etapa US$ 0,375 (ledger = conta US$ 15,829536788). Detalhes em [reports/v3_cascade_v32.md](reports/v3_cascade_v32.md) e [reports/v3_flow.md](reports/v3_flow.md). Sem revisão médica; uma execução por caso.
+
+
+## v4 — 08-10-2026
+Nova condição da assinatura ChatGPT: transporte Codex fechado e replay por hash; unidades relativas de exames entregues para todos os atores; componentes literais; limites e prioridades corrigidos. Base v3.7 preservada. Protocolo e limitações em reports/v4_protocol.md.

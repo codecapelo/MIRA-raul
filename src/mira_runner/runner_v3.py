@@ -95,6 +95,8 @@ class V3Tools:
             if self.policy is not None:
                 try:self.policy.record(json.loads(result).get('not_available_in_this_case',[]))
                 except (json.JSONDecodeError,TypeError,AttributeError):pass
+            if hasattr(self.inner,'summary'):
+                note+=' Performed examination cost so far: '+str(self.inner.summary()['relative_units'])+' relative simulation units (all physicians; not dollars).'
             if not self.delay:return result+('\n'+note if note else '')
             self.pending.append({'tool':name,'request':args,'result':result})
             return (note+' ' if note else 'Order placed. ')+'Results will be reported after your next exchange with the patient; keep talking to the patient meanwhile.'
@@ -114,9 +116,14 @@ class V3Tools:
         if self.policy is not None:
             self.policy.end_turn();self.held_turn=set();queued,self.queue=self.queue,[];self.queued_names=set()
             for tool,item in queued:  # tests queued by the per-turn cap run now (they count for this new turn) and are reported with the next message
+                if getattr(self.policy,'relative_units',False):
+                    allowed,held=self.policy.plan([item])
+                    if not allowed:
+                        self.queue.append((tool,item));self.queued_names.add(norm(item));continue
+                    self.policy.stats['queued_run']+=1
                 args={'study_name':item} if tool=='request_radiology' else {'test_names':[item]}
                 res=self.inner.execute(tool,args);self.orders+=1;usd=classify(item)[1]
-                self.policy.turn_tests+=1;self.policy.spent+=usd;self.policy.stats['ordered']+=1;self.policy.stats['queued_run']+=1;self.policy.stats['spent_usd']+=usd;self.policy.stats['tier%d'%classify(item)[0]]+=1
+                if not getattr(self.policy,'relative_units',False):self.policy.turn_tests+=1;self.policy.spent+=usd;self.policy.stats['ordered']+=1;self.policy.stats['queued_run']+=1;self.policy.stats['spent_usd']+=usd;self.policy.stats['tier%d'%classify(item)[0]]+=1
                 try:self.policy.record(json.loads(res).get('not_available_in_this_case',[]))
                 except (json.JSONDecodeError,TypeError,AttributeError):pass
                 extra.append(f"- {tool} {json.dumps(args,ensure_ascii=False)}: {res}")
@@ -158,7 +165,7 @@ def write_chart_note(client,log,model):
         log.append({'event':'chart_note_failed','model':model,'error':type(exc).__name__+': '+str(exc)[:200]})
 
 def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False,guard=None,min_exchanges=MIN_EXCHANGES,exam_first=False,cascade=None,delay_results=True,consult=None,prereqs=False,judge_override=False,patient_model=PATIENT_MODEL,strict_exams=False,opening=0,extras=None):
-    extras=extras or {};log=AuditLog(root/'logs/raw'/model.replace('/','__')/(case_dir.name+'.jsonl'),commit)
+    extras=extras or {};protocol=extras.get('protocol',PROTOCOL);log=AuditLog(root/'logs/raw'/model.replace('/','__')/(case_dir.name+'.jsonl'),commit)
     previous=log.events()
     complete=next((e for e in previous if e['event']=='case_complete'),None)
     if complete:return complete['result']
@@ -167,10 +174,12 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
         if not allow_commit_transition:raise RuntimeError('Cannot resume under a different commit without --allow-commit-transition')
         log.append({'event':'commit_transition','previous_commits':old_commits,'new_commit':commit,'policy':'reuse only hash-identical settled responses'})
     if not any(e['event']=='protocol_config' for e in previous):
-        log.append({'event':'protocol_config','min_exchanges':min_exchanges,'exam_first':exam_first,'delay_results':delay_results,'consult':consult,'prereqs':prereqs,'judge_override':judge_override,'protocol':PROTOCOL,'patient_model':patient_model,'min_exchanges':min_exchanges,'exam_first':exam_first,'cascade':cascade is not None,'delay_results':delay_results,'judge_model':JUDGE_V3,'judge_params':JUDGE_PARAMS,'max_external_turns':10,'jef_guard':guard is not None,'strict_exams':strict_exams,'opening':opening})
+        log.append({'event':'protocol_config','min_exchanges':min_exchanges,'exam_first':exam_first,'delay_results':delay_results,'consult':consult,'prereqs':prereqs,'judge_override':judge_override,'protocol':protocol,'patient_model':patient_model,'min_exchanges':min_exchanges,'exam_first':exam_first,'cascade':cascade is not None,'delay_results':delay_results,'judge_model':JUDGE_V3,'judge_params':JUDGE_PARAMS,'max_external_turns':10,'jef_guard':guard is not None,'strict_exams':strict_exams,'opening':opening,**({'v4':extras} if protocol=='v4' else {})})
     patient=json.loads((case_dir/'patient.json').read_text());inv=json.loads((case_dir/'investigations.json').read_text())
     prompts=load_module(root/'upstream/onprem-medical-agents/src/prompts_vivabench.py')
     medprompt=prompts.VIVABENCH_MEDICAL_SYSTEM_PROMPT.replace('`finish`','`admission`')+doctor_rules(min_exchanges,exam_first,delay_results,bool(consult),prereqs,strict_exams,bool(extras.get('order_policy')),int(extras.get('admit_min') or 0),bool(extras.get('speech_format')))
+    if protocol=='v4':
+        medprompt=medprompt.replace('workflow rules (v3)','workflow rules (v4)').replace('You are told the approximate cost of what you order.','Costs are artificial simulation units: first-line 1, targeted 5, expensive/invasive 15. They are not dollar prices. Only available examinations first delivered are charged, including reviewer orders; unavailable and repeated results cost zero. Order tests only when they would change the decision or management.').replace('At most 8 tests per turn: the most outcome-changing and cheapest are ordered first and the rest are held.','At most 8 non-exempt tests per turn; critical and specifically endorsed investigations are exempt. Additional tests stay queued for a later exchange.')
     complaint=patient['presenting_complaint'];hx=[h['value'] for h in patient['history_facts']]
     # opening statement: the complaint plus the first lines of the history (0 none, 1 first fact, 2 first two, 3 all); it is the patient's first message and the only input of the consultation map besides the initial examination
     if opening in (5,6):  # first visit as a clinician receives it: the recorded complaint and, as any doctor knows, age and sex (6 adds the first history fact)
@@ -193,7 +202,14 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
             log.append({'event':'backend_error','role':'matcher','reason':'settled malformed matcher output','fallback':'unavailable'})
             return []
     strict=(lambda queries,cands:strict_match(client,log,STRICT_MATCHER,queries,cands)) if strict_exams else None
-    tools=V3Tools(V3CaseTools(inv['observations'],matcher,prereqs,strict),min_exchanges,delay_results,OrderPolicy() if extras.get('order_policy') else None,int(extras.get('admit_min') or 0));
+    inner=V3CaseTools(inv['observations'],matcher,prereqs,strict,literal_components=bool(extras.get('literal_components')))
+    policy=OrderPolicy() if extras.get('order_policy') else None
+    if protocol=='v4':
+        from .exam_costs import RecordedExamTools
+        from .policy_v4 import RelativeOrderPolicy
+        inner=RecordedExamTools(inner,emit=log.append)
+        policy=RelativeOrderPolicy() if extras.get('order_policy') else None
+    tools=V3Tools(inner,min_exchanges,delay_results,policy,int(extras.get('admit_min') or 0));
     findings=[]
     if exam_first:
         try:findings=json.loads(tools.inner.execute('request_physical_exam',{}))
@@ -234,7 +250,13 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
             pv='' if failure else (verdict if final['diagnosis']==proposal['diagnosis'] else judge_dx(proposal['diagnosis'],proposal['reasoning'],'judge_proposal')[0])
             extra={'cascade':True,'cascade_path':'>'.join(cstats['path']),'proposal_dx':proposal['diagnosis'],'proposal_correct':pv,'jef_c1':cstats.get('jef_c1'),'audited':cstats.get('audited',False),'tier2_verdict':cstats.get('tier2_verdict',''),'tier3_model':cstats.get('tier3_model',''),'review_exchanges':cstats.get('review_exchanges',0),'rescued':failure is not None,'failure_reason':failure or '',**deploy_costs(log.events())}
         responses=[e['response'] for e in log.events() if e['event'] in ('response','cli_call')];usage=[r['usage'] for r in responses]
-        result={'case_id':case_dir.name,'model':model,'provider':client.config['models'][model]['provider'],'dx_agent':final['diagnosis'],'reasoning':final['reasoning'],'dx_reference':reference['correct_diagnosis'],'judge_correct':verdict,'judge_rationale':rationale,'n_turns':turn,'n_tool_calls':ntools,'tool_errors':tools.errors,'prompt_tokens':sum(u.get('prompt_tokens',0) for u in usage),'completion_tokens':sum(u.get('completion_tokens',0) for u in usage),'reasoning_tokens':sum(u.get('completion_tokens_details',{}).get('reasoning_tokens',0) for u in usage),'cost_usd':str(sum(Decimal(str(u['cost'])) for u in usage)),'latency_s':time.monotonic()-start,'commit':commit,'timestamp':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'physician_review':'','min_exchanges':min_exchanges,'exam_first':exam_first,'delay_results':delay_results,'protocol':PROTOCOL,'patient_model':patient_model,'judge_model':JUDGE_V3,'patient_exchanges':tools.exchanges,'gated_requests':tools.gated,'investigation_orders':tools.orders,**extra,'consult_model':consult or '','consult_urgency':cmap['urgency'] if cmap else '','nudged':nudged,'prereq_blocks':tools.inner.prereq_blocks,'rubric':'override' if override else 'reference','unread_orders':len(tools.pending),'jef_guard':guard is not None,'jef_checks':jstats['checks'],'jef_retries':jstats['retries'],'jef_failures':jstats['failures'],'opening':opening,'claude_all_equiv_usd':str(sum(Decimal(str(u.get('api_equivalent_cost_usd') or 0)) for u in usage)),'strict_exams':strict_exams,'exam_stats':json.dumps(tools.inner.stats) if strict_exams else '','order_policy':json.dumps(tools.policy.stats) if tools.policy is not None else '','exam_cost_usd':tools.policy.spent if tools.policy is not None else '','admit_blocked':tools.admit_blocked,'v36':json.dumps({k:v for k,v in extras.items() if v}) if extras else ''}
+        result={'case_id':case_dir.name,'model':model,'provider':client.config['models'][model]['provider'],'dx_agent':final['diagnosis'],'reasoning':final['reasoning'],'dx_reference':reference['correct_diagnosis'],'judge_correct':verdict,'judge_rationale':rationale,'n_turns':turn,'n_tool_calls':ntools,'tool_errors':tools.errors,'prompt_tokens':sum(u.get('prompt_tokens',0) for u in usage),'completion_tokens':sum(u.get('completion_tokens',0) for u in usage),'reasoning_tokens':sum(u.get('completion_tokens_details',{}).get('reasoning_tokens',0) for u in usage),'cost_usd':str(sum(Decimal(str(u['cost'])) for u in usage)),'latency_s':time.monotonic()-start,'commit':commit,'timestamp':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'physician_review':'','min_exchanges':min_exchanges,'exam_first':exam_first,'delay_results':delay_results,'protocol':protocol,'patient_model':patient_model,'judge_model':JUDGE_V3,'patient_exchanges':tools.exchanges,'gated_requests':tools.gated,'investigation_orders':tools.orders,**extra,'consult_model':consult or '','consult_urgency':cmap['urgency'] if cmap else '','nudged':nudged,'prereq_blocks':tools.inner.prereq_blocks,'rubric':'override' if override else 'reference','unread_orders':len(tools.pending),'jef_guard':guard is not None,'jef_checks':jstats['checks'],'jef_retries':jstats['retries'],'jef_failures':jstats['failures'],'opening':opening,'claude_all_equiv_usd':str(sum(Decimal(str(u.get('api_equivalent_cost_usd') or 0)) for u in usage)),'strict_exams':strict_exams,'exam_stats':json.dumps(tools.inner.stats) if strict_exams else '','order_policy':json.dumps(tools.policy.stats) if tools.policy is not None else '','exam_cost_usd':tools.policy.spent if tools.policy is not None else '','admit_blocked':tools.admit_blocked,'v36':json.dumps({k:v for k,v in extras.items() if v}) if extras else ''}
+        if protocol=='v4':
+            result['exam_cost_usd']=''
+            result['exam_cost_relative']=tools.inner.summary()
+            result['subscription_usage']={k:sum(int(u.get(k,0) or 0) for e in log.events() if e['event']=='cli_call' and e.get('transport','').startswith('codex') for u in [e['response']['usage']]) for k in ('prompt_tokens','completion_tokens','cache_input_tokens')}
+            result['subscription_monetary_cost_usd']=None
+            result['deployment_cost_note']='OpenRouter amounts are actual billed usage; subscription monetary cost is unknown. No API-equivalent price assigned to Codex.'
         log.append({'event':'case_complete','result':result})
         if extras.get('chart_note'):write_chart_note(client,log,extras['chart_note'])
         return result
@@ -244,7 +266,7 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
     for turn in range(1,11):
         if turn==10:doctor.append({'role':'system','content':prompts.COMPLETION_PROMPT+' Call admission now.'})
         for subturn in range(40):
-            m=client.call(model,doctor,log,'doctor',SAMPLING[model],tools=schemas() if turn<10 else [schemas()[-1]],tool_choice='auto')
+            m=client.call(model,doctor,log,'doctor',SAMPLING.get(model,{}),tools=schemas() if turn<10 else [schemas()[-1]],tool_choice='auto')
             doctor.append(m);calls=m.get('tool_calls',[])
             if not calls:break
             for tc in calls:

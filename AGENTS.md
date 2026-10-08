@@ -103,3 +103,7 @@ Opções novas de `scripts/run_v3.py`: `--order-policy` (política custo-benefí
 
 ## v3.7: prontuário e fala do médico — 07-10-2026
 Opções novas de `scripts/run_v3.py`: `--speech-format` (instrução de formato da fala do médico e limpeza sem IA, `src/mira_runner/chart_note.py`) e `--chart-note claude-haiku-5-5` (prontuário rastreável escrito pelo Haiku 5.5 pela assinatura depois do resultado; não entra na decisão). `claude-haiku-5-5` é o ID da CLI (aviso de modelo não reconhecido, mas o modelo servido é conferido em cada chamada). Estudo em `reports/v3_7_chart_note_and_speech.md`; scripts `scripts/note_study.py` e `scripts/replay_events.py` (linha do tempo com relógio e latência, usada na aba Reprodução do painel). Ledger = conta = US$ 18,965410033; restam US$ 1,03 do teto de US$ 20.
+
+
+## v4 — 08-10-2026, nova autorização do usuário
+Usuário nomeou esta variante v4, autorizou subagentes e US$5 adicionais, solicitou modelos OpenAI pela assinatura desta conta e OpenRouter só para outros modelos. Referência: reports/v4_protocol.md. Base correta c1d3270 do worktree Claude mais recente; main local estava desatualizado. Ledger v4 isolado e cap5, nunca alterar ledger/traces históricos. Somente10casos públicos no primeiro teste. Revisão médica pendente; não prometer100% generalizável.

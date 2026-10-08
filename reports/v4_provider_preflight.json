@@ -1,0 +1,72 @@
+{
+  "credits_before": {
+    "total_credits": 25,
+    "total_usage": 18.965410033
+  },
+  "verified_routes": {
+    "google/gemini-3.1-pro-preview": {
+      "provider": "google-ai-studio",
+      "name": "Google AI Studio",
+      "usd_per_million": {
+        "input": 2.0,
+        "output": 12.0
+      },
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "seed",
+        "response_format",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "reasoning_effort"
+      ]
+    },
+    "google/gemini-3.1-flash-lite-preview": {
+      "provider": "google-ai-studio",
+      "name": "Google AI Studio",
+      "usd_per_million": {
+        "input": 0.25,
+        "output": 1.5
+      },
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "seed",
+        "response_format",
+        "structured_outputs",
+        "tool_choice",
+        "tools",
+        "reasoning_effort"
+      ]
+    },
+    "z-ai/glm-5": {
+      "provider": "streamlake/fp8",
+      "name": "StreamLake",
+      "usd_per_million": {
+        "input": 0.6,
+        "output": 1.92
+      },
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "tool_choice",
+        "tools",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "stop",
+        "response_format",
+        "structured_outputs",
+        "logprobs",
+        "top_logprobs"
+      ]
+    }
+  }
+}
