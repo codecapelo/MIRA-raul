@@ -10,7 +10,7 @@ from mira_runner.budget import Ledger
 from mira_runner.cli_client import HybridClient,CODEX_MODELS
 from mira_runner.runner_v3 import run_case_v3
 from mira_runner.v4 import SubscriptionCascade
-from mira_runner.runner import parallel_models,all_terminal_results
+from mira_runner.runner import parallel_cases,all_terminal_results
 
 CAP=Decimal('5.00')
 
@@ -96,7 +96,7 @@ def main():
             jobs=[(str(c),a.doctor,1) for c in cases]
             with ProcessPoolExecutor(max_workers=a.parallel_cases) as pool:
                 submit=lambda job:pool.submit(work,str(root),job[0],job[1],cfg,key,commit)
-                parallel_models(jobs,a.parallel_cases,a.parallel_cases,submit,terminal)
+                parallel_cases(jobs,a.parallel_cases,submit,terminal)
         finally:
             export(root);ledger.db.close()
             (base/'runs/v4/credits_after.json').write_text(json.dumps(credits(key),indent=2))
