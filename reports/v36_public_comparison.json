@@ -1,0 +1,101 @@
+{
+  "public_subset": [
+    {
+      "case_id": "case_001",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.04706093",
+      "patient_exchanges": 1,
+      "review_exchanges": 1,
+      "exam_cost_usd": 8885
+    },
+    {
+      "case_id": "case_002",
+      "judge_correct": true,
+      "proposal_correct": false,
+      "cost_usd": "0.03720062",
+      "patient_exchanges": 1,
+      "review_exchanges": 2,
+      "exam_cost_usd": 8460
+    },
+    {
+      "case_id": "case_003",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.02405424",
+      "patient_exchanges": 2,
+      "review_exchanges": 1,
+      "exam_cost_usd": 1555
+    },
+    {
+      "case_id": "case_004",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.06758454",
+      "patient_exchanges": 3,
+      "review_exchanges": 1,
+      "exam_cost_usd": 23475
+    },
+    {
+      "case_id": "case_005",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.03092301",
+      "patient_exchanges": 2,
+      "review_exchanges": 1,
+      "exam_cost_usd": 1440
+    },
+    {
+      "case_id": "case_006",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.03107617",
+      "patient_exchanges": 3,
+      "review_exchanges": 1,
+      "exam_cost_usd": 2400
+    },
+    {
+      "case_id": "case_007",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.02442865",
+      "patient_exchanges": 3,
+      "review_exchanges": 0,
+      "exam_cost_usd": 1110
+    },
+    {
+      "case_id": "case_008",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.03113267",
+      "patient_exchanges": 1,
+      "review_exchanges": 1,
+      "exam_cost_usd": 10430
+    },
+    {
+      "case_id": "case_009",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.02485770",
+      "patient_exchanges": 1,
+      "review_exchanges": 1,
+      "exam_cost_usd": 3605
+    },
+    {
+      "case_id": "case_010",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.03192116",
+      "patient_exchanges": 3,
+      "review_exchanges": 1,
+      "exam_cost_usd": 3520
+    }
+  ],
+  "api_total": "0.35023969",
+  "by_role": {
+    "doctor": "0.16943244",
+    "matcher": "0.09831125",
+    "judge": "0.043956",
+    "judge_proposal": "0.038540"
+  }
+}
