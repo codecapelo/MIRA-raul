@@ -2,7 +2,7 @@
 
 Dry-run unless --execute. No retries or replacement of existing terminal traces.
 """
-import argparse,fcntl,json,os,sqlite3,subprocess,urllib.request
+import argparse,fcntl,hashlib,json,os,sqlite3,subprocess,urllib.request
 from concurrent.futures import ProcessPoolExecutor
 from decimal import Decimal
 from pathlib import Path
@@ -10,9 +10,30 @@ from mira_runner.budget import Ledger
 from mira_runner.cli_client import HybridClient,CODEX_MODELS
 from mira_runner.runner_v3 import run_case_v3
 from mira_runner.v4 import SubscriptionCascade
-from mira_runner.runner import parallel_cases,all_terminal_results
+from mira_runner.runner import parallel_cases
 
 CAP=Decimal('5.00')
+
+def all_terminal_results(root):
+    rows=[];seen=set()
+    for path in sorted((Path(root)/'logs/raw').glob('*/*.jsonl')):
+        events=[json.loads(line) for line in path.read_text().splitlines()]
+        terminals=[e['result'] for e in events if e['event']=='case_complete']
+        if len(terminals)>1:raise RuntimeError('Duplicate terminal trace')
+        for row in terminals:
+            key=(row['model'],row['case_id'])
+            if key in seen:raise RuntimeError('Duplicate model/case terminal')
+            seen.add(key);rows.append(row)
+    return sorted(rows,key=lambda row:(row['model'],row['case_id']))
+
+def unchanged_clinical_code(base,old_commit):
+    files=list((base/'src/mira_runner').glob('*.py'))+[base/'config/v4.json']
+    for path in files:
+        rel=str(path.relative_to(base))
+        old=subprocess.check_output(['git','-C',str(base),'show',old_commit+':'+rel])
+        if hashlib.sha256(old).digest()!=hashlib.sha256(path.read_bytes()).digest():
+            return False
+    return True
 
 def credits(key):
     req=urllib.request.Request('https://openrouter.ai/api/v1/credits',headers={'Authorization':'Bearer '+key,'Cache-Control':'no-cache'})
@@ -37,7 +58,7 @@ def export(root):
     return rows
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--execute',action='store_true');ap.add_argument('--max-cases',type=int,default=None,help='Limit this dispatch without changing the frozen ten-case manifest')
+    ap=argparse.ArgumentParser();ap.add_argument('--execute',action='store_true');ap.add_argument('--allow-operational-transition',action='store_true');ap.add_argument('--max-cases',type=int,default=None,help='Limit this dispatch without changing the frozen ten-case manifest')
     ap.add_argument('--doctor',choices=['gpt-6.1-sol','z-ai/glm-5'],default='gpt-6.1-sol')
     ap.add_argument('--cases',nargs='+',default=[f'case_{i:03}' for i in range(1,11)])
     ap.add_argument('--parallel-cases',type=int,choices=[1,2],default=2)
@@ -86,8 +107,14 @@ def main():
                   'reviewers':['gpt-6.1-sol','gpt-6-astra'],'jef':False,'relative_units':{'tier1':1,'tier2':5,'tier3':15},
                   'judge':'google/gemini-3.1-pro-preview','judge_override':'same v3 case009 criterion','additional_cap_usd':str(CAP),'parallel_cases':a.parallel_cases}
         mp=root/'manifest.json'
-        if mp.exists() and json.loads(mp.read_text())!=manifest:raise RuntimeError('Frozen manifest differs')
-        mp.write_text(json.dumps(manifest,indent=2))
+        if mp.exists():
+            old=json.loads(mp.read_text())
+            if old!=manifest:
+                without_commit=lambda d:{k:v for k,v in d.items() if k!='commit'}
+                if not (a.allow_operational_transition and without_commit(old)==without_commit(manifest) and unchanged_clinical_code(base,old['commit'])):
+                    raise RuntimeError('Frozen clinical manifest differs')
+                with (root/'dispatch_transitions.jsonl').open('a') as h:h.write(json.dumps({'previous_commit':old['commit'],'dispatch_commit':commit,'clinical_code_hashes_unchanged':True})+'\n')
+        else:mp.write_text(json.dumps(manifest,indent=2))
         def terminal(result,job):
             export(root)
             print(json.dumps({'case_id':result['case_id'],'judge_correct':result['judge_correct'],'api_usd':result['cost_usd'],
@@ -98,7 +125,9 @@ def main():
                 submit=lambda job:pool.submit(work,str(root),job[0],job[1],cfg,key,commit)
                 parallel_cases(jobs,a.parallel_cases,submit,terminal)
         finally:
-            export(root);ledger.db.close()
-            (base/'runs/v4/credits_after.json').write_text(json.dumps(credits(key),indent=2))
+            try:export(root)
+            finally:
+                ledger.db.close()
+                (base/'runs/v4/credits_after.json').write_text(json.dumps(credits(key),indent=2))
 
 if __name__=='__main__':main()
