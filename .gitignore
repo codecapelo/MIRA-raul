@@ -33,3 +33,8 @@ results/note_study*
 # Closed v4 study: never publish source facts, raw traces or detailed outputs
 runs/v4/fast_private/
 reports/v4_fast_private_details*
+
+# Full operational manifests and per-generation billing metadata stay local.
+# Public exports contain only opaque digests and cohort aggregates.
+runs/v4/fast/*/public/run1/manifest.json
+reports/v4_fast_generation_costs.json

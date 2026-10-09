@@ -122,3 +122,25 @@ Dois terminais,1/2aceitos,US$0.04537300. Negativo001preservado: pré-requisito n
 
 ## Continuidade fast4 —09/10
 Fast3 piloto1/2,US$0.04295675,semampliação. Preservar negativo como diagnóstico, não invalidar/zerar. Fast4 é próximo braço genérico: únicoSol adicional quando há achado novo OU exame indisponível estruturado, alternativas sem repetir pedido igual, mesmos limites4+2/3CLI, referencia/juiz excluídos. Completar todos10públicosfast4 e sóapós10/10os10fechadosnamesmaHEAD; userautorizouotimizar,cap5mantido. Não retomarfast2/3 nemduplicar terminais.
+
+
+## Checkpoint operacional fast4 —09/10/2026, após bloqueio da chave
+Dez públicos completos10/10; oito fechados completos8/8. Penúltimo encontro parcial preservado, último não iniciado. HTTP403 no matcher por limite total da chave US$20, sem reset; conta25 créditos/usage20.001081458. Há quaseUS$5 disponíveis, mas a chave bloqueia o envio.
+
+Global v4 ledgerUS$1.035671425 igual ao delta da conta;952 settled:951 respostas/951 metadados coincidentes e uma rejeição sem resposta atribuída a zero por três snapshots estáveis, sem fabricar usage.cost. Evidências: reports/v4_fast_key_limit_reconciliation.json, v4_fast_key_limit_snapshots.json e v4_fast_billing_reconciliation.json. Backup/prefixo arquivado somente fast_private; eventos originais preservados e request_rejected confirmado permite replay exato.
+
+Não alterar HEAD b3d7d005a324db538b98882f6599cc33f2692eb5, código/config/fatos. Não enviar enquanto key.limit_remaining=0; não comprar/reset/aumentar tetoUS$5. Usuário solicitado a ajustar limite da chave para25. Observe mudança real antes de retomar somente restantes com script fast4 closed --max-cases2, sem repetir terminais. Dados privados somente agregados públicos.
+
+Análise/artifact final de20 candidatos ainda em/tmp. Checkpoints/relatórios e reports/v4_checkpoint.html estão salvos sem commit para preservar HEAD até o fim. Automação monitora GET/cota, quieta se inalterado. Concluir20 antes de commit/push/draftPR7/pausa. Respostas e clínica não foram retunadas.
+
+<!-- V4_FAST4_FINAL_START -->
+## Encerramento v4 rápida fast4 —09/10/2026 18:29:56
+
+Condição inferencial congelada b3d7d005a324db538b98882f6599cc33f2692eb5;321 testes antes da execução. Públicos10/10 terminais,10/10 aceitos; gate liberou fechados somente após10/10 públicos na mesma condição. Fechados10/10 terminais,10/10 aceitos. Preservar fast1=9/10, fast2=1/2 piloto e fast3=1/2 piloto e seus custos; não invalidar negativos ou substituir denominadores.
+
+Gasto v4 globalUS$1.061257675 do ledger cap5; situação de conciliaçãoconta e ledger conciliados; custos das respostas com usage.cost confirmados pelos metadados de geração; 1 rejeição sem usage.cost atribuída a zero por evidência de conta. Sem nova inferência autorizada após esta consolidação; não retentar terminais, não aumentar teto ou comprar créditos. OpenAI apenas assinatura, custo monetário desconhecido. Ao necessário acompanhar financeiro, apenas GET sem inferência e com estado antigo preservado. Pausar a automação de retomada ao concluir publicação/entrega.
+
+Fonte: reports/v4_fast4_summary.md e reports/v4_fast_summary.json, manifestos[v4_fast_public_trace_manifest.json](reports/v4_fast_public_trace_manifest.json) ev4_fast_preregistration_digests.json e v4_fast_public_trace_manifest.json (digests opacos; manifestos integrais preservados localmente), artifact reports/v4_comparison.html. Manifestos originais integrais e metadados de geração por chamada permanecem locais para auditoria; os exports públicos contêm digests opacos e contagens. Ledger consultado somente em leitura. Traces/fatos/diagnósticos fechados permanecem locais em runs/v4/fast_private ignorado; publicação somente agregada. Não copiar dados privados para artifact/reports ou Git. Secret/privacy scan antes de stage/push.
+
+Limitações reais: negativos do paciente sem fonte ainda ocorrem; troponina I pode devolver fonteT; observação EP posterior foi entregue na fase aguda; protocolo solicitado não garante aquisição correspondente; mínimo de história pode bloquear exames em choque. Referência só chega ao juiz depois do final e o juiz mede texto diagnóstico, sem confiança/uncertainty/manejo. Revisão médica pendente; casos conhecidos, sem100% clínico/generalizável ou superioridade estabelecida. Protótipo TemporalCaseTools continua separado.
+<!-- V4_FAST4_FINAL_END -->

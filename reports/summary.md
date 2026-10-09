@@ -144,3 +144,9 @@ Intercorrências (ver [reports/runs23_incidents.md](reports/runs23_incidents.md)
 
 ## Atualização v4
 Resultado atual e condições distintas em [v4_final_summary.md](v4_final_summary.md), com [artefato e animação](v4_comparison.html). Resumos acima permanecem históricos.
+
+<!-- V4_FAST4_FINAL_START -->
+## Atualização v4 rápida — 09/10/2026 18:29:56
+
+Fast4 públicos 10/10, fechados 10/10 pelo juiz, separados; condição b3d7d00, sem retuning fechado. Global v4 US$1.061257675. conta e ledger conciliados; custos das respostas com usage.cost confirmados pelos metadados de geração; 1 rejeição sem usage.cost atribuída a zero por evidência de conta. [Resumo específico](v4_fast4_summary.md), [métricas e atores](v4_fast_summary.json), [artifact animado](v4_comparison.html). Histórico e negativos preservados; revisão médica pendente.
+<!-- V4_FAST4_FINAL_END -->

@@ -1,5 +1,16 @@
 # Histórico de alterações
 
+<!-- V4_FAST4_FINAL_START -->
+## v4 fast4 — consolidação em09/10/2026 18:29:56
+
+Conversa/paciente foram transferidos para Gemini 3.1 Flash-Lite pela OpenRouter e Sol 6.1/Astra ficaram na revisão da assinatura. A primeira fala deixou de esperar um mapa CLI; streaming passou a medir conteúdo/ferramentas e conclusão com IDs e uso real.
+
+Corrigidos, em condição nova: whitelist dos revisores exclui `default_admission`, ferramentas desconhecidas e fala final; prefixo JSON de retorno permite cumprir pré-requisitos apesar de notas anexas; todos os resultados intermediários são registrados com texto/hash; pedidos e filas passam pela política externa compartilhada. Estudos comuns multi-região são normalizados sem ampliar cobertura da fonte. Uma única revisão Sol adicional limitada pode pedir alternativas após achados/indisponibilidade estruturados; pedidos iguais são adiados.
+
+Preservados fast1(9/10), fast2(1/2 piloto), fast3(1/2 piloto), todos os traces/custos e escores anteriores. Fast4 congelada em b3d7d00,321 testes antes da inferência: públicos10/10; fechados10/10 após o gate. Total adicional globalUS$1.061257675, tetoUS$ 5. Valores e limitações em reports/v4_fast4_summary.md; sem atribuir preço API à assinatura ou declarar superioridade clínica.
+<!-- V4_FAST4_FINAL_END -->
+
+
 ## v4 — 08/09-10-2026, base Claude v3.7 preservada
 - Condição opt-in v4 com modelos OpenAI pela assinatura, matcher/juiz Gemini via OpenRouter, extração literal e contabilização relativa compartilhada por médico/revisores; transporte/replay/limites testados,229testes aprovados antes da última rodada.
 - Rodada original9/10, US$0.12304050; revisão offline pós-hoc10/10, US$0.045766; nova condição com parecer final Astra10/10, US$0.11515425. Nenhum resultado original substituído; dez casos conhecidos por condição, revisão médica pendente.

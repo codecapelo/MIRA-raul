@@ -1,0 +1,27 @@
+{
+  "public_changed_files_scanned": 43,
+  "credential_matches": 0,
+  "private_report_content_matches": 0,
+  "historical_transport_audit_fixture_identity_not_a_new_clinical_export": true,
+  "clinical_commit": "b3d7d005a324db538b98882f6599cc33f2692eb5",
+  "billing": {
+    "responded_metadata_costs_matched": 951,
+    "settled_zero_cost_rejections_without_usage": 1,
+    "account_ledger_equal": true
+  },
+  "software_checks": {
+    "clinical_pre_inference": 321,
+    "offline_consolidation": 9,
+    "artifact": 5,
+    "js_scope": true
+  },
+  "ui_checks": {
+    "fast4_default_replay": true,
+    "animation_clock_advanced": true,
+    "complete_output_hidden_while_in_progress": true,
+    "checkpoint_10_public_8_closed_visible": true,
+    "screenshot_sha256": "9400c2346e6f0bc4953f79e41a0ec8f85c5061f25a28bedbf8ddb5074771a6dd"
+  },
+  "selected_twenty_complete": false,
+  "checkpoint_only": true
+}

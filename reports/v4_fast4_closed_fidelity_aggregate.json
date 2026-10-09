@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "status": "complete_post_terminal_source_audit",
+  "audited_terminal_encounters": 10,
+  "target_encounters": 10,
+  "exam_results": {
+    "distinct_excerpts_checked": 68,
+    "literal_source_match_review_candidates": 0,
+    "future_or_retrospective_excerpts_delivered": 0,
+    "result_excerpts_missing_observed_prior_procedure": 0
+  },
+  "patient_answers": {
+    "total_answers": 46,
+    "numeric_source_review_candidates": 0,
+    "negative_candidate_answers": 34,
+    "negative_candidate_answers_semantically_reviewed": 34,
+    "confirmed_answers_with_unreported_negative_assertions": 17,
+    "pending_ambiguous_answers": 5,
+    "source_supported_or_unknown_appropriately_preserved": 11,
+    "nonclinical_conversational_preferences": 1
+  },
+  "doctor_uncertainty": {
+    "unknown_as_negative_review_candidates": 0
+  },
+  "source_integrity": {
+    "source_files_verified": 20,
+    "mismatches": 0,
+    "distinct_terminal_commits": 1
+  },
+  "boundaries": {
+    "additional_inference_calls": 0,
+    "paid_inference_calls": 0,
+    "condition_changes": 0,
+    "reference_diagnoses_opened": 0,
+    "benchmark_reclassification": false,
+    "existing_intermediate_audits_preserved": 8
+  },
+  "limitations": [
+    "Counts concern source fidelity, not clinical truth, diagnostic accuracy, safety or guideline concordance.",
+    "Negative lexical candidates were reviewed semantically; lexical counts must not be treated as a clinical fidelity rate.",
+    "Qualified epistemic claims remain ambiguous where the source does not resolve their scope.",
+    "Numeric novelty screening alone cannot establish narrative fidelity.",
+    "Positive narrative assertions and doctor reasoning were not exhaustively clinically adjudicated.",
+    "Tool-output checks cover logged distinct excerpts and recorded prerequisite chronology; they are not independent medical review.",
+    "No finding was used for retuning or outcome reclassification."
+  ]
+}

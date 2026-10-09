@@ -1,28 +1,32 @@
 # MIRA-RAUL
 
 <!-- V4_CURRENT_START -->
-## v4 — implementação e avaliação concluídas
+## v4 rápida — conversa Flash-Lite e supervisão Sol/Astra
 
-[Abrir artefato interativo, comparação e animação](reports/v4_comparison.html) · [relatório final](reports/v4_final_summary.md) · [auditoria factual](reports/v4_working_fidelity.md).
+Condição final `fast4`, congelada no commit `b3d7d005a324db538b98882f6599cc33f2692eb5`, com321 testes aprovados antes da inferência. A conversa e o paciente simulado usam Gemini 3.1 Flash-Lite pela OpenRouter; Sol 6.1/Astra permanecem revisores pela assinatura ChatGPT/Codex, esforço medium. Não há mapa pesado antes da primeira fala, comparadores de diagnósticos ou JEF.
 
-| Condição, mesmos dez públicos | Aceitos pelo juiz LLM | OpenRouter, todos os atores |
-|---|---:|---:|
-| Claude v3.6, histórico | 10/10 | US$0.35023969 |
-| v4 original, Sol + cascade | 9/10 | US$0.12304050 |
-| v4 com hipótese de trabalho Astra, dez novos encontros | 10/10 | US$0.11515425 |
-| Revisão Astra offline dos traces originais, pós-hoc | 10/10 | US$0.045766 |
+|Coorte|Terminais|Aceitos pelo juiz final|Proposta inicial aceita|OpenRouter, todos os atores|Mediana da primeira fala completa|Mediana do tempo em chamadas|
+|---|---:|---:|---:|---:|---:|---:|
+|Públicos de desenvolvimento|10/10|10/10|6/10|US$0.210319200|1,59s|103,61s|
+|Casos de acesso fechado|10/10|10/10|6/9|US$0.284180975|1,52s|111,98s|
 
-A revisão offline não é encontro novo e não substitui o resultado original. São casos conhecidos durante desenvolvimento, uma execução por caso/condição; diferenças de modelo, transporte e protocolo impedem conclusão causal ou superioridade clínica. Juiz LLM não estabelece acurácia clínica100%; revisão médica cega pendente.
+Os fechados só foram liberados após dez terminais públicos e dez juízos positivos na mesma condição. São casos históricos já utilizados no projeto, não um holdout externo novo. Resultados de desenvolvimento, validação fechada e pilotos permanecem separados. [Resumo final](reports/v4_fast4_summary.md), [protocolo](reports/v4_fast_protocol.md) e [artifact com relógio e etapas](reports/v4_comparison.html).
 
-OpenAI usa somente a assinatura ChatGPT/Codex; seu custo monetário é desconhecido. Gemini matcher/juiz usa OpenRouter, sem fallback. Gasto adicional global v4 **US$0.28396075**, tetoUS$5, restanteUS$4.71603925; a conta reporta adicionalUS$0.265806750, diferençaUS$0.018154000 em investigação, quatro metadados de juiz404. Custos recebidos não foram zerados. As unidades1/5/15 de exames são artificiais, com fonte deduplicada entre médico e revisores, inclusive painéis; não são dólares nem preços hospitalares.
+Gasto global adicional v4: US$1.061257675, incluindo condições anteriores, todos os atores e falhas, dentro do teto únicoUS$ 5. Situação financeira: conta e ledger conciliados; custos das respostas com usage.cost confirmados pelos metadados de geração; 1 rejeição sem usage.cost atribuída a zero por evidência de conta. O custo monetário da assinatura é desconhecido. Tokens de API e CLI, cache e espera são reportados separadamente; menor gasto OpenRouter não implica menor custo total.
 
-Melhorias: extração literal qualitativa/numérica, política aplicada também à revisão, limite de pedidos respeitado pela fila, isolamento da assinatura sem ferramentas externas, replay integral por hash, revisão final que distingue hipótese de confirmação e informa achados não confirmados/próximos passos. A animação permite reproduzir horários e etapas reais, pausar, acelerar e ir ao final; o início de chamadas CLI é estimado pela latência. Os tempos são de execução do teste.
+A condição corrige o vazamento de `default_admission` para os revisores, preserva resultados brutos/hash dos pré-requisitos e mantém todos os pedidos dentro da política compartilhada de exames. Até quatro pedidos atômicos iniciais e dois adicionais; pré-requisitos podem acrescentar procedimentos cobrados. Um único segundo Sol pode buscar alternativas diante de achados novos ou indisponibilidade estruturada; Astra sempre finaliza. Não há loops orientados pelo juiz.
 
-Persistem diferenças entre pedido e protocolo/ensaio retornado, achados de seguimento liberados cedo e fontes históricas devolvidas para pedidos novos. O protótipo temporal foi testado em software, mas não participa dos encontros apresentados. Os100% do juiz, quando presentes, não eliminam essas limitações. Nenhum terminal anterior foi reexecutado ou sobrescrito.
+A revisão médica permanece pendente. O piloto auditado mostrou números literais corretos, mas ainda apresentou negativos do paciente sem fonte, troponina I mapeada para troponina T e resultado eletrofisiológico posterior entregue durante o encontro agudo. Confiança autoatribuída e conduta não fazem parte do input do juiz. Nenhum escore demonstra segurança clínica ou100% generalizável.
 
-**Validação de software:** 238 testes aprovados. O [registro opcional da fila](reports/post_evaluation_release_logging.md) foi corrigido após a avaliação e não integrou estes encontros.
 
-Base Claude correta: c1d3270(v3.7); condição nova congelada em2fac24e. [Protocolos](reports/v4_working_encounters_protocol.md), [manifesto30traces](reports/v4_all_trace_manifest.json), [conciliação](reports/v4_global_billing_reconciliation.json). Não há nova inferência pendente ou autorizada após esta consolidação.
+Comparação descritiva nos dez públicos: Claude v3.6 158,46s / US$0.35023969; v4 anterior 515,93s / US$0.11515425; fast4 103,61s / US$0.210319200. Variação da API: -39,95% versus v3.6 e 82,64% versus v4 lenta. Entrada CLI mediana 33.473,50 versus 183.706,5 na v4 lenta e 34.522,5 na v3.6. Contextos, cache e transportes diferem; os tempos históricos não isolam efeito causal.
+
+Nos fechados, o tempo de parede manteve a cauda de pausas: P95 8.785,85s e máximo 15.833,52s, incluindo interrupção pelo limite da chave e pausa solicitada. A união dos intervalos de chamadas foi P50 111,98s / P95 158,47s. As pausas não foram apagadas; tempo ativo e tempo decorrido respondem a perguntas distintas, e nenhum deles isoladamente mede a qualidade da interação.
+
+Auditoria agregada dos fechados: 46 respostas do paciente; 17 continham negativos sem fonte e 5 permaneceram ambíguas. 68 trechos distintos de exames e 20 arquivos-fonte foram verificados. Divergências de identidade: 0; candidatos de divergência literal de exames: 0. Estes números refletem o escopo auditado: não houve adjudicação clínica exaustiva das afirmações narrativas positivas ou do raciocínio médico. Ausência de divergência literal não demonstra segurança, adequação do manejo ou acurácia clínica. Nenhum achado da auditoria foi usado para reajustar a condição ou reclassificar resultados.
+
+Auditoria dos públicos: pré-requisito repetido indevidamente, teste específico representado por basal, bloqueio de investigação urgente e afirmação inventada usada no raciocínio. Hash íntegro e juiz positivo não garantem fidelidade ou conduta correta; correções propostas ainda não testadas nesta condição.
+
 <!-- V4_CURRENT_END -->
 
 

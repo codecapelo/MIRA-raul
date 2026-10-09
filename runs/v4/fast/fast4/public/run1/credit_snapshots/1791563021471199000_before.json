@@ -1,0 +1,14 @@
+{
+  "account": {
+    "total_credits": "25",
+    "total_usage": "19.592636533"
+  },
+  "validation": {
+    "account_delta_usd": "0.627226500",
+    "ledger_total_usd": "0.62722650",
+    "ledger_above_account_usd": "0E-9",
+    "conservative_consumed_usd": "0.627226500",
+    "remaining_global_cap_usd": "4.372773500",
+    "policy": "Retain received usage.cost; lower account delta is not zero-cost evidence"
+  }
+}

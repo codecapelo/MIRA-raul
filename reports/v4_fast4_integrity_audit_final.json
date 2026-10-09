@@ -1,0 +1,165 @@
+{
+  "variant": "fast4",
+  "cohort": "public",
+  "cases_audited": 10,
+  "all_integrity_checks_passed": true,
+  "review_input_count": 30,
+  "third_review_cases": 10,
+  "fields_not_judged_by_diagnostic_score": [
+    "confidence",
+    "unconfirmed",
+    "next_steps"
+  ],
+  "patient_and_temporal_fidelity_not_established_by_this_hash_audit": true,
+  "closed_content_accessed": false,
+  "closed_content_exported": false,
+  "fields_present_all_cases": true,
+  "self_reported_confidence_range": [
+    0.8,
+    0.99
+  ],
+  "total_unconfirmed_items": 35,
+  "total_next_steps_items": 38,
+  "rows": [
+    {
+      "case_id": "case_001",
+      "trace_sha256": "2e05065d1a2924cafbc1b7ac77c226ef543de44ea147cf2878ea03f473ddfd30",
+      "judge_accepted": true,
+      "review_stages": [
+        "sol",
+        "sol_post_followup",
+        "astra"
+      ],
+      "input_hashes_verified": 3,
+      "final_confidence_self_reported": 0.93,
+      "unconfirmed_count": 5,
+      "next_steps_count": 4
+    },
+    {
+      "case_id": "case_002",
+      "trace_sha256": "a23c9958000c7082c82e811ba6c56429b928d430a5136405f8476b3a574f258b",
+      "judge_accepted": true,
+      "review_stages": [
+        "sol",
+        "sol_post_followup",
+        "astra"
+      ],
+      "input_hashes_verified": 3,
+      "final_confidence_self_reported": 0.8,
+      "unconfirmed_count": 3,
+      "next_steps_count": 4
+    },
+    {
+      "case_id": "case_003",
+      "trace_sha256": "0e13343ec838fee15e053c8bc89132c6417d27a089f6601be0fe0339e23df0ef",
+      "judge_accepted": true,
+      "review_stages": [
+        "sol",
+        "sol_post_followup",
+        "astra"
+      ],
+      "input_hashes_verified": 3,
+      "final_confidence_self_reported": 0.86,
+      "unconfirmed_count": 4,
+      "next_steps_count": 3
+    },
+    {
+      "case_id": "case_004",
+      "trace_sha256": "75a7fccbb11a4d86fdb344d1298de6b19f3551501fd0559939b47571f2dd6172",
+      "judge_accepted": true,
+      "review_stages": [
+        "sol",
+        "sol_post_followup",
+        "astra"
+      ],
+      "input_hashes_verified": 3,
+      "final_confidence_self_reported": 0.96,
+      "unconfirmed_count": 3,
+      "next_steps_count": 4
+    },
+    {
+      "case_id": "case_005",
+      "trace_sha256": "460c2b23e26030fe2b73e1c5d9fdbdd2a0268e9aff62a23b0ec77de6f7a9f816",
+      "judge_accepted": true,
+      "review_stages": [
+        "sol",
+        "sol_post_followup",
+        "astra"
+      ],
+      "input_hashes_verified": 3,
+      "final_confidence_self_reported": 0.96,
+      "unconfirmed_count": 4,
+      "next_steps_count": 4
+    },
+    {
+      "case_id": "case_006",
+      "trace_sha256": "7e3e9b3ba0129911db89e47f1bc8a9553696bd24fe507fcc413d897ae680ccd0",
+      "judge_accepted": true,
+      "review_stages": [
+        "sol",
+        "sol_post_followup",
+        "astra"
+      ],
+      "input_hashes_verified": 3,
+      "final_confidence_self_reported": 0.88,
+      "unconfirmed_count": 4,
+      "next_steps_count": 4
+    },
+    {
+      "case_id": "case_007",
+      "trace_sha256": "ac9ce711d760af097ece12b85e1c4ec7b68c54d0fc2277d0188de7b6be9dc30c",
+      "judge_accepted": true,
+      "review_stages": [
+        "sol",
+        "sol_post_followup",
+        "astra"
+      ],
+      "input_hashes_verified": 3,
+      "final_confidence_self_reported": 0.9,
+      "unconfirmed_count": 4,
+      "next_steps_count": 5
+    },
+    {
+      "case_id": "case_008",
+      "trace_sha256": "86eb7621936b51e715d53205a6358aec2aa70e0ebd50e1a1c4e5e4ce1602623a",
+      "judge_accepted": true,
+      "review_stages": [
+        "sol",
+        "sol_post_followup",
+        "astra"
+      ],
+      "input_hashes_verified": 3,
+      "final_confidence_self_reported": 0.96,
+      "unconfirmed_count": 4,
+      "next_steps_count": 4
+    },
+    {
+      "case_id": "case_009",
+      "trace_sha256": "68f5d9fd1702d27f7e646c0c3d58ed8010ed259e0e2741b2343fc923600d2a4a",
+      "judge_accepted": true,
+      "review_stages": [
+        "sol",
+        "sol_post_followup",
+        "astra"
+      ],
+      "input_hashes_verified": 3,
+      "final_confidence_self_reported": 0.99,
+      "unconfirmed_count": 2,
+      "next_steps_count": 3
+    },
+    {
+      "case_id": "case_010",
+      "trace_sha256": "be0084869ee328434a7ccf1af8a5df5b6ef8bb6894f8761acffc1c31679c159d",
+      "judge_accepted": true,
+      "review_stages": [
+        "sol",
+        "sol_post_followup",
+        "astra"
+      ],
+      "input_hashes_verified": 3,
+      "final_confidence_self_reported": 0.9,
+      "unconfirmed_count": 2,
+      "next_steps_count": 3
+    }
+  ]
+}
