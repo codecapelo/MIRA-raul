@@ -1,5 +1,14 @@
 # Histórico de alterações
 
+## v4 — 08/09-10-2026, base Claude v3.7 preservada
+- Condição opt-in v4 com modelos OpenAI pela assinatura, matcher/juiz Gemini via OpenRouter, extração literal e contabilização relativa compartilhada por médico/revisores; transporte/replay/limites testados,229testes aprovados antes da última rodada.
+- Rodada original9/10, US$0.12304050; revisão offline pós-hoc10/10, US$0.045766; nova condição com parecer final Astra10/10, US$0.11515425. Nenhum resultado original substituído; dez casos conhecidos por condição, revisão médica pendente.
+- Custos globais adicionaisUS$0.28396075, cap5; ledgerUS$0.28396075/delta contaUS$0.265806750, diferençaUS$0.018154000 identificada em quatro chamadas de juiz sem metadados404. Não conciliado exatamente; custos preservados. Metadados originais com atraso ficaram disponíveis sem reclassificação ou alteração do ledger. Uso CLI de chamadas interrompidas pode estar ausente; dinheiro da assinatura desconhecido.
+- Reparo pós-avaliação opt-in do registro de resultados da fila, sem alterar os encontros avaliados ou o input dos revisores. Nove testes adicionais; suíte final238aprovados. Detalhes em reports/post_evaluation_release_logging.md.
+- Animação standalone mostra relógio, início/fim/duração, fases, custoAPI/unidades, pausa/velocidade/navegação; entradas e referências dos juízes omitidas. Corrigido arredondamento do slider para exibir exatamente o terminal.
+- Achados de auditoria mantidos: ensaios/protocolos não equivalentes, cronologia comprimida, fontes históricas e leniência de juiz. Protótipo temporal não integrou a condição; histórico canônico978hashes sem divergência.
+
+
 ## 2026-10-03 — protocolo MIRA-RAUL
 
 - Preservado o experimento anterior em `legacy/`, incluindo 290 percursos terminais; novo experimento possui denominador independente.

@@ -1,5 +1,31 @@
 # MIRA-RAUL
 
+<!-- V4_CURRENT_START -->
+## v4 — implementação e avaliação concluídas
+
+[Abrir artefato interativo, comparação e animação](reports/v4_comparison.html) · [relatório final](reports/v4_final_summary.md) · [auditoria factual](reports/v4_working_fidelity.md).
+
+| Condição, mesmos dez públicos | Aceitos pelo juiz LLM | OpenRouter, todos os atores |
+|---|---:|---:|
+| Claude v3.6, histórico | 10/10 | US$0.35023969 |
+| v4 original, Sol + cascade | 9/10 | US$0.12304050 |
+| v4 com hipótese de trabalho Astra, dez novos encontros | 10/10 | US$0.11515425 |
+| Revisão Astra offline dos traces originais, pós-hoc | 10/10 | US$0.045766 |
+
+A revisão offline não é encontro novo e não substitui o resultado original. São casos conhecidos durante desenvolvimento, uma execução por caso/condição; diferenças de modelo, transporte e protocolo impedem conclusão causal ou superioridade clínica. Juiz LLM não estabelece acurácia clínica100%; revisão médica cega pendente.
+
+OpenAI usa somente a assinatura ChatGPT/Codex; seu custo monetário é desconhecido. Gemini matcher/juiz usa OpenRouter, sem fallback. Gasto adicional global v4 **US$0.28396075**, tetoUS$5, restanteUS$4.71603925; a conta reporta adicionalUS$0.265806750, diferençaUS$0.018154000 em investigação, quatro metadados de juiz404. Custos recebidos não foram zerados. As unidades1/5/15 de exames são artificiais, com fonte deduplicada entre médico e revisores, inclusive painéis; não são dólares nem preços hospitalares.
+
+Melhorias: extração literal qualitativa/numérica, política aplicada também à revisão, limite de pedidos respeitado pela fila, isolamento da assinatura sem ferramentas externas, replay integral por hash, revisão final que distingue hipótese de confirmação e informa achados não confirmados/próximos passos. A animação permite reproduzir horários e etapas reais, pausar, acelerar e ir ao final; o início de chamadas CLI é estimado pela latência. Os tempos são de execução do teste.
+
+Persistem diferenças entre pedido e protocolo/ensaio retornado, achados de seguimento liberados cedo e fontes históricas devolvidas para pedidos novos. O protótipo temporal foi testado em software, mas não participa dos encontros apresentados. Os100% do juiz, quando presentes, não eliminam essas limitações. Nenhum terminal anterior foi reexecutado ou sobrescrito.
+
+**Validação de software:** 238 testes aprovados. O [registro opcional da fila](reports/post_evaluation_release_logging.md) foi corrigido após a avaliação e não integrou estes encontros.
+
+Base Claude correta: c1d3270(v3.7); condição nova congelada em2fac24e. [Protocolos](reports/v4_working_encounters_protocol.md), [manifesto30traces](reports/v4_all_trace_manifest.json), [conciliação](reports/v4_global_billing_reconciliation.json). Não há nova inferência pendente ou autorizada após esta consolidação.
+<!-- V4_CURRENT_END -->
+
+
 Avaliação exploratória de agentes diagnósticos em dez casos públicos previamente utilizados, com médico, paciente simulado, ferramentas e juiz por equivalência clínica via OpenRouter. A arquitetura deriva de [Zhang et al.](https://doi.org/10.1038/s41591-026-04609-x) e [onprem-medical-agents](https://github.com/KatherLab/onprem-medical-agents), com adaptações documentadas.
 
 O protocolo usa limite rígido de dez turnos do médico, sem Plan, e separa fatos iniciais, exames e referências. Exames publicados são liberados mediante solicitação com compressão temporal; a condição não reproduz estritamente a disponibilidade de achados na admissão. O código upstream permite encerramento adicional após dez rodadas; esse comportamento foi excluído por solicitação do usuário. O projeto não reproduz os conjuntos completos, a infraestrutura local ou as conclusões estatísticas do artigo.

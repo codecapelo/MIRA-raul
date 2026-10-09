@@ -1,0 +1,313 @@
+{
+  "schema": "v4_public_thirty_trace_manifest_v1",
+  "conditions": {
+    "original_v4_sol": {
+      "kind": "encounter",
+      "count": 10,
+      "source_manifest": {
+        "path": "runs/v4/sol/run1/manifest.json",
+        "sha256": "849f1696481b85374422199e5a24687c383116fd1d51720cec28f825503325df"
+      },
+      "traces": [
+        {
+          "case_id": "case_001",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+          "trace_sha256": "bc791bbc2ca83e75547fe53322ea07dd849d13d4b5e17d4a4debeddb76c48c12",
+          "terminal_event": "case_complete",
+          "commits": [
+            "25471d1e13eeff8ba03db2115cd8591581288162"
+          ]
+        },
+        {
+          "case_id": "case_002",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+          "trace_sha256": "fc5de670687b9c934912e46995e988967911fbd6a5bfcede9dc575b800b33aae",
+          "terminal_event": "case_complete",
+          "commits": [
+            "25471d1e13eeff8ba03db2115cd8591581288162"
+          ]
+        },
+        {
+          "case_id": "case_003",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+          "trace_sha256": "16e52d7f487869b72921b6f91125564bd540b9326330db12b8860650e20c6dc1",
+          "terminal_event": "case_complete",
+          "commits": [
+            "70c794029e7af60025616f11ee563813aed098ac"
+          ]
+        },
+        {
+          "case_id": "case_004",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+          "trace_sha256": "8bee3731e3c7babf25a71d5ac8903e48b7b7dc1c5e45e0da3dc8b66805bf5378",
+          "terminal_event": "case_complete",
+          "commits": [
+            "70c794029e7af60025616f11ee563813aed098ac"
+          ]
+        },
+        {
+          "case_id": "case_005",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+          "trace_sha256": "ce6a7ebac6685251f3a0ce9639273354d06939d33b2477c8dbe9685993103411",
+          "terminal_event": "case_complete",
+          "commits": [
+            "70c794029e7af60025616f11ee563813aed098ac"
+          ]
+        },
+        {
+          "case_id": "case_006",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+          "trace_sha256": "1e6bddab8190bc63d3385a032cff7325a1d5e0943ca695b0c7c3a591ad15f01d",
+          "terminal_event": "case_complete",
+          "commits": [
+            "70c794029e7af60025616f11ee563813aed098ac"
+          ]
+        },
+        {
+          "case_id": "case_007",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_007.jsonl",
+          "trace_sha256": "ceaee3584c2edc51c308c771e0e38ed0deee3666897fc9986f7846d59ee5705f",
+          "terminal_event": "case_complete",
+          "commits": [
+            "70c794029e7af60025616f11ee563813aed098ac"
+          ]
+        },
+        {
+          "case_id": "case_008",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_008.jsonl",
+          "trace_sha256": "0aacaceb2906ec0daa23dec479e338b22ef4097c5b2f2a0b6ace279cfb83fa72",
+          "terminal_event": "case_complete",
+          "commits": [
+            "70c794029e7af60025616f11ee563813aed098ac"
+          ]
+        },
+        {
+          "case_id": "case_009",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_009.jsonl",
+          "trace_sha256": "170dffd56eb3db98636e88953f5dbc0030fe31303792c8c66b72f0803a5a0d7b",
+          "terminal_event": "case_complete",
+          "commits": [
+            "70c794029e7af60025616f11ee563813aed098ac"
+          ]
+        },
+        {
+          "case_id": "case_010",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+          "trace_sha256": "d2570037fc8c9cc1c161fdcfb68293f4e15bcd9a12ce8d9b8ffa6d28bd5e6803",
+          "terminal_event": "case_complete",
+          "commits": [
+            "70c794029e7af60025616f11ee563813aed098ac"
+          ]
+        }
+      ]
+    },
+    "prospective_v4_sol_working": {
+      "kind": "new_encounter",
+      "count": 10,
+      "source_manifest": {
+        "path": "runs/v4/sol_working/run1/manifest.json",
+        "sha256": "089430d51411f6f0daf7b97a0b64b7f9f5355f892f0b7df7a9b6fcaaa0615f89"
+      },
+      "traces": [
+        {
+          "case_id": "case_001",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+          "trace_sha256": "526c0570983dd94216da538e49982ab28bc8d92c3d33a51ca66845f27ee595ba",
+          "terminal_event": "case_complete",
+          "commits": [
+            "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c"
+          ]
+        },
+        {
+          "case_id": "case_002",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+          "trace_sha256": "d75f6f7854516028387fc7943cc9641266c85c8adad783dab6a572c509e928c6",
+          "terminal_event": "case_complete",
+          "commits": [
+            "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c"
+          ]
+        },
+        {
+          "case_id": "case_003",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+          "trace_sha256": "9a169efa126130223c500321cd735d9cfbd3d3450d9ac7ad1c52afb9d873b70d",
+          "terminal_event": "case_complete",
+          "commits": [
+            "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c"
+          ]
+        },
+        {
+          "case_id": "case_004",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+          "trace_sha256": "ebf6ddc25815073c276654e9c772468a45237652edaacbcfca57f60e9e656631",
+          "terminal_event": "case_complete",
+          "commits": [
+            "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c"
+          ]
+        },
+        {
+          "case_id": "case_005",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+          "trace_sha256": "add63500af1074fd0d20a56b021ee9d542e1e6b078743f9284c8f170b6b0b967",
+          "terminal_event": "case_complete",
+          "commits": [
+            "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c"
+          ]
+        },
+        {
+          "case_id": "case_006",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+          "trace_sha256": "abf89cc43374706ffabe39415216d1c22a973d7b78c84c274c7e4217d6ba4a4a",
+          "terminal_event": "case_complete",
+          "commits": [
+            "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c"
+          ]
+        },
+        {
+          "case_id": "case_007",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_007.jsonl",
+          "trace_sha256": "7c8ce427cd641d4064d26cb8b2d0ae7bc5f10aeab4c3775dfc6b0f02aa834b21",
+          "terminal_event": "case_complete",
+          "commits": [
+            "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c"
+          ]
+        },
+        {
+          "case_id": "case_008",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_008.jsonl",
+          "trace_sha256": "e6f4e3382ba6e813057054a8cca1cf12db00b2f9b903aadeafaf62880319bdb4",
+          "terminal_event": "case_complete",
+          "commits": [
+            "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c"
+          ]
+        },
+        {
+          "case_id": "case_009",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_009.jsonl",
+          "trace_sha256": "ef4a1ccf958b3b3e6e0c449c4f04a96bb858ceadcd899f322f567ac9a1846d64",
+          "terminal_event": "case_complete",
+          "commits": [
+            "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c"
+          ]
+        },
+        {
+          "case_id": "case_010",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+          "trace_sha256": "1ff7f4dfdd93ea3756940155ea35f129dbfe04478f895df62d0f0803d030a012",
+          "terminal_event": "case_complete",
+          "commits": [
+            "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c"
+          ]
+        }
+      ]
+    },
+    "offline_working_review": {
+      "kind": "posthoc_review_not_encounter",
+      "count": 10,
+      "source_manifest": null,
+      "traces": [
+        {
+          "case_id": "case_001",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_001.jsonl",
+          "trace_sha256": "ad9a3d0cdfd1e8d8e0cc5932aeb4e71311b1d29470a579dc7a17712885839b2a",
+          "terminal_event": "working_review_complete",
+          "commits": [
+            "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+          ]
+        },
+        {
+          "case_id": "case_002",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_002.jsonl",
+          "trace_sha256": "60c447f6f14a34967ea731b7b4519b3daef54c5b641019e598d8a11e12bbf4ef",
+          "terminal_event": "working_review_complete",
+          "commits": [
+            "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+          ]
+        },
+        {
+          "case_id": "case_003",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_003.jsonl",
+          "trace_sha256": "e94affd981d99ba69ea3310fdf7e9c7c4e542feb7ece66b4390c5c4cdf849a25",
+          "terminal_event": "working_review_complete",
+          "commits": [
+            "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+          ]
+        },
+        {
+          "case_id": "case_004",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_004.jsonl",
+          "trace_sha256": "2e1fa37fd73f658d5dae12f4dbaba8faeab392aa4321dba0270409797b2f30c9",
+          "terminal_event": "working_review_complete",
+          "commits": [
+            "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+          ]
+        },
+        {
+          "case_id": "case_005",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_005.jsonl",
+          "trace_sha256": "e59e2f9ca1730d63d9e38e622957c170892a24e2384e34dbc4cfd58f26956e37",
+          "terminal_event": "working_review_complete",
+          "commits": [
+            "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+          ]
+        },
+        {
+          "case_id": "case_006",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_006.jsonl",
+          "trace_sha256": "e01cb9d7695bd4bc3127a4be636e7367feac6cf1f722a5b28419260f20dd041c",
+          "terminal_event": "working_review_complete",
+          "commits": [
+            "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+          ]
+        },
+        {
+          "case_id": "case_007",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_007.jsonl",
+          "trace_sha256": "895358bbc98eff1787f35af7e7e670c7e50f6a6e974d6c91427f5d5d4f22a200",
+          "terminal_event": "working_review_complete",
+          "commits": [
+            "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+          ]
+        },
+        {
+          "case_id": "case_008",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_008.jsonl",
+          "trace_sha256": "9d79c1d6e8570385a9437d7ccf9c9845f016e6fcd3aa28a3fae2c905d54a19d3",
+          "terminal_event": "working_review_complete",
+          "commits": [
+            "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+          ]
+        },
+        {
+          "case_id": "case_009",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_009.jsonl",
+          "trace_sha256": "7ab5b7e2aa97731b68174d87f11f68745d1cf094f544f3b266e20b13952e9495",
+          "terminal_event": "working_review_complete",
+          "commits": [
+            "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+          ]
+        },
+        {
+          "case_id": "case_010",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_010.jsonl",
+          "trace_sha256": "f9cf42a6d0d0504648d8b94bbfe69379b8003465146b5d60f3f0c7732928124a",
+          "terminal_event": "working_review_complete",
+          "commits": [
+            "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+          ]
+        }
+      ]
+    }
+  },
+  "consolidator_sha256": "d9e0372e45d4f1c9a526ffb562d40c224f6b46df02c6469f9f50697742a15497",
+  "financial_sources": {
+    "baseline": {
+      "path": "runs/v4/credits_before.json",
+      "sha256": "26cf9b771291f5244d594cb2479c16d8da69abef7231060237c5c1abf818c5d5"
+    },
+    "final": {
+      "path": "runs/v4/credits_global_final.json",
+      "sha256": "316d23e0a9c90b4e4c624bfa4cad4d56d876473e5a9a0274cced4656dee12637"
+    }
+  }
+}

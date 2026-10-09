@@ -1,0 +1,14 @@
+{
+  "time": 1791492854.944375,
+  "kind": "subscription_process_exit_no_terminal",
+  "case": "case_002",
+  "failed_stage": "original blind review after followup before additional working final review",
+  "last_successful_cli_ordinal": 10,
+  "durable_cli_calls": 11,
+  "settled_api_responses": 7,
+  "exit_code": 1,
+  "category": "process_exit; underlying cause not retained",
+  "quota_snapshot_used_percent": 84,
+  "case001_terminal_preserved": true,
+  "decision": "One explicit continuation of unanswered subscription step, exact payload replay of all recorded prefixes; no automatic retry loop. Shared ledger115settled US$0.18950075. No new HEAD or clinical change."
+}

@@ -1,0 +1,33 @@
+{
+  "protocol": "v4",
+  "commit": "25471d1e13eeff8ba03db2115cd8591581288162",
+  "cases": [
+    "case_001",
+    "case_002",
+    "case_003",
+    "case_004",
+    "case_005",
+    "case_006",
+    "case_007",
+    "case_008",
+    "case_009",
+    "case_010"
+  ],
+  "doctor": "gpt-6.1-sol",
+  "patient": "gpt-6.1-sol",
+  "map": "gpt-6.1-sol",
+  "reviewers": [
+    "gpt-6.1-sol",
+    "gpt-6-astra"
+  ],
+  "jef": false,
+  "relative_units": {
+    "tier1": 1,
+    "tier2": 5,
+    "tier3": 15
+  },
+  "judge": "google/gemini-3.1-pro-preview",
+  "judge_override": "same v3 case009 criterion",
+  "additional_cap_usd": "5.00",
+  "parallel_cases": 2
+}

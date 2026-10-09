@@ -7,7 +7,7 @@ Changes against runner._run_case, all announced to the doctor in the prompt:
 - judge: Gemini 3.1 Pro, temperature 0 (Opus arbitration is a separate offline step).
 Everything else (10 external turns, tools, matcher, scoring prompt) is identical to the earlier runs.
 """
-import ast,fcntl,json,time
+import ast,fcntl,hashlib,json,time
 from decimal import Decimal
 from pathlib import Path
 from .client import AuditLog
@@ -132,6 +132,24 @@ class V3Tools:
         if not self.pending:return ''
         lines=[f"- {p['tool']} {json.dumps(p['request'],ensure_ascii=False)}: {p['result']}" for p in self.pending];self.pending=[]
         return '[Results of the tests ordered earlier, now available]\n'+'\n'.join(lines)
+
+def record_released_results(log,protocol,enabled,text,turn,exchanges,delivery):
+    """Opt-in v4 audit only; text is the unchanged release() return value.
+
+    This event is for display/audit, never an added clinical reviewer input.
+    Preserve one immutable delivery per execution point on hash-identical replay.
+    """
+    if protocol!='v4' or not enabled or not text:return
+    slot={'turn':turn,'exchanges':exchanges,'delivery':delivery}
+    digest=hashlib.sha256(text.encode()).hexdigest()
+    prior=[e for e in log.events() if e.get('event')=='released_results'
+           and all(e.get(k)==v for k,v in slot.items())]
+    if prior:
+        if len(prior)!=1 or prior[0].get('text')!=text or prior[0].get('content_sha256')!=digest:
+            raise RuntimeError('Released-results audit changed at the same delivery point')
+        return
+    log.append({'event':'released_results','text':text,'content_sha256':digest,
+                **slot,'clinical_input_unchanged':True,'audit_display_only':True})
 
 def run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False,guard=None,min_exchanges=MIN_EXCHANGES,exam_first=False,cascade=None,delay_results=True,consult=None,prereqs=False,judge_override=False,patient_model=PATIENT_MODEL,strict_exams=False,opening=0,extras=None):
     locks=root/'logs/case_locks';locks.mkdir(parents=True,exist_ok=True)
@@ -313,9 +331,11 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
                 m2=consult_map(client,log,consult,complaint,exam_text2,history=history_text(patient_messages))
                 if m2:cmap=m2;refreshed='\n\n[Updated '+format_map(cmap).lstrip('[')
                 if m2 and tools.policy is not None:tools.policy.set_endorsed([n for t in m2['decisive'] for n in t['test_names']])
+            record_released_results(log,protocol,bool(extras.get('record_released_results')),released,turn,tools.exchanges,'patient_reply')
             doctor.append({'role':'user','content':(p.get('content') or '')+('\n\n'+released if released else '')+refreshed})
         else:  # silent turn: never deadlock on pending results
             released=tools.release()
+            record_released_results(log,protocol,bool(extras.get('record_released_results')),released,turn,tools.exchanges,'silent_turn')
             doctor.append({'role':'user','content':released or 'Please speak to the patient or use a tool.'})
     if final is None:return operational('10-turn admission limit',turn,ntools)
     return finish(final,turn,ntools)

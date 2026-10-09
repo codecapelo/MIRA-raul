@@ -1,0 +1,24 @@
+{
+  "software_tests_passed": 238,
+  "software_tests_failed": 0,
+  "after_evaluation_logging_opt_in": true,
+  "clinical_inference_after_ten_terminals": 0,
+  "browser_checks": [
+    "Play/Pause",
+    "Reset",
+    "Speed100x",
+    "SeekEnd exact terminal"
+  ],
+  "historical_hashes": {
+    "canonical": {
+      "present": 978,
+      "divergent": 0
+    },
+    "managed": {
+      "present": 888,
+      "missing_ignored": 90,
+      "divergent": 0
+    }
+  },
+  "note": "A dry-run unit test originally depended on live terminal state; isolated its terminal fixture before final238pass. Existing replay_events ResourceWarning persists, no test failure. Optional logging is not part of the evaluated condition."
+}

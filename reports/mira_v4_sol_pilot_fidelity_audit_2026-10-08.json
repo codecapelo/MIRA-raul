@@ -1,0 +1,368 @@
+{
+  "audit_date": "2026-10-08",
+  "scope": "Read-only audit of two public v4 pilot terminal traces; no code/input/HEAD changes, inference calls or private cases.",
+  "cases": [
+    {
+      "case_id": "case_001",
+      "model": "gpt-6.1-sol",
+      "protocol": "v4",
+      "commit": "25471d1e13eeff8ba03db2115cd8591581288162",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "proposal_dx": "MRSA-associated coronary stent infection with rapidly enlarging coronary pseudoaneurysm, complicated by cardiac tamponade and cardiogenic shock, with probable purulent pericarditis.",
+      "dx_agent": "Probable MRSA coronary stent infection causing an infected coronary pseudoaneurysm with stent disruption and associated purulent pericarditis, producing cardiac tamponade and shock.",
+      "cascade_path": "glm>blind:gpt-6.1-sol>followup+sweep>accept_blind",
+      "patient_exchanges": 1,
+      "review_exchanges": 1,
+      "cost_usd": "0.01788875",
+      "cost_openrouter_deploy_usd": "0.00722275",
+      "latency_s": 201.24937725,
+      "tool_errors": 0,
+      "subscription_usage": {
+        "prompt_tokens": 157148,
+        "completion_tokens": 3984,
+        "cache_input_tokens": 0
+      },
+      "subscription_monetary_cost_usd": null,
+      "exam_cost_relative": {
+        "accounting_version": "relative-exam-units-v4-2026-10-08",
+        "unit": "artificial_relative_simulation_unit",
+        "unit_definition": {
+          "1": 1,
+          "2": 5,
+          "3": 15
+        },
+        "relative_units": 26,
+        "total_performed": 4,
+        "tier_counts": {
+          "1": 1,
+          "2": 2,
+          "3": 1
+        },
+        "actor_units": {
+          "doctor": 26
+        },
+        "attempts": 15,
+        "unavailable": 6,
+        "duplicates": 2,
+        "ambiguous": 0,
+        "gated": 3,
+        "unresolved_findings": 0,
+        "malformed_outputs": 0,
+        "failed_calls": 0,
+        "charges": [
+          {
+            "source_fact_id": "ecg_008",
+            "name": "Transthoracic echocardiography",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "microbiology_013",
+            "name": "Blood cultures",
+            "tier": 1,
+            "relative_units": 1,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "procedure_result_011",
+            "name": "Pericardiocentesis",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "imaging_009",
+            "name": "Coronary angiography",
+            "tier": 3,
+            "relative_units": 15,
+            "actor": "doctor"
+          }
+        ]
+      },
+      "trace_path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+      "trace_sha256": "bc791bbc2ca83e75547fe53322ea07dd849d13d4b5e17d4a4debeddb76c48c12",
+      "terminal_line": 72,
+      "patient_response_audits": [
+        {
+          "trace_line": 31,
+          "role": "patient",
+          "word_count": 20,
+          "manual_factual_audit": "No clearly invented clinical fact observed; unsupported answers remain unknown. Unknown phrasing may imply memory uncertainty rather than record absence."
+        },
+        {
+          "trace_line": 38,
+          "role": "patient_review",
+          "word_count": 24,
+          "manual_factual_audit": "No clearly invented clinical fact observed; unsupported answers remain unknown. Unknown phrasing may imply memory uncertainty rather than record absence."
+        }
+      ],
+      "finding_source_checks": [
+        {
+          "trace_line": 5,
+          "name": "Transthoracic echocardiography",
+          "source_fact_ids": [
+            "ecg_008"
+          ],
+          "literal_source_match": true,
+          "source_availability": [
+            "time_zero"
+          ]
+        },
+        {
+          "trace_line": 9,
+          "name": "Blood cultures",
+          "source_fact_ids": [
+            "microbiology_013"
+          ],
+          "literal_source_match": true,
+          "source_availability": [
+            "time_zero"
+          ]
+        },
+        {
+          "trace_line": 16,
+          "name": "Pericardiocentesis",
+          "source_fact_ids": [
+            "procedure_result_011"
+          ],
+          "literal_source_match": true,
+          "source_availability": [
+            "time_zero"
+          ]
+        },
+        {
+          "trace_line": 16,
+          "name": "Coronary angiography",
+          "source_fact_ids": [
+            "imaging_009"
+          ],
+          "literal_source_match": true,
+          "source_availability": [
+            "after_procedure:pericardiocentesis"
+          ]
+        }
+      ],
+      "exam_cost_events": 13,
+      "event_units_sum": 26,
+      "served_model_attestation_status": [
+        "requested_only; CLI did not attest served model"
+      ]
+    },
+    {
+      "case_id": "case_002",
+      "model": "gpt-6.1-sol",
+      "protocol": "v4",
+      "commit": "25471d1e13eeff8ba03db2115cd8591581288162",
+      "judge_correct": false,
+      "proposal_correct": false,
+      "proposal_dx": "Atrial standstill with complete atrioventricular block and a slow junctional escape rhythm, complicated by right-sided heart failure",
+      "dx_agent": "Atrial standstill with complete atrioventricular block and a slow junctional escape rhythm, causing symptomatic bradycardia and contributing to predominantly right-sided heart failure; the underlying atrial disease remains unconfirmed.",
+      "cascade_path": "glm>blind:gpt-6.1-sol>followup+sweep>accept_blind",
+      "patient_exchanges": 2,
+      "review_exchanges": 1,
+      "cost_usd": "0.01371400",
+      "cost_openrouter_deploy_usd": "0.00274800",
+      "latency_s": 175.71190745799998,
+      "tool_errors": 0,
+      "subscription_usage": {
+        "prompt_tokens": 149826,
+        "completion_tokens": 3379,
+        "cache_input_tokens": 0
+      },
+      "subscription_monetary_cost_usd": null,
+      "exam_cost_relative": {
+        "accounting_version": "relative-exam-units-v4-2026-10-08",
+        "unit": "artificial_relative_simulation_unit",
+        "unit_definition": {
+          "1": 1,
+          "2": 5,
+          "3": 15
+        },
+        "relative_units": 27,
+        "total_performed": 5,
+        "tier_counts": {
+          "1": 2,
+          "2": 2,
+          "3": 1
+        },
+        "actor_units": {
+          "doctor": 27
+        },
+        "attempts": 12,
+        "unavailable": 7,
+        "duplicates": 0,
+        "ambiguous": 0,
+        "gated": 0,
+        "unresolved_findings": 0,
+        "malformed_outputs": 0,
+        "failed_calls": 0,
+        "charges": [
+          {
+            "source_fact_id": "ecg_005",
+            "name": "Electrocardiogram",
+            "tier": 1,
+            "relative_units": 1,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "ecg_009",
+            "name": "Transthoracic echocardiography",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "lab_007",
+            "name": "Troponin",
+            "tier": 1,
+            "relative_units": 1,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "imaging_014",
+            "name": "Cardiac MRI",
+            "tier": 3,
+            "relative_units": 15,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "ecg_015",
+            "name": "Electrophysiology study",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "doctor"
+          }
+        ]
+      },
+      "trace_path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+      "trace_sha256": "fc5de670687b9c934912e46995e988967911fbd6a5bfcede9dc575b800b33aae",
+      "terminal_line": 43,
+      "patient_response_audits": [
+        {
+          "trace_line": 4,
+          "role": "patient",
+          "word_count": 49,
+          "manual_factual_audit": "No clearly invented clinical fact observed; unsupported answers remain unknown. Unknown phrasing may imply memory uncertainty rather than record absence."
+        },
+        {
+          "trace_line": 6,
+          "role": "patient",
+          "word_count": 25,
+          "manual_factual_audit": "No clearly invented clinical fact observed; unsupported answers remain unknown. Unknown phrasing may imply memory uncertainty rather than record absence."
+        },
+        {
+          "trace_line": 28,
+          "role": "patient_review",
+          "word_count": 60,
+          "manual_factual_audit": "No clearly invented clinical fact observed; unsupported answers remain unknown. Unknown phrasing may imply memory uncertainty rather than record absence."
+        }
+      ],
+      "finding_source_checks": [
+        {
+          "trace_line": 9,
+          "name": "Electrocardiogram",
+          "source_fact_ids": [
+            "ecg_005"
+          ],
+          "literal_source_match": true,
+          "source_availability": [
+            "time_zero"
+          ]
+        },
+        {
+          "trace_line": 9,
+          "name": "Transthoracic echocardiography",
+          "source_fact_ids": [
+            "ecg_009"
+          ],
+          "literal_source_match": true,
+          "source_availability": [
+            "time_zero"
+          ]
+        },
+        {
+          "trace_line": 15,
+          "name": "Troponin",
+          "source_fact_ids": [
+            "lab_007"
+          ],
+          "literal_source_match": true,
+          "source_availability": [
+            "time_zero"
+          ]
+        },
+        {
+          "trace_line": 18,
+          "name": "Cardiac MRI",
+          "source_fact_ids": [
+            "imaging_014"
+          ],
+          "literal_source_match": true,
+          "source_availability": [
+            "time_zero"
+          ]
+        },
+        {
+          "trace_line": 23,
+          "name": "Electrophysiology study",
+          "source_fact_ids": [
+            "ecg_015"
+          ],
+          "literal_source_match": true,
+          "source_availability": [
+            "followup"
+          ]
+        }
+      ],
+      "exam_cost_events": 6,
+      "event_units_sum": 27,
+      "served_model_attestation_status": [
+        "requested_only; CLI did not attest served model"
+      ]
+    }
+  ],
+  "incidents": [
+    {
+      "id": "temporal_followup_release",
+      "case": "case_002",
+      "trace_line": 23,
+      "source": "cases/case_002/investigations.json: ecg_015",
+      "finding": "Electrophysiology study",
+      "description": "Source available_at followup and prerequisites followup; unavailable_for_immediate_care false. V3 procedure guard ignores plain followup prerequisite, so result was delivered during the acute pilot. Literal data, compressed source timeline. Both proposal and final use this finding."
+    },
+    {
+      "id": "generic_prerequisite_auto_retry",
+      "case": "case_001",
+      "trace_line": 64,
+      "description": "Reviewer requested coronary tissue/stent culture. Generic tissue prerequisite offered Pericardiocentesis or Cardiac device surgical exploration. Automatic prerequisite resolver chose already-delivered pericardiocentesis twice and never satisfied the culture request. No new result or relative charge, but redundant action and anatomically questionable generic prerequisite hint."
+    },
+    {
+      "id": "historical_culture_after_repeat_request",
+      "case": "case_001",
+      "trace_line": 9,
+      "description": "Repeat blood culture request returns literal known MRSA bacteremia; response explicitly says sampling time and susceptibility unknown. Historical source fact, not demonstrated new culture collection/result."
+    },
+    {
+      "id": "patient_record_voice",
+      "case": "case_001",
+      "trace_line": 38,
+      "description": "Reviewer patient response says exposures were not mentioned. No invented exposure, but phrasing reveals record-based simulation instead of ordinary recollection."
+    }
+  ],
+  "aggregates": {
+    "terminals": 2,
+    "judge_correct": 1,
+    "proposal_correct": 1,
+    "patient_responses_audited": 5,
+    "findings_checked": 9,
+    "literal_source_matches": 9,
+    "openrouter_total_usd": "0.03160275",
+    "openrouter_deploy_usd": "0.00997075",
+    "relative_units": 53,
+    "unique_performed_source_facts": 9,
+    "subscription_monetary_cost_known": false,
+    "medical_review_performed": false
+  }
+}

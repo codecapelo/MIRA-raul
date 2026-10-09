@@ -224,6 +224,7 @@ class LauncherTest(unittest.TestCase):
              patch.object(launcher, 'account_snapshot') as account, \
              patch.object(launcher, 'work') as work, \
              patch.object(launcher, 'readonly_ledger') as ledger, \
+             patch.object(launcher, 'terminals', return_value=[]), \
              patch('builtins.print') as printed:
             launcher.main()
         account.assert_not_called()
@@ -231,7 +232,7 @@ class LauncherTest(unittest.TestCase):
         ledger.assert_not_called()
         output = json.loads(printed.call_args.args[0])
         self.assertTrue(output['requests_not_sent'])
-        self.assertEqual(len(output['pending']), 2)
+        self.assertEqual(output['pending'], ['case_001', 'case_002'])
         self.assertIn('/sol_working/run1', output['root'])
 
 
