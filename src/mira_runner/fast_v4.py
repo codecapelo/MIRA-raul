@@ -79,6 +79,16 @@ def actual_findings(output):
     return out
 
 
+def actionable_missing(output):
+    """A structured unavailable study, never cost notes or workflow locks."""
+    if not isinstance(output,str):return False
+    try:value=json.JSONDecoder().raw_decode(output.lstrip())[0]
+    except ValueError:return False
+    if not isinstance(value,dict):return False
+    if value.get('not_available_in_this_case'):return True
+    return any(actionable_missing(item.get('output')) for item in value.get('atomic_scope_results',[]) if isinstance(item,dict))
+
+
 def finding_identity(finding):
     return _json({k: finding.get(k) for k in ('name', 'value')})
 
@@ -204,11 +214,12 @@ class _ReleaseToolAdapter:
 class FastReviewCascade:
     rescue = True
 
-    def __init__(self, patient, observations, *, review_module=None, second_round=False):
+    def __init__(self, patient, observations, *, review_module=None, second_round=False, review_missing=False):
         self.patient = patient
         self.observations = observations
         self.review_module = review_module or load_offline_review(Path(__file__).resolve().parents[2])
         self.second_round = bool(second_round)
+        self.review_missing = bool(review_missing)
 
     def _initial_evidence(self, events):
         # Existing initial-review marker freezes the pre-follow-up boundary on
@@ -345,12 +356,17 @@ class FastReviewCascade:
         seen = {finding_identity(f) for e in original_events[:boundary]
                 if e.get('event') == 'tool' for f in actual_findings(e.get('output'))}
         new = [f for f in first_findings if finding_identity(f) not in seen]
-        if self.second_round and new:
+        missing = any(actionable_missing(item.get('output')) for e in original_events if e.get('event')=='fast_followup_result' and e.get('phase')=='initial' for item in e.get('obtained_outputs',[]))
+        if self.second_round and (new or self.review_missing and missing):
             stats['path'].append('blind_post_followup:' + SOL)
-            post_system = SOL_SYSTEM + ' This is the final opportunity to request information: at most TWO patient questions and TWO actual studies in total.'
+            post_system = SOL_SYSTEM + ' This is the final opportunity to request information: at most TWO patient questions and TWO named studies in total. A requested unavailable study is not a negative result. If a different clinically appropriate technique can answer the unresolved question, you may request it, considering urgency and risk. Do not repeat an unavailable or already completed request; do not invent availability or findings.'
             post = self._review(ctx, 'sol_post_followup', SOL, post_system, evidence, validate_sol_review)
             post_questions, deferred_questions = post['missing_questions'][:2], post['missing_questions'][2:]
             post_tests, post_deferred = normalize_reviewer_tests(post['missing_tests'], max_atomic=2)
+            prior_orders={(t['tool'],name.strip().casefold()) for t in tests for name in t['test_names']}
+            duplicates=[t for t in post_tests if (t['tool'],t['test_names'][0].strip().casefold()) in prior_orders]
+            post_tests=[t for t in post_tests if t not in duplicates]
+            post_deferred+=duplicates
             if post_questions or post_tests:
                 stats['path'].append('second_bounded_followup')
                 extra, _ = self._follow_up(ctx, post_questions, post_tests, phase='second',

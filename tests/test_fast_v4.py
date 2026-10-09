@@ -200,6 +200,18 @@ class FastReviewTest(unittest.TestCase):
         result=next(e for e in self.log.events() if e['event']=='fast_followup_result')
         self.assertEqual(len(result['obtained_outputs']),3)
 
+    def test_unavailable_study_allows_one_bounded_alternative_review(self):
+        self.cascade=FastReviewCascade(self.patient,[],review_module=self.module,second_round=True,review_missing=True)
+        tool=FakeTool();tool.execute=lambda name,args: json.dumps({'not_available_in_this_case':['Synthetic study']})+'\nEstimated cost: 5'
+        self.ctx['tools']=FakeOuterTool(tool)
+        first={**SOL_REVIEW,'missing_tests':[{'tool':'request_radiology','test_names':['Synthetic study']}]}
+        post={**SOL_REVIEW,'missing_tests':[{'tool':'request_radiology','test_names':['Synthetic study']}]}
+        self.client.call.side_effect=[{'content':json.dumps(first)},{'content':json.dumps(post)},{'content':json.dumps(ASTRA_REVIEW)}]
+        self.cascade(self.ctx)
+        self.assertEqual(self.client.call.call_count,3)
+        self.assertEqual(len(self.ctx['tools'].execute_calls),1)
+        self.assertNotIn('SOL_PRIVATE_DIAGNOSIS',self.client.call.call_args_list[1].args[1][1]['content'])
+
     def test_actual_findings_detector_structured_only_and_atomic_results(self):
         finding = {'name': 'Synthetic finding', 'value': 'Literal value'}
         result = json.dumps({'findings': [finding]}) + '\nEstimated cost: 5'

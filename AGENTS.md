@@ -119,3 +119,6 @@ Fast1 concluída9/10,US$0.19446700, preservar todos os terminais. Não libera fe
 
 ## Piloto fast2 interrompido antes de ampliação
 Dois terminais,1/2aceitos,US$0.04537300. Negativo001preservado: pré-requisito não executado porque nota de custo invalidava json.loads. Fast3 corrige parsingprefixoJSON opt-in mantendo outputs completos e reforça história de procedimentos/dispositivos/medicamentos recentes genericamente. Novos dez públicos emfast3; sóapós10/10osdezfechados namesmaHEAD. Não completar fast2 nem rerodar seus terminais. Todos custos/atores no mesmoledger5.
+
+## Continuidade fast4 —09/10
+Fast3 piloto1/2,US$0.04295675,semampliação. Preservar negativo como diagnóstico, não invalidar/zerar. Fast4 é próximo braço genérico: únicoSol adicional quando há achado novo OU exame indisponível estruturado, alternativas sem repetir pedido igual, mesmos limites4+2/3CLI, referencia/juiz excluídos. Completar todos10públicosfast4 e sóapós10/10os10fechadosnamesmaHEAD; userautorizouotimizar,cap5mantido. Não retomarfast2/3 nemduplicar terminais.

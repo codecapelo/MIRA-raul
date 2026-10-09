@@ -1,0 +1,325 @@
+{
+  "frozen_condition": {
+    "condition": "v4_fast_blind_sol_astra",
+    "doctor": "google/gemini-3.1-flash-lite-preview",
+    "patient": "google/gemini-3.1-flash-lite-preview",
+    "reviewers": [
+      "gpt-6.1-sol",
+      "gpt-6-astra"
+    ],
+    "clinical_params": {
+      "min_exchanges": 2,
+      "exam_first": true,
+      "delay_results": false,
+      "consult": null,
+      "prereqs": true,
+      "judge_override": true,
+      "patient_model": "google/gemini-3.1-flash-lite-preview",
+      "strict_exams": true,
+      "opening": 5
+    },
+    "extras": {
+      "protocol": "v4",
+      "literal_components": true,
+      "order_policy": true,
+      "admit_min": 1,
+      "emergency_voice": true,
+      "speech_format": true,
+      "record_released_results": true,
+      "fast_atomic_imaging": true,
+      "fast_second_review": true,
+      "variant": "fast_review_blind_sequential"
+    },
+    "role_policy": {
+      "doctor": {
+        "max_tokens": 4096,
+        "reasoning": {
+          "effort": "minimal"
+        }
+      },
+      "patient": {
+        "max_tokens": 512,
+        "reasoning": {
+          "effort": "minimal"
+        }
+      },
+      "patient_review": {
+        "max_tokens": 1024,
+        "reasoning": {
+          "effort": "minimal"
+        }
+      }
+    },
+    "config": {
+      "budget_usd": "5.00",
+      "models": {
+        "google/gemini-3.1-flash-lite-preview": {
+          "provider": "google-ai-studio",
+          "provider_name": "Google AI Studio",
+          "pricing_verified": true,
+          "context_tokens": 0,
+          "context_limit": 1048576,
+          "max_tokens": 8192,
+          "usd_per_million": {
+            "input": 0.25,
+            "output": 1.5
+          },
+          "supports_logprobs": false,
+          "supported_parameters": [
+            "reasoning",
+            "include_reasoning",
+            "max_tokens",
+            "temperature",
+            "top_p",
+            "seed",
+            "response_format",
+            "structured_outputs",
+            "tool_choice",
+            "tools",
+            "reasoning_effort",
+            "stream"
+          ]
+        },
+        "google/gemini-3.1-pro-preview": {
+          "provider": "google-ai-studio",
+          "provider_name": "Google AI Studio",
+          "pricing_verified": true,
+          "context_tokens": 0,
+          "context_limit": 1048576,
+          "max_tokens": 24576,
+          "usd_per_million": {
+            "input": 2.0,
+            "output": 12.0
+          },
+          "supports_logprobs": false,
+          "supported_parameters": [
+            "include_reasoning",
+            "max_tokens",
+            "reasoning",
+            "reasoning_effort",
+            "response_format",
+            "seed",
+            "structured_outputs",
+            "temperature",
+            "tool_choice",
+            "tools",
+            "top_p"
+          ],
+          "note": "Frozen final/proposal benchmark judge after the encounter; never medical interaction."
+        },
+        "gpt-6.1-sol": {
+          "provider": "codex-chatgpt-subscription",
+          "provider_name": "Codex ChatGPT subscription",
+          "supports_logprobs": false,
+          "pricing_verified": false,
+          "max_tokens": 24576,
+          "transport": "codex_subscription_cli_json_action",
+          "effort": "medium",
+          "note": "No OpenRouter billing; subscription monetary cost unknown; served model identity may not be exposed by CLI"
+        },
+        "gpt-6-astra": {
+          "provider": "codex-chatgpt-subscription",
+          "provider_name": "Codex ChatGPT subscription",
+          "supports_logprobs": false,
+          "pricing_verified": false,
+          "max_tokens": 24576,
+          "transport": "codex_subscription_cli_json_action",
+          "effort": "medium",
+          "note": "No OpenRouter billing; subscription monetary cost unknown; served model identity may not be exposed by CLI"
+        }
+      },
+      "streaming_note": "OpenRouter standard SSE for conversation roles only; wait usage and DONE, interrupted streams remain uncertain."
+    },
+    "code_sha256": {
+      "config/judge_overrides_v3.json": "fdee85321dabb531465d842e37243de55f1f8b8ace2b1cc3771eff5a6cd8428f",
+      "config/v4_fast.json": "e8fd0a6348a3ffa2570e57bea0bb916e1f1dde18fa90ecfdd3ec427db9455b14",
+      "scripts/review_v4_working.py": "10549a3cf178d4dd640ed404c72acd3ffd7bb11803f99093a48425691eb1af10",
+      "scripts/run_v4_fast.py": "4bff10fae4402e33fb805c7d64e058d699319225f433fe6fd474a62825d3e185",
+      "src/mira_runner/__init__.py": "0855df61fa3b4983a487672f600076e7f00a62c00e43d698b50e78f2f524e958",
+      "src/mira_runner/atomic_imaging.py": "c1a3e9a166cabaeb80e73b25108a26aa17c4e8f4ae35552ce69a44c02646df8b",
+      "src/mira_runner/budget.py": "00756b70f29d957e6d6c8b295125882b5f2e5d5fd5fa481b54396bca4addb1e0",
+      "src/mira_runner/cascade.py": "6022ec5c752ff698045d35e42a5b144c6a2b165a32b7291c07e1409b7be638bc",
+      "src/mira_runner/chart_note.py": "8bdd2e8006e2e3e5ce75762972f805bf55dac04c2d55d56d7824f31ef6d44fbc",
+      "src/mira_runner/cli_client.py": "e1e153c4ede2d7b39d43a60e3acbfa1da34481839ebb9833b2ea938ea9fada86",
+      "src/mira_runner/client.py": "a118eb6cf0a7a672b68a04970684d94d703a62753f2ebc09b55dee34c737e8ab",
+      "src/mira_runner/consult.py": "a947018286dbb5694b4ce23c506b4f449935c16b152e0c4377a3241a771ab27d",
+      "src/mira_runner/exam_costs.py": "d83485a643e8005b1dc325af0e4fd0924aac10010dfd87c9bb611fa77ee56c70",
+      "src/mira_runner/exam_policy.py": "b34b178208abd027a31cc2b225303691951e086e4bdb167162f2dc542dbe4bc9",
+      "src/mira_runner/fast_client.py": "9ee25a470fb80c0155ad0be8ea50d9831e0725bfcdfab78aa789727a0b34fed3",
+      "src/mira_runner/fast_v4.py": "daa37322a6e6f3e35001956bbf45e2b6f14d2766adac4b9c5f3ea67bece47012",
+      "src/mira_runner/jef.py": "c7fc82fcf542765e1da832b6ce2679e14aa5d7b91160ab57e8788b60933dfe70",
+      "src/mira_runner/matcher_v3.py": "d9a5b1d90d8a98b7a4462acca3a0787646491dfbe1ce300fdda0ed91d96fbb1f",
+      "src/mira_runner/policy_v4.py": "0d37d7b3e4dc60a10e5d41362f21cc7ea08bff4935319f9e7fac6c8a90a77d9a",
+      "src/mira_runner/runner.py": "9b7a66c1ba520a020c2295c5ca5ef1ca99094da9f22879c40955b915c2fb4a00",
+      "src/mira_runner/runner_v3.py": "f1ae4277fb9c783e7625fc1f8b9610dd8fdddb1b04dfa1f335b357f95596ec60",
+      "src/mira_runner/semantics.py": "3bcf2b62496b805d86e940d061af82a42f63fe155f1cebb1da1dc5010b1051f0",
+      "src/mira_runner/tools.py": "77ad84af532af19ac4a678fb61f123fbd1766b1b0a542fa2151c15c555af1e34",
+      "src/mira_runner/tools_v3.py": "bdfa907d45286919e44c9ea8f7c30d6221ea73291f6ffba1eddd66edb24a7a2d",
+      "src/mira_runner/tools_v4.py": "a77dd926edf4460ec4f3c9c06d001e7307c70211179dd1651ddb039aab388e8f",
+      "src/mira_runner/v4.py": "58dbd8d2e2fedf576081ba468f623c171e93b962e33e7dfc73691358fa42a628",
+      "src/mira_runner/working_v4.py": "ab0686372c0507ff9567f071520cb78a860b4d2a385996e09f6e76a1ffda3f8d",
+      "upstream/onprem-medical-agents/src/MimicEnums/BloodEnum.py": "2aa1ab4a7456b55ec041e41e22b2be2bc293712e377aaf560c1309aab37f660b",
+      "upstream/onprem-medical-agents/src/MimicEnums/BloodEnumPE.py": "8f5cb132b87ec9538558e75b1bb4ca9502bf2b74cb1c10377e308e66a499fe62",
+      "upstream/onprem-medical-agents/src/MimicEnums/LabEventsEnums.py": "212ad0c07444e1a5c4f81cf112a974f409d1ba6098bb097eb33a552bbf3cad06",
+      "upstream/onprem-medical-agents/src/MimicEnums/LabEventsEnumsLong.py": "4f89d4fa8dfdb1be40505cc582df256de39500242e7b34f37af652478438a28c",
+      "upstream/onprem-medical-agents/src/MimicEnums/MicrobiologyEnum.py": "0cff449c9d9edb4f38e79c0cd8b9bc31b53476cc512bfe54cc788223f13f2a0e",
+      "upstream/onprem-medical-agents/src/MimicEnums/PeriodEnum.py": "b9e0307369485fbc3a9f0e45dd7b3c7a2560ed05422833fe4b5aa488e02f15e7",
+      "upstream/onprem-medical-agents/src/MimicEnums/RadiologyModalityEnum.py": "54a236c4826ad253a27975e974b6a3ad9aef0960a1258edd44e3da7620dada56",
+      "upstream/onprem-medical-agents/src/MimicEnums/RadiologyRegionEnum.py": "f330deb958e1a868c88213396dfa9b21fc18405954e18cba8e0a511a38086518",
+      "upstream/onprem-medical-agents/src/MimicEnums/RouteEnum.py": "ad0ddbb2231096da732fe0de7839f85d8d4aa479d2064a63b9ecb12edaa17099",
+      "upstream/onprem-medical-agents/src/MimicEnums/UrineEnum.py": "584c727f0e5d2b3050ff077b6aa813e8a333fdc5a8deb319c4babaa12bc5a4e9",
+      "upstream/onprem-medical-agents/src/MimicEnums/_60MicroBiologyEnum.py": "fb6da008841b1dc8c22bb6467fd80297a8137933b69c98dfeecf804c46fb1530",
+      "upstream/onprem-medical-agents/src/MimicEnums/__init__.py": "63d02a72ef6f0231c507a03e00610e2d76ab3422dcbcd15892de9471976e1463",
+      "upstream/onprem-medical-agents/src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "upstream/onprem-medical-agents/src/confidence/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "upstream/onprem-medical-agents/src/confidence/analysis.py": "c0c18ae40c4875816a8981e903d51c19b3936f3c39e420569a8157baa3ce1381",
+      "upstream/onprem-medical-agents/src/confidence/data_loader.py": "d70f0488a35f588761b9d76f8f6c91c0af25888c6942b42d8231485686797d50",
+      "upstream/onprem-medical-agents/src/confidence/feature_engineering.py": "fc208bbf5907026d02ed7b47051fa0c2602cac84cb6c5c3e1cde55055f98f31c",
+      "upstream/onprem-medical-agents/src/confidence/features/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "upstream/onprem-medical-agents/src/confidence/features/behavioral.py": "c84c8fb481eb192b71de7ab1659ce6c0d4e2ab4bbf0489899c679cd5932ddd01",
+      "upstream/onprem-medical-agents/src/confidence/features/expressed.py": "da60cd5dc7399a991650d13c0916d20c5fd0f207b512880166b3a6669815b22f",
+      "upstream/onprem-medical-agents/src/confidence/features/internal.py": "7197532cafa41ebba1f45e665d3fe909b37f3e1888a16fc4c9df9fc262d78332",
+      "upstream/onprem-medical-agents/src/confidence/features/reported.py": "51295f6eeb561d440cef654d87c780162cb65f0dad07b28cb6d65a0f9b85724f",
+      "upstream/onprem-medical-agents/src/configs/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "upstream/onprem-medical-agents/src/configs/agent_config.py": "81d818fc989e7147ef84995af9d1d5ef3d0d35ebb28804abb0e3bc186535d919",
+      "upstream/onprem-medical-agents/src/conv.py": "bf0bd6ab5c8c8ac96a03beae98ddb9b0838a6f262da16bb94e01da6feae9a02f",
+      "upstream/onprem-medical-agents/src/dataset/__init__.py": "6dfbd3ba5449ebda62f59f4e7e3e57ac1a17994f2e11fb811158c91963b65546",
+      "upstream/onprem-medical-agents/src/dataset/mimic_dataset.py": "59379abdcf7838436dc2663bf968a92c2798fdcc6a0a355e999714ff46802f62",
+      "upstream/onprem-medical-agents/src/dataset/vivabench_dataset.py": "09dcfd3f4637d78efce82769b8440218f57bc1f5f1c52fa8b2828f947860e2bd",
+      "upstream/onprem-medical-agents/src/eval/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "upstream/onprem-medical-agents/src/eval/evaluation_input.py": "ea7cfe99635f52a52f7e734e06c527c2f6b6c97e0cb6357145a343fbee384d9e",
+      "upstream/onprem-medical-agents/src/eval/evaluation_input_vivabench.py": "bc7735e917350ee9d1437a48492c9489a8dfb726d5482f37302671e4f981548f",
+      "upstream/onprem-medical-agents/src/eval/evaluators.py": "125c33cadec466fe5483bbeb63d3d0c15e6ecaca4d590a553ff5ba0bdacab290",
+      "upstream/onprem-medical-agents/src/eval/metrics.py": "967c02e666f64ba15ae7d375b3dad4d20ce29809eb00b38ea1816fea66b1ba3f",
+      "upstream/onprem-medical-agents/src/eval/prompt_builders.py": "2c4d5b7922719ae716df55bd0df88444d93fc1f636ac2416e0ce14462446cc64",
+      "upstream/onprem-medical-agents/src/eval/utils.py": "64746a992faa8d38c977c1cbfb86d9c044af22dbe235d32c7331bdf29612d2d1",
+      "upstream/onprem-medical-agents/src/eval/utils_vivabench.py": "067cf2bdc836a052b0b55df2467d5cd9e09a87dc0aeca6fb8e1094e039044886",
+      "upstream/onprem-medical-agents/src/evaluate.py": "2dda3afedcaee9da880535423e4205771fac31545038b3809468487d6cfdb7c9",
+      "upstream/onprem-medical-agents/src/logging_config.py": "3513e2ece07a2b1bc40a1fcbb38c339a66c117ee5bbb1edb481ab933536c18a7",
+      "upstream/onprem-medical-agents/src/merge_runs.py": "9a792d8df267907aa9ed7d34232ec7e6a28cbb9dd5c45d72cf8150691cd725c8",
+      "upstream/onprem-medical-agents/src/mes_collect.py": "f90d2fb6289a9e6ee2443a996b4e1716b1b80ccb1cf5f2f06e7a7c2bb7fca58c",
+      "upstream/onprem-medical-agents/src/multi_agents/__init__.py": "1c266a792227c2e266111391c2a51f23d5c79e791dda50f050d562eca1895b69",
+      "upstream/onprem-medical-agents/src/multi_agents/critic_agent.py": "462d19ff0373e730f33161eaf31acd56e820ca051a67b542f610b0ebcb18e7a6",
+      "upstream/onprem-medical-agents/src/multi_agents/executor_agent.py": "2762bdf66fe58fdd32d8d9147dc539232daaf1ee451bcbcb5571e2dca2b27b79",
+      "upstream/onprem-medical-agents/src/prompts.py": "738be2279ba9651c5b7349db15463c5a848afccb7e761dd71b2489eafa4f3ffe",
+      "upstream/onprem-medical-agents/src/prompts_vivabench.py": "196f2492ba18bdce12e942b4e4624f48c9cb37fab7e1200f2bced117b6a38530",
+      "upstream/onprem-medical-agents/src/qdrant_collection.py": "928eb68ac0f08d0cc227c993311069e779e0ea5e1aa04e5e283f96f6846ce3b2",
+      "upstream/onprem-medical-agents/src/simulate.py": "4b2e11c2e97836c87e98593090512373ec2b89b5942d231bdd49d590329fe5bf",
+      "upstream/onprem-medical-agents/src/simulate_critic.py": "3e4f0e4f2abdd1352e43601be898275ca946f25b560c21e2e66d9cb313d702c4",
+      "upstream/onprem-medical-agents/src/statistics_threshold.py": "335ba1a6f9f3ba0a70c6057e172ab3249e872576343f55eb3bbb0b14e8a2b83c",
+      "upstream/onprem-medical-agents/src/tools/__init__.py": "f8c18ca7f431565bee2ba08855477cee0e088c199cc0e91e51e619d4ca1c61e5",
+      "upstream/onprem-medical-agents/src/tools/tool_execs.py": "be70db571278a52203173d18945f5e2110f49847a6b746ea69f627e966c26404",
+      "upstream/onprem-medical-agents/src/tools/tool_handler.py": "f2dbdde1cfdb5400667f63a350af761df38a8f0feb1c1e3d9fee623640086c8f",
+      "upstream/onprem-medical-agents/src/tools/tool_mimic.py": "e0fc3598f08c97074676362ded5c0d87248e66ff4505f1b44ab205f6d791c93b",
+      "upstream/onprem-medical-agents/src/tools/tool_mimic_cdm.py": "972bc5218a71b0425ce5eaa5eabd055fff83651376a9a94cb9cafc23a778d804",
+      "upstream/onprem-medical-agents/src/tools/tool_observation.py": "b46552a43125808ebd60b54add56d599dea6b5c9a46e193c5945c4e86ff5fa7c",
+      "upstream/onprem-medical-agents/src/tools/tool_observation_cdm.py": "2969c6e89c03044ab7fe9438e9c8654cd9a868b6c79ec44e6648f35b507e0d0e",
+      "upstream/onprem-medical-agents/src/tools/tool_request.py": "774789a5905d18cc34b842d5837e6e7a3d6c0bc055face3c6d0b67beb6d886d6",
+      "upstream/onprem-medical-agents/src/tools/tool_vivabench.py": "f4eba76bcaa1cb700bbf2fed544df5e4f74f6b71a440f95275f73bfb7001bb4e",
+      "upstream/onprem-medical-agents/src/vis_confidence.py": "15fff93de5f026791f3a9e441ff01fb05b69dfd185015566f391a2bf974cd045"
+    },
+    "commit": "dc353c18466dfc7f2a667081995562812fe0c535",
+    "judge": "google/gemini-3.1-pro-preview",
+    "judge_params": {
+      "temperature": 0,
+      "top_p": 1,
+      "reasoning": {
+        "effort": "low"
+      }
+    },
+    "codex_effort": "medium",
+    "codex_transport": "codex_chatgpt_subscription_cli_json_action_v1",
+    "codex_transport_options": {
+      "diagnostics": true
+    },
+    "workers": 1,
+    "global_cap_usd": "5.00",
+    "account_initial_usage_usd": "18.965410033",
+    "retries_by_launcher": 0,
+    "subscription_monetary_cost_usd": null,
+    "public_case_ids": [
+      "case_001",
+      "case_002",
+      "case_003",
+      "case_004",
+      "case_005",
+      "case_006",
+      "case_007",
+      "case_008",
+      "case_009",
+      "case_010"
+    ],
+    "closed_case_ids": [
+      "case_011",
+      "case_012",
+      "case_013",
+      "case_014",
+      "case_015",
+      "case_016",
+      "case_017",
+      "case_018",
+      "case_019",
+      "case_020"
+    ],
+    "reference_policy": "Reference only opened by judge after final diagnosis"
+  },
+  "frozen_condition_sha256": "9b4e1a88897c84f7a580fe3724c4402fd111127eff83c5a3f1a5f9b8d55937c2",
+  "cohort": "public",
+  "cases": [
+    "case_001",
+    "case_002",
+    "case_003",
+    "case_004",
+    "case_005",
+    "case_006",
+    "case_007",
+    "case_008",
+    "case_009",
+    "case_010"
+  ],
+  "case_input_sha256": {
+    "case_001": {
+      "patient.json": "585b65124ecc4926522cc06cdba852ed262e118d604a4393345bdc7852fd2638",
+      "investigations.json": "c831ae7fba03258f3226931a9d80d6afbafc2c22e80b46b298e3b23b5babf02d"
+    },
+    "case_002": {
+      "patient.json": "44b3de002a436ac4661bcaddd66759fbe939d0b339ab153c7bf69c68d28f2e95",
+      "investigations.json": "1b2e06edb76d06db709161e1a8a44d8a245395dcbbe2cf5dc0990b1d6ddeec3e"
+    },
+    "case_003": {
+      "patient.json": "54a0db6d7a1fd7b026f1eaf5ef9198c3498ee98a254ec920d7182e1ea912dc77",
+      "investigations.json": "79dc6874f7b16f422438c5c4537e6ce441659a08415bcd1ff657acb7d3051bab"
+    },
+    "case_004": {
+      "patient.json": "eaf97d21072236f92a58e122f052f97cfc7fc11b6d627385e0cd7289736b16ff",
+      "investigations.json": "f41e84387d8c60ae6812a9c5a31a96764a3491749b785ab66049e5a65b77edc3"
+    },
+    "case_005": {
+      "patient.json": "789e11ede473e0ac33e45092001ed876fde3977ae44f2e0775439d5a32f92f56",
+      "investigations.json": "0b464f22e25a75a2980b3ea6d28802f9d2f1aa4f1ec029e4b05b543bb728d86c"
+    },
+    "case_006": {
+      "patient.json": "cd25327eea45b5dc6eb5c71e0edd59ccbd60b1c91648b5642d8dcae28f5b01cd",
+      "investigations.json": "8434c9db3998f99855fcfeefdb416a4dce4b4a3f735779fa6c0eb1a6092d8582"
+    },
+    "case_007": {
+      "patient.json": "5de6e7fadd24516b0de74c4169a707ba47bc012ba981612bfc042ca7d3ece781",
+      "investigations.json": "21c6887296052271de020a892ddac92603ee371a4619b73f87d525631d79b11b"
+    },
+    "case_008": {
+      "patient.json": "ae420e415f8db814fd6e499ce26a4c875fcbc3e6269887dbe3b468ceabc237db",
+      "investigations.json": "057dad91d4b3b6b44287a5967b9c3365e3348a677dca0b1abdb5ab05743c9953"
+    },
+    "case_009": {
+      "patient.json": "771a3e921ce4c9176d6261fc071fd429effb90cf5a8cad4b609e4871291902ef",
+      "investigations.json": "ee444cba1db87277a832ac518eb8346b2165735e32286297f48d136df06d4fc9"
+    },
+    "case_010": {
+      "patient.json": "0b8e23941fcbbc95919e5bd8e8de01780aa33fd292c57b272a3666170a2305b8",
+      "investigations.json": "51a3841147bbf3116bd6b86857f887e9993abcad2207bdde0b4e6191aef0c9f2"
+    }
+  },
+  "case_root": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/cases",
+  "run": "run1",
+  "closed_input_freeze_sha256": "0192fb0c38a05b43af22d00de32838cbfd4323c2b21f11054e05fed58b767b19"
+}
