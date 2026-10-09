@@ -11,7 +11,7 @@ from .cli_client import HybridClient
 FAST_MODEL = 'google/gemini-3.1-flash-lite-preview'
 SPEECH_ROLES = {'doctor', 'patient', 'patient_review'}
 FAST_SPEECH = ('\nFast conversation rules: keep each spoken response concise, at most 120 words. '
-               'Ask a short coherent group of questions about facts not yet known; preserve medication/exposure '
+               'Ask a short coherent group of questions about facts not yet known. Early in the interview, collect relevant past illnesses, recent procedures or devices, current and recent medicines or exposures, unless already obtained. Preserve medication/exposure '
                'and chronology questions when relevant. Record unknown details as unknown. '
                'Choose investigations from the current history and physical findings according to their '
                'expected effect on diagnosis or management. Avoid duplicate requests unless repeat sampling '

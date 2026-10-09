@@ -147,8 +147,8 @@ class Cascade:
             for name in t['test_names']:
                 tool=t['tool'];out=run(tool,name)
                 for _ in range(2):  # the reviewer has one round: resolve a wrong tool or a prerequisite procedure by itself (and say so)
-                    try:o=json.loads(out)
-                    except (json.JSONDecodeError,TypeError):break
+                    try:o=(json.JSONDecoder().raw_decode(out.lstrip())[0] if ctx.get('tool_output_prefix_json') else json.loads(out))
+                    except (json.JSONDecodeError,TypeError,AttributeError):break
                     if not isinstance(o,dict):break
                     wt=[w for w in o.get('wrong_tool',[]) if isinstance(w,dict) and w.get('use_tool')]
                     pre=[r for r in o.get('requires_prior_procedure',[]) if isinstance(r,dict) and r.get('needs_prior_procedure')]

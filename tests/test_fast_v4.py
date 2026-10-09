@@ -183,6 +183,23 @@ class FastReviewTest(unittest.TestCase):
         events.append(api('doctor', 'SECRET', [{'function': {'name': 'browser'}}]))
         self.assertEqual(evidence_events(events), [])
 
+    def test_prerequisite_json_with_cost_note_is_executed_and_preserved(self):
+        tool=FakeTool()
+        outputs=[json.dumps({'requires_prior_procedure':[{'requested':'Synthetic targeted study','needs_prior_procedure':'synthetic sampling'}]})+'\nEstimated order cost: 15 relative units.',
+                 json.dumps({'findings':[{'name':'Synthetic procedure','value':'SOURCE_PROCEDURE'}]})+'\nPerformed examination cost: 5 relative units.',
+                 json.dumps({'findings':[{'name':'Synthetic targeted study','value':'SOURCE_TARGET'}]})+'\nPerformed examination cost: 20 relative units.']
+        def execute(name,args):
+            tool.calls.append((name,args));return outputs.pop(0)
+        tool.execute=execute;self.ctx['tools']=FakeOuterTool(tool)
+        text,findings=self.cascade._follow_up(self.ctx,[],[{'tool':'request_other_investigation','test_names':['Synthetic targeted study']}])
+        self.assertEqual(len(tool.calls),3)
+        self.assertEqual(tool.calls[1],('request_other_investigation',{'test_names':['synthetic sampling']}))
+        self.assertEqual([f['value'] for f in findings],['SOURCE_PROCEDURE','SOURCE_TARGET'])
+        self.assertIn('Estimated order cost:',text)
+        self.assertIn('SOURCE_TARGET',text)
+        result=next(e for e in self.log.events() if e['event']=='fast_followup_result')
+        self.assertEqual(len(result['obtained_outputs']),3)
+
     def test_actual_findings_detector_structured_only_and_atomic_results(self):
         finding = {'name': 'Synthetic finding', 'value': 'Literal value'}
         result = json.dumps({'findings': [finding]}) + '\nEstimated cost: 5'

@@ -116,3 +116,6 @@ Usuário autorizou otimizar a interação nos dez públicos e, somente depois de
 
 ## Otimização fast2 —09/10
 Fast1 concluída9/10,US$0.19446700, preservar todos os terminais. Não libera fechados. Novo braço fast2 corrige whitelist/default_admission, usa perguntas literais e paciente desconhecido≠negativo, divide CT/MRI comuns por regiões explícitas antes da política externa e uma segunda revisão Sol opcional após novos achados. Até três revisões CLI principais, pedidos selecionados4+2, protocolos/critério/fatos não alterados. Fast2 terá todos os dez públicos novos e, se10/10, dez fechados na MESMA condição/HEAD. Teto globalv4US$5 incluindo fast1 e anteriores; sem loops/repetição de terminais.
+
+## Piloto fast2 interrompido antes de ampliação
+Dois terminais,1/2aceitos,US$0.04537300. Negativo001preservado: pré-requisito não executado porque nota de custo invalidava json.loads. Fast3 corrige parsingprefixoJSON opt-in mantendo outputs completos e reforça história de procedimentos/dispositivos/medicamentos recentes genericamente. Novos dez públicos emfast3; sóapós10/10osdezfechados namesmaHEAD. Não completar fast2 nem rerodar seus terminais. Todos custos/atores no mesmoledger5.

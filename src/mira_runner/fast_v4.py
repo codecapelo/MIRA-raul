@@ -170,7 +170,7 @@ class _PolicyToolAdapter:
     def execute(self, tool, arguments):
         output = self.tools.execute(tool, arguments)
         self.collector.append({'tool': tool, 'arguments': arguments,
-                               'output_sha256': digest(output),
+                               'output': output, 'output_sha256': digest(output),
                                'findings': actual_findings(output)})
         return output
     def as_actor(self, actor):
@@ -196,7 +196,7 @@ class _ReleaseToolAdapter:
     def execute(self, tool, arguments):
         output = self.inner.execute(tool, arguments)
         self.collector.append({'tool': tool, 'arguments': arguments,
-                               'output_sha256': digest(output),
+                               'output': output, 'output_sha256': digest(output),
                                'findings': actual_findings(output)})
         return output
 
@@ -277,12 +277,15 @@ class FastReviewCascade:
         previous = [e for e in ctx['log'].events() if e.get('event') == 'fast_followup_result'
                     and e.get('phase') == phase]
         collector = []
-        adapted = {**ctx, 'tools': SimpleNamespace(inner=_PolicyToolAdapter(ctx['tools'], collector)),
+        adapted = {**ctx, 'tool_output_prefix_json': True, 'tools': SimpleNamespace(inner=_PolicyToolAdapter(ctx['tools'], collector)),
                    'client': _FollowupClientAdapter(ctx['client'], ctx['tools'])}
         text = Cascade(None).follow_up(adapted, questions, tests)
         released = self._release(ctx, 'after_followup' if phase == 'initial' else 'after_second_followup', collector)
         if released:
             text += '\nExact queued results newly acquired by reviewer: ' + released
+        for item in collector:
+            if item['output'] not in text:
+                text += '\nExact intermediate review tool ' + item['tool'] + ' ' + _json(item['arguments']) + ': ' + item['output']
         if previous and (len(previous) != 1 or previous[0].get('text') != text):
             raise RuntimeError('Fast follow-up evidence changed on replay')
         self._record_once(ctx['log'], {'event': 'fast_followup_result',
