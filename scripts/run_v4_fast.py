@@ -33,7 +33,8 @@ CLINICAL = {'min_exchanges': 2, 'exam_first': True, 'delay_results': False,
             'patient_model': DOCTOR, 'strict_exams': True, 'opening': 5}
 EXTRAS = {'protocol': 'v4', 'literal_components': True, 'order_policy': True,
           'admit_min': 1, 'emergency_voice': True, 'speech_format': True,
-          'record_released_results': True, 'variant': 'fast_review_blind'}
+          'record_released_results': True, 'fast_atomic_imaging': True,
+          'fast_second_review': True, 'variant': 'fast_review_blind_sequential'}
 ROLE_POLICY = {'doctor': {'max_tokens': 4096, 'reasoning': {'effort': 'minimal'}},
                'patient': {'max_tokens': 512, 'reasoning': {'effort': 'minimal'}},
                'patient_review': {'max_tokens': 1024, 'reasoning': {'effort': 'minimal'}}}
@@ -204,7 +205,7 @@ def work(base, root, case_root, case_id, config, key, commit):
     ledger = Ledger(base / 'runs/v4/budget.sqlite', str(CAP))
     try:
         client = FastClient(ledger, config, key, codex_effort=CODEX_EFFORT, codex_transport_options={'diagnostics': True})
-        cascade = FastReviewCascade(patient, observations, review_module=load_offline_review(base))
+        cascade = FastReviewCascade(patient, observations, review_module=load_offline_review(base), second_round=True)
         return run_case_v3(root, case, DOCTOR, client, commit,
                            cascade=cascade, extras=EXTRAS.copy(), **CLINICAL)
     finally:

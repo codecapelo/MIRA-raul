@@ -62,14 +62,23 @@ def history_text(messages):
 class V3Tools:
     """Gate and delay wrapper around CaseTools; matcher/routing behavior is unchanged."""
     INVESTIGATIONS=set(NAMES)-{'admission','request_physical_exam'}
-    def __init__(self,inner,min_exchanges=MIN_EXCHANGES,delay=True,policy=None,admit_min=0):
-        self.policy=policy;self.queue=[];self.queued_names=set();self.held_turn=set();self.admit_min=admit_min;self.admit_blocked=0;self.delay=delay;self.inner=inner;self.min_exchanges=min_exchanges;self.exchanges=0;self.exam_done=False;self.exam_provided=False;self.pending=[];self.gated=0;self.orders=0
+    def __init__(self,inner,min_exchanges=MIN_EXCHANGES,delay=True,policy=None,admit_min=0,atomic_imaging=False):
+        self.atomic_imaging=atomic_imaging;self.policy=policy;self.queue=[];self.queued_names=set();self.held_turn=set();self.admit_min=admit_min;self.admit_blocked=0;self.delay=delay;self.inner=inner;self.min_exchanges=min_exchanges;self.exchanges=0;self.exam_done=False;self.exam_provided=False;self.pending=[];self.gated=0;self.orders=0
     @property
     def errors(self):return self.inner.errors
     @errors.setter
     def errors(self,value):self.inner.errors=value
     def execute(self,name,args):
         self.inner.validate(name,args)  # invalid arguments keep the original error semantics, locked or not
+        if self.atomic_imaging and name=='request_radiology':
+            from .atomic_imaging import normalize_imaging_order,SCOPE_NOTE
+            atoms=normalize_imaging_order(name,args)
+            if len(atoms)>1:
+                # Every region passes through the SAME outer gates, caps and
+                # actor accounting; no direct inner/source catalogue access.
+                results=[{'requested':item['study_name'],'output':self.execute(name,item)} for item in atoms]
+                return json.dumps({'original_request':args['study_name'],
+                                   'atomic_scope_results':results,'scope_note':SCOPE_NOTE},ensure_ascii=False)
         if name in self.INVESTIGATIONS:
             missing=[]
             if self.exchanges<self.min_exchanges:missing.append(f'at least {self.min_exchanges} exchanges with the patient (so far {self.exchanges})')
@@ -227,7 +236,7 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
         from .policy_v4 import RelativeOrderPolicy
         inner=RecordedExamTools(inner,emit=log.append)
         policy=RelativeOrderPolicy() if extras.get('order_policy') else None
-    tools=V3Tools(inner,min_exchanges,delay_results,policy,int(extras.get('admit_min') or 0));
+    tools=V3Tools(inner,min_exchanges,delay_results,policy,int(extras.get('admit_min') or 0),**({'atomic_imaging':True} if extras.get('fast_atomic_imaging') else {}));
     findings=[]
     if exam_first:
         try:findings=json.loads(tools.inner.execute('request_physical_exam',{}))

@@ -1,0 +1,319 @@
+{
+  "status": "completed_two_case_pilot_readonly_audit",
+  "condition": "fast1/public/run1",
+  "scope": [
+    "case_001",
+    "case_002"
+  ],
+  "closed_cases_read": false,
+  "active_case003_reference_read": false,
+  "inference_sent": false,
+  "source_or_prompt_changes": false,
+  "method": "Manual claim-level source audit plus literal returned-value/hash checks. Unsupported count is a listed-claim count, not a calibrated rate or exhaustive clinical adjudication.",
+  "cases": [
+    {
+      "case_id": "case_001",
+      "trace": "runs/v4/fast/fast1/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_001.jsonl",
+      "trace_sha256": "c17078ca528a10c7aa767574c12196e02cbefbed020ec1c38ff3326ae7fb1e32",
+      "trace_lines": 84,
+      "source_hashes": {
+        "patient.json": "585b65124ecc4926522cc06cdba852ed262e118d604a4393345bdc7852fd2638",
+        "investigations.json": "c831ae7fba03258f3226931a9d80d6afbafc2c22e80b46b298e3b23b5babf02d",
+        "reference.json": "8d91efc4e0882e908d49ce3a1176f2f579bdc8b666d1b05fe58559894a8283fb"
+      },
+      "terminal_commit": "65efa490eac32a34b7d2a21ee8216a047a199e16",
+      "judge_correct": true,
+      "proposal_correct": false,
+      "relative_exam_units": 6,
+      "charged_source_ids": [
+        "ecg_008",
+        "microbiology_013"
+      ],
+      "patient_outputs": [
+        {
+          "line": 9,
+          "role": "patient",
+          "text": "The pain is just in my chest; it doesn't seem to be moving to my neck, back, or arms. I am feeling short of breath and quite lightheaded. Regarding my heart history, I have end-stage renal disease and receive hemodialysis. I also had a drug-eluting stent put in for stable angina some time ago, and I have a leadless pacemaker. I don't know anything else about my heart function."
+        },
+        {
+          "line": 22,
+          "role": "patient",
+          "text": "I'm sorry, I don't remember the exact time the chest pain started, it just happened while I was here getting treated for this bloodstream infection. I’m not sure about fevers, chills, or night sweats, I’d have to check with the nurses. As for my dialysis access, I don't know the specifics of that status. I'm just focused on how poorly I'm feeling right now."
+        }
+      ],
+      "review_inputs": [
+        {
+          "line": 58,
+          "stage": "sol",
+          "input_sha256": "4f1384ffcd232dbb14dd5e8f1173cbb1240b53771e46140e2801dee2119ddf95",
+          "input_hash_verified": true,
+          "system_hash_verified": true,
+          "default_admission_proposal_leak": false
+        },
+        {
+          "line": 76,
+          "stage": "astra",
+          "input_sha256": "8e2bd644c8b5a219ba19518d90b89ff9e8b8a0d1c4df3d0a75f9c17b49575c16",
+          "input_hash_verified": true,
+          "system_hash_verified": true,
+          "default_admission_proposal_leak": false
+        }
+      ],
+      "queue_releases": [
+        {
+          "line": 57,
+          "phase": "before_sol",
+          "recipient": "reviewer",
+          "empty": true,
+          "hash_verified": true
+        },
+        {
+          "line": 74,
+          "phase": "after_followup",
+          "recipient": "reviewer",
+          "empty": true,
+          "hash_verified": true
+        }
+      ],
+      "literal_findings": [
+        {
+          "line": 28,
+          "name": "Transthoracic echocardiography",
+          "requested": "bedside cardiac ultrasound",
+          "literal_value_supported": true,
+          "source_fact_id": "ecg_008"
+        },
+        {
+          "line": 42,
+          "name": "Blood cultures",
+          "requested": "blood culture",
+          "literal_value_supported": true,
+          "source_fact_id": "microbiology_013"
+        }
+      ],
+      "judge_inputs": [
+        {
+          "line": 80,
+          "role": "judge",
+          "input_sha256": "eda4a570a3de36db57d5f03421b7dffab70f65aa30a69d55a29e31bbf3aa40ac",
+          "diagnosis_only_case_fields": true,
+          "confidence_in_input": false,
+          "unconfirmed_list_in_input": false,
+          "management_in_input": false
+        },
+        {
+          "line": 82,
+          "role": "judge_proposal",
+          "input_sha256": "908a163293dac0943997130985051f0c9f8c7cbd80c9de33784ee27e0162016b",
+          "diagnosis_only_case_fields": true,
+          "confidence_in_input": false,
+          "unconfirmed_list_in_input": false,
+          "management_in_input": false
+        }
+      ]
+    },
+    {
+      "case_id": "case_002",
+      "trace": "runs/v4/fast/fast1/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_002.jsonl",
+      "trace_sha256": "b104a155afd21e079e312bf9690972f9e11a2d5dfe392c271486a5b3759f34ce",
+      "trace_lines": 106,
+      "source_hashes": {
+        "patient.json": "44b3de002a436ac4661bcaddd66759fbe939d0b339ab153c7bf69c68d28f2e95",
+        "investigations.json": "1b2e06edb76d06db709161e1a8a44d8a245395dcbbe2cf5dc0990b1d6ddeec3e",
+        "reference.json": "681ec040837a4d858e895bf1f9cb27f886ce7b97cbf2ead16a452e20c6c34293"
+      },
+      "terminal_commit": "65efa490eac32a34b7d2a21ee8216a047a199e16",
+      "judge_correct": true,
+      "proposal_correct": false,
+      "relative_exam_units": 42,
+      "charged_source_ids": [
+        "ecg_005",
+        "lab_007",
+        "ecg_009",
+        "imaging_014",
+        "ecg_015",
+        "procedure_result_012"
+      ],
+      "patient_outputs": [
+        {
+          "line": 16,
+          "role": "patient",
+          "text": "I’ve been feeling this way for about two weeks, starting after I had some respiratory infection symptoms. It has gotten worse over that time. I have ulcerative colitis, which is controlled with mesalazine, and that is the only medication I take regularly. I haven't had any chest pain or dizziness since this all started."
+        },
+        {
+          "line": 31,
+          "role": "patient",
+          "text": "I don't remember if I had a fever or body aches back then. I don't have a history of heart conditions, and I am not aware of any family history of sudden cardiac issues. I haven't traveled recently, and I don't know if anyone else I've been around has had similar symptoms."
+        },
+        {
+          "line": 84,
+          "role": "patient_review",
+          "text": "I don't remember when I first started taking mesalazine, but my dose hasn't changed recently. As for previous ECGs, I don't know or I don't recall anything about my pulse or P waves being mentioned to me."
+        }
+      ],
+      "review_inputs": [
+        {
+          "line": 77,
+          "stage": "sol",
+          "input_sha256": "8c1e8db8a1fe110d1fcd08715db3bcdeec9936c8cb9e860d02773c43cae7031f",
+          "input_hash_verified": true,
+          "system_hash_verified": true,
+          "default_admission_proposal_leak": true
+        },
+        {
+          "line": 98,
+          "stage": "astra",
+          "input_sha256": "0bf09b8bb6564b6a99ae6f9a799a4ec34c5515f5f82a9d430a5ab8140328d4d2",
+          "input_hash_verified": true,
+          "system_hash_verified": true,
+          "default_admission_proposal_leak": true
+        }
+      ],
+      "queue_releases": [
+        {
+          "line": 76,
+          "phase": "before_sol",
+          "recipient": "reviewer",
+          "empty": true,
+          "hash_verified": true
+        },
+        {
+          "line": 96,
+          "phase": "after_followup",
+          "recipient": "reviewer",
+          "empty": true,
+          "hash_verified": true
+        }
+      ],
+      "literal_findings": [
+        {
+          "line": 38,
+          "name": "Electrocardiogram",
+          "requested": "ECG",
+          "literal_value_supported": true,
+          "source_fact_id": "ecg_005"
+        },
+        {
+          "line": 42,
+          "name": "Troponin",
+          "requested": "troponin T",
+          "literal_value_supported": true,
+          "source_fact_id": "lab_007"
+        },
+        {
+          "line": 49,
+          "name": "Transthoracic echocardiography",
+          "requested": "echocardiogram",
+          "literal_value_supported": true,
+          "source_fact_id": "ecg_009"
+        },
+        {
+          "line": 95,
+          "name": "Cardiac MRI",
+          "requested": "Cardiac MRI with dedicated atrial and ventricular assessment for edema, late gadolinium enhancement, and structural abnormalities",
+          "literal_value_supported": true,
+          "source_fact_id": "imaging_014"
+        },
+        {
+          "line": 95,
+          "name": "Electrophysiology study",
+          "requested": "Electrophysiological study assessing atrial electrograms and response to atrial pacing to distinguish atrial standstill from sinus arrest",
+          "literal_value_supported": true,
+          "source_fact_id": "ecg_015"
+        },
+        {
+          "line": 95,
+          "name": "Right-heart catheterization",
+          "requested": "Right-heart catheterization measuring pulmonary pressures, pulmonary capillary wedge pressure, cardiac output, and pulmonary vascular resistance",
+          "literal_value_supported": true,
+          "source_fact_id": "procedure_result_012"
+        }
+      ],
+      "judge_inputs": [
+        {
+          "line": 102,
+          "role": "judge",
+          "input_sha256": "071aa12abe80c400d98df082e978c38567f5273949031fc1fcb44d3935906637",
+          "diagnosis_only_case_fields": true,
+          "confidence_in_input": false,
+          "unconfirmed_list_in_input": false,
+          "management_in_input": false
+        },
+        {
+          "line": 104,
+          "role": "judge_proposal",
+          "input_sha256": "a62594600b2376603b72e774dbae7ba9e212286e9aa78ea2cecf8e96984aa990",
+          "diagnosis_only_case_fields": true,
+          "confidence_in_input": false,
+          "unconfirmed_list_in_input": false,
+          "management_in_input": false
+        }
+      ]
+    }
+  ],
+  "patient_unsupported_claims": [
+    {
+      "case_id": "case_001",
+      "trace_line": 9,
+      "claims": [
+        "chest pain does not radiate to neck/back/arms",
+        "shortness of breath",
+        "lightheadedness"
+      ],
+      "count": 3,
+      "support": "None in complete patient.json lines1-43 or investigations.json lines1-129; shock may make symptoms plausible but does not establish patient-reported symptoms."
+    },
+    {
+      "case_id": "case_002",
+      "trace_line": 16,
+      "claims": [
+        "mesalazine is the only regular medication"
+      ],
+      "count": 1,
+      "support": "patient.json line27 lists mesalazine; lines31-35 explicitly leave complete home medication list unknown."
+    },
+    {
+      "case_id": "case_002",
+      "trace_line": 31,
+      "claims": [
+        "no previous heart conditions",
+        "no known family history of sudden cardiac issues",
+        "no recent travel"
+      ],
+      "count": 3,
+      "support": "No such negative history in complete patient.json lines1-37; absence from case source is unknown, not a negative."
+    },
+    {
+      "case_id": "case_002",
+      "trace_line": 84,
+      "claims": [
+        "mesalazine dose has not changed recently"
+      ],
+      "count": 1,
+      "support": "Mesalazine named at patient.json line27, but dose/change/initiation history not specified. Unknown initiation and previous ECG answers remain appropriately unknown."
+    }
+  ],
+  "listed_patient_unsupported_claim_count": 8,
+  "patient_numeric_dose_values_invented_detected": 0,
+  "chronology_ambiguities": [
+    {
+      "case_id": "case_002",
+      "trace_line": 16,
+      "source": "patient.json line15: two weeks AFTER respiratory symptoms, dyspnea progressed",
+      "response": "Feeling this way ABOUT TWO WEEKS, starting after respiratory symptoms",
+      "assessment": "Conflates latency after infection with duration of current symptoms; same numeral but chronology not byte/meaning-equivalent."
+    }
+  ],
+  "limitations": [
+    "case002 default_admission proposal/reasoning enters both blinded inputs despite proposal_excluded=true; reference and judge inputs remain excluded.",
+    "Doctor diagnosis statements and Sol-directed test names can convey hypotheses; Astra is independent of the explicit Sol review output, not independent of all hypothesis priming.",
+    "case001 only echo and documented historical blood cultures delivered; coronary imaging, pericardiocentesis and operative confirmation not obtained. Six exam units represent reduced evidence acquisition, not proven adequate diagnostic workup.",
+    "case001 final Astra hypothesis labels pseudoaneurysm/stent infection/rupture unconfirmed at confidence0.55; judge accepted diagnostic text only, not certainty calibration or safe management.",
+    "case002 EP source available_at=followup is delivered in the acute reviewer follow-up and treated as verified findings without preserving source follow-up timing in final wording.",
+    "case002 dedicated MRI protocol is requested, but source establishes generic cardiac MRI findings only; dedicated atrial/ventricular acquisition protocol not attested.",
+    "case002 doctor explicitly confirms myocarditis before supportive MRI and without histology; final Astra restores probable working status and identifies histology/etiology as unconfirmed.",
+    "case001 mandatory two history exchanges blocked emergency bedside testing once despite shock; clinical effect requires physician review.",
+    "The four judge calls assess diagnosis matching only; confidence, uncertainty lists, management and source fidelity are outside their input.",
+    "All eight literal returned findings match source values. Literal matching does not establish requested modality, specimen, timing, therapeutic adequacy or clinical safety."
+  ]
+}

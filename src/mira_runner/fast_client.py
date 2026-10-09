@@ -18,6 +18,12 @@ FAST_SPEECH = ('\nFast conversation rules: keep each spoken response concise, at
                'would change management; a historical source is not evidence of a newly performed test.')
 
 
+FAST_PATIENT = ('\nSource fidelity: an omitted symptom or history detail is UNKNOWN, never a negative. '
+                'Do not infer absence of associated symptoms, other medicines, prior disease, family events, '
+                'travel, dose changes or exact timing. Preserve the source timeline verbatim in meaning. '
+                'Respond that you do not know whenever the source does not explicitly answer the question.')
+
+
 class StreamFailure(RuntimeError):
     def __init__(self, category, generation_id=None, received_cost=None):
         super().__init__('Streaming response failed: '+category)
@@ -131,10 +137,9 @@ class StreamingHybridClient(HybridClient):
         streaming=model==FAST_MODEL and role in SPEECH_ROLES
         if streaming:
             kwargs={**kwargs,'stream':True}
-            if role=='doctor':
-                messages=[dict(m) for m in messages]
-                if messages and messages[0].get('role')=='system':
-                    messages[0]['content']+=FAST_SPEECH
+            messages=[dict(m) for m in messages]
+            if messages and messages[0].get('role')=='system':
+                messages[0]['content']+=FAST_SPEECH if role=='doctor' else FAST_PATIENT
         self._stream_log=log if streaming else None;self._stream_role=role
         try:return super().call(model,messages,log,role,params,**kwargs)
         except StreamFailure as exc:

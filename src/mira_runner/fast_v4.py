@@ -8,15 +8,30 @@ case-tool instance shared with the conversational doctor.
 import hashlib
 import json
 import math
+import re
 from pathlib import Path
 from types import SimpleNamespace
 
 from .cascade import Cascade, REVIEW_BLIND, CLAUDE_BLIND_FORMAT, clean_requests, parse_json
 from .working_v4 import load_offline_review, validate_review
+from .atomic_imaging import normalize_reviewer_tests
 
 SOL = 'gpt-6.1-sol'
 ASTRA = 'gpt-6-astra'
-SOL_SYSTEM = REVIEW_BLIND + ' ' + CLAUDE_BLIND_FORMAT
+SOL_SYSTEM = (REVIEW_BLIND + ' '
+    'Use short, precise investigation names: every test_names item must identify ONE actual study '
+    'and ONE relevant anatomical region or specimen. Do not combine independent examinations, '
+    'body regions or acquisition protocols in one name; at most four actual studies in total. '
+    'When an etiological cause is not established, prioritize missing localization or anatomical '
+    'characterization that would guide the next decision before highly specialized etiological '
+    'assays or invasive tissue sampling. Do not mistake a confirmed syndrome for a confirmed cause. '
+    'A history item absent from the information supplied, not reported or described as unknown is '
+    'not a negative finding; do not infer normal tests, absent symptoms, a complete medication list, '
+    'unchanged doses or exact timing from silence. Preserve uncertainty and do not invent findings '
+    'to make a requested examination or diagnosis seem supported. ' + CLAUDE_BLIND_FORMAT)
+CLINICAL_EVIDENCE_TOOLS = frozenset(('request_physical_exam', 'request_blood_test',
+    'request_urine_test', 'request_bedside_test', 'request_radiology',
+    'request_microbiology', 'request_other_investigation'))
 
 
 def digest(text):
@@ -25,6 +40,47 @@ def digest(text):
 
 def _json(value):
     return json.dumps(value, sort_keys=True, ensure_ascii=False, separators=(',', ':'))
+
+
+def doctor_questions(text):
+    """Keep literal interrogative sentences, omitting assessment/final speech.
+
+    Mechanical extraction only: no new summary/facts and no model call. Actual
+    questions may still suggest a hypothesis; this is not independence from
+    the clinician's choice of questions. Unformatted statements are omitted.
+    """
+    out = []
+    for paragraph in re.split(r'(?<=[.!])\s+|\n+', text):
+        # Statements following a question are never retained merely because an
+        # earlier interrogative exists in the same paragraph.
+        for question in paragraph.split('?')[:-1]:
+            question = question.strip()
+            if question:
+                out.append(question + '?')
+    return '\n'.join(out)
+
+
+def actual_findings(output):
+    """Read real finding objects, never infer obtainedness from notes/cost."""
+    if not isinstance(output, str):
+        return []
+    try:
+        value = json.JSONDecoder().raw_decode(output.lstrip())[0]
+    except ValueError:
+        return []
+    if not isinstance(value, dict):
+        return []
+    out = [finding for finding in value.get('findings', [])
+           if isinstance(finding, dict) and isinstance(finding.get('name'), str)
+           and 'value' in finding]
+    for atomic in value.get('atomic_scope_results', []):
+        if isinstance(atomic, dict):
+            out.extend(actual_findings(atomic.get('output')))
+    return out
+
+
+def finding_identity(finding):
+    return _json({k: finding.get(k) for k in ('name', 'value')})
 
 
 def evidence_events(events):
@@ -47,15 +103,18 @@ def evidence_events(events):
                 if len(choices) != 1:
                     raise ValueError('Clinical response must have exactly one choice')
                 message = choices[0].get('message', {})
-            if any(call.get('function', {}).get('name') == 'admission'
+            if any(call.get('function', {}).get('name') not in CLINICAL_EVIDENCE_TOOLS
                    for call in message.get('tool_calls', [])):
-                continue  # Strip accompanying final prose as well as arguments.
+                continue  # Admission aliases/unexpected native tools: omit all prose.
             text = message.get('content')
             if text:
                 if not isinstance(text, str):
                     raise ValueError('Clinical evidence content must be a string')
-                out.append({'kind': event['role'], 'text': text})
-        elif kind == 'tool' and event.get('name') != 'admission':
+                if event['role'] == 'doctor':
+                    text = doctor_questions(text)
+                if text:
+                    out.append({'kind': event['role'], 'text': text})
+        elif kind == 'tool' and event.get('name') in CLINICAL_EVIDENCE_TOOLS:
             clean = {k: event.get(k) for k in ('name', 'arguments', 'output', 'turn', 'exchanges')}
             signature = _json(clean)
             if signature not in seen:
@@ -106,10 +165,14 @@ def validate_sol_review(value):
 
 class _PolicyToolAdapter:
     """The historical follow-up sees `.inner`; keep the OUTER policy active."""
-    def __init__(self, tools):
-        self.tools = tools
+    def __init__(self, tools, collector):
+        self.tools, self.collector = tools, collector
     def execute(self, tool, arguments):
-        return self.tools.execute(tool, arguments)
+        output = self.tools.execute(tool, arguments)
+        self.collector.append({'tool': tool, 'arguments': arguments,
+                               'output_sha256': digest(output),
+                               'findings': actual_findings(output)})
+        return output
     def as_actor(self, actor):
         return self.tools.inner.as_actor(actor)
 
@@ -124,13 +187,28 @@ class _FollowupClientAdapter:
         return reply
 
 
+class _ReleaseToolAdapter:
+    """Capture exact queued tool returns while delegating shared accounting."""
+    def __init__(self, inner, collector):
+        self.inner, self.collector = inner, collector
+    def __getattr__(self, name):
+        return getattr(self.inner, name)
+    def execute(self, tool, arguments):
+        output = self.inner.execute(tool, arguments)
+        self.collector.append({'tool': tool, 'arguments': arguments,
+                               'output_sha256': digest(output),
+                               'findings': actual_findings(output)})
+        return output
+
+
 class FastReviewCascade:
     rescue = True
 
-    def __init__(self, patient, observations, *, review_module=None):
+    def __init__(self, patient, observations, *, review_module=None, second_round=False):
         self.patient = patient
         self.observations = observations
         self.review_module = review_module or load_offline_review(Path(__file__).resolve().parents[2])
+        self.second_round = bool(second_round)
 
     def _initial_evidence(self, events):
         # Existing initial-review marker freezes the pre-follow-up boundary on
@@ -143,7 +221,7 @@ class FastReviewCascade:
         for event in evidence_events(events[:marker]):
             kind = event['kind']
             if kind in ('doctor', 'patient'):
-                label = 'Doctor statement/question' if kind == 'doctor' else 'Patient'
+                label = 'Doctor question (not evidence)' if kind == 'doctor' else 'Patient'
                 lines.append(label + ': ' + event['text'])
             elif kind == 'tool':
                 lines.append('Recorded tool ' + event['name'] + ' ' + _json(event['arguments']) + ': ' + event['output'])
@@ -186,35 +264,46 @@ class FastReviewCascade:
                                'review': value, 'input_sha256': digest(text)}, key=('stage',))
         return value
 
-    def _follow_up(self, ctx, questions, tests):
+    def _follow_up(self, ctx, questions, tests, *, phase='initial', deferred_tests=None, deferred_questions=None):
         # Reuse the established tools, actor accounting, tool rerouting and
         # prerequisite handling. The client checks exact patient payload on
         # replay; identical tool state is rebuilt from the original encounter.
         intent = {'event': 'fast_followup_input', 'questions': questions, 'tests': tests,
+                  'phase': phase, 'deferred_tests': deferred_tests or [],
+                  'deferred_questions': deferred_questions or [],
                   'patient_model': ctx['patient_model'],
                   'patient_context_sha256': digest(_json(ctx['patient_messages']))}
-        self._record_once(ctx['log'], intent, key=())
-        previous = [e for e in ctx['log'].events() if e.get('event') == 'fast_followup_result']
-        adapted = {**ctx, 'tools': SimpleNamespace(inner=_PolicyToolAdapter(ctx['tools'])),
+        self._record_once(ctx['log'], intent, key=('phase',))
+        previous = [e for e in ctx['log'].events() if e.get('event') == 'fast_followup_result'
+                    and e.get('phase') == phase]
+        collector = []
+        adapted = {**ctx, 'tools': SimpleNamespace(inner=_PolicyToolAdapter(ctx['tools'], collector)),
                    'client': _FollowupClientAdapter(ctx['client'], ctx['tools'])}
         text = Cascade(None).follow_up(adapted, questions, tests)
-        released = self._release(ctx, 'after_followup')
+        released = self._release(ctx, 'after_followup' if phase == 'initial' else 'after_second_followup', collector)
         if released:
             text += '\nExact queued results newly acquired by reviewer: ' + released
         if previous and (len(previous) != 1 or previous[0].get('text') != text):
             raise RuntimeError('Fast follow-up evidence changed on replay')
         self._record_once(ctx['log'], {'event': 'fast_followup_result',
+                                     'phase': phase, 'obtained_outputs': collector,
                                      'questions': questions, 'tests': tests, 'text': text,
-                                     'content_sha256': digest(text)}, key=())
-        return text
+                                     'content_sha256': digest(text)}, key=('phase',))
+        return text, [f for output in collector for f in output['findings']]
 
-    def _release(self, ctx, phase):
+    def _release(self, ctx, phase, collector=None):
         tools = ctx['tools']
         # Same external policy's release begins the next round, executes only
         # permitted queued orders and returns the exact findings. Every source
         # remains in the shared actor/cost ledger. No reconstruction from cost.
-        with tools.inner.as_actor('reviewer'):
-            text = tools.release()
+        original = tools.inner
+        if collector is not None:
+            tools.inner = _ReleaseToolAdapter(original, collector)
+        try:
+            with tools.inner.as_actor('reviewer'):
+                text = tools.release()
+        finally:
+            tools.inner = original
         if not isinstance(text, str):
             raise ValueError('Reviewer queue release must return exact text')
         self._record_once(ctx['log'], {'event': 'fast_queue_release', 'phase': phase,
@@ -237,11 +326,33 @@ class FastReviewCascade:
         self._release(ctx, 'before_sol')
         evidence = self._initial_evidence(ctx['log'].events())
         sol = self._review(ctx, 'sol', SOL, SOL_SYSTEM, evidence, validate_sol_review)
-        questions, tests = sol['missing_questions'], sol['missing_tests']
+        questions = sol['missing_questions']
+        tests, deferred = normalize_reviewer_tests(sol['missing_tests'], max_atomic=4)
+        first_findings = []
         if questions or tests:
             stats['path'].append('single_followup')
-            more = self._follow_up(ctx, questions, tests)
+            more, first_findings = self._follow_up(ctx, questions, tests, deferred_tests=deferred)
             evidence += '\nADDITIONAL INFORMATION ACTUALLY OBTAINED:\n' + more
+        # No second review based on confidence, diagnosis or judge feedback.
+        # It exists only when the first follow-up returned new structured
+        # findings; question-only/queued/unavailable/estimate notes do not count.
+        original_events = ctx['log'].events()
+        boundary = next((i for i, e in enumerate(original_events)
+                         if e.get('event') == 'fast_review_input' and e.get('stage') == 'sol'), len(original_events))
+        seen = {finding_identity(f) for e in original_events[:boundary]
+                if e.get('event') == 'tool' for f in actual_findings(e.get('output'))}
+        new = [f for f in first_findings if finding_identity(f) not in seen]
+        if self.second_round and new:
+            stats['path'].append('blind_post_followup:' + SOL)
+            post_system = SOL_SYSTEM + ' This is the final opportunity to request information: at most TWO patient questions and TWO actual studies in total.'
+            post = self._review(ctx, 'sol_post_followup', SOL, post_system, evidence, validate_sol_review)
+            post_questions, deferred_questions = post['missing_questions'][:2], post['missing_questions'][2:]
+            post_tests, post_deferred = normalize_reviewer_tests(post['missing_tests'], max_atomic=2)
+            if post_questions or post_tests:
+                stats['path'].append('second_bounded_followup')
+                extra, _ = self._follow_up(ctx, post_questions, post_tests, phase='second',
+                                           deferred_tests=post_deferred, deferred_questions=deferred_questions)
+                evidence += '\nSECOND BOUNDED FOLLOW-UP ACTUALLY OBTAINED:\n' + extra
         stats['path'].append('working_final_blind:' + ASTRA)
         # Exact generic final-review contract from the earlier working study;
         # Sol's diagnosis/reasoning is deliberately absent from this input.
