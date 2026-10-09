@@ -1,0 +1,20 @@
+{
+  "snapshot_unix": 1791545193.927402,
+  "baseline_usage_usd": "18.965410033",
+  "account_total_usage_usd": "19.249370783",
+  "account_delta_usd": "0.283960750",
+  "ledger_usage_cost_usd": "0.28396075",
+  "difference_ledger_minus_account_usd": "0E-9",
+  "account_reconciled": true,
+  "received_responses": 168,
+  "settled_ledger_calls": 168,
+  "generation_metadata_present": 168,
+  "generation_cost_matches": 168,
+  "generation_cost_mismatches": 0,
+  "missing_generation_ids": [],
+  "cap_usd": "5.00",
+  "remaining_cap_usd": "4.71603925",
+  "ledger_modified": false,
+  "subscription_monetary_cost_usd": null,
+  "note": "All received usage.cost retained. Missing metadata or account reporting lag is never classified as zero cost. GET requests only; no new model inference."
+}

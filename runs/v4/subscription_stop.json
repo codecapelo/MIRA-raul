@@ -1,0 +1,33 @@
+{
+  "reason": "Subscription five-hour usage96%; stop active Codex calls and dispatch, no paid requests active",
+  "terminated_task_pids": [
+    58565,
+    58607,
+    58608,
+    58609,
+    62719,
+    62720
+  ],
+  "ledger_states": {
+    "settled": 42
+  },
+  "terminal_cases": [
+    "case_001",
+    "case_002",
+    "case_004"
+  ],
+  "partial_cases": [
+    "case_003",
+    "case_005"
+  ],
+  "not_started": [
+    "case_006",
+    "case_007",
+    "case_008",
+    "case_009",
+    "case_010"
+  ],
+  "openai_paid_fallback": false,
+  "reset_used": false,
+  "time": 1791462068.682484
+}

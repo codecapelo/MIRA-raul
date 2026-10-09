@@ -8,7 +8,7 @@ An `emergency` flag opens investigations immediately (no minimum number of excha
 of decisive investigations from the map that were not requested yet.
 """
 import json,re
-from .cli_client import CLI_MODELS
+from .cli_client import SUBSCRIPTION_MODELS
 from .cascade import parse_json,clean_requests,claude_kw,for_api,is_claude
 from .semantics import identity
 
@@ -27,7 +27,7 @@ CLAUDE_FORMAT=' Put the JSON object, serialized as a string, in the "content" fi
 def consult_map(client,log,model,complaint,exam_text,history=''):
     user=f'PRESENTING COMPLAINT: {complaint}\n\nINITIAL PHYSICAL EXAMINATION:\n{exam_text or "(none recorded)"}'
     if history:user+='\n\nWHAT THE DOCTOR HAS LEARNED SO FAR (questions and answers; no test results yet). Update the map with it: keep what still fits, drop what the answers made unlikely, add what they suggest:\n'+history
-    m=client.call(model,[{'role':'system','content':CONSULT_SYSTEM+(CLAUDE_FORMAT if model in CLI_MODELS else '')},{'role':'user','content':user}],log,'consult_map',{},**claude_kw(model,2500))
+    m=client.call(model,[{'role':'system','content':CONSULT_SYSTEM+(CLAUDE_FORMAT if model in SUBSCRIPTION_MODELS else '')},{'role':'user','content':user}],log,'consult_map',{},**claude_kw(model,2500))
     out=parse_json(m.get('content') or '')
     if not isinstance(out,dict):log.append({'event':'backend_error','role':'consult_map','reason':'unparseable consultation map'});return None
     diffs=[d for d in (out.get('differentials') or []) if isinstance(d,dict) and isinstance(d.get('diagnosis'),str)][:5]

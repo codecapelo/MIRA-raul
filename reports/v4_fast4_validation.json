@@ -1,0 +1,7 @@
+{
+  "tests": 321,
+  "status": "passed",
+  "log_sha256": "b9dfcbc526b73b9c7c5a0ad812567333e4cca2e1afa1157e3d11a2a314205b43",
+  "command": "PYTHONPATH=src python3 -m unittest discover -s tests -v",
+  "scope": "bounded alternatives and no repeated requests before fast4 inference"
+}

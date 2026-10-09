@@ -3449,3 +3449,16 @@
 {"kind": "cascade_same", "input_tokens": 504, "output_tokens": 20, "model": "jev-1.13.0"}
 {"kind": "cascade_verify", "input_tokens": 4953, "output_tokens": 75, "model": "jev-1.13.0"}
 {"kind": "cascade_same", "input_tokens": 548, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 15383, "output_tokens": 75, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 614, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2917, "output_tokens": 75, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 2884, "output_tokens": 75, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 501, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 500, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 4412, "output_tokens": 75, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 449, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 4655, "output_tokens": 75, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 557, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 3677, "output_tokens": 75, "model": "jev-1.13.0"}
+{"kind": "cascade_same", "input_tokens": 501, "output_tokens": 20, "model": "jev-1.13.0"}
+{"kind": "cascade_verify", "input_tokens": 3516, "output_tokens": 75, "model": "jev-1.13.0"}

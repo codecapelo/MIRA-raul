@@ -16,7 +16,7 @@ from decimal import Decimal
 from .tools import ToolArgumentsError
 from .runner import SAMPLING
 from .jef import CAP_TOKENS
-from .cli_client import CLI_MODELS
+from .cli_client import CLI_MODELS,SUBSCRIPTION_MODELS,CODEX_MODELS
 
 ACCEPT_C1=0.90;QWEN_CONF=0.70;SAME_TH=0.50;JEF_PRICE=Decimal('0.042')
 QWEN='qwen/qwen3.8-max-0902';SONNET='claude-sonnet-5-5';OPUS='claude-opus-5-5';TIER3=SONNET;TIER4=OPUS
@@ -26,11 +26,11 @@ PATIENT_EFFORT='high'
 def is_claude(model):return 'claude' in model
 def claude_kw(model,max_tokens,effort=None):
     """Call arguments for a Claude model: unchanged for the subscription CLI; through the API the reasoning effort is explicit and the token ceiling leaves room for the answer after the thinking."""
-    if model in CLI_MODELS or not is_claude(model):return {'max_tokens':max_tokens}
+    if model in SUBSCRIPTION_MODELS or not is_claude(model):return {'max_tokens':max_tokens}
     return {'max_tokens':max(max_tokens,16000),'reasoning':{'effort':effort or EFFORT_API}}
 def for_api(model,text):
     """The CLI arm wraps the JSON object in a `content` field; a plain API reply does not."""
-    return text if (model in CLI_MODELS or not is_claude(model)) else text.replace('Put ONE JSON object, serialized as a string, in the "content" field:','Return ONLY one JSON object (no markdown fence):')
+    return text if (model in SUBSCRIPTION_MODELS or not is_claude(model)) else text.replace('Put ONE JSON object, serialized as a string, in the "content" field:','Return ONLY one JSON object (no markdown fence):')
 INVESTIGATIONS=['request_blood_test','request_urine_test','request_bedside_test','request_radiology','request_microbiology','request_other_investigation']
 MARK='[Results of the tests ordered earlier, now available]'
 
@@ -108,18 +108,20 @@ class Cascade:
     def same(self,ctx,key,a,b):
         v=self.step(ctx,key,lambda:self.jef.same(a,b));return None if v.get('failed') else v['same']
     def llm_json(self,ctx,model,system,user):
-        if is_claude(model):role='review_claude';m=ctx['client'].call(model,[{'role':'system','content':for_api(model,system)},{'role':'user','content':user}],ctx['log'],role,{},**claude_kw(model,8192))
+        if model in CODEX_MODELS:
+            role='review_codex';m=ctx['client'].call(model,[{'role':'system','content':system},{'role':'user','content':user}],ctx['log'],role,{},max_tokens=8192)
+        elif is_claude(model):role='review_claude';m=ctx['client'].call(model,[{'role':'system','content':for_api(model,system)},{'role':'user','content':user}],ctx['log'],role,{},**claude_kw(model,8192))
         else:role='review_qwen';m=ctx['client'].call(model,[{'role':'system','content':system},{'role':'user','content':user}],ctx['log'],role,SAMPLING[model],max_tokens=6000,response_format={'type':'json_object'},reasoning={'effort':'low'})
         out=parse_json(m.get('content') or '')
         if not isinstance(out,dict):ctx['log'].append({'event':'backend_error','role':role,'reason':'unparseable review output'});return {}
         return out
     def blind(self,ctx,model,conv):
-        fmt=CLAUDE_BLIND_FORMAT if model in CLI_MODELS else BLIND_FORMAT
+        fmt=CLAUDE_BLIND_FORMAT if model in SUBSCRIPTION_MODELS else BLIND_FORMAT
         cm=ctx.get('map_text') or ''
         return self.llm_json(ctx,model,REVIEW_BLIND+' '+fmt,(f'CONSULTATION MAP FROM A SENIOR CONSULTANT (made before the interview; use it as guidance, it may be wrong):\n{cm}\n\n' if cm else '')+f'CONVERSATION AND FINDINGS:\n{conv}')
     def feature_read(self,ctx,model,conv):
         """Blind read of the strongest model, driven by the distinctive features of the case; one retry with a different payload if the JSON is unreadable."""
-        fmt=FEATURE_FORMAT_CLI if model in CLI_MODELS else FEATURE_FORMAT;cm=ctx.get('map_text') or ''
+        fmt=FEATURE_FORMAT_CLI if model in SUBSCRIPTION_MODELS else FEATURE_FORMAT;cm=ctx.get('map_text') or ''
         user=(f'CONSULTATION MAP FROM A SENIOR CONSULTANT (made before the interview; it may be wrong):\n{cm}\n\n' if cm else '')+f'CONVERSATION AND FINDINGS:\n{conv}'
         out=self.llm_json(ctx,model,FEATURE_BLIND+' '+fmt,user)
         if not (out.get('diagnosis') or '').strip():out=self.llm_json(ctx,model,FEATURE_BLIND+' '+fmt+' Output strictly valid JSON: one object, every string closed, nothing outside it.',user)
@@ -136,14 +138,17 @@ class Cascade:
         tools=ctx['tools'].inner
         def run(tool,name):
             args={'study_name':name} if tool=='request_radiology' else {'test_names':[name]}
-            try:return tools.execute(tool,args)
+            try:
+                if hasattr(tools,'as_actor'):
+                    with tools.as_actor('reviewer'):return tools.execute(tool,args)
+                return tools.execute(tool,args)
             except ToolArgumentsError:return 'invalid request'
         for t in tests:
             for name in t['test_names']:
                 tool=t['tool'];out=run(tool,name)
                 for _ in range(2):  # the reviewer has one round: resolve a wrong tool or a prerequisite procedure by itself (and say so)
-                    try:o=json.loads(out)
-                    except (json.JSONDecodeError,TypeError):break
+                    try:o=(json.JSONDecoder().raw_decode(out.lstrip())[0] if ctx.get('tool_output_prefix_json') else json.loads(out))
+                    except (json.JSONDecodeError,TypeError,AttributeError):break
                     if not isinstance(o,dict):break
                     wt=[w for w in o.get('wrong_tool',[]) if isinstance(w,dict) and w.get('use_tool')]
                     pre=[r for r in o.get('requires_prior_procedure',[]) if isinstance(r,dict) and r.get('needs_prior_procedure')]

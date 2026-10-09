@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "request_id": "3054f333-5c6c-476f-b1c6-3d87ead4564e",
+  "http_status": 403,
+  "classification": "key total limit exhausted; no provider response",
+  "account_total_usage_usd": "20.001081458",
+  "baseline_usage_usd": "18.965410033",
+  "ledger_known_cost_usd": "1.035671425",
+  "account_delta_usd": "1.035671425",
+  "account_snapshot_count": 3,
+  "snapshots_sha256": [
+    "e61ba91828b63853310427b138b4947829b55ab42a64fb1a50e599894cbc146a",
+    "094af301eba5f3acca6317fdb75a395032a08b7bbc239b35442400563b64051a",
+    "8ce5167b2ac6eaf72b539e16a77be49b592e3b46ed7a9ed08dc19889853463cb"
+  ],
+  "snapshots_times": [
+    1791565435.826682,
+    1791565456.8042939,
+    1791565538.409672
+  ],
+  "attributed_cost_usd": "0",
+  "provider_usage_cost_received": false,
+  "not_inference_response": true,
+  "clinical_commit_unchanged": "b3d7d005a324db538b98882f6599cc33f2692eb5",
+  "paid_prefix_preserved": true,
+  "terminal_reexecuted": false,
+  "inference_requests": 0
+}

@@ -1,5 +1,25 @@
 # Histórico de alterações
 
+<!-- V4_FAST4_FINAL_START -->
+## v4 fast4 — consolidação em09/10/2026 18:29:56
+
+Conversa/paciente foram transferidos para Gemini 3.1 Flash-Lite pela OpenRouter e Sol 6.1/Astra ficaram na revisão da assinatura. A primeira fala deixou de esperar um mapa CLI; streaming passou a medir conteúdo/ferramentas e conclusão com IDs e uso real.
+
+Corrigidos, em condição nova: whitelist dos revisores exclui `default_admission`, ferramentas desconhecidas e fala final; prefixo JSON de retorno permite cumprir pré-requisitos apesar de notas anexas; todos os resultados intermediários são registrados com texto/hash; pedidos e filas passam pela política externa compartilhada. Estudos comuns multi-região são normalizados sem ampliar cobertura da fonte. Uma única revisão Sol adicional limitada pode pedir alternativas após achados/indisponibilidade estruturados; pedidos iguais são adiados.
+
+Preservados fast1(9/10), fast2(1/2 piloto), fast3(1/2 piloto), todos os traces/custos e escores anteriores. Fast4 congelada em b3d7d00,321 testes antes da inferência: públicos10/10; fechados10/10 após o gate. Total adicional globalUS$1.061257675, tetoUS$ 5. Valores e limitações em reports/v4_fast4_summary.md; sem atribuir preço API à assinatura ou declarar superioridade clínica.
+<!-- V4_FAST4_FINAL_END -->
+
+
+## v4 — 08/09-10-2026, base Claude v3.7 preservada
+- Condição opt-in v4 com modelos OpenAI pela assinatura, matcher/juiz Gemini via OpenRouter, extração literal e contabilização relativa compartilhada por médico/revisores; transporte/replay/limites testados,229testes aprovados antes da última rodada.
+- Rodada original9/10, US$0.12304050; revisão offline pós-hoc10/10, US$0.045766; nova condição com parecer final Astra10/10, US$0.11515425. Nenhum resultado original substituído; dez casos conhecidos por condição, revisão médica pendente.
+- Custos globais adicionaisUS$0.28396075, cap5; ledgerUS$0.28396075/delta contaUS$0.265806750, diferençaUS$0.018154000 identificada em quatro chamadas de juiz sem metadados404. Não conciliado exatamente; custos preservados. Metadados originais com atraso ficaram disponíveis sem reclassificação ou alteração do ledger. Uso CLI de chamadas interrompidas pode estar ausente; dinheiro da assinatura desconhecido.
+- Reparo pós-avaliação opt-in do registro de resultados da fila, sem alterar os encontros avaliados ou o input dos revisores. Nove testes adicionais; suíte final238aprovados. Detalhes em reports/post_evaluation_release_logging.md.
+- Animação standalone mostra relógio, início/fim/duração, fases, custoAPI/unidades, pausa/velocidade/navegação; entradas e referências dos juízes omitidas. Corrigido arredondamento do slider para exibir exatamente o terminal.
+- Achados de auditoria mantidos: ensaios/protocolos não equivalentes, cronologia comprimida, fontes históricas e leniência de juiz. Protótipo temporal não integrou a condição; histórico canônico978hashes sem divergência.
+
+
 ## 2026-10-03 — protocolo MIRA-RAUL
 
 - Preservado o experimento anterior em `legacy/`, incluindo 290 percursos terminais; novo experimento possui denominador independente.
@@ -102,3 +122,7 @@ Variante `cas` (GLM-5 → triagem JEF → Sonnet às cegas → Opus, Claude pela
 
 ## v3.2 com Sonnet no lugar do Opus e correções (execuções 1 e 2) — 05-10-2026
 Mapa da consulta, pré-requisitos de procedimento, emergência sem N mínimo, critério v3 do caso 009, triagem do JEF 0,86 com auditoria e gatilho, resgate de falhas, dica de ferramenta errada e revisor que resolve pré-requisitos sozinho. v3.2b 9/10 (US$ 0,089 por encontro); v3.2c (correções) **10/10, US$ 0,070 por encontro**, caso 001 resolvido já na primeira camada. Gasto da etapa US$ 0,375 (ledger = conta US$ 15,829536788). Detalhes em [reports/v3_cascade_v32.md](reports/v3_cascade_v32.md) e [reports/v3_flow.md](reports/v3_flow.md). Sem revisão médica; uma execução por caso.
+
+
+## v4 — 08-10-2026
+Nova condição da assinatura ChatGPT: transporte Codex fechado e replay por hash; unidades relativas de exames entregues para todos os atores; componentes literais; limites e prioridades corrigidos. Base v3.7 preservada. Protocolo e limitações em reports/v4_protocol.md.

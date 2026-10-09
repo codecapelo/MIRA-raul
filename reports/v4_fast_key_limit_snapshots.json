@@ -1,0 +1,81 @@
+{
+  "snapshots": [
+    {
+      "time": 1791565435.826682,
+      "key": {
+        "limit": 20,
+        "limit_remaining": 0,
+        "limit_reset": null,
+        "usage": 20.001081458,
+        "usage_daily": 0.824454175,
+        "usage_weekly": 11.63820187,
+        "usage_monthly": 20.001081458,
+        "is_free_tier": false
+      },
+      "account": {
+        "total_credits": 25,
+        "total_usage": 20.001081458
+      },
+      "ledger_cost_usd": "1.035671425",
+      "account_delta_usd": "1.035671425",
+      "difference_ledger_minus_account_usd": "0E-9",
+      "states": {
+        "settled": 951,
+        "uncertain": 1
+      },
+      "inference_requests": 0
+    },
+    {
+      "time": 1791565456.8042939,
+      "key": {
+        "limit": 20,
+        "limit_remaining": 0,
+        "limit_reset": null,
+        "usage": 20.001081458,
+        "usage_daily": 0.824454175,
+        "usage_weekly": 11.63820187,
+        "usage_monthly": 20.001081458,
+        "is_free_tier": false
+      },
+      "account": {
+        "total_credits": 25,
+        "total_usage": 20.001081458
+      },
+      "ledger_cost_usd": "1.035671425",
+      "account_delta_usd": "1.035671425",
+      "difference_ledger_minus_account_usd": "0E-9",
+      "states": {
+        "settled": 951,
+        "uncertain": 1
+      },
+      "inference_requests": 0
+    },
+    {
+      "time": 1791565538.409672,
+      "key": {
+        "limit": 20,
+        "limit_remaining": 0,
+        "limit_reset": null,
+        "usage": 20.001081458,
+        "usage_daily": 0.824454175,
+        "usage_weekly": 11.63820187,
+        "usage_monthly": 20.001081458,
+        "is_free_tier": false
+      },
+      "account": {
+        "total_credits": 25,
+        "total_usage": 20.001081458
+      },
+      "ledger_cost_usd": "1.035671425",
+      "account_delta_usd": "1.035671425",
+      "difference_ledger_minus_account_usd": "0E-9",
+      "states": {
+        "settled": 951,
+        "uncertain": 1
+      },
+      "inference_requests": 0
+    }
+  ],
+  "inference_requests": 0,
+  "credentials_exported": false
+}

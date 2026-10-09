@@ -141,3 +141,12 @@ Intercorrências (ver [reports/runs23_incidents.md](reports/runs23_incidents.md)
 
 ## Resultado do Opus 5.5 pela assinatura — 05-10-2026
 `claude-opus-5-5` em high, mesmo braço de assinatura do Sonnet (ferramentas emuladas em JSON, não equivalente aos demais): 10/10 terminais, **10 corretos pelo juiz** (7 a 8 de 10 sob leitura rigorosa: 007 sem o fármaco, 002 sem miocardite, 009 sem Meckel), 0 sem julgamento, conversa com o paciente em 6 de 10 encontros. Consumo: 49 chamadas ao CLI, 194 mil tokens de entrada (194,1 mil em cache), 38,5 mil de saída, cerca de 5 minutos, custo equivalente de API US$ 1,85; gasto no OpenRouter US$ 0,0078; conta = ledger = US$ 8,370711103. O percentual consumido do limite do plano Pro não é legível pelo CLI. Detalhes e comparação com o Sonnet em [reports/claude_opus_5_5_subscription_run1.md](reports/claude_opus_5_5_subscription_run1.md). Revisão médica pendente; uma execução por caso, sem afirmação de superioridade.
+
+## Atualização v4
+Resultado atual e condições distintas em [v4_final_summary.md](v4_final_summary.md), com [artefato e animação](v4_comparison.html). Resumos acima permanecem históricos.
+
+<!-- V4_FAST4_FINAL_START -->
+## Atualização v4 rápida — 09/10/2026 18:29:56
+
+Fast4 públicos 10/10, fechados 10/10 pelo juiz, separados; condição b3d7d00, sem retuning fechado. Global v4 US$1.061257675. conta e ledger conciliados; custos das respostas com usage.cost confirmados pelos metadados de geração; 1 rejeição sem usage.cost atribuída a zero por evidência de conta. [Resumo específico](v4_fast4_summary.md), [métricas e atores](v4_fast_summary.json), [artifact animado](v4_comparison.html). Histórico e negativos preservados; revisão médica pendente.
+<!-- V4_FAST4_FINAL_END -->

@@ -30,3 +30,14 @@ Custo real total US$ 4.274237323 (ledger = conta). Detalhes e projeção para 5 
 ## Atualização após extensão Qwen3.8
 
 Custo real total US$ 8.356544873 (ledger = conta). A projeção para 5 repetições em [all_runs_cost_projection.md](all_runs_cost_projection.md) agora cobre 7 modelos.
+
+## v4 — projeção a partir de encontros completos
+Nova condição:10encontros, API todosatoresUS$0.11515425, médiaUS$0.011515425; projeção linear50encontrosUS$0.57577125. Apenas estimativa de API, sem autorização de novos testes, sem assinatura e sem dólares de exames. Histórico original/APIoffline adicional e falhas permanecem no globalUS$0.28396075, cap5/restanteUS$4.71603925. Não representa custo por sucesso clínico. Comparação descritivaClaudev3.6públicosUS$0.35023969 versus novaAPIUS$0.11515425; modelos/transporte/custos assinatura diferem. Fonte: v4_final_summary.json.
+
+<!-- V4_FAST4_FINAL_START -->
+## v4 rápida fast4 — consolidação em 09/10/2026 18:29:56
+
+Dez públicos: US$0.210319200 todos os atores; dez fechados: US$0.284180975. A assinatura tem custo monetário desconhecido. A API de implantação exclui paciente simulado e juízes, discriminados no resumo. Exames usam unidades artificiais 1/5/15 deduplicadas por fonte, sem dólar clínico.
+
+Projeção linear para 50 encontros públicos: US$1.051596000; para 50 do mix das duas coortes: US$1.2362504375. Estimativas sem autorização de execução, sem assinatura, sem garantia de acerto ou preço. Global v4 US$1.061257675 conciliado, pilotos e falhas incluídos; restante do teto US$5: US$3.938742325. Projeções anteriores permanecem históricas.
+<!-- V4_FAST4_FINAL_END -->

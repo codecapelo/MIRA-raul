@@ -1,0 +1,138 @@
+{
+  "protocol": "v4",
+  "terminals": 10,
+  "judge_correct": 9,
+  "judge_denominator": 10,
+  "proposal_correct": 8,
+  "wilson95": [
+    0.595849973204771,
+    0.9821237869049263
+  ],
+  "openrouter_usd": "0.12304050",
+  "openrouter_mean_usd": "0.01230405",
+  "by_actor_usd": {
+    "matcher": "0.03262650",
+    "judge": "0.045424",
+    "judge_proposal": "0.044990"
+  },
+  "account_delta_usd": "0.265806750",
+  "account_reconciled": false,
+  "global_v4_openrouter_usd": "0.28396075",
+  "ledger_states": {
+    "settled": 168
+  },
+  "additional_cap_usd": "5.00",
+  "remaining_cap_usd": "4.71603925",
+  "relative_exam_units": 247,
+  "performed_exam_sources": 41,
+  "subscription_tokens": {
+    "prompt_tokens": 1801738,
+    "completion_tokens": 33901,
+    "cache_input_tokens": 248704
+  },
+  "subscription_monetary_cost_usd": null,
+  "served_subscription_model_identity": "not attested by CLI",
+  "rescued": 0,
+  "patient_exchanges": 23,
+  "review_exchanges": 10,
+  "latency_median_s": 188.480642354,
+  "cases": [
+    {
+      "case_id": "case_001",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.01788875",
+      "relative_units": 26,
+      "exam_sources": 4,
+      "rescued": false
+    },
+    {
+      "case_id": "case_002",
+      "judge_correct": false,
+      "proposal_correct": false,
+      "cost_usd": "0.01371400",
+      "relative_units": 27,
+      "exam_sources": 5,
+      "rescued": false
+    },
+    {
+      "case_id": "case_003",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.01535050",
+      "relative_units": 22,
+      "exam_sources": 4,
+      "rescued": false
+    },
+    {
+      "case_id": "case_004",
+      "judge_correct": true,
+      "proposal_correct": false,
+      "cost_usd": "0.01648675",
+      "relative_units": 31,
+      "exam_sources": 5,
+      "rescued": false
+    },
+    {
+      "case_id": "case_005",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.01243150",
+      "relative_units": 11,
+      "exam_sources": 3,
+      "rescued": false
+    },
+    {
+      "case_id": "case_006",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.01060875",
+      "relative_units": 35,
+      "exam_sources": 5,
+      "rescued": false
+    },
+    {
+      "case_id": "case_007",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.00744275",
+      "relative_units": 12,
+      "exam_sources": 4,
+      "rescued": false
+    },
+    {
+      "case_id": "case_008",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.008170",
+      "relative_units": 17,
+      "exam_sources": 3,
+      "rescued": false
+    },
+    {
+      "case_id": "case_009",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.00880875",
+      "relative_units": 20,
+      "exam_sources": 2,
+      "rescued": false
+    },
+    {
+      "case_id": "case_010",
+      "judge_correct": true,
+      "proposal_correct": true,
+      "cost_usd": "0.01213875",
+      "relative_units": 46,
+      "exam_sources": 6,
+      "rescued": false
+    }
+  ],
+  "limits": [
+    "Known cases reused for development; no holdout",
+    "LLM judge; blinded medical review pending",
+    "Inherited time compression permits some followup records",
+    "No claim of general clinical accuracy or clinical safety",
+    "US$0 OpenRouter for subscription calls is not a zero monetary cost for the subscription"
+  ]
+}

@@ -1,0 +1,635 @@
+{
+  "scope": "fast4 public pilot001002 only",
+  "mode": "readonly",
+  "closed_case_contents_read": false,
+  "active_case003_reference_read": false,
+  "reference_files_read": false,
+  "paid_calls_sent": false,
+  "code_or_head_changes": false,
+  "cases": [
+    {
+      "case_id": "case_001",
+      "trace": "runs/v4/fast/fast4/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_001.jsonl",
+      "trace_sha256": "2e05065d1a2924cafbc1b7ac77c226ef543de44ea147cf2878ea03f473ddfd30",
+      "lines": 97,
+      "terminal_commit": "b3d7d005a324db538b98882f6599cc33f2692eb5",
+      "terminal_judge": true,
+      "proposal_judge": true,
+      "source_hashes": {
+        "patient.json": "585b65124ecc4926522cc06cdba852ed262e118d604a4393345bdc7852fd2638",
+        "investigations.json": "c831ae7fba03258f3226931a9d80d6afbafc2c22e80b46b298e3b23b5babf02d"
+      },
+      "review_inputs": [
+        {
+          "line": 49,
+          "stage": "sol",
+          "input_sha256": "58c09992ea9879431aff9ae8058ab239e7d966654f1813ea6a499de19a8b06be",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frame_absent": true,
+          "diagnostic_final_speech_absent": true,
+          "astra_exact_generic_system": null
+        },
+        {
+          "line": 72,
+          "stage": "sol_post_followup",
+          "input_sha256": "e664c2cb732601ad778b10f548a6f3f69520141e19b6f7e9308cc64381a2c719",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frame_absent": true,
+          "diagnostic_final_speech_absent": true,
+          "astra_exact_generic_system": null
+        },
+        {
+          "line": 89,
+          "stage": "astra",
+          "input_sha256": "083e6fff9a89e0cdf43bbb6c0efed6e15f3b57479674186d03702b660bff38c4",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frame_absent": true,
+          "diagnostic_final_speech_absent": true,
+          "astra_exact_generic_system": true
+        }
+      ],
+      "tool_output_integrity": [
+        {
+          "line": 71,
+          "phase": "initial",
+          "tool": "request_radiology",
+          "arguments": {
+            "study_name": "Coronary angiography"
+          },
+          "raw_output_sha256": "f5c0deded0e5d547abbc0829abc125b0425aeb26c666e856e317d45973e0ffd5",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 71,
+          "phase": "initial",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "pericardiocentesis"
+            ]
+          },
+          "raw_output_sha256": "42c700b799ebda50df88d1762cda3e5818f01622a4363443ca44444d54477a03",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 71,
+          "phase": "initial",
+          "tool": "request_radiology",
+          "arguments": {
+            "study_name": "Coronary angiography"
+          },
+          "raw_output_sha256": "c2bee18c3d45a3fdd4e39f00136d93f7e79261585ca0c7be1caa2e199775f8dd",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 71,
+          "phase": "initial",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Operative exploration of the heart and pericardium"
+            ]
+          },
+          "raw_output_sha256": "c6a47f29223736220630575b4a3871a54eb3a4d517766dd64a050ed073811a1a",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 71,
+          "phase": "initial",
+          "tool": "request_bedside_test",
+          "arguments": {
+            "test_names": [
+              "Transesophageal echocardiography of the heart"
+            ]
+          },
+          "raw_output_sha256": "903318ec1137d31639de40f68ff6d99c92c21713e1671dfb90773c0dae240c10",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 71,
+          "phase": "initial",
+          "tool": "request_microbiology",
+          "arguments": {
+            "test_names": [
+              "Blood culture"
+            ]
+          },
+          "raw_output_sha256": "a8febe6fa4695c3d4796924bfebfe5d328636af0d9f4d6dd67abf7b134390bd4",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 88,
+          "phase": "second",
+          "tool": "request_radiology",
+          "arguments": {
+            "study_name": "CT angiography of the heart"
+          },
+          "raw_output_sha256": "27ca9bd7140cfd4155d98ba75ea7f0ffa626dd0efb7ebb91a7479eb76301c0df",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 88,
+          "phase": "second",
+          "tool": "request_microbiology",
+          "arguments": {
+            "test_names": [
+              "Bacterial culture of pericardial fluid"
+            ]
+          },
+          "raw_output_sha256": "64fb24e95c83884e7029b7b8d89ed5fa646c85c33798e35936fa9493dd8b39ab",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        }
+      ],
+      "literal_findings": [
+        {
+          "line": 42,
+          "actor": "doctor",
+          "requested": "transthoracic echocardiogram",
+          "name": "Transthoracic echocardiography",
+          "literal_supported": true,
+          "source_fact_id": "ecg_008"
+        },
+        {
+          "line": 71,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "pericardiocentesis",
+          "name": "Pericardiocentesis",
+          "literal_supported": true,
+          "source_fact_id": "procedure_result_011"
+        },
+        {
+          "line": 71,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "Coronary angiography",
+          "name": "Coronary angiography",
+          "literal_supported": true,
+          "source_fact_id": "imaging_009"
+        },
+        {
+          "line": 71,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "Blood culture",
+          "name": "Blood cultures",
+          "literal_supported": true,
+          "source_fact_id": "microbiology_013"
+        }
+      ],
+      "queue_releases": [
+        {
+          "line": 48,
+          "phase": "before_sol",
+          "recipient": "reviewer",
+          "empty": true,
+          "hash_valid": true
+        },
+        {
+          "line": 70,
+          "phase": "after_followup",
+          "recipient": "reviewer",
+          "empty": true,
+          "hash_valid": true
+        },
+        {
+          "line": 87,
+          "phase": "after_second_followup",
+          "recipient": "reviewer",
+          "empty": true,
+          "hash_valid": true
+        }
+      ],
+      "followup_integrity": [
+        {
+          "line": 71,
+          "phase": "initial",
+          "text_sha256": "6d8bf195d71963f3d70fa6e30d67254e9613c5d2d03f23b4126b474981c1b2f5",
+          "hash_valid": true,
+          "actual_findings": 3
+        },
+        {
+          "line": 88,
+          "phase": "second",
+          "text_sha256": "735930ba8e6a536bd1fad42fa1ba311d5b3b8592ec991c0b0e693c6b376e60ee",
+          "hash_valid": true,
+          "actual_findings": 0
+        }
+      ],
+      "judge_inputs": [
+        {
+          "line": 93,
+          "role": "judge",
+          "confidence_fields_absent": true,
+          "unconfirmed_list_absent": true,
+          "management_absent": true
+        },
+        {
+          "line": 95,
+          "role": "judge_proposal",
+          "confidence_fields_absent": true,
+          "unconfirmed_list_absent": true,
+          "management_absent": true
+        }
+      ],
+      "exams": {
+        "relative_units": 26,
+        "charged_sources": 4,
+        "charge_source_unique": true,
+        "units_sum_valid": true,
+        "actor_units": {
+          "doctor": 5,
+          "reviewer": 21
+        },
+        "unavailable_attempts": 6,
+        "duplicate_attempts": 0,
+        "gated_prerequisites": 1
+      },
+      "final_uncertainty": {
+        "confidence": 0.93,
+        "finite_confidence": true,
+        "unconfirmed": [
+          "Direct MRSA infection of the coronary stent/pseudoaneurysm",
+          "Purulent pericarditis and its organism",
+          "Pseudoaneurysm rupture or communication with the pericardial space",
+          "Persistent bacteremia, endocarditis, or leadless pacemaker infection",
+          "Myocardial infarction"
+        ],
+        "next_steps": [
+          "Urgent cardiothoracic surgical and interventional cardiology assessment for source control and management of the unstable pseudoaneurysm; monitor for recurrent tamponade.",
+          "Obtain operative tissue/stent and pericardial fluid cultures and histopathology when feasible to confirm infection and assess rupture.",
+          "Repeat blood cultures to document clearance, obtain susceptibility results, and ensure intravenous MRSA-active therapy with infectious disease input.",
+          "Perform transesophageal echocardiography when feasible to evaluate endocarditis and pacemaker involvement; obtain ECG and serial troponin to assess myocardial injury."
+        ],
+        "diagnosis": "Probable MRSA infection of the prior LAD coronary stent with an infected coronary pseudoaneurysm, complicated by suspected purulent pericarditis and confirmed cardiac tamponade."
+      }
+    },
+    {
+      "case_id": "case_002",
+      "trace": "runs/v4/fast/fast4/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_002.jsonl",
+      "trace_sha256": "a23c9958000c7082c82e811ba6c56429b928d430a5136405f8476b3a574f258b",
+      "lines": 108,
+      "terminal_commit": "b3d7d005a324db538b98882f6599cc33f2692eb5",
+      "terminal_judge": true,
+      "proposal_judge": false,
+      "source_hashes": {
+        "patient.json": "44b3de002a436ac4661bcaddd66759fbe939d0b339ab153c7bf69c68d28f2e95",
+        "investigations.json": "1b2e06edb76d06db709161e1a8a44d8a245395dcbbe2cf5dc0990b1d6ddeec3e"
+      },
+      "review_inputs": [
+        {
+          "line": 76,
+          "stage": "sol",
+          "input_sha256": "fb61a968a9bc22fbf63f6a9f12a4d13aa6c49c88806b83b48afc40414c750c0c",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frame_absent": true,
+          "diagnostic_final_speech_absent": true,
+          "astra_exact_generic_system": null
+        },
+        {
+          "line": 97,
+          "stage": "sol_post_followup",
+          "input_sha256": "6a94b494c381121325cffd7bda8ad9c2f6e6e7244b3c502c836fe23948e2af4e",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frame_absent": true,
+          "diagnostic_final_speech_absent": true,
+          "astra_exact_generic_system": null
+        },
+        {
+          "line": 100,
+          "stage": "astra",
+          "input_sha256": "6a94b494c381121325cffd7bda8ad9c2f6e6e7244b3c502c836fe23948e2af4e",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frame_absent": true,
+          "diagnostic_final_speech_absent": true,
+          "astra_exact_generic_system": true
+        }
+      ],
+      "tool_output_integrity": [
+        {
+          "line": 96,
+          "phase": "initial",
+          "tool": "request_radiology",
+          "arguments": {
+            "study_name": "Cardiac MRI of the heart with tissue characterization"
+          },
+          "raw_output_sha256": "ec6f3145f2b6af84f2bce8a0d437e04ee8bb5287f6753ffa018f20c286022612",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 96,
+          "phase": "initial",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Intracardiac electrophysiological study of atrial electrical activity"
+            ]
+          },
+          "raw_output_sha256": "d5174ca822de771024209df424069cba38fecb7d1e84e54ae8c73d9e45ae05e3",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 96,
+          "phase": "initial",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Right-heart catheterization for pulmonary hemodynamics"
+            ]
+          },
+          "raw_output_sha256": "327afda16535c3e86e5f403d3eb645a59b755cceeefa494abd5b8fc6e191aeb8",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 96,
+          "phase": "initial",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Right ventricular endomyocardial biopsy for histopathology"
+            ]
+          },
+          "raw_output_sha256": "bdd766e59c303b31f1955fc1b9f6b0d92847557be911853dd30f5e49eee5ba97",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        }
+      ],
+      "literal_findings": [
+        {
+          "line": 23,
+          "actor": "doctor",
+          "requested": "ECG",
+          "name": "Electrocardiogram",
+          "literal_supported": true,
+          "source_fact_id": "ecg_005"
+        },
+        {
+          "line": 27,
+          "actor": "doctor",
+          "requested": "BNP",
+          "name": "NT-proBNP",
+          "literal_supported": true,
+          "source_fact_id": "lab_006"
+        },
+        {
+          "line": 41,
+          "actor": "doctor",
+          "requested": "troponin I",
+          "name": "Troponin",
+          "literal_supported": true,
+          "source_fact_id": "lab_007"
+        },
+        {
+          "line": 63,
+          "actor": "doctor",
+          "requested": "echocardiogram",
+          "name": "Transthoracic echocardiography",
+          "literal_supported": true,
+          "source_fact_id": "ecg_009"
+        },
+        {
+          "line": 96,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "Cardiac MRI of the heart with tissue characterization",
+          "name": "Cardiac MRI",
+          "literal_supported": true,
+          "source_fact_id": "imaging_014"
+        },
+        {
+          "line": 96,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "Intracardiac electrophysiological study of atrial electrical activity",
+          "name": "Electrophysiology study",
+          "literal_supported": true,
+          "source_fact_id": "ecg_015"
+        },
+        {
+          "line": 96,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "Right-heart catheterization for pulmonary hemodynamics",
+          "name": "Right-heart catheterization",
+          "literal_supported": true,
+          "source_fact_id": "procedure_result_012"
+        }
+      ],
+      "queue_releases": [
+        {
+          "line": 75,
+          "phase": "before_sol",
+          "recipient": "reviewer",
+          "empty": true,
+          "hash_valid": true
+        },
+        {
+          "line": 95,
+          "phase": "after_followup",
+          "recipient": "reviewer",
+          "empty": true,
+          "hash_valid": true
+        }
+      ],
+      "followup_integrity": [
+        {
+          "line": 96,
+          "phase": "initial",
+          "text_sha256": "f084b4f4c1d08adf6f54e38e99374aa55f98b56a6836314e620636cdab4347a9",
+          "hash_valid": true,
+          "actual_findings": 3
+        }
+      ],
+      "judge_inputs": [
+        {
+          "line": 104,
+          "role": "judge",
+          "confidence_fields_absent": true,
+          "unconfirmed_list_absent": true,
+          "management_absent": true
+        },
+        {
+          "line": 106,
+          "role": "judge_proposal",
+          "confidence_fields_absent": true,
+          "unconfirmed_list_absent": true,
+          "management_absent": true
+        }
+      ],
+      "exams": {
+        "relative_units": 47,
+        "charged_sources": 7,
+        "charge_source_unique": true,
+        "units_sum_valid": true,
+        "actor_units": {
+          "doctor": 12,
+          "reviewer": 35
+        },
+        "unavailable_attempts": 4,
+        "duplicate_attempts": 0,
+        "gated_prerequisites": 0
+      },
+      "final_uncertainty": {
+        "confidence": 0.8,
+        "finite_confidence": true,
+        "unconfirmed": [
+          "Postinfectious inflammatory etiology and any specific pathogen",
+          "Histologic myocarditis and reversibility of atrial dysfunction",
+          "Mesalazine causality, ulcerative-colitis-associated inflammation, or preexisting atrial cardiomyopathy"
+        ],
+        "next_steps": [
+          "Urgent monitored cardiology/electrophysiology management of complete AV block and congestion, including assessment for permanent pacing.",
+          "Establish mesalazine initiation and dose history, prior ECGs and cardiac symptoms, and ulcerative colitis activity; discuss withdrawal or substitution if drug causality becomes plausible.",
+          "Obtain electrolytes and thyroid function to assess reversible contributors.",
+          "Repeat ECG, echocardiography and cardiac MRI after stabilization to assess inflammatory resolution and persistent atrial dysfunction; consider targeted tissue diagnosis if feasible and management-changing."
+        ],
+        "diagnosis": "Probable postinfectious atrial-predominant myocarditis causing extensive atrial electrical failure and reduced left-atrial compliance, with secondary postcapillary pulmonary hypertension and right-sided heart failure."
+      }
+    }
+  ],
+  "limitations": [
+    {
+      "case_id": "case_001",
+      "trace_lines": [
+        9
+      ],
+      "kind": "unsupported_patient_negative",
+      "finding": "Pain does not radiate to jaw/back/arms is not documented in patient source. Other symptom/onset/implant/date/repeatculture questions remained unknown."
+    },
+    {
+      "case_id": "case_001",
+      "trace_lines": [
+        14,
+        15
+      ],
+      "kind": "urgent_history_gate",
+      "finding": "Known shock does not waive two-exchange gate; ECG/troponin attempts were locked. Pilot is not clinical timeliness validation."
+    },
+    {
+      "case_id": "case_001",
+      "trace_lines": [
+        42,
+        71,
+        91
+      ],
+      "kind": "etiology_vs_confirmation",
+      "finding": "Doctor had echo only (5units); reviewer subsequently obtained pericardiocentesis, coronary angiography and documented MRSA culture: terminal26units/4sources. Pseudoaneurysm/stentdisruption now directly supported, but direct infection, organism in pericardial fluid and rupture/communication remain unconfirmed."
+    },
+    {
+      "case_id": "case_001",
+      "trace_lines": [
+        71,
+        88
+      ],
+      "kind": "source_time_and_unavailable",
+      "finding": "Bloodculture source is historical documentedMRSA, not new clearance/susceptibility; CT/TEE/operative/pericardialculture requests unavailable. Prerequisite pericardiocentesis was executed before angiography and all intermediate raw results reached final reviewer."
+    },
+    {
+      "case_id": "case_002",
+      "trace_lines": [
+        9
+      ],
+      "kind": "unsupported_medication_negative",
+      "finding": "Not taking heart or blood-pressure medicines is not established by the source, which leaves complete medication list unknown."
+    },
+    {
+      "case_id": "case_002",
+      "trace_lines": [
+        83
+      ],
+      "kind": "unsupported_symptom_temporal_extension",
+      "finding": "Source excludes chestpain/dizziness initially; reply extends no dizzyspells to entire illness and adds no fainting. Mesalazine initiation/dosechanges/oldECG correctly remain unknown."
+    },
+    {
+      "case_id": "case_002",
+      "trace_lines": [
+        41
+      ],
+      "kind": "assay_mismatch",
+      "finding": "Requested troponinI returns literal high-sensitivitytroponinT31ng/L. Literal/source numeric correctness does not establish assay equivalence."
+    },
+    {
+      "case_id": "case_002",
+      "trace_lines": [
+        96,
+        102
+      ],
+      "kind": "temporal_compression",
+      "finding": "EP observation is marked followup in source, yet delivered in acute review and used as verified electricalfailure/AVblock without retaining later timing."
+    },
+    {
+      "case_id": "case_002",
+      "trace_lines": [
+        96
+      ],
+      "kind": "modality_and_scope",
+      "finding": "CardiacMRI tissuecharacterization maps genericMRIsource with atrialLGE/borderlineedema; requested acquisition protocol not independently attested. Rightventricular biopsy unavailable, not proof against atrialinflammation."
+    },
+    {
+      "case_id": "case_002",
+      "trace_lines": [
+        68,
+        69,
+        76,
+        97,
+        100
+      ],
+      "kind": "proposal_exclusion_repaired",
+      "finding": "NativeAPI default_admission and accompanying diagnostic final speech occur again, but neither entered any of the three reviewer inputs. No priorSoldiagnosis/reasoning entered subsequent stages; chosen study names/questions can still prime hypotheses."
+    },
+    {
+      "case_id": "both",
+      "kind": "unexercised_paths",
+      "finding": "All six queue releases are empty; duplicate_attempts=0 bothcases and no deferred studies. This pilot does not empirically exercise queue delivery or duplicate-blocked alternatives, though unavailable/prerequisite paths are recorded."
+    },
+    {
+      "case_id": "both",
+      "kind": "judge_scope",
+      "finding": "Four judgeinputs contain diagnosticmatchingfields only, excluding confidence/uncertainty/management. Two accepted finals are not proof of clinical safety, calibration or superiority."
+    }
+  ],
+  "patient_listed_unsupported_claims": 5,
+  "clinical_review": "pending",
+  "summary": "All6review inputs reconstruct exactly with valid hashes; 12recordedfollowupoutputs rawSHA and parser match, all11literalfindings supported, 11uniquecharges/sources acrosscases. Proposal exclusion repaired; assay/time fidelity remains limited."
+}

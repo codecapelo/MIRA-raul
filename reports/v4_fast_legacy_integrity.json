@@ -1,0 +1,11 @@
+{
+  "manifest_entries": 978,
+  "canonical_present": 978,
+  "canonical_matching": 978,
+  "managed_present": 888,
+  "managed_matching": 888,
+  "managed_missing": 90,
+  "canonical_all_match": true,
+  "managed_present_all_match": true,
+  "managed_missing_are_not_claimed_verified": true
+}

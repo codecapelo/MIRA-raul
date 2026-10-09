@@ -1,0 +1,26 @@
+{
+  "status": "account_difference_unresolved_usage_cost_conservatively_retained",
+  "before": {
+    "total_credits": "25",
+    "total_usage": "18.965410033"
+  },
+  "account_snapshot": {
+    "total_credits": "25",
+    "total_usage": "19.077967533"
+  },
+  "response_usage_cost_total": "0.12304050",
+  "account_delta": "0.112557500",
+  "difference": "0.010483000",
+  "generation_metadata_available": 75,
+  "generation_metadata_missing": 6,
+  "missing_generation_ids": [
+    "gen-1791490894-Tdpi04FK5wh8fvtX23uD",
+    "gen-1791490906-vPRJmYq7vC3aIzBLGOpq",
+    "gen-1791490907-NKLVO7ekCErSAA3DRrU1",
+    "gen-1791490969-2tC3FpPcAWtFTRjE0E65",
+    "gen-1791491069-2WKHabJWqvNaEN8shxne",
+    "gen-1791491073-UefGQfyHKoOkgvzq7Pha"
+  ],
+  "missing_received_usage_cost_sum": "0.01048300",
+  "action": "Do not alter ledger or mark received usage.cost zero. Every inference has received and settled cost. Budget uses higher full usage.cost amount. Metadata404 does not prove zero charge. Additional study shares same USD5 conservative ledger. Recheck account after study."
+}
