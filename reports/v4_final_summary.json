@@ -1562,18 +1562,18 @@
     "outside_three_conditions_usage_cost_usd": "0",
     "ledger_without_durable_response": [],
     "final_account": {
-      "total_usage": "19.231216783",
       "total_credits": "25",
-      "snapshot_unix": 1791510859.245557,
+      "total_usage": "19.249370783",
+      "snapshot_unix": 1791545193.926522,
       "no_cache": true
     },
     "baseline_account": {
       "total_credits": "25",
       "total_usage": "18.965410033"
     },
-    "account_delta_usd": "0.265806750",
-    "ledger_minus_account_usd": "0.018154000",
-    "account_reconciled_exactly": false,
+    "account_delta_usd": "0.283960750",
+    "ledger_minus_account_usd": "0E-9",
+    "account_reconciled_exactly": true,
     "cost_policy": "All settled recorded costs preserved; no divergence reclassified as zero",
     "unique_api_response_ids": 168,
     "unique_provider_response_ids_received": 168,

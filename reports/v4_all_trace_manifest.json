@@ -299,7 +299,7 @@
       ]
     }
   },
-  "consolidator_sha256": "d9e0372e45d4f1c9a526ffb562d40c224f6b46df02c6469f9f50697742a15497",
+  "consolidator_sha256": "fc6553b281fdf74c243b59b9d0a8ad0a07a7bdd1629b9104d69444200d5f8219",
   "financial_sources": {
     "baseline": {
       "path": "runs/v4/credits_before.json",
@@ -307,7 +307,7 @@
     },
     "final": {
       "path": "runs/v4/credits_global_final.json",
-      "sha256": "316d23e0a9c90b4e4c624bfa4cad4d56d876473e5a9a0274cced4656dee12637"
+      "sha256": "e6b0dd021e80398316e4a9770e07513fc198334bc30cf3ee70329c7d5ccf56f0"
     }
   }
 }

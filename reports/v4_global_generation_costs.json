@@ -1733,7 +1733,17 @@
     "role": "judge",
     "generation_id": "gen-1791492721-pDd65XcZT1HVSd9uvPGr",
     "usage_cost": "0.004174",
-    "metadata_http_status": 404
+    "generation": {
+      "total_cost": 0.004174,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:52:01.157Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 868,
+      "tokens_completion": 203,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
   },
   {
     "condition": "working",
@@ -1741,7 +1751,17 @@
     "role": "judge_proposal",
     "generation_id": "gen-1791492725-K9NqRxNbjySvQUlN7CYN",
     "usage_cost": "0.005006",
-    "metadata_http_status": 404
+    "generation": {
+      "total_cost": 0.005006,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:52:05.345Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 854,
+      "tokens_completion": 221,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
   },
   {
     "condition": "working",
@@ -1875,7 +1895,17 @@
     "role": "judge",
     "generation_id": "gen-1791492903-U2aGyiYM4g4RDFfzxqOU",
     "usage_cost": "0.004306",
-    "metadata_http_status": 404
+    "generation": {
+      "total_cost": 0.004306,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:55:03.527Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 844,
+      "tokens_completion": 210,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
   },
   {
     "condition": "working",
@@ -1883,7 +1913,17 @@
     "role": "judge_proposal",
     "generation_id": "gen-1791492908-waWjmYWamwUjNKCe8MzN",
     "usage_cost": "0.004668",
-    "metadata_http_status": 404
+    "generation": {
+      "total_cost": 0.004668,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:55:08.407Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 830,
+      "tokens_completion": 208,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
   },
   {
     "condition": "working",

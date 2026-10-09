@@ -191,7 +191,40 @@ def parse_codex(stdout,model,with_tools):
         raise CLIFailure('Codex CLI failed: category=invalid_events_or_output') from None
 
 
-def run_codex(model,sysprompt,prompt,with_tools,effort=CODEX_EFFORT):
+def validate_codex_transport_options(options=None):
+    """Diagnostic capture only; the built-in provider cannot be overridden.
+
+    Codex 0.159.1 merges configured built-ins with entry(...).or_insert(...),
+    so model_providers.openai retry/idle settings would not change its provider.
+    Reject those knobs instead of claiming they shorten transport waits.
+    """
+    if options is None:return {}
+    if not isinstance(options,dict) or set(options)-{'diagnostics'}:
+        raise ValueError('Only verified Codex transport option diagnostics is supported')
+    if 'diagnostics' in options and not isinstance(options['diagnostics'],bool):
+        raise ValueError('Codex diagnostics must be a boolean')
+    return {'diagnostics':True} if options.get('diagnostics') else {}
+
+
+def codex_transport_diagnostics(stderr):
+    """Persist counts of fixed phrases only, never matching text or stderr.
+
+    Counts are observations, not an attestation of retries, wait durations, or
+    their cause. Internal CLI logging may omit them; zero is not no retries.
+    """
+    if isinstance(stderr,bytes):stderr=stderr.decode('utf-8',errors='replace')
+    text=stderr.lower() if isinstance(stderr,str) else ''
+    phrases={'stream_disconnected_mentions':'stream disconnected',
+             'sampling_retry_mentions':'retrying sampling request',
+             'stream_error_mentions':'stream error',
+             'timeout_mentions':'timed out'}
+    return {'capture':'fixed_phrase_counts_only',
+            'counts':{key:text.count(phrase) for key,phrase in phrases.items()},
+            'internal_retry_count_attested':False,'stderr_persisted':False}
+
+
+def run_codex(model,sysprompt,prompt,with_tools,effort=CODEX_EFFORT,transport_options=None):
+    options=validate_codex_transport_options(transport_options)
     cli=shutil.which('codex')
     if not cli:raise CLIFailure('Codex CLI not installed')
     settings=codex_settings(effort)
@@ -212,21 +245,37 @@ def run_codex(model,sysprompt,prompt,with_tools,effort=CODEX_EFFORT):
         try:
             done=subprocess.run(command,input=input_text,capture_output=True,text=True,
                                 timeout=TIMEOUT_S,check=False,cwd=cwd,env=env)
-        except subprocess.TimeoutExpired:
-            raise CLIFailure('Codex CLI failed: category=timeout') from None
+        except subprocess.TimeoutExpired as exc:
+            failure=CLIFailure('Codex CLI failed: category=timeout')
+            if options:
+                failure.transport_diagnostics=codex_transport_diagnostics(exc.stderr)
+                failure.process_latency_s=time.monotonic()-t0
+            raise failure from None
         except OSError:
             raise CLIFailure('Codex CLI failed: category=process_start') from None
     if done.returncode:
         # Never persist stderr, account data or the raw process envelope.
-        raise CLIFailure('Codex CLI failed: category=process_exit, exit_code='+str(done.returncode))
-    message,usage=parse_codex(done.stdout,model,with_tools)
-    return {'message':message,'usage':usage,'cli_version':version,'settings':settings},time.monotonic()-t0
+        failure=CLIFailure('Codex CLI failed: category=process_exit, exit_code='+str(done.returncode))
+        if options:
+            failure.transport_diagnostics=codex_transport_diagnostics(done.stderr)
+            failure.process_latency_s=time.monotonic()-t0
+        raise failure
+    try:message,usage=parse_codex(done.stdout,model,with_tools)
+    except CLIFailure as failure:
+        if options:
+            failure.transport_diagnostics=codex_transport_diagnostics(done.stderr)
+            failure.process_latency_s=time.monotonic()-t0
+        raise
+    result={'message':message,'usage':usage,'cli_version':version,'settings':settings}
+    if options:result['transport_diagnostics']=codex_transport_diagnostics(done.stderr)
+    return result,time.monotonic()-t0
 
 
 class HybridClient(Client):
     """OpenRouter Client plus isolated subscription CLIs for clinical roles."""
-    def __init__(self,ledger,config,key=None,transport=None,codex_effort=CODEX_EFFORT):
+    def __init__(self,ledger,config,key=None,transport=None,codex_effort=CODEX_EFFORT,codex_transport_options=None):
         super().__init__(ledger,config,key,transport);codex_settings(codex_effort);self.codex_effort=codex_effort
+        self.codex_transport_options=validate_codex_transport_options(codex_transport_options)
     def call_codex(self,model,messages,log,role,tools):
         ordinal=getattr(log,'cli_ordinal',0);log.cli_ordinal=ordinal+1
         sysprompt,prompt=build(messages,tools)
@@ -234,13 +283,27 @@ class HybridClient(Client):
         payload={'transport':CODEX_TRANSPORT,'model':model,'effort':self.codex_effort,
                  'system':sysprompt,'prompt':prompt,'schema':codex_schema(bool(tools)),
                  'settings':codex_settings(self.codex_effort)}
+        if self.codex_transport_options:payload['transport_options']=self.codex_transport_options
         payload_hash=hashlib.sha256(json.dumps(payload,sort_keys=True,ensure_ascii=False).encode()).hexdigest()
         prior=[e for e in log.events() if e['event']=='cli_call']
         if ordinal<len(prior):
             old=prior[ordinal]
             if old['payload_hash']!=payload_hash or old['ordinal']!=ordinal:raise RuntimeError('Resume payload differs; cannot continue safely')
             return old['response']['message']
-        result,latency=run_codex(model,sysprompt,prompt,bool(tools),self.codex_effort)
+        try:
+            if self.codex_transport_options:
+                result,latency=run_codex(model,sysprompt,prompt,bool(tools),self.codex_effort,
+                                       transport_options=self.codex_transport_options)
+            else:result,latency=run_codex(model,sysprompt,prompt,bool(tools),self.codex_effort)
+        except CLIFailure as failure:
+            if self.codex_transport_options and hasattr(failure,'transport_diagnostics'):
+                category=re.search(r'category=(timeout|process_exit|turn_failure|invalid_events_or_output|process_start)(?:[, ]|$)',str(failure))
+                log.append({'event':'cli_transport_failure','ordinal':ordinal,'role':role,
+                            'model':model,'payload_hash':payload_hash,'failure_category':category.group(1) if category else 'unclassified',
+                            'latency_s':failure.process_latency_s,
+                            'transport_diagnostics':failure.transport_diagnostics,
+                            'usage_unavailable':True})
+            raise
         message=result['message']
         if tools:
             allowed={t['function']['name'] for t in tools}
@@ -250,7 +313,9 @@ class HybridClient(Client):
                     'effort':self.codex_effort,'transport':CODEX_TRANSPORT,'tool_transport':'json_emulated',
                     'payload_hash':payload_hash,'latency_s':latency,'cli_version':result['cli_version'],
                     'settings':result['settings'],'response':{'message':message,'usage':result['usage']},
-                    'sampling_params_accepted':False})
+                    'sampling_params_accepted':False,
+                    **({'transport_diagnostics':result['transport_diagnostics']}
+                       if self.codex_transport_options and 'transport_diagnostics' in result else {})})
         return message
     def call(self,model,messages,log,role,params=None,**kwargs):
         if model in CODEX_MODELS:return self.call_codex(model,messages,log,role,kwargs.get('tools') or [])

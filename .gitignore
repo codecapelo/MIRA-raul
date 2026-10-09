@@ -29,3 +29,7 @@ results/exam_eval_*
 runs/opening_study*/
 runs/note_study*/
 results/note_study*
+
+# Closed v4 study: never publish source facts, raw traces or detailed outputs
+runs/v4/fast_private/
+reports/v4_fast_private_details*

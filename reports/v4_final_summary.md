@@ -8,8 +8,8 @@ A variante prospectiva tem dez novos encontros. A revisão offline reutiliza os 
 | prospective_v4_sol_working | 10/10; 0 não julgados | 72.2%–100.0% | 0.11515425 | 0.03127225 | 257 |
 | offline_working_review | 10/10; 0 não julgados | 72.2%–100.0% | 0.045766 | 0 | 0 |
 
-Ledger global USD 0.28396075; diferença da conta USD 0.265806750; ledger menos conta USD 0.018154000. Teto global USD5 preservado.
-Reconciliação exata: False. Respostas API únicas: 168. Entradas de ledger sem resposta durável: 0.
+Ledger global USD 0.28396075; diferença da conta USD 0.283960750; ledger menos conta USD 0E-9. Teto global USD5 preservado.
+Reconciliação exata: True. Respostas API únicas: 168. Entradas de ledger sem resposta durável: 0.
 
 Hipóteses working não equivalem a confirmação. Juiz LLM não estabelece acurácia clínica, segurança ou superioridade. Revisão médica permanece pendente.
 
