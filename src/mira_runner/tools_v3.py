@@ -6,6 +6,7 @@ Every requested test gets an explicit status by name: reported (with the finding
 LLM matcher; a specimen guard keeps urine/fluid requests from matching serum values. v1/v2 CaseTools is unchanged.
 """
 import json,re
+from .exam_notes import hard_conflict,delivery_note,is_bare
 from .semantics import family, compatible,identity,norm,requested_analytes,result_value,analytes_in,modality,fragments as analyte_fragments
 from .tools import CaseTools
 
@@ -54,7 +55,7 @@ def prereq_groups(o):
 class V3CaseTools(CaseTools):
     def __init__(self,observations,matcher=None,enforce_prereqs=False,strict=None,literal_components=False):
         super().__init__(observations,matcher);self.reported=set();self.enforce=enforce_prereqs;self.prereq_blocks=0;self.strict=strict;self.stats={'rerouted':0,'same':0,'component':0,'panel_part':0,'too_generic':0,'none':0,'wrong_tool_hint':0,'specimen_blocked':0,'component_isolated':0,'component_unisolated':0}
-        self.literal_components=literal_components
+        self.literal_components=literal_components;self.delivery_notes=False  # v5: refuse dynamic tests answered by a baseline value, and say how a delivered result differs from the request
         self.names={o['fact_id']:o['name'].lower() for o in observations}
     def unmet(self,o):
         done=[self.names[i] for i in self.returned if i in self.names]
@@ -163,10 +164,10 @@ class V3CaseTools(CaseTools):
         for query in requested:
             def compat(o):  # a single-analyte record is eligible when its NAME is the requested analyte, even if the result text does not repeat the name
                 return compatible(query,o) or bool(requested_analytes(query)&requested_analytes(o['name']))
-            eligible=[o for o in pool if compat(o)]
+            eligible=[o for o in pool if compat(o) and not (self.delivery_notes and hard_conflict(query,o))]
             ok=[o for o in eligible if specimen_ok(query,o)]
             self.stats['specimen_blocked']+=len(eligible)-len(ok)
-            exact=[o for o in pool if family(identity(query))==family(identity(o['name'])) and specimen_ok(query,o)]
+            exact=[o for o in pool if family(identity(query))==family(identity(o['name'])) and specimen_ok(query,o) and not (self.delivery_notes and hard_conflict(query,o))]
             if exact:decided[query]=(exact,'same');continue
             part=self.panel_parts(query,ok)
             if part and not exact:decided[query]=(part,'panel_part');continue
@@ -212,6 +213,8 @@ class V3CaseTools(CaseTools):
                         # requested analyte has no isolatable source fragment.
                         part=self.isolate_literal(o['value'],analyte_fragments(query,o['value']))
                     else:part=self.isolate_literal(o['value'],*(extracts.get(query) or ([],'')))
+                    if part and self.delivery_notes and is_bare(part):  # v5: a bare analyte name is not a result; use the matcher's short statement when it adds no number, else fail closed
+                        part=self.isolate(o['value'],[],(extracts.get(query) or ([],''))[1]);self.stats['bare_fragment']=self.stats.get('bare_fragment',0)+1
                     if part:value=part;self.stats['component_isolated']+=1
                     else:
                         self.stats['component_unisolated']+=1
@@ -233,6 +236,9 @@ class V3CaseTools(CaseTools):
                 item={'requested':query,'name':o['name'],'value':value}
                 if rel=='panel_part':item['note']='Only these components of the requested panel are reported in this case.'
                 if query in rerouted:item['rerouted']=rerouted[query];item['note']=(item.get('note','')+' ' if item.get('note') else '')+f'Requested through {name}; this test is held under {rerouted[query]}: use that tool next time.'
+                if self.delivery_notes:
+                    dn=delivery_note(query,o)
+                    if dn:item['note']=(item.get('note','')+' '+dn).strip();self.stats['delivery_notes']=self.stats.get('delivery_notes',0)+1
                 if item not in findings:findings.append(item)
         if self.enforce:
             for q in list(missing):  # a procedure-gated tissue sample at a site that needs a procedure first
