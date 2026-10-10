@@ -46,6 +46,7 @@ CATALOG=[
  (r'\beeg\b|electroencephal|\bemg\b|nerve conduction|spirometry|pulmonary function',2,500,False),
  (r'serolog|antibod|antigen|\bpcr\b|nucleic acid|cultur|\bigm\b|\bigg\b|\bige\b|immunofix|electrophoresis|elisa|assay|titer|smear|stain|ova and parasites|\bana\b|\banca\b|complement|panel',2,100,False),
 ]
+URGENT_IMAGING=re.compile(r'\b(mri|mra|ct|cta|ctpa|angiogra\w*|ultraso\w*|echo\w*|doppler)\b')
 DEFAULT=(2,150,False)
 TIER_NAMES={1:'first-line',2:'targeted',3:'expensive or invasive'}
 COMPILED=[(re.compile(rx),t,usd,p1) for rx,t,usd,p1 in CATALOG]
@@ -64,6 +65,7 @@ def overlap(a,b):
     return len(ta&tb)/min(len(ta),len(tb)) if ta and tb else 0.0
 
 class OrderPolicy:
+    urgent=False  # v5: urgency alarm on -> time-critical imaging (MRI, CT, angiography, ultrasound, echo) is not held for cost
     def __init__(self,cap=8,endorsed=None):
         self.cap=cap;self.endorsed=list(endorsed or []);self.turn_tests=0;self.rounds=0;self.seen_na=[];self.spent=0;self.turn_na=[]
         self.stats={'ordered':0,'held_tier3':0,'held_cap':0,'queued_run':0,'family_blocked':0,'tier1':0,'tier2':0,'tier3':0,'spent_usd':0}
@@ -78,9 +80,17 @@ class OrderPolicy:
         for n in self.turn_na:
             if n not in self.seen_na:self.seen_na.append(n)
         self.turn_tests=0;self.turn_na=[]
+    strict_family=False  # v5: subset rule instead of token overlap
+    reviewer=False  # v5: the closed-family rule protects the physician from loops; a reviewer's request is judged on its own
+    TRIVIAL={'the','of','and','with','for','a','an','test','tests','study','serum','blood','level','levels','assay','plasma'}
+    def covers(self,name,closed):
+        """True when `name` adds nothing specific to the already-unanswered `closed` request (same words or fewer): a generic failure never closes a more specific test."""
+        a={t for t in norm(name).split() if t not in self.TRIVIAL};b={t for t in norm(closed).split() if t not in self.TRIVIAL}
+        return bool(a) and a<=b
     def family_seen(self,name):
         """Previously answered 'not in this case' tests of the same family (at least two make the family closed)."""
-        hits=[n for n in self.seen_na if overlap(name,n)>=0.6]
+        if self.reviewer:return []
+        hits=[n for n in self.seen_na if (self.covers(name,n) if self.strict_family else overlap(name,n)>=0.6)]
         return hits if len(hits)>=2 else []
     def plan(self,names):
         """Splits requested names into (allowed, held) with the reason of each held one. Order of `allowed` follows the doctor's order."""
@@ -88,7 +98,7 @@ class OrderPolicy:
         for n in names:
             tier,usd,p1=classify(n);fam=self.family_seen(n)
             if fam:held.append({'requested':n,'why':'family','detail':fam[:2]});self.stats['family_blocked']+=1;continue
-            if tier==3 and self.rounds<1 and not self.is_endorsed(n):held.append({'requested':n,'why':'tier3','tier':tier,'usd':usd});self.stats['held_tier3']+=1;continue
+            if tier==3 and self.rounds<1 and not self.is_endorsed(n) and not (self.urgent and URGENT_IMAGING.search(norm(n)) and not PROCEDURE_RX.search(norm(n))):held.append({'requested':n,'why':'tier3','tier':tier,'usd':usd});self.stats['held_tier3']+=1;continue
             cand.append((n,tier,usd,p1))
         room=max(self.cap-self.turn_tests,0)
         free=lambda i:cand[i][3] or self.is_endorsed(cand[i][0])

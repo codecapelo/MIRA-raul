@@ -144,3 +144,7 @@ Fonte: reports/v4_fast4_summary.md e reports/v4_fast_summary.json, manifestos[v4
 
 Limitações reais: negativos do paciente sem fonte ainda ocorrem; troponina I pode devolver fonteT; observação EP posterior foi entregue na fase aguda; protocolo solicitado não garante aquisição correspondente; mínimo de história pode bloquear exames em choque. Referência só chega ao juiz depois do final e o juiz mede texto diagnóstico, sem confiança/uncertainty/manejo. Revisão médica pendente; casos conhecidos, sem100% clínico/generalizável ou superioridade estabelecida. Protótipo TemporalCaseTools continua separado.
 <!-- V4_FAST4_FINAL_END -->
+
+## v5 (desenvolvimento) — 10-10-2026
+Autorizado pelo usuário: ledger próprio até US$ 4,80 (a conta tem US$ 25 de crédito; US$ 20,16 já usados antes), Sol e Astra pela conta ChatGPT/Codex, paciente Sonnet 5.5 pela assinatura (custo equivalente de API registrado), 1 troca mínima, exames da v3.6 com justificativa e notas do associador. Código: `scripts/run_v5.py`, `src/mira_runner/{v5,exam_notes,urgency,patient_v5}.py`; auditoria do paciente `scripts/patient_audit.py`; agregados `scripts/v5_summary.py`. Resultado e limites em `reports/v5_dev_report.md` (12 casos, desenvolvimento, não é prova). Ledger v5 = conta = US$ 0,685754500 (`reports/credits_v5_final_*.json`). Traces em `runs/v5/` (ignorado pelo Git). Casos novos reservados ficam para depois da fidelidade, exames e demais correções.
+

@@ -38,3 +38,4 @@ reports/v4_fast_private_details*
 # Public exports contain only opaque digests and cohort aggregates.
 runs/v4/fast/*/public/run1/manifest.json
 reports/v4_fast_generation_costs.json
+runs/v5/

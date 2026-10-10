@@ -34,7 +34,7 @@ PATIENT_RULES=('\n\nStrict rules for this role-play: use only the facts listed a
                'lay language, first person, in at most 80 words, as a patient and not as clinical staff. Do not use lists, headings or numbered '
                'answers: if several questions are asked, answer in one short paragraph. Never name or hint at a diagnosis.')
 old_wait=('- Results are not instant: tests you order are reported only after your next exchange with the patient. After ordering, speak to the patient (explain what you ordered and ask what the tests cannot tell you: medications, exposures, family and social history, timeline), then read the results when they arrive.\n')
-def doctor_rules(n=MIN_EXCHANGES,exam_first=False,delay=True,consult=False,prereqs=False,strict=False,policy=False,admit=0,speech=False):
+def doctor_rules(n=MIN_EXCHANGES,exam_first=False,delay=True,consult=False,prereqs=False,strict=False,policy=False,admit=0,speech=False,v5=False):
     gate=(f'- Investigations (blood, urine, bedside/ECG, radiology, microbiology, other) are locked until you have exchanged at least {n} message{"s" if n!=1 else ""} with the patient. An earlier request is refused: keep talking to the patient.\n'
           '- The initial physical examination findings are provided together with the presenting complaint; do not request them again.\n') if exam_first else (
           f'- Investigations (blood, urine, bedside/ECG, radiology, microbiology, other) are locked until you have exchanged at least {n} message{"s" if n!=1 else ""} with the patient AND requested the physical examination. An earlier request is refused: keep talking to the patient.\n')
@@ -47,7 +47,7 @@ def doctor_rules(n=MIN_EXCHANGES,exam_first=False,delay=True,consult=False,prere
             '- Finalize with `admission` only when the evidence gathered supports your diagnosis.'+
             (' A consultation map from a senior consultant comes with the first message (urgency, 5 differentials, decisive investigations, key questions): use it to organize the interview and the investigations, and obtain the decisive investigations before admitting when they are available; you remain responsible for the diagnosis. If the map says the case is an emergency, investigations are unlocked immediately.' if consult else '')+
             (' A finding that requires a prior procedure (for example a biopsy that needs laparoscopy or laparotomy first) is refused with the required procedure named: request that procedure first.' if prereqs else '')+
-            (' A test is answered only when it is the very test you requested: a broader request is never replaced by a more specific test, a different specimen, organism, antigen or assay is a different test, and a request that is too nonspecific (a category or workup, or a test class without its target, specimen or site) comes back as `ambiguous_request` asking you to specify: answer by naming the exact test. Name each test precisely (specimen, target antigen or organism); if a test you need is not reported it comes back as not available.' if strict else '')+(SPEECH_FORMAT if speech else ''))
+            (' A test is answered only when it is the very test you requested: a broader request is never replaced by a more specific test, a different specimen, organism, antigen or assay is a different test, and a request that is too nonspecific (a category or workup, or a test class without its target, specimen or site) comes back as `ambiguous_request` asking you to specify: answer by naming the exact test. Name each test precisely (specimen, target antigen or organism); if a test you need is not reported it comes back as not available.' if strict else '')+(SPEECH_FORMAT if speech else '')+(__import__('mira_runner.v5',fromlist=['V5_RULES']).V5_RULES if v5 else ''))
 DOCTOR_RULES=doctor_rules(MIN_EXCHANGES)
 EMERGENCY_VOICE=('\n\nThe consultation map flagged this encounter as an EMERGENCY: the patient is acutely and seriously unwell right now. Answer in at most 30 words, in short, breathless or tired '
                  'fragments, giving only the most urgent answer to what was asked (what happened, how it started, what hurts, allergies, medicines). If the facts say you are confused or too weak to give a history, say so in a few words. Still use only the listed facts.')
@@ -62,6 +62,7 @@ def history_text(messages):
 class V3Tools:
     """Gate and delay wrapper around CaseTools; matcher/routing behavior is unchanged."""
     INVESTIGATIONS=set(NAMES)-{'admission','request_physical_exam'}
+    show_units=True
     def __init__(self,inner,min_exchanges=MIN_EXCHANGES,delay=True,policy=None,admit_min=0,atomic_imaging=False):
         self.atomic_imaging=atomic_imaging;self.policy=policy;self.queue=[];self.queued_names=set();self.held_turn=set();self.admit_min=admit_min;self.admit_blocked=0;self.delay=delay;self.inner=inner;self.min_exchanges=min_exchanges;self.exchanges=0;self.exam_done=False;self.exam_provided=False;self.pending=[];self.gated=0;self.orders=0
     @property
@@ -104,7 +105,7 @@ class V3Tools:
             if self.policy is not None:
                 try:self.policy.record(json.loads(result).get('not_available_in_this_case',[]))
                 except (json.JSONDecodeError,TypeError,AttributeError):pass
-            if hasattr(self.inner,'summary'):
+            if self.show_units and hasattr(self.inner,'summary'):
                 note+=' Performed examination cost so far: '+str(self.inner.summary()['relative_units'])+' relative simulation units (all physicians; not dollars).'
             if not self.delay:return result+('\n'+note if note else '')
             self.pending.append({'tool':name,'request':args,'result':result})
@@ -148,7 +149,7 @@ def record_released_results(log,protocol,enabled,text,turn,exchanges,delivery):
     This event is for display/audit, never an added clinical reviewer input.
     Preserve one immutable delivery per execution point on hash-identical replay.
     """
-    if protocol!='v4' or not enabled or not text:return
+    if protocol not in ('v4','v5') or not enabled or not text:return
     slot={'turn':turn,'exchanges':exchanges,'delivery':delivery}
     digest=hashlib.sha256(text.encode()).hexdigest()
     prior=[e for e in log.events() if e.get('event')=='released_results'
@@ -182,6 +183,26 @@ def guarded_patient_answer(log,guard,client,record,messages,text,answer,stats,pa
         return client.call(patient_model,messages[:-1]+[{'role':'user','content':text+RETRY_NOTE}],log,'patient_retry',{},**claude_kw(patient_model,8192,PATIENT_EFFORT))
     return answer
 
+def patient_rules_v5(patient):
+    from .patient_v5 import STRICT_RULES,FORMAT,facts_block
+    return STRICT_RULES+facts_block(patient)+FORMAT
+
+def v5_patient_turn(client,patient_model,patient_messages,patient,log,pstats):
+    """One simulated-patient answer under v5: parse the JSON reply, validate it, regenerate once with the reasons, then fall back to a plain 'I don't know'. Returns (raw message for the patient's own history, text for the physician)."""
+    from .patient_v5 import parse_reply,validate,CORRECTION,FALLBACK
+    msgs=list(patient_messages);reasons=[];raw=None
+    for attempt in (0,1):
+        raw=client.call(patient_model,msgs,log,'patient',{},**claude_kw(patient_model,8192,PATIENT_EFFORT))
+        answer,ids,nir,structured=parse_reply(raw.get('content') or '');reasons=validate(answer,ids,nir,patient,structured,question=(patient_messages[-1].get('content') if patient_messages and patient_messages[-1].get('role')=='user' else None))
+        pstats['answers']+=1;pstats['unstructured']+=(not structured)
+        if not reasons:
+            log.append({'event':'patient_v5','attempt':attempt,'facts_used':ids,'not_in_record':nir,'ok':True});return raw,answer
+        pstats['rejected']+=1;pstats['reasons'].extend(reasons)
+        log.append({'event':'patient_v5','attempt':attempt,'facts_used':ids,'not_in_record':nir,'ok':False,'reasons':reasons,'answer_rejected':answer[:400]})
+        if attempt==0:msgs=msgs+[{'role':'assistant','content':raw.get('content') or ''},{'role':'user','content':CORRECTION.format(reasons='; '.join(reasons))}]
+    pstats['fallbacks']+=1;log.append({'event':'patient_v5_fallback','reasons':reasons})
+    return {**raw,'content':json.dumps({'answer':FALLBACK,'facts_used':[],'not_in_record':['the last question']})},FALLBACK
+
 def write_chart_note(client,log,model):
     """Clinical record of the encounter (clinician's chart) written AFTER the result is final, from the trace: it never feeds the physician, the reviewers or the judge, and a failure cannot change the encounter."""
     try:
@@ -204,7 +225,8 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
         log.append({'event':'protocol_config','min_exchanges':min_exchanges,'exam_first':exam_first,'delay_results':delay_results,'consult':consult,'prereqs':prereqs,'judge_override':judge_override,'protocol':protocol,'patient_model':patient_model,'min_exchanges':min_exchanges,'exam_first':exam_first,'cascade':cascade is not None,'delay_results':delay_results,'judge_model':JUDGE_V3,'judge_params':JUDGE_PARAMS,'max_external_turns':10,'jef_guard':guard is not None,'strict_exams':strict_exams,'opening':opening,**({'v4':extras} if protocol=='v4' else {})})
     patient=json.loads((case_dir/'patient.json').read_text());inv=json.loads((case_dir/'investigations.json').read_text())
     prompts=load_module(root/'upstream/onprem-medical-agents/src/prompts_vivabench.py')
-    medprompt=prompts.VIVABENCH_MEDICAL_SYSTEM_PROMPT.replace('`finish`','`admission`')+doctor_rules(min_exchanges,exam_first,delay_results,bool(consult),prereqs,strict_exams,bool(extras.get('order_policy')),int(extras.get('admit_min') or 0),bool(extras.get('speech_format')))
+    medprompt=prompts.VIVABENCH_MEDICAL_SYSTEM_PROMPT.replace('`finish`','`admission`')+doctor_rules(min_exchanges,exam_first,delay_results,bool(consult),prereqs,strict_exams,bool(extras.get('order_policy')),int(extras.get('admit_min') or 0),bool(extras.get('speech_format')),protocol=='v5')
+    v5=protocol=='v5'
     if protocol=='v4':
         medprompt=medprompt.replace('workflow rules (v3)','workflow rules (v4)').replace('You are told the approximate cost of what you order.','Costs are artificial simulation units: first-line 1, targeted 5, expensive/invasive 15. They are not dollar prices. Only available examinations first delivered are charged, including reviewer orders; unavailable and repeated results cost zero. Order tests only when they would change the decision or management.').replace('At most 8 tests per turn: the most outcome-changing and cheapest are ordered first and the rest are held.','At most 8 non-exempt tests per turn; critical and specifically endorsed investigations are exempt. Additional tests stay queued for a later exchange.')
     complaint=patient['presenting_complaint'];hx=[h['value'] for h in patient['history_facts']]
@@ -216,7 +238,7 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
     else:complaint=complaint+(' '+{1:' '.join(hx[:1])[:350],2:' '.join(hx[:2])[:700],3:' '.join(hx)}.get(opening,'') if opening else '')
     primary='primary symptom: '+complaint;starter='My '+primary
     doctor=[{'role':'system','content':medprompt},{'role':'user','content':starter}]
-    patient_messages=[{'role':'system','content':prompts.VIVABENCH_PATIENT_SYSTEM_PROMPT.format(primary_symptom=primary,anamnesis_summary=json.dumps(patient,ensure_ascii=False))+PATIENT_RULES},{'role':'assistant','content':starter}]
+    patient_messages=[{'role':'system','content':prompts.VIVABENCH_PATIENT_SYSTEM_PROMPT.format(primary_symptom=primary,anamnesis_summary=json.dumps(patient,ensure_ascii=False))+(patient_rules_v5(patient) if v5 else PATIENT_RULES)},{'role':'assistant','content':starter}]
     def matcher(requested,pool):
         candidates=[{'category':o['domain'],'key':o['fact_id'],'display_name':o['name']} for o in pool]
         tree=ast.parse((root/'upstream/onprem-medical-agents/src/tools/tool_vivabench.py').read_text())
@@ -229,20 +251,39 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
             log.append({'event':'backend_error','role':'matcher','reason':'settled malformed matcher output','fallback':'unavailable'})
             return []
     strict=(lambda queries,cands:strict_match(client,log,STRICT_MATCHER,queries,cands)) if strict_exams else None
-    inner=V3CaseTools(inv['observations'],matcher,prereqs,strict,literal_components=bool(extras.get('literal_components')))
+    if v5 and extras.get('v5_temporal',True):  # results that only exist at a later stage (follow-up, later days, retrospective research) are not obtainable in this single encounter
+        from .tools_v4 import TemporalCaseTools
+        inner=TemporalCaseTools(inv['observations'],matcher,strict=strict,literal_components=bool(extras.get('literal_components')))
+    else:inner=V3CaseTools(inv['observations'],matcher,prereqs,strict,literal_components=bool(extras.get('literal_components')))
     policy=OrderPolicy() if extras.get('order_policy') else None
-    if protocol=='v4':
+    if v5 and policy is not None:policy.strict_family=True
+    if v5:inner.delivery_notes=bool(extras.get('v5_desk',True))  # refuse dynamic-vs-baseline matches and annotate differing deliveries
+    if protocol in ('v4','v5'):
         from .exam_costs import RecordedExamTools
         from .policy_v4 import RelativeOrderPolicy
         inner=RecordedExamTools(inner,emit=log.append)
-        policy=RelativeOrderPolicy() if extras.get('order_policy') else None
-    tools=V3Tools(inner,min_exchanges,delay_results,policy,int(extras.get('admit_min') or 0),**({'atomic_imaging':True} if extras.get('fast_atomic_imaging') else {}));
+        policy=RelativeOrderPolicy() if (extras.get('order_policy') and protocol=='v4') else policy
+    atomic={'atomic_imaging':True} if extras.get('fast_atomic_imaging') else {}
+    if v5:
+        from .v5 import V5Tools
+        tools=V5Tools(inner,min_exchanges,delay_results,policy,int(extras.get('admit_min') or 0),emit=log.append,**atomic);tools.show_units=False
+    else:tools=V3Tools(inner,min_exchanges,delay_results,policy,int(extras.get('admit_min') or 0),**atomic);
     findings=[]
     if exam_first:
         try:findings=json.loads(tools.inner.execute('request_physical_exam',{}))
         except json.JSONDecodeError:findings=[]
         tools.exam_done=True;tools.exam_provided=True
         doctor[1]['content']=starter+'\n\n[Initial physical examination findings recorded at presentation]\n'+'\n'.join(f"- {f['name']}: {f['value']}" for f in findings)
+    urgency={'urgent':False,'reasons':[]};pstats={'answers':0,'unstructured':0,'rejected':0,'fallbacks':0,'reasons':[]}
+    if v5:
+        from .urgency import assess,URGENT_DOCTOR
+        exam_txt='\n'.join(f"- {f['name']}: {f['value']}" for f in findings) if exam_first else ''
+        urgency=assess(patient['presenting_complaint'],exam_txt);log.append({'event':'urgency','urgent':urgency['urgent'],'reasons':urgency['reasons'],'provisional':True})
+        if urgency['urgent']:
+            tools.min_exchanges=0;tools.urgent=True;doctor[1]['content']+=URGENT_DOCTOR
+            if tools.policy is not None:tools.policy.urgent=True
+            if extras.get('emergency_voice'):patient_messages[0]['content']+=EMERGENCY_VOICE
+    tool_schemas=__import__('mira_runner.v5',fromlist=['schemas_v5']).schemas_v5() if v5 else schemas()
     cmap=None;requested=[];nudged=False
     if consult:
         exam_text='\n'.join(f"- {f['name']}: {f['value']}" for f in findings) if exam_first else ''
@@ -256,6 +297,10 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
     map_done=False;ntools=0;final=None;start=time.monotonic();jstats={'checks':0,'retries':0,'failures':0}
     def finish(proposal,turn,ntools,failure=None):
         cstats={'path':['glm']};final=proposal
+        if v5:
+            tools.require_justification=False
+            if tools.policy is not None:tools.policy.reviewer=True
+        if v5:log.append({'event':'proposal_snapshot','proposal_sha256':hashlib.sha256(json.dumps(proposal,sort_keys=True,ensure_ascii=False).encode()).hexdigest(),'diagnosis':proposal.get('diagnosis')})
         if cascade is not None:
             final=cascade({'log':log,'client':client,'doctor':doctor,'proposal':proposal,'tools':tools,'patient_messages':patient_messages,'patient_model':patient_model,'stats':cstats,'consult_map':cmap,'map_text':format_map(cmap) if cmap else '','rescue':failure is not None})
         reference=json.loads((case_dir/'reference.json').read_text())
@@ -278,12 +323,19 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
             extra={'cascade':True,'cascade_path':'>'.join(cstats['path']),'proposal_dx':proposal['diagnosis'],'proposal_correct':pv,'jef_c1':cstats.get('jef_c1'),'audited':cstats.get('audited',False),'tier2_verdict':cstats.get('tier2_verdict',''),'tier3_model':cstats.get('tier3_model',''),'review_exchanges':cstats.get('review_exchanges',0),'rescued':failure is not None,'failure_reason':failure or '',**deploy_costs(log.events())}
         responses=[e['response'] for e in log.events() if e['event'] in ('response','cli_call')];usage=[r['usage'] for r in responses]
         result={'case_id':case_dir.name,'model':model,'provider':client.config['models'][model]['provider'],'dx_agent':final['diagnosis'],'reasoning':final['reasoning'],'dx_reference':reference['correct_diagnosis'],'judge_correct':verdict,'judge_rationale':rationale,'n_turns':turn,'n_tool_calls':ntools,'tool_errors':tools.errors,'prompt_tokens':sum(u.get('prompt_tokens',0) for u in usage),'completion_tokens':sum(u.get('completion_tokens',0) for u in usage),'reasoning_tokens':sum(u.get('completion_tokens_details',{}).get('reasoning_tokens',0) for u in usage),'cost_usd':str(sum(Decimal(str(u['cost'])) for u in usage)),'latency_s':time.monotonic()-start,'commit':commit,'timestamp':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'physician_review':'','min_exchanges':min_exchanges,'exam_first':exam_first,'delay_results':delay_results,'protocol':protocol,'patient_model':patient_model,'judge_model':JUDGE_V3,'patient_exchanges':tools.exchanges,'gated_requests':tools.gated,'investigation_orders':tools.orders,**extra,'consult_model':consult or '','consult_urgency':cmap['urgency'] if cmap else '','nudged':nudged,'prereq_blocks':tools.inner.prereq_blocks,'rubric':'override' if override else 'reference','unread_orders':len(tools.pending),'jef_guard':guard is not None,'jef_checks':jstats['checks'],'jef_retries':jstats['retries'],'jef_failures':jstats['failures'],'opening':opening,'claude_all_equiv_usd':str(sum(Decimal(str(u.get('api_equivalent_cost_usd') or 0)) for u in usage)),'strict_exams':strict_exams,'exam_stats':json.dumps(tools.inner.stats) if strict_exams else '','order_policy':json.dumps(tools.policy.stats) if tools.policy is not None else '','exam_cost_usd':tools.policy.spent if tools.policy is not None else '','admit_blocked':tools.admit_blocked,'v36':json.dumps({k:v for k,v in extras.items() if v}) if extras else ''}
-        if protocol=='v4':
+        if protocol in ('v4','v5'):
             result['exam_cost_usd']=''
             result['exam_cost_relative']=tools.inner.summary()
             result['subscription_usage']={k:sum(int(u.get(k,0) or 0) for e in log.events() if e['event']=='cli_call' and e.get('transport','').startswith('codex') for u in [e['response']['usage']]) for k in ('prompt_tokens','completion_tokens','cache_input_tokens')}
             result['subscription_monetary_cost_usd']=None
             result['deployment_cost_note']='OpenRouter amounts are actual billed usage; subscription monetary cost is unknown. No API-equivalent price assigned to Codex.'
+        if v5:
+            evs=log.events();pat=[e for e in evs if e['event']=='cli_call' and e.get('role')=='patient']
+            result['exam_cost_usd']=tools.policy.spent if tools.policy is not None else ''  # approximate reference USD of the physician's orders (v3.6 table)
+            result['v5']={**tools.v5,'urgency':urgency,'desk_stats':dict(getattr(tools.inner,'stats',{}) or {}),'patient':{**pstats,'reasons':sorted(set(pstats['reasons']))},'patient_model':patient_model,
+                          'patient_calls':len(pat),'patient_api_equiv_usd':round(sum(float(e['response']['usage'].get('api_equivalent_cost_usd') or 0) for e in pat),4),
+                          'speech_sync_fixes':sum(1 for e in evs if e['event']=='speech_sync'),'proposal_dx':proposal.get('diagnosis'),
+                          'final_changed_by_review':(final.get('diagnosis') or '').strip().lower()!=(proposal.get('diagnosis') or '').strip().lower()}
         log.append({'event':'case_complete','result':result})
         if extras.get('chart_note'):write_chart_note(client,log,extras['chart_note'])
         return result
@@ -291,11 +343,20 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
         if cascade is None or not getattr(cascade,'rescue',False):return terminal_failure(root,case_dir,model,log,commit,reason,turn,ntools,tools.errors,time.monotonic()-start)
         log.append({'event':'rescue','reason':reason});return finish({'diagnosis':'','reasoning':'(no proposal: the first physician failed: '+reason+')'},turn,ntools,failure=reason)
     for turn in range(1,11):
+        if v5:tools.begin_turn()
+        synced=False
         if turn==10:doctor.append({'role':'system','content':prompts.COMPLETION_PROMPT+' Call admission now.'})
         for subturn in range(40):
-            m=client.call(model,doctor,log,'doctor',SAMPLING.get(model,{}),tools=schemas() if turn<10 else [schemas()[-1]],tool_choice='auto')
+            m=client.call(model,doctor,log,'doctor',SAMPLING.get(model,{}),tools=tool_schemas if turn<10 else [tool_schemas[-1]],tool_choice='auto')
             doctor.append(m);calls=m.get('tool_calls',[])
-            if not calls:break
+            if not calls:
+                if v5 and not synced and turn<10:  # speech/action sync: the message must not claim an order the desk refused
+                    from .v5 import speech_mismatch,SYNC_NOTE
+                    bad=speech_mismatch(m.get('content') or '',tools.refused_names())
+                    if bad:
+                        synced=True;log.append({'event':'speech_sync','claimed':bad,'text':(m.get('content') or '')[:500]})
+                        doctor.append({'role':'user','content':SYNC_NOTE.format(names=', '.join(bad),why='refused, held or not on record')});continue
+                break
             for tc in calls:
                 invalid=False;ntools+=1;f=tc['function'];args=None
                 try:
@@ -326,13 +387,17 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
         else:return operational('inner max_turns limit',turn,ntools)
         if final:break
         text=m.get('content') or ''
-        if text and extras.get('speech_format'):  # format only (no model): the raw message stays in the doctor's own history and in the trace
+        if v5 and text:tools.note_doctor_text(text)
+        if text and (extras.get('speech_format') or v5):  # format only (no model): the raw message stays in the doctor's own history and in the trace
             norm=normalize_speech(text)
             if norm!=text:log.append({'event':'speech_format','raw':text,'normalized':norm});text=norm
         if text:
             patient_messages.append({'role':'user','content':text})
-            p=client.call(patient_model,patient_messages,log,'patient',{},**claude_kw(patient_model,8192,PATIENT_EFFORT))
-            if guard is not None:p=guarded_patient_answer(log,guard,client,patient,patient_messages,text,p,jstats,patient_model)
+            if v5:p,answer=v5_patient_turn(client,patient_model,patient_messages,patient,log,pstats);p_view={**p,'content':answer}
+            else:
+                p=client.call(patient_model,patient_messages,log,'patient',{},**claude_kw(patient_model,8192,PATIENT_EFFORT))
+                if guard is not None:p=guarded_patient_answer(log,guard,client,patient,patient_messages,text,p,jstats,patient_model)
+                p_view=p
             patient_messages.append(p);tools.patient_replied();released=tools.release()
             refreshed=''
             if extras.get('map_refresh') and cmap and not map_done and tools.exchanges>=2:
@@ -341,7 +406,8 @@ def _run_case_v3(root,case_dir,model,client,commit,allow_commit_transition=False
                 if m2:cmap=m2;refreshed='\n\n[Updated '+format_map(cmap).lstrip('[')
                 if m2 and tools.policy is not None:tools.policy.set_endorsed([n for t in m2['decisive'] for n in t['test_names']])
             record_released_results(log,protocol,bool(extras.get('record_released_results')),released,turn,tools.exchanges,'patient_reply')
-            doctor.append({'role':'user','content':(p.get('content') or '')+('\n\n'+released if released else '')+refreshed})
+            pressure=('\n\n[Desk] You are at turn %d of 10. If the evidence gathered supports a diagnosis, call admission now; do not keep talking once there is nothing left to ask or order.'%turn) if v5 and turn>=6 else ''
+            doctor.append({'role':'user','content':(p_view.get('content') or '')+('\n\n'+released if released else '')+refreshed+pressure})
         else:  # silent turn: never deadlock on pending results
             released=tools.release()
             record_released_results(log,protocol,bool(extras.get('record_released_results')),released,turn,tools.exchanges,'silent_turn')
