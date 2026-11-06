@@ -1,0 +1,528 @@
+{
+  "method": "28 selected qualitative sequences after full reading of 3 PriMock57 transcripts plus 4 purposive Brazilian excerpts; not exhaustive turn-by-turn coding, no interrater validation",
+  "annotations": [
+    {
+      "id": "A01",
+      "source": "P1",
+      "location": [
+        "P1-T001",
+        "P1-T003"
+      ],
+      "question_or_interaction_type": "aberta",
+      "observation_pt": "Abertura geral obtém duração da diarreia, necessidade de permanecer perto do banheiro e impacto cotidiano.",
+      "suggested_change_pt": "Preservar relato inicial livre; extrair sintomas, cronologia e impacto sem exigir preenchimento prévio de questionário.",
+      "proposal_ids": [
+        "M1"
+      ],
+      "limit_pt": ""
+    },
+    {
+      "id": "A02",
+      "source": "P1",
+      "location": [
+        "P1-T004",
+        "P1-T005",
+        "P1-T007",
+        "P1-T008"
+      ],
+      "question_or_interaction_type": "esclarecimento_semantico_e_quantificacao",
+      "observation_pt": "O médico esclarece o significado de diarreia; o paciente especifica fezes aquosas, frequência e acrescenta dor.",
+      "suggested_change_pt": "Confirmar significado de termos do paciente e separar conceito, intensidade/frequência e sintomas novos.",
+      "proposal_ids": [
+        "M2",
+        "M3"
+      ],
+      "limit_pt": ""
+    },
+    {
+      "id": "A03",
+      "source": "P1",
+      "location": [
+        "P1-T011",
+        "P1-T013",
+        "P1-T014",
+        "P1-T015"
+      ],
+      "question_or_interaction_type": "esclarecimento_de_localizacao",
+      "observation_pt": "A resposta inicial situa dor no abdome inferior de um lado; a pergunta seguinte obtém o lado esquerdo.",
+      "suggested_change_pt": "Tratar localização parcial como incompleta, preservando a resposta original até esclarecer.",
+      "proposal_ids": [
+        "M2",
+        "M3"
+      ],
+      "limit_pt": ""
+    },
+    {
+      "id": "A04",
+      "source": "P1",
+      "location": [
+        "P1-T022",
+        "P1-T024",
+        "P1-T026",
+        "P1-T027"
+      ],
+      "question_or_interaction_type": "esclarecimento_com_sugestao",
+      "observation_pt": "O paciente diferencia ausência de febre no momento de sensação de calor no início; não há medida confirmada.",
+      "suggested_change_pt": "Representar sintoma por período e distinguir sensação subjetiva de temperatura medida; evitar reduzir tudo a febre sim/não.",
+      "proposal_ids": [
+        "M2",
+        "M3"
+      ],
+      "limit_pt": "A formulação do médico sugere febre como exemplo; não é evidência de que ele causou a resposta."
+    },
+    {
+      "id": "A05",
+      "source": "P1",
+      "location": [
+        "P1-T028",
+        "P1-T029",
+        "P1-T030"
+      ],
+      "question_or_interaction_type": "perguntas_multiplas_respostas_temporais",
+      "observation_pt": "Negativa breve e relato de vômitos iniciais que cessaram aparecem em sequência de perguntas sobre sudorese e vômitos.",
+      "suggested_change_pt": "Vincular cada resposta ao alvo correto; registrar vômitos prévios resolvidos e não ausência de vômitos em todo o episódio.",
+      "proposal_ids": [
+        "M2",
+        "M3"
+      ],
+      "limit_pt": ""
+    },
+    {
+      "id": "A06",
+      "source": "P1",
+      "location": [
+        "P1-T033",
+        "P1-T034"
+      ],
+      "question_or_interaction_type": "aberta_de_complementacao",
+      "observation_pt": "Convite para acrescentar sintomas obtém perda de apetite e capacidade de manter líquidos.",
+      "suggested_change_pt": "Usar convite de complementação em ponto pertinente da história e integrar a informação espontânea.",
+      "proposal_ids": [
+        "M1",
+        "M3"
+      ],
+      "limit_pt": ""
+    },
+    {
+      "id": "A07",
+      "source": "P1",
+      "location": [
+        "P1-T039",
+        "P1-T041",
+        "P1-T043",
+        "P1-T044",
+        "P1-T045",
+        "P1-T046"
+      ],
+      "question_or_interaction_type": "exposicoes_e_negativa_qualificada",
+      "observation_pt": "Há refeição fora de casa; ao negar contatos com sintomas iguais, o paciente relata criança com vômitos sem diarreia.",
+      "suggested_change_pt": "Separar negativa global da exceção factual e esclarecer contato parcialmente sintomático antes de consolidar a história.",
+      "proposal_ids": [
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "limit_pt": "Não estabelece fonte da infecção nem relação causal."
+    },
+    {
+      "id": "A08",
+      "source": "P1",
+      "location": [
+        "P1-T072",
+        "P1-T093",
+        "P1-T095",
+        "P1-T097",
+        "P1-T103",
+        "P1-T105",
+        "P1-T106"
+      ],
+      "question_or_interaction_type": "resumo_fechamento",
+      "observation_pt": "O resumo aproxima a refeição de três dias, embora o paciente tenha dito quatro; o fechamento contém retorno e confirmação genérica de clareza.",
+      "suggested_change_pt": "Resumo derivado dos dados confirmados, com cronologia preservada; checar compreensão por explicação do próximo passo.",
+      "proposal_ids": [
+        "M2",
+        "M5"
+      ],
+      "limit_pt": "Existem marcas de incerteza na transcrição; não equivale a julgamento de inadequação terapêutica."
+    },
+    {
+      "id": "A09",
+      "source": "P2",
+      "location": [
+        "P2-T005",
+        "P2-T006",
+        "P2-T008",
+        "P2-T009",
+        "P2-T010"
+      ],
+      "question_or_interaction_type": "aberta_localizacao_impacto",
+      "observation_pt": "Relato inicial e esclarecimento obtêm coceira, distribuição, prejuízo ao sono e ao trabalho.",
+      "suggested_change_pt": "Guardar queixa e impacto funcional e reconhecer a prioridade do paciente por alívio.",
+      "proposal_ids": [
+        "M1",
+        "M3"
+      ],
+      "limit_pt": ""
+    },
+    {
+      "id": "A10",
+      "source": "P2",
+      "location": [
+        "P2-T013",
+        "P2-T014",
+        "P2-T018",
+        "P2-T019",
+        "P2-T020",
+        "P2-T023",
+        "P2-T024"
+      ],
+      "question_or_interaction_type": "antecedente_e_tratamento_tentado",
+      "observation_pt": "História de eczema e uso de cremes são explorados; o nome exato do produto permanece desconhecido.",
+      "suggested_change_pt": "Guardar tratamento tentado com nome/produto desconhecido, duração e resposta; não inventar nome ou dose.",
+      "proposal_ids": [
+        "M2",
+        "M3"
+      ],
+      "limit_pt": ""
+    },
+    {
+      "id": "A11",
+      "source": "P2",
+      "location": [
+        "P2-T025",
+        "P2-T027",
+        "P2-T029",
+        "P2-T031"
+      ],
+      "question_or_interaction_type": "comparacao_com_episodio_anterior",
+      "observation_pt": "Perguntar se o episódio atual é diferente revela maior prurido e distribuição diferente do episódio anterior.",
+      "suggested_change_pt": "Perguntar o que mudou em relação ao padrão habitual quando há doença prévia, evitando usar o diagnóstico anterior como atalho.",
+      "proposal_ids": [
+        "M3",
+        "M6"
+      ],
+      "limit_pt": ""
+    },
+    {
+      "id": "A12",
+      "source": "P2",
+      "location": [
+        "P2-T041",
+        "P2-T042",
+        "P2-T043"
+      ],
+      "question_or_interaction_type": "correcao_cronologica",
+      "observation_pt": "O médico menciona três dias e o paciente corrige para quatro, incorporado na fala do médico.",
+      "suggested_change_pt": "Registrar correção explicitamente e substituir o valor vigente sem apagar a proveniência.",
+      "proposal_ids": [
+        "M2"
+      ],
+      "limit_pt": ""
+    },
+    {
+      "id": "A13",
+      "source": "P2",
+      "location": [
+        "P2-T044",
+        "P2-T045",
+        "P2-T046"
+      ],
+      "question_or_interaction_type": "perguntas_multiplas_barreira_de_comunicacao",
+      "observation_pt": "A resposta mistura negativa, dúvida sobre mudanças e desconforto em perguntar a outras pessoas; há trechos inaudíveis.",
+      "suggested_change_pt": "Separar mudança de produtos de contatos sintomáticos; oferecer esclarecimento acolhedor e não inferir resposta a todas as perguntas.",
+      "proposal_ids": [
+        "M2",
+        "M3",
+        "M4"
+      ],
+      "limit_pt": "Resposta parcialmente ininteligível impede conclusão firme sobre contatos."
+    },
+    {
+      "id": "A14",
+      "source": "P2",
+      "location": [
+        "P2-T049",
+        "P2-T051",
+        "P2-T099",
+        "P2-T101"
+      ],
+      "question_or_interaction_type": "resumo_com_correcao_nao_preservada",
+      "observation_pt": "No resumo são sugeridas pernas; o paciente restringe a peito, mãos e região interna dos cotovelos. Depois a explicação cita peito e costas, região não sustentada pelo relato legível.",
+      "suggested_change_pt": "Manter correções do paciente como estado vigente e confrontar novos resumos com a fonte.",
+      "proposal_ids": [
+        "M2",
+        "M5"
+      ],
+      "limit_pt": "O áudio não foi ouvido e não há imagem/exame disponível; conclusão restrita ao suporte no texto, não à intenção ou ação do clínico."
+    },
+    {
+      "id": "A15",
+      "source": "P2",
+      "location": [
+        "P2-T053",
+        "P2-T054",
+        "P2-T055",
+        "P2-T056",
+        "P2-T080",
+        "P2-T081",
+        "P2-T082",
+        "P2-T084",
+        "P2-T085",
+        "P2-T086",
+        "P2-T087"
+      ],
+      "question_or_interaction_type": "reparo_por_falha_de_comunicacao",
+      "observation_pt": "Perguntas sobre face e alergias precisam ser repetidas ou reformuladas por dificuldade de compreensão/áudio.",
+      "suggested_change_pt": "Estado não compreendido não pode virar negativa; repetir com formulação simples e confirmar o alvo.",
+      "proposal_ids": [
+        "M2",
+        "M4"
+      ],
+      "limit_pt": ""
+    },
+    {
+      "id": "A16",
+      "source": "P2",
+      "location": [
+        "P2-T112",
+        "P2-T113",
+        "P2-T117",
+        "P2-T118",
+        "P2-T119",
+        "P2-T121",
+        "P2-T125"
+      ],
+      "question_or_interaction_type": "informacao_tardia_sobre_tratamento",
+      "observation_pt": "Somente após uma proposta de manejo aparece uso prévio de anti-histamínicos sem benefício; o médico solicita repetição e responde.",
+      "suggested_change_pt": "Antes de concluir, revisar produtos já tentados e sua resposta; ao surgir dado tardio, reabrir a avaliação pertinente.",
+      "proposal_ids": [
+        "M3",
+        "M5",
+        "M6"
+      ],
+      "limit_pt": "Não avaliamos escolha, dose ou segurança dos tratamentos citados."
+    },
+    {
+      "id": "A17",
+      "source": "P3",
+      "location": [
+        "P3-T003",
+        "P3-T004",
+        "P3-T005",
+        "P3-T006",
+        "P3-T007",
+        "P3-T010"
+      ],
+      "question_or_interaction_type": "aberta_e_aprofundamento_aberto",
+      "observation_pt": "Pedido para contar mais sobre a cefaleia obtém fenômenos visuais antes da dor e visão borrada.",
+      "suggested_change_pt": "Dar espaço ao primeiro relato e fazer aprofundamento aberto antes de limitar os atributos por perguntas fechadas.",
+      "proposal_ids": [
+        "M1",
+        "M2"
+      ],
+      "limit_pt": ""
+    },
+    {
+      "id": "A18",
+      "source": "P3",
+      "location": [
+        "P3-T016",
+        "P3-T017",
+        "P3-T018"
+      ],
+      "question_or_interaction_type": "alternativa_fechada_com_resposta_incerta",
+      "observation_pt": "Ao ser perguntada se o início foi súbito ou gradual, a paciente diz não saber; a conversa segue para qualidade da dor.",
+      "suggested_change_pt": "Manter início incerto e reformular concretamente se esse atributo pode mudar urgência ou conduta.",
+      "proposal_ids": [
+        "M2",
+        "M3",
+        "M6"
+      ],
+      "limit_pt": "A necessidade e a urgência clínica devem ser adjudicadas por médico; não se conclui diagnóstico pelo excerto."
+    },
+    {
+      "id": "A19",
+      "source": "P3",
+      "location": [
+        "P3-T025",
+        "P3-T026",
+        "P3-T028",
+        "P3-T030",
+        "P3-T031",
+        "P3-T032",
+        "P3-T059",
+        "P3-T063"
+      ],
+      "question_or_interaction_type": "preocupacao_espontanea_e_retornada",
+      "observation_pt": "Medo de tumor relacionado à morte de conhecida aparece e retorna; o médico reconhece o receio e combina conversar após colher mais dados.",
+      "suggested_change_pt": "Registrar preocupação com status pendente/abordada; acolher, explicar investigação e retomar no fechamento sem confundir medo com hipótese confirmada.",
+      "proposal_ids": [
+        "M3",
+        "M5"
+      ],
+      "limit_pt": ""
+    },
+    {
+      "id": "A20",
+      "source": "P3",
+      "location": [
+        "P3-T034",
+        "P3-T035",
+        "P3-T037",
+        "P3-T038"
+      ],
+      "question_or_interaction_type": "possivel_erro_de_transcricao_e_inferencia",
+      "observation_pt": "O texto do médico contém referência estranha a doença antes da cefaleia; resposta sobre lateralidade visual é pouco clara, mas a fala seguinte consolida ambos os olhos.",
+      "suggested_change_pt": "Não normalizar fala incerta como fato; pedir confirmação, preservando trecho literal e qualidade da evidência.",
+      "proposal_ids": [
+        "M2",
+        "M4"
+      ],
+      "limit_pt": "Não é possível atribuir o trecho estranho a erro do médico sem ouvir áudio."
+    },
+    {
+      "id": "A21",
+      "source": "P3",
+      "location": [
+        "P3-T047",
+        "P3-T048",
+        "P3-T049",
+        "P3-T051",
+        "P3-T052",
+        "P3-T059",
+        "P3-T061"
+      ],
+      "question_or_interaction_type": "negativa_qualificada_e_contradicao_aparente",
+      "observation_pt": "Paciente diz não ser propensa a cefaleia, relata episódio semelhante semanas antes e depois diz nunca ter tido cefaleias assim.",
+      "suggested_change_pt": "Separar padrão habitual de episódio anterior; esclarecer se o atual difere em intensidade, característica ou frequência.",
+      "proposal_ids": [
+        "M2",
+        "M3"
+      ],
+      "limit_pt": ""
+    },
+    {
+      "id": "A22",
+      "source": "P3",
+      "location": [
+        "P3-T064",
+        "P3-T065",
+        "P3-T066",
+        "P3-T067",
+        "P3-T068",
+        "P3-T069",
+        "P3-T070",
+        "P3-T071",
+        "P3-T072"
+      ],
+      "question_or_interaction_type": "perguntas_dirigidas_com_alvos_explicitos",
+      "observation_pt": "Sequência de perguntas fechadas obtém negativas explícitas sobre fala, membros, equilíbrio e trauma.",
+      "suggested_change_pt": "Preservar perguntas fechadas focadas quando necessárias; armazenar os negativos com alvo e fonte, sem promover uma rejeição geral das perguntas fechadas.",
+      "proposal_ids": [
+        "M2",
+        "M3"
+      ],
+      "limit_pt": ""
+    },
+    {
+      "id": "A23",
+      "source": "P3",
+      "location": [
+        "P3-T089",
+        "P3-T090",
+        "P3-T091",
+        "P3-T092",
+        "P3-T093",
+        "P3-T094",
+        "P3-T096"
+      ],
+      "question_or_interaction_type": "medicamento_cronologia_indicacao",
+      "observation_pt": "A pergunta por medicamentos obtém nome de contraceptivo; aprofundamento obtém três meses de uso e indicação.",
+      "suggested_change_pt": "Representar medicamento, tempo de uso e indicação; ligar ao episódio quando pertinente, sem automatizar causalidade.",
+      "proposal_ids": [
+        "M2",
+        "M3"
+      ],
+      "limit_pt": ""
+    },
+    {
+      "id": "A24",
+      "source": "P3",
+      "location": [
+        "P3-T118",
+        "P3-T119",
+        "P3-T122",
+        "P3-T131",
+        "P3-T132",
+        "P3-T133"
+      ],
+      "question_or_interaction_type": "reasseguramento_e_plano_de_reavaliacao",
+      "observation_pt": "A explicação tranquiliza sobre doença grave e especifica condições para retorno por persistência/piora ou novos sintomas.",
+      "suggested_change_pt": "Encerrar com hipótese, incerteza residual e plano de reavaliação coerentes com a informação disponível.",
+      "proposal_ids": [
+        "M5",
+        "M6"
+      ],
+      "limit_pt": "A transcrição não permite certificar exclusão de doença grave; não adotamos a frase de tranquilização como padrão clínico."
+    },
+    {
+      "id": "B01",
+      "source": "BR2021-excerto3",
+      "location": [
+        "linhas 1-27 do excerto 3"
+      ],
+      "question_or_interaction_type": "revelacao_hesitante",
+      "observation_pt": "Paciente leva vários turnos para nomear alteração íntima, com hesitações e expressões coloquiais; a profissional mantém espaço com respostas breves.",
+      "suggested_change_pt": "Permitir continuação e esclarecer termos com respeito; não converter hesitação em ausência de queixa.",
+      "proposal_ids": [
+        "M1",
+        "M4"
+      ],
+      "limit_pt": "Excerto parcial; não permite avaliar o restante da consulta nem o diagnóstico."
+    },
+    {
+      "id": "B02",
+      "source": "BR2021-excerto4",
+      "location": [
+        "linhas 1-7 do excerto 4"
+      ],
+      "question_or_interaction_type": "pista_sem_aprofundamento_no_excerto",
+      "observation_pt": "Uma queixa descrita como alergia aparece, mas localização e características não são esclarecidas antes de retomar o procedimento.",
+      "suggested_change_pt": "Criar pendência para sintoma novo e decidir esclarecer, encaminhar ou registrar motivo de adiamento.",
+      "proposal_ids": [
+        "M3"
+      ],
+      "limit_pt": "Só se afirma ausência de esclarecimento neste excerto, não em toda a consulta."
+    },
+    {
+      "id": "B03",
+      "source": "BR2021-excerto5",
+      "location": [
+        "linhas 1-13 do excerto 5"
+      ],
+      "question_or_interaction_type": "sintoma_adicional_com_resposta_direta",
+      "observation_pt": "Dor na relação é acrescentada à discussão de dor/ressecamento e recebe orientação; o trecho não mostra caracterização adicional.",
+      "suggested_change_pt": "Explorar o novo sintoma de modo focal antes de atribuir sua causa; registrar a justificativa quando não houver aprofundamento.",
+      "proposal_ids": [
+        "M3",
+        "M6"
+      ],
+      "limit_pt": "Não se avalia correção do manejo nem se presume que o sintoma não foi abordado em outro momento."
+    },
+    {
+      "id": "B04",
+      "source": "BR2021-excerto7",
+      "location": [
+        "linhas 1-15 do excerto 7"
+      ],
+      "question_or_interaction_type": "pista_psicossocial",
+      "observation_pt": "Há relato repetido de sofrimento com ex-companheiro e respostas breves de acompanhamento no trecho publicado.",
+      "suggested_change_pt": "Reconhecer pista sensível e oferecer exploração apropriada em contexto privado; não inferir detalhes ou diagnóstico de violência.",
+      "proposal_ids": [
+        "M3",
+        "M4"
+      ],
+      "limit_pt": "Situação atual e restante da consulta desconhecidos; excerto não permite concluir omissão de todo o atendimento."
+    }
+  ]
+}

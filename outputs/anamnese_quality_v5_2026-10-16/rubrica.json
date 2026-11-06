@@ -1,0 +1,69 @@
+{
+  "version": "exploratoria-anamnese-1",
+  "date": "2026-10-16",
+  "sample": "12 execuções selecionadas da v5 conforme v5_summary.py; não são casos novos nem amostra representativa",
+  "review": "Um avaliador IA; leitura dos diálogos do médico e respostas efetivamente entregues; sem usar o veredito como critério; não é revisão médica cega.",
+  "domains": [
+    {
+      "id": "A",
+      "name": "Abertura e agenda",
+      "anchors": {
+        "0": "Sem convite ou perguntas apenas confirmatórias que pressupõem a resposta",
+        "1": "Perguntas dirigidas pertinentes, sem espaço explícito para relato/prioridade",
+        "2": "Convite aberto ou oportunidade explícita de complementar e preocupação reconhecida"
+      }
+    },
+    {
+      "id": "C",
+      "name": "Caracterização e cronologia",
+      "anchors": {
+        "0": "Dados centrais não caracterizados ou inferidos sem suporte",
+        "1": "Obtém atributos pertinentes, mas persistem respostas parciais/incertas sem retomada explícita",
+        "2": "Obtém os atributos necessários ao foco e preserva/resolve incerteza e cronologia"
+      }
+    },
+    {
+      "id": "X",
+      "name": "Contexto e exposições pertinentes",
+      "anchors": {
+        "0": "Não explora contexto pertinente observável nem aproveita o já fornecido",
+        "1": "Perguntas gerais ou algum contexto focal, sem esclarecimento suficiente de respostas parciais",
+        "2": "Contexto focal, tratamento/exposição/antecedente pertinente explorado e reaproveitado"
+      }
+    },
+    {
+      "id": "I",
+      "name": "Escuta e integração da resposta",
+      "anchors": {
+        "0": "Ignora resposta material ou afirma fato não sustentado",
+        "1": "Reconhece dados, mas muda de bloco sem aprofundar pistas pertinentes",
+        "2": "Pergunta seguinte/ação incorpora resposta e esclarece pista ou contradição"
+      }
+    },
+    {
+      "id": "R",
+      "name": "Reparo e gestão de desconhecidos",
+      "anchors": {
+        "0": "Promove dúvida/ausência de resposta a certeza ou deixa questão relevante sem reconhecer",
+        "1": "Preserva desconhecido, mas não esclarece resposta parcial relevante nem justifica adiar",
+        "2": "Reformula/confirma ou explica a decisão de manter desconhecido",
+        "NA": "Sem oportunidade clara de reparo no material"
+      }
+    },
+    {
+      "id": "S",
+      "name": "Síntese confirmada da história",
+      "anchors": {
+        "0": "Não há resumo verificável da história durante a fase do médico",
+        "1": "Retoma alguns dados ou apresenta plano, sem pedir confirmação/correção da síntese",
+        "2": "Síntese dos dados com convite à correção e incorporação da resposta"
+      }
+    }
+  ],
+  "overall": "Sem somar os itens: 'bem estruturada' exige C=2 e I=2, R=2/NA e S>=1; 'parcial' tem coleta pertinente observável mas não cumpre esse padrão; 'frágil' exige falha documental material C=0 ou I=0 ou R=0, detalhada por evidência; 'não avaliável' se o texto não permite julgamento. Abertura dirigida pode ser apropriada em urgência; urgência e pré-carregamento descritos à parte, sem penalizar ausência de história já fornecida.",
+  "limits": [
+    "Rubrica própria, não validada, não é escore Revised Safer Dx e seus itens não são somados.",
+    "Segurança da triagem, diagnóstico e manejo dependem de revisão médica.",
+    "A fase do médico termina na proposta/admission; revisão posterior não é creditada como história colhida pelo médico."
+  ]
+}

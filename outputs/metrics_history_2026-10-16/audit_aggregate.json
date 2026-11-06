@@ -1,0 +1,269 @@
+{
+  "reference_date": "2026-10-16",
+  "source_scope": "Two local worktrees, raw case_complete events; identical source files deduplicated by SHA-256; selected reports checked. No inference or live account query.",
+  "remote_main": {
+    "sha": "5146c4491d3a1086c8a3e75fb0b90486d764a881",
+    "date": "2026-10-10T22:40:44Z",
+    "message": "Merge pull request #8 from codecapelo/claude/v5-exams-patient-fidelity"
+  },
+  "legacy_panel_terminals_previously_audited": 290,
+  "terminal_groups_recounted": {
+    "base_run1": {
+      "terminals": 50,
+      "judge_negative": 16,
+      "judge_positive": 32,
+      "unjudged": 2
+    },
+    "runs/run2": {
+      "terminals": 50,
+      "judge_negative": 18,
+      "judge_positive": 30,
+      "unjudged": 2
+    },
+    "runs/qwen38_max_prime": {
+      "terminals": 30,
+      "judge_positive": 26,
+      "judge_negative": 4
+    },
+    "runs/qwen38_max_0902": {
+      "terminals": 30,
+      "judge_positive": 24,
+      "judge_negative": 6
+    },
+    "runs/run3": {
+      "terminals": 50,
+      "judge_positive": 29,
+      "judge_negative": 19,
+      "unjudged": 2
+    },
+    "runs/v5": {
+      "terminals": 29,
+      "judge_positive": 27,
+      "proposal_judged": 28,
+      "proposal_positive": 13,
+      "judge_negative": 2
+    },
+    "runs/v4": {
+      "terminals": 54,
+      "judge_positive": 50,
+      "proposal_judged": 53,
+      "proposal_positive": 33,
+      "judge_negative": 4
+    },
+    "runs/v3": {
+      "terminals": 207,
+      "judge_negative": 27,
+      "judge_positive": 178,
+      "proposal_judged": 145,
+      "proposal_positive": 101,
+      "unjudged": 2
+    },
+    "runs/claude_sonnet_5_5": {
+      "terminals": 10,
+      "judge_positive": 9,
+      "judge_negative": 1
+    },
+    "runs/claude_opus_5_5": {
+      "terminals": 10,
+      "judge_positive": 10
+    }
+  },
+  "recounted_terminals": 520,
+  "inventory_total_including_legacy_panel": 810,
+  "v5_all_variants": {
+    "v5d": {
+      "terminals": 1,
+      "judge_positive": 1
+    },
+    "v5c": {
+      "terminals": 1,
+      "judge_positive": 1
+    },
+    "v5j": {
+      "terminals": 1,
+      "judge_positive": 1
+    },
+    "v5m": {
+      "terminals": 1,
+      "judge_negative": 1
+    },
+    "v5q": {
+      "terminals": 2,
+      "judge_positive": 2
+    },
+    "v5l": {
+      "terminals": 1,
+      "judge_positive": 1
+    },
+    "v5k": {
+      "terminals": 1,
+      "judge_positive": 1
+    },
+    "v5b": {
+      "terminals": 1,
+      "judge_positive": 1
+    },
+    "v5e": {
+      "terminals": 1,
+      "judge_positive": 1
+    },
+    "v5g": {
+      "terminals": 1,
+      "judge_positive": 1
+    },
+    "v5n": {
+      "terminals": 1,
+      "judge_positive": 1
+    },
+    "v5i": {
+      "terminals": 1,
+      "judge_positive": 1
+    },
+    "v5z": {
+      "terminals": 12,
+      "judge_positive": 11,
+      "judge_negative": 1
+    },
+    "v5h": {
+      "terminals": 1,
+      "judge_positive": 1
+    },
+    "v5o": {
+      "terminals": 1,
+      "judge_positive": 1
+    },
+    "v5f": {
+      "terminals": 1,
+      "judge_positive": 1
+    },
+    "v5a": {
+      "terminals": 1,
+      "judge_positive": 1
+    }
+  },
+  "v5_selected_report": {
+    "summary": {
+      "v4": {
+        "cases": 12,
+        "final_ok": 12,
+        "proposal_ok": 5,
+        "proposal_judged": 12,
+        "rescued": 0,
+        "turns_mean": 5.1,
+        "exchanges_mean": 4.8,
+        "locked": 9,
+        "held": 2,
+        "dup_blocked": 14,
+        "queued": 6,
+        "not_available": 33,
+        "orders_mean": 8.6,
+        "first_result_s_median": 10.4,
+        "result_s_median": 108,
+        "patient_role_leaks": 4,
+        "openrouter_usd_per_case": 0.0268,
+        "openrouter_usd_total": 0.321
+      },
+      "v5": {
+        "cases": 12,
+        "final_ok": 12,
+        "proposal_ok": 6,
+        "proposal_judged": 12,
+        "rescued": 0,
+        "turns_mean": 3.9,
+        "exchanges_mean": 3.4,
+        "locked": 1,
+        "held": 0,
+        "dup_blocked": 0,
+        "queued": 6,
+        "not_available": 45,
+        "orders_mean": 7,
+        "first_result_s_median": 9.3,
+        "result_s_median": 108,
+        "patient_role_leaks": 0,
+        "openrouter_usd_per_case": 0.0255,
+        "openrouter_usd_total": 0.306,
+        "patient_sonnet_api_equiv_usd_total": 0.479,
+        "patient_sonnet_api_equiv_usd_per_case": 0.0399,
+        "justification_rejects": 4,
+        "desk_notes": 64,
+        "loop_guards": 0,
+        "speech_sync_fixes": 0,
+        "stagnation_nudges": 4,
+        "exposure_pauses": 5,
+        "temporal_unavailable": 0,
+        "orders_with_justification": 79,
+        "patient_answers": 45,
+        "patient_rejected": 10,
+        "patient_fallbacks": 0,
+        "delivery_notes": 5,
+        "urgent_cases": 5
+      }
+    },
+    "note": "v5 = last run of each case with the final code (012 and 019 from the rerun after the last two fixes); same cases in v4 fast4. Development set: code was corrected between cases. Aggregates only."
+  },
+  "ledgers_read_only": [
+    {
+      "label": "base_and_v3",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/budget.sqlite",
+      "calls": 10811,
+      "states": {
+        "settled": 10811
+      },
+      "total_usd": "18.965410033"
+    },
+    {
+      "label": "v4",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/budget.sqlite",
+      "calls": 968,
+      "states": {
+        "settled": 968
+      },
+      "total_usd": "1.061257675"
+    },
+    {
+      "label": "v5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v5/budget.sqlite",
+      "calls": 642,
+      "states": {
+        "settled": 642
+      },
+      "total_usd": "0.685754500"
+    }
+  ],
+  "historical_final_account_snapshots": [
+    {
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/reports/credits_v5_final_1.json",
+      "timestamp": 1791671272.0143318,
+      "data": {
+        "total_credits": 25,
+        "total_usage": 20.843347608
+      }
+    },
+    {
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/reports/credits_v5_final_2.json",
+      "timestamp": 1791671287.199744,
+      "data": {
+        "total_credits": 25,
+        "total_usage": 20.843347608
+      }
+    },
+    {
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/reports/credits_v5_final_3.json",
+      "timestamp": 1791671302.395791,
+      "data": {
+        "total_credits": 25,
+        "total_usage": 20.843347608
+      }
+    }
+  ],
+  "ledger_subtotal_usd": "20.712422208",
+  "account_minus_located_ledger_subtotal_usd": "0.130925400",
+  "gap_context": "v5 baseline total_usage 20.157593108 minus base/v3 ledger 18.965410033 minus v4 ledger 1.061257675 = 0.130925400; cause not established in this consolidation, do not assign or mark zero.",
+  "limits": [
+    "Inventory contains repeated cases, development and distinct protocols; not one accuracy denominator.",
+    "Legacy lexical match and later LLM judgements not comparable.",
+    "No private case facts or individual diagnoses exported.",
+    "Medical review pending.",
+    "Account snapshots historical, no claim of live balance."
+  ]
+}

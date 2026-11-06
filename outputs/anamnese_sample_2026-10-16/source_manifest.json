@@ -1,0 +1,80 @@
+{
+  "analysis_date_user_timezone": "2026-10-16",
+  "purpose": "Exploratory qualitative sample for MIRA v5 history taking; not clinical validation",
+  "selection": "First three consecutively numbered consultations on day 1 in PriMock57; no outcome-based selection",
+  "source_article": "https://aclanthology.org/2022.acl-short.65/",
+  "license": "CC BY 4.0",
+  "attribution": "Alex Papadopoulos Korfiatis, Francesco Moramarco, Radmila Sarac, Aleksandar Savkov (2022), PriMock57. Dataset babylonhealth/primock57.",
+  "transform": "Merged doctor and patient TextGrid intervals by start time, retained overlapping intervals and transcription uncertainty tags; no audio listened to. IDs are local interval IDs, not original dialogue turns.",
+  "files": [
+    {
+      "local_path": "sources/primock57/day1_consultation01_doctor.TextGrid",
+      "source_url": "https://github.com/babylonhealth/primock57/blob/main/transcripts/day1_consultation01_doctor.TextGrid",
+      "github_blob_sha": "70c91e1424e43f95538d3993868c4b78c65609e7",
+      "sha256": "a727b4f53fd0c21750405fa683a0079585d9cf3cf763d3ced51bde9673a3eb04",
+      "github_blob_verified": true
+    },
+    {
+      "local_path": "sources/primock57/day1_consultation01_patient.TextGrid",
+      "source_url": "https://github.com/babylonhealth/primock57/blob/main/transcripts/day1_consultation01_patient.TextGrid",
+      "github_blob_sha": "f1fb8134b55a266169444990c22a0defd360c47f",
+      "sha256": "7082e1abf185b30a82d57d585b999d4f11263e006359249aeffbad1061bfd0bd",
+      "github_blob_verified": true
+    },
+    {
+      "local_path": "sources/primock57/day1_consultation02_doctor.TextGrid",
+      "source_url": "https://github.com/babylonhealth/primock57/blob/main/transcripts/day1_consultation02_doctor.TextGrid",
+      "github_blob_sha": "157dc6dc048f4116ae711899a39d98568737f271",
+      "sha256": "4a33e030a4670936754821469855e63cb3263b1575da098cacd1158b48684277",
+      "github_blob_verified": true
+    },
+    {
+      "local_path": "sources/primock57/day1_consultation02_patient.TextGrid",
+      "source_url": "https://github.com/babylonhealth/primock57/blob/main/transcripts/day1_consultation02_patient.TextGrid",
+      "github_blob_sha": "7d6d524e17059c6b3e41333ecf5cfac78966bff3",
+      "sha256": "61ae00734844852f9fd70df574b02aa79b3da4b654464bd0d70191266a5f78fa",
+      "github_blob_verified": true
+    },
+    {
+      "local_path": "sources/primock57/day1_consultation03_doctor.TextGrid",
+      "source_url": "https://github.com/babylonhealth/primock57/blob/main/transcripts/day1_consultation03_doctor.TextGrid",
+      "github_blob_sha": "ddf34cae5a8767f68ed2cea99e8c128a8e833cc9",
+      "sha256": "a4a10a7817ea6ff09baa7c5dcf582008d4d67d82154492622e3ba39af7ef8589",
+      "github_blob_verified": true
+    },
+    {
+      "local_path": "sources/primock57/day1_consultation03_patient.TextGrid",
+      "source_url": "https://github.com/babylonhealth/primock57/blob/main/transcripts/day1_consultation03_patient.TextGrid",
+      "github_blob_sha": "066d9aa7cd0f21fa28497366e7932aad0bd612ce",
+      "sha256": "db2982dfa60856dc104919f3e7a71716bd58c243e81311d41cd6010cb7f39f90",
+      "github_blob_verified": true
+    }
+  ],
+  "additional_sample": {
+    "source": "https://www.scielo.br/j/csc/a/KDhTm7gdNKz7DbYHmwzX8FR/?lang=pt",
+    "article": "Conversas invisíveis: assuntos falados, mas não ouvidos em consultas ginecológicas",
+    "authors": "Stela Nazareth Meneghel; Daniela Negraes Pinheiro Andrade; Lilian Zielke Hesler",
+    "issue_year": 2021,
+    "excerpt_ids": [
+      3,
+      4,
+      5,
+      7
+    ],
+    "selection": "Purposive contrasting excerpts: hesitant disclosure, unclarified complaint, sexual pain, psychosocial disclosure; not representative prevalence sample",
+    "full_encounters_available": false,
+    "raw_reproduction": "Not copied; paraphrases and source line locators in analysis"
+  },
+  "contextual_schema": {
+    "source": "https://aclanthology.org/2024.emnlp-main.936/",
+    "use": "CMAS schema consulted as design reference; no additional full MediTOD encounter counted"
+  },
+  "mira_code_root": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596",
+  "mira_commit": "9ccc23eb88774e9277caa1752cfb7bb6e28222ae",
+  "limitations": [
+    "Three simulated consultations and four excerpts from one real consultation study; not seven independent complete cases.",
+    "Single AI qualitative reviewer; not blinded medical adjudication.",
+    "Transcription errors and ambiguous speaker timing remain possible.",
+    "No new MIRA inference, no model or prompt changes, no financial ledger changes."
+  ]
+}
