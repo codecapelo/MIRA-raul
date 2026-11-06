@@ -1,0 +1,29 @@
+[
+  {
+    "case": "consultation_01",
+    "intervals": 109,
+    "duration_end_seconds": 456.8911674785823,
+    "doctor_intervals": 53,
+    "patient_intervals": 56,
+    "patient_max_words_in_single_interval": 44,
+    "uncertain_intervals": 60
+  },
+  {
+    "case": "consultation_02",
+    "intervals": 130,
+    "duration_end_seconds": 555.811111866194,
+    "doctor_intervals": 77,
+    "patient_intervals": 53,
+    "patient_max_words_in_single_interval": 70,
+    "uncertain_intervals": 38
+  },
+  {
+    "case": "consultation_03",
+    "intervals": 141,
+    "duration_end_seconds": 542.299571417932,
+    "doctor_intervals": 79,
+    "patient_intervals": 62,
+    "patient_max_words_in_single_interval": 36,
+    "uncertain_intervals": 44
+  }
+]

@@ -1,0 +1,58 @@
+{
+  "rubric": "rubrica.json",
+  "sample_size": 12,
+  "unit": "Physician encounter up to proposal, not final system diagnosis",
+  "overall": {
+    "bem_estruturada": 1,
+    "parcial": 10,
+    "fragil": 1
+  },
+  "domains": {
+    "A": {
+      "consistente": 0,
+      "parcial": 12,
+      "fragil": 0,
+      "nao_avaliavel": 0
+    },
+    "C": {
+      "consistente": 5,
+      "parcial": 6,
+      "fragil": 1,
+      "nao_avaliavel": 0
+    },
+    "X": {
+      "consistente": 6,
+      "parcial": 6,
+      "fragil": 0,
+      "nao_avaliavel": 0
+    },
+    "I": {
+      "consistente": 3,
+      "parcial": 9,
+      "fragil": 0,
+      "nao_avaliavel": 0
+    },
+    "R": {
+      "consistente": 0,
+      "parcial": 10,
+      "fragil": 0,
+      "nao_avaliavel": 2
+    },
+    "S": {
+      "consistente": 0,
+      "parcial": 12,
+      "fragil": 0,
+      "nao_avaliavel": 0
+    }
+  },
+  "classification_note": "Exploratory documentary quality by one AI assessor; no validated total score; no medical adjudication. A brief emergency history may be appropriate. Differences in source completeness and ability to answer limit classification. Summary partial includes a plan/partial recapitulation; explicit patient-confirmed history summary was absent in 12.",
+  "methodological_corrections": [
+    "reported patient_exchanges mixes initial physician and reviewer followup",
+    "A question mark is not a clinical question count",
+    "No reference diagnosis used to determine quality, but the review is not claimed blind",
+    "No closed-case individual labels, content, paths or hashes exported"
+  ],
+  "unresolved_fields": [
+    "Clinical adequacy of questions, urgency, management and possible missed opportunities require physician review."
+  ]
+}

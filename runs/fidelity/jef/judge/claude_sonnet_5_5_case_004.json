@@ -1,0 +1,1 @@
+{"id": "claude_sonnet_5_5_case_004", "request_sha256": "374248f74da9b0a161589055d7c4c364909aeb6cc836433164bb88bcaee31903", "model": "jev-1.13.0", "usage": {"input_tokens": 722, "output_tokens": 36}, "answers": {"match": {"type": "noul", "noul": 0.9}, "generic": {"type": "noul", "noul": 0.06}}, "timestamp": 1791209881.047468}

@@ -1,0 +1,3026 @@
+[
+  {
+    "condition": "original",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791460920-IxUMH7I6DHWStcubdyHQ",
+    "usage_cost": "0.0005815",
+    "generation": {
+      "total_cost": 0.0005815,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:01:59.934Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1590,
+      "tokens_completion": 137,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791460922-gXuchkvpRuW2xqCHPn9t",
+    "usage_cost": "0.000487",
+    "generation": {
+      "total_cost": 0.000487,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:02:02.32Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1618,
+      "tokens_completion": 75,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791460938-eY9WKMvrI13Qa6r9E9gN",
+    "usage_cost": "0.00048425",
+    "generation": {
+      "total_cost": 0.00048425,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:02:17.99Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1563,
+      "tokens_completion": 82,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791460939-wJilCa9BGQJemCTftOPe",
+    "usage_cost": "0.00054925",
+    "generation": {
+      "total_cost": 0.00054925,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:02:19.541Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1828,
+      "tokens_completion": 88,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791460941-VviiWbqqf43QgdLILk3i",
+    "usage_cost": "0.00050625",
+    "generation": {
+      "total_cost": 0.00050625,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:02:21.139Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1599,
+      "tokens_completion": 100,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791461043-p6Tx67WVqKS8mcJqTlmc",
+    "usage_cost": "0.00052075",
+    "generation": {
+      "total_cost": 0.00052075,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:04:03.37Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1620,
+      "tokens_completion": 119,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791461044-bOGGTiFMAWgHprVQpuUZ",
+    "usage_cost": "0.00056275",
+    "generation": {
+      "total_cost": 0.00056275,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:04:04.854Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1823,
+      "tokens_completion": 120,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791461046-pFXSKLXkJkjVC9oHNxuz",
+    "usage_cost": "0.0005085",
+    "generation": {
+      "total_cost": 0.0005085,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:04:06.03Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1618,
+      "tokens_completion": 107,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791461047-9le8eWHgPv8niegHvG6n",
+    "usage_cost": "0.00047275",
+    "generation": {
+      "total_cost": 0.00047275,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:04:07.385Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1563,
+      "tokens_completion": 80,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791461048-7GEsWzlDShDNUe5eUsBT",
+    "usage_cost": "0.00053475",
+    "generation": {
+      "total_cost": 0.00053475,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:04:08.535Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1828,
+      "tokens_completion": 79,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791461049-H5uh2OxlN13XZcM7qwwg",
+    "usage_cost": "0.00047275",
+    "generation": {
+      "total_cost": 0.00047275,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:04:09.849Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1563,
+      "tokens_completion": 80,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791461051-g3jPBClic8bGgpfCfOKx",
+    "usage_cost": "0.00053475",
+    "generation": {
+      "total_cost": 0.00053475,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:04:11.157Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1828,
+      "tokens_completion": 79,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791461052-0bGRz6ALM4lRf586RZcd",
+    "usage_cost": "0.00047275",
+    "generation": {
+      "total_cost": 0.00047275,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:04:12.359Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1563,
+      "tokens_completion": 80,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791461053-18yOPSAKyQpbNRXrgDD7",
+    "usage_cost": "0.00053475",
+    "generation": {
+      "total_cost": 0.00053475,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:04:13.517Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1828,
+      "tokens_completion": 79,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_001",
+    "role": "judge",
+    "generation_id": "gen-1791461086-bkvuUGbE3GxgqUwpQuSe",
+    "usage_cost": "0.005038",
+    "generation": {
+      "total_cost": 0.005038,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:04:46.399Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 869,
+      "tokens_completion": 207,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_001",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791461091-Qvjd94pwaEH1h0To5b8a",
+    "usage_cost": "0.005628",
+    "generation": {
+      "total_cost": 0.005628,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:04:51.111Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 869,
+      "tokens_completion": 246,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_002",
+    "role": "matcher",
+    "generation_id": "gen-1791460932-6eX5z0db4YDPWtmnhunk",
+    "usage_cost": "0.000483",
+    "generation": {
+      "total_cost": 0.000483,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:02:12.961Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1576,
+      "tokens_completion": 65,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_002",
+    "role": "matcher",
+    "generation_id": "gen-1791460934-qhI2uDJ40UTVnpF6tAs1",
+    "usage_cost": "0.00065325",
+    "generation": {
+      "total_cost": 0.00065325,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:02:14.123Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1863,
+      "tokens_completion": 136,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_002",
+    "role": "matcher",
+    "generation_id": "gen-1791460962-kMYOxMayORje0pYHKsGR",
+    "usage_cost": "0.0005405",
+    "generation": {
+      "total_cost": 0.0005405,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:02:42.125Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1641,
+      "tokens_completion": 113,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_002",
+    "role": "matcher",
+    "generation_id": "gen-1791461012-gGfBAgnc2evXoo8cR102",
+    "usage_cost": "0.000505",
+    "generation": {
+      "total_cost": 0.000505,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:03:32.566Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1628,
+      "tokens_completion": 94,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_002",
+    "role": "matcher",
+    "generation_id": "gen-1791461013-7QtxtNaJjV2OePv0HgYc",
+    "usage_cost": "0.00056625",
+    "generation": {
+      "total_cost": 0.00056625,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:03:33.94Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1843,
+      "tokens_completion": 86,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_002",
+    "role": "judge",
+    "generation_id": "gen-1791461050-NcAAKlrslT0CgWzLyZ3J",
+    "usage_cost": "0.005888",
+    "generation": {
+      "total_cost": 0.005888,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:04:10.138Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 865,
+      "tokens_completion": 245,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_002",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791461055-vQQDnLPyyKrnoL5ungJp",
+    "usage_cost": "0.005078",
+    "generation": {
+      "total_cost": 0.005078,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:04:15.786Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 839,
+      "tokens_completion": 204,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_003",
+    "role": "matcher",
+    "generation_id": "gen-1791461413-X27sq2jxkuOIE5W7hK4M",
+    "usage_cost": "0.00065825",
+    "generation": {
+      "total_cost": 0.00065825,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:10:13.005Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1897,
+      "tokens_completion": 124,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_003",
+    "role": "matcher",
+    "generation_id": "gen-1791461430-2BYtYrRbUZNBjyhorZnb",
+    "usage_cost": "0.00065125",
+    "generation": {
+      "total_cost": 0.00065125,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:10:30.472Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1663,
+      "tokens_completion": 138,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_003",
+    "role": "matcher",
+    "generation_id": "gen-1791461432-UmYu7CfzbTabsGU2Ro4X",
+    "usage_cost": "0.00049175",
+    "generation": {
+      "total_cost": 0.00049175,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:10:32.354Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1669,
+      "tokens_completion": 66,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_003",
+    "role": "matcher",
+    "generation_id": "gen-1791461447-kCLr9fKsQajUj3nCFgL4",
+    "usage_cost": "0.00049675",
+    "generation": {
+      "total_cost": 0.00049675,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:10:47.056Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1589,
+      "tokens_completion": 79,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_003",
+    "role": "matcher",
+    "generation_id": "gen-1791461461-9YIAsmOJmtQpQYxIrL93",
+    "usage_cost": "0.000477",
+    "generation": {
+      "total_cost": 0.000477,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:11:01.659Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1621,
+      "tokens_completion": 68,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_003",
+    "role": "matcher",
+    "generation_id": "gen-1791461462-J5o67kQ3eN4MpTiDSYLf",
+    "usage_cost": "0.00056725",
+    "generation": {
+      "total_cost": 0.00056725,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:11:02.997Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1861,
+      "tokens_completion": 73,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_003",
+    "role": "matcher",
+    "generation_id": "gen-1791490104-Ow1mWHm11jk1MjdNwIKK",
+    "usage_cost": "0.0005385",
+    "generation": {
+      "total_cost": 0.0005385,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:08:24.265Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1654,
+      "tokens_completion": 120,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_003",
+    "role": "matcher",
+    "generation_id": "gen-1791490106-C69GF1zF3l62VYyKTRem",
+    "usage_cost": "0.00051575",
+    "generation": {
+      "total_cost": 0.00051575,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:08:25.812Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1610,
+      "tokens_completion": 111,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_003",
+    "role": "judge",
+    "generation_id": "gen-1791490132-cWE5OKDygtC8hoB40HVe",
+    "usage_cost": "0.006078",
+    "generation": {
+      "total_cost": 0.006078,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:08:52.068Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 851,
+      "tokens_completion": 346,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_003",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791490138-dzmHJmTZULprdf7CYiFD",
+    "usage_cost": "0.004876",
+    "generation": {
+      "total_cost": 0.004876,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:08:58.434Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 833,
+      "tokens_completion": 221,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791461449-iKlJbAoGNkRnMH0dz0kU",
+    "usage_cost": "0.000493",
+    "generation": {
+      "total_cost": 0.000493,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:10:49.664Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1660,
+      "tokens_completion": 70,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791461462-Nj7lbqh5ZyrHLdmmreoZ",
+    "usage_cost": "0.00093225",
+    "generation": {
+      "total_cost": 0.00093225,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:11:02.401Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1697,
+      "tokens_completion": 309,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791461464-tGvTQtc8qGEmAgwzAeJK",
+    "usage_cost": "0.00048",
+    "generation": {
+      "total_cost": 0.00048,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:11:04.043Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1581,
+      "tokens_completion": 73,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791461465-noAuX6c2G9cof4cXsDlb",
+    "usage_cost": "0.00061625",
+    "generation": {
+      "total_cost": 0.00061625,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:11:05.445Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1833,
+      "tokens_completion": 114,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791461466-5z9AyCt42QueQGguqWpO",
+    "usage_cost": "0.00063575",
+    "generation": {
+      "total_cost": 0.00063575,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:11:06.704Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1588,
+      "tokens_completion": 175,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791461481-lCDUfBg5QUraCvZsygGU",
+    "usage_cost": "0.00049625",
+    "generation": {
+      "total_cost": 0.00049625,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:11:21.054Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1659,
+      "tokens_completion": 72,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791461535-wrYKCbLVu8pzPrH8jdoO",
+    "usage_cost": "0.00052925",
+    "generation": {
+      "total_cost": 0.00052925,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:12:15.295Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1674,
+      "tokens_completion": 85,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_004",
+    "role": "judge",
+    "generation_id": "gen-1791461601-hW9wAvEASoXIf0haGyhm",
+    "usage_cost": "0.006282",
+    "generation": {
+      "total_cost": 0.006282,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:13:21.412Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 860,
+      "tokens_completion": 385,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_004",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791461607-VnGw5ASrTIsQYbktiFtE",
+    "usage_cost": "0.006022",
+    "generation": {
+      "total_cost": 0.006022,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:13:27.393Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 833,
+      "tokens_completion": 201,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_005",
+    "role": "matcher",
+    "generation_id": "gen-1791462060-nl1NCZRKLRKKlmJFOsfC",
+    "usage_cost": "0.0006",
+    "generation": {
+      "total_cost": 0.0006,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:20:59.769Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1557,
+      "tokens_completion": 157,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_005",
+    "role": "matcher",
+    "generation_id": "gen-1791462062-lxb3NCOR8ELtPopkQt3k",
+    "usage_cost": "0.000485",
+    "generation": {
+      "total_cost": 0.000485,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:21:02.071Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1636,
+      "tokens_completion": 71,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_005",
+    "role": "matcher",
+    "generation_id": "gen-1791462064-ZDDrWrZxyCRtoKSMCZne",
+    "usage_cost": "0.000501",
+    "generation": {
+      "total_cost": 0.000501,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:21:04.043Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1625,
+      "tokens_completion": 81,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_005",
+    "role": "matcher",
+    "generation_id": "gen-1791462065-gP6g019JYBPFIifB9KWJ",
+    "usage_cost": "0.0004975",
+    "generation": {
+      "total_cost": 0.0004975,
+      "cache_discount": null,
+      "created_at": "2026-10-08T12:21:05.574Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1674,
+      "tokens_completion": 71,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_005",
+    "role": "matcher",
+    "generation_id": "gen-1791490063-fKTNofSc0eSzDow1ZIaq",
+    "usage_cost": "0.00050875",
+    "generation": {
+      "total_cost": 0.00050875,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:07:43.368Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1629,
+      "tokens_completion": 81,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_005",
+    "role": "matcher",
+    "generation_id": "gen-1791490065-1LZnO2LvSbFxubWLUkQS",
+    "usage_cost": "0.00049475",
+    "generation": {
+      "total_cost": 0.00049475,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:07:45.567Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1622,
+      "tokens_completion": 80,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_005",
+    "role": "matcher",
+    "generation_id": "gen-1791490075-lAN2IxlGLbnZfcAK01is",
+    "usage_cost": "0.0005035",
+    "generation": {
+      "total_cost": 0.0005035,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:07:55.348Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1628,
+      "tokens_completion": 80,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_005",
+    "role": "matcher",
+    "generation_id": "gen-1791490076-9M5ckBferM4QKCCH5WJF",
+    "usage_cost": "0.00048725",
+    "generation": {
+      "total_cost": 0.00048725,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:07:56.662Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1630,
+      "tokens_completion": 70,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_005",
+    "role": "matcher",
+    "generation_id": "gen-1791490127-d3aVwyOyl9j8Zdo48wiO",
+    "usage_cost": "0.00051975",
+    "generation": {
+      "total_cost": 0.00051975,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:08:47.16Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1657,
+      "tokens_completion": 104,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_005",
+    "role": "judge",
+    "generation_id": "gen-1791490150-A8CiJ56DMnJrg4qB87WS",
+    "usage_cost": "0.004028",
+    "generation": {
+      "total_cost": 0.004028,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:09:10.159Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 848,
+      "tokens_completion": 235,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_005",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791490154-5O4Rzlv7b7VRE1736x8z",
+    "usage_cost": "0.003806",
+    "generation": {
+      "total_cost": 0.003806,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:09:14.355Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 838,
+      "tokens_completion": 230,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_006",
+    "role": "matcher",
+    "generation_id": "gen-1791490238-khPw8nXvQ1tLtfj6Bv85",
+    "usage_cost": "0.00059375",
+    "generation": {
+      "total_cost": 0.00059375,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:10:37.731Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1609,
+      "tokens_completion": 136,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_006",
+    "role": "matcher",
+    "generation_id": "gen-1791490239-Utlz8JO6zXM1TYMS8Bsk",
+    "usage_cost": "0.000616",
+    "generation": {
+      "total_cost": 0.000616,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:10:39.663Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1706,
+      "tokens_completion": 144,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_006",
+    "role": "matcher",
+    "generation_id": "gen-1791490241-fN24yoM2Tl7uhrz9TZod",
+    "usage_cost": "0.00049375",
+    "generation": {
+      "total_cost": 0.00049375,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:10:41.23Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1551,
+      "tokens_completion": 91,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_006",
+    "role": "matcher",
+    "generation_id": "gen-1791490263-UzRqGa82nuQ0SZ7SrDNv",
+    "usage_cost": "0.0004905",
+    "generation": {
+      "total_cost": 0.0004905,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:11:03.654Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1613,
+      "tokens_completion": 78,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_006",
+    "role": "matcher",
+    "generation_id": "gen-1791490581-d5oEhiXm2tJryJxyLXzo",
+    "usage_cost": "0.0004695",
+    "generation": {
+      "total_cost": 0.0004695,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:16:21.469Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1562,
+      "tokens_completion": 78,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_006",
+    "role": "matcher",
+    "generation_id": "gen-1791490583-GtVB9vS5CpgTcBtcEKnq",
+    "usage_cost": "0.000529",
+    "generation": {
+      "total_cost": 0.000529,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:16:23.385Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1740,
+      "tokens_completion": 80,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_006",
+    "role": "matcher",
+    "generation_id": "gen-1791490599-dCydyb2ACKm7y37TqHbF",
+    "usage_cost": "0.00049225",
+    "generation": {
+      "total_cost": 0.00049225,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:16:39.01Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1553,
+      "tokens_completion": 91,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_006",
+    "role": "judge",
+    "generation_id": "gen-1791490647-sTWk1GCvDkTYQRfhb1Op",
+    "usage_cost": "0.003094",
+    "generation": {
+      "total_cost": 0.003094,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:17:27.565Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 829,
+      "tokens_completion": 92,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_006",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791490651-iJU29Pmpl6opmXdVuKwq",
+    "usage_cost": "0.00383",
+    "generation": {
+      "total_cost": 0.00383,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:17:31.668Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 820,
+      "tokens_completion": 232,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_007",
+    "role": "matcher",
+    "generation_id": "gen-1791490278-Y4dXnFHzcKvAeH9YvxGL",
+    "usage_cost": "0.00046725",
+    "generation": {
+      "total_cost": 0.00046725,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:11:18.863Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1548,
+      "tokens_completion": 71,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_007",
+    "role": "matcher",
+    "generation_id": "gen-1791490280-R79l9SC3vftuHWbUqmbm",
+    "usage_cost": "0.0005115",
+    "generation": {
+      "total_cost": 0.0005115,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:11:20.401Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1683,
+      "tokens_completion": 69,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_007",
+    "role": "judge",
+    "generation_id": "gen-1791490729-Uo1HCfTFC3EBXORPgH1I",
+    "usage_cost": "0.00343",
+    "generation": {
+      "total_cost": 0.00343,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:18:49.381Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 823,
+      "tokens_completion": 192,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_007",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791490733-KHlf2xamyKq91C0JEM4Z",
+    "usage_cost": "0.003034",
+    "generation": {
+      "total_cost": 0.003034,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:18:53.808Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 811,
+      "tokens_completion": 76,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_008",
+    "role": "judge",
+    "generation_id": "gen-1791490812-2DlAeeJ7b2DQ6rKwkqDi",
+    "usage_cost": "0.004152",
+    "generation": {
+      "total_cost": 0.004152,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:20:12.103Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 862,
+      "tokens_completion": 228,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_008",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791490816-fqlMGlrLh94JnGse4csH",
+    "usage_cost": "0.004018",
+    "generation": {
+      "total_cost": 0.004018,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:20:16.577Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 839,
+      "tokens_completion": 235,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_009",
+    "role": "matcher",
+    "generation_id": "gen-1791490792-haFpVFhcoJCqQQuUVP8o",
+    "usage_cost": "0.00049625",
+    "generation": {
+      "total_cost": 0.00049625,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:19:52.284Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1674,
+      "tokens_completion": 74,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_009",
+    "role": "matcher",
+    "generation_id": "gen-1791490804-4me99P7QJN66h0jPnQyz",
+    "usage_cost": "0.0004985",
+    "generation": {
+      "total_cost": 0.0004985,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:20:03.965Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1640,
+      "tokens_completion": 83,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_009",
+    "role": "judge",
+    "generation_id": "gen-1791490863-ilwu8UcVLt0EI3XayLel",
+    "usage_cost": "0.003846",
+    "generation": {
+      "total_cost": 0.003846,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:21:03.18Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 901,
+      "tokens_completion": 184,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_009",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791490867-9Orm6tTNrjhaUqubHo2q",
+    "usage_cost": "0.003968",
+    "generation": {
+      "total_cost": 0.003968,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:21:07.569Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 913,
+      "tokens_completion": 180,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_010",
+    "role": "matcher",
+    "generation_id": "gen-1791490892-hjmWsFmbFLAfpES8ZHDe",
+    "usage_cost": "0.00045325",
+    "generation": {
+      "total_cost": 0.00045325,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:21:32.733Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1521,
+      "tokens_completion": 64,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_010",
+    "role": "matcher",
+    "generation_id": "gen-1791490894-Tdpi04FK5wh8fvtX23uD",
+    "usage_cost": "0.00059125",
+    "generation": {
+      "total_cost": 0.00059125,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:21:34.346Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1726,
+      "tokens_completion": 115,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_010",
+    "role": "matcher",
+    "generation_id": "gen-1791490906-vPRJmYq7vC3aIzBLGOpq",
+    "usage_cost": "0.00048975",
+    "generation": {
+      "total_cost": 0.00048975,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:21:46.323Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1565,
+      "tokens_completion": 101,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_010",
+    "role": "matcher",
+    "generation_id": "gen-1791490907-NKLVO7ekCErSAA3DRrU1",
+    "usage_cost": "0.00051775",
+    "generation": {
+      "total_cost": 0.00051775,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:21:47.772Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1658,
+      "tokens_completion": 101,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_010",
+    "role": "matcher",
+    "generation_id": "gen-1791490969-2tC3FpPcAWtFTRjE0E65",
+    "usage_cost": "0.00056625",
+    "generation": {
+      "total_cost": 0.00056625,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:22:49.471Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1631,
+      "tokens_completion": 135,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_010",
+    "role": "matcher",
+    "generation_id": "gen-1791490996-DHJCXjOd9rkMKV1yLJDj",
+    "usage_cost": "0.00063625",
+    "generation": {
+      "total_cost": 0.00063625,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:23:16.459Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1674,
+      "tokens_completion": 156,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_010",
+    "role": "matcher",
+    "generation_id": "gen-1791491006-HNRnFBUT4DLfYGcdoUDX",
+    "usage_cost": "0.00056625",
+    "generation": {
+      "total_cost": 0.00056625,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:23:26.39Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1631,
+      "tokens_completion": 135,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_010",
+    "role": "judge",
+    "generation_id": "gen-1791491069-2WKHabJWqvNaEN8shxne",
+    "usage_cost": "0.003588",
+    "generation": {
+      "total_cost": 0.003588,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:24:28.965Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 840,
+      "tokens_completion": 215,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "original",
+    "case_id": "case_010",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791491073-UefGQfyHKoOkgvzq7Pha",
+    "usage_cost": "0.00473",
+    "generation": {
+      "total_cost": 0.00473,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:24:33.106Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 829,
+      "tokens_completion": 272,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791492242-g6Or6HSmM9fYB6dwc92T",
+    "usage_cost": "0.000557",
+    "generation": {
+      "total_cost": 0.000557,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:44:02.241Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1587,
+      "tokens_completion": 120,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791492244-4YhVxXL93FtJuLFfqz3n",
+    "usage_cost": "0.0004855",
+    "generation": {
+      "total_cost": 0.0004855,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:44:04.035Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1620,
+      "tokens_completion": 74,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791492262-pYCGKmLdKldVBZHJlO8u",
+    "usage_cost": "0.000467",
+    "generation": {
+      "total_cost": 0.000467,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:44:22.267Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1583,
+      "tokens_completion": 69,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791492264-X7HnkTzJOBh7y19zSHU1",
+    "usage_cost": "0.0004855",
+    "generation": {
+      "total_cost": 0.0004855,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:44:24Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1620,
+      "tokens_completion": 74,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791492265-mftB3UyYMVVbC1zhLtQU",
+    "usage_cost": "0.000472",
+    "generation": {
+      "total_cost": 0.000472,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:44:25.316Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1554,
+      "tokens_completion": 74,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791492266-QAPOcKpL5ozO4oD1RvsU",
+    "usage_cost": "0.0005325",
+    "generation": {
+      "total_cost": 0.0005325,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:44:26.751Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1820,
+      "tokens_completion": 77,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791492658-uAkJqHcEaZEbPOpHWN8U",
+    "usage_cost": "0.00051325",
+    "generation": {
+      "total_cost": 0.00051325,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:50:58.834Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1620,
+      "tokens_completion": 114,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791492660-1GsMYlqxvqSC3ynypCUZ",
+    "usage_cost": "0.00056125",
+    "generation": {
+      "total_cost": 0.00056125,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:51:00.628Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1823,
+      "tokens_completion": 116,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791492662-sA2wjQCVKiMkqcZyvVPb",
+    "usage_cost": "0.000486",
+    "generation": {
+      "total_cost": 0.000486,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:51:02.129Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1577,
+      "tokens_completion": 93,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791492664-SWuy2dZWpzy5YHlSVEEZ",
+    "usage_cost": "0.000542",
+    "generation": {
+      "total_cost": 0.000542,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:51:03.945Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1842,
+      "tokens_completion": 92,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791492665-ZgKjnpIDY3rgdErUWgGC",
+    "usage_cost": "0.000486",
+    "generation": {
+      "total_cost": 0.000486,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:51:05.458Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1577,
+      "tokens_completion": 93,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791492667-AQyR4v7nwKo0bjHk6Nvm",
+    "usage_cost": "0.0005495",
+    "generation": {
+      "total_cost": 0.0005495,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:51:07.171Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1842,
+      "tokens_completion": 101,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791492668-Q7Lc4dDnYf1xCyy6rF60",
+    "usage_cost": "0.0004875",
+    "generation": {
+      "total_cost": 0.0004875,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:51:08.539Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1577,
+      "tokens_completion": 96,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791492670-ohpbMtOzc9poEPkCJcVr",
+    "usage_cost": "0.000542",
+    "generation": {
+      "total_cost": 0.000542,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:51:10.193Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1842,
+      "tokens_completion": 92,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "matcher",
+    "generation_id": "gen-1791492671-CyzlkkpOt262VpqJEkbs",
+    "usage_cost": "0.00050875",
+    "generation": {
+      "total_cost": 0.00050875,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:51:11.715Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1620,
+      "tokens_completion": 107,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "judge",
+    "generation_id": "gen-1791492721-pDd65XcZT1HVSd9uvPGr",
+    "usage_cost": "0.004174",
+    "generation": {
+      "total_cost": 0.004174,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:52:01.157Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 868,
+      "tokens_completion": 203,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_001",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791492725-K9NqRxNbjySvQUlN7CYN",
+    "usage_cost": "0.005006",
+    "generation": {
+      "total_cost": 0.005006,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:52:05.345Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 854,
+      "tokens_completion": 221,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_002",
+    "role": "matcher",
+    "generation_id": "gen-1791492562-o1sQ905wkLdKrz9NoULD",
+    "usage_cost": "0.000483",
+    "generation": {
+      "total_cost": 0.000483,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:49:22.42Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1576,
+      "tokens_completion": 65,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_002",
+    "role": "matcher",
+    "generation_id": "gen-1791492565-mBJoDcrJXG7ql7RcV3tE",
+    "usage_cost": "0.00065325",
+    "generation": {
+      "total_cost": 0.00065325,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:49:25.125Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1863,
+      "tokens_completion": 136,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_002",
+    "role": "matcher",
+    "generation_id": "gen-1791492589-fOCcyGUACacABzpBxVN4",
+    "usage_cost": "0.00053225",
+    "generation": {
+      "total_cost": 0.00053225,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:49:49.489Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1641,
+      "tokens_completion": 107,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_002",
+    "role": "matcher",
+    "generation_id": "gen-1791492636-3ToyI7wqnEML83S79prn",
+    "usage_cost": "0.00050325",
+    "generation": {
+      "total_cost": 0.00050325,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:50:36.309Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1624,
+      "tokens_completion": 87,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_002",
+    "role": "matcher",
+    "generation_id": "gen-1791492638-emrmDP21epiY61QoTg8T",
+    "usage_cost": "0.0005675",
+    "generation": {
+      "total_cost": 0.0005675,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:50:38.03Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1839,
+      "tokens_completion": 84,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_002",
+    "role": "matcher",
+    "generation_id": "gen-1791492639-x6Sh7d81Nd4VizG5Cl83",
+    "usage_cost": "0.0005175",
+    "generation": {
+      "total_cost": 0.0005175,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:50:39.576Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1639,
+      "tokens_completion": 99,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_002",
+    "role": "matcher",
+    "generation_id": "gen-1791492641-6YQGeDeEPnz0PPxy6VM7",
+    "usage_cost": "0.00058175",
+    "generation": {
+      "total_cost": 0.00058175,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:50:41.099Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1853,
+      "tokens_completion": 97,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_002",
+    "role": "judge",
+    "generation_id": "gen-1791492903-U2aGyiYM4g4RDFfzxqOU",
+    "usage_cost": "0.004306",
+    "generation": {
+      "total_cost": 0.004306,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:55:03.527Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 844,
+      "tokens_completion": 210,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_002",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791492908-waWjmYWamwUjNKCe8MzN",
+    "usage_cost": "0.004668",
+    "generation": {
+      "total_cost": 0.004668,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:55:08.407Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 830,
+      "tokens_completion": 208,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_003",
+    "role": "matcher",
+    "generation_id": "gen-1791493122-Eo2F7jpXtqsrDbwCLT5B",
+    "usage_cost": "0.00065975",
+    "generation": {
+      "total_cost": 0.00065975,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:58:42.339Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1898,
+      "tokens_completion": 125,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_003",
+    "role": "matcher",
+    "generation_id": "gen-1791493460-ejBdPfyvYKlh1V9iYs9L",
+    "usage_cost": "0.000494",
+    "generation": {
+      "total_cost": 0.000494,
+      "cache_discount": null,
+      "created_at": "2026-10-08T21:04:20.476Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1590,
+      "tokens_completion": 76,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_003",
+    "role": "matcher",
+    "generation_id": "gen-1791493517-QXzbuCAMyTRH4bS6p1mM",
+    "usage_cost": "0.00053875",
+    "generation": {
+      "total_cost": 0.00053875,
+      "cache_discount": null,
+      "created_at": "2026-10-08T21:05:17.831Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1653,
+      "tokens_completion": 118,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_003",
+    "role": "matcher",
+    "generation_id": "gen-1791493519-S3FjP9CSUzF7vo34g2i1",
+    "usage_cost": "0.0004925",
+    "generation": {
+      "total_cost": 0.0004925,
+      "cache_discount": null,
+      "created_at": "2026-10-08T21:05:19.598Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1630,
+      "tokens_completion": 83,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_003",
+    "role": "matcher",
+    "generation_id": "gen-1791493521-izBfzPo2j2MvsTusoOTJ",
+    "usage_cost": "0.0005815",
+    "generation": {
+      "total_cost": 0.0005815,
+      "cache_discount": null,
+      "created_at": "2026-10-08T21:05:21.033Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1904,
+      "tokens_completion": 81,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_003",
+    "role": "judge",
+    "generation_id": "gen-1791493566-p3HonB9jihyGU53qtGGy",
+    "usage_cost": "0.004784",
+    "generation": {
+      "total_cost": 0.004784,
+      "cache_discount": null,
+      "created_at": "2026-10-08T21:06:06.44Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 840,
+      "tokens_completion": 223,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_003",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791493571-oAeGS0NK7OuvWYOxYZiM",
+    "usage_cost": "0.005192",
+    "generation": {
+      "total_cost": 0.005192,
+      "cache_discount": null,
+      "created_at": "2026-10-08T21:06:11.561Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 839,
+      "tokens_completion": 276,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791508771-laQoDK2ehbhQiHmNu2UY",
+    "usage_cost": "0.00090225",
+    "generation": {
+      "total_cost": 0.00090225,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:19:31.475Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1852,
+      "tokens_completion": 304,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791508783-qTUsvhlCxinxq7aPYsFa",
+    "usage_cost": "0.0005035",
+    "generation": {
+      "total_cost": 0.0005035,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:19:42.878Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1660,
+      "tokens_completion": 77,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791508784-iSMRNMuroaIFfUqFzJVw",
+    "usage_cost": "0.00052275",
+    "generation": {
+      "total_cost": 0.00052275,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:19:44.323Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1679,
+      "tokens_completion": 81,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791508796-cbFBgAoBWTs4czp1Gfn5",
+    "usage_cost": "0.0008645",
+    "generation": {
+      "total_cost": 0.0008645,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:19:56.579Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1698,
+      "tokens_completion": 295,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791508827-c96ajH8ie70KEj9qkEvX",
+    "usage_cost": "0.000552",
+    "generation": {
+      "total_cost": 0.000552,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:20:27.261Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1675,
+      "tokens_completion": 90,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791508829-wWB7GJurmU5XEZ6hr0kX",
+    "usage_cost": "0.00052",
+    "generation": {
+      "total_cost": 0.00052,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:20:28.706Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1580,
+      "tokens_completion": 102,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791508830-XlOwHyWsyPkxsZr3Zs19",
+    "usage_cost": "0.00049",
+    "generation": {
+      "total_cost": 0.00049,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:20:30.476Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1581,
+      "tokens_completion": 83,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791508832-esR2ZOz4mYlSQrTMNR8F",
+    "usage_cost": "0.00048425",
+    "generation": {
+      "total_cost": 0.00048425,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:20:32.057Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1554,
+      "tokens_completion": 80,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791509179-mnDcL6MSFSCeChzHA93Q",
+    "usage_cost": "0.00048875",
+    "generation": {
+      "total_cost": 0.00048875,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:26:18.801Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1596,
+      "tokens_completion": 88,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_004",
+    "role": "matcher",
+    "generation_id": "gen-1791509180-cJbglSZezE2jS6fR5v28",
+    "usage_cost": "0.000536",
+    "generation": {
+      "total_cost": 0.000536,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:26:20.835Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1765,
+      "tokens_completion": 89,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_004",
+    "role": "judge",
+    "generation_id": "gen-1791509249-8gDkvkr9IqdFicEpRDYR",
+    "usage_cost": "0.004372",
+    "generation": {
+      "total_cost": 0.004372,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:27:29.869Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 844,
+      "tokens_completion": 237,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_004",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791509256-3PN8zCfcWpZbjM9s1iQd",
+    "usage_cost": "0.00424",
+    "generation": {
+      "total_cost": 0.00424,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:27:36.212Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 834,
+      "tokens_completion": 198,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_005",
+    "role": "matcher",
+    "generation_id": "gen-1791508783-D9SbTY6INCYE6wnQQIcY",
+    "usage_cost": "0.000544",
+    "generation": {
+      "total_cost": 0.000544,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:19:43.065Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1556,
+      "tokens_completion": 123,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_005",
+    "role": "matcher",
+    "generation_id": "gen-1791508785-cmlnSw0hco5gLDgb0jz6",
+    "usage_cost": "0.0005985",
+    "generation": {
+      "total_cost": 0.0005985,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:19:45.059Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1755,
+      "tokens_completion": 122,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_005",
+    "role": "matcher",
+    "generation_id": "gen-1791508795-WpWJlhAdVc7KkJBshFYQ",
+    "usage_cost": "0.00061825",
+    "generation": {
+      "total_cost": 0.00061825,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:19:55.623Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1635,
+      "tokens_completion": 144,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_005",
+    "role": "matcher",
+    "generation_id": "gen-1791508797-gCr22jrAz7LMEwV3vCG3",
+    "usage_cost": "0.00049025",
+    "generation": {
+      "total_cost": 0.00049025,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:19:57.426Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1622,
+      "tokens_completion": 80,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_005",
+    "role": "matcher",
+    "generation_id": "gen-1791508798-msQwcMgfnUTDaVfnHYUL",
+    "usage_cost": "0.0004975",
+    "generation": {
+      "total_cost": 0.0004975,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:19:58.925Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1674,
+      "tokens_completion": 71,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_005",
+    "role": "judge",
+    "generation_id": "gen-1791509217-tiZVA6QUPWBq2DrE8p26",
+    "usage_cost": "0.003522",
+    "generation": {
+      "total_cost": 0.003522,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:26:56.98Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 838,
+      "tokens_completion": 183,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_005",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791509220-0IvS1hCPQPHP5M0FM0si",
+    "usage_cost": "0.004138",
+    "generation": {
+      "total_cost": 0.004138,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:27:00.74Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 842,
+      "tokens_completion": 272,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_006",
+    "role": "matcher",
+    "generation_id": "gen-1791509633-PmvFkUNSRAOom5rIuzCC",
+    "usage_cost": "0.00059375",
+    "generation": {
+      "total_cost": 0.00059375,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:33:52.793Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1609,
+      "tokens_completion": 136,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_006",
+    "role": "matcher",
+    "generation_id": "gen-1791509635-bXTctlhQXGnMNm626MPa",
+    "usage_cost": "0.000604",
+    "generation": {
+      "total_cost": 0.000604,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:33:55.019Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1706,
+      "tokens_completion": 122,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_006",
+    "role": "matcher",
+    "generation_id": "gen-1791509637-x6SmWHnDenzeHkBHZT9M",
+    "usage_cost": "0.00047875",
+    "generation": {
+      "total_cost": 0.00047875,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:33:56.815Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1542,
+      "tokens_completion": 75,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_006",
+    "role": "matcher",
+    "generation_id": "gen-1791509662-7oBRSSKcHe6ot9VFMVuY",
+    "usage_cost": "0.000684",
+    "generation": {
+      "total_cost": 0.000684,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:34:22.609Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1574,
+      "tokens_completion": 212,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_006",
+    "role": "matcher",
+    "generation_id": "gen-1791509664-NB1A68fkxzvtVaWJRSjC",
+    "usage_cost": "0.0005965",
+    "generation": {
+      "total_cost": 0.0005965,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:34:24.739Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1692,
+      "tokens_completion": 132,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_006",
+    "role": "judge",
+    "generation_id": "gen-1791509727-beljRUTHpA6qoMHw4Nzw",
+    "usage_cost": "0.003122",
+    "generation": {
+      "total_cost": 0.003122,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:35:27.358Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 812,
+      "tokens_completion": 204,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_006",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791509731-aWeJLbj1cbim0zjLPKBm",
+    "usage_cost": "0.003432",
+    "generation": {
+      "total_cost": 0.003432,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:35:31.076Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 819,
+      "tokens_completion": 214,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_007",
+    "role": "judge",
+    "generation_id": "gen-1791510070-9EfOqoXau6aWE8oZSxPV",
+    "usage_cost": "0.00332",
+    "generation": {
+      "total_cost": 0.00332,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:41:10.406Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 818,
+      "tokens_completion": 212,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_007",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791510074-jgGxLiJdKf7Lw20VByw6",
+    "usage_cost": "0.003092",
+    "generation": {
+      "total_cost": 0.003092,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:41:14.316Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 810,
+      "tokens_completion": 93,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_008",
+    "role": "judge",
+    "generation_id": "gen-1791509903-iE6FTaVhCpvv9Fp1BMAT",
+    "usage_cost": "0.004108",
+    "generation": {
+      "total_cost": 0.004108,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:38:23.378Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 847,
+      "tokens_completion": 261,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_008",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791509907-zSAjOFCV7kw6CtmlOvdH",
+    "usage_cost": "0.00434",
+    "generation": {
+      "total_cost": 0.00434,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:38:27.512Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 837,
+      "tokens_completion": 195,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_009",
+    "role": "matcher",
+    "generation_id": "gen-1791509966-V7oHvTpHXthXr51BFIxW",
+    "usage_cost": "0.00059",
+    "generation": {
+      "total_cost": 0.00059,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:39:26.467Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1689,
+      "tokens_completion": 140,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_009",
+    "role": "matcher",
+    "generation_id": "gen-1791509968-a0tLho9WcYjS1cIdSNFj",
+    "usage_cost": "0.00049025",
+    "generation": {
+      "total_cost": 0.00049025,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:39:28.412Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1562,
+      "tokens_completion": 84,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_009",
+    "role": "matcher",
+    "generation_id": "gen-1791509979-jpBx4Sm1I6bSFSvrytWF",
+    "usage_cost": "0.0004975",
+    "generation": {
+      "total_cost": 0.0004975,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:39:39.1Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1638,
+      "tokens_completion": 75,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_009",
+    "role": "judge",
+    "generation_id": "gen-1791510544-tvD8GKt7yARCmYcHgesu",
+    "usage_cost": "0.00375",
+    "generation": {
+      "total_cost": 0.00375,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:49:04.019Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 902,
+      "tokens_completion": 184,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_009",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791510548-RnOD30HpROBt6NOPprA2",
+    "usage_cost": "0.004162",
+    "generation": {
+      "total_cost": 0.004162,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:49:07.842Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 912,
+      "tokens_completion": 166,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_010",
+    "role": "matcher",
+    "generation_id": "gen-1791510139-UMEnHJdRSbHIs50b2J7z",
+    "usage_cost": "0.00045325",
+    "generation": {
+      "total_cost": 0.00045325,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:42:18.91Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1521,
+      "tokens_completion": 64,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_010",
+    "role": "matcher",
+    "generation_id": "gen-1791510140-P5H1jG49y1UrGUqDuKAo",
+    "usage_cost": "0.00059125",
+    "generation": {
+      "total_cost": 0.00059125,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:42:20.678Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1726,
+      "tokens_completion": 115,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_010",
+    "role": "matcher",
+    "generation_id": "gen-1791510152-JEH02IvSdOC96TpHoBRU",
+    "usage_cost": "0.00049325",
+    "generation": {
+      "total_cost": 0.00049325,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:42:32.18Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1566,
+      "tokens_completion": 102,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_010",
+    "role": "matcher",
+    "generation_id": "gen-1791510153-1SXL7uE0w3HKCQAZa6Ch",
+    "usage_cost": "0.00051975",
+    "generation": {
+      "total_cost": 0.00051975,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:42:33.648Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1659,
+      "tokens_completion": 99,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_010",
+    "role": "matcher",
+    "generation_id": "gen-1791510163-H5ecjizVYHHM05FcmJHs",
+    "usage_cost": "0.000518",
+    "generation": {
+      "total_cost": 0.000518,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:42:43.641Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1600,
+      "tokens_completion": 104,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_010",
+    "role": "matcher",
+    "generation_id": "gen-1791510185-xYfR3e4XttL2lBVevBHX",
+    "usage_cost": "0.0006225",
+    "generation": {
+      "total_cost": 0.0006225,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:43:05.548Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1686,
+      "tokens_completion": 158,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_010",
+    "role": "matcher",
+    "generation_id": "gen-1791510208-xjBIrfnPvvg19ex3T3wK",
+    "usage_cost": "0.00064625",
+    "generation": {
+      "total_cost": 0.00064625,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:43:28.53Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 1697,
+      "tokens_completion": 171,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_010",
+    "role": "judge",
+    "generation_id": "gen-1791510589-nDoq0qLL7furbK6Pi3O0",
+    "usage_cost": "0.004698",
+    "generation": {
+      "total_cost": 0.004698,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:49:49.233Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 833,
+      "tokens_completion": 237,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "working",
+    "case_id": "case_010",
+    "role": "judge_proposal",
+    "generation_id": "gen-1791510594-bGkxWM0TQhK0GczS3zFH",
+    "usage_cost": "0.005456",
+    "generation": {
+      "total_cost": 0.005456,
+      "cache_discount": null,
+      "created_at": "2026-10-09T01:49:54.399Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 828,
+      "tokens_completion": 234,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "offline",
+    "case_id": "case_001",
+    "role": "working_review_judge",
+    "generation_id": "gen-1791491736-9BcOssBMHfVlzA5qI3qV",
+    "usage_cost": "0.005044",
+    "generation": {
+      "total_cost": 0.005044,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:35:36.546Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 864,
+      "tokens_completion": 224,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "offline",
+    "case_id": "case_002",
+    "role": "working_review_judge",
+    "generation_id": "gen-1791491733-a6p2O4fqJc3Fc1RSweXb",
+    "usage_cost": "0.004472",
+    "generation": {
+      "total_cost": 0.004472,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:35:33.023Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 853,
+      "tokens_completion": 233,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "offline",
+    "case_id": "case_003",
+    "role": "working_review_judge",
+    "generation_id": "gen-1791491756-NadJOkdM5zSVu6jYrxjM",
+    "usage_cost": "0.007214",
+    "generation": {
+      "total_cost": 0.007214,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:35:56.329Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 840,
+      "tokens_completion": 325,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "offline",
+    "case_id": "case_004",
+    "role": "working_review_judge",
+    "generation_id": "gen-1791491760-7jJC7opdYeiNBAtWcMiL",
+    "usage_cost": "0.006904",
+    "generation": {
+      "total_cost": 0.006904,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:35:59.829Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 860,
+      "tokens_completion": 399,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "offline",
+    "case_id": "case_005",
+    "role": "working_review_judge",
+    "generation_id": "gen-1791491780-1GfDQohpxp8LQnzx7ROS",
+    "usage_cost": "0.003778",
+    "generation": {
+      "total_cost": 0.003778,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:36:20.494Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 834,
+      "tokens_completion": 208,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "offline",
+    "case_id": "case_006",
+    "role": "working_review_judge",
+    "generation_id": "gen-1791491784-29TflWkuQCCUn9AliqOL",
+    "usage_cost": "0.003556",
+    "generation": {
+      "total_cost": 0.003556,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:36:24.015Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 837,
+      "tokens_completion": 209,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "offline",
+    "case_id": "case_007",
+    "role": "working_review_judge",
+    "generation_id": "gen-1791491802-5xxoIgxZU8MkpqLGPpeD",
+    "usage_cost": "0.003102",
+    "generation": {
+      "total_cost": 0.003102,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:36:42.246Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 817,
+      "tokens_completion": 178,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "offline",
+    "case_id": "case_008",
+    "role": "working_review_judge",
+    "generation_id": "gen-1791491805-R1CcM5pmp6ROsXB6resE",
+    "usage_cost": "0.004152",
+    "generation": {
+      "total_cost": 0.004152,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:36:45.674Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 844,
+      "tokens_completion": 254,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "offline",
+    "case_id": "case_009",
+    "role": "working_review_judge",
+    "generation_id": "gen-1791491822-LxVPjhTGekHsz5I8tu5b",
+    "usage_cost": "0.003738",
+    "generation": {
+      "total_cost": 0.003738,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:37:02.292Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 902,
+      "tokens_completion": 186,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  },
+  {
+    "condition": "offline",
+    "case_id": "case_010",
+    "role": "working_review_judge",
+    "generation_id": "gen-1791491827-gfLIQjCykJYNwUV8J1Ed",
+    "usage_cost": "0.003806",
+    "generation": {
+      "total_cost": 0.003806,
+      "cache_discount": null,
+      "created_at": "2026-10-08T20:37:06.994Z",
+      "provider_name": "Google AI Studio",
+      "is_byok": false,
+      "tokens_prompt": 859,
+      "tokens_completion": 195,
+      "native_tokens_cached": 0
+    },
+    "cost_matches": true
+  }
+]

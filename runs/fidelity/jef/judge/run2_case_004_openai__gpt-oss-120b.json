@@ -1,0 +1,1 @@
+{"id": "run2_case_004_openai__gpt-oss-120b", "request_sha256": "81cc167dc3dc8183d9a2eb87118f5f9258643f8ad8a6845c9d7204cb2553dfb0", "model": "jev-1.13.0", "usage": {"input_tokens": 649, "output_tokens": 36}, "answers": {"match": {"type": "noul", "noul": 0.02}, "generic": {"type": "noul", "noul": 0.28}}, "timestamp": 1791209872.190637}

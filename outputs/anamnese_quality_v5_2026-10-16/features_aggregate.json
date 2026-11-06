@@ -1,0 +1,39 @@
+{
+  "scope": "12 selected development encounters in v5_summary.py; physician up to proposal_snapshot, reviewers separately; aggregate only",
+  "counts": {
+    "flagged_urgent": 5,
+    "review_patient_attempts": 9,
+    "review_rejected": 3,
+    "review_question_batches": 6,
+    "physician_messages_to_patient": 35,
+    "with_question_mark": 29,
+    "patient_attempts": 45,
+    "patient_delivered": 35,
+    "reported_all_exchanges": 41,
+    "encounters_with_exposure_pause": 5,
+    "exposure_pause": 5,
+    "patient_rejected": 10,
+    "encounters_with_textual_admission": 2,
+    "without_question_mark": 6,
+    "textual_admission_in_patient_message": 5
+  },
+  "physician_delivered_exchange_distribution": {
+    "1": 2,
+    "2": 3,
+    "3": 4,
+    "4": 1,
+    "5": 1,
+    "6": 1
+  },
+  "physician_exchanges_mean": 2.9166666666666665,
+  "review_delivered_exchanges_inferred": 6,
+  "with_question_mark_note": "Punctuation check only, not a count of clinical questions or semantic information gain",
+  "manual_observations": {
+    "initial_broad_narrative_invitation": 0,
+    "explicit_confirmation_of_history_summary": 0,
+    "direct_question_about_main_patient_concern_at_opening": 0,
+    "initial_physician_message_with_question": 12
+  },
+  "source_integrity": "Existing traces read, not modified; no private facts or private identifiers exported",
+  "inference_calls": 0
+}

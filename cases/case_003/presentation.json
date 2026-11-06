@@ -1,0 +1,6 @@
+{
+ "text": "I'm a woman. I have severe lower belly pain and I'm getting more short of breath. My catheter stopped draining last night and I've passed much less urine since then.",
+ "statement": "I have severe lower belly pain and I'm getting more short of breath. My catheter stopped draining last night and I've passed much less urine since then.",
+ "method": "one Sonnet call from the recorded complaint and history; reviewed by a person",
+ "model": "claude-sonnet-5-5"
+}

@@ -1,5 +1,5 @@
 {
-  "budget_usd": "18.00",
+  "budget_usd": "20.00",
   "models": {
     "openai/gpt-oss-120b": {
       "provider": "mancer/fp8",
@@ -175,6 +175,195 @@
         "tools",
         "reasoning_effort"
       ]
+    },
+    "qwen/qwen3.8-max-prime": {
+      "provider": "alibaba",
+      "provider_name": "Alibaba",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 4.0,
+        "output": 12.0
+      },
+      "supports_logprobs": true,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "seed",
+        "presence_penalty",
+        "response_format",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "logprobs",
+        "top_logprobs",
+        "top_k",
+        "frequency_penalty",
+        "stop",
+        "reasoning_effort"
+      ]
+    },
+    "qwen/qwen3.8-max-0902": {
+      "provider": "alibaba",
+      "provider_name": "Alibaba",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 2.0,
+        "output": 6.0
+      },
+      "supports_logprobs": true,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "seed",
+        "presence_penalty",
+        "response_format",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "logprobs",
+        "top_logprobs",
+        "top_k",
+        "frequency_penalty",
+        "stop",
+        "reasoning_effort"
+      ]
+    },
+    "claude-sonnet-5-5": {
+      "provider": "claude-code-cli",
+      "provider_name": "Claude Code subscription",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 2.0,
+        "output": 10.0
+      },
+      "supports_logprobs": false,
+      "transport": "claude_code_subscription_cli_json_action",
+      "effort": "high",
+      "note": "doctor/patient via subscription CLI (no OpenRouter charge); prices are API-equivalent for reference only"
+    },
+    "claude-opus-5-5": {
+      "provider": "claude-code-cli",
+      "provider_name": "Claude Code subscription",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 4.0,
+        "output": 20.0
+      },
+      "supports_logprobs": false,
+      "transport": "claude_code_subscription_cli_json_action",
+      "effort": "high",
+      "note": "doctor/patient via subscription CLI (no OpenRouter charge); prices are API-equivalent for reference only"
+    },
+    "google/gemini-3.1-pro-preview": {
+      "provider": "google-ai-studio",
+      "provider_name": "Google AI Studio",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1048576,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 2.0,
+        "output": 12.0
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "note": "fidelity/judge offline evaluation only; never a doctor or run judge"
+    },
+    "anthropic/claude-sonnet-5.5": {
+      "provider": "anthropic",
+      "provider_name": "Anthropic",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 2.0,
+        "output": 10.0
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "stop",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "response_format",
+        "verbosity",
+        "reasoning_effort"
+      ]
+    },
+    "anthropic/claude-opus-5.5": {
+      "provider": "anthropic",
+      "provider_name": "Anthropic",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 4.0,
+        "output": 20.0
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "stop",
+        "tool_choice",
+        "tools",
+        "structured_outputs",
+        "response_format",
+        "verbosity",
+        "reasoning_effort"
+      ]
+    },
+    "claude-haiku-5-5": {
+      "provider": "claude-code-cli",
+      "provider_name": "Claude Code subscription",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 1.0,
+        "output": 5.0
+      },
+      "supports_logprobs": false,
+      "transport": "claude_code_subscription_cli_json_action",
+      "effort": "high",
+      "note": "doctor via subscription CLI alias 'haiku' (newest Haiku served by the CLI; version recorded per call); no OpenRouter charge; prices are API-equivalent (Haiku 4.5) for reference only"
     }
   }
 }

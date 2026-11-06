@@ -1,0 +1,3146 @@
+{
+  "conditions": {
+    "original_v4_sol": {
+      "kind": "encounter",
+      "terminals": 10,
+      "judged": 10,
+      "unjudged": 0,
+      "judge_agreement": {
+        "successes": 9,
+        "n_judged": 10,
+        "fraction": 0.9,
+        "lower95": 0.5958499732047615,
+        "upper95": 0.9821237869049271,
+        "interpretation": "Descriptive LLM-judge agreement, not clinical accuracy; ten shared selected cases"
+      },
+      "failure_reasons": {
+        "none_recorded": 10
+      },
+      "proposal_judge_agreement": {
+        "successes": 8,
+        "n_judged": 10,
+        "fraction": 0.8,
+        "lower95": 0.49016247153664183,
+        "upper95": 0.9433178485456247,
+        "interpretation": "Descriptive LLM-judge agreement, not clinical accuracy; ten shared selected cases"
+      },
+      "openrouter_api_total_usd": "0.12304050",
+      "openrouter_api_mean_usd": "0.01230405",
+      "openrouter_api_by_actor_usd": {
+        "judge": "0.045424",
+        "judge_proposal": "0.044990",
+        "matcher": "0.03262650"
+      },
+      "openrouter_deployment_usd": "0.03262650",
+      "deployment_definition": "Actual API usage excluding every judge role and patient/patient_review actor; subscription price unknown",
+      "tokens_per_case": {
+        "api": {
+          "input": {
+            "n": 10,
+            "median": 11543.5,
+            "q1": 5558.75,
+            "q3": 13328.0,
+            "iqr": 7769.25,
+            "sum": 104697,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "output": {
+            "n": 10,
+            "median": 1251.5,
+            "q1": 721.0,
+            "q3": 1487.5,
+            "iqr": 766.5,
+            "sum": 11836,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_input": {
+            "n": 10,
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "iqr": 0.0,
+            "sum": 0,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_write_input": {
+            "n": 10,
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "iqr": 0.0,
+            "sum": 0,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "reasoning_output": {
+            "n": 10,
+            "median": 298.5,
+            "q1": 269.5,
+            "q3": 502.75,
+            "iqr": 233.25,
+            "sum": 3694,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          }
+        },
+        "subscription_cli": {
+          "input": {
+            "n": 10,
+            "median": 172307.5,
+            "q1": 150972.0,
+            "q3": 197233.25,
+            "iqr": 46261.25,
+            "sum": 1801738,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "output": {
+            "n": 10,
+            "median": 3441.0,
+            "q1": 3256.5,
+            "q3": 3539.25,
+            "iqr": 282.75,
+            "sum": 33901,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_input": {
+            "n": 10,
+            "median": 30592.0,
+            "q1": 9504.0,
+            "q3": 37280.0,
+            "iqr": 27776.0,
+            "sum": 248704,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_write_input": {
+            "n": 10,
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "iqr": 0.0,
+            "sum": 0,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "reasoning_output": {
+            "n": 10,
+            "median": 1097.0,
+            "q1": 968.5,
+            "q3": 1211.25,
+            "iqr": 242.75,
+            "sum": 10612,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          }
+        },
+        "all_recorded": {
+          "input": {
+            "n": 10,
+            "median": 189223.0,
+            "q1": 161331.5,
+            "q3": 208852.25,
+            "iqr": 47520.75,
+            "sum": 1906435,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "output": {
+            "n": 10,
+            "median": 4628.5,
+            "q1": 4103.75,
+            "q3": 5281.25,
+            "iqr": 1177.5,
+            "sum": 45737,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_input": {
+            "n": 10,
+            "median": 30592.0,
+            "q1": 9504.0,
+            "q3": 37280.0,
+            "iqr": 27776.0,
+            "sum": 248704,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_write_input": {
+            "n": 10,
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "iqr": 0.0,
+            "sum": 0,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "reasoning_output": {
+            "n": 10,
+            "median": 1511.5,
+            "q1": 1187.5,
+            "q3": 1638.5,
+            "iqr": 451.0,
+            "sum": 14306,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          }
+        }
+      },
+      "cli_answered_calls": 152,
+      "cli_aborted_events": [],
+      "cli_versions": [
+        "codex-cli 0.159.1"
+      ],
+      "requested_subscription_models": [
+        "gpt-6.1-sol"
+      ],
+      "model_identity_status": {
+        "requested_only; CLI did not attest served model": 152
+      },
+      "subscription_monetary_cost_usd": null,
+      "artificial_exam_units": {
+        "unit": "artificial_relative_simulation_unit",
+        "tier_units": {
+          "1": 1,
+          "2": 5,
+          "3": 15
+        },
+        "per_case": {
+          "n": 10,
+          "median": 24.0,
+          "q1": 17.75,
+          "q3": 30.0,
+          "iqr": 12.25,
+          "sum": 247,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        },
+        "by_actor": {
+          "doctor": 232,
+          "reviewer": 15
+        },
+        "note": "Simulation units, neither dollars nor validated clinical prices; unavailable/repeated results cost zero under v4 policy"
+      },
+      "cases": [
+        {
+          "condition": "original_v4_sol",
+          "case_id": "case_001",
+          "kind": "encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Probable MRSA coronary stent infection causing an infected coronary pseudoaneurysm with stent disruption and associated purulent pericarditis, producing cardiac tamponade and shock.",
+          "confidence_self_reported": null,
+          "unconfirmed": null,
+          "next_steps": null,
+          "openrouter_api_usd": "0.01788875",
+          "openrouter_deployment_usd": "0.00722275",
+          "api_input_tokens": 22296,
+          "api_output_tokens": 1988,
+          "cli_input_tokens": 157148,
+          "cli_output_tokens": 3984,
+          "cli_cache_input_tokens": 0,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 26,
+          "commit": "25471d1e13eeff8ba03db2115cd8591581288162",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+          "trace_sha256": "bc791bbc2ca83e75547fe53322ea07dd849d13d4b5e17d4a4debeddb76c48c12"
+        },
+        {
+          "condition": "original_v4_sol",
+          "case_id": "case_002",
+          "kind": "encounter",
+          "judge_correct": false,
+          "proposal_correct": false,
+          "failure_reason": "",
+          "diagnosis": "Atrial standstill with complete atrioventricular block and a slow junctional escape rhythm, causing symptomatic bradycardia and contributing to predominantly right-sided heart failure; the underlying atrial disease remains unconfirmed.",
+          "confidence_self_reported": null,
+          "unconfirmed": null,
+          "next_steps": null,
+          "openrouter_api_usd": "0.01371400",
+          "openrouter_deployment_usd": "0.00274800",
+          "api_input_tokens": 9215,
+          "api_output_tokens": 1210,
+          "cli_input_tokens": 149826,
+          "cli_output_tokens": 3379,
+          "cli_cache_input_tokens": 0,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 27,
+          "commit": "25471d1e13eeff8ba03db2115cd8591581288162",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+          "trace_sha256": "fc5de670687b9c934912e46995e988967911fbd6a5bfcede9dc575b800b33aae"
+        },
+        {
+          "condition": "original_v4_sol",
+          "case_id": "case_003",
+          "kind": "encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Intraperitoneal rupture of a MAINZ urinary pouch with urinary leakage into the peritoneum, most likely precipitated by impaired catheter drainage and reservoir overdistension.",
+          "confidence_self_reported": null,
+          "unconfirmed": null,
+          "next_steps": null,
+          "openrouter_api_usd": "0.01535050",
+          "openrouter_deployment_usd": "0.00439650",
+          "api_input_tokens": 13793,
+          "api_output_tokens": 1545,
+          "cli_input_tokens": 154410,
+          "cli_output_tokens": 3503,
+          "cli_cache_input_tokens": 15360,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 22,
+          "commit": "70c794029e7af60025616f11ee563813aed098ac",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+          "trace_sha256": "16e52d7f487869b72921b6f91125564bd540b9326330db12b8860650e20c6dc1"
+        },
+        {
+          "condition": "original_v4_sol",
+          "case_id": "case_004",
+          "kind": "encounter",
+          "judge_correct": true,
+          "proposal_correct": false,
+          "failure_reason": "",
+          "diagnosis": "Biopsy-confirmed extensive-stage small cell lung carcinoma with recurrent cancer-associated right pleural effusion and severe right-middle-lobe bronchial narrowing contributing to dyspnea.",
+          "confidence_self_reported": null,
+          "unconfirmed": null,
+          "next_steps": null,
+          "openrouter_api_usd": "0.01648675",
+          "openrouter_deployment_usd": "0.00418275",
+          "api_input_tokens": 11933,
+          "api_output_tokens": 1825,
+          "cli_input_tokens": 241848,
+          "cli_output_tokens": 3534,
+          "cli_cache_input_tokens": 38144,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 31,
+          "commit": "70c794029e7af60025616f11ee563813aed098ac",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+          "trace_sha256": "8bee3731e3c7babf25a71d5ac8903e48b7b7dc1c5e45e0da3dc8b66805bf5378"
+        },
+        {
+          "condition": "original_v4_sol",
+          "case_id": "case_005",
+          "kind": "encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Malignant melanoma involving the left pleura, with an unidentified primary site, causing a malignant pleural effusion and contributing to hypoxemic respiratory failure.",
+          "confidence_self_reported": null,
+          "unconfirmed": null,
+          "next_steps": null,
+          "openrouter_api_usd": "0.01243150",
+          "openrouter_deployment_usd": "0.00459750",
+          "api_input_tokens": 14549,
+          "api_output_tokens": 1293,
+          "cli_input_tokens": 196712,
+          "cli_output_tokens": 3375,
+          "cli_cache_input_tokens": 33408,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 11,
+          "commit": "70c794029e7af60025616f11ee563813aed098ac",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+          "trace_sha256": "ce6a7ebac6685251f3a0ce9639273354d06939d33b2477c8dbe9685993103411"
+        },
+        {
+          "condition": "original_v4_sol",
+          "case_id": "case_006",
+          "kind": "encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Primary adrenal insufficiency (Addison disease) caused by bilateral tuberculous adrenalitis with granulomatous adrenal destruction.",
+          "confidence_self_reported": null,
+          "unconfirmed": null,
+          "next_steps": null,
+          "openrouter_api_usd": "0.01060875",
+          "openrouter_deployment_usd": "0.00368475",
+          "api_input_tokens": 11535,
+          "api_output_tokens": 1111,
+          "cli_input_tokens": 187467,
+          "cli_output_tokens": 3217,
+          "cli_cache_input_tokens": 7552,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 35,
+          "commit": "70c794029e7af60025616f11ee563813aed098ac",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+          "trace_sha256": "1e6bddab8190bc63d3385a032cff7325a1d5e0943ca695b0c7c3a591ad15f01d"
+        },
+        {
+          "condition": "original_v4_sol",
+          "case_id": "case_007",
+          "kind": "encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Pembrolizumab-associated autoimmune hemolytic anemia causing profound anemia and predominantly unconjugated jaundice.",
+          "confidence_self_reported": null,
+          "unconfirmed": null,
+          "next_steps": null,
+          "openrouter_api_usd": "0.00744275",
+          "openrouter_deployment_usd": "0.00097875",
+          "api_input_tokens": 4219,
+          "api_output_tokens": 488,
+          "cli_input_tokens": 197407,
+          "cli_output_tokens": 3541,
+          "cli_cache_input_tokens": 34688,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 12,
+          "commit": "70c794029e7af60025616f11ee563813aed098ac",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_007.jsonl",
+          "trace_sha256": "ceaee3584c2edc51c308c771e0e38ed0deee3666897fc9986f7846d59ee5705f"
+        },
+        {
+          "condition": "original_v4_sol",
+          "case_id": "case_008",
+          "kind": "encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Spontaneous cervicothoracic spinal epidural hematoma extending from C6 to T2, causing acute spinal cord compression with paraplegia and sphincter dysfunction; the underlying bleeding source is undetermined.",
+          "confidence_self_reported": null,
+          "unconfirmed": null,
+          "next_steps": null,
+          "openrouter_api_usd": "0.008170",
+          "openrouter_deployment_usd": "0",
+          "api_input_tokens": 1265,
+          "api_output_tokens": 470,
+          "cli_input_tokens": 140183,
+          "cli_output_tokens": 3069,
+          "cli_cache_input_tokens": 38144,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 17,
+          "commit": "70c794029e7af60025616f11ee563813aed098ac",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_008.jsonl",
+          "trace_sha256": "0aacaceb2906ec0daa23dec479e338b22ef4097c5b2f2a0b6ace279cfb83fa72"
+        },
+        {
+          "condition": "original_v4_sol",
+          "case_id": "case_009",
+          "kind": "encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Ileal perforation caused by a migrated biliary stent lodged in a Meckel diverticulum, with purulent peritonitis.",
+          "confidence_self_reported": null,
+          "unconfirmed": null,
+          "next_steps": null,
+          "openrouter_api_usd": "0.00880875",
+          "openrouter_deployment_usd": "0.00099475",
+          "api_input_tokens": 4340,
+          "api_output_tokens": 591,
+          "cli_input_tokens": 111984,
+          "cli_output_tokens": 2027,
+          "cli_cache_input_tokens": 27776,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 20,
+          "commit": "70c794029e7af60025616f11ee563813aed098ac",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_009.jsonl",
+          "trace_sha256": "170dffd56eb3db98636e88953f5dbc0030fe31303792c8c66b72f0803a5a0d7b"
+        },
+        {
+          "condition": "original_v4_sol",
+          "case_id": "case_010",
+          "kind": "encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Omental abdominal ectopic pregnancy between the spleen and descending colon, with active hemorrhage causing hemoperitoneum.",
+          "confidence_self_reported": null,
+          "unconfirmed": null,
+          "next_steps": null,
+          "openrouter_api_usd": "0.01213875",
+          "openrouter_deployment_usd": "0.00382075",
+          "api_input_tokens": 11552,
+          "api_output_tokens": 1315,
+          "cli_input_tokens": 264753,
+          "cli_output_tokens": 4272,
+          "cli_cache_input_tokens": 53632,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 46,
+          "commit": "70c794029e7af60025616f11ee563813aed098ac",
+          "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+          "trace_sha256": "d2570037fc8c9cc1c161fdcfb68293f4e15bcd9a12ce8d9b8ffa6d28bd5e6803"
+        }
+      ]
+    },
+    "prospective_v4_sol_working": {
+      "kind": "new_encounter",
+      "terminals": 10,
+      "judged": 10,
+      "unjudged": 0,
+      "judge_agreement": {
+        "successes": 10,
+        "n_judged": 10,
+        "fraction": 1.0,
+        "lower95": 0.7224672001371107,
+        "upper95": 0.9999999999999999,
+        "interpretation": "Descriptive LLM-judge agreement, not clinical accuracy; ten shared selected cases"
+      },
+      "failure_reasons": {
+        "none_recorded": 10
+      },
+      "proposal_judge_agreement": {
+        "successes": 9,
+        "n_judged": 10,
+        "fraction": 0.9,
+        "lower95": 0.5958499732047615,
+        "upper95": 0.9821237869049271,
+        "interpretation": "Descriptive LLM-judge agreement, not clinical accuracy; ten shared selected cases"
+      },
+      "openrouter_api_total_usd": "0.11515425",
+      "openrouter_api_mean_usd": "0.011515425",
+      "openrouter_api_by_actor_usd": {
+        "judge": "0.040156",
+        "judge_proposal": "0.043726",
+        "matcher": "0.03127225"
+      },
+      "openrouter_deployment_usd": "0.03127225",
+      "deployment_definition": "Actual API usage excluding every judge role and patient/patient_review actor; subscription price unknown",
+      "tokens_per_case": {
+        "api": {
+          "input": {
+            "n": 10,
+            "median": 9004.0,
+            "q1": 6462.0,
+            "q3": 12234.75,
+            "iqr": 5772.75,
+            "sum": 98972,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "output": {
+            "n": 10,
+            "median": 1107.0,
+            "q1": 818.5,
+            "q3": 1413.75,
+            "iqr": 595.25,
+            "sum": 11343,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_input": {
+            "n": 10,
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "iqr": 0.0,
+            "sum": 0,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_write_input": {
+            "n": 10,
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "iqr": 0.0,
+            "sum": 0,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "reasoning_output": {
+            "n": 10,
+            "median": 308.5,
+            "q1": 274.25,
+            "q3": 368.5,
+            "iqr": 94.25,
+            "sum": 3167,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          }
+        },
+        "subscription_cli": {
+          "input": {
+            "n": 10,
+            "median": 183706.5,
+            "q1": 154139.75,
+            "q3": 204303.75,
+            "iqr": 50164.0,
+            "sum": 1814689,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "output": {
+            "n": 10,
+            "median": 3689.5,
+            "q1": 3520.75,
+            "q3": 3926.5,
+            "iqr": 405.75,
+            "sum": 36502,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_input": {
+            "n": 10,
+            "median": 32256.0,
+            "q1": 24064.0,
+            "q3": 54624.0,
+            "iqr": 30560.0,
+            "sum": 386432,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_write_input": {
+            "n": 10,
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "iqr": 0.0,
+            "sum": 0,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "reasoning_output": {
+            "n": 10,
+            "median": 960.0,
+            "q1": 733.75,
+            "q3": 1077.25,
+            "iqr": 343.5,
+            "sum": 9017,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          }
+        },
+        "all_recorded": {
+          "input": {
+            "n": 10,
+            "median": 192464.5,
+            "q1": 158191.0,
+            "q3": 214774.25,
+            "iqr": 56583.25,
+            "sum": 1913661,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "output": {
+            "n": 10,
+            "median": 4760.0,
+            "q1": 4324.25,
+            "q3": 5000.0,
+            "iqr": 675.75,
+            "sum": 47845,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_input": {
+            "n": 10,
+            "median": 32256.0,
+            "q1": 24064.0,
+            "q3": 54624.0,
+            "iqr": 30560.0,
+            "sum": 386432,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_write_input": {
+            "n": 10,
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "iqr": 0.0,
+            "sum": 0,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "reasoning_output": {
+            "n": 10,
+            "median": 1221.0,
+            "q1": 999.5,
+            "q3": 1406.5,
+            "iqr": 407.0,
+            "sum": 12184,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          }
+        }
+      },
+      "cli_answered_calls": 154,
+      "cli_aborted_events": [],
+      "cli_versions": [
+        "codex-cli 0.159.1"
+      ],
+      "requested_subscription_models": [
+        "gpt-6-astra",
+        "gpt-6.1-sol"
+      ],
+      "model_identity_status": {
+        "requested_only; CLI did not attest served model": 154
+      },
+      "subscription_monetary_cost_usd": null,
+      "artificial_exam_units": {
+        "unit": "artificial_relative_simulation_unit",
+        "tier_units": {
+          "1": 1,
+          "2": 5,
+          "3": 15
+        },
+        "per_case": {
+          "n": 10,
+          "median": 24.0,
+          "q1": 20.25,
+          "q3": 33.0,
+          "iqr": 12.75,
+          "sum": 257,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        },
+        "by_actor": {
+          "doctor": 227,
+          "reviewer": 30
+        },
+        "note": "Simulation units, neither dollars nor validated clinical prices; unavailable/repeated results cost zero under v4 policy"
+      },
+      "cases": [
+        {
+          "condition": "prospective_v4_sol_working",
+          "case_id": "case_001",
+          "kind": "new_encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Probable MRSA infection of the coronary stent and adjacent arterial wall, causing an infected coronary pseudoaneurysm with stent disruption and associated pericardial tamponade.",
+          "confidence_self_reported": 0.93,
+          "unconfirmed": [
+            "MRSA infection of the coronary stent and arterial wall",
+            "Pseudoaneurysm rupture or pericardial communication",
+            "Bacterial infection of the pericardial fluid",
+            "Myocardial infarction or specific mechanism of regional ventricular dysfunction",
+            "Persistent bacteremia or concomitant endocarditis"
+          ],
+          "next_steps": [
+            "Emergency cardiothoracic surgical management of the expanding pseudoaneurysm and disrupted stent, with ongoing shock and tamponade support.",
+            "Obtain operative assessment and coronary arterial/stent specimens for culture and histopathology; culture pericardial fluid if available.",
+            "Verify current antimicrobial treatment and ensure appropriate intravenous MRSA therapy with infectious-disease input.",
+            "Obtain follow-up blood cultures to document clearance and repeat echocardiography to assess effusion, ventricular function, and possible endocarditis."
+          ],
+          "openrouter_api_usd": "0.01685575",
+          "openrouter_deployment_usd": "0.00767575",
+          "api_input_tokens": 23731,
+          "api_output_tokens": 1927,
+          "cli_input_tokens": 182260,
+          "cli_output_tokens": 4164,
+          "cli_cache_input_tokens": 51456,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 26,
+          "commit": "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+          "trace_sha256": "526c0570983dd94216da538e49982ab28bc8d92c3d33a51ca66845f27ee595ba"
+        },
+        {
+          "condition": "prospective_v4_sol_working",
+          "case_id": "case_002",
+          "kind": "new_encounter",
+          "judge_correct": true,
+          "proposal_correct": false,
+          "failure_reason": "",
+          "diagnosis": "Probable atrial-predominant myocarditis, most likely postinfectious, causing extensive atrial electrical standstill and complete atrioventricular block.",
+          "confidence_self_reported": 0.72,
+          "unconfirmed": [
+            "Postinfectious cause and specific pathogen",
+            "Histological myocarditis and inflammatory subtype",
+            "Mesalazine causality",
+            "Previous rhythm status and chronicity of atrial disease",
+            "Cause of pulmonary pressure elevation, RV dysfunction and severe tricuspid regurgitation",
+            "Electrolyte and thyroid abnormalities; requested results were unavailable"
+          ],
+          "next_steps": [
+            "Urgent monitored cardiology assessment for complete AV block, pacing and treatment of congestion.",
+            "Establish mesalazine initiation and dose-change dates; jointly review possible withdrawal or substitution with cardiology and gastroenterology.",
+            "Retrieve prior ECGs and imaging; obtain electrolytes, renal function and thyroid testing.",
+            "Consider targeted atrial biopsy with histopathology at an experienced center if feasible and management-changing; use serial imaging and rhythm assessment to evaluate evolution.",
+            "Reassess right-sided dysfunction, tricuspid regurgitation and pulmonary pressures after stabilization; investigate persistent abnormalities."
+          ],
+          "openrouter_api_usd": "0.01281250",
+          "openrouter_deployment_usd": "0.00383850",
+          "api_input_tokens": 12443,
+          "api_output_tokens": 1233,
+          "cli_input_tokens": 161855,
+          "cli_output_tokens": 3767,
+          "cli_cache_input_tokens": 34560,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 27,
+          "commit": "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+          "trace_sha256": "d75f6f7854516028387fc7943cc9641266c85c8adad783dab6a572c509e928c6"
+        },
+        {
+          "condition": "prospective_v4_sol_working",
+          "case_id": "case_003",
+          "kind": "new_encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Probable drainage-failure–related overdistension and rupture of a MAINZ urinary pouch, causing intraperitoneal urinary leakage.",
+          "confidence_self_reported": 0.78,
+          "unconfirmed": [
+            "Catheter obstruction and pressure-related pouch overdistension as the initiating mechanism",
+            "Traumatic, ischemic, or other structural contributors to rupture",
+            "Bacterial peritonitis or septic shock"
+          ],
+          "next_steps": [
+            "Review operative details and prior reconstruction records for tissue viability, defect characteristics, catheter position, and evidence of obstruction or trauma.",
+            "Maintain and verify unobstructed pouch drainage with urology follow-up; monitor urine output, renal function, and cardiopulmonary recovery.",
+            "If infection remains suspected, obtain appropriate cultures and reassess clinically; use follow-up pouch contrast imaging as clinically indicated to assess repair integrity."
+          ],
+          "openrouter_api_usd": "0.01274250",
+          "openrouter_deployment_usd": "0.00276650",
+          "api_input_tokens": 9292,
+          "api_output_tokens": 1127,
+          "cli_input_tokens": 137232,
+          "cli_output_tokens": 3519,
+          "cli_cache_input_tokens": 55680,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 22,
+          "commit": "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+          "trace_sha256": "9a169efa126130223c500321cd735d9cfbd3d3450d9ac7ad1c52afb9d873b70d"
+        },
+        {
+          "condition": "prospective_v4_sol_working",
+          "case_id": "case_004",
+          "kind": "new_encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Small cell lung carcinoma–associated chylothorax, most likely from malignant obstruction of thoracic lymphatic drainage.",
+          "confidence_self_reported": 0.93,
+          "unconfirmed": [
+            "Exact site and anatomical mechanism of malignant lymphatic obstruction or leakage",
+            "Direct pleural malignant involvement",
+            "Potential contributions from surgery, trauma or medications"
+          ],
+          "next_steps": [
+            "Promptly reassess respiratory status and manage symptomatic recurrent fluid.",
+            "Coordinate oncology and pleural specialist care for biopsy-confirmed small cell carcinoma and chylothorax, including nutritional assessment.",
+            "Review the actual CT report and complete surgery, trauma and medication histories.",
+            "Obtain lymphatic imaging when available if persistent leakage or intervention planning requires localization; reassess the mechanism if imaging identifies another cause."
+          ],
+          "openrouter_api_usd": "0.01447600",
+          "openrouter_deployment_usd": "0.00586400",
+          "api_input_tokens": 16386,
+          "api_output_tokens": 1896,
+          "cli_input_tokens": 228642,
+          "cli_output_tokens": 3973,
+          "cli_cache_input_tokens": 14080,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 36,
+          "commit": "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+          "trace_sha256": "ebf6ddc25815073c276654e9c772468a45237652edaacbcfca57f60e9e656631"
+        },
+        {
+          "condition": "prospective_v4_sol_working",
+          "case_id": "case_005",
+          "kind": "new_encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Melanoma involving the left pleura, most likely metastatic from an unidentified primary, causing a malignant pleural effusion.",
+          "confidence_self_reported": 0.96,
+          "unconfirmed": [
+            "Primary melanoma site and full disease extent",
+            "Metastatic origin versus rare primary pleural melanoma",
+            "Whether the pleural disease fully explains hypoxemia and crackles",
+            "Pulmonary embolism exclusion"
+          ],
+          "next_steps": [
+            "Obtain integrated pathology review of pleural tissue morphology and immunostains to finalize classification.",
+            "Arrange oncology assessment, staging, and further primary-site evaluation.",
+            "Continue oxygen and reassess respiratory status and residual effusion after the documented thoracentesis.",
+            "If hypoxemia remains unexplained, assess additional pulmonary causes and obtain dedicated embolism testing as clinically indicated."
+          ],
+          "openrouter_api_usd": "0.01040850",
+          "openrouter_deployment_usd": "0.00274850",
+          "api_input_tokens": 8716,
+          "api_output_tokens": 1018,
+          "cli_input_tokens": 189858,
+          "cli_output_tokens": 3856,
+          "cli_cache_input_tokens": 18048,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 21,
+          "commit": "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+          "trace_sha256": "add63500af1074fd0d20a56b021ee9d542e1e6b078743f9284c8f170b6b0b967"
+        },
+        {
+          "condition": "prospective_v4_sol_working",
+          "case_id": "case_006",
+          "kind": "new_encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Tuberculous adrenalitis causing primary adrenal insufficiency.",
+          "confidence_self_reported": 0.97,
+          "unconfirmed": [
+            "Viable organisms and tuberculosis drug susceptibility; mycobacterial culture unavailable",
+            "Current extra-adrenal tuberculosis activity",
+            "Timed morning cortisol and dynamic adrenal testing",
+            "Mineralocorticoid deficiency and current hemodynamic stability",
+            "Fungal culture unavailable"
+          ],
+          "next_steps": [
+            "Promptly assess blood pressure, orthostasis, hydration, glucose, electrolytes, and adrenal-crisis symptoms; treat suspected crisis immediately with hydrocortisone and IV saline.",
+            "Arrange endocrinology management of glucocorticoid replacement; assess renin and aldosterone to guide mineralocorticoid replacement.",
+            "Obtain infectious-disease or tuberculosis-service assessment for antituberculous treatment, susceptibility testing where feasible, and evaluation for active pulmonary disease.",
+            "Coordinate replacement dosing during tuberculosis therapy because rifampicin increases glucocorticoid clearance; provide stress-dosing and emergency steroid education."
+          ],
+          "openrouter_api_usd": "0.00951100",
+          "openrouter_deployment_usd": "0.00295700",
+          "api_input_tokens": 8583,
+          "api_output_tokens": 1087,
+          "cli_input_tokens": 209119,
+          "cli_output_tokens": 3358,
+          "cli_cache_input_tokens": 27520,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 35,
+          "commit": "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+          "trace_sha256": "abf89cc43374706ffabe39415216d1c22a973d7b78c84c274c7e4217d6ba4a4a"
+        },
+        {
+          "condition": "prospective_v4_sol_working",
+          "case_id": "case_007",
+          "kind": "new_encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Pembrolizumab-associated autoimmune hemolytic anemia, a probable immune-related adverse reaction.",
+          "confidence_self_reported": 0.92,
+          "unconfirmed": [
+            "Causal attribution to pembrolizumab",
+            "Warm versus mixed or cold antibody subtype",
+            "Prior autoimmune hemolysis or recent transfusion",
+            "Concurrent gastrointestinal bleeding",
+            "Other medication or malignancy-associated triggers"
+          ],
+          "next_steps": [
+            "Immediate hospital admission and hematology assessment; urgent transfusion support coordinated with the blood bank for symptomatic hemoglobin 45 g/L.",
+            "Withhold pembrolizumab and initiate specialist-directed treatment for severe immune hemolysis, typically corticosteroids.",
+            "Complete antibody characterization, including monospecific DAT review, antibody screen/elution and the pending cold agglutinin titer; assess thermal amplitude if indicated.",
+            "Retrieve baseline blood counts, oncology records, medication and transfusion history; monitor hemoglobin and hemolysis markers to assess response.",
+            "Evaluate dark stools for concurrent bleeding and obtain liver enzymes and coagulation studies to assess additional pathology."
+          ],
+          "openrouter_api_usd": "0.006412",
+          "openrouter_deployment_usd": "0",
+          "api_input_tokens": 1202,
+          "api_output_tokens": 334,
+          "cli_input_tokens": 185153,
+          "cli_output_tokens": 3950,
+          "cli_cache_input_tokens": 68480,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 12,
+          "commit": "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_007.jsonl",
+          "trace_sha256": "7c8ce427cd641d4064d26cb8b2d0ae7bc5f10aeab4c3775dfc6b0f02aa834b21"
+        },
+        {
+          "condition": "prospective_v4_sol_working",
+          "case_id": "case_008",
+          "kind": "new_encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Spontaneous cervicothoracic spinal epidural hemorrhage causing acute compressive myelopathy; the underlying bleeding source remains undetermined.",
+          "confidence_self_reported": 0.93,
+          "unconfirmed": [
+            "Specific bleeding source or precipitant",
+            "Absence of previous spinal procedures",
+            "Personal or familial bleeding tendency despite normal screening coagulation tests",
+            "Occult spinal vascular abnormality",
+            "Exact onset and rate of motor deterioration"
+          ],
+          "next_steps": [
+            "Immediate spinal surgical assessment for emergency decompression and hematoma evacuation.",
+            "Serial neurological examinations and supportive management of paralysis and sphincter dysfunction.",
+            "Clarify procedure and bleeding histories without delaying treatment.",
+            "Use operative findings and specialist-directed follow-up imaging, with vascular investigation if indicated, to evaluate the bleeding source; pursue additional hemostatic testing if history or recurrent bleeding warrants it."
+          ],
+          "openrouter_api_usd": "0.008448",
+          "openrouter_deployment_usd": "0",
+          "api_input_tokens": 1254,
+          "api_output_tokens": 495,
+          "cli_input_tokens": 151568,
+          "cli_output_tokens": 3612,
+          "cli_cache_input_tokens": 22912,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 17,
+          "commit": "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_008.jsonl",
+          "trace_sha256": "e6f4e3382ba6e813057054a8cca1cf12db00b2f9b903aadeafaf62880319bdb4"
+        },
+        {
+          "condition": "prospective_v4_sol_working",
+          "case_id": "case_009",
+          "kind": "new_encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Migrated biliary stent lodged in a Meckel diverticulum, causing adjacent ileal perforation and purulent peritonitis.",
+          "confidence_self_reported": 0.99,
+          "unconfirmed": [
+            "Prior biliary stent placement, indication, timing, and migration route",
+            "Definitive mechanical obstruction and contribution of adhesions",
+            "Systemic infection severity and bowel viability beyond the reported perforation"
+          ],
+          "next_steps": [
+            "Ensure operative source control, including stent removal and appropriate treatment of the perforated ileum and Meckel diverticulum; completion was not reported.",
+            "Provide resuscitation, intravenous antibiotics, and postoperative monitoring for sepsis and complications.",
+            "Review biliary procedure records to establish stent origin and assess any remaining biliary management needs."
+          ],
+          "openrouter_api_usd": "0.00948975",
+          "openrouter_deployment_usd": "0.00157775",
+          "api_input_tokens": 5755,
+          "api_output_tokens": 752,
+          "cli_input_tokens": 136328,
+          "cli_output_tokens": 2777,
+          "cli_cache_input_tokens": 29952,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 20,
+          "commit": "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_009.jsonl",
+          "trace_sha256": "ef4a1ccf958b3b3e6e0c449c4f04a96bb858ceadcd899f322f567ac9a1846d64"
+        },
+        {
+          "condition": "prospective_v4_sol_working",
+          "case_id": "case_010",
+          "kind": "new_encounter",
+          "judge_correct": true,
+          "proposal_correct": true,
+          "failure_reason": "",
+          "diagnosis": "Bleeding abdominal ectopic pregnancy involving the omentum, most likely an omental implantation.",
+          "confidence_self_reported": 0.99,
+          "unconfirmed": [
+            "Primary versus secondary abdominal implantation",
+            "Precise microscopic implantation site within the omentum",
+            "Complete removal and subsequent resolution of gestational tissue"
+          ],
+          "next_steps": [
+            "Ensure surgical hemostasis and monitor vital signs and hemoglobin after documented intra-abdominal bleeding.",
+            "Follow serial quantitative hCG to resolution to assess for persistent gestational tissue.",
+            "Review the operative and detailed pathology reports to clarify implantation site and completeness of removal."
+          ],
+          "openrouter_api_usd": "0.01399825",
+          "openrouter_deployment_usd": "0.00384425",
+          "api_input_tokens": 11610,
+          "api_output_tokens": 1474,
+          "cli_input_tokens": 232674,
+          "cli_output_tokens": 3526,
+          "cli_cache_input_tokens": 63744,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": 41,
+          "commit": "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c",
+          "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+          "trace_sha256": "1ff7f4dfdd93ea3756940155ea35f129dbfe04478f895df62d0f0803d030a012"
+        }
+      ]
+    },
+    "offline_working_review": {
+      "kind": "posthoc_review_not_encounter",
+      "terminals": 10,
+      "judged": 10,
+      "unjudged": 0,
+      "judge_agreement": {
+        "successes": 10,
+        "n_judged": 10,
+        "fraction": 1.0,
+        "lower95": 0.7224672001371107,
+        "upper95": 0.9999999999999999,
+        "interpretation": "Descriptive LLM-judge agreement, not clinical accuracy; ten shared selected cases"
+      },
+      "failure_reasons": {
+        "none_recorded": 10
+      },
+      "proposal_judge_agreement": null,
+      "openrouter_api_total_usd": "0.045766",
+      "openrouter_api_mean_usd": "0.0045766",
+      "openrouter_api_by_actor_usd": {
+        "working_review_judge": "0.045766"
+      },
+      "openrouter_deployment_usd": "0",
+      "deployment_definition": "Actual API usage excluding every judge role and patient/patient_review actor; subscription price unknown",
+      "tokens_per_case": {
+        "api": {
+          "input": {
+            "n": 10,
+            "median": 624.5,
+            "q1": 613.0,
+            "q3": 633.5,
+            "iqr": 20.5,
+            "sum": 6275,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "output": {
+            "n": 10,
+            "median": 227.5,
+            "q1": 202.5,
+            "q3": 301.5,
+            "iqr": 99.0,
+            "sum": 2768,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_input": {
+            "n": 10,
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "iqr": 0.0,
+            "sum": 0,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_write_input": {
+            "n": 10,
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "iqr": 0.0,
+            "sum": 0,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "reasoning_output": {
+            "n": 10,
+            "median": 139.5,
+            "q1": 128.5,
+            "q3": 193.5,
+            "iqr": 65.0,
+            "sum": 1876,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          }
+        },
+        "subscription_cli": {
+          "input": {
+            "n": 10,
+            "median": 11942.5,
+            "q1": 11839.25,
+            "q3": 12139.75,
+            "iqr": 300.5,
+            "sum": 119737,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "output": {
+            "n": 10,
+            "median": 412.5,
+            "q1": 387.25,
+            "q3": 426.25,
+            "iqr": 39.0,
+            "sum": 4110,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_input": {
+            "n": 10,
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "iqr": 0.0,
+            "sum": 0,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_write_input": {
+            "n": 10,
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "iqr": 0.0,
+            "sum": 0,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "reasoning_output": {
+            "n": 10,
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "iqr": 0.0,
+            "sum": 28,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          }
+        },
+        "all_recorded": {
+          "input": {
+            "n": 10,
+            "median": 12550.0,
+            "q1": 12461.75,
+            "q3": 12774.75,
+            "iqr": 313.0,
+            "sum": 126012,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "output": {
+            "n": 10,
+            "median": 615.0,
+            "q1": 592.75,
+            "q3": 779.25,
+            "iqr": 186.5,
+            "sum": 6878,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_input": {
+            "n": 10,
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "iqr": 0.0,
+            "sum": 0,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "cache_write_input": {
+            "n": 10,
+            "median": 0.0,
+            "q1": 0.0,
+            "q3": 0.0,
+            "iqr": 0.0,
+            "sum": 0,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          },
+          "reasoning_output": {
+            "n": 10,
+            "median": 139.5,
+            "q1": 128.5,
+            "q3": 200.5,
+            "iqr": 72.0,
+            "sum": 1904,
+            "quantile_method": "linear interpolation at (n-1)*p"
+          }
+        }
+      },
+      "cli_answered_calls": 10,
+      "cli_aborted_events": [],
+      "cli_versions": [
+        "codex-cli 0.159.1"
+      ],
+      "requested_subscription_models": [
+        "gpt-6-astra"
+      ],
+      "model_identity_status": {
+        "requested_only; CLI did not attest served model": 10
+      },
+      "subscription_monetary_cost_usd": null,
+      "artificial_exam_units": {
+        "unit": "artificial_relative_simulation_unit",
+        "tier_units": {
+          "1": 1,
+          "2": 5,
+          "3": 15
+        },
+        "per_case": {
+          "n": 0,
+          "median": null,
+          "q1": null,
+          "q3": null,
+          "iqr": null,
+          "sum": 0,
+          "quantile_method": "linear interpolation at (n-1)*p"
+        },
+        "by_actor": {},
+        "note": "Simulation units, neither dollars nor validated clinical prices; unavailable/repeated results cost zero under v4 policy"
+      },
+      "cases": [
+        {
+          "condition": "offline_working_review",
+          "case_id": "case_001",
+          "kind": "posthoc_review_not_encounter",
+          "judge_correct": true,
+          "proposal_correct": "",
+          "failure_reason": "",
+          "diagnosis": "Probable MRSA coronary stent infection causing an infected coronary pseudoaneurysm, with suspected associated purulent pericarditis and confirmed cardiac tamponade.",
+          "confidence_self_reported": 0.94,
+          "unconfirmed": [
+            "MRSA infection of coronary stent or arterial tissue",
+            "Purulent pericarditis and its organism",
+            "Pseudoaneurysm rupture or pericardial communication",
+            "Concurrent endocarditis",
+            "Myocardial infarction; ECG and troponin unavailable",
+            "Bacteremia clearance and antimicrobial susceptibilities"
+          ],
+          "next_steps": [
+            "Emergency cardiac surgical assessment for pseudoaneurysm source control and management of tamponade, with ongoing shock support.",
+            "Verify current antibiotics and allergy records; ensure intravenous MRSA-active treatment guided by available susceptibilities.",
+            "Obtain operative findings and coronary tissue, stent material, and pericardial cultures when feasible without delaying treatment.",
+            "Repeat blood cultures to establish clearance and echocardiography to reassess effusion and ventricular function; obtain TEE when feasible to assess endocarditis."
+          ],
+          "openrouter_api_usd": "0.005044",
+          "openrouter_deployment_usd": "0",
+          "api_input_tokens": 644,
+          "api_output_tokens": 313,
+          "cli_input_tokens": 12150,
+          "cli_output_tokens": 443,
+          "cli_cache_input_tokens": 0,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": null,
+          "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_001.jsonl",
+          "trace_sha256": "ad9a3d0cdfd1e8d8e0cc5932aeb4e71311b1d29470a579dc7a17712885839b2a"
+        },
+        {
+          "condition": "offline_working_review",
+          "case_id": "case_002",
+          "kind": "posthoc_review_not_encounter",
+          "judge_correct": true,
+          "proposal_correct": "",
+          "failure_reason": "",
+          "diagnosis": "Probable atrial-predominant inflammatory cardiomyopathy (atrial myocarditis), provisionally postinfectious, causing extensive atrial electrical failure and complete atrioventricular block.",
+          "confidence_self_reported": 0.72,
+          "unconfirmed": [
+            "Postinfectious etiology and specific infectious agent",
+            "Histologic atrial myocarditis, including giant-cell or eosinophilic subtypes",
+            "Mesalazine causality and relationship to ulcerative colitis",
+            "Thyroid, electrolyte, and renal contributors",
+            "Cause and persistence of elevated pulmonary pressure and RV dysfunction"
+          ],
+          "next_steps": [
+            "Urgent monitored cardiology care and pacing assessment for complete AV block; assess hemodynamic stability and treat congestion.",
+            "Establish mesalazine initiation/dose chronology and colitis activity; coordinate medication review with cardiology and gastroenterology.",
+            "Obtain potassium, renal function, thyroid tests, and blood count; follow troponin and cardiac function.",
+            "Consider targeted atrial biopsy with histology if feasible and management-changing; repeat cardiac imaging to assess inflammatory evolution.",
+            "Reassess RV function, tricuspid regurgitation, and pulmonary pressure after stabilization; investigate persistent pulmonary hypertension."
+          ],
+          "openrouter_api_usd": "0.004472",
+          "openrouter_deployment_usd": "0",
+          "api_input_tokens": 634,
+          "api_output_tokens": 267,
+          "cli_input_tokens": 11852,
+          "cli_output_tokens": 520,
+          "cli_cache_input_tokens": 0,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": null,
+          "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_002.jsonl",
+          "trace_sha256": "60c447f6f14a34967ea731b7b4519b3daef54c5b641019e598d8a11e12bbf4ef"
+        },
+        {
+          "condition": "offline_working_review",
+          "case_id": "case_003",
+          "kind": "posthoc_review_not_encounter",
+          "judge_correct": true,
+          "proposal_correct": "",
+          "failure_reason": "",
+          "diagnosis": "Likely pressure-related rupture of a MAINZ urinary pouch following catheter drainage failure, with intraperitoneal urinary leakage.",
+          "confidence_self_reported": 0.84,
+          "unconfirmed": [
+            "Catheter obstruction and consequent pouch overdistension as the rupture mechanism",
+            "Recent catheter manipulation or direct traumatic injury",
+            "Tissue ischemia, necrosis, recurrent malignancy, or infection contributing to rupture",
+            "Exact cause and severity of cardiopulmonary decompensation"
+          ],
+          "next_steps": [
+            "Review catheter patency, position, drainage records, and any preceding manipulation to assess the proposed obstructive mechanism.",
+            "Obtain detailed operative findings concerning rupture margins and evidence of trauma, necrosis, or structural disease; review histology if tissue was sampled.",
+            "Continue postoperative surgical and urological monitoring of pouch drainage, abdominal findings, respiratory and circulatory status, urine output, and renal function.",
+            "Arrange urological follow-up to establish reliable long-term pouch emptying and prevent recurrent retention."
+          ],
+          "openrouter_api_usd": "0.007214",
+          "openrouter_deployment_usd": "0",
+          "api_input_tokens": 619,
+          "api_output_tokens": 498,
+          "cli_input_tokens": 11835,
+          "cli_output_tokens": 411,
+          "cli_cache_input_tokens": 0,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": null,
+          "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_003.jsonl",
+          "trace_sha256": "e94affd981d99ba69ea3310fdf7e9c7c4e542feb7ece66b4390c5c4cdf849a25"
+        },
+        {
+          "condition": "offline_working_review",
+          "case_id": "case_004",
+          "kind": "posthoc_review_not_encounter",
+          "judge_correct": true,
+          "proposal_correct": "",
+          "failure_reason": "",
+          "diagnosis": "Small cell lung carcinoma–associated recurrent right pleural effusion, with suspected tumor-related impairment of pleural lymphatic drainage and contribution from bronchial obstruction.",
+          "confidence_self_reported": 0.96,
+          "unconfirmed": [
+            "Direct malignant involvement of the pleura",
+            "Exact mechanism and biochemical classification of the effusion",
+            "Cause of pulmonary infiltrates",
+            "Pulmonary embolism and cardiac contribution have not been excluded"
+          ],
+          "next_steps": [
+            "Prompt oncology and pulmonary assessment for confirmed extensive-stage small cell lung carcinoma.",
+            "Reassess respiratory status and effusion size; arrange therapeutic drainage if clinically indicated.",
+            "If distinguishing pleural involvement would change management, obtain repeat cytology and consider pleural biopsy; obtain paired serum studies for effusion classification.",
+            "Assess persistent or disproportionate dyspnea for additional causes, including embolism or cardiac disease, as clinically indicated."
+          ],
+          "openrouter_api_usd": "0.006904",
+          "openrouter_deployment_usd": "0",
+          "api_input_tokens": 632,
+          "api_output_tokens": 470,
+          "cli_input_tokens": 12586,
+          "cli_output_tokens": 414,
+          "cli_cache_input_tokens": 0,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": null,
+          "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_004.jsonl",
+          "trace_sha256": "2e1fa37fd73f658d5dae12f4dbaba8faeab392aa4321dba0270409797b2f30c9"
+        },
+        {
+          "condition": "offline_working_review",
+          "case_id": "case_005",
+          "kind": "posthoc_review_not_encounter",
+          "judge_correct": true,
+          "proposal_correct": "",
+          "failure_reason": "",
+          "diagnosis": "Pleural involvement by melanoma with an unidentified primary site, causing a malignant left pleural effusion.",
+          "confidence_self_reported": 0.95,
+          "unconfirmed": [
+            "Pleural tissue histology confirming melanoma",
+            "Primary melanoma site and disease extent",
+            "Relative contributions to hypoxemia; concomitant embolism, infection or cardiac disease"
+          ],
+          "next_steps": [
+            "Continue hospital oxygen support and monitor respiratory status.",
+            "Obtain urgent oncology assessment and expert review of pleural cytology/immunohistochemistry; pursue targeted pleural biopsy when available.",
+            "Stage suspected melanoma and complete a directed search for an occult primary.",
+            "Assess residual or recurrent effusion for therapeutic drainage; investigate persistent disproportionate hypoxemia, including whether diagnostic pulmonary angiography is needed."
+          ],
+          "openrouter_api_usd": "0.003778",
+          "openrouter_deployment_usd": "0",
+          "api_input_tokens": 611,
+          "api_output_tokens": 213,
+          "cli_input_tokens": 12003,
+          "cli_output_tokens": 385,
+          "cli_cache_input_tokens": 0,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": null,
+          "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_005.jsonl",
+          "trace_sha256": "e59e2f9ca1730d63d9e38e622957c170892a24e2384e34dbc4cfd58f26956e37"
+        },
+        {
+          "condition": "offline_working_review",
+          "case_id": "case_006",
+          "kind": "posthoc_review_not_encounter",
+          "judge_correct": true,
+          "proposal_correct": "",
+          "failure_reason": "",
+          "diagnosis": "Bilateral tuberculous adrenalitis causing primary adrenal insufficiency, strongly supported by detection of Mycobacterium tuberculosis DNA in adrenal biopsy tissue.",
+          "confidence_self_reported": 0.98,
+          "unconfirmed": [
+            "Mycobacterial viability and drug susceptibility",
+            "Duration and extent of active tuberculosis",
+            "Cosyntropin response and cortisol sampling times",
+            "Mineralocorticoid deficiency and current hemodynamic status",
+            "Fungal culture result; testing was queued, not performed"
+          ],
+          "next_steps": [
+            "Promptly assess blood pressure, orthostasis, hydration, glucose, electrolytes, and adrenal crisis symptoms; treat immediately if crisis is suspected.",
+            "Arrange endocrinology care for glucocorticoid replacement and assessment of mineralocorticoid replacement needs.",
+            "Arrange tuberculosis specialist care for treatment, evaluation of other involved sites, and resistance testing or culture if obtainable.",
+            "If clinically necessary and safe, clarify adrenal reserve with documented paired morning cortisol/ACTH or cosyntropin testing without delaying needed treatment."
+          ],
+          "openrouter_api_usd": "0.003556",
+          "openrouter_deployment_usd": "0",
+          "api_input_tokens": 608,
+          "api_output_tokens": 195,
+          "cli_input_tokens": 12109,
+          "cli_output_tokens": 428,
+          "cli_cache_input_tokens": 0,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": null,
+          "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_006.jsonl",
+          "trace_sha256": "e01cb9d7695bd4bc3127a4be636e7367feac6cf1f722a5b28419260f20dd041c"
+        },
+        {
+          "condition": "offline_working_review",
+          "case_id": "case_007",
+          "kind": "posthoc_review_not_encounter",
+          "judge_correct": true,
+          "proposal_correct": "",
+          "failure_reason": "",
+          "diagnosis": "Pembrolizumab-associated autoimmune hemolytic anemia, with antibody thermal subtype unconfirmed.",
+          "confidence_self_reported": 0.93,
+          "unconfirmed": [
+            "Pembrolizumab causality versus malignancy-associated or another medication-associated immune hemolysis",
+            "Warm, cold, or mixed antibody subtype",
+            "Concurrent gastrointestinal bleeding",
+            "Concurrent hepatobiliary disease"
+          ],
+          "next_steps": [
+            "Immediate hospital admission, hematology consultation, and urgent transfusion assessment with blood bank coordination.",
+            "Withhold pembrolizumab and initiate specialist-directed corticosteroid treatment for suspected immune-mediated hemolysis.",
+            "Trend hemoglobin and hemolysis markers; obtain antibody characterization, including the queued cold agglutinin titer and thermal amplitude testing if indicated.",
+            "Review baseline laboratory results and complete medication history; improvement after withdrawal and treatment would support the working attribution.",
+            "Assess dark stools for bleeding and obtain missing liver enzymes, pursuing endoscopy or biliary imaging as clinically indicated."
+          ],
+          "openrouter_api_usd": "0.003102",
+          "openrouter_deployment_usd": "0",
+          "api_input_tokens": 603,
+          "api_output_tokens": 158,
+          "cli_input_tokens": 11882,
+          "cli_output_tokens": 421,
+          "cli_cache_input_tokens": 0,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": null,
+          "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_007.jsonl",
+          "trace_sha256": "895358bbc98eff1787f35af7e7e670c7e50f6a6e974d6c91427f5d5d4f22a200"
+        },
+        {
+          "condition": "offline_working_review",
+          "case_id": "case_008",
+          "kind": "posthoc_review_not_encounter",
+          "judge_correct": true,
+          "proposal_correct": "",
+          "failure_reason": "",
+          "diagnosis": "Spontaneous cervicothoracic spinal epidural hemorrhage causing acute compressive myelopathy; underlying bleeding source undetermined.",
+          "confidence_self_reported": 0.94,
+          "unconfirmed": [
+            "Specific bleeding vessel or underlying vascular malformation",
+            "Occult bleeding disorder despite normal routine coagulation studies",
+            "Complete medication, supplement, and substance exposure history"
+          ],
+          "next_steps": [
+            "Immediate spine/neurosurgical assessment for emergency decompression and hematoma evacuation.",
+            "Monitor neurological function and perfusion; provide bladder care.",
+            "Review operative findings for a bleeding source; pursue targeted vascular imaging if indicated without delaying decompression.",
+            "Clarify bleeding and exposure history and consider additional hematologic evaluation if the cause remains unexplained."
+          ],
+          "openrouter_api_usd": "0.004152",
+          "openrouter_deployment_usd": "0",
+          "api_input_tokens": 624,
+          "api_output_tokens": 242,
+          "cli_input_tokens": 11307,
+          "cli_output_tokens": 349,
+          "cli_cache_input_tokens": 0,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": null,
+          "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_008.jsonl",
+          "trace_sha256": "9d79c1d6e8570385a9437d7ccf9c9845f016e6fcd3aa28a3fae2c905d54a19d3"
+        },
+        {
+          "condition": "offline_working_review",
+          "case_id": "case_009",
+          "kind": "posthoc_review_not_encounter",
+          "judge_correct": true,
+          "proposal_correct": "",
+          "failure_reason": "",
+          "diagnosis": "Migrated biliary stent lodged in a Meckel diverticulum, causing adjacent ileal perforation and purulent peritonitis.",
+          "confidence_self_reported": 0.99,
+          "unconfirmed": [
+            "Original biliary stent placement, indication and timing of migration",
+            "Definitive mechanical obstruction and its precise mechanism",
+            "Systemic sepsis or organ dysfunction"
+          ],
+          "next_steps": [
+            "Complete urgent operative source control, including stent removal and treatment of the perforated bowel and involved diverticulum as indicated.",
+            "Provide intravenous antibiotics, resuscitation and postoperative monitoring; obtain blood count, renal function, electrolytes and lactate when available.",
+            "Review prior biliary procedure records to establish stent origin and assess any ongoing biliary management needs."
+          ],
+          "openrouter_api_usd": "0.003738",
+          "openrouter_deployment_usd": "0",
+          "api_input_tokens": 675,
+          "api_output_tokens": 199,
+          "cli_input_tokens": 11052,
+          "cli_output_tokens": 345,
+          "cli_cache_input_tokens": 0,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": null,
+          "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_009.jsonl",
+          "trace_sha256": "7ab5b7e2aa97731b68174d87f11f68745d1cf094f544f3b266e20b13952e9495"
+        },
+        {
+          "condition": "offline_working_review",
+          "case_id": "case_010",
+          "kind": "posthoc_review_not_encounter",
+          "judge_correct": true,
+          "proposal_correct": "",
+          "failure_reason": "",
+          "diagnosis": "Bleeding abdominal ectopic pregnancy involving the omentum between the spleen and descending colon, confirmed by surgical pathology; primary omental implantation is the leading but unproven mechanism.",
+          "confidence_self_reported": 0.99,
+          "unconfirmed": [
+            "Primary versus secondary abdominal implantation",
+            "Exact implantation attachment and any splenic involvement",
+            "Completion of treatment and resolution of bleeding or residual trophoblastic tissue"
+          ],
+          "next_steps": [
+            "Urgent gynecologic and surgical management to establish hemostasis and definitive treatment if not already completed.",
+            "Monitor vital signs and obtain blood count, blood group/Rh status and crossmatch; provide resuscitation as indicated.",
+            "Review operative and pathology details to clarify implantation site and completeness of removal.",
+            "Follow quantitative hCG to resolution; persistent levels warrant assessment for residual gestational tissue."
+          ],
+          "openrouter_api_usd": "0.003806",
+          "openrouter_deployment_usd": "0",
+          "api_input_tokens": 625,
+          "api_output_tokens": 213,
+          "cli_input_tokens": 12961,
+          "cli_output_tokens": 394,
+          "cli_cache_input_tokens": 0,
+          "cli_cache_write_tokens": 0,
+          "exam_relative_units": null,
+          "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527",
+          "trace": "runs/v4/working_diagnosis_review/logs/raw/case_010.jsonl",
+          "trace_sha256": "f9cf42a6d0d0504648d8b94bbfe69379b8003465146b5d60f3f0c7732928124a"
+        }
+      ]
+    }
+  },
+  "financial_audit": {
+    "shared_cap_usd": "5.00",
+    "ledger_states": {
+      "settled": 168
+    },
+    "ledger_total_usd": "0.28396075",
+    "all_v4_response_usage_cost_usd": "0.28396075",
+    "three_conditions_usage_cost_usd": "0.28396075",
+    "outside_three_conditions_usage_cost_usd": "0",
+    "ledger_without_durable_response": [],
+    "final_account": {
+      "total_credits": "25",
+      "total_usage": "19.249370783",
+      "snapshot_unix": 1791545193.926522,
+      "no_cache": true
+    },
+    "baseline_account": {
+      "total_credits": "25",
+      "total_usage": "18.965410033"
+    },
+    "account_delta_usd": "0.283960750",
+    "ledger_minus_account_usd": "0E-9",
+    "account_reconciled_exactly": true,
+    "cost_policy": "All settled recorded costs preserved; no divergence reclassified as zero",
+    "unique_api_response_ids": 168,
+    "unique_provider_response_ids_received": 168,
+    "api_request_audit": [
+      {
+        "request_id": "009e3187-e26e-4d1a-a7c2-171d4e0154c1",
+        "provider_response_id": "gen-1791461481-lCDUfBg5QUraCvZsygGU",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.00049625",
+        "ledger_cost_usd": "0.00049625"
+      },
+      {
+        "request_id": "01459166-3a50-4c4c-9eae-f402ff88623e",
+        "provider_response_id": "gen-1791461447-kCLr9fKsQajUj3nCFgL4",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.00049675",
+        "ledger_cost_usd": "0.00049675"
+      },
+      {
+        "request_id": "020f97cc-20bb-4c54-8b50-8d664c81e49e",
+        "provider_response_id": "gen-1791492641-6YQGeDeEPnz0PPxy6VM7",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+        "usage_cost_usd": "0.00058175",
+        "ledger_cost_usd": "0.00058175"
+      },
+      {
+        "request_id": "02de9c75-552c-4e02-a050-24e25a5ee786",
+        "provider_response_id": "gen-1791490127-d3aVwyOyl9j8Zdo48wiO",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.00051975",
+        "ledger_cost_usd": "0.00051975"
+      },
+      {
+        "request_id": "0504cb54-27c3-4737-aba0-6edfbaec9844",
+        "provider_response_id": "gen-1791492670-ohpbMtOzc9poEPkCJcVr",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.000542",
+        "ledger_cost_usd": "0.000542"
+      },
+      {
+        "request_id": "07343f3b-d45a-4f99-95fd-9c7778c38c70",
+        "provider_response_id": "gen-1791492264-X7HnkTzJOBh7y19zSHU1",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.0004855",
+        "ledger_cost_usd": "0.0004855"
+      },
+      {
+        "request_id": "07cef3cb-707b-4194-97d8-c88a3234572d",
+        "provider_response_id": "gen-1791491822-LxVPjhTGekHsz5I8tu5b",
+        "condition": "offline_working_review",
+        "actor": "working_review_judge",
+        "trace": "runs/v4/working_diagnosis_review/logs/raw/case_009.jsonl",
+        "usage_cost_usd": "0.003738",
+        "ledger_cost_usd": "0.003738"
+      },
+      {
+        "request_id": "08bf701a-720f-46e6-8ded-76b39785039d",
+        "provider_response_id": "gen-1791461464-tGvTQtc8qGEmAgwzAeJK",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.00048",
+        "ledger_cost_usd": "0.00048"
+      },
+      {
+        "request_id": "0a593897-96ab-4274-b4c1-3bb9d3b6ece2",
+        "provider_response_id": "gen-1791461466-5z9AyCt42QueQGguqWpO",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.00063575",
+        "ledger_cost_usd": "0.00063575"
+      },
+      {
+        "request_id": "0f235f4a-0911-4b0a-8187-96bdfaccdee2",
+        "provider_response_id": "gen-1791491784-29TflWkuQCCUn9AliqOL",
+        "condition": "offline_working_review",
+        "actor": "working_review_judge",
+        "trace": "runs/v4/working_diagnosis_review/logs/raw/case_006.jsonl",
+        "usage_cost_usd": "0.003556",
+        "ledger_cost_usd": "0.003556"
+      },
+      {
+        "request_id": "12f45bbd-e2ac-469c-ae75-86e31830492e",
+        "provider_response_id": "gen-1791508797-gCr22jrAz7LMEwV3vCG3",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.00049025",
+        "ledger_cost_usd": "0.00049025"
+      },
+      {
+        "request_id": "15b0f877-cf24-47a1-b013-ee2e5c9cedaf",
+        "provider_response_id": "gen-1791492244-4YhVxXL93FtJuLFfqz3n",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.0004855",
+        "ledger_cost_usd": "0.0004855"
+      },
+      {
+        "request_id": "15f05606-f85c-415c-a4f6-37cf40aae733",
+        "provider_response_id": "gen-1791508783-D9SbTY6INCYE6wnQQIcY",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.000544",
+        "ledger_cost_usd": "0.000544"
+      },
+      {
+        "request_id": "16be5b01-377f-4c37-9b61-191205ea4785",
+        "provider_response_id": "gen-1791510070-9EfOqoXau6aWE8oZSxPV",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_007.jsonl",
+        "usage_cost_usd": "0.00332",
+        "ledger_cost_usd": "0.00332"
+      },
+      {
+        "request_id": "17b5c1b8-1111-4262-ae52-37acb290db7c",
+        "provider_response_id": "gen-1791461086-bkvuUGbE3GxgqUwpQuSe",
+        "condition": "original_v4_sol",
+        "actor": "judge",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.005038",
+        "ledger_cost_usd": "0.005038"
+      },
+      {
+        "request_id": "1c1b14ed-2eda-4710-83e5-b0911f16b592",
+        "provider_response_id": "gen-1791509217-tiZVA6QUPWBq2DrE8p26",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.003522",
+        "ledger_cost_usd": "0.003522"
+      },
+      {
+        "request_id": "1d1b0a41-ce56-4617-af75-6fd3396a301e",
+        "provider_response_id": "gen-1791508783-qTUsvhlCxinxq7aPYsFa",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.0005035",
+        "ledger_cost_usd": "0.0005035"
+      },
+      {
+        "request_id": "1f5a6a07-6290-4322-9ae7-a26d16e59d76",
+        "provider_response_id": "gen-1791490733-KHlf2xamyKq91C0JEM4Z",
+        "condition": "original_v4_sol",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_007.jsonl",
+        "usage_cost_usd": "0.003034",
+        "ledger_cost_usd": "0.003034"
+      },
+      {
+        "request_id": "208d46b4-5be9-44b8-9c71-8a6063668d71",
+        "provider_response_id": "gen-1791461052-0bGRz6ALM4lRf586RZcd",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.00047275",
+        "ledger_cost_usd": "0.00047275"
+      },
+      {
+        "request_id": "22199660-5539-4f70-be46-fda503f38661",
+        "provider_response_id": "gen-1791492667-AQyR4v7nwKo0bjHk6Nvm",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.0005495",
+        "ledger_cost_usd": "0.0005495"
+      },
+      {
+        "request_id": "22ff9efa-4e06-4715-bbb0-f4b26934aa03",
+        "provider_response_id": "gen-1791492725-K9NqRxNbjySvQUlN7CYN",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.005006",
+        "ledger_cost_usd": "0.005006"
+      },
+      {
+        "request_id": "23b0d311-4acd-456f-bea6-ab8c0871bb9d",
+        "provider_response_id": "gen-1791461047-9le8eWHgPv8niegHvG6n",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.00047275",
+        "ledger_cost_usd": "0.00047275"
+      },
+      {
+        "request_id": "24d406c3-7b93-4939-83e3-89c40bb97916",
+        "provider_response_id": "gen-1791492636-3ToyI7wqnEML83S79prn",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+        "usage_cost_usd": "0.00050325",
+        "ledger_cost_usd": "0.00050325"
+      },
+      {
+        "request_id": "25f7b242-87a1-40f2-8a78-0a2f6933cef0",
+        "provider_response_id": "gen-1791460934-qhI2uDJ40UTVnpF6tAs1",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+        "usage_cost_usd": "0.00065325",
+        "ledger_cost_usd": "0.00065325"
+      },
+      {
+        "request_id": "2a6a42bc-b13a-4f7b-8962-bd015d5ff864",
+        "provider_response_id": "gen-1791460939-wJilCa9BGQJemCTftOPe",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.00054925",
+        "ledger_cost_usd": "0.00054925"
+      },
+      {
+        "request_id": "2a95d0e1-7b0f-4dc8-8859-3c218cc02584",
+        "provider_response_id": "gen-1791493517-QXzbuCAMyTRH4bS6p1mM",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.00053875",
+        "ledger_cost_usd": "0.00053875"
+      },
+      {
+        "request_id": "2ade774b-4571-4341-883f-7ad8e1cbd12b",
+        "provider_response_id": "gen-1791461050-NcAAKlrslT0CgWzLyZ3J",
+        "condition": "original_v4_sol",
+        "actor": "judge",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+        "usage_cost_usd": "0.005888",
+        "ledger_cost_usd": "0.005888"
+      },
+      {
+        "request_id": "2dc9cf04-4ac7-4bd7-8286-d7d8aa89a4a9",
+        "provider_response_id": "gen-1791490867-9Orm6tTNrjhaUqubHo2q",
+        "condition": "original_v4_sol",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_009.jsonl",
+        "usage_cost_usd": "0.003968",
+        "ledger_cost_usd": "0.003968"
+      },
+      {
+        "request_id": "2f163956-28e6-47ae-aa87-b51b7e502035",
+        "provider_response_id": "gen-1791492639-x6Sh7d81Nd4VizG5Cl83",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+        "usage_cost_usd": "0.0005175",
+        "ledger_cost_usd": "0.0005175"
+      },
+      {
+        "request_id": "304422e6-7c4b-4d9b-90aa-522a76739d5b",
+        "provider_response_id": "gen-1791491780-1GfDQohpxp8LQnzx7ROS",
+        "condition": "offline_working_review",
+        "actor": "working_review_judge",
+        "trace": "runs/v4/working_diagnosis_review/logs/raw/case_005.jsonl",
+        "usage_cost_usd": "0.003778",
+        "ledger_cost_usd": "0.003778"
+      },
+      {
+        "request_id": "30775297-3362-4544-98b5-c49f564e99f7",
+        "provider_response_id": "gen-1791510594-bGkxWM0TQhK0GczS3zFH",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.005456",
+        "ledger_cost_usd": "0.005456"
+      },
+      {
+        "request_id": "31949da9-c1ca-4e1b-a383-f1710657c13d",
+        "provider_response_id": "gen-1791490894-Tdpi04FK5wh8fvtX23uD",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.00059125",
+        "ledger_cost_usd": "0.00059125"
+      },
+      {
+        "request_id": "34c3e820-7f95-4d3d-a6b8-0f53f6655e7a",
+        "provider_response_id": "gen-1791510548-RnOD30HpROBt6NOPprA2",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_009.jsonl",
+        "usage_cost_usd": "0.004162",
+        "ledger_cost_usd": "0.004162"
+      },
+      {
+        "request_id": "361c56fa-c317-40ee-b452-4f2749cc65f9",
+        "provider_response_id": "gen-1791492664-SWuy2dZWpzy5YHlSVEEZ",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.000542",
+        "ledger_cost_usd": "0.000542"
+      },
+      {
+        "request_id": "378f333a-dc2a-4607-8707-b727ec8ab453",
+        "provider_response_id": "gen-1791490063-fKTNofSc0eSzDow1ZIaq",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.00050875",
+        "ledger_cost_usd": "0.00050875"
+      },
+      {
+        "request_id": "3bd781d1-8a59-452c-a6e1-601afc2a9e9d",
+        "provider_response_id": "gen-1791491805-R1CcM5pmp6ROsXB6resE",
+        "condition": "offline_working_review",
+        "actor": "working_review_judge",
+        "trace": "runs/v4/working_diagnosis_review/logs/raw/case_008.jsonl",
+        "usage_cost_usd": "0.004152",
+        "ledger_cost_usd": "0.004152"
+      },
+      {
+        "request_id": "3c2dfa8e-4a36-409a-92dc-e2ef6b9da9c5",
+        "provider_response_id": "gen-1791461462-Nj7lbqh5ZyrHLdmmreoZ",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.00093225",
+        "ledger_cost_usd": "0.00093225"
+      },
+      {
+        "request_id": "3c872aa1-af28-4a68-b166-da7ad8bf83c6",
+        "provider_response_id": "gen-1791490263-UzRqGa82nuQ0SZ7SrDNv",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+        "usage_cost_usd": "0.0004905",
+        "ledger_cost_usd": "0.0004905"
+      },
+      {
+        "request_id": "3cdf18fd-3c22-415a-974d-e6dfaaad8576",
+        "provider_response_id": "gen-1791492266-QAPOcKpL5ozO4oD1RvsU",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.0005325",
+        "ledger_cost_usd": "0.0005325"
+      },
+      {
+        "request_id": "3e5fb805-69ee-48ce-be74-31b23f4a74bf",
+        "provider_response_id": "gen-1791490647-sTWk1GCvDkTYQRfhb1Op",
+        "condition": "original_v4_sol",
+        "actor": "judge",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+        "usage_cost_usd": "0.003094",
+        "ledger_cost_usd": "0.003094"
+      },
+      {
+        "request_id": "428b781d-1dbf-4efc-a80d-065077559357",
+        "provider_response_id": "gen-1791491733-a6p2O4fqJc3Fc1RSweXb",
+        "condition": "offline_working_review",
+        "actor": "working_review_judge",
+        "trace": "runs/v4/working_diagnosis_review/logs/raw/case_002.jsonl",
+        "usage_cost_usd": "0.004472",
+        "ledger_cost_usd": "0.004472"
+      },
+      {
+        "request_id": "44d25db2-2752-45e5-ac17-9dffa86b9fe9",
+        "provider_response_id": "gen-1791510208-xjBIrfnPvvg19ex3T3wK",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.00064625",
+        "ledger_cost_usd": "0.00064625"
+      },
+      {
+        "request_id": "450657ea-8019-4f21-877b-1794d2be0f6e",
+        "provider_response_id": "gen-1791492671-CyzlkkpOt262VpqJEkbs",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.00050875",
+        "ledger_cost_usd": "0.00050875"
+      },
+      {
+        "request_id": "458bdcca-440d-4614-b559-ed92fd0ee836",
+        "provider_response_id": "gen-1791509635-bXTctlhQXGnMNm626MPa",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+        "usage_cost_usd": "0.000604",
+        "ledger_cost_usd": "0.000604"
+      },
+      {
+        "request_id": "45998aad-d3e4-4ed1-9049-1931dab0b71b",
+        "provider_response_id": "gen-1791509903-iE6FTaVhCpvv9Fp1BMAT",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_008.jsonl",
+        "usage_cost_usd": "0.004108",
+        "ledger_cost_usd": "0.004108"
+      },
+      {
+        "request_id": "483c4404-807d-43e5-9d5d-a635f65605ff",
+        "provider_response_id": "gen-1791510589-nDoq0qLL7furbK6Pi3O0",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.004698",
+        "ledger_cost_usd": "0.004698"
+      },
+      {
+        "request_id": "4aac202c-b885-4dd9-aece-c67c16298997",
+        "provider_response_id": "gen-1791490816-fqlMGlrLh94JnGse4csH",
+        "condition": "original_v4_sol",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_008.jsonl",
+        "usage_cost_usd": "0.004018",
+        "ledger_cost_usd": "0.004018"
+      },
+      {
+        "request_id": "4ae1889d-bfb6-4413-83a4-4cefd2329039",
+        "provider_response_id": "gen-1791492242-g6Or6HSmM9fYB6dwc92T",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.000557",
+        "ledger_cost_usd": "0.000557"
+      },
+      {
+        "request_id": "4b4f6ba8-3daf-4492-a7a3-adc011d7d1c6",
+        "provider_response_id": "gen-1791461091-Qvjd94pwaEH1h0To5b8a",
+        "condition": "original_v4_sol",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.005628",
+        "ledger_cost_usd": "0.005628"
+      },
+      {
+        "request_id": "4bb10acf-df99-463d-87ad-dd20a6582b30",
+        "provider_response_id": "gen-1791490138-dzmHJmTZULprdf7CYiFD",
+        "condition": "original_v4_sol",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.004876",
+        "ledger_cost_usd": "0.004876"
+      },
+      {
+        "request_id": "4bd9f364-65ad-475a-bc0b-87234cede9d7",
+        "provider_response_id": "gen-1791492262-pYCGKmLdKldVBZHJlO8u",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.000467",
+        "ledger_cost_usd": "0.000467"
+      },
+      {
+        "request_id": "4cd3f773-3d52-42aa-9e99-025af20d6f38",
+        "provider_response_id": "gen-1791462064-ZDDrWrZxyCRtoKSMCZne",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.000501",
+        "ledger_cost_usd": "0.000501"
+      },
+      {
+        "request_id": "4d0cd196-0fc4-4327-aa84-5e8b6f5e74b7",
+        "provider_response_id": "gen-1791508771-laQoDK2ehbhQiHmNu2UY",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.00090225",
+        "ledger_cost_usd": "0.00090225"
+      },
+      {
+        "request_id": "513967c6-ca3e-4095-851a-b128d7c68597",
+        "provider_response_id": "gen-1791493571-oAeGS0NK7OuvWYOxYZiM",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.005192",
+        "ledger_cost_usd": "0.005192"
+      },
+      {
+        "request_id": "52177464-bfee-4b53-a882-4f90342b2fc3",
+        "provider_response_id": "gen-1791492660-1GsMYlqxvqSC3ynypCUZ",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.00056125",
+        "ledger_cost_usd": "0.00056125"
+      },
+      {
+        "request_id": "53e410d4-9bc8-4654-a32b-938fcf35456e",
+        "provider_response_id": "gen-1791493521-izBfzPo2j2MvsTusoOTJ",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.0005815",
+        "ledger_cost_usd": "0.0005815"
+      },
+      {
+        "request_id": "53e83134-3337-4b80-b62e-235b3754cb20",
+        "provider_response_id": "gen-1791490104-Ow1mWHm11jk1MjdNwIKK",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.0005385",
+        "ledger_cost_usd": "0.0005385"
+      },
+      {
+        "request_id": "5407c070-2ff3-4b7a-896b-3d8a797c138c",
+        "provider_response_id": "gen-1791460938-eY9WKMvrI13Qa6r9E9gN",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.00048425",
+        "ledger_cost_usd": "0.00048425"
+      },
+      {
+        "request_id": "5516d39d-b41d-4784-9c01-040b96a87811",
+        "provider_response_id": "gen-1791509966-V7oHvTpHXthXr51BFIxW",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_009.jsonl",
+        "usage_cost_usd": "0.00059",
+        "ledger_cost_usd": "0.00059"
+      },
+      {
+        "request_id": "55b9f2cb-f3c9-4d92-8b19-b33513bbedd6",
+        "provider_response_id": "gen-1791508830-XlOwHyWsyPkxsZr3Zs19",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.00049",
+        "ledger_cost_usd": "0.00049"
+      },
+      {
+        "request_id": "55dac1e5-9913-4b69-a517-41d4719d0dcb",
+        "provider_response_id": "gen-1791461461-9YIAsmOJmtQpQYxIrL93",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.000477",
+        "ledger_cost_usd": "0.000477"
+      },
+      {
+        "request_id": "5799492e-9e88-49e6-b7c3-4ff643dabff5",
+        "provider_response_id": "gen-1791510153-1SXL7uE0w3HKCQAZa6Ch",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.00051975",
+        "ledger_cost_usd": "0.00051975"
+      },
+      {
+        "request_id": "57bbb607-f269-4109-9767-5e3e55247137",
+        "provider_response_id": "gen-1791462062-lxb3NCOR8ELtPopkQt3k",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.000485",
+        "ledger_cost_usd": "0.000485"
+      },
+      {
+        "request_id": "5a468b22-3e5e-491a-8ab8-bd6ae71a50cc",
+        "provider_response_id": "gen-1791510544-tvD8GKt7yARCmYcHgesu",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_009.jsonl",
+        "usage_cost_usd": "0.00375",
+        "ledger_cost_usd": "0.00375"
+      },
+      {
+        "request_id": "5b68d8e1-2872-4c0e-b955-1538b8159ec4",
+        "provider_response_id": "gen-1791509637-x6SmWHnDenzeHkBHZT9M",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+        "usage_cost_usd": "0.00047875",
+        "ledger_cost_usd": "0.00047875"
+      },
+      {
+        "request_id": "5bc37b37-a035-413e-b80f-80871d3b40f0",
+        "provider_response_id": "gen-1791461449-iKlJbAoGNkRnMH0dz0kU",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.000493",
+        "ledger_cost_usd": "0.000493"
+      },
+      {
+        "request_id": "5bf5f660-f9e5-44bb-962e-cc1d6ddda3c2",
+        "provider_response_id": "gen-1791509907-zSAjOFCV7kw6CtmlOvdH",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_008.jsonl",
+        "usage_cost_usd": "0.00434",
+        "ledger_cost_usd": "0.00434"
+      },
+      {
+        "request_id": "5bfb8e3e-c7fe-4687-a253-771871a3b616",
+        "provider_response_id": "gen-1791509664-NB1A68fkxzvtVaWJRSjC",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+        "usage_cost_usd": "0.0005965",
+        "ledger_cost_usd": "0.0005965"
+      },
+      {
+        "request_id": "5caf18bc-84aa-4be1-80b0-09e176c1072c",
+        "provider_response_id": "gen-1791461432-UmYu7CfzbTabsGU2Ro4X",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.00049175",
+        "ledger_cost_usd": "0.00049175"
+      },
+      {
+        "request_id": "5de17ea0-d787-4223-b497-4e28a3c38e20",
+        "provider_response_id": "gen-1791490792-haFpVFhcoJCqQQuUVP8o",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_009.jsonl",
+        "usage_cost_usd": "0.00049625",
+        "ledger_cost_usd": "0.00049625"
+      },
+      {
+        "request_id": "5e25cd3d-6b88-4af4-8734-4c1511df1451",
+        "provider_response_id": "gen-1791490154-5O4Rzlv7b7VRE1736x8z",
+        "condition": "original_v4_sol",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.003806",
+        "ledger_cost_usd": "0.003806"
+      },
+      {
+        "request_id": "608da933-46e8-4fa8-9188-86e05b9acccb",
+        "provider_response_id": "gen-1791492589-fOCcyGUACacABzpBxVN4",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+        "usage_cost_usd": "0.00053225",
+        "ledger_cost_usd": "0.00053225"
+      },
+      {
+        "request_id": "60fe321b-986f-4af2-9883-c8cf95da1e5a",
+        "provider_response_id": "gen-1791490906-vPRJmYq7vC3aIzBLGOpq",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.00048975",
+        "ledger_cost_usd": "0.00048975"
+      },
+      {
+        "request_id": "63018001-0273-47e6-8fbc-e5320789e38d",
+        "provider_response_id": "gen-1791461601-hW9wAvEASoXIf0haGyhm",
+        "condition": "original_v4_sol",
+        "actor": "judge",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.006282",
+        "ledger_cost_usd": "0.006282"
+      },
+      {
+        "request_id": "64d529d7-28b7-4956-902b-69dbf5b6f1fa",
+        "provider_response_id": "gen-1791508796-cbFBgAoBWTs4czp1Gfn5",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.0008645",
+        "ledger_cost_usd": "0.0008645"
+      },
+      {
+        "request_id": "663a1824-bcfc-4291-be1f-d97bd3d92ccb",
+        "provider_response_id": "gen-1791461048-7GEsWzlDShDNUe5eUsBT",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.00053475",
+        "ledger_cost_usd": "0.00053475"
+      },
+      {
+        "request_id": "681e9f6d-c753-4999-bff3-ac5b85020458",
+        "provider_response_id": "gen-1791461043-p6Tx67WVqKS8mcJqTlmc",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.00052075",
+        "ledger_cost_usd": "0.00052075"
+      },
+      {
+        "request_id": "68f231ed-8989-4237-8d8a-e466a3dfd50d",
+        "provider_response_id": "gen-1791493460-ejBdPfyvYKlh1V9iYs9L",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.000494",
+        "ledger_cost_usd": "0.000494"
+      },
+      {
+        "request_id": "6d091b90-2cf3-4563-850a-3d61b9c3aea0",
+        "provider_response_id": "gen-1791508832-esR2ZOz4mYlSQrTMNR8F",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.00048425",
+        "ledger_cost_usd": "0.00048425"
+      },
+      {
+        "request_id": "6d13a452-07dd-41c5-b0e9-f9abb6209f4c",
+        "provider_response_id": "gen-1791510140-P5H1jG49y1UrGUqDuKAo",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.00059125",
+        "ledger_cost_usd": "0.00059125"
+      },
+      {
+        "request_id": "6d4c0e80-b097-4b7f-8225-5c775f5967dc",
+        "provider_response_id": "gen-1791492903-U2aGyiYM4g4RDFfzxqOU",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+        "usage_cost_usd": "0.004306",
+        "ledger_cost_usd": "0.004306"
+      },
+      {
+        "request_id": "6f369602-4ecf-49dd-93d6-f7869dfdaaa3",
+        "provider_response_id": "gen-1791509180-cJbglSZezE2jS6fR5v28",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.000536",
+        "ledger_cost_usd": "0.000536"
+      },
+      {
+        "request_id": "70510ede-e7f3-4a59-ac43-bd5dba234639",
+        "provider_response_id": "gen-1791492662-sA2wjQCVKiMkqcZyvVPb",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.000486",
+        "ledger_cost_usd": "0.000486"
+      },
+      {
+        "request_id": "718bf2c2-4375-4c59-8d1c-ad8d0e4fdfed",
+        "provider_response_id": "gen-1791509256-3PN8zCfcWpZbjM9s1iQd",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.00424",
+        "ledger_cost_usd": "0.00424"
+      },
+      {
+        "request_id": "740bfc66-74ef-4afb-bb0d-b27102ac0541",
+        "provider_response_id": "gen-1791509731-aWeJLbj1cbim0zjLPKBm",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+        "usage_cost_usd": "0.003432",
+        "ledger_cost_usd": "0.003432"
+      },
+      {
+        "request_id": "74c02739-c592-4581-89ee-a436d820bb2b",
+        "provider_response_id": "gen-1791508829-wWB7GJurmU5XEZ6hr0kX",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.00052",
+        "ledger_cost_usd": "0.00052"
+      },
+      {
+        "request_id": "75b8a840-674d-470a-b861-a29c42da3ebc",
+        "provider_response_id": "gen-1791492658-uAkJqHcEaZEbPOpHWN8U",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.00051325",
+        "ledger_cost_usd": "0.00051325"
+      },
+      {
+        "request_id": "76853b6b-47da-4665-bd91-42955ea3565c",
+        "provider_response_id": "gen-1791492565-mBJoDcrJXG7ql7RcV3tE",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+        "usage_cost_usd": "0.00065325",
+        "ledger_cost_usd": "0.00065325"
+      },
+      {
+        "request_id": "789b529a-ec3a-4c7b-b027-5fccaa642cce",
+        "provider_response_id": "gen-1791462065-gP6g019JYBPFIifB9KWJ",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.0004975",
+        "ledger_cost_usd": "0.0004975"
+      },
+      {
+        "request_id": "797cd8d2-119b-4ff0-8b78-5667da1ffa47",
+        "provider_response_id": "gen-1791491069-2WKHabJWqvNaEN8shxne",
+        "condition": "original_v4_sol",
+        "actor": "judge",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.003588",
+        "ledger_cost_usd": "0.003588"
+      },
+      {
+        "request_id": "7a115708-986f-457e-ac9c-e0b31fecb907",
+        "provider_response_id": "gen-1791461044-bOGGTiFMAWgHprVQpuUZ",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.00056275",
+        "ledger_cost_usd": "0.00056275"
+      },
+      {
+        "request_id": "7f72b2e0-f16b-45b6-945a-21a585f09882",
+        "provider_response_id": "gen-1791509968-a0tLho9WcYjS1cIdSNFj",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_009.jsonl",
+        "usage_cost_usd": "0.00049025",
+        "ledger_cost_usd": "0.00049025"
+      },
+      {
+        "request_id": "8163fc5c-2550-44fa-bad6-ea98b0513cb6",
+        "provider_response_id": "gen-1791490278-Y4dXnFHzcKvAeH9YvxGL",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_007.jsonl",
+        "usage_cost_usd": "0.00046725",
+        "ledger_cost_usd": "0.00046725"
+      },
+      {
+        "request_id": "824bd1aa-94fe-4986-b902-28ba423f6030",
+        "provider_response_id": "gen-1791491827-gfLIQjCykJYNwUV8J1Ed",
+        "condition": "offline_working_review",
+        "actor": "working_review_judge",
+        "trace": "runs/v4/working_diagnosis_review/logs/raw/case_010.jsonl",
+        "usage_cost_usd": "0.003806",
+        "ledger_cost_usd": "0.003806"
+      },
+      {
+        "request_id": "84866ac2-58ee-4850-b298-14f92a0dce5a",
+        "provider_response_id": "gen-1791492562-o1sQ905wkLdKrz9NoULD",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+        "usage_cost_usd": "0.000483",
+        "ledger_cost_usd": "0.000483"
+      },
+      {
+        "request_id": "856640fb-feb7-4ecf-ab5a-9cf4e22cd78b",
+        "provider_response_id": "gen-1791490583-GtVB9vS5CpgTcBtcEKnq",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+        "usage_cost_usd": "0.000529",
+        "ledger_cost_usd": "0.000529"
+      },
+      {
+        "request_id": "85874c01-d515-4787-8803-0c0350f15e46",
+        "provider_response_id": "gen-1791461430-2BYtYrRbUZNBjyhorZnb",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.00065125",
+        "ledger_cost_usd": "0.00065125"
+      },
+      {
+        "request_id": "8649bdf6-d109-4641-80d8-b8967220a673",
+        "provider_response_id": "gen-1791490804-4me99P7QJN66h0jPnQyz",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_009.jsonl",
+        "usage_cost_usd": "0.0004985",
+        "ledger_cost_usd": "0.0004985"
+      },
+      {
+        "request_id": "880c2c2a-2307-4ffa-a473-2b9ed73ae77e",
+        "provider_response_id": "gen-1791490969-2tC3FpPcAWtFTRjE0E65",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.00056625",
+        "ledger_cost_usd": "0.00056625"
+      },
+      {
+        "request_id": "895a1f4b-c275-4fb8-a207-c8413c6598e9",
+        "provider_response_id": "gen-1791509633-PmvFkUNSRAOom5rIuzCC",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+        "usage_cost_usd": "0.00059375",
+        "ledger_cost_usd": "0.00059375"
+      },
+      {
+        "request_id": "89b1263b-1958-4c8d-940d-4eda33ec47d9",
+        "provider_response_id": "gen-1791493519-S3FjP9CSUzF7vo34g2i1",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.0004925",
+        "ledger_cost_usd": "0.0004925"
+      },
+      {
+        "request_id": "8b2d3376-7344-4645-992f-387143b5074f",
+        "provider_response_id": "gen-1791492265-mftB3UyYMVVbC1zhLtQU",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.000472",
+        "ledger_cost_usd": "0.000472"
+      },
+      {
+        "request_id": "8bb77bf2-2046-43b4-9e34-f09a4e848f83",
+        "provider_response_id": "gen-1791509179-mnDcL6MSFSCeChzHA93Q",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.00048875",
+        "ledger_cost_usd": "0.00048875"
+      },
+      {
+        "request_id": "8cda2bcf-7bb4-41c8-856b-53f1ee200e3b",
+        "provider_response_id": "gen-1791461535-wrYKCbLVu8pzPrH8jdoO",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.00052925",
+        "ledger_cost_usd": "0.00052925"
+      },
+      {
+        "request_id": "8e9a7e92-c485-4a1f-83ba-4cc2fbdd0070",
+        "provider_response_id": "gen-1791460922-gXuchkvpRuW2xqCHPn9t",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.000487",
+        "ledger_cost_usd": "0.000487"
+      },
+      {
+        "request_id": "90218469-e245-4835-9789-fe3c5540a94c",
+        "provider_response_id": "gen-1791461465-noAuX6c2G9cof4cXsDlb",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.00061625",
+        "ledger_cost_usd": "0.00061625"
+      },
+      {
+        "request_id": "90b65ab2-003a-4fad-92ed-64430284d51e",
+        "provider_response_id": "gen-1791461607-VnGw5ASrTIsQYbktiFtE",
+        "condition": "original_v4_sol",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.006022",
+        "ledger_cost_usd": "0.006022"
+      },
+      {
+        "request_id": "920c4220-9a54-4288-a8c4-e8b284f57dc6",
+        "provider_response_id": "gen-1791491802-5xxoIgxZU8MkpqLGPpeD",
+        "condition": "offline_working_review",
+        "actor": "working_review_judge",
+        "trace": "runs/v4/working_diagnosis_review/logs/raw/case_007.jsonl",
+        "usage_cost_usd": "0.003102",
+        "ledger_cost_usd": "0.003102"
+      },
+      {
+        "request_id": "933ebb46-0370-435a-bb4b-775aa6271d00",
+        "provider_response_id": "gen-1791510163-H5ecjizVYHHM05FcmJHs",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.000518",
+        "ledger_cost_usd": "0.000518"
+      },
+      {
+        "request_id": "975b4ff7-ba63-4231-a4d4-f9bf8379c67b",
+        "provider_response_id": "gen-1791510074-jgGxLiJdKf7Lw20VByw6",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_007.jsonl",
+        "usage_cost_usd": "0.003092",
+        "ledger_cost_usd": "0.003092"
+      },
+      {
+        "request_id": "9a648119-ea23-4a12-b5a9-08aa378b4239",
+        "provider_response_id": "gen-1791508784-iSMRNMuroaIFfUqFzJVw",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.00052275",
+        "ledger_cost_usd": "0.00052275"
+      },
+      {
+        "request_id": "9cd20d1d-c1b4-49f4-a0f5-0de9bd401ba6",
+        "provider_response_id": "gen-1791490150-A8CiJ56DMnJrg4qB87WS",
+        "condition": "original_v4_sol",
+        "actor": "judge",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.004028",
+        "ledger_cost_usd": "0.004028"
+      },
+      {
+        "request_id": "9d369475-026a-4fc4-9147-2f8469f867fb",
+        "provider_response_id": "gen-1791490076-9M5ckBferM4QKCCH5WJF",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.00048725",
+        "ledger_cost_usd": "0.00048725"
+      },
+      {
+        "request_id": "9ef26436-e61c-4d2a-a533-6be235ce09b8",
+        "provider_response_id": "gen-1791460962-kMYOxMayORje0pYHKsGR",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+        "usage_cost_usd": "0.0005405",
+        "ledger_cost_usd": "0.0005405"
+      },
+      {
+        "request_id": "a3eeadb5-d4fa-4264-ac4a-36ed0a4b80e5",
+        "provider_response_id": "gen-1791510139-UMEnHJdRSbHIs50b2J7z",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.00045325",
+        "ledger_cost_usd": "0.00045325"
+      },
+      {
+        "request_id": "a436f066-2f1f-4ee7-acb7-97bad4c704e4",
+        "provider_response_id": "gen-1791461462-J5o67kQ3eN4MpTiDSYLf",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.00056725",
+        "ledger_cost_usd": "0.00056725"
+      },
+      {
+        "request_id": "a527a330-2091-406a-9572-605ad28810fc",
+        "provider_response_id": "gen-1791508798-msQwcMgfnUTDaVfnHYUL",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.0004975",
+        "ledger_cost_usd": "0.0004975"
+      },
+      {
+        "request_id": "a56a41c4-3d7a-47de-9c15-12cfe58a603d",
+        "provider_response_id": "gen-1791490996-DHJCXjOd9rkMKV1yLJDj",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.00063625",
+        "ledger_cost_usd": "0.00063625"
+      },
+      {
+        "request_id": "a7d1187a-d65d-4d02-a942-c5ad8219a7e4",
+        "provider_response_id": "gen-1791490239-Utlz8JO6zXM1TYMS8Bsk",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+        "usage_cost_usd": "0.000616",
+        "ledger_cost_usd": "0.000616"
+      },
+      {
+        "request_id": "a993c6c2-1053-4e70-bba0-fdcfa479348f",
+        "provider_response_id": "gen-1791461413-X27sq2jxkuOIE5W7hK4M",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.00065825",
+        "ledger_cost_usd": "0.00065825"
+      },
+      {
+        "request_id": "aaa39f18-c641-4b86-a77d-0d5e3fae0041",
+        "provider_response_id": "gen-1791493122-Eo2F7jpXtqsrDbwCLT5B",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.00065975",
+        "ledger_cost_usd": "0.00065975"
+      },
+      {
+        "request_id": "abe4bf2b-6089-4340-ac80-8f26098fe41e",
+        "provider_response_id": "gen-1791490075-lAN2IxlGLbnZfcAK01is",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.0005035",
+        "ledger_cost_usd": "0.0005035"
+      },
+      {
+        "request_id": "ae571038-4562-4735-8b61-9040a4e13251",
+        "provider_response_id": "gen-1791490729-Uo1HCfTFC3EBXORPgH1I",
+        "condition": "original_v4_sol",
+        "actor": "judge",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_007.jsonl",
+        "usage_cost_usd": "0.00343",
+        "ledger_cost_usd": "0.00343"
+      },
+      {
+        "request_id": "af15a291-d069-429c-b457-88aa6891c2af",
+        "provider_response_id": "gen-1791461055-vQQDnLPyyKrnoL5ungJp",
+        "condition": "original_v4_sol",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+        "usage_cost_usd": "0.005078",
+        "ledger_cost_usd": "0.005078"
+      },
+      {
+        "request_id": "b1d7f74a-6d4a-40cf-928b-444d4a68e7fe",
+        "provider_response_id": "gen-1791490651-iJU29Pmpl6opmXdVuKwq",
+        "condition": "original_v4_sol",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+        "usage_cost_usd": "0.00383",
+        "ledger_cost_usd": "0.00383"
+      },
+      {
+        "request_id": "b1e766ca-e456-44f7-a463-c18828b457d7",
+        "provider_response_id": "gen-1791490280-R79l9SC3vftuHWbUqmbm",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_007.jsonl",
+        "usage_cost_usd": "0.0005115",
+        "ledger_cost_usd": "0.0005115"
+      },
+      {
+        "request_id": "b39ceca3-bfbe-409c-8826-88fd2d57f074",
+        "provider_response_id": "gen-1791492721-pDd65XcZT1HVSd9uvPGr",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.004174",
+        "ledger_cost_usd": "0.004174"
+      },
+      {
+        "request_id": "b3b8ee5c-4ee3-4de6-a8aa-c74a86f46047",
+        "provider_response_id": "gen-1791491073-UefGQfyHKoOkgvzq7Pha",
+        "condition": "original_v4_sol",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.00473",
+        "ledger_cost_usd": "0.00473"
+      },
+      {
+        "request_id": "b4f77658-7bfa-45de-b750-0c4dd776ce9b",
+        "provider_response_id": "gen-1791461046-pFXSKLXkJkjVC9oHNxuz",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.0005085",
+        "ledger_cost_usd": "0.0005085"
+      },
+      {
+        "request_id": "b67bacb9-9967-4a1b-bf06-597d95c8cd19",
+        "provider_response_id": "gen-1791510185-xYfR3e4XttL2lBVevBHX",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.0006225",
+        "ledger_cost_usd": "0.0006225"
+      },
+      {
+        "request_id": "ba26af44-28a2-401d-83f6-6d7daf82e026",
+        "provider_response_id": "gen-1791491006-HNRnFBUT4DLfYGcdoUDX",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.00056625",
+        "ledger_cost_usd": "0.00056625"
+      },
+      {
+        "request_id": "bc111d15-882e-462f-be83-6018ca81bc21",
+        "provider_response_id": "gen-1791491760-7jJC7opdYeiNBAtWcMiL",
+        "condition": "offline_working_review",
+        "actor": "working_review_judge",
+        "trace": "runs/v4/working_diagnosis_review/logs/raw/case_004.jsonl",
+        "usage_cost_usd": "0.006904",
+        "ledger_cost_usd": "0.006904"
+      },
+      {
+        "request_id": "bd21806e-40f9-4afb-b3f1-f3c729cef4a1",
+        "provider_response_id": "gen-1791490892-hjmWsFmbFLAfpES8ZHDe",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.00045325",
+        "ledger_cost_usd": "0.00045325"
+      },
+      {
+        "request_id": "bf5b4af3-3331-4475-8bbe-3cbad43d7261",
+        "provider_response_id": "gen-1791490863-ilwu8UcVLt0EI3XayLel",
+        "condition": "original_v4_sol",
+        "actor": "judge",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_009.jsonl",
+        "usage_cost_usd": "0.003846",
+        "ledger_cost_usd": "0.003846"
+      },
+      {
+        "request_id": "bf683955-4c70-4e08-bd96-d05733690ffe",
+        "provider_response_id": "gen-1791461051-g3jPBClic8bGgpfCfOKx",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.00053475",
+        "ledger_cost_usd": "0.00053475"
+      },
+      {
+        "request_id": "c2183e93-2515-432f-93c2-38cd89859c58",
+        "provider_response_id": "gen-1791460941-VviiWbqqf43QgdLILk3i",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.00050625",
+        "ledger_cost_usd": "0.00050625"
+      },
+      {
+        "request_id": "c30d18ad-9f49-44b9-97a6-6808d1693b35",
+        "provider_response_id": "gen-1791491736-9BcOssBMHfVlzA5qI3qV",
+        "condition": "offline_working_review",
+        "actor": "working_review_judge",
+        "trace": "runs/v4/working_diagnosis_review/logs/raw/case_001.jsonl",
+        "usage_cost_usd": "0.005044",
+        "ledger_cost_usd": "0.005044"
+      },
+      {
+        "request_id": "c744e146-9bef-49ed-a157-17c276cb557c",
+        "provider_response_id": "gen-1791461049-H5uh2OxlN13XZcM7qwwg",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.00047275",
+        "ledger_cost_usd": "0.00047275"
+      },
+      {
+        "request_id": "c80d94e2-7a09-4eb0-81c3-58ca1723182b",
+        "provider_response_id": "gen-1791490907-NKLVO7ekCErSAA3DRrU1",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.00051775",
+        "ledger_cost_usd": "0.00051775"
+      },
+      {
+        "request_id": "c8e36623-aba5-4cf9-8e82-898892e920b1",
+        "provider_response_id": "gen-1791492908-waWjmYWamwUjNKCe8MzN",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+        "usage_cost_usd": "0.004668",
+        "ledger_cost_usd": "0.004668"
+      },
+      {
+        "request_id": "c8f847d5-dcdd-4097-bd99-54863afcbb09",
+        "provider_response_id": "gen-1791460932-6eX5z0db4YDPWtmnhunk",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+        "usage_cost_usd": "0.000483",
+        "ledger_cost_usd": "0.000483"
+      },
+      {
+        "request_id": "ca424b12-e0da-4a7f-8c68-3db9a6ec10ce",
+        "provider_response_id": "gen-1791492665-ZgKjnpIDY3rgdErUWgGC",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.000486",
+        "ledger_cost_usd": "0.000486"
+      },
+      {
+        "request_id": "cbe1aa59-cdc2-491c-afee-f54d6a9f99c4",
+        "provider_response_id": "gen-1791509979-jpBx4Sm1I6bSFSvrytWF",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_009.jsonl",
+        "usage_cost_usd": "0.0004975",
+        "ledger_cost_usd": "0.0004975"
+      },
+      {
+        "request_id": "ccff3d40-b900-48d9-8cd5-e7a1d777d549",
+        "provider_response_id": "gen-1791490599-dCydyb2ACKm7y37TqHbF",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+        "usage_cost_usd": "0.00049225",
+        "ledger_cost_usd": "0.00049225"
+      },
+      {
+        "request_id": "d311c9c6-e342-48d0-a2c0-99c1b78c3075",
+        "provider_response_id": "gen-1791460920-IxUMH7I6DHWStcubdyHQ",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.0005815",
+        "ledger_cost_usd": "0.0005815"
+      },
+      {
+        "request_id": "d508d8cf-31d4-4e00-9e0f-4c9ba1c87328",
+        "provider_response_id": "gen-1791508795-WpWJlhAdVc7KkJBshFYQ",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.00061825",
+        "ledger_cost_usd": "0.00061825"
+      },
+      {
+        "request_id": "d582810a-a0db-43fc-98c5-4ae43636d1a2",
+        "provider_response_id": "gen-1791490065-1LZnO2LvSbFxubWLUkQS",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.00049475",
+        "ledger_cost_usd": "0.00049475"
+      },
+      {
+        "request_id": "d98c6e41-861d-44f9-9b68-408f2568a420",
+        "provider_response_id": "gen-1791490812-2DlAeeJ7b2DQ6rKwkqDi",
+        "condition": "original_v4_sol",
+        "actor": "judge",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_008.jsonl",
+        "usage_cost_usd": "0.004152",
+        "ledger_cost_usd": "0.004152"
+      },
+      {
+        "request_id": "dc48dbaf-b8a0-4e71-91b6-b21fc6bd96e9",
+        "provider_response_id": "gen-1791509249-8gDkvkr9IqdFicEpRDYR",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.004372",
+        "ledger_cost_usd": "0.004372"
+      },
+      {
+        "request_id": "dcd33125-36bd-4047-a9a4-0accbf5d0b7b",
+        "provider_response_id": "gen-1791491756-NadJOkdM5zSVu6jYrxjM",
+        "condition": "offline_working_review",
+        "actor": "working_review_judge",
+        "trace": "runs/v4/working_diagnosis_review/logs/raw/case_003.jsonl",
+        "usage_cost_usd": "0.007214",
+        "ledger_cost_usd": "0.007214"
+      },
+      {
+        "request_id": "de7b12db-85d9-4720-9250-96bc3ae4056c",
+        "provider_response_id": "gen-1791490581-d5oEhiXm2tJryJxyLXzo",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+        "usage_cost_usd": "0.0004695",
+        "ledger_cost_usd": "0.0004695"
+      },
+      {
+        "request_id": "e06ba976-7002-4608-9b61-dbeef9f72a5f",
+        "provider_response_id": "gen-1791490132-cWE5OKDygtC8hoB40HVe",
+        "condition": "original_v4_sol",
+        "actor": "judge",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.006078",
+        "ledger_cost_usd": "0.006078"
+      },
+      {
+        "request_id": "e2209876-d8cc-43e9-a052-0a24ba41af5b",
+        "provider_response_id": "gen-1791461013-7QtxtNaJjV2OePv0HgYc",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+        "usage_cost_usd": "0.00056625",
+        "ledger_cost_usd": "0.00056625"
+      },
+      {
+        "request_id": "e31a0611-9f83-45dc-8350-0e4d4a306cf8",
+        "provider_response_id": "gen-1791490241-fN24yoM2Tl7uhrz9TZod",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+        "usage_cost_usd": "0.00049375",
+        "ledger_cost_usd": "0.00049375"
+      },
+      {
+        "request_id": "e32cf72b-7d46-4d96-ab32-0fb72b3d8fbb",
+        "provider_response_id": "gen-1791490106-C69GF1zF3l62VYyKTRem",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.00051575",
+        "ledger_cost_usd": "0.00051575"
+      },
+      {
+        "request_id": "e56fbe2c-2687-432b-8506-bbc95377c1af",
+        "provider_response_id": "gen-1791490238-khPw8nXvQ1tLtfj6Bv85",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+        "usage_cost_usd": "0.00059375",
+        "ledger_cost_usd": "0.00059375"
+      },
+      {
+        "request_id": "e8686f10-d28a-4605-9efd-bda700e530fe",
+        "provider_response_id": "gen-1791508785-cmlnSw0hco5gLDgb0jz6",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.0005985",
+        "ledger_cost_usd": "0.0005985"
+      },
+      {
+        "request_id": "e8bdd067-78c7-454c-93ae-2b0105fbe755",
+        "provider_response_id": "gen-1791492668-Q7Lc4dDnYf1xCyy6rF60",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.0004875",
+        "ledger_cost_usd": "0.0004875"
+      },
+      {
+        "request_id": "eab06824-9b5b-423d-943a-eabf53897689",
+        "provider_response_id": "gen-1791493566-p3HonB9jihyGU53qtGGy",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+        "usage_cost_usd": "0.004784",
+        "ledger_cost_usd": "0.004784"
+      },
+      {
+        "request_id": "ed3eae3d-2a80-468c-bf5b-71189725c5da",
+        "provider_response_id": "gen-1791509220-0IvS1hCPQPHP5M0FM0si",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge_proposal",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.004138",
+        "ledger_cost_usd": "0.004138"
+      },
+      {
+        "request_id": "edc3b3e9-a9e2-43b0-9d05-212db00fe092",
+        "provider_response_id": "gen-1791510152-JEH02IvSdOC96TpHoBRU",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+        "usage_cost_usd": "0.00049325",
+        "ledger_cost_usd": "0.00049325"
+      },
+      {
+        "request_id": "ee4d2291-dfa7-43ee-8dc6-6b2bf21231c1",
+        "provider_response_id": "gen-1791461053-18yOPSAKyQpbNRXrgDD7",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+        "usage_cost_usd": "0.00053475",
+        "ledger_cost_usd": "0.00053475"
+      },
+      {
+        "request_id": "f0f10a7b-befd-457c-b861-dd61277fa049",
+        "provider_response_id": "gen-1791508827-c96ajH8ie70KEj9qkEvX",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+        "usage_cost_usd": "0.000552",
+        "ledger_cost_usd": "0.000552"
+      },
+      {
+        "request_id": "f1def9b3-02b9-499f-9792-574e21e43b25",
+        "provider_response_id": "gen-1791462060-nl1NCZRKLRKKlmJFOsfC",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+        "usage_cost_usd": "0.0006",
+        "ledger_cost_usd": "0.0006"
+      },
+      {
+        "request_id": "f3bf4f35-2c5c-472f-b246-1679040e4afd",
+        "provider_response_id": "gen-1791509662-7oBRSSKcHe6ot9VFMVuY",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+        "usage_cost_usd": "0.000684",
+        "ledger_cost_usd": "0.000684"
+      },
+      {
+        "request_id": "f6ca3026-b0d2-4ed3-8e65-8d5594dfb8ec",
+        "provider_response_id": "gen-1791492638-emrmDP21epiY61QoTg8T",
+        "condition": "prospective_v4_sol_working",
+        "actor": "matcher",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+        "usage_cost_usd": "0.0005675",
+        "ledger_cost_usd": "0.0005675"
+      },
+      {
+        "request_id": "f9560686-f84a-4071-8b79-bdd3236dc46a",
+        "provider_response_id": "gen-1791509727-beljRUTHpA6qoMHw4Nzw",
+        "condition": "prospective_v4_sol_working",
+        "actor": "judge",
+        "trace": "runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+        "usage_cost_usd": "0.003122",
+        "ledger_cost_usd": "0.003122"
+      },
+      {
+        "request_id": "fe88b58e-7672-4b81-9529-0989b7208fee",
+        "provider_response_id": "gen-1791461012-gGfBAgnc2evXoo8cR102",
+        "condition": "original_v4_sol",
+        "actor": "matcher",
+        "trace": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+        "usage_cost_usd": "0.000505",
+        "ledger_cost_usd": "0.000505"
+      }
+    ],
+    "requests_without_durable_response_note": "Any settled costs not backed by usage.cost remain listed with ledger attribution, rather than counted as observed usage"
+  },
+  "subscription_incidents": [
+    {
+      "path": "runs/v4/sol_working/run1/subscription_incident_1.json",
+      "sha256": "01f552804ede0b1332c7d12209d5158d1715ba461325405a1155010cb1f57eae",
+      "record": {
+        "time": 1791492854.944375,
+        "kind": "subscription_process_exit_no_terminal",
+        "case": "case_002",
+        "failed_stage": "original blind review after followup before additional working final review",
+        "last_successful_cli_ordinal": 10,
+        "durable_cli_calls": 11,
+        "settled_api_responses": 7,
+        "exit_code": 1,
+        "category": "process_exit; underlying cause not retained",
+        "quota_snapshot_used_percent": 84,
+        "case001_terminal_preserved": true,
+        "decision": "One explicit continuation of unanswered subscription step, exact payload replay of all recorded prefixes; no automatic retry loop. Shared ledger115settled US$0.18950075. No new HEAD or clinical change."
+      },
+      "usage_status": "Aborted/unanswered subscription token usage may be unknown; no zero-cost subscription inference"
+    }
+  ],
+  "historical_claude_v36_public": {
+    "path": "reports/v36_public_comparison.json",
+    "sha256": "c9696b80a175e03bd4c0288741cd91f54c79d159b9a8f4a98060dd048d6bb2d2",
+    "judge_agreement": {
+      "successes": 10,
+      "n_judged": 10,
+      "fraction": 1.0,
+      "lower95": 0.7224672001371107,
+      "upper95": 0.9999999999999999,
+      "interpretation": "Descriptive LLM-judge agreement, not clinical accuracy; ten shared selected cases"
+    },
+    "openrouter_api_total_usd": "0.35023969",
+    "openrouter_api_by_actor_usd": {
+      "doctor": "0.16943244",
+      "matcher": "0.09831125",
+      "judge": "0.043956",
+      "judge_proposal": "0.038540"
+    },
+    "note": "Descriptive historical comparison only: different workflow, subscription/API accounting and examination units; not equivalent conditions"
+  },
+  "interpretation": [
+    "Original and prospective runs are distinct encounters; offline review reuses original evidence and adds no encounter.",
+    "Working etiological hypothesis may be unconfirmed; judge agreement does not establish confirmation, clinical accuracy, safety or superiority.",
+    "Ten shared selected public cases and one encounter per arm do not establish ConsistencyDx or a generalizable performance estimate.",
+    "Self-reported confidence is not a validated clinical probability.",
+    "Token sums include durable answered responses only; interrupted subscription calls with unknown usage make totals lower bounds.",
+    "Cached input is part of input tokens and must not be added to input totals again."
+  ],
+  "token_quantile_method": "linear interpolation at (n-1)*p; distributions use per-case sums, not pooled per-request counts"
+}

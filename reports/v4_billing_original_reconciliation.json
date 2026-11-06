@@ -1,0 +1,19 @@
+{
+  "status": "all81_original_generation_costs_verified",
+  "original_received_usage_cost_usd": "0.12304050",
+  "original_generation_total_cost_usd": "0.12304050",
+  "original_ids_verified": 81,
+  "previous_missing_generation_metadata_now_present": true,
+  "previous_account_difference_usd": "0.010483000",
+  "original_difference_explanation": "Transient metadata/account reporting lag; all81costs now match received usage.cost. Ledger unchanged.",
+  "latest_account": {
+    "total_credits": "25",
+    "total_usage": "19.130478533"
+  },
+  "latest_global_ledger_usd": "0.17180600",
+  "latest_global_account_delta_usd": "0.165068500",
+  "latest_global_difference_usd": "0.006737500",
+  "global_account_reconciled_at_snapshot": false,
+  "snapshot_unix": 1791492436.1724658,
+  "note": "Pilot active; this is not the final global reconciliation."
+}

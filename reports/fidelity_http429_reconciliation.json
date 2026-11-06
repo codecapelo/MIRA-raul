@@ -1,0 +1,28 @@
+{
+  "timestamp": 1791204051.792406,
+  "reconciled_requests": 1,
+  "unattributed_row": null,
+  "unattributed_usd": "0E-9",
+  "account_total_usage": "8.773172603",
+  "ledger_total_after": "8.773172603",
+  "states_after": {
+    "settled": 5265
+  },
+  "snapshots_sha256": {
+    "reports/credits_fidelity_429_1.json": "5f71447c72a16dadecc277cd172661181733c8e6c89def753d4a099345a22f69",
+    "reports/credits_fidelity_429_2.json": "4e666e73d9eb084c064e30d9d9f2af61acc37bf453b74a407da9a504e48f0430",
+    "reports/credits_fidelity_429_3.json": "c28e1476f177673586da040108b18aacf01103c0327714e1e223504e15e3d57f"
+  },
+  "ledger_backup": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/reports/budget_before_fidelity_http429_reconciliation.sqlite",
+  "archive": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/incomplete/fidelity_http429_v1",
+  "provider_usage_cost_invented": false,
+  "archived": [
+    {
+      "request_id": "5a216313-0648-4e34-b45b-6a505b36fb07",
+      "role": "judge",
+      "model": "google/gemini-3.1-pro-preview",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/incomplete/fidelity_http429_v1/runs/fidelity/judge/pro_t0/run1_case_002_qwen__qwen3.5-397b-a17b.jsonl",
+      "sha256": "a6612f500f6df49689d4c0ed1f27923a34b01b09fb1aecc61bf67247d5488a1b"
+    }
+  ]
+}

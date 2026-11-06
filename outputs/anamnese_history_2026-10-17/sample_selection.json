@@ -1,0 +1,402 @@
+{
+  "method": "First chronological legacy pilot per stage; earliest legacy GPT-6 Sol per matched public case; first recorded run of named October variants (v3.2c run2); public cases 001/002/004/008, available pilot subset and v3.7 subset; no selection by correctness",
+  "closed_cases_exported": 0,
+  "sample": [
+    {
+      "stage": "legado_exploratory_v1",
+      "path": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/results/exploratory_v1/anthropic_raw/b9fdc4c9-4f89-43b6-ab37-b6105a4c61fc.jsonl",
+      "case_id": "case_001",
+      "legacy": true
+    },
+    {
+      "stage": "legado_exploratory_v2_aborted",
+      "path": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/results/exploratory_v2_aborted/raw/6fd86870-f8f8-4a1e-b4c0-97d0b65ecb45.jsonl",
+      "case_id": "case_001",
+      "legacy": true
+    },
+    {
+      "stage": "legado_exploratory_v3_aborted",
+      "path": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/results/exploratory_v3_aborted/raw/d22f5d26-93b0-4a5f-81db-a30213db5141.jsonl",
+      "case_id": "case_001",
+      "legacy": true
+    },
+    {
+      "stage": "legado_exploratory_v4_aborted",
+      "path": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/results/exploratory_v4_aborted/raw/41bddd4b-c8a8-4a1e-b96a-09f6c995e707.jsonl",
+      "case_id": "case_001",
+      "legacy": true
+    },
+    {
+      "stage": "legado_painel",
+      "path": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/results/raw/29027b04-95f3-464d-8446-36620d3f8113.jsonl",
+      "case_id": "case_001",
+      "legacy": true
+    },
+    {
+      "stage": "legado_painel",
+      "path": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/results/raw/82581adf-28bd-4a0c-b2c1-5b239dc5f822.jsonl",
+      "case_id": "case_002",
+      "legacy": true
+    },
+    {
+      "stage": "legado_painel",
+      "path": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/results/raw/a49d4ce2-8c30-42fe-88ea-a1184ea1221e.jsonl",
+      "case_id": "case_004",
+      "legacy": true
+    },
+    {
+      "stage": "legado_painel",
+      "path": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/results/raw/a6bfcaf1-d3c1-403a-9f57-8a359702dd91.jsonl",
+      "case_id": "case_008",
+      "legacy": true
+    },
+    {
+      "stage": "v1v2_glm5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/raw/z-ai__glm-5/case_001.jsonl",
+      "case_id": "case_001",
+      "legacy": false
+    },
+    {
+      "stage": "v1v2_glm5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/raw/z-ai__glm-5/case_002.jsonl",
+      "case_id": "case_002",
+      "legacy": false
+    },
+    {
+      "stage": "v1v2_glm5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/raw/z-ai__glm-5/case_004.jsonl",
+      "case_id": "case_004",
+      "legacy": false
+    },
+    {
+      "stage": "v1v2_glm5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/raw/z-ai__glm-5/case_008.jsonl",
+      "case_id": "case_008",
+      "legacy": false
+    },
+    {
+      "stage": "v3_inicial",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/qwen38_max_0902/run1/logs/raw/qwen__qwen3.8-max-0902/case_001.jsonl",
+      "case_id": "case_001",
+      "legacy": false
+    },
+    {
+      "stage": "v3_inicial",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/qwen38_max_0902/run1/logs/raw/qwen__qwen3.8-max-0902/case_002.jsonl",
+      "case_id": "case_002",
+      "legacy": false
+    },
+    {
+      "stage": "v3_inicial",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/qwen38_max_0902/run1/logs/raw/qwen__qwen3.8-max-0902/case_004.jsonl",
+      "case_id": "case_004",
+      "legacy": false
+    },
+    {
+      "stage": "v3_inicial",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/qwen38_max_0902/run1/logs/raw/qwen__qwen3.8-max-0902/case_008.jsonl",
+      "case_id": "case_008",
+      "legacy": false
+    },
+    {
+      "stage": "v3_n2_glm5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_n2/run1/logs/raw/z-ai__glm-5/case_001.jsonl",
+      "case_id": "case_001",
+      "legacy": false
+    },
+    {
+      "stage": "v3_n2_glm5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_n2/run1/logs/raw/z-ai__glm-5/case_002.jsonl",
+      "case_id": "case_002",
+      "legacy": false
+    },
+    {
+      "stage": "v3_n2_glm5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_n2/run1/logs/raw/z-ai__glm-5/case_004.jsonl",
+      "case_id": "case_004",
+      "legacy": false
+    },
+    {
+      "stage": "v3_n2_glm5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_n2/run1/logs/raw/z-ai__glm-5/case_008.jsonl",
+      "case_id": "case_008",
+      "legacy": false
+    },
+    {
+      "stage": "cascata_v1",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_cas_n2/run1/logs/raw/z-ai__glm-5/case_001.jsonl",
+      "case_id": "case_001",
+      "legacy": false
+    },
+    {
+      "stage": "cascata_v1",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_cas_n2/run1/logs/raw/z-ai__glm-5/case_002.jsonl",
+      "case_id": "case_002",
+      "legacy": false
+    },
+    {
+      "stage": "cascata_v1",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_cas_n2/run1/logs/raw/z-ai__glm-5/case_004.jsonl",
+      "case_id": "case_004",
+      "legacy": false
+    },
+    {
+      "stage": "cascata_v1",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_cas_n2/run1/logs/raw/z-ai__glm-5/case_008.jsonl",
+      "case_id": "case_008",
+      "legacy": false
+    },
+    {
+      "stage": "cascata_v2",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_n2/run1/logs/raw/z-ai__glm-5/case_001.jsonl",
+      "case_id": "case_001",
+      "legacy": false
+    },
+    {
+      "stage": "cascata_v2",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_n2/run1/logs/raw/z-ai__glm-5/case_002.jsonl",
+      "case_id": "case_002",
+      "legacy": false
+    },
+    {
+      "stage": "cascata_v2",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_n2/run1/logs/raw/z-ai__glm-5/case_004.jsonl",
+      "case_id": "case_004",
+      "legacy": false
+    },
+    {
+      "stage": "cascata_v2",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_n2/run1/logs/raw/z-ai__glm-5/case_008.jsonl",
+      "case_id": "case_008",
+      "legacy": false
+    },
+    {
+      "stage": "v3_2c",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_v32sjeft86a20d_n2/run2/logs/raw/z-ai__glm-5/case_001.jsonl",
+      "case_id": "case_001",
+      "legacy": false
+    },
+    {
+      "stage": "v3_2c",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_v32sjeft86a20d_n2/run2/logs/raw/z-ai__glm-5/case_002.jsonl",
+      "case_id": "case_002",
+      "legacy": false
+    },
+    {
+      "stage": "v3_2c",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_v32sjeft86a20d_n2/run2/logs/raw/z-ai__glm-5/case_004.jsonl",
+      "case_id": "case_004",
+      "legacy": false
+    },
+    {
+      "stage": "v3_2c",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_v32sjeft86a20d_n2/run2/logs/raw/z-ai__glm-5/case_008.jsonl",
+      "case_id": "case_008",
+      "legacy": false
+    },
+    {
+      "stage": "v3_5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_v32sjeft86a20dsxotswaglc50op2f_n2/run1/logs/raw/z-ai__glm-5/case_001.jsonl",
+      "case_id": "case_001",
+      "legacy": false
+    },
+    {
+      "stage": "v3_5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_v32sjeft86a20dsxotswaglc50op2f_n2/run1/logs/raw/z-ai__glm-5/case_002.jsonl",
+      "case_id": "case_002",
+      "legacy": false
+    },
+    {
+      "stage": "v3_5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_v32sjeft86a20dsxotswaglc50op2f_n2/run1/logs/raw/z-ai__glm-5/case_004.jsonl",
+      "case_id": "case_004",
+      "legacy": false
+    },
+    {
+      "stage": "v3_5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_v32sjeft86a20dsxotswaglc50op2f_n2/run1/logs/raw/z-ai__glm-5/case_008.jsonl",
+      "case_id": "case_008",
+      "legacy": false
+    },
+    {
+      "stage": "v3_6",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_v32sjeft86a20dsxotswaglc50op5cbam1evxprv_n2/run1/logs/raw/z-ai__glm-5/case_001.jsonl",
+      "case_id": "case_001",
+      "legacy": false
+    },
+    {
+      "stage": "v3_6",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_v32sjeft86a20dsxotswaglc50op5cbam1evxprv_n2/run1/logs/raw/z-ai__glm-5/case_002.jsonl",
+      "case_id": "case_002",
+      "legacy": false
+    },
+    {
+      "stage": "v3_6",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_v32sjeft86a20dsxotswaglc50op5cbam1evxprv_n2/run1/logs/raw/z-ai__glm-5/case_004.jsonl",
+      "case_id": "case_004",
+      "legacy": false
+    },
+    {
+      "stage": "v3_6",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_v32sjeft86a20dsxotswaglc50op5cbam1evxprv_n2/run1/logs/raw/z-ai__glm-5/case_008.jsonl",
+      "case_id": "case_008",
+      "legacy": false
+    },
+    {
+      "stage": "v4_original",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+      "case_id": "case_001",
+      "legacy": false
+    },
+    {
+      "stage": "v4_original",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+      "case_id": "case_002",
+      "legacy": false
+    },
+    {
+      "stage": "v4_original",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+      "case_id": "case_004",
+      "legacy": false
+    },
+    {
+      "stage": "v4_original",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_008.jsonl",
+      "case_id": "case_008",
+      "legacy": false
+    },
+    {
+      "stage": "v4_working",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+      "case_id": "case_001",
+      "legacy": false
+    },
+    {
+      "stage": "v4_working",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+      "case_id": "case_002",
+      "legacy": false
+    },
+    {
+      "stage": "v4_working",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+      "case_id": "case_004",
+      "legacy": false
+    },
+    {
+      "stage": "v4_working",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/sol_working/run1/logs/raw/gpt-6.1-sol/case_008.jsonl",
+      "case_id": "case_008",
+      "legacy": false
+    },
+    {
+      "stage": "fast1",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/fast/fast1/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_001.jsonl",
+      "case_id": "case_001",
+      "legacy": false
+    },
+    {
+      "stage": "fast1",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/fast/fast1/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_002.jsonl",
+      "case_id": "case_002",
+      "legacy": false
+    },
+    {
+      "stage": "fast1",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/fast/fast1/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_004.jsonl",
+      "case_id": "case_004",
+      "legacy": false
+    },
+    {
+      "stage": "fast1",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/fast/fast1/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_008.jsonl",
+      "case_id": "case_008",
+      "legacy": false
+    },
+    {
+      "stage": "fast2",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/fast/fast2/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_001.jsonl",
+      "case_id": "case_001",
+      "legacy": false
+    },
+    {
+      "stage": "fast2",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/fast/fast2/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_002.jsonl",
+      "case_id": "case_002",
+      "legacy": false
+    },
+    {
+      "stage": "fast3",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/fast/fast3/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_001.jsonl",
+      "case_id": "case_001",
+      "legacy": false
+    },
+    {
+      "stage": "fast3",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/fast/fast3/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_002.jsonl",
+      "case_id": "case_002",
+      "legacy": false
+    },
+    {
+      "stage": "fast4",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/fast/fast4/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_001.jsonl",
+      "case_id": "case_001",
+      "legacy": false
+    },
+    {
+      "stage": "fast4",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/fast/fast4/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_002.jsonl",
+      "case_id": "case_002",
+      "legacy": false
+    },
+    {
+      "stage": "fast4",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/fast/fast4/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_004.jsonl",
+      "case_id": "case_004",
+      "legacy": false
+    },
+    {
+      "stage": "fast4",
+      "path": "/Users/test/.codex/worktrees/mira-review-v38/MIRA-RAUL/runs/v4/fast/fast4/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_008.jsonl",
+      "case_id": "case_008",
+      "legacy": false
+    },
+    {
+      "stage": "v5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v5/v5z/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_001.jsonl",
+      "case_id": "case_001",
+      "legacy": false
+    },
+    {
+      "stage": "v5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v5/v5z/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_002.jsonl",
+      "case_id": "case_002",
+      "legacy": false
+    },
+    {
+      "stage": "v5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v5/v5z/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_004.jsonl",
+      "case_id": "case_004",
+      "legacy": false
+    },
+    {
+      "stage": "v5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v5/v5z/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_008.jsonl",
+      "case_id": "case_008",
+      "legacy": false
+    },
+    {
+      "stage": "v3_7_fala",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_v32sjeft86a20dsxotswaglc50op5cbam1evsfprv_n2/run1/logs/raw/z-ai__glm-5/case_001.jsonl",
+      "case_id": "case_001",
+      "legacy": false
+    },
+    {
+      "stage": "v3_7_fala",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v3/glm5_xf_imm_cas_v32sjeft86a20dsxotswaglc50op5cbam1evsfprv_n2/run1/logs/raw/z-ai__glm-5/case_008.jsonl",
+      "case_id": "case_008",
+      "legacy": false
+    }
+  ]
+}

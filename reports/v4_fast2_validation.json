@@ -1,0 +1,8 @@
+{
+  "tests": 319,
+  "status": "passed",
+  "command": "PYTHONPATH=src python3 -m unittest discover -s tests -v",
+  "log_sha256": "ae24bb4fdc26b6cf083f5d440fd7fa27b2df86a5f238b9a79f4cf611c8d8555a",
+  "scope": "frozen fast2 implementation before new inference",
+  "no_paid_test_inference": true
+}

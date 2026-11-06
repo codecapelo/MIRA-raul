@@ -1,0 +1,6 @@
+{
+ "text": "I'm a 65-year-old man. I've got new chest pain. It started while I've been in the hospital getting treatment for an infection in my blood.",
+ "statement": "I've got new chest pain. It started while I've been in the hospital getting treatment for an infection in my blood.",
+ "method": "one Sonnet call from the recorded complaint and history; reviewed by a person",
+ "model": "claude-sonnet-5-5"
+}

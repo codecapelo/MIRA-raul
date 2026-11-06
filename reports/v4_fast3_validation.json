@@ -1,0 +1,8 @@
+{
+  "tests": 320,
+  "status": "passed",
+  "command": "PYTHONPATH=src python3 -m unittest discover -s tests -v",
+  "log_sha256": "8e590b0c81132a3dfd56832dc1bb30ec296aa57689807e1491c9da1c48db0f76",
+  "scope": "prefix prereq parser and exact intermediate outputs before fast3 inference",
+  "no_paid_test_inference": true
+}

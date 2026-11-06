@@ -1,0 +1,132 @@
+{
+  "sample_n": 66,
+  "groups": [
+    {
+      "stage": "legado_exploratory_v1",
+      "n": 1,
+      "history_actions_or_standalone_messages": 1,
+      "content_with_tool_calls": 0
+    },
+    {
+      "stage": "legado_exploratory_v2_aborted",
+      "n": 1,
+      "history_actions_or_standalone_messages": 40,
+      "content_with_tool_calls": 0
+    },
+    {
+      "stage": "legado_exploratory_v3_aborted",
+      "n": 1,
+      "history_actions_or_standalone_messages": 2,
+      "content_with_tool_calls": 0
+    },
+    {
+      "stage": "legado_exploratory_v4_aborted",
+      "n": 1,
+      "history_actions_or_standalone_messages": 2,
+      "content_with_tool_calls": 0
+    },
+    {
+      "stage": "legado_painel",
+      "n": 4,
+      "history_actions_or_standalone_messages": 8,
+      "content_with_tool_calls": 0
+    },
+    {
+      "stage": "v1v2_glm5",
+      "n": 4,
+      "history_actions_or_standalone_messages": 7,
+      "content_with_tool_calls": 21
+    },
+    {
+      "stage": "v3_inicial",
+      "n": 4,
+      "history_actions_or_standalone_messages": 21,
+      "content_with_tool_calls": 24
+    },
+    {
+      "stage": "v3_n2_glm5",
+      "n": 4,
+      "history_actions_or_standalone_messages": 18,
+      "content_with_tool_calls": 15
+    },
+    {
+      "stage": "cascata_v1",
+      "n": 4,
+      "history_actions_or_standalone_messages": 16,
+      "content_with_tool_calls": 17
+    },
+    {
+      "stage": "cascata_v2",
+      "n": 4,
+      "history_actions_or_standalone_messages": 12,
+      "content_with_tool_calls": 14
+    },
+    {
+      "stage": "v3_2c",
+      "n": 4,
+      "history_actions_or_standalone_messages": 5,
+      "content_with_tool_calls": 19
+    },
+    {
+      "stage": "v3_5",
+      "n": 4,
+      "history_actions_or_standalone_messages": 6,
+      "content_with_tool_calls": 18
+    },
+    {
+      "stage": "v3_6",
+      "n": 4,
+      "history_actions_or_standalone_messages": 6,
+      "content_with_tool_calls": 29
+    },
+    {
+      "stage": "v4_original",
+      "n": 4,
+      "history_actions_or_standalone_messages": 8,
+      "content_with_tool_calls": 22
+    },
+    {
+      "stage": "v4_working",
+      "n": 4,
+      "history_actions_or_standalone_messages": 7,
+      "content_with_tool_calls": 22
+    },
+    {
+      "stage": "fast1",
+      "n": 4,
+      "history_actions_or_standalone_messages": 9,
+      "content_with_tool_calls": 12
+    },
+    {
+      "stage": "fast2",
+      "n": 2,
+      "history_actions_or_standalone_messages": 6,
+      "content_with_tool_calls": 2
+    },
+    {
+      "stage": "fast3",
+      "n": 2,
+      "history_actions_or_standalone_messages": 8,
+      "content_with_tool_calls": 0
+    },
+    {
+      "stage": "fast4",
+      "n": 4,
+      "history_actions_or_standalone_messages": 14,
+      "content_with_tool_calls": 2
+    },
+    {
+      "stage": "v5",
+      "n": 4,
+      "history_actions_or_standalone_messages": 11,
+      "content_with_tool_calls": 9
+    },
+    {
+      "stage": "v3_7_fala",
+      "n": 2,
+      "history_actions_or_standalone_messages": 5,
+      "content_with_tool_calls": 7
+    }
+  ],
+  "warning": "Ações de ferramenta no legado; mensagens autônomas do médico nas demais fases. Não são número de perguntas, nem classificação clínica. Candidatos do paciente no pacote não são todos respostas validadas; v5 registra validação separada."
+}

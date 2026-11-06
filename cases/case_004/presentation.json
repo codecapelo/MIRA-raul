@@ -1,0 +1,6 @@
+{
+ "text": "I'm a 63-year-old woman. I've been short of breath and coughing for about two weeks. It got a bit better right after they drained fluid from my chest, but the breathlessness came back a few days later.",
+ "statement": "I've been short of breath and coughing for about two weeks. It got a bit better right after they drained fluid from my chest, but the breathlessness came back a few days later.",
+ "method": "one Sonnet call from the recorded complaint and history; reviewed by a person",
+ "model": "claude-sonnet-5-5"
+}

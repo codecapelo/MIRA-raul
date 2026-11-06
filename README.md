@@ -1,5 +1,35 @@
 # MIRA-RAUL
 
+<!-- V4_CURRENT_START -->
+## v4 rápida — conversa Flash-Lite e supervisão Sol/Astra
+
+Condição final `fast4`, congelada no commit `b3d7d005a324db538b98882f6599cc33f2692eb5`, com321 testes aprovados antes da inferência. A conversa e o paciente simulado usam Gemini 3.1 Flash-Lite pela OpenRouter; Sol 6.1/Astra permanecem revisores pela assinatura ChatGPT/Codex, esforço medium. Não há mapa pesado antes da primeira fala, comparadores de diagnósticos ou JEF.
+
+|Coorte|Terminais|Aceitos pelo juiz final|Proposta inicial aceita|OpenRouter, todos os atores|Mediana da primeira fala completa|Mediana do tempo em chamadas|
+|---|---:|---:|---:|---:|---:|---:|
+|Públicos de desenvolvimento|10/10|10/10|6/10|US$0.210319200|1,59s|103,61s|
+|Casos de acesso fechado|10/10|10/10|6/9|US$0.284180975|1,52s|111,98s|
+
+Os fechados só foram liberados após dez terminais públicos e dez juízos positivos na mesma condição. São casos históricos já utilizados no projeto, não um holdout externo novo. Resultados de desenvolvimento, validação fechada e pilotos permanecem separados. [Resumo final](reports/v4_fast4_summary.md), [protocolo](reports/v4_fast_protocol.md) e [artifact com relógio e etapas](reports/v4_comparison.html).
+
+Gasto global adicional v4: US$1.061257675, incluindo condições anteriores, todos os atores e falhas, dentro do teto únicoUS$ 5. Situação financeira: conta e ledger conciliados; custos das respostas com usage.cost confirmados pelos metadados de geração; 1 rejeição sem usage.cost atribuída a zero por evidência de conta. O custo monetário da assinatura é desconhecido. Tokens de API e CLI, cache e espera são reportados separadamente; menor gasto OpenRouter não implica menor custo total.
+
+A condição corrige o vazamento de `default_admission` para os revisores, preserva resultados brutos/hash dos pré-requisitos e mantém todos os pedidos dentro da política compartilhada de exames. Até quatro pedidos atômicos iniciais e dois adicionais; pré-requisitos podem acrescentar procedimentos cobrados. Um único segundo Sol pode buscar alternativas diante de achados novos ou indisponibilidade estruturada; Astra sempre finaliza. Não há loops orientados pelo juiz.
+
+A revisão médica permanece pendente. O piloto auditado mostrou números literais corretos, mas ainda apresentou negativos do paciente sem fonte, troponina I mapeada para troponina T e resultado eletrofisiológico posterior entregue durante o encontro agudo. Confiança autoatribuída e conduta não fazem parte do input do juiz. Nenhum escore demonstra segurança clínica ou100% generalizável.
+
+
+Comparação descritiva nos dez públicos: Claude v3.6 158,46s / US$0.35023969; v4 anterior 515,93s / US$0.11515425; fast4 103,61s / US$0.210319200. Variação da API: -39,95% versus v3.6 e 82,64% versus v4 lenta. Entrada CLI mediana 33.473,50 versus 183.706,5 na v4 lenta e 34.522,5 na v3.6. Contextos, cache e transportes diferem; os tempos históricos não isolam efeito causal.
+
+Nos fechados, o tempo de parede manteve a cauda de pausas: P95 8.785,85s e máximo 15.833,52s, incluindo interrupção pelo limite da chave e pausa solicitada. A união dos intervalos de chamadas foi P50 111,98s / P95 158,47s. As pausas não foram apagadas; tempo ativo e tempo decorrido respondem a perguntas distintas, e nenhum deles isoladamente mede a qualidade da interação.
+
+Auditoria agregada dos fechados: 46 respostas do paciente; 17 continham negativos sem fonte e 5 permaneceram ambíguas. 68 trechos distintos de exames e 20 arquivos-fonte foram verificados. Divergências de identidade: 0; candidatos de divergência literal de exames: 0. Estes números refletem o escopo auditado: não houve adjudicação clínica exaustiva das afirmações narrativas positivas ou do raciocínio médico. Ausência de divergência literal não demonstra segurança, adequação do manejo ou acurácia clínica. Nenhum achado da auditoria foi usado para reajustar a condição ou reclassificar resultados.
+
+Auditoria dos públicos: pré-requisito repetido indevidamente, teste específico representado por basal, bloqueio de investigação urgente e afirmação inventada usada no raciocínio. Hash íntegro e juiz positivo não garantem fidelidade ou conduta correta; correções propostas ainda não testadas nesta condição.
+
+<!-- V4_CURRENT_END -->
+
+
 Avaliação exploratória de agentes diagnósticos em dez casos públicos previamente utilizados, com médico, paciente simulado, ferramentas e juiz por equivalência clínica via OpenRouter. A arquitetura deriva de [Zhang et al.](https://doi.org/10.1038/s41591-026-04609-x) e [onprem-medical-agents](https://github.com/KatherLab/onprem-medical-agents), com adaptações documentadas.
 
 O protocolo usa limite rígido de dez turnos do médico, sem Plan, e separa fatos iniciais, exames e referências. Exames publicados são liberados mediante solicitação com compressão temporal; a condição não reproduz estritamente a disponibilidade de achados na admissão. O código upstream permite encerramento adicional após dez rodadas; esse comportamento foi excluído por solicitação do usuário. O projeto não reproduz os conjuntos completos, a infraestrutura local ou as conclusões estatísticas do artigo.
@@ -28,5 +58,30 @@ Código e prompts upstream: CC BY 4.0 conforme README do repositório; atribuiç
 ## Extensão autorizada —04-10-2026
 Usuário autorizou runs2e3:100encontros novos, total150 (5modelos×10casos×3). Preservar run1. Mesmo protocolo/params/provedores; orçamento globalUS$18 compartilhado incluindo primeira rodada e custos técnicos. Consulta posterior credits_before_repetitions.json confirma contaUS$1,502941443 igual ledger: diferença anterior era transitória na contabilização da conta. Não reclassificar custos antigos. Projeção100novos baseada run1:US$2,803773620, estimativa não garantia. Revisão médica pendente.
 
-## Consolidação das três repetições —04-10-2026
-150/150 terminais; custo globalUS$4.274237323 conciliado com conta. Nenhuma chamada pendente. Run1 e978 arquivos históricos verificados por hashes. Relatório: reports/repetitions_summary.md; manifesto: reports/all150_trace_manifest.json. Não executar novos encontros sem nova autorização. Revisão médica pendente.
+## Rodadas 2 e 3 concluídas — 04-10-2026
+150/150 encontros terminais (50 por rodada; 5 modelos × 10 casos × 3), sem pares duplicados ou ausentes. 144 julgados e 6 sem julgamento (falha operacional/sem diagnóstico: GPT-OSS 5, GLM-4.5-Air 1), mantidos como terminais e fora do denominador do juiz. **Julgamento por LLM; revisão médica cega pendente; sem afirmação de acurácia clínica ou superioridade.** Repetições do mesmo caso não são pacientes independentes: Wilson é descritivo.
+
+| Modelo | Run 1 | Run 2 | Run 3 | Agregado | Wilson 95% (descritivo) | Sem julgamento |
+|---|---:|---:|---:|---:|---|---:|
+| openai/gpt-oss-120b | 5/8 | 3/9 | 2/8 | 10/25 | 23.4%–59.3% | 5 |
+| z-ai/glm-4.5-air | 7/10 | 6/9 | 6/10 | 19/29 | 47.3%–80.1% | 1 |
+| z-ai/glm-5 | 7/10 | 8/10 | 5/10 | 20/30 | 48.8%–80.8% | 0 |
+| qwen/qwen3.5-397b-a17b | 6/10 | 6/10 | 7/10 | 19/30 | 45.5%–78.1% | 0 |
+| openai/gpt-5.2 | 7/10 | 7/10 | 9/10 | 23/30 | 59.1%–88.2% | 0 |
+
+Custo real total (ledger = conta, três snapshots sem cache): US$ 4.274237323. Terminais por rodada: US$ 1.401886810 / 1.313640775 / 1.427001795. Projeção para 5 rodadas ≈ US$ 6.90 em terminais (estimativa, não autorização).
+
+Intercorrências (ver [reports/runs23_incidents.md](reports/runs23_incidents.md)): timeout de rede com 13 chamadas perdidas (US$ 0,030653310 não atribuível a nenhuma individualmente, registrado em linha própria do ledger) e um HTTP 429 do Qwen/Parasail sem cobrança. Nenhum terminal foi repetido; cada chamada perdida foi refeita uma vez após reconciliação. Análise: [reports/all_runs_summary.md](reports/all_runs_summary.md), `results/all_runs.csv`, manifesto `reports/final_trace_manifest_runs123.json`. Legacy: 978 arquivos verificados, 0 divergências.
+
+## Extensão Qwen3.8 concluída — 04-10-2026
+`qwen/qwen3.8-max-prime` (26/30 pelo juiz, US$ 2,7619) e `qwen/qwen3.8-max-0902` (24/30, US$ 1,3204): 10 casos × 3 repetições cada, rota Alibaba única, mesmo protocolo e juiz, sem falhas. Total agora 210 encontros terminais (204 julgados, 6 sem julgamento). Gasto real US$ 8.356544873 = ledger = conta (snapshots sem cache `reports/credits_qwen38_*final_*.json`); restam cerca de US$ 9,64 do teto de US$ 18, sem nova execução autorizada. Os dois modelos quase não conversaram com o paciente (23% e 7% dos encontros) e pediram achados cirúrgicos/histopatológicos finais em 60% e 53%: parte do resultado reflete a compressão temporal do protocolo. Parâmetros de amostragem assumidos iguais aos do Qwen3.5. Revisão médica pendente; sem afirmação de superioridade. Detalhes em [reports/extension_qwen38.md](reports/extension_qwen38.md); análise combinada em [reports/all_runs_summary.md](reports/all_runs_summary.md).
+
+## Resultado do Sonnet 5.5 pela assinatura — 04-10-2026
+10/10 terminais, 9 corretos pelo juiz (8/10 sob leitura rigorosa do caso 009), 0 sem julgamento, conversa com o paciente em 6 de 10 encontros. Consumo: 62 chamadas ao CLI, 408 mil tokens de entrada (407,8 mil em cache), 41,3 mil de saída, cerca de 6 minutos, custo equivalente de API US$ 1,19; gasto no OpenRouter US$ 0,0063 (associador e juiz), conta = ledger = US$ 8,362879588. Percentual consumido do limite do plano Pro não é legível pelo CLI (conferir no medidor da conta). Braço não equivalente aos demais (ferramentas em JSON, sem controle de amostragem). Detalhes em [reports/claude_sonnet_5_5_subscription_run1.md](reports/claude_sonnet_5_5_subscription_run1.md). Opus 5.5 aguardando decisão do usuário.
+
+## Resultado do Opus 5.5 pela assinatura — 05-10-2026
+`claude-opus-5-5` em high, mesmo braço de assinatura do Sonnet (ferramentas emuladas em JSON, não equivalente aos demais): 10/10 terminais, **10 corretos pelo juiz** (7 a 8 de 10 sob leitura rigorosa: 007 sem o fármaco, 002 sem miocardite, 009 sem Meckel), 0 sem julgamento, conversa com o paciente em 6 de 10 encontros. Consumo: 49 chamadas ao CLI, 194 mil tokens de entrada (194,1 mil em cache), 38,5 mil de saída, cerca de 5 minutos, custo equivalente de API US$ 1,85; gasto no OpenRouter US$ 0,0078; conta = ledger = US$ 8,370711103. O percentual consumido do limite do plano Pro não é legível pelo CLI. Detalhes e comparação com o Sonnet em [reports/claude_opus_5_5_subscription_run1.md](reports/claude_opus_5_5_subscription_run1.md). Revisão médica pendente; uma execução por caso, sem afirmação de superioridade.
+
+## Otimização v4 autorizada em09/10
+
+[Protocolo fast1](reports/v4_fast_protocol.md): conversa rápida Flash-Lite e revisão Sol/Astra, públicos primeiro; fechados somente após10/10 públicos na mesma condição congelada. As chamadas compartilham o teto adicionalUS$5 existente. A conciliação das três condições anteriores passou a conferir em09/10:168metadados,US$0.28396075 igual à conta, sem alterar custos.

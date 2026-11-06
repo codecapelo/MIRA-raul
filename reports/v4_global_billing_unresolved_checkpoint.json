@@ -1,0 +1,30 @@
+{
+  "snapshot_unix": 1791510859.246198,
+  "baseline_usage_usd": "18.965410033",
+  "account_total_usage_usd": "19.231216783",
+  "account_delta_usd": "0.265806750",
+  "ledger_usage_cost_usd": "0.28396075",
+  "difference_ledger_minus_account_usd": "0.018154000",
+  "account_reconciled": false,
+  "received_responses": 168,
+  "settled_ledger_calls": 168,
+  "generation_metadata_present": 164,
+  "generation_cost_matches": 164,
+  "generation_cost_mismatches": 0,
+  "missing_generation_ids": [
+    "gen-1791492721-pDd65XcZT1HVSd9uvPGr",
+    "gen-1791492725-K9NqRxNbjySvQUlN7CYN",
+    "gen-1791492903-U2aGyiYM4g4RDFfzxqOU",
+    "gen-1791492908-waWjmYWamwUjNKCe8MzN"
+  ],
+  "cap_usd": "5.00",
+  "remaining_cap_usd": "4.71603925",
+  "ledger_modified": false,
+  "subscription_monetary_cost_usd": null,
+  "note": "All received usage.cost retained. Missing metadata or account reporting lag is never classified as zero cost. GET requests only; no new model inference.",
+  "status": "difference_identified_cause_unresolved",
+  "unchanged_no_cache_account_snapshots": 3,
+  "missing_generation_cost_sum_usd": "0.018154",
+  "explanation": "The four missing judge/judge_proposal metadata records in working cases001/002 sum exactly to the difference. This identifies the affected responses, not the cause; reporting lag, refund or zero charge is not established.",
+  "official_accounting_docs": "https://openrouter.ai/docs/guides/guides/usage-accounting"
+}

@@ -1,0 +1,33 @@
+{
+  "snapshot_unix": 1791580995.150252,
+  "baseline_usage_usd": "18.965410033",
+  "account_delta_usd": "1.061257675",
+  "ledger_usage_cost_usd": "1.061257675",
+  "difference_ledger_minus_account_usd": "0E-9",
+  "account_reconciled": true,
+  "calls": 968,
+  "settled_calls": 968,
+  "responded_calls_with_usage": 967,
+  "zero_cost_rejections_without_usage": 1,
+  "rejected_calls": [
+    {
+      "request_id": "3054f333-5c6c-476f-b1c6-3d87ead4564e",
+      "role": "matcher",
+      "model": "google/gemini-3.1-flash-lite-preview",
+      "attributed_cost_usd": "0",
+      "provider_usage_cost_received": false,
+      "evidence_sha256": "2d45dcb5577bbacf62502f845f48b84cc7a95ea39f82c7b3a5a330302328af9e"
+    }
+  ],
+  "generation_metadata_present": 967,
+  "generation_cost_matches": 967,
+  "generation_cost_mismatches": 0,
+  "missing_generation_ids": [],
+  "cap_usd": "5.00",
+  "remaining_cap_usd": "3.938742325",
+  "ledger_modified": false,
+  "inference_requests": 0,
+  "closed_content_exported": false,
+  "subscription_monetary_cost_usd": null,
+  "note": "All usage.cost retained. Metadata absence/account delay is not zero cost. Per-case closed IDs, facts, paths and diagnoses excluded."
+}

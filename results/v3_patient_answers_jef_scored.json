@@ -1,0 +1,969 @@
+[
+ {
+  "arm": "A",
+  "case": "case_001",
+  "q": "I'm sorry you're dealing with new chest pain on top of a bloodstream infection — that deserves prompt attention. Let me ask a couple of focused questions first.\n\n1. **Can you describe the pain?** Where exactly is it, what does it feel like (sharp, pressure, burning, tearing), how severe is it, does it spread anywhere (jaw, arm, back), and what makes it better or worse — breathing in, lying flat, sitting forward, movement, or pressing on the chest?\n\n2. **What infection are you being treated for, and what antibiotics are you on?** Specifically: do you know the organism and where it started (e.g., a line, the lung, urine, skin), when did the antibiotics start, and are you receiving any antifungal medication?\n\nWhile you answer, I'd also like to examine you.",
+  "first": "The chest pain started while I was in the hospital getting treated for the blood infection. I don't remember exactly where it is, how bad it is, or what it feels like, and I don't know what makes it better or worse. I was told the germ is MRSA and that it affected my heart. I'm getting antibiotics through an IV, but I don't know the names or when they started. I don't know about antifungals.",
+  "final": "The chest pain started while I was in the hospital getting treated for the blood infection. I don't remember exactly where it is, how bad it is, or what it feels like, and I don't know what makes it better or worse. I was told the germ is MRSA and that it affected my heart. I'm getting antibiotics through an IV, but I don't know the names or when they started. I don't know about antifungals.",
+  "p_first": 0.1,
+  "d_first": 0.07,
+  "p_final": 0.1
+ },
+ {
+  "arm": "A",
+  "case": "case_001",
+  "q": "I understand — I need a bit more history before I can order the tests. Let me be quick and focused, because your situation is urgent.\n\n**Question 1:** Do you have any of the following right now — severe shortness of breath, coughing up blood, a feeling of your heart racing or pounding, fainting, or new swelling in your legs or abdomen?\n\n**Question 2:** Do you know which heart valve the MRSA infection is on (aortic, mitral, or tricuspid), and have you ever been told you have a heart murmur, valve disease, a pacemaker, or do you inject drugs?",
+  "first": "I don't remember having any of those things right now, and nobody mentioned them to me, so I can't say yes to any of them. I don't know which heart valve is affected, only that the germ got into my heart. I do have a pacemaker, a small one placed inside the heart. I also get dialysis. I don't know about murmurs or drug use being mentioned.",
+  "final": "I don't remember having any of those things right now, and nobody mentioned them to me, so I can't say yes to any of them. I don't know which heart valve is affected, only that the germ got into my heart. I do have a pacemaker, a small one placed inside the heart. I also get dialysis. I don't know about murmurs or drug use being mentioned.",
+  "p_first": 0.42,
+  "d_first": 0.09,
+  "p_final": 0.42
+ },
+ {
+  "arm": "A",
+  "case": "case_001",
+  "q": "One more round of history and then I'll order everything.\n\n**Question 1:** When was your pacemaker placed or last revised/replaced, and have you ever had fever, redness, or discharge at the pacemaker pocket site in your chest?\n\n**Question 2:** How long have you been on dialysis, and do you use a catheter in your neck or chest for it? And did the chest pain start suddenly or build up gradually?",
+  "first": "I don't remember when the pacemaker was placed or if it was ever replaced. Nobody mentioned any fever, redness or discharge there, so I can't say. I get dialysis because of kidney failure from diabetes, but I don't know how long I've been on it or what kind of access I use. I also don't remember whether the chest pain came on suddenly or slowly.",
+  "final": "I don't remember when the pacemaker was placed or if it was ever replaced. Nobody mentioned any fever, redness or discharge there, so I can't say. I get dialysis because of kidney failure from diabetes, but I don't know how long I've been on it or what kind of access I use. I also don't remember whether the chest pain came on suddenly or slowly.",
+  "p_first": 0.17,
+  "d_first": 0.04,
+  "p_final": 0.17
+ },
+ {
+  "arm": "A",
+  "case": "case_001",
+  "q": "The tests are ordered. Here's what's happening and why:\n\n- **Bedside echocardiogram (ultrasound of the heart)** — the single most important test. It will show vegetations (infected clumps) on your pacemaker lead or tricuspid valve, whether a valve has been destroyed, whether there's an abscess, and whether fluid is compressing the heart (tamponade).\n- **12-lead ECG** — to look for a heart attack pattern or new conduction block (which would suggest the infection has eaten into the heart's wiring near the aortic valve).\n- **Troponin, lactate, blood gas, blood count, CRP/procalcitonin** — troponin shows heart muscle injury, lactate shows how badly your tissues are being starved of oxygen in shock, and the rest gauge infection severity and anaemia.\n- **Blood cultures with MRSA susceptibilities** — to confirm the organism is still growing despite antibiotics (persistent bacteraemia is a hallmark of device infection) and to check the antibiotic is the right one.\n- **Chest X-ray and CT pulmonary angiogram** — to look for septic pulmonary emboli (wedge-shaped lung infarcts, nodules, cavities), pneumonia, or a collapsed lung.\n\nWhile we wait, a few things the tests can't tell me:\n\n1. **Which antibiotic are you actually receiving** — vancomycin or daptomycin — and has the dose been adjusted for your dialysis? Have your vancomycin levels been checked?\n2. **Has anyone discussed removing your pacemaker?** With MRSA on a device lead, antibiotics alone almost never cure it; complete device extraction is usually required.\n3. **Any recent procedures** — dental work, catheter changes, or vascular access interventions — before the bloodstream infection started?",
+  "first": "I don't know which antibiotic I'm getting or whether the dose was changed for dialysis, and I don't know about any levels being checked. Nobody has talked to me about taking the pacemaker out. I also don't remember any recent dental work, catheter changes, or procedures before the infection started. I'm sorry, I just don't have those details.",
+  "final": "I don't know which antibiotic I'm getting or whether the dose was changed for dialysis, and I don't know about any levels being checked. Nobody has talked to me about taking the pacemaker out. I also don't remember any recent dental work, catheter changes, or procedures before the infection started. I'm sorry, I just don't have those details.",
+  "p_first": 0.14,
+  "d_first": 0.05,
+  "p_final": 0.14
+ },
+ {
+  "arm": "A",
+  "case": "case_001",
+  "q": "The procedures are arranged. In the meantime, the tamponade itself is being treated as an emergency — draining the fluid around your heart (pericardiocentesis) is both life-saving and diagnostic, because the appearance of the fluid tells us the cause:\n\n- **Frank pus** → purulent pericarditis from direct MRSA spread\n- **Blood** → rupture of the heart wall or a coronary artery mycotic aneurysm\n- **Straw-coloured/serous** → inflammatory effusion\n\nA few more questions while we wait:\n\n1. **Before the chest pain started, had you been having shaking chills, night sweats, or a temperature that kept spiking despite the IV antibiotics?** Persistent fever on appropriate therapy is a strong clue that there is an undrained focus — an abscess or an infected device.\n2. **Has anyone mentioned your blood pressure dropping, needing medicines to support your blood pressure, or being moved to intensive care?**\n3. **Do you recall any stroke-like symptoms** — weakness on one side, speech difficulty, vision loss, or a painful cold/pale limb? Septic emboli from left-sided endocarditis can travel to the brain, spleen, kidneys, or limbs, and that would tell me the infection is on the left side of the heart rather than just the pacemaker lead.",
+  "first": "I don't remember having shaking chills, night sweats, or fevers before the chest pain, and nobody told me about that. Nobody has mentioned my blood pressure dropping, needing medicine for it, or going to intensive care. I also don't remember any weakness on one side, trouble speaking, vision loss, or a cold, pale limb. I'm sorry, I just don't have more details.",
+  "final": "I don't remember having shaking chills, night sweats, or fevers before the chest pain, and nobody told me about that. Nobody has mentioned my blood pressure dropping, needing medicine for it, or going to intensive care. I also don't remember any weakness on one side, trouble speaking, vision loss, or a cold, pale limb. I'm sorry, I just don't have more details.",
+  "p_first": 0.42,
+  "d_first": 0.07,
+  "p_final": 0.42
+ },
+ {
+  "arm": "A",
+  "case": "case_002",
+  "q": "Thank you for telling me. Progressive breathlessness on exertion together with leg swelling and abdominal pain often points to the heart's pumping/filling being under strain, with fluid backing up into the legs, liver, and abdomen — but I want to pin down the details before examining you.\n\nTwo questions to start:\n\n1. **Timing and swelling:** How long has this been going on, and is it steadily worsening? Does the leg swelling pit when you press it, is it worse by evening, and have you noticed your abdomen getting larger or tighter (or your weight going up)?\n\n2. **Breathlessness pattern:** How far can you walk before you have to stop? Do you need extra pillows to sleep at night, or wake up suddenly short of breath? Any chest pain, palpitations, cough, or fainting?",
+  "first": "It started about two weeks after I had a cold-like chest infection. Since then my breathlessness has gotten worse, and it's now bad enough that I get winded with ordinary activity. My legs are swollen and my belly hurts. I haven't had chest pain or dizziness. I don't remember exact distances, pillows, weight changes, or whether the swelling pits.",
+  "final": "It started about two weeks after I had a cold-like chest infection. Since then my breathlessness has gotten worse, and it's now bad enough that I get winded with ordinary activity. My legs are swollen and my belly hurts. I haven't had chest pain or dizziness. I don't remember exact distances, pillows, weight changes, or whether the swelling pits.",
+  "p_first": 0.2,
+  "d_first": 0.05,
+  "p_final": 0.2
+ },
+ {
+  "arm": "A",
+  "case": "case_002",
+  "q": "On examination I've found two key things: **pitting-type peripheral edema** and a **slow pulse — heart rate 42 beats per minute (bradycardia)**. That combination, following a viral-type illness, narrows things considerably.\n\nTwo more focused questions:\n\n1. **Medications and exposures:** Are you taking *any* medicines right now — especially beta-blockers (e.g. atenolol, metoprolol), digoxin, amiodarone, verapamil or diltiazem — or any herbal/over-the-counter remedies? And have you had a tick bite, an expanding rash, fevers, or joint pains in the past few months?\n\n2. **Metabolic/thyroid-type symptoms:** Have you noticed cold intolerance, constipation, unexplained weight gain, hair loss, dry skin, heavy periods, or profound fatigue? Any personal or family history of thyroid or autoimmune disease?",
+  "first": "The only medicine I take is mesalazine, for my bowel condition, which has been well controlled. I don't know of any other pills or herbal remedies. I haven't mentioned any tick bite, rash, fevers or joint pains, and I don't remember anything like that. I also don't know about thyroid problems or family history. I used to smoke, but not now.",
+  "final": "The only medicine I take is mesalazine, for my bowel condition, which has been well controlled. I don't know of any other pills or herbal remedies. I haven't mentioned any tick bite, rash, fevers or joint pains, and I don't remember anything like that. I also don't know about thyroid problems or family history. I used to smoke, but not now.",
+  "p_first": 0.33,
+  "d_first": 0.07,
+  "p_final": 0.33
+ },
+ {
+  "arm": "A",
+  "case": "case_002",
+  "q": "The tests aren't available to me just yet — let me complete the history first, then I'll order them.\n\nTwo more questions:\n\n1. **The abdominal pain:** Where exactly is it (right side under the ribs, central, or generalised)? Is it a dull ache or cramping, and is it related to your bowels — any diarrhoea, blood or mucus in the stool, or a recent flare of your bowel condition? When did you start mesalazine, and has the dose changed recently?\n\n2. **Fluid and other symptoms:** Has your urine output dropped, or is it frothy? Any swelling of your face or around your eyes, any cough or wheeze, and have you ever been told you have a heart murmur, high blood pressure, or a slow pulse before?",
+  "first": "My belly hurts, but I can't say exactly where, or whether it's dull or cramping. I don't remember any diarrhoea, blood in my stool, or a bowel flare. My bowel condition has been well controlled on mesalazine. I don't remember when I started it or any dose changes. I don't know about my urine, face swelling, cough, murmur, blood pressure, or a slow pulse before.",
+  "final": "My belly hurts, but I can't say exactly where, or whether it's dull or cramping. I don't remember any diarrhoea, blood in my stool, or a bowel flare. My bowel condition has been well controlled on mesalazine. I don't remember when I started it or any dose changes. I don't know about my urine, face swelling, cough, murmur, blood pressure, or a slow pulse before.",
+  "p_first": 0.17,
+  "d_first": 0.05,
+  "p_final": 0.17
+ },
+ {
+  "arm": "A",
+  "case": "case_002",
+  "q": "I've put in the requests for your **ECG, blood tests (including heart strain markers, inflammation, kidney/liver function and thyroid), chest X-ray, echocardiogram (heart ultrasound), and a urine test**. While those are being processed, let me ask about things no test can tell me.\n\n1. **Family and social history:** Has anyone in your family had a heart muscle problem (cardiomyopathy), a pacemaker or very slow heart rate, or died suddenly at a young age? Do you drink alcohol, and roughly how much? Any recent travel, camping/woodland exposure, or contact with someone who was unwell?\n\n2. **Symptoms you may not have mentioned:** Any palpitations, near-blackouts, unusual tiredness, muscle aches or weakness, joint pains, skin rashes, mouth ulcers, or eye inflammation? And has your breathlessness come on with a cough or any blood-streaked sputum?",
+  "first": "I don't know about my family history, like heart problems, pacemakers or sudden deaths. I used to smoke, but I don't remember anything about alcohol, travel, woodland exposure or sick contacts. I haven't had chest pain or dizziness. I don't remember palpitations, blackouts, muscle aches, joint pains, rashes, mouth ulcers or eye problems, and I haven't mentioned any cough or blood in my sputum.",
+  "final": "I don't know about my family history, like heart problems, pacemakers or sudden deaths. I used to smoke, but I don't remember anything about alcohol, travel, woodland exposure or sick contacts. I haven't had chest pain or dizziness. I don't remember palpitations, blackouts, muscle aches, joint pains, rashes, mouth ulcers or eye problems, and I haven't mentioned any cough or blood in my sputum.",
+  "p_first": 0.3,
+  "d_first": 0.09,
+  "p_final": 0.3
+ },
+ {
+  "arm": "A",
+  "case": "case_002",
+  "q": "I've ordered a **cardiac MRI**, a **CT scan of the lung arteries (CTPA)**, a **right-heart catheterisation** to measure the lung pressures directly, a **24-hour heart rhythm monitor**, and blood/microbiology tests for **sarcoidosis, autoimmune disease, amyloid-type proteins, Lyme disease and viruses**.\n\nWhile those come back, a few things only you can tell me:\n\n1. **The \"cold-like chest infection\":** Was it a sore throat, a cough, or feverish/chesty? Did you see a doctor, and were you given any antibiotics or steroids for it? Did you fully recover before the breathlessness started, or did it run straight into this?\n\n2. **Your bowel condition:** Do you know whether it was called **ulcerative colitis** or **Crohn's disease**, and roughly how long you've had it? Have you ever had a chest X-ray, CT scan, or any eye, skin, or joint problems in the past?",
+  "first": "The breathlessness started about two weeks after a cold-like chest infection. I don't remember the details, like whether it was a sore throat or cough, if I saw a doctor, or got antibiotics or steroids. I don't know if I fully recovered first. My bowel condition is ulcerative colitis, and it's been well controlled on mesalazine. I don't remember how long I've had it, or any past scans, or eye, skin or joint problems.",
+  "final": "The breathlessness started about two weeks after a cold-like chest infection. I don't remember the details, like whether it was a sore throat or cough, if I saw a doctor, or got antibiotics or steroids. I don't know if I fully recovered first. My bowel condition is ulcerative colitis, and it's been well controlled on mesalazine. I don't remember how long I've had it, or any past scans, or eye, skin or joint problems.",
+  "p_first": 0.14,
+  "d_first": 0.05,
+  "p_final": 0.14
+ },
+ {
+  "arm": "A",
+  "case": "case_002",
+  "q": "I've asked for a **heart tissue biopsy (endomyocardial biopsy)**, an **FDG-PET scan**, a **transoesophageal echo** (a camera-based ultrasound that sees the heart valves and atria far more clearly than the external scan), a **detailed CT of the lungs**, and further bloods including an **eosinophil count** (which would point to an allergic/drug-related inflammation of the heart).\n\nTwo more questions while we wait:\n\n1. **About the slow pulse:** Have you ever felt your pulse and noticed it was very slow or very regular? Any episodes where your vision greyed over, or a feeling your heart \"paused\"? And did the leg swelling and tummy pain start at the same time as the breathlessness, or later?\n\n2. **About the mesalazine:** Thinking back, did you **start mesalazine (or increase the dose) within a few weeks before all this began**, or have you genuinely been on the same dose for years? This matters, because mesalazine can very rarely cause an allergic inflammation of the heart muscle and its lining — and if so, stopping it is part of the cure.",
+  "first": "I haven't noticed my pulse being slow or any greying of vision or feeling my heart pause. The breathlessness, leg swelling and belly pain came on over the same stretch after the chest infection, but I don't remember which started first. My bowel condition has been well controlled on mesalazine, but I don't remember when I started it or if the dose ever changed.",
+  "final": "I haven't noticed my pulse being slow or any greying of vision or feeling my heart pause. The breathlessness, leg swelling and belly pain came on over the same stretch after the chest infection, but I don't remember which started first. My bowel condition has been well controlled on mesalazine, but I don't remember when I started it or if the dose ever changed.",
+  "p_first": 0.53,
+  "d_first": 0.04,
+  "p_final": 0.53
+ },
+ {
+  "arm": "A",
+  "case": "case_002",
+  "q": "While those are processed, two last questions:\n\n1. **Day-to-day impact:** Is the breathlessness constant or does it come in waves? Do you feel unusually tired or lightheaded on standing, and does the tummy pain get worse after eating or when you lie flat?\n\n2. **Prior records:** Have you ever had an **ECG before this illness** (for example, before an operation or at a GP check), and were you ever told your heart rate was slow or that you had a heart murmur? Do you have any implanted device or pacemaker?",
+  "first": "I can tell the breathlessness has gotten worse over time and now comes with ordinary activity, but I don't remember whether it's constant or comes in waves. I haven't mentioned dizziness or chest pain. I don't know about feeling lightheaded on standing, or if the belly pain changes with eating or lying flat. I don't remember any earlier ECG, heart murmur, or being told my pulse was slow, and I don't know of any pacemaker.",
+  "final": "I can tell the breathlessness has gotten worse over time and now comes with ordinary activity, but I don't remember whether it's constant or comes in waves. I haven't mentioned dizziness or chest pain. I don't know about feeling lightheaded on standing, or if the belly pain changes with eating or lying flat. I don't remember any earlier ECG, heart murmur, or being told my pulse was slow, and I don't know of any pacemaker.",
+  "p_first": 0.28,
+  "d_first": 0.06,
+  "p_final": 0.28
+ },
+ {
+  "arm": "A",
+  "case": "case_003",
+  "q": "Thank you — I've had a chance to look at your observations, and they show you were quite unwell on arrival, with strain on both your heart and lungs. That tells me this is urgent, so I'll keep my questions short and targeted.\n\n**Two more questions:**\n\n1. **What was the catheter in place for**, and what is your underlying medical history? For example: kidney failure on dialysis, urinary retention, a recent operation, a kidney stone, or a cancer diagnosis?\n\n2. **Along with the pain and breathlessness, have you had any of these:** a swollen/tight abdomen, fever or chills, vomiting, an inability to pass urine, blood in the urine, or pain in your chest or shoulder tip?\n\nPlease also tell me your age and sex, and roughly how long ago all of this began.",
+  "first": "I'm a woman, in my early 30s. I was born with a spine problem, a meningomyelocele. I had a bladder made bigger using bowel, and later had my bladder removed for cancer and got a pouch to hold urine. For weeks it's been harder to put the catheter in, so a catheter was left in to drain constantly. It stopped draining last night and I've passed less urine. Then the bad lower belly pain and breathlessness started. I don't know about the other things you asked.",
+  "final": "I'm a woman, in my early 30s. I was born with a spine problem, a meningomyelocele. I had a bladder made bigger using bowel, and later had my bladder removed for cancer and got a pouch to hold urine. For weeks it's been harder to put the catheter in, so a catheter was left in to drain constantly. It stopped draining last night and I've passed less urine. Then the bad lower belly pain and breathlessness started. I don't know about the other things you asked.",
+  "p_first": 0.17,
+  "d_first": 0.06,
+  "p_final": 0.17
+ },
+ {
+  "arm": "A",
+  "case": "case_003",
+  "q": "The system needs a little more history before I can order tests, so let me ask you a few more quick but important questions.\n\n**1. Medications and allergies:** What medicines do you take regularly — especially anything for bladder spasms (oxybutynin, tolterodine), painkillers, blood thinners, or antibiotics recently? Any drug allergies?\n\n**2. Timeline and details:**\n- When exactly was your bladder removed and the pouch created, and what type of pouch was it (e.g., Indiana pouch, Mitrofanoff channel)?\n- What was the cancer found on the bladder augmentation, and are you still under oncology follow-up?\n- When did the catheter stop draining — how many hours ago — and have you had **any** urine output since?\n- Have you had a fever, vomiting, or noticed your belly getting tighter and more swollen?\n\n**3. Other background:** Any kidney problems or dialysis in the past? Any previous episodes like this? Do you smoke or drink? Any chance of pregnancy?\n\nAnswer what you can — even partial answers help.",
+  "first": "I don't know my medicine list or allergies, and I don't remember the dates of my surgeries. I had my bladder removed for cancer and got a continent pouch, a MAINZ pouch I. The catheter stopped draining last night, and I've passed less urine since. I don't know about fever, vomiting, belly swelling, kidney problems, smoking, drinking or pregnancy.",
+  "final": "I don't know my medicine list or allergies, and I don't remember the dates of my surgeries. I had my bladder removed for cancer and got a continent pouch, a MAINZ pouch I. The catheter stopped draining last night, and I've passed less urine since. I don't know about fever, vomiting, belly swelling, kidney problems, smoking, drinking or pregnancy.",
+  "p_first": 0.26,
+  "d_first": 0.06,
+  "p_final": 0.26
+ },
+ {
+  "arm": "A",
+  "case": "case_003",
+  "q": "One more round of questions and then I'll be able to order everything.\n\n**1. Pain character:** Is the pain constant and severe all over the lower belly, or does it come in cramping waves? Does it get worse when you move or cough? Does it radiate to your back or up to your shoulder tip?\n\n**2. Breathing:** Is the breathlessness worse when you lie flat? Are you able to speak in full sentences? Any chest pain, palpitations, or cough?\n\n**3. The catheter itself:** When it stopped draining, was it still in place, or did it come out? Did anyone try to flush it or re-pass it? Was there any blood or mucus in the tubing?\n\n**4. Recent history:** Have you had any recent abdominal injury, heavy lifting, or a recent change in your catheterization routine? Any history of pouch stones or previous pouch rupture?\n\nPlease answer whatever you can — I'll then send off the bloods, an ECG, bedside ultrasound, and a CT scan of your abdomen and pelvis.",
+  "first": "The pain is very bad and in my lower belly, and it came on after the catheter stopped draining. The breathlessness has been getting worse since then. I don't know about waves, movement, coughing, lying flat, chest pain or where the pain spreads. The catheter was left in to drain all the time, and it stopped draining last night. I don't know about the other details.",
+  "final": "The pain is very bad and in my lower belly, and it came on after the catheter stopped draining. The breathlessness has been getting worse since then. I don't know about waves, movement, coughing, lying flat, chest pain or where the pain spreads. The catheter was left in to drain all the time, and it stopped draining last night. I don't know about the other details.",
+  "p_first": 0.23,
+  "d_first": 0.07,
+  "p_final": 0.23
+ },
+ {
+  "arm": "A",
+  "case": "case_003",
+  "q": "All the tests are ordered. Here's what I've asked for and why:\n\n- **Bloods** — full blood count (infection), kidney function and electrolytes (especially **potassium** and **chloride**), a blood gas with lactate (to measure the acid load and check tissue perfusion), clotting, and a group-and-save in case you need surgery. Also a pregnancy test, which is standard before imaging and anaesthesia in a woman your age.\n- **ECG** — high potassium from reabsorbed urine can dangerously affect the heart rhythm, and this is the fastest way to detect it.\n- **Bedside ultrasound** — to look for free fluid in the abdomen, which would suggest urine has leaked out of the pouch.\n- **CT of abdomen and pelvis with contrast instilled into the pouch** — this is the definitive test. It shows whether the pouch has perforated and where.\n- **Chest X-ray** — to assess the breathlessness and look for fluid around the lungs or air under the diaphragm.\n- **Blood and pouch urine cultures** — to check for infection.\n\n**While we wait, a few things the tests can't tell me:**\n\n1. Has anyone **tried to flush the catheter** with saline since it stopped, or attempted to pass a new one? If so, was it difficult, and did anything come out?\n2. Are you known to have **pouch stones** or recurrent urinary infections in the pouch?\n3. Do you have any **advance care plans, alerts, or a urology team** who follow you — and do you know if your cancer was fully removed or if you're under surveillance?\n4. Anything at all you can recall about **regular catheter changes, irrigation routines, or medications** you were told to take?\n\nPlease don't eat or drink anything for now, in case you need an operation.",
+  "first": "I don't know if anyone tried flushing the catheter or putting in a new one. I don't know about pouch stones or repeated infections, and I don't know about care plans or whether the cancer was fully removed. I only know it was getting harder to catheterize for weeks, so a catheter was left in to drain, and then it stopped draining last night. I don't remember anything about my medicines.",
+  "final": "I don't know if anyone tried flushing the catheter or putting in a new one. I don't know about pouch stones or repeated infections, and I don't know about care plans or whether the cancer was fully removed. I only know it was getting harder to catheterize for weeks, so a catheter was left in to drain, and then it stopped draining last night. I don't remember anything about my medicines.",
+  "p_first": 0.08,
+  "d_first": 0.06,
+  "p_final": 0.08
+ },
+ {
+  "arm": "A",
+  "case": "case_004",
+  "q": "Thank you. On examination the record I have is limited: at your **first** emergency visit you were breathing fast (tachypnoeic) but your oxygen level was normal, and breath sounds were reduced on the right — consistent with fluid (or air) in the right chest. I don't have the findings from your repeat visit yet.\n\nTo fill in the picture, could you tell me:\n\n1. **Has this happened before?** Is this your first right-sided effusion, or have you had repeated drains/pleural procedures on that side? And do you have any known diagnosis such as cancer (breast, lung, lymphoma, mesothelioma), tuberculosis, heart failure, liver or kidney disease, or a clotting problem?\n\n2. **What are you taking right now** — especially any blood thinners (warfarin, apixaban, rivaroxaban, heparin, aspirin/clopidogrel), and any recent new medicines? Also, any recent long travel, surgery, immobilisation, or hormone therapy?",
+  "first": "As far as I know, this is the first time on my right side. I've had two weeks of breathlessness and cough, and the first drain took out about 1.5 litres of milky fluid. I don't know of any other diagnoses. I've smoked a lot, about 45 pack-years. I don't remember my medicines or allergies, and no recent injury or chest surgery. Travel wasn't mentioned.",
+  "final": "As far as I know, this is the first time on my right side. I've had two weeks of breathlessness and cough, and the first drain took out about 1.5 litres of milky fluid. I don't know of any other diagnoses. I've smoked a lot, about 45 pack-years. I don't remember my medicines or allergies, and no recent injury or chest surgery. Travel wasn't mentioned.",
+  "p_first": 0.16,
+  "d_first": 0.08,
+  "p_final": 0.16
+ },
+ {
+  "arm": "A",
+  "case": "case_004",
+  "q": "The lab and imaging systems need a bit more of the history documented before they'll release results, so let me continue with a few more questions — please answer as best you can.\n\n1. **Constitutional symptoms:** any fever, drenching night sweats, or unintentional weight loss over the past few months? Any lumps in your neck, armpits, or groin?\n\n2. **Cough details:** is the cough dry or productive? Any blood in the sputum, hoarseness, or pain when breathing in?\n\n3. **Prior procedures/devices:** have you ever had a central venous line, pacemaker, or dialysis catheter in a neck or chest vein? Any abdominal or chest procedure, even years ago?\n\n4. **Between the two visits:** were you told the fluid had come back on a scan, and did you have a second drain or an indwelling pleural catheter placed?",
+  "first": "I have had a cough along with the breathlessness for about two weeks, but I don't remember details like whether it brings up phlegm or blood. Fever, night sweats, weight loss, lumps, hoarseness and pain on breathing weren't mentioned, so I don't know. I don't know of any lines, pacemaker or earlier procedures. I only know the first drain took out milky fluid and the breathlessness came back, so I returned.",
+  "final": "I have had a cough along with the breathlessness for about two weeks, but I don't remember details like whether it brings up phlegm or blood. Fever, night sweats, weight loss, lumps, hoarseness and pain on breathing weren't mentioned, so I don't know. I don't know of any lines, pacemaker or earlier procedures. I only know the first drain took out milky fluid and the breathlessness came back, so I returned.",
+  "p_first": 0.13,
+  "d_first": 0.13,
+  "p_final": 0.13
+ },
+ {
+  "arm": "A",
+  "case": "case_004",
+  "q": "Almost there — one more round of questions and then I'll release the tests.\n\n1. **Timing:** after the 1.5 L was drained, did your breathing improve immediately, and roughly how many days later did the breathlessness return? Was it gradual or sudden?\n\n2. **Risk context:** any known contact with tuberculosis, any history of heavy alcohol use or liver disease, any leg swelling, and do you have any record of a recent blood test showing high triglycerides?",
+  "first": "I only know that the breathing got a bit better after the drain, but then the breathlessness came back and I returned a few days later. I don't remember exactly how many days or whether it was sudden or gradual. Contact with tuberculosis, alcohol use, liver problems, leg swelling and blood test results for triglycerides weren't mentioned, so I don't know.",
+  "final": "I only know that the breathing got a bit better after the drain, but then the breathlessness came back and I returned a few days later. I don't remember exactly how many days or whether it was sudden or gradual. Contact with tuberculosis, alcohol use, liver problems, leg swelling and blood test results for triglycerides weren't mentioned, so I don't know.",
+  "p_first": 0.09,
+  "d_first": 0.1,
+  "p_final": 0.09
+ },
+ {
+  "arm": "A",
+  "case": "case_004",
+  "q": "The tests are now in the lab and radiology queue. Here's what I've asked for and why:\n\n- **Pleural fluid triglycerides, cholesterol and chylomicron testing** — this is the decisive test. Triglycerides >110 mg/dL with chylomicrons present confirms a true **chylothorax**; a high cholesterol with low triglycerides would mean **pseudochylothorax**; a high neutrophil count with positive Gram stain would mean **empyema**.\n- **Fluid cell count, protein, LDH, cytology and flow cytometry** — to look for lymphoma or another cancer, which is the commonest non-traumatic cause of chyle leak.\n- **TB testing (AFB smear, culture, PCR)** — TB can cause both chylous and cholesterol effusions.\n- **Chest X-ray and contrast CT chest** — to see how much fluid has come back, whether the lung re-expanded, and to look for enlarged lymph nodes or a mass compressing/invading the thoracic duct.\n- **Bloods** — count, albumin (chyle leaks deplete protein and lymphocytes), LDH, CRP, liver/kidney function and blood triglycerides.\n\nWhile we wait, a few things only you can tell me:\n\n1. Have you ever worked with **asbestos** (shipbuilding, insulation, construction, brake linings), or had any **radiation** to the chest?\n2. Is your breathlessness **worse lying flat**, and does it change with position or after eating a fatty meal?\n3. Any **family history** of lymphoma, lung cancer, or a condition causing cysts/collapsed lungs?",
+  "first": "I'm sorry, but I don't know about any of that. Working with asbestos, chest radiation, or a family history of lymphoma or lung cancer wasn't mentioned, so I can't say. I also don't know if my breathlessness is worse lying flat or after fatty meals. What I do know is the cough and breathlessness for two weeks, the milky fluid drained, and that I smoked a lot.",
+  "final": "I'm sorry, but I don't know about any of that. Working with asbestos, chest radiation, or a family history of lymphoma or lung cancer wasn't mentioned, so I can't say. I also don't know if my breathlessness is worse lying flat or after fatty meals. What I do know is the cough and breathlessness for two weeks, the milky fluid drained, and that I smoked a lot.",
+  "p_first": 0.07,
+  "d_first": 0.09,
+  "p_final": 0.07
+ },
+ {
+  "arm": "A",
+  "case": "case_004",
+  "q": "While those are arranged, let me explain the plan and ask two more things.\n\n**Why this matters practically:** every litre of chyle you lose carries away protein, fat, lymphocytes and electrolytes, so repeated drainage alone will deplete you. Management usually combines (a) **stopping the leak** — a fat-restricted diet with medium-chain triglycerides, or temporarily nothing by mouth with intravenous feeding, sometimes plus octreotide — and (b) **treating the underlying cause**, which for lymphoma or lung cancer is chemotherapy/radiotherapy, and for a persistent leak may need **thoracic duct embolisation or surgical ligation**, or an **indwelling pleural catheter/pleurodesis**.\n\n1. Have you noticed any **swelling or fullness of your face, neck or arms**, or distended neck veins? (That would suggest the enlarged nodes are also compressing the superior vena cava — an important, more urgent problem.)\n\n2. Do you have any **previous chest X-rays or CT scans** from before these two weeks, and any **old medical records or a medication list** we could obtain? Comparing with prior imaging is the single best way to tell whether these lymph nodes are new and rapidly growing (favouring lymphoma or aggressive lung cancer) or long-standing (favouring sarcoidosis or TB).",
+  "first": "I haven't noticed anything mentioned about swelling in my face, neck or arms, so I don't know about that. I also don't have any earlier chest X-rays, scans, old records or a medication list that I know of. All I can tell you is the two weeks of cough and breathlessness, the milky fluid drained, and my heavy smoking.",
+  "final": "I haven't noticed anything mentioned about swelling in my face, neck or arms, so I don't know about that. I also don't have any earlier chest X-rays, scans, old records or a medication list that I know of. All I can tell you is the two weeks of cough and breathlessness, the milky fluid drained, and my heavy smoking.",
+  "p_first": 0.15,
+  "d_first": 0.07,
+  "p_final": 0.15
+ },
+ {
+  "arm": "A",
+  "case": "case_005",
+  "q": "Thanks for telling me. I'd like to understand this better before we do any tests.\n\n**Two quick questions:**\n\n1. Did the breathlessness and cough come on suddenly or gradually over the week — and is the breathlessness present at rest, or only when you're moving around or climbing stairs?\n\n2. Have you had any fever, chills, chest pain, coughing up blood, wheeze, or unintentional weight loss or night sweats?",
+  "first": "I've had the shortness of breath and a dry cough, no phlegm, for about a week. I don't remember exactly how it started or whether it's there at rest versus moving around. As for fever, chills, chest pain, coughing up blood, wheeze, weight loss or night sweats, none of that was mentioned, so I can't say.",
+  "final": "I've had the shortness of breath and a dry cough, no phlegm, for about a week. I don't remember exactly how it started or whether it's there at rest versus moving around. As for fever, chills, chest pain, coughing up blood, wheeze, weight loss or night sweats, none of that was mentioned, so I can't say.",
+  "p_first": 0.37,
+  "d_first": 0.3,
+  "p_final": 0.37
+ },
+ {
+  "arm": "A",
+  "case": "case_005",
+  "q": "Thank you. On examination you're low on oxygen — you need 4 L/min of oxygen by nasal cannula to keep your saturations above 92% — and I can hear fine crackles through both lungs with reduced air entry at the left base. Your other observations are normal, and there are no enlarged glands, no liver or spleen enlargement, and no suspicious skin or eye lesion.\n\nThat combination — a week of breathlessness and dry cough with crackles and low oxygen — needs prompt investigation. Before I order tests, two more questions:\n\n1. **How old are you, and have you ever smoked or vaped?** Also, any exposures at work or home that stand out — dusts (asbestos, silica, bird/mould), chemicals, recent travel, or a new medication in the last few months (including antibiotics, chemotherapy, immunotherapy, amiodarone, nitrofurantoin, methotrexate)?\n\n2. **Any symptoms elsewhere, however minor** — joint pains or stiffness, rashes, mouth/eye dryness or ulcers, reflux or trouble swallowing, abdominal or urinary symptoms, blood in the urine or stool, and (if relevant) any recent pregnancy, miscarriage, or abnormal bleeding?",
+  "first": "I'm in my 60s, but I don't know my exact age to tell you. Smoking or vaping wasn't mentioned, so I can't say. I was around asbestos material in the past. I take baricitinib and methotrexate, and that routine hasn't changed. I have rheumatoid arthritis and a long-standing lung condition that's been stable for five years. Travel, other new medicines, or other symptoms weren't mentioned, so I don't know.",
+  "final": "I'm in my 60s, but I don't know my exact age to tell you. Smoking or vaping wasn't mentioned, so I can't say. I was around asbestos material in the past. I take baricitinib and methotrexate, and that routine hasn't changed. I have rheumatoid arthritis and a long-standing lung condition that's been stable for five years. Travel, other new medicines, or other symptoms weren't mentioned, so I don't know.",
+  "p_first": 0.15,
+  "d_first": 0.21,
+  "p_final": 0.15
+ },
+ {
+  "arm": "A",
+  "case": "case_005",
+  "q": "The system needs one more round of history before it will release the tests, so let me use that time on the two things that matter most for narrowing this down.\n\n1. **What is the \"long-standing lung condition\" you've had for five years?** Do you know its name — for example rheumatoid arthritis–related interstitial lung disease, pulmonary fibrosis, asbestosis, pleural plaques, bronchiectasis, or COPD/emphysema? And when was your last chest CT or lung function test?\n\n2. **Have you ever been given preventive antibiotics (such as co-trimoxazole/septra) or told you were screened for TB or hepatitis before starting baricitinib and methotrexate?** Also — in the last month or so, have you had any mouth ulcers, sore throat, shingles, a recent course of steroids, or a noticeable increase in joint pain or a steroid dose change?",
+  "first": "I know I have rheumatoid arthritis and a lung condition linked to it that's been stable for five years, but I don't remember the exact name beyond that. I don't know when my last chest scan or breathing test was. Preventive antibiotics, TB or hepatitis screening, mouth ulcers, sore throat, shingles, steroids, or joint pain changes weren't mentioned, so I can't say.",
+  "final": "I know I have rheumatoid arthritis and a lung condition linked to it that's been stable for five years, but I don't remember the exact name beyond that. I don't know when my last chest scan or breathing test was. Preventive antibiotics, TB or hepatitis screening, mouth ulcers, sore throat, shingles, steroids, or joint pain changes weren't mentioned, so I can't say.",
+  "p_first": 0.11,
+  "d_first": 0.12,
+  "p_final": 0.11
+ },
+ {
+  "arm": "A",
+  "case": "case_005",
+  "q": "Everything is ordered. Here's what I've asked for and why:\n\n- **Chest X-ray and high-resolution CT** — to see whether there's a new diffuse \"ground-glass\" pattern (typical of PJP or drug pneumonitis), a lobar consolidation (bacterial pneumonia), nodules/cavities (TB or fungal), a pleural effusion or pleural thickening (asbestos-related), or new worsening of your known RA-ILD.\n- **Bloods** — full blood count (a low lymphocyte count strongly favours PJP; a high white count favours bacterial infection), CRP/ESR and procalcitonin, **LDH** (classically raised in PJP), kidney and liver function, and **beta-D-glucan** (a fungal cell-wall marker that is positive in PJP).\n- **ECG, oxygen saturations and spirometry** — to check for heart strain or a cardiac cause and to document how much your lung function has fallen.\n- **Microbiology** — blood and sputum cultures, a ***Pneumocystis* PCR**, respiratory virus PCR, TB smear/culture, cryptococcal antigen, CMV PCR, and urinary antigens for Legionella and pneumococcus.\n\nWhile those are processing, a few things the tests can't tell me:\n\n1. **Any sick contacts** in the past month — family, friends, or a clinic/hospital visit? Any exposure to **birds, poultry, farm animals, hay, compost, potting mix, damp or mould** at home, or a hot tub/humidifier?\n2. **Has anyone around you had a cough or flu-like illness**, and did you have your flu and pneumococcal vaccines this year?",
+  "first": "I don't know about any sick contacts, or whether anyone around me has had a cough or flu-like illness. Exposure to birds, farm animals, mould, damp, humidifiers or hot tubs wasn't mentioned, and I don't remember about my flu or pneumonia vaccines. The only exposure I know of is asbestos material in the past.",
+  "final": "I don't know about any sick contacts, or whether anyone around me has had a cough or flu-like illness. Exposure to birds, farm animals, mould, damp, humidifiers or hot tubs wasn't mentioned, and I don't remember about my flu or pneumonia vaccines. The only exposure I know of is asbestos material in the past.",
+  "p_first": 0.13,
+  "d_first": 0.12,
+  "p_final": 0.13
+ },
+ {
+  "arm": "A",
+  "case": "case_005",
+  "q": "Here's what I've arranged and why:\n\n- **A needle drainage of the fluid (thoracentesis)** — to measure protein, LDH, glucose and pH (an exudate with a very low glucose would also fit RA pleuritis), to look for **malignant cells under the microscope (cytology)**, and to send for **bacterial and TB culture**.\n- **A pleural biopsy, ideally thoracoscopic (VATS)** — this is the definitive test. The tissue will be stained with a panel of markers (**calretinin, WT-1, CK5/6, D2-40** for mesothelioma versus **TTF-1, napsin A, Ber-EP4, MOC-31** for adenocarcinoma) to tell mesothelioma apart from a metastasis.\n- **An FDG PET-CT** — to see how active the pleural disease is, whether it has spread, and whether there's a separate primary cancer anywhere else.\n- **Serum mesothelin** — a supportive blood marker for mesothelioma.\n\nTwo more things while we wait:\n\n1. **What work did you do with asbestos** — for example shipbuilding, insulation, plumbing, roofing, brake linings, construction or demolition? Roughly how many years ago was that exposure, and was it heavy/direct or incidental? (Mesothelioma typically appears 20–50 years after exposure, and can follow quite brief exposure.)\n\n2. **Have you had any chest wall or shoulder pain, or pain that's worse lying flat**, and is there any **family history of mesothelioma or other cancers**?",
+  "first": "I only know I was around asbestos material in the past. What kind of work it was, how long ago, or how heavy the exposure was, I don't know. Chest wall or shoulder pain, pain lying flat, and family history of cancer weren't mentioned, so I can't say. I also wasn't told about any fluid, so I don't know about that.",
+  "final": "I only know I was around asbestos material in the past. What kind of work it was, how long ago, or how heavy the exposure was, I don't know. Chest wall or shoulder pain, pain lying flat, and family history of cancer weren't mentioned, so I can't say. I also wasn't told about any fluid, so I don't know about that.",
+  "p_first": 0.15,
+  "d_first": 0.09,
+  "p_final": 0.15
+ },
+ {
+  "arm": "A",
+  "case": "case_006",
+  "q": "Thank you. The examination finding is informative: **mild pigmentation over the knuckles (interphalangeal joints) and knees**. That pattern of darkening typically reflects high levels of ACTH, the pituitary hormone that drives the adrenal gland — which points toward the problem originating *in the adrenal glands themselves* (primary adrenal insufficiency), rather than the pituitary.\n\nThat combination — **bilateral adrenal nodules + primary adrenal insufficiency + hyperpigmentation** — narrows things considerably. My working list includes:\n\n- **Infectious adrenalitis** — tuberculosis or fungal infection (histoplasmosis), which classically produce enlarged, nodular adrenals that later fail\n- **Congenital adrenal hyperplasia** (e.g., 21-hydroxylase deficiency), where chronic ACTH overdrive causes nodular adrenal enlargement\n- **Infiltrative/neoplastic disease** — lymphoma or metastases replacing both glands\n- **Autoimmune adrenalitis** with coexisting incidental nodules\n- **Bilateral macronodular adrenal hyperplasia**\n\nTo separate these, I need a few more details:\n\n1. **Constitutional and infectious symptoms:** Have you had fever, night sweats, weight loss, chronic cough, or known contact with tuberculosis? Any travel to or residence in areas where TB or fungal infections are common?\n\n2. **History since childhood:** Were you ever told as a child or young adult that you had an adrenal problem, salt-wasting, ambiguous development, or early pubic hair? Any prior steroid treatment, or family history of adrenal, pituitary, or autoimmune disease?",
+  "first": "No fever, night sweats or cough. I haven't noticed those. About five years ago I was in the hospital for a spot on my chest imaging, but I wasn't told it was TB and I never got treated for it. I've never taken steroid medicine, and no hereditary diseases run in my family. I don't know about weight loss, travel, or childhood adrenal problems; those weren't mentioned.",
+  "final": "No fever, night sweats or cough. I haven't noticed those. About five years ago I was in the hospital for a spot on my chest imaging, but I wasn't told it was TB and I never got treated for it. I've never taken steroid medicine, and no hereditary diseases run in my family. I don't know about weight loss, travel, or childhood adrenal problems; those weren't mentioned.",
+  "p_first": 0.23,
+  "d_first": 0.07,
+  "p_final": 0.23
+ },
+ {
+  "arm": "A",
+  "case": "case_006",
+  "q": "That detail about the **chest imaging \"spot\" five years ago** is genuinely important — a solitary lung/mediastinal opacity that was never treated can represent an old granulomatous infection (including silent or healed tuberculosis or a fungal infection), and that is exactly the kind of process that can later involve the adrenal glands. It also raises the question of whether it was something else entirely.\n\nTwo more focused questions, and then I'll move to tests:\n\n1. **Day-to-day symptoms of low cortisol/aldosterone:** Do you have unusual tiredness or weakness, dizziness or light-headedness when you stand up, a craving for salty foods, nausea, poor appetite, abdominal discomfort, or unexplained weight loss? Have you ever had a blood pressure reading that was low, or an episode of collapse/severe illness?\n\n2. **Neurological and other glandular symptoms:** Any numbness, tingling, stiffness or weakness in the legs, balance problems, or bladder/bowel changes? Any thyroid problems, diabetes, vitiligo (pale patches of skin), or dry eyes/mouth? And do you still have any record of what that chest \"spot\" was?",
+  "first": "I don't remember anything about tiredness, dizziness, salt cravings, nausea or low blood pressure, since none of that was mentioned. The only thing I know is the mild darkening of my skin over my finger joints and knees. I haven't been told about thyroid problems, diabetes, vitiligo or nerve symptoms. I don't have any record of what the chest spot was, only that I was hospitalized for it.",
+  "final": "I don't remember anything about tiredness, dizziness, salt cravings, nausea or low blood pressure, since none of that was mentioned. The only thing I know is the mild darkening of my skin over my finger joints and knees. I haven't been told about thyroid problems, diabetes, vitiligo or nerve symptoms. I don't have any record of what the chest spot was, only that I was hospitalized for it.",
+  "p_first": 0.11,
+  "d_first": 0.19,
+  "p_final": 0.11
+ },
+ {
+  "arm": "A",
+  "case": "case_006",
+  "q": "The system needs one more round of history before I can order tests, so let me use it productively — these details genuinely change the differential.\n\n1. **Your age and sex**, and roughly how long ago the adrenal nodules were identified? These matter a lot: for example, an X-linked adrenal disorder (adrenoleukodystrophy) is only relevant in males, and the likelihood of metastatic or lymphomatous adrenal disease rises substantially with age.\n\n2. **Any medications or supplements at all** — including over-the-counter drugs, herbal remedies, or anything containing steroids (some joint/pain injections, skin creams, or \"supplements\" contain hidden steroids that suppress the adrenal axis). Also: any **allergies**, any **HIV testing** in the past, and any **bleeding disorder or blood-thinner use** (relevant because bilateral adrenal haemorrhage is another cause of nodular adrenals with failure)?",
+  "first": "I'm a 38-year-old woman. I don't know how long ago the nodules were found; that wasn't mentioned. I've never taken steroid medicine. I don't know about other medications, supplements, allergies, HIV testing, or bleeding problems or blood thinners, since none of that was mentioned to me.",
+  "final": "I'm a 38-year-old woman. I don't know how long ago the nodules were found; that wasn't mentioned. I've never taken steroid medicine. I don't know about other medications, supplements, allergies, HIV testing, or bleeding problems or blood thinners, since none of that was mentioned to me.",
+  "p_first": 0.27,
+  "d_first": 0.12,
+  "p_final": 0.27
+ },
+ {
+  "arm": "A",
+  "case": "case_006",
+  "q": "Your tests are now ordered. Here's what I've asked for and what each will settle:\n\n- **Morning cortisol + ACTH** — confirms whether the failure is in the adrenal gland (low cortisol with high ACTH) versus the pituitary.\n- **Short Synacthen (ACTH stimulation) test** — the definitive dynamic proof of adrenal reserve.\n- **Aldosterone, renin, sodium, potassium, postural blood pressure** — tells me whether the mineralocorticoid layer is also destroyed, which is typical of infectious/autoimmune adrenalitis but *not* of many other causes.\n- **17-hydroxyprogesterone and DHEA-S** — screens for congenital adrenal hyperplasia, which can cause bilateral nodular adrenals with ACTH-driven pigmentation.\n- **21-hydroxylase antibody** — the marker of autoimmune Addison's disease.\n- **Adrenal CT** — the single most discriminating test here. Tuberculous/fungal adrenals are typically **enlarged with calcification and central necrosis**; autoimmune adrenals are **small and atrophic**; lymphoma and metastases look different again.\n- **Chest X-ray, IGRA (TB blood test), sputum AFB, Histoplasma antigen** — to chase down that five-year-old chest \"spot.\"\n- **Plasma free metanephrines** — a safety check, since bilateral adrenal masses must never be biopsied without excluding phaeochromocytoma.\n\nWhile these process, two things the tests cannot tell me:\n\n1. **Geography and exposures:** Where have you lived or travelled — including any time in countries where tuberculosis is common, or in river valleys (e.g., Ohio/Mississippi) where histoplasmosis is endemic? Any contact with someone with a chronic cough or known TB? Any exposure to birds, bats, caves, chicken coops, or soil/dust through farming or construction work?\n\n2. **Hormonal/reproductive history:** Have your periods been regular? Any difficulty conceiving, excess facial/body hair, or acne? And any family history of autoimmune disease (thyroid, type 1 diabetes, Addison's, coeliac)?",
+  "first": "I don't know about where I've lived or travelled, or any contact with people with a cough or exposure to birds, bats or dust; none of that was mentioned. I also don't know about my periods, trouble conceiving, hair or acne, or family autoimmune illness. All I can say is that no hereditary diseases run in my family, and I've never taken steroids.",
+  "final": "I don't know about where I've lived or travelled, or any contact with people with a cough or exposure to birds, bats or dust; none of that was mentioned. I also don't know about my periods, trouble conceiving, hair or acne, or family autoimmune illness. All I can say is that no hereditary diseases run in my family, and I've never taken steroids.",
+  "p_first": 0.12,
+  "d_first": 0.08,
+  "p_final": 0.12
+ },
+ {
+  "arm": "A",
+  "case": "case_007",
+  "q": "Thank you for telling me this. I want to understand your symptoms clearly before we do any tests, so let me ask a couple of focused questions first.\n\n**Two things I need to clarify right away:**\n\n1. **About the stools** — when you say \"dark,\" do you mean **black, tarry and sticky with a strong smell** (like road tar), or **dark brown but normal in consistency**? And separately, have your **urine** and stools become unusually **pale or clay-coloured**? This distinction matters a great deal — black tarry stool points to bleeding in the stomach or upper gut, whereas pale stool points to a blocked bile duct.\n\n2. **About the jaundice** — how quickly did the yellowing come on (days, weeks, months)? And have you noticed **itching**, **pain under your right ribs**, **fever or chills**, or **unintentional weight loss**?\n\nAlso, please tell me: are you feeling **so lightheaded that you're close to fainting**, or breathless on exertion? If you are, that changes how urgently we need to act.",
+  "first": "It's been about four days of my skin and eyes turning more yellow, and my stools have been dark. I can't say if they're tarry or sticky, and I don't remember about my urine. I've had no belly pain, no fever. I've felt very tired and lightheaded. I don't know about itching, weight loss, or breathlessness; nobody mentioned those.",
+  "final": "It's been about four days of my skin and eyes turning more yellow, and my stools have been dark. I can't say if they're tarry or sticky, and I don't remember about my urine. I've had no belly pain, no fever. I've felt very tired and lightheaded. I don't know about itching, weight loss, or breathlessness; nobody mentioned those.",
+  "p_first": 0.26,
+  "d_first": 0.06,
+  "p_final": 0.26
+ },
+ {
+  "arm": "A",
+  "case": "case_007",
+  "q": "Thank you. Here's what I found on examining you:\n\n**Examination findings:** You are **afebrile** (no fever), but you are **noticeably pale as well as deeply jaundiced**. Your heart rate is 92/min, breathing rate 20/min, and your systolic blood pressure is 115 mmHg — all stable for now, though your pulse is at the upper end of normal.\n\n**Why this matters:** The combination of **pallor (anaemia) + jaundice + no fever + no abdominal pain** is the classic picture of **haemolysis** — your red blood cells being broken down faster than your body can replace them. When red cells burst, they release haemoglobin, which is converted to bilirubin: that causes the yellowing, and the excess pigment can darken the stool and urine. The anaemia explains your tiredness and lightheadedness.\n\nI still want to consider liver disease and bleeding from the gut, so my next step will be blood tests (full blood count, bilirubin, liver enzymes, a haemolysis screen and a blood film), a urine test, and possibly a scan of your abdomen.\n\n**Before I order those, two more questions:**\n\n1. Please confirm your **age**, and tell me about **any medicines, antibiotics, painkillers, herbal products or supplements** you've taken in the last few weeks — and your **alcohol** intake.\n\n2. Have you noticed your **urine being dark (like tea or cola)**, any **bruising or bleeding** (gums, nose), any **swelling or fullness in the left side of your abdomen**, or any **joint pains, rashes or mouth ulcers**? And have you ever had a **similar episode** before?",
+  "first": "I'm 69. About two weeks ago I got my first dose of pembrolizumab, the cancer treatment through a drip, for my lung cancer. I don't remember other medicines, supplements or my alcohol use. I don't know about dark urine, bruising, bleeding, swelling, joint pains, rashes, mouth ulcers or any earlier similar episode. I've had my gallbladder removed, and I have gastritis and high cholesterol.",
+  "final": "I'm 69. About two weeks ago I got my first dose of pembrolizumab, the cancer treatment through a drip, for my lung cancer. I don't remember other medicines, supplements or my alcohol use. I don't know about dark urine, bruising, bleeding, swelling, joint pains, rashes, mouth ulcers or any earlier similar episode. I've had my gallbladder removed, and I have gastritis and high cholesterol.",
+  "p_first": 0.18,
+  "d_first": 0.06,
+  "p_final": 0.18
+ },
+ {
+  "arm": "A",
+  "case": "case_007",
+  "q": "I've explained what I want to order — the tests aren't available to me just yet, so let me complete your history properly first. Two more focused questions:\n\n**1. About your cancer treatment:** What type and stage of lung cancer do you have, and is pembrolizumab the **only** treatment you're receiving, or are you also on **chemotherapy, radiotherapy, or a steroid (like prednisone/dexamethasone)**? Because you have gastritis, are you taking a **stomach-protecting drug** (omeprazole, pantoprazole, etc.) or any **anti-inflammatory painkiller**?\n\n**2. About other possible immune side effects:** Since the drip, have you had any **diarrhoea or loose stools, abdominal cramps, skin rash or itching, mouth or eye dryness, palpitations, breathlessness on exertion, or unusual cold intolerance/fatigue**? And have you ever had a **blood transfusion**, or been told you have a **thyroid problem or any autoimmune condition**?",
+  "first": "I have advanced lung adenocarcinoma that has spread to my adrenal gland and below the diaphragm. I was told the tumour has high PD-L1. Pembrolizumab is the treatment I know about; I don't remember chemo, radiotherapy or steroids. I don't know about stomach tablets or painkillers. I don't know about diarrhoea, rash, dryness, palpitations, transfusions, thyroid or autoimmune problems. I'm a former smoker.",
+  "final": "I have advanced lung adenocarcinoma that has spread to my adrenal gland and below the diaphragm. I was told the tumour has high PD-L1. Pembrolizumab is the treatment I know about; I don't remember chemo, radiotherapy or steroids. I don't know about stomach tablets or painkillers. I don't know about diarrhoea, rash, dryness, palpitations, transfusions, thyroid or autoimmune problems. I'm a former smoker.",
+  "p_first": 0.13,
+  "d_first": 0.08,
+  "p_final": 0.13
+ },
+ {
+  "arm": "A",
+  "case": "case_007",
+  "q": "All the tests are now ordered — bloods, urine, the abdominal ultrasound, the viral screens, and the blood film. While we wait for those to come back, let me ask you a few things that no test can tell me:\n\n**1. The exact timeline:** You had the pembrolizumab drip about two weeks ago. Did the tiredness and lightheadedness start **before** the yellowing appeared, or did everything come on together? And have you had **more than one dose** of pembrolizumab, or only the single one?\n\n**2. How you're functioning day to day:** Are you managing to walk around, or do you feel faint when you stand up? Have you had any **falls, blackouts, chest pain, or a racing heartbeat**? Have you been **eating and drinking normally**, and has your **weight** changed?\n\n**3. Exposures:** Any recent **infection, antibiotic course, or illness** in the weeks before the jaundice? Any **new foods, herbal teas, or over-the-counter products**? Any contact with someone who was jaundiced?\n\nPlease also, if you can, **look at your next bowel movement in good light** and tell me whether it is truly **black and tarry**, or **dark brown/pale**. That single observation would help me distinguish bleeding from haemolysis.",
+  "first": "I only know about the one pembrolizumab drip two weeks ago. I can't say whether the tiredness or the yellowing started first; I just know it's been about four days of yellowing and dark stools, with tiredness and lightheadedness. I don't remember about falls, chest pain, racing heart, eating, weight, recent infections, antibiotics, new foods or contacts. I haven't had belly pain or fever. I can't tell you about my next bowel movement yet.",
+  "final": "I only know about the one pembrolizumab drip two weeks ago. I can't say whether the tiredness or the yellowing started first; I just know it's been about four days of yellowing and dark stools, with tiredness and lightheadedness. I don't remember about falls, chest pain, racing heart, eating, weight, recent infections, antibiotics, new foods or contacts. I haven't had belly pain or fever. I can't tell you about my next bowel movement yet.",
+  "p_first": 0.13,
+  "d_first": 0.06,
+  "p_final": 0.13
+ },
+ {
+  "arm": "A",
+  "case": "case_008",
+  "q": "I'm sorry you're dealing with this — the combination of sudden mid-back pain between the shoulder blades, then worsening leg weakness and loss of bladder/bowel control, is a **medical emergency** that suggests something is affecting your spinal cord. I'm going to move quickly but I need a few key details first.\n\n**Two urgent questions:**\n\n1. **Timing:** How long ago did the pain between your shoulder blades start, and how rapidly did the leg weakness and incontinence follow — over minutes, hours, or days?\n\n2. **Red-flag history:** Do you have any fever or chills? And are you taking any blood thinners (e.g., warfarin, apixaban, clopidogrel), or have you had a recent spinal injection, lumbar puncture, epidural, back injury, or surgery?\n\nPlease also tell me if you have any history of cancer, IV drug use, diabetes, or a recent infection — and whether you've noticed a \"band-like\" tightness around your chest or abdomen, or numbness with a clear level below which sensation is lost.",
+  "first": "The pain between my shoulder blades started about two days ago. It doesn't spread anywhere. After that my legs got weaker until I couldn't stand, and now I've lost control of my bladder and bowels. I've had no fever, no injury, no heavy lifting, and I'm not on blood thinners or any other medicines. I also have numbness around my private area. I don't know about the timing in hours, or about a band-like feeling.",
+  "final": "The pain between my shoulder blades started about two days ago. It doesn't spread anywhere. After that my legs got weaker until I couldn't stand, and now I've lost control of my bladder and bowels. I've had no fever, no injury, no heavy lifting, and I'm not on blood thinners or any other medicines. I also have numbness around my private area. I don't know about the timing in hours, or about a band-like feeling.",
+  "p_first": 0.11,
+  "d_first": 0.05,
+  "p_final": 0.11
+ },
+ {
+  "arm": "A",
+  "case": "case_008",
+  "q": "Understood — I'll hold those orders for a moment and complete the history first, because the answers will directly change which tests I prioritize.\n\n**Two focused questions:**\n\n1. **Infection/inflammation clues:** In the past 2–4 weeks, have you had any fever, sore throat, cough, urinary infection, skin boil or wound, dental work, or a vaccination? And do you use intravenous drugs, or have you ever been told you have a heart murmur or valve problem?\n\n2. **Cancer/systemic clues:** Do you have any history of cancer, or recent unexplained weight loss, drenching night sweats, or a persistent cough? Also, how old are you, and is there any chance of pregnancy or a bleeding disorder in your family?",
+  "first": "I'm 23 years old. I've had no fever, no recent vaccination, and no chronic illness. I wasn't told about any other infections, drug use, heart problems, cancer, weight loss or night sweats, and I don't know about any family bleeding problems. I'm male, so pregnancy isn't a concern. Mostly it's just the back pain, then my legs giving out and losing control.",
+  "final": "I'm 23 years old. I've had no fever, no recent vaccination, and no chronic illness. I wasn't told about any other infections, drug use, heart problems, cancer, weight loss or night sweats, and I don't know about any family bleeding problems. I'm male, so pregnancy isn't a concern. Mostly it's just the back pain, then my legs giving out and losing control.",
+  "p_first": 0.4,
+  "d_first": 0.11,
+  "p_final": 0.4
+ },
+ {
+  "arm": "A",
+  "case": "case_008",
+  "q": "I need one more exchange before the system will release the investigations to me — so let me use it well.\n\n**Please tell me:**\n\n1. **Onset pattern:** Did the weakness strike at a single identifiable moment (for example during exertion, straining, coughing, or a sudden \"snap\" of pain), or did it worsen steadily hour by hour over the two days?\n\n2. **Sensory level:** Run your hand from your chest down — is there a clear \"line\" or \"band\" on your trunk below which feeling is absent or altered? Roughly where is it (nipples, lower ribs, belly button, groin)?\n\n3. **Any of these:** blurred or painful vision, severe hiccups/nausea, prior similar attacks, recent chiropractic manipulation, or a sudden tearing pain into the abdomen?\n\nOnce you answer, I'll immediately order the **urgent contrast MRI of the whole spine**, plus blood work (CBC, CRP/ESR, clotting, B12, autoimmune and infection serology), blood cultures, and a lumbar puncture for CSF analysis — those are the tests that separate a surgical compression from an inflammatory myelitis.",
+  "first": "The pain started two days ago between my shoulder blades, and then my legs got weaker until I couldn't stand. I don't remember a single moment or snap, and I don't know how fast it changed hour by hour. I don't know about a line or band on my chest or belly. I only know about numbness around my private area. Nothing was mentioned about vision problems, hiccups, earlier attacks, or chiropractic treatment.",
+  "final": "The pain started two days ago between my shoulder blades, and then my legs got weaker until I couldn't stand. I don't remember a single moment or snap, and I don't know how fast it changed hour by hour. I don't know about a line or band on my chest or belly. I only know about numbness around my private area. Nothing was mentioned about vision problems, hiccups, earlier attacks, or chiropractic treatment.",
+  "p_first": 0.1,
+  "d_first": 0.07,
+  "p_final": 0.1
+ },
+ {
+  "arm": "A",
+  "case": "case_008",
+  "q": "All four orders are in. Here's what's happening and what I need from you while we wait:\n\n**What I've ordered and why:**\n- **MRI of the whole spine with contrast** — the decisive test. It will show whether something is *pressing* on your cord (pus from an epidural abscess, blood from a hematoma, or a tumor) or whether the cord itself is *inflamed or infarcted* (transverse myelitis, spinal cord stroke). This distinction determines whether you need emergency surgery or high-dose steroids.\n- **Blood tests** — white cell count, CRP and ESR (infection/inflammation), clotting studies (bleeding risk), B12, autoimmune markers, and antibodies for neuromyelitis optica/MOG, which cause severe inflammatory cord attacks in young people.\n- **Blood cultures** — to catch a bloodstream infection even without fever.\n- **Lumbar puncture** — CSF cell count, protein, glucose, and oligoclonal bands to confirm inflammation and exclude infection. *(Note: I will only let this proceed after the MRI confirms there is no mass lesion, and after your clotting results are back — doing a tap above a block or with a bleeding tendency can be dangerous.)*\n\n**Meanwhile, you should already have a urinary catheter in place** to protect your bladder and kidneys, and be on clot-prevention measures, since your legs are not moving.\n\n**A few things no test can tell me — please answer:**\n\n1. **Any substance or medication use at all**, including over-the-counter painkillers, supplements, steroids, or recreational drugs (especially cocaine or amphetamines, which can cause spinal cord strokes in young people)? Any alcohol use?\n\n2. **Exposures and history:** Any recent long-haul travel, tick bites, unpasteurized dairy, contact with someone with tuberculosis, or travel abroad? Any family history of multiple sclerosis, autoimmune disease, or bleeding disorders?\n\n3. **Timeline detail:** Were you completely well and active two days ago, or had you felt unwell, run down, or had any back soreness in the week before the pain began?",
+  "first": "I'm not on any medicines, and I was told nothing about drug or alcohol use, supplements or steroids, so I can't say more on that. I don't know about travel, tick bites, or family history. I only remember the back pain starting two days ago, then my legs weakening. I don't remember feeling unwell or having back soreness before that.",
+  "final": "I'm not on any medicines, and I was told nothing about drug or alcohol use, supplements or steroids, so I can't say more on that. I don't know about travel, tick bites, or family history. I only remember the back pain starting two days ago, then my legs weakening. I don't remember feeling unwell or having back soreness before that.",
+  "p_first": 0.19,
+  "d_first": 0.16,
+  "p_final": 0.19
+ },
+ {
+  "arm": "A",
+  "case": "case_009",
+  "q": "I'm sorry you're going through this — let me get a clear picture before we start testing.\n\nA few quick questions to begin:\n\n1. **How long** has the pain been building up, and is it constant or does it come in waves (cramping, tightening)?\n2. **Have you been passing stool and wind normally** over the last few days — or has that stopped or changed?\n\nAlso helpful if you can tell me: any vomiting, fever, or previous abdominal surgery?",
+  "first": "The pain has been getting steadily worse, and my belly feels swollen and bloated, all over, with nausea. I don't remember exactly how long it's been or whether it comes in waves. I'm not sure about my bowel movements or passing wind, and I don't recall vomiting or fever. I had a procedure a year ago to remove a gallstone and have a stent in place.",
+  "final": "The pain has been getting steadily worse, and my belly feels swollen and bloated, all over, with nausea. I don't remember exactly how long it's been or whether it comes in waves. I'm not sure about my bowel movements or passing wind, and I don't recall vomiting or fever. I had a procedure a year ago to remove a gallstone and have a stent in place.",
+  "p_first": 0.19,
+  "d_first": 0.04,
+  "p_final": 0.19
+ },
+ {
+  "arm": "A",
+  "case": "case_009",
+  "q": "The examination shows **signs of peritoneal irritation** — meaning the lining of your abdomen is inflamed. That's a finding I take seriously, and it means we need to move quickly to imaging and blood tests.\n\nTwo focused questions before I order them:\n\n1. Have you noticed any **yellowing of your eyes or skin, dark urine, pale/clay-coloured stools, or episodes of shivering and fever**?\n2. Do you know **what kind of stent** was placed (plastic or metal), and were you ever told it needed to be removed or changed? Was there a planned follow-up that didn't happen?",
+  "first": "I haven't noticed anything about yellow eyes or skin, dark urine, pale stools or shivering that I can recall. As for the stent, I know it's a plastic one, about 10 cm long, left in after the stone was removed a year ago. I don't remember being told it needed to be removed or changed, or about any follow-up.",
+  "final": "I haven't noticed anything about yellow eyes or skin, dark urine, pale stools or shivering that I can recall. As for the stent, I know it's a plastic one, about 10 cm long, left in after the stone was removed a year ago. I don't remember being told it needed to be removed or changed, or about any follow-up.",
+  "p_first": 0.35,
+  "d_first": 0.07,
+  "p_final": 0.35
+ },
+ {
+  "arm": "A",
+  "case": "case_009",
+  "q": "The tests are queued — I need one more piece of history before they can be released.\n\nWhile we wait, please tell me:\n\n1. **What medicines are you taking right now** (including blood thinners, painkillers, or anything for the gallstones), and do you have any **drug allergies**?\n2. Have you had **any other medical conditions or surgeries** — for example diabetes, inflammatory bowel disease, or a hernia — and has anything like this pain happened before?",
+  "first": "I don't remember my full medicine list, so I can't tell you what I take, and I don't know about any allergies. I do have type 2 diabetes, high blood pressure, an irregular heartbeat called atrial fibrillation, and COPD. The only procedure I remember is the one a year ago for the gallstone, with the stent left in. I don't recall this pain happening before.",
+  "final": "I don't remember my full medicine list, so I can't tell you what I take, and I don't know about any allergies. I do have type 2 diabetes, high blood pressure, an irregular heartbeat called atrial fibrillation, and COPD. The only procedure I remember is the one a year ago for the gallstone, with the stent left in. I don't recall this pain happening before.",
+  "p_first": 0.5,
+  "d_first": 0.05,
+  "p_final": 0.5
+ },
+ {
+  "arm": "A",
+  "case": "case_009",
+  "q": "Everything is ordered — a CT scan of your abdomen and pelvis with contrast (which will show the stent, any free air from a perforation, and the blood supply to your bowel), blood tests including a lactate level and clotting studies, blood cultures, and an ECG.\n\nWhile those are running, a few things the tests can't tell me:\n\n1. **Are you on a blood thinner** for the atrial fibrillation (e.g. warfarin, apixaban, rivaroxaban)? If you're not sure, have you ever missed doses or run out?\n2. **When did this episode really start** — hours, days, or weeks ago? And did the pain begin suddenly and severely, or creep up gradually?\n3. Do you drink alcohol or smoke, and have you had any **unintentional weight loss** or a change in appetite?",
+  "first": "I'm not sure if I'm on a blood thinner, since I can't remember my medicine list. I don't remember when this started or whether it came on suddenly, only that it has been getting steadily worse. I don't know about alcohol, smoking, weight loss or appetite changes, since that wasn't mentioned to me.",
+  "final": "I'm not sure if I'm on a blood thinner, since I can't remember my medicine list. I don't remember when this started or whether it came on suddenly, only that it has been getting steadily worse. I don't know about alcohol, smoking, weight loss or appetite changes, since that wasn't mentioned to me.",
+  "p_first": 0.15,
+  "d_first": 0.09,
+  "p_final": 0.15
+ },
+ {
+  "arm": "A",
+  "case": "case_010",
+  "q": "I'm sorry you're dealing with this — left upper abdominal pain with vomiting has several possible causes, and I'd like to narrow things down carefully before ordering anything.\n\nFirst two questions:\n\n1. **Timing and character:** When did this pain start, and how has it changed? Is it constant or does it come in waves? How severe is it (0–10)? Does it travel anywhere — to your back, left shoulder, or down into your groin?\n\n2. **Vomiting and triggers:** How many times have you vomited, and what does it look like (food, green/yellow bile, blood or coffee-ground material)? Is the pain worse after eating or drinking, and are you able to keep any fluids down?",
+  "first": "The pain started mildly in my left upper belly about eight days ago. I was treated for a stomach bug, but it didn't get better, and now it's worse with nausea and vomiting. I don't remember how bad it is on a scale, whether it spreads anywhere, or how many times I've vomited. I'm not sure about what it looks like or whether eating changes it.",
+  "final": "The pain started mildly in my left upper belly about eight days ago. I was treated for a stomach bug, but it didn't get better, and now it's worse with nausea and vomiting. I don't remember how bad it is on a scale, whether it spreads anywhere, or how many times I've vomited. I'm not sure about what it looks like or whether eating changes it.",
+  "p_first": 0.06,
+  "d_first": 0.05,
+  "p_final": 0.06
+ },
+ {
+  "arm": "A",
+  "case": "case_010",
+  "q": "Thank you. Here's what I found on examination:\n\n- Your **vital signs are stable** — blood pressure 107/77, pulse 89, and you have **no fever** (36.7°C).\n- Your abdomen is **tender in the left upper area**, but there's no guarding or rigidity (no sign of a surgical emergency like peritonitis), and the lower abdomen is not tender.\n- The pelvic examination was normal — no bleeding, no adnexal mass, no cervical tenderness.\n\nBecause your assessment included a pelvic exam, I want to be sure I'm not missing a gynaecological or pregnancy-related cause, and I need a couple of details to target the right tests:\n\n1. **When was the first day of your last menstrual period, and is there any chance you could be pregnant?** Have you had any vaginal bleeding or spotting, or pain in your shoulder tip?\n\n2. **Do you drink alcohol, have you ever been told you have gallstones, and have you had any surgery or a blood clot before?** Also, any unintentional weight loss or night sweats over the past few months?",
+  "first": "I've missed my period and my home urine pregnancy test was positive. By my dates I'm about five weeks along, and this is my first pregnancy. I don't remember the exact date of my last period. I don't know about any bleeding or shoulder pain. I don't drink alcohol or smoke, and I've never had any surgeries or serious medical problems. I don't know about gallstones, clots, or weight loss.",
+  "final": "I've missed my period and my home urine pregnancy test was positive. By my dates I'm about five weeks along, and this is my first pregnancy. I don't remember the exact date of my last period. I don't know about any bleeding or shoulder pain. I don't drink alcohol or smoke, and I've never had any surgeries or serious medical problems. I don't know about gallstones, clots, or weight loss.",
+  "p_first": 0.31,
+  "d_first": 0.04,
+  "p_final": 0.31
+ },
+ {
+  "arm": "A",
+  "case": "case_010",
+  "q": "The tests aren't available to order just yet — I need to complete your history first, so let me ask a few more questions while that's arranged. These details genuinely help me interpret the results:\n\n1. **Pain pattern and bleeding:** Is the left upper abdominal pain sharp, cramping, or a constant ache? Have you had any vaginal bleeding or brown discharge at all since the pain began, any pain with passing urine, or any feeling of faintness, dizziness, or pain at the tip of your left shoulder (especially when lying flat)?\n\n2. **Pregnancy and vomiting details:** How many times a day are you vomiting now, and are you managing to keep any fluids down? Was this pregnancy spontaneous or did you have any fertility treatment? Have you had a scan yet in this pregnancy, any previous ectopic pregnancy, pelvic infection, or an IUD/coil in place? And have you taken any medicines for the \"stomach bug\" — antibiotics, anti-sickness tablets, or painkillers?",
+  "first": "I'm sorry, I can't say what type of pain it is, and I don't know about any bleeding, burning with urine, dizziness, or shoulder pain. I don't remember how often I'm vomiting or whether I keep fluids down. I don't know about fertility treatment, a scan, or a coil. I've never had pelvic infection. I don't know what medicines I took for the stomach bug.",
+  "final": "I'm sorry, I can't say what type of pain it is, and I don't know about any bleeding, burning with urine, dizziness, or shoulder pain. I don't remember how often I'm vomiting or whether I keep fluids down. I don't know about fertility treatment, a scan, or a coil. I've never had pelvic infection. I don't know what medicines I took for the stomach bug.",
+  "p_first": 0.44,
+  "d_first": 0.07,
+  "p_final": 0.44
+ },
+ {
+  "arm": "A",
+  "case": "case_010",
+  "q": "All the tests are ordered and the results should come back shortly. While we wait, let me explain what I'm looking for and ask a few things the tests can't tell me.\n\n**What I'm worried about:** In early pregnancy, one-sided abdominal pain that gets steadily worse over days is an **ectopic pregnancy** until proven otherwise — a pregnancy that has implanted outside the womb. Most ectopics are in a fallopian tube and cause *lower* abdominal pain, but your pain is high on the left, which is unusual. That makes me think about rarer possibilities: an ectopic implanted somewhere atypical (such as the spleen or upper abdomen), a small amount of internal bleeding irritating the diaphragm, or a completely separate cause like a kidney stone, kidney infection, pancreas inflammation, or a stomach ulcer. It's also possible the vomiting is severe pregnancy sickness and the pain is something else entirely.\n\n**Please tell me, while we wait:**\n\n1. **Timeline:** You were \"treated for a stomach bug\" — was that at a clinic or emergency department, and did anyone do a pregnancy test or a scan at that time? Did the treatment help at all, even briefly?\n\n2. **Background:** Do you have any allergies to medicines? Is there any family history of blood clots, bleeding disorders, or pregnancy complications such as ectopic pregnancy or miscarriage? And roughly how much weight have you lost, if any, over these eight days?\n\n**Important safety advice right now:** If you develop sudden severe pain, feel faint or dizzy, have pain at the tip of your shoulder, or notice any vaginal bleeding, tell me or a nurse immediately — those can signal internal bleeding and need urgent action.",
+  "first": "I'm not sure where I was treated for the stomach bug, or whether anyone did a pregnancy test or scan then. I only know it didn't get better and has gotten worse. I don't know about any allergies, family history, or how much weight I've lost. I'm just worried because the pain keeps getting worse and I'm being sick.",
+  "final": "I'm not sure where I was treated for the stomach bug, or whether anyone did a pregnancy test or scan then. I only know it didn't get better and has gotten worse. I don't know about any allergies, family history, or how much weight I've lost. I'm just worried because the pain keeps getting worse and I'm being sick.",
+  "p_first": 0.07,
+  "d_first": 0.03,
+  "p_final": 0.07
+ },
+ {
+  "arm": "A",
+  "case": "case_010",
+  "q": "I've arranged imaging of your whole abdomen — an ultrasound, a CT scan, and an MRI — plus a quick bedside scan to check for any free fluid (blood) in your abdomen. The team will choose whichever is most appropriate and fastest; I'll explain the trade-offs once I see what's available.\n\n**Why this matters:** An ectopic pregnancy cannot continue and can be life-threatening if it ruptures and bleeds internally. Finding exactly where it is determines whether you need an operation, a medicine called methotrexate, or close monitoring.\n\n**While we wait, two things:**\n\n1. **Right now, at this moment** — do you feel light-headed, dizzy, breathless, or faint, especially when you sit up or stand? Is the pain suddenly sharper than it has been, or is there any new pain at the tip of your left shoulder? These are the warning signs of internal bleeding and I need to know about them immediately.\n\n2. **Practical:** Is there someone with you, or a family member we can contact? If an operation becomes necessary you'll need support, and we'll also want to discuss your blood group and whether you need an anti-D injection.\n\nPlease don't eat or drink anything for now, in case you need an urgent procedure.",
+  "first": "I don't know about feeling faint or dizzy right now, and I can't say if the pain has suddenly gotten sharper or if there's any shoulder pain. I just know the pain in my left upper belly keeps getting worse and I'm being sick. I don't know if anyone is here with me. I'll hold off eating or drinking like you said.",
+  "final": "I don't know about feeling faint or dizzy right now, and I can't say if the pain has suddenly gotten sharper or if there's any shoulder pain. I just know the pain in my left upper belly keeps getting worse and I'm being sick. I don't know if anyone is here with me. I'll hold off eating or drinking like you said.",
+  "p_first": 0.14,
+  "d_first": 0.05,
+  "p_final": 0.14
+ },
+ {
+  "arm": "A",
+  "case": "case_010",
+  "q": "I've asked the surgical team for an urgent **diagnostic laparoscopy** — a keyhole camera procedure to look directly inside your abdomen, confirm exactly where the pregnancy is attached, and treat it at the same time.\n\n**What needs to happen now, and why:**\n- You must **remain nil by mouth** (nothing to eat or drink), as you've been doing.\n- We need **two large IV cannulas, bloods crossmatched** so blood is ready if needed, and your **blood group and Rhesus status** checked — if you are Rhesus negative you'll need an **anti-D injection**.\n- **Methotrexate is not appropriate here** as first-line: with a mass this large, this vascular, and attached to the spleen, the risk of catastrophic bleeding is too high. Surgery is the safer route.\n- Please **stay in bed and press the call bell immediately** if the pain suddenly worsens, you feel faint, or you notice shoulder-tip pain.\n\n**Two questions for you:**\n\n1. Do you understand what I've explained — that this pregnancy cannot continue and is not viable, and that it is putting your life at risk? Do you have any questions about the operation, or about your chances of a healthy pregnancy in the future?\n\n2. Is there anyone we can contact for you — a partner, relative or friend? And do you have any known drug allergies, or are you taking any medicines at all right now, including anything for the vomiting?",
+  "first": "I think I understand, though I'm scared. I don't have any questions I can think of right now. I don't know if anyone is here to contact for me. I don't know about any allergies, and I don't know what medicines I've taken for the sickness. I haven't had any surgery before, so I'm worried, but I'll stay in bed and not eat or drink.",
+  "final": "I think I understand, though I'm scared. I don't have any questions I can think of right now. I don't know if anyone is here to contact for me. I don't know about any allergies, and I don't know what medicines I've taken for the sickness. I haven't had any surgery before, so I'm worried, but I'll stay in bed and not eat or drink.",
+  "p_first": 0.75,
+  "d_first": 0.08,
+  "p_final": 0.75
+ },
+ {
+  "arm": "B",
+  "case": "case_001",
+  "q": "I'm sorry you're dealing with new chest pain on top of a bloodstream infection — let's work through this carefully and quickly.\n\nFirst, two key questions:\n\n1. **Can you describe the pain itself?** Where exactly is it, when did it start (sudden or gradual), what does it feel like (sharp, pressure, tearing, burning), how severe is it, does it travel anywhere (back, jaw, arm, shoulder), and what makes it better or worse — breathing in, lying flat, sitting forward, pressing on the chest, or exertion?\n\n2. **What infection are you being treated for, and what are you receiving?** Do you know the organism or source (e.g., a line, urine, lung, heart valve), which antibiotic(s) and for how many days, and do you have any central venous catheter, pacemaker, or prosthetic valve?",
+  "first": "The chest pain started while I've been in the hospital getting treated for the infection. I don't remember exactly when it began, how bad it is, or what it feels like. I'm being told I have a staph infection in my blood that affected my heart, and I'm getting antibiotics through a vein. I have a small pacemaker in my heart and a stent. I also get dialysis for my kidneys. I don't know the other details.",
+  "final": "The chest pain started while I've been in the hospital getting treated for the infection. I don't remember exactly when it began, how bad it is, or what it feels like. I'm being told I have a staph infection in my blood that affected my heart, and I'm getting antibiotics through a vein. I have a small pacemaker in my heart and a stent. I also get dialysis for my kidneys. I don't know the other details.",
+  "p_first": 0.11,
+  "d_first": 0.08,
+  "p_final": 0.11
+ },
+ {
+  "arm": "B",
+  "case": "case_001",
+  "q": "The tests aren't ready to be released yet — I need a bit more of your history first, and I'll order them immediately after. Please answer as best you can:\n\n1. **Breathing and position:** Are you short of breath? Do you need to sit upright to breathe comfortably? Any cough, frothy or blood-streaked sputum, or palpitations?\n\n2. **Fever and infection course:** Have you had fevers, chills or sweats since starting the antibiotics? How many days of antibiotics have you had, and do you know if the fevers settled and then came back?\n\n3. **Dialysis and blood thinners:** When was your last dialysis session, and do you receive heparin with it? Are you on aspirin or clopidogrel for your stent?\n\n4. **Past history:** When was the stent placed, when was the pacemaker fitted, and do you have diabetes or any known valve disease?",
+  "first": "I'm sorry, I don't remember details about shortness of breath, cough, fevers, chills, or how many days of antibiotics I've had. I don't know when my last dialysis was or if I get heparin or aspirin. I don't remember when the stent or pacemaker were placed. I do get dialysis because of kidney damage from diabetes, and I know I have a staph infection that affected my heart.",
+  "final": "I'm sorry, I don't remember details about shortness of breath, cough, fevers, chills, or how many days of antibiotics I've had. I don't know when my last dialysis was or if I get heparin or aspirin. I don't remember when the stent or pacemaker were placed. I do get dialysis because of kidney damage from diabetes, and I know I have a staph infection that affected my heart.",
+  "p_first": 0.08,
+  "d_first": 0.05,
+  "p_final": 0.08
+ },
+ {
+  "arm": "B",
+  "case": "case_001",
+  "q": "One more exchange and I can release the tests. Two quick questions:\n\n1. **Has anyone told you which heart structure the staph has attacked** — a valve (aortic or mitral), the pacemaker wire itself, or the lining of the heart? And has your antibiotic been vancomycin or daptomycin?\n\n2. **Since the pain began, have you noticed** your hands/feet becoming cold and clammy, feeling faint or confused, very little urine output, or a racing/irregular heartbeat?",
+  "first": "I don't know which part of my heart the infection is on, only that it affected my heart. I'm getting antibiotics through a vein, but I don't know the name of them. I don't remember feeling cold or clammy, faint, confused, or having a racing heartbeat, and I don't know about my urine output. Sorry, I can't tell you more than that.",
+  "final": "I don't know which part of my heart the infection is on, only that it affected my heart. I'm getting antibiotics through a vein, but I don't know the name of them. I don't remember feeling cold or clammy, faint, confused, or having a racing heartbeat, and I don't know about my urine output. Sorry, I can't tell you more than that.",
+  "p_first": 0.25,
+  "d_first": 0.04,
+  "p_final": 0.25
+ },
+ {
+  "arm": "B",
+  "case": "case_001",
+  "q": "All the tests are ordered. Here's what I've asked for and why, in plain terms:\n\n- **ECG (heart tracing)** — to see whether your coronary stent has blocked or whether the heart muscle is being starved of oxygen, and to check your rhythm.\n- **Troponin blood test** — a marker of heart-muscle injury; it rises with a heart attack but also with severe valve infection and strain.\n- **Lactate, blood count, electrolytes/kidney panel, CRP** — to measure how badly your organs are being under-perfused and how active the infection is.\n- **Blood cultures and staph PCR** — to confirm whether the staph is still growing in your blood despite antibiotics, which would mean the infection source hasn't been controlled.\n- **Ultrasound of the heart (both from the chest wall and, if needed, from the gullet)** — this is the key test. It shows whether a valve has been torn or is leaking severely, whether there's an abscess around the valve, whether your pacemaker wire is coated with infected material, and whether fluid or pus is compressing the heart (tamponade).\n- **Chest X-ray** — to look for fluid on the lungs, or small infected clots that have showered into the lungs from the pacemaker wire.\n\nWhile these are running, a few things the tests can't tell me:\n\n1. **Has anyone mentioned removing your pacemaker?** In staph infection of a device, antibiotics alone often fail — the wire usually has to come out. Has a surgeon or cardiologist discussed this with you?\n2. **Have you had any recent procedures** — a dental visit, a wound, a catheter change, or a dialysis line insertion — that might have been the entry point for the staph?\n3. **Any drug allergies**, especially to antibiotics?",
+  "first": "No one has talked to me about taking out my pacemaker, at least that I remember. I don't know of any recent procedures like dental work or a catheter change. I don't know if I have any drug allergies, it wasn't mentioned to me. I'm sorry, I just know about the chest pain, the infection in my blood and heart, my dialysis, the pacemaker and the stent.",
+  "final": "No one has talked to me about taking out my pacemaker, at least that I remember. I don't know of any recent procedures like dental work or a catheter change. I don't know if I have any drug allergies, it wasn't mentioned to me. I'm sorry, I just know about the chest pain, the infection in my blood and heart, my dialysis, the pacemaker and the stent.",
+  "p_first": 0.2,
+  "d_first": 0.04,
+  "p_final": 0.2
+ },
+ {
+  "arm": "B",
+  "case": "case_001",
+  "q": "I've asked the team to perform an **urgent needle drainage of the fluid around your heart (pericardiocentesis)**. This does two things at once: it relieves the pressure on your heart so your blood pressure can recover, and it lets the lab look at the fluid — whether it is **pus** (bacterial infection of the pericardial sac), **blood**, or something else — and culture it to see if the MRSA is growing there. I've also asked whether a **coronary angiogram** (X-ray pictures of your heart arteries) is feasible to check your stent.\n\nTwo questions while that is being arranged:\n\n1. **Has the pain changed in the last hour** — for example, is it now worse when you lie flat and eased by leaning forward, or is it a constant heavy pressure? Any new tearing sensation into your back?\n2. **Are you able to tell me if you've been shivering, or if your skin feels mottled or blotchy?** These help me judge how far the shock has progressed.",
+  "first": "I'm sorry, I don't know if the pain has changed in the last hour. I can't say if it's worse lying flat or better leaning forward, and I don't remember a tearing feeling in my back. I don't remember shivering, and I don't know about my skin looking blotchy. I just know about the chest pain, the infection, my dialysis, the pacemaker and the stent.",
+  "final": "I'm sorry, I don't know if the pain has changed in the last hour. I can't say if it's worse lying flat or better leaning forward, and I don't remember a tearing feeling in my back. I don't remember shivering, and I don't know about my skin looking blotchy. I just know about the chest pain, the infection, my dialysis, the pacemaker and the stent.",
+  "p_first": 0.09,
+  "d_first": 0.05,
+  "p_final": 0.09
+ },
+ {
+  "arm": "B",
+  "case": "case_002",
+  "q": "Thank you for telling me. I want to understand the pattern before I examine you and order anything.\n\n**Two questions to start:**\n\n1. **Timeline and swelling:** Over how many weeks or months has the breathlessness and leg swelling developed? Is the swelling in both legs, and does it pit when pressed? Have you noticed your abdomen getting larger or tighter (rather than just painful), or any sudden weight gain?\n\n2. **Associated symptoms:** Do you get breathless lying flat at night or wake up gasping? Any chest pain or pressure, palpitations, cough, fever, night sweats, jaundice (yellow eyes/skin), dark urine, or ankle/abdominal pain that worsens after eating?\n\nPlease answer as best you can — I'll then examine you.",
+  "first": "It started about two weeks after I had a respiratory infection. Since then my breathing got worse, and now I get short of breath with even light activity. My legs are swollen and my belly hurts. I don't remember exact weeks, weight changes, or whether the swelling pits. I haven't had chest pain or dizziness. I don't know about the other things you asked.",
+  "final": "It started about two weeks after I had a respiratory infection. My breathing got worse until even light activity left me short of breath, and then my legs swelled and my belly started hurting. I haven't had chest pain or dizziness. I don't remember exact timing, weight changes, or the other things you asked about.",
+  "retried": true,
+  "p_first": 0.37,
+  "d_first": 0.04,
+  "p_final": 0.47
+ },
+ {
+  "arm": "B",
+  "case": "case_002",
+  "q": "Your examination shows **peripheral (leg) edema and a markedly slow pulse — heart rate 42 beats per minute.** A heart rate that low, together with fluid buildup, is an important clue: it means the heart may not be pumping enough because it's beating too slowly, or because of a hormonal/metabolic problem.\n\n**Two focused questions:**\n\n1. **Medications and substances:** Are you taking *any* prescription or over-the-counter medicines right now or recently — especially heart drugs such as beta blockers (e.g., metoprolol, atenolol, bisoprolol), digoxin, diltiazem/verapamil, amiodarone, or clonidine? Also any thyroid medication, lithium, or herbal/supplement products?\n\n2. **Symptoms suggesting an underactive thyroid:** Have you had unusual cold intolerance, constipation, weight gain, dry skin, hair loss, a hoarse or deeper voice, puffiness around the eyes, heavy or irregular periods, or profound fatigue and slowed thinking over the past weeks to months?",
+  "first": "The only medicine I take is mesalazine, for my bowel condition. I don't know of any other pills, heart medicines, thyroid medicine or supplements. As for the other things you asked, like feeling cold, constipation, weight gain, dry skin or voice changes, none of that was mentioned and I don't remember noticing it. I'm a smoker in the past, but not now.",
+  "final": "The only medicine I take is mesalazine, for my bowel condition. I don't know of any other pills, heart medicines, thyroid medicine or supplements. As for the other things you asked, like feeling cold, constipation, weight gain, dry skin or voice changes, none of that was mentioned and I don't remember noticing it. I'm a smoker in the past, but not now.",
+  "p_first": 0.31,
+  "d_first": 0.1,
+  "p_final": 0.31
+ },
+ {
+  "arm": "B",
+  "case": "case_002",
+  "q": "The tests aren't available to me just yet — I need to complete your history first. So let me ask a few more things that will directly shape which tests matter most.\n\n**Two questions:**\n\n1. **Your bowel condition:** Which diagnosis do you have — ulcerative colitis or Crohn's disease — and how many years have you had it? Has it been actively flaring (diarrhoea, blood or mucus in stool, cramping, weight loss), and when did you start mesalazine — weeks, months, or years ago? Have you ever had bowel surgery?\n\n2. **Other history:** Do you have any kidney problems, foamy/frothy urine, or swelling around the eyes in the morning? Any history of rheumatoid arthritis, chronic infections such as tuberculosis, or a family history of heart disease, sudden death, or amyloidosis? And roughly how much alcohol do you drink?",
+  "first": "I have ulcerative colitis, and it's been well controlled with mesalazine. I don't remember how many years I've had it, when I started the medicine, or whether I've had surgery. Nothing was mentioned about recent flares. I don't know of any kidney problems, frothy urine, arthritis, tuberculosis, family heart history, or how much alcohol I drink. I smoked in the past.",
+  "final": "I have ulcerative colitis, and it's been well controlled with mesalazine. I don't remember how many years I've had it, when I started the medicine, or whether I've had surgery. Nothing was mentioned about recent flares. I don't know of any kidney problems, frothy urine, arthritis, tuberculosis, family heart history, or how much alcohol I drink. I smoked in the past.",
+  "p_first": 0.22,
+  "d_first": 0.09,
+  "p_final": 0.22
+ },
+ {
+  "arm": "B",
+  "case": "case_002",
+  "q": "All the tests are ordered. While we wait for them, let me pin down two details the tests can't tell me:\n\n1. **Your abdominal pain:** Where exactly is it — the upper right side under the ribs, the middle, the lower abdomen, or all over? Is it a dull ache, a pressure/fullness, or a sharp cramp? Does it get worse after meals or when lying flat, and is it related to your bowel movements? Is your belly visibly swollen or tight?\n\n2. **The illness that came before this:** What was it like — fever, sore throat, cough, body aches? Did you have any rash, a bull's-eye skin patch, joint pains, or a tick bite or woodland/hiking exposure in the weeks before it? Did anyone around you have a similar illness?",
+  "first": "I know my belly started hurting after my legs swelled, but I can't say exactly where it hurts, what kind of pain it is, or whether meals or lying flat change it. About the earlier illness, I only know it was a respiratory infection about two weeks before this started. I don't remember rash, tick bites, joint pains, or anyone else being sick.",
+  "final": "I know my belly started hurting after my legs swelled, but I can't tell you exactly where it hurts, what kind of pain it is, or whether meals change it. About the earlier illness, I only know it was a respiratory infection about two weeks before this began. I don't remember a rash, tick bite, joint pain, or anyone else being sick.",
+  "retried": true,
+  "p_first": 0.52,
+  "d_first": 0.05,
+  "p_final": 0.5
+ },
+ {
+  "arm": "B",
+  "case": "case_002",
+  "q": "Those are arranged. While we wait, a few things only you can tell me:\n\n1. **Roughly how old are you, and have you ever fainted or nearly fainted** — especially suddenly, without warning? Have you ever been told your pulse was slow before, or had a pacemaker?\n\n2. **Geography and exposures:** Where do you live or have you travelled in the last few years — any time in wooded/grassy areas with ticks (northern Europe, northeastern United States), or in Latin America? Any history of tuberculosis, or a long-standing cough, skin lumps, eye inflammation (uveitis), or swollen ankles/knees before this illness?",
+  "first": "I'm 35. I haven't had chest pain or dizziness with this illness. I don't remember fainting, being told my pulse was slow before, or ever having a pacemaker. I don't know about travel, tick areas, or where I've lived, and nothing was mentioned about tuberculosis, a long cough, skin lumps, eye inflammation, or joint swelling. I do have ulcerative colitis, and I smoked in the past.",
+  "final": "I'm 35. I haven't had chest pain or dizziness, and I don't remember fainting. I don't know if anyone told me my pulse was slow before, and nothing was mentioned about a pacemaker. I don't know about where I've lived or travelled, ticks, or tuberculosis. I have ulcerative colitis, controlled with mesalazine, and I smoked in the past.",
+  "retried": true,
+  "p_first": 0.29,
+  "d_first": 0.12,
+  "p_final": 0.24
+ },
+ {
+  "arm": "B",
+  "case": "case_002",
+  "q": "Those are underway. A couple more things only you can tell me:\n\n1. **Before this illness,** was your exercise tolerance completely normal — could you climb stairs, walk uphill, play sport without getting breathless? And have you ever noticed a very slow or very regular pulse, or had an ECG for a job, insurance, or sports physical that anyone commented on?\n\n2. **Any of the following:** muscle weakness or difficulty raising your arms/climbing stairs, joint pains, mouth ulcers, eye redness or pain, skin rashes or nodules, or a family history of anyone needing a pacemaker or dying suddenly young? Also, do you drink alcohol or use any recreational drugs (including cocaine or amphetamines)?",
+  "first": "I don't remember what my exercise was like before, and I don't know about any slow pulse, ECG, or family history of pacemakers or sudden death. Nothing was mentioned about muscle weakness, joint pain, mouth ulcers, eye problems, or rashes. I don't know about alcohol or drug use. I just know I got short of breath after that respiratory infection, then my legs swelled and my belly hurt.",
+  "final": "I don't remember what my exercise was like before, and I don't know about any slow pulse, ECG, or family history of pacemakers or sudden death. Nothing was mentioned about muscle weakness, joint pain, mouth ulcers, eye problems, or rashes. I don't know about alcohol or drug use. I just know I got short of breath after that respiratory infection, then my legs swelled and my belly hurt.",
+  "p_first": 0.15,
+  "d_first": 0.06,
+  "p_final": 0.15
+ },
+ {
+  "arm": "B",
+  "case": "case_003",
+  "q": "Thank you — the examination notes I have are limited (they record **cardiopulmonary decompensation on arrival**, with specific pre-procedure vital signs not documented), so your history is especially important here.\n\nA few more questions:\n\n1. **Which catheter is it, and why was it placed?** For example: a urinary (Foley) catheter, a suprapubic catheter, a peritoneal dialysis catheter, or a nephrostomy tube? And what condition led to it — urinary retention, prostate problems, kidney failure/dialysis, a recent operation, or trauma?\n\n2. **What exactly happened when it stopped draining?** Did it block suddenly, drain only a trickle, drain blood or cloudy fluid, or did you notice your abdomen swelling and becoming tense? Any leakage around the catheter?\n\nAlso helpful if you can tell me:\n- How long ago this began (hours vs. days)\n- Fever, chills, vomiting, confusion, or reduced urine output\n- Any recent surgery, instrumentation, or abdominal/pelvic trauma\n- Your current medications (especially blood thinners, diuretics, painkillers, or sedatives) and any kidney, heart, or liver disease",
+  "first": "The catheter goes into my urinary pouch. I had trouble getting a catheter in for weeks, so they left one in to drain all the time. It stopped draining the night before I came, and I was passing less urine. Then I got bad lower belly pain and my breathing got worse. I don't know about fever, leakage, blood, or my medications.",
+  "final": "The catheter goes into my urinary pouch. I had trouble getting a catheter in for weeks, so they left one in to drain all the time. It stopped draining the night before I came, and I was passing less urine. Then I got bad lower belly pain and my breathing got worse. I don't know about fever, leakage, blood, or my medications.",
+  "p_first": 0.15,
+  "d_first": 0.07,
+  "p_final": 0.15
+ },
+ {
+  "arm": "B",
+  "case": "case_003",
+  "q": "My apologies — I jumped ahead to ordering tests before completing your history. Let me stay with the questions for now; the tests will come right after.\n\nTo recap what you've told me: you have a **urinary pouch (ileal conduit/urostomy)**, catheterisation was difficult for weeks so an **indwelling catheter** was left in the stoma to drain continuously, it **stopped draining the night before admission**, your **urine output fell**, and you then developed **severe lower abdominal pain** with **worsening breathlessness**.\n\nPlease tell me:\n\n1. **Why was the pouch created?** Was your bladder removed — for cancer, or for a non-cancer reason (nerve problems with the bladder, radiation damage, repeated strictures)? Roughly how long ago was that operation?\n\n2. **Has your abdomen become swollen, tight, or bloated** since the catheter stopped? Is the pain constant across the whole lower belly, or sharp in one spot? Any nausea or vomiting?\n\n3. **Any fever, shivering, confusion, or drowsiness?** Has the stoma itself changed colour (pale, dusky, dark), or is there any fluid leaking around the catheter rather than through it?\n\n4. **Was the catheter recently changed or manipulated**, and did it ever drain blood or cloudy urine before it stopped?\n\n5. **Any other medical history** — kidney disease, heart or lung problems, diabetes — and **any medicines** you take, especially blood thinners or diuretics?",
+  "first": "I was born with a spinal problem, a meningomyelocele, and had my bladder enlarged with a piece of bowel. Later my bladder was removed because of bladder cancer, and I got a continent urinary pouch. I don't remember how long ago that was. I don't know about swelling, fever, vomiting, stoma colour, leaking, blood, or my medicines. The pain and breathing trouble came after the catheter stopped draining.",
+  "final": "I was born with a spinal problem, a meningomyelocele, and had my bladder enlarged with a piece of bowel. Later my bladder was removed because of bladder cancer, and I got a continent urinary pouch. I don't remember how long ago that was. I don't know about swelling, fever, vomiting, stoma colour, leaking, blood, or my medicines. The pain and breathing trouble came after the catheter stopped draining.",
+  "p_first": 0.15,
+  "d_first": 0.05,
+  "p_final": 0.15
+ },
+ {
+  "arm": "B",
+  "case": "case_003",
+  "q": "Understood — one more round of history and then I'll order the tests straight away.\n\nTwo focused questions:\n\n1. **Timing:** Roughly how many hours passed between the catheter stopping and you arriving here — and has the pain been steadily worsening, or did it become severe suddenly at a particular moment (for example, after coughing, straining, or moving)? Sudden severe worsening would point more toward a tear in the pouch.\n\n2. **Breathing and background:** Is the breathlessness worse when lying flat, and do you feel you can't take a deep breath because your belly is tight? Also — do you have any known **kidney impairment, heart or lung condition**, or a **history of similar blockages or pouch problems** before this?",
+  "first": "I know it stopped draining the night before I came, but I don't know exactly how many hours it was. The pain and breathing trouble came after that. I don't remember if it got bad suddenly or if anything like coughing set it off. I don't know if lying flat makes it worse. I don't know about kidney, heart or lung problems, or earlier pouch blockages.",
+  "final": "I know it stopped draining the night before I came, but I don't know exactly how many hours it was. The pain and breathing trouble came after that. I don't remember if it got bad suddenly or if anything like coughing set it off. I don't know if lying flat makes it worse. I don't know about kidney, heart or lung problems, or earlier pouch blockages.",
+  "p_first": 0.09,
+  "d_first": 0.04,
+  "p_final": 0.09
+ },
+ {
+  "arm": "B",
+  "case": "case_003",
+  "q": "All the tests are now ordered. While we wait for them, let me explain what I've asked for and why:\n\n- **Bloods** — kidney function (creatinine, urea), electrolytes (especially potassium), acid balance, blood count and inflammation markers, and lactate. If urine has been sitting in your abdomen, your body reabsorbs it, which characteristically raises urea and creatinine out of proportion and disturbs sodium, potassium and acid levels.\n- **ECG and oxygen saturation** — to check whether a high potassium or the breathing problem is affecting your heart and oxygen levels.\n- **Urine from the catheter** — to look for infection and blood.\n- **Blood cultures** — in case there's a bloodstream infection.\n- **CT scan of your abdomen and pelvis with contrast, including filling the pouch with contrast (a \"pouchogram\")** — this is the key test. It shows whether the pouch is over-distended, whether the kidneys are backed up, whether there is free fluid in the abdomen, and most importantly whether contrast leaks out of the pouch, which would confirm a rupture.\n\nA few things the tests can't tell me, so please answer what you can:\n\n1. **Who looks after your pouch?** Do you have a urostomy/continence nurse or urologist, and what is your usual routine — how often do you catheterise, and do you irrigate the pouch with saline to clear mucus?\n\n2. **Has anyone tried to re-catheterise or flush the catheter since it stopped?** If so, did any urine come out, and how much?\n\n3. **Are you able to lie flat for the CT scan**, or does the breathlessness prevent it?\n\n4. **Any allergies** — particularly to iodine/CT contrast, or to any antibiotics?\n\n5. **Anything else in your medical history** you can recall — the spinal surgery/shunt for your meningomyelocele, bowel problems, or previous abdominal operations and any complications afterwards?",
+  "first": "I don't know who looks after my pouch or my usual routine, and I don't remember if anyone tried flushing it. I only know I'd been having trouble catheterizing for weeks, so a catheter was left in, and it stopped draining the night before. I don't know about allergies or whether I can lie flat. I've told you my spinal problem and bladder surgeries; I don't remember anything else.",
+  "final": "I don't know who looks after my pouch or my usual routine, and I don't remember if anyone tried flushing it. I only know I'd been having trouble catheterizing for weeks, so a catheter was left in, and it stopped draining the night before. I don't know about allergies or whether I can lie flat. I've told you my spinal problem and bladder surgeries; I don't remember anything else.",
+  "p_first": 0.12,
+  "d_first": 0.05,
+  "p_final": 0.12
+ },
+ {
+  "arm": "B",
+  "case": "case_004",
+  "q": "I'm sorry you're dealing with this — breathlessness returning after a drain is unsettling, and I want to work out why. Let me start with a few key questions.\n\n**First two questions:**\n\n1. **About the drainage itself:** How much fluid was removed, and did your breathing improve right afterwards — or did it never really get better? Roughly how many days passed before the breathlessness came back?\n\n2. **About the original effusion:** Do you know what caused it? Was any fluid sent to the lab (and were you told the results — for example \"exudate,\" infection, cancer cells, or blood)? Was the drain a small catheter left in place, or a one-time procedure?\n\nWhile you answer, I'll also arrange to examine you — checking your chest, oxygen levels, and looking for signs like reduced breath sounds, dullness to percussion, or a shift of the trachea, which help distinguish re-accumulating fluid, trapped lung, air in the pleural space, or a blocked/clotted drain.",
+  "first": "They took out about a liter and a half of milky-looking fluid from my right chest. My breathing got better for a little while, but then the shortness of breath came back and I returned to the ER a few days later. I don't know exactly how many days. I wasn't told what caused it or any lab results, and I don't remember whether a tube was left in.",
+  "final": "They took out about a liter and a half of milky-looking fluid from my right chest. My breathing got better for a little while, but then the shortness of breath came back and I returned to the ER a few days later. I don't know exactly how many days. I wasn't told what caused it or any lab results, and I don't remember whether a tube was left in.",
+  "p_first": 0.1,
+  "d_first": 0.04,
+  "p_final": 0.1
+ },
+ {
+  "arm": "B",
+  "case": "case_004",
+  "q": "Thank you. On examination at your first visit you were breathing fast but your oxygen level was normal, and breath sounds were reduced on the right — consistent with fluid in that chest space. The findings from your return visit weren't recorded in what I have, so your answers plus tests will guide me.\n\n**Two focused questions:**\n\n1. **Any recent injury or procedure to your chest, neck, or upper abdomen** — surgery, a fall/rib fracture, a central line, or an endoscopy? And have you had any **unexplained weight loss, drenching night sweats, fevers, or new lumps** in your neck, armpits, or groin?\n\n2. **Any past medical history** of tuberculosis, cancer, heart/liver/kidney disease, or a condition affecting your lymphatic system? And are you on any medications?\n\n**What I'm planning next and why:** I want to confirm the fluid really is chyle and find the cause. Once you reply, I'll order:\n- **Pleural fluid analysis** (triglycerides, cholesterol, cell count, Gram stain/culture, cytology) — a triglyceride level above ~110 mg/dL confirms chylothorax.\n- **Blood tests** (full blood count, albumin, total protein, LDH, liver and kidney function, inflammatory markers).\n- **Chest imaging** (X-ray to see how much fluid has re-accumulated, then CT of the chest/abdomen to look for a mass, lymph nodes, or a duct leak).",
+  "first": "No, I haven't had any recent injury, fall, or surgery on my chest, neck, or belly. I smoked for a long time, about 45 pack-years. About weight loss, night sweats, fevers, or lumps, I don't remember any being mentioned, so I can't say. I don't know about any past TB, cancer, or heart, liver or kidney problems, and I don't have a medication list to give you.",
+  "final": "No, I haven't had any recent injury, fall, or surgery on my chest, neck, or belly. I smoked for a long time, about 45 pack-years. About weight loss, night sweats, fevers, or lumps, I don't remember any being mentioned, so I can't say. I don't know about any past TB, cancer, or heart, liver or kidney problems, and I don't have a medication list to give you.",
+  "p_first": 0.2,
+  "d_first": 0.07,
+  "p_final": 0.2
+ },
+ {
+  "arm": "B",
+  "case": "case_004",
+  "q": "Understood — I need to complete the history first. Two more focused questions, and then I'll order the tests.\n\n1. **Symptoms now and before the drainage:** Have you had a cough, coughing up blood, chest pain, or a hoarse voice? Any **swelling of your legs, abdomen, face, or neck**, or any past episodes of swelling? Have you noticed changes in your nails (thickened, yellow, slow-growing) or repeated chest infections or sinus problems?\n\n2. **Other background:** How much alcohol do you drink, and have you ever used intravenous drugs? Any **family history** of cancer, lymphoma, or a lymphatic/vascular malformation disorder? And has anyone ever told you that a previous chest X-ray or scan showed an abnormality — a mass, enlarged lymph nodes, or fluid?\n\nThese help me separate the main possibilities: **lymphoma or another tumor** compressing the thoracic duct, **tuberculosis**, **yellow nail syndrome/lymphatic malformation**, or a **cardiac/venous cause** such as heart failure or central vein obstruction.",
+  "first": "I've had a cough along with the shortness of breath for about two weeks. I don't remember anything about coughing up blood, chest pain, a hoarse voice, swelling, nail changes, or repeated infections. I don't know about my alcohol use, drug use, or family history, and I can't recall being told about any earlier scan or X-ray abnormality.",
+  "final": "I've had a cough along with the shortness of breath for about two weeks. I don't remember anything about coughing up blood, chest pain, a hoarse voice, swelling, nail changes, or repeated infections. I don't know about my alcohol use, drug use, or family history, and I can't recall being told about any earlier scan or X-ray abnormality.",
+  "p_first": 0.19,
+  "d_first": 0.06,
+  "p_final": 0.19
+ },
+ {
+  "arm": "B",
+  "case": "case_004",
+  "q": "I've ordered the tests. Here's what they'll tell us, in plain language:\n\n- **Pleural fluid analysis** — measuring **triglycerides** in the fluid is the key test. A level above about 110 mg/dL confirms chyle (a chylothorax); if it's borderline, detecting **chylomicrons** settles it. The cell count, protein and LDH tell me whether it's an exudate, and **cytology** looks for cancer cells.\n- **Microbiology** — Gram stain/culture and **TB testing** to exclude infection, since tuberculous effusions can occasionally look milky (though true \"milky\" fluid from TB is usually a cholesterol-rich *pseudochylothorax*, which has low triglycerides and high cholesterol — that's why I ordered both).\n- **Blood tests** — blood counts, albumin, protein, LDH, liver/kidney function and inflammation markers. Chyle is rich in protein, lymphocytes and fat, so repeated drainage can cause **malnutrition and immune depletion**; these give me a baseline.\n- **CT of the chest, abdomen and pelvis with contrast** — the most important test for finding *why* the duct is leaking: a lung tumor, enlarged lymph nodes from lymphoma, or a visible duct injury.\n\n**While we wait, a few things the tests can't tell me:**\n\n1. **Timeline and course:** Roughly how long ago was the drainage, and since returning to the ER, has your breathing been steadily worse, fluctuating, or stable? Have you had any new drainage, or are you waiting for a procedure?\n\n2. **Weight, appetite, and general health:** Have your clothes been fitting looser, or has your appetite dropped, over the past few months? Any fatigue, itching, or a feeling of fullness in your abdomen?\n\n3. **Anything you can recall about exposures:** Even vaguely — did you work around dusts, asbestos, chemicals, or in mining/construction/shipbuilding? Any travel or time living where tuberculosis is common?\n\nPlease answer what you can; \"I don't remember\" is a perfectly acceptable answer, and I'll interpret the results as soon as they come back.",
+  "first": "I've had the shortness of breath and cough for about two weeks. The drainage was a few days before I came back, but I don't know exactly how many. I don't know how my breathing has been since returning, or whether I'm waiting for a procedure. I don't remember anything about weight loss, appetite, tiredness, or work exposures or travel, so I can't say.",
+  "final": "I've had the shortness of breath and cough for about two weeks. The drainage was a few days before I came back, but I don't know exactly how many. I don't know how my breathing has been since returning, or whether I'm waiting for a procedure. I don't remember anything about weight loss, appetite, tiredness, or work exposures or travel, so I can't say.",
+  "p_first": 0.12,
+  "d_first": 0.05,
+  "p_final": 0.12
+ },
+ {
+  "arm": "B",
+  "case": "case_004",
+  "q": "I've ordered the next round of tests. Here's what they are and why:\n\n- **Bronchoscopy with EBUS-TBNA** — a thin, camera-equipped tube passed through the mouth into the airways, using ultrasound to guide a needle into the enlarged lymph nodes. This is the standard, minimally invasive way to get tissue from mediastinal and hilar nodes. I've also asked for an **endobronchial biopsy** of the narrowed right middle lobe airway, since a lesion there could be sampled directly.\n- **Histopathology with immunohistochemistry and flow cytometry** — these distinguish lymphoma (and its subtype) from carcinoma, sarcoidosis, and infection. This is the single most important result for your diagnosis and treatment.\n- **Bronchoalveolar lavage** — washing fluid from the airway, sent for cytology and cultures (including TB and fungi).\n- **Repeat chest X-ray and bedside lung ultrasound** — to measure how much fluid has come back and whether another drainage is needed.\n- **Oxygen saturation and ECG** — to check how well you're oxygenating and to exclude a cardiac contribution.\n\n**While we wait, two questions:**\n\n1. Have you had **fevers, drenching night sweats, or unintentional weight loss** at any point in the last few months — even if you're unsure? And any **itching, or a sense of fullness/pain under your left ribs**?\n\n2. Has anyone ever mentioned that you might have a **weakened immune system**, or have you ever been tested for **HIV**? Any history of **skin rashes, eye inflammation, joint pains, or a dry cough lasting months** before this episode?\n\nThese help me weigh lymphoma and infection more precisely against lung cancer and sarcoidosis.",
+  "first": "I don't remember any fevers, night sweats, weight loss, itching, or pain under my ribs, so I can't say. I don't know if anyone has said my immune system is weak, and I don't know if I've been tested for HIV. I also don't remember any rashes, eye problems, joint pains, or a long-lasting cough before these two weeks.",
+  "final": "I don't remember any fevers, night sweats, weight loss, itching, or pain under my ribs, so I can't say. I don't know if anyone has said my immune system is weak, and I don't know if I've been tested for HIV. I also don't remember any rashes, eye problems, joint pains, or a long-lasting cough before these two weeks.",
+  "p_first": 0.23,
+  "d_first": 0.05,
+  "p_final": 0.23
+ },
+ {
+  "arm": "B",
+  "case": "case_005",
+  "q": "Thank you. The examination is informative: your oxygen level is low (you need 4 L/min of oxygen through nasal prongs to keep saturations above 92%), there are **fine crackles throughout both lungs**, and **breath sounds are reduced at the left base** (suggesting some fluid or a collapsed area there). Notably, there are no enlarged lymph nodes, no liver or spleen enlargement, and no suspicious skin or eye lesions.\n\nThat pattern — a week of dry cough and breathlessness with low oxygen and fine crackles — makes me think about inflammation or infection affecting the air sacs of the lungs, and also about fluid around the left lung.\n\n**Two more questions, and they matter a lot here:**\n\n1. **Is there anything affecting your immune system?** For example: HIV infection (ever tested?), steroid tablets or inhalers, chemotherapy, transplant drugs, biologics, or any condition affecting immunity? Also, have you had unexplained fevers, drenching night sweats, or unintentional weight loss?\n\n2. **What medicines have you taken in the last 3 months** — including antibiotics, heart/blood pressure drugs (e.g. amiodarone, nitrofurantoin, methotrexate), herbal or over-the-counter products? And do you smoke, or have exposures to birds, mould, dusts, or recent travel?",
+  "first": "I take baricitinib and methotrexate for my rheumatoid arthritis, and that regimen has been stable. I don't know of any other immune problems. I don't remember being asked about HIV testing, and fevers, night sweats or weight loss weren't mentioned. I was around asbestos material before. I don't have other medicine details, smoking, bird, mould or travel information to give you.",
+  "final": "I have rheumatoid arthritis, and I take baricitinib and methotrexate. That regimen has been stable. I also have a lung condition linked to the arthritis that's been stable for about five years, and I've been around asbestos material. I don't know about HIV testing, other medicines, smoking, fevers, night sweats, weight loss, birds, mould or travel. That wasn't mentioned in my record.",
+  "retried": true,
+  "p_first": 0.31,
+  "d_first": 0.1,
+  "p_final": 0.15
+ },
+ {
+  "arm": "B",
+  "case": "case_005",
+  "q": "The tests are queued but the system needs a fuller history first — so let me keep asking, and these questions are genuinely important.\n\n**Question 1 — about clot risk and infection prevention:**\nBaricitinib (a JAK inhibitor) carries a known increased risk of **blood clots**, so I need to ask: have you had any **calf pain or one-sided leg swelling**, any recent long travel, immobility, surgery, or hospital stay? And are you taking **co-trimoxazole (Bactrim/Septra) as preventive treatment against Pneumocystis**, plus folic acid with your methotrexate?\n\n**Question 2 — about your existing lung disease and this week's course:**\nWhat exactly was the \"lung condition linked to the arthritis\" called (interstitial lung disease, pleural effusion, bronchiectasis?), and has it ever been scanned or treated before? And over these seven days, has the breathlessness been **steadily worsening**, or did it peak and stay the same? Any fever at all, even low-grade?",
+  "first": "The lung condition is called interstitial lung disease, linked to my rheumatoid arthritis, and it's been stable for about five years. I don't know about past scans or treatments for it. I've had shortness of breath and a new dry cough for one week. I don't know whether it's steadily worsening, and fever isn't mentioned. Leg pain or swelling, recent travel, surgery, hospital stays, co-trimoxazole and folic acid also weren't mentioned.",
+  "final": "The lung condition is called interstitial lung disease, linked to my rheumatoid arthritis, and it's been stable for about five years. I don't know about past scans or treatments for it. I've had shortness of breath and a new dry cough for one week. I don't know whether it's steadily worsening, and fever isn't mentioned. Leg pain or swelling, recent travel, surgery, hospital stays, co-trimoxazole and folic acid also weren't mentioned.",
+  "p_first": 0.14,
+  "d_first": 0.16,
+  "p_final": 0.14
+ },
+ {
+  "arm": "B",
+  "case": "case_005",
+  "q": "One more exchange is needed before the lab and imaging systems will release results — so two final questions, then I'll proceed.\n\n**1.** Was there anything you could point to as a trigger — a cold or flu-like illness in the household, a change in your methotrexate or baricitinib dose, a new medication (including an antibiotic such as nitrofurantoin or co-trimoxazole), or a period of unusual dust/mould exposure?\n\n**2.** Practically, how limited are you now — can you walk across a room or climb stairs, and can you lie flat in bed without getting more breathless? And when were you last exposed to asbestos (occupation, and roughly how many years ago)?",
+  "first": "I can't point to a trigger. My methotrexate and baricitinib regimen has been stable, and I don't have any record of a new medicine, a cold at home, or unusual dust or mould. I was around asbestos material, but I don't know when or how long ago. How far I can walk, stairs, or lying flat weren't mentioned, so I don't know.",
+  "final": "I'm sorry, I don't know of any trigger. My arthritis medicines, baricitinib and methotrexate, have stayed the same, and nothing about a cold, a new medicine or dust was mentioned. I also don't know how far I can walk, whether I can lie flat, or when I was last around asbestos. All I know is I've had a week of breathlessness and a new dry cough.",
+  "retried": true,
+  "p_first": 0.46,
+  "d_first": 0.28,
+  "p_final": 0.25
+ },
+ {
+  "arm": "B",
+  "case": "case_005",
+  "q": "All the tests are now in the system — bloods (including LDH, inflammatory markers and a fungal cell-wall marker called beta-D-glucan), an ECG and arterial blood gas, a chest X-ray and a contrast CT of the chest, plus microbiology including HIV testing, blood and sputum cultures, TB testing and a **Pneumocystis PCR**. Results will come back to me shortly.\n\nWhile we wait, there are a few things no test can tell me, and they'd help me interpret the results:\n\n**1.** Do you know whether you have ever been **screened for tuberculosis** before starting baricitinib (a chest X-ray or a blood/skin TB test)? JAK inhibitors can reactivate latent TB, and it's standard practice to check beforehand — whether that happened tells me how much weight to give TB.\n\n**2.** What is your **smoking history and past occupation** (even approximately — pack-years, and the industry you worked in)? This matters both for the asbestos exposure and for judging your underlying risk of lung cancer or COPD alongside the RA lung disease.",
+  "first": "I'm sorry, I don't know whether I was screened for tuberculosis before starting baricitinib. My smoking history and past job also weren't mentioned, so I can't tell you pack-years or what industry I worked in. All I know is that I've been around asbestos material, and I have rheumatoid arthritis and the lung condition that goes with it.",
+  "final": "I'm sorry, I don't know whether I was screened for tuberculosis before starting baricitinib. My smoking history and past job also weren't mentioned, so I can't tell you pack-years or what industry I worked in. All I know is that I've been around asbestos material, and I have rheumatoid arthritis and the lung condition that goes with it.",
+  "p_first": 0.09,
+  "d_first": 0.09,
+  "p_final": 0.09
+ },
+ {
+  "arm": "B",
+  "case": "case_005",
+  "q": "I've now asked for the decisive tests: **bronchoscopy with bronchoalveolar lavage** (washing the lung and testing the fluid — this is the gold standard for finding *Pneumocystis*, and it also detects TB, fungi and viruses), **induced-sputum staining for Pneumocystis**, an **ultrasound and sampling of any fluid at the left lung base**, a **CT of the chest**, an **echocardiogram**, and **lung function tests including gas transfer (DLCO)**.\n\nWhile those are pending, two questions that only you can answer:\n\n**1.** Have you ever been given **steroid tablets (prednisone/prednisolone)** for your arthritis or your lung disease — and if so, roughly how much and for how long, including any courses in the past year? Cumulative steroid exposure is one of the strongest drivers of PJP risk, and it also shapes how I'd treat you.\n\n**2.** Are your **joints currently flared** (more pain, swelling or morning stiffness than usual), and have you noticed any **mouth ulcers, new rash, sore throat, or a band of burning pain/blisters on one side of your chest or face**? The last of those would suggest shingles, which is a recognised complication of baricitinib and would tell me how suppressed your immunity currently is.",
+  "first": "I'm sorry, I don't know about any steroid tablets, either for my arthritis or my lung condition. Nothing was mentioned about my joints flaring, mouth ulcers, a rash, a sore throat, or blistering pain on my chest or face. What I do know is that I take baricitinib and methotrexate, and I've had a week of breathlessness and a new dry cough.",
+  "final": "I'm sorry, I don't know about any steroid tablets, either for my arthritis or my lung condition. Nothing was mentioned about my joints flaring, mouth ulcers, a rash, a sore throat, or blistering pain on my chest or face. What I do know is that I take baricitinib and methotrexate, and I've had a week of breathlessness and a new dry cough.",
+  "p_first": 0.3,
+  "d_first": 0.07,
+  "p_final": 0.3
+ },
+ {
+  "arm": "B",
+  "case": "case_005",
+  "q": "Those are pending. Meanwhile, a few history points that would genuinely help — and they're things only you can tell me:\n\n**1.** Have you ever had a **mole or skin lesion removed, biopsied, or treated with freezing/laser** at any point in your life — even decades ago, and even if it was called benign? Also, do you have a history of **heavy sun exposure, sunburns, sunbed use**, or a **family history of melanoma or other skin cancer**? A previously \"removed mole\" is very often the answer in melanoma of unknown primary.\n\n**2.** Have you had any **headaches, visual change, seizures, weakness, numbness, or balance problems**, and any **abdominal pain, bowel habit change, or black stools**? Melanoma commonly spreads to the brain and gut, so these symptoms would change how urgently we act.",
+  "first": "I'm sorry, I don't know about any mole or skin lesion being removed, sun exposure, or a family history of skin cancer. Nothing was mentioned about headaches, vision changes, seizures, weakness, numbness, balance problems, belly pain, bowel changes or black stools. All I know is I have rheumatoid arthritis, the lung condition linked to it, and a week of breathlessness and a new dry cough.",
+  "final": "I'm sorry, I don't know about any mole or skin lesion being removed, sun exposure, or a family history of skin cancer. Nothing was mentioned about headaches, vision changes, seizures, weakness, numbness, balance problems, belly pain, bowel changes or black stools. All I know is I have rheumatoid arthritis, the lung condition linked to it, and a week of breathlessness and a new dry cough.",
+  "p_first": 0.15,
+  "d_first": 0.1,
+  "p_final": 0.15
+ },
+ {
+  "arm": "B",
+  "case": "case_006",
+  "q": "Thank you for coming in. Bilateral adrenal nodules together with blood tests suggesting your adrenal glands may be under-functioning is an important combination to work through carefully — it can point to several different causes (infection, bleeding into the glands, infiltrative disease, autoimmune adrenalitis, or a genetic/metabolic condition), so I'd like to build a clear picture before ordering tests.\n\nLet me start with a few focused questions:\n\n1. **How did this come to light?** Were the nodules found incidentally on a scan done for something else, or were you having symptoms that led to imaging?\n\n2. **What symptoms have you noticed?** Specifically: fatigue or weakness, dizziness on standing, weight loss, loss of appetite, nausea/vomiting, abdominal or back/flank pain, salt craving, darkening of the skin (especially gums, scars, knuckles, or skin creases)?\n\n3. **Any recent illness, fever, night sweats, cough, or known exposure to tuberculosis?** And have you been on any blood thinners, steroids (tablets, injections, inhalers, or creams), or antifungal medicines?",
+  "first": "I don't remember exactly how the nodules were found, I just know they were seen on an exam. The main thing I've noticed is mild darkening of the skin over my finger joints and knees. I haven't had fever, night sweats or cough. I've never taken steroids. About five years ago I was in hospital for a spot on my chest, but I wasn't told it was TB and had no treatment. I don't know about blood thinners or antifungals.",
+  "final": "I don't remember exactly how the nodules were found, I just know they were seen on an exam. The main thing I've noticed is mild darkening of the skin over my finger joints and knees. I haven't had fever, night sweats or cough. I've never taken steroids. About five years ago I was in hospital for a spot on my chest, but I wasn't told it was TB and had no treatment. I don't know about blood thinners or antifungals.",
+  "p_first": 0.21,
+  "d_first": 0.04,
+  "p_final": 0.21
+ },
+ {
+  "arm": "B",
+  "case": "case_006",
+  "q": "Thank you. The examination confirms mild hyperpigmentation over the knuckles and knees, which supports the idea that your adrenal glands themselves are under-active.\n\nBefore I arrange tests, two more questions that will really shape which investigations I choose:\n\n1. **Where have you lived and travelled?** In particular, have you ever lived in or spent significant time in a country where tuberculosis is common (e.g. South Asia, Southeast Asia, sub-Saharan Africa, Eastern Europe), or in areas where certain fungal infections like histoplasmosis occur (parts of the Americas, river valleys, caves, bird/bat droppings exposure)?\n\n2. **Have you had any unexplained weight loss, fevers, swollen glands, abdominal or back pain, or any easy bruising/bleeding — and have you ever been told you have a clotting problem, lupus, or had recent surgery or a serious illness?**",
+  "first": "I'm sorry, I don't know about where I've lived or travelled, it wasn't mentioned to me. I haven't noticed fevers or night sweats. I don't remember being told about weight loss, swollen glands, pain, bruising, clotting problems, lupus or recent surgery. The only things I can tell you are the mild skin darkening and the chest spot hospital stay five years ago.",
+  "final": "I'm sorry, I don't know about where I've lived or travelled, it wasn't mentioned to me. I haven't noticed fevers or night sweats. I don't remember being told about weight loss, swollen glands, pain, bruising, clotting problems, lupus or recent surgery. The only things I can tell you are the mild skin darkening and the chest spot hospital stay five years ago.",
+  "p_first": 0.14,
+  "d_first": 0.06,
+  "p_final": 0.14
+ },
+ {
+  "arm": "B",
+  "case": "case_006",
+  "q": "No problem — I'll hold off on the tests for one more moment and finish taking your history properly first. Two last questions:\n\n1. **Day-to-day symptoms:** Do you feel unusually tired or weak, get dizzy or light-headed when you stand up, crave salty foods, or have any nausea, tummy upset, or loss of appetite? Have you noticed any low mood, or in men, any changes in sexual function?\n\n2. **Family and medicines:** Has anyone in your family had adrenal problems, tuberculosis, thyroid disease, type 1 diabetes, vitiligo, or unexplained skin darkening? And are you taking *any* medicines, supplements, herbal remedies, or injections at all — including anything for mood, blood pressure, or blood thinning?",
+  "first": "I'm sorry, I don't have information about tiredness, dizziness, salt cravings, nausea or appetite, so I can't say. The only thing I've noticed is mild skin darkening over my finger joints and knees. As far as I know, there's no family history of inherited diseases. I've never taken steroids, but I don't know my full medicine list or any supplements.",
+  "final": "I'm sorry, I don't have information about tiredness, dizziness, salt cravings, nausea or appetite, so I can't say. The only thing I've noticed is mild skin darkening over my finger joints and knees. As far as I know, there's no family history of inherited diseases. I've never taken steroids, but I don't know my full medicine list or any supplements.",
+  "p_first": 0.13,
+  "d_first": 0.08,
+  "p_final": 0.13
+ },
+ {
+  "arm": "B",
+  "case": "case_006",
+  "q": "All of those are now booked — the bloods, the ECG and lying/standing blood pressure, the Synacthen stimulation test, the adrenal CT, the chest X-ray, and the TB/fungal/HIV samples. Results will come back shortly.\n\nWhile we wait, let me clarify two things the tests can't tell me:\n\n1. **That hospital stay five years ago for \"a spot on my chest\"** — do you remember whether the spot was something *on your skin* (a rash, lump, sore or discharging area on the chest wall), or something seen *inside your chest on an X-ray*? And do you recall roughly how long you were in hospital, or whether you had any drainage, biopsy, or a course of tablets afterwards?\n\n2. **Timing and other symptoms:** Has the skin darkening been slowly getting worse over months or years, or did it appear suddenly? And have you noticed any mouth/gum darkening, any new lumps anywhere, any cough or breathlessness, or any change in your energy or weight that you or others have commented on?",
+  "first": "The chest spot was seen inside my chest, as an opacity, when I was in hospital five years ago. I wasn't told it was TB and I didn't get any treatment for it. I don't remember how long I stayed, or about any drainage or biopsy. I don't know how the skin darkening changed over time, or about gum darkening, new lumps, cough, breathlessness, or weight changes. I just know about the mild darkening on my finger joints and knees.",
+  "final": "The chest spot was seen inside my chest, as an opacity, when I was in hospital five years ago. I wasn't told it was TB and I didn't get any treatment for it. I don't remember how long I stayed, or about any drainage or biopsy. I don't know how the skin darkening changed over time, or about gum darkening, new lumps, cough, breathlessness, or weight changes. I just know about the mild darkening on my finger joints and knees.",
+  "p_first": 0.24,
+  "d_first": 0.05,
+  "p_final": 0.24
+ },
+ {
+  "arm": "B",
+  "case": "case_007",
+  "q": "Thank you for telling me about this. I want to make sure I understand the picture clearly before I examine you and arrange any tests.\n\nFirst, two focused questions:\n\n1. **About the stools:** when you say \"dark,\" do you mean black, tarry and sticky with a strong smell (like road tar or coffee grounds), or dark brown/greenish but otherwise normal in consistency? And roughly how many such bowel movements have you had, and over how many days?\n\n2. **About the jaundice:** how quickly did the yellowing appear — over days or weeks — and have you also noticed your **urine** becoming dark (tea/cola-coloured) or your stools becoming pale and putty-coloured at any point? Any itching?\n\nPlease also mention any **abdominal pain** (where, and what it feels like), vomiting (especially any blood or \"coffee-ground\" material), fever, or unintentional weight loss.",
+  "first": "The yellowing and dark stools have been getting worse over about four days. I can't say exactly how black or sticky the stools are, or how many times I've gone. I don't remember noticing the urine colour, pale stools or itching. I haven't had any belly pain, fever or bleeding that I know of. I've just felt very tired and lightheaded. I don't know about weight loss or vomiting.",
+  "final": "The yellowing and dark stools have been getting worse over about four days. I can't say exactly how black or sticky the stools are, or how many times I've gone. I don't remember noticing the urine colour, pale stools or itching. I haven't had any belly pain, fever or bleeding that I know of. I've just felt very tired and lightheaded. I don't know about weight loss or vomiting.",
+  "p_first": 0.19,
+  "d_first": 0.04,
+  "p_final": 0.19
+ },
+ {
+  "arm": "B",
+  "case": "case_007",
+  "q": "That's helpful — the combination of yellowing plus feeling very tired and lightheaded, without pain or fever, makes me want to check whether your red blood cells are being broken down too quickly (haemolysis) or whether you're losing blood or have a liver/bile-duct problem.\n\nTwo more questions:\n\n1. **Medicines and exposures:** what have you taken in the last 2–3 weeks — including prescription drugs, antibiotics, painkillers (especially paracetamol/acetaminophen), over-the-counter or herbal remedies, and any new drugs or supplements? Have you eaten fava/broad beans, or been exposed to mothballs, henna, or any new chemicals? Any recent infection, sore throat, or illness before this started?\n\n2. **Past and family history:** have you ever been told you're anaemic, jaundiced, or have a blood disorder such as G6PD deficiency, sickle cell disease or thalassaemia — or has anyone in your family? Any history of liver disease, hepatitis, gallstones, heavy alcohol use, or previous episodes like this one?",
+  "first": "About two weeks ago I had my first dose of an immunotherapy drug called pembrolizumab through a drip, for my lung cancer. I don't remember the full list of my other medicines, and I don't know about allergies. I have a history of gastritis and high cholesterol, and I've had my gallbladder removed. I used to smoke. I don't know about blood disorders, family history, or the other exposures you mentioned.",
+  "final": "About two weeks ago I had my first dose of an immunotherapy drug called pembrolizumab through a drip, for my lung cancer. I don't remember the full list of my other medicines, and I don't know about allergies. I have a history of gastritis and high cholesterol, and I've had my gallbladder removed. I used to smoke. I don't know about blood disorders, family history, or the other exposures you mentioned.",
+  "p_first": 0.11,
+  "d_first": 0.05,
+  "p_final": 0.11
+ },
+ {
+  "arm": "B",
+  "case": "case_007",
+  "q": "The system needs one more round of history before I can send those samples through, so let me ask two quick but important things:\n\n1. **Your cancer and its treatment:** what type of lung cancer do you have, and was pembrolizumab given alone or alongside chemotherapy or any other drug (for example, a steroid such as prednisone/dexamethasone, or a targeted tablet)? Have you ever had a blood transfusion, or a previous episode of jaundice or anaemia?\n\n2. **Symptoms I may have missed:** have you noticed shortness of breath, a racing or pounding heart, dizziness on standing, cold hands and feet, or yellowing of the whites of your eyes getting deeper? And has your urine looked dark (tea- or cola-coloured) even if you didn't notice it before?",
+  "first": "I have lung cancer, I was told it's an adenocarcinoma, and it has spread to my adrenal gland and an area under the diaphragm. I only remember getting the pembrolizumab drip two weeks ago; I don't know if anything else was given with it. I don't know about transfusions or earlier jaundice or anaemia. I haven't noticed breathlessness or a racing heart, and I don't remember about my urine or cold hands.",
+  "final": "I have lung cancer, I was told it's an adenocarcinoma, and it has spread to my adrenal gland and an area under the diaphragm. I only remember getting the pembrolizumab drip two weeks ago; I don't know if anything else was given with it. I don't know about transfusions or earlier jaundice or anaemia. I haven't noticed breathlessness or a racing heart, and I don't remember about my urine or cold hands.",
+  "p_first": 0.26,
+  "d_first": 0.05,
+  "p_final": 0.26
+ },
+ {
+  "arm": "B",
+  "case": "case_007",
+  "q": "The blood, urine and smear samples are on their way to the lab — results should come back shortly.\n\nWhile we wait, a few things the tests **can't** tell me, which matter for interpreting them:\n\n1. **Other possible immune side-effects:** since the pembrolizumab drip, have you had any new **rash or itching**, **diarrhoea or looser/more frequent stools than usual**, mouth sores, new headaches or changes in your vision, or feeling unusually cold/constipated? (These would point to immune-related skin, bowel, pituitary or thyroid inflammation.)\n\n2. **Everything you may have taken:** any tablets at all in the last month — including a steroid, antibiotics, a blood thinner, iron, or anything for your cholesterol or gastritis (such as omeprazole)? Even things you think are unimportant can cause jaundice or anaemia, so please list whatever you can recall, and let me know if you drink alcohol.",
+  "first": "I haven't noticed any rash, itching, diarrhoea, mouth sores, headaches or vision changes that I remember. I don't know about feeling cold or constipated. I can't recall my other tablets, so I can't say if I've taken a steroid, antibiotics, blood thinner, iron or anything for my stomach or cholesterol. I don't remember about alcohol either. Sorry, I just know about the pembrolizumab drip.",
+  "final": "I haven't noticed any rash, itching, diarrhoea, mouth sores, headaches or vision changes that I remember. I don't know about feeling cold or constipated. I can't recall my other tablets, so I can't say if I've taken a steroid, antibiotics, blood thinner, iron or anything for my stomach or cholesterol. I don't remember about alcohol either. Sorry, I just know about the pembrolizumab drip.",
+  "p_first": 0.39,
+  "d_first": 0.05,
+  "p_final": 0.39
+ },
+ {
+  "arm": "B",
+  "case": "case_008",
+  "q": "Thank you. The examination is very informative and concerning:\n\n- **Leg strength 0/5 with normal arm strength** → the problem sits in the **thoracic spinal cord** (below the neck, above the legs).\n- **Absent perianal (saddle) sensation + incontinence** → the sacral cord segments are involved.\n- **Preserved bulbocavernosus reflex** → this points to a **spinal cord (conus) lesion** rather than a lower cauda equina/root problem, and tells me spinal shock is not complete.\n\nThis pattern — sudden interscapular pain, then rapidly progressive paraplegia and sphincter loss — is most often caused by something **acutely compressing or infarcting the thoracic cord**. My leading possibilities are:\n\n1. **Spinal epidural hematoma** (bleeding around the cord)\n2. **Spinal epidural abscess** (infection/pus compressing the cord)\n3. **Aortic dissection or occlusion cutting off the cord's blood supply** (anterior spinal artery syndrome)\n4. **Metastatic tumour compressing the cord**\n5. **Acute transverse myelitis**\n\nA few more questions to separate these:\n\n1. **Are you on any blood thinners** (warfarin, apixaban, rivaroxaban, clopidogrel, aspirin), or have you had a recent lumbar puncture, epidural, or spinal injection?\n2. **Did the pain feel sudden and \"tearing/ripping,\"** and do you have any history of high blood pressure, Marfan syndrome, recent heavy lifting/strain, cancer, or fever?",
+  "first": "No, I'm not on any blood thinners or other medicines that I know of, and the case doesn't mention any spinal injection or lumbar puncture. The pain was in the middle of my upper back between the shoulder blades, and it didn't spread anywhere. I don't remember if it felt tearing. No injury, heavy lifting, fever, or long-term illnesses. I don't know about blood pressure or Marfan's.",
+  "final": "No, I'm not on any blood thinners or other medicines that I know of, and the case doesn't mention any spinal injection or lumbar puncture. The pain was in the middle of my upper back between the shoulder blades, and it didn't spread anywhere. I don't remember if it felt tearing. No injury, heavy lifting, fever, or long-term illnesses. I don't know about blood pressure or Marfan's.",
+  "p_first": 0.31,
+  "d_first": 0.13,
+  "p_final": 0.31
+ },
+ {
+  "arm": "B",
+  "case": "case_008",
+  "q": "The tests are queued but I need to complete the history first — so let me keep asking while we wait. Two more focused questions:\n\n1. **Sensation in your legs and trunk:** Can you still feel a pinprick or hot/cold on your legs, and is there a distinct \"band\" or level around your chest or abdomen below which feeling stops? Is your sense of touch and joint position (knowing where your toes are without looking) better preserved than pain and temperature?\n\n2. **Timeline and associated symptoms:** Exactly how many hours or days passed between the back pain starting and the weakness becoming complete? And have you noticed any of these — a recent cold/skin infection/boil, unexplained weight loss or night sweats, a history of any cancer, urinary burning before this started, or a sudden \"pop\"/strain in the back at onset?",
+  "first": "The back pain started two days before I came in, and then my legs got weak until I couldn't stand. I can't feel the area around my bottom, and I've lost control of my bowels and bladder. I don't know about pinprick, hot or cold, or a band level, and I don't know the exact hours. I haven't had fever or injury. I don't remember anything else like weight loss, cancer, or infections.",
+  "final": "The back pain started two days before I came in, and then my legs got weak until I couldn't stand. I can't feel the area around my bottom, and I've lost control of my bowels and bladder. I don't know about pinprick, hot or cold, or a band level, and I don't know the exact hours. I haven't had fever or injury. I don't remember anything else like weight loss, cancer, or infections.",
+  "p_first": 0.13,
+  "d_first": 0.05,
+  "p_final": 0.13
+ },
+ {
+  "arm": "B",
+  "case": "case_008",
+  "q": "Almost there — one more round of history before I can release the tests. Let me ask about background and exposures, which matter for narrowing the cause:\n\n1. **Social and exposure history:** Do you smoke or drink alcohol? Have you ever used intravenous drugs, or had any tattoos, piercings, or skin/soft-tissue infections in the past few months? Any recent travel, animal contact, or unpasteurised dairy?\n\n2. **Family and past history:** Any family history of aneurysm, aortic dissection, Marfan/Ehlers-Danlos, or bleeding disorders? And have you ever had unexplained back pain before, or any autoimmune condition?",
+  "first": "I'm sorry, I don't know about most of that. Smoking, drinking, drug use, tattoos, travel, or family history weren't mentioned, so I can't say. I do know I haven't had a long-term illness, any injury, or a fever recently. I don't remember having back pain like this before, and I don't know of any autoimmune problem.",
+  "final": "I'm sorry, I don't know about most of that. Smoking, drinking, drug use, tattoos, travel, or family history weren't mentioned, so I can't say. I do know I haven't had a long-term illness, any injury, or a fever recently. I don't remember having back pain like this before, and I don't know of any autoimmune problem.",
+  "p_first": 0.17,
+  "d_first": 0.16,
+  "p_final": 0.17
+ },
+ {
+  "arm": "B",
+  "case": "case_008",
+  "q": "I've now placed the orders. Here's what's happening and what each test is for:\n\n- **Urgent MRI of the whole spine with contrast** — the decisive test. It will show whether there is blood (epidural hematoma), pus (epidural abscess), a tumour, inflammation of the cord itself (transverse myelitis), or a cord stroke.\n- **Blood count, CRP, ESR** — to look for infection or inflammation.\n- **Clotting studies (PT/INR, aPTT)** — to check for an undiagnosed bleeding tendency, which would matter both for diagnosis and for any urgent surgery.\n- **Blood cultures** — to catch bacteria in the bloodstream if this is an abscess.\n- **ECG and bladder scan** — the ECG screens for a cardiac/aortic cause of the back pain; the bladder scan confirms urinary retention, which we then manage with a catheter to protect your kidneys.\n\nWhile we wait, a few things the tests **cannot** tell me — please think about them:\n\n1. **Any new symptoms since arrival** — numbness spreading upward, difficulty breathing, chest pain, or a change in your voice/swallowing?\n2. **Was there any moment of exertion, coughing, sneezing, straining, or a sudden movement right when the pain began?** (This matters a lot for a spontaneous bleed.)\n3. **Any recent dental work, sore throat, skin boil, or course of antibiotics in the last month or two?**\n\nPlease also know: **do not eat or drink anything** for now, in case you need an urgent operation or a procedure.",
+  "first": "I'm not sure about new symptoms since I got here, nothing like that was mentioned. I don't remember any coughing, sneezing, straining, or sudden movement when the pain started, and I didn't have any injury or heavy lifting. Dental work, sore throat, boils, or antibiotics weren't mentioned, so I don't know. I'll stay off food and drink.",
+  "final": "I'm not sure about new symptoms since I got here, nothing like that was mentioned. I don't remember any coughing, sneezing, straining, or sudden movement when the pain started, and I didn't have any injury or heavy lifting. Dental work, sore throat, boils, or antibiotics weren't mentioned, so I don't know. I'll stay off food and drink.",
+  "p_first": 0.13,
+  "d_first": 0.17,
+  "p_final": 0.13
+ },
+ {
+  "arm": "B",
+  "case": "case_009",
+  "q": "I'm sorry you're dealing with this — let me get a clear picture before we do anything else.\n\nTwo quick questions to start:\n\n1. **How long has this been going on, and how has it changed?** Specifically: when did the pain begin, is it constant or cramping/colicky, and where is it worst (all over, or more in one spot)?\n\n2. **Have you been able to pass stool and gas normally?** And have you vomited — if so, what does it look like (food, green/bilious, or anything darker)?\n\nAlso helpful if you can add: any fever, prior abdominal surgeries, and any unintentional weight loss.",
+  "first": "The pain is all over my belly, not in one spot, and it's been getting worse over time. My belly is swollen and I feel sick to my stomach. I don't remember exactly when it started or how bad it is on a scale. I don't know about stool, gas, vomiting, fever or weight loss. I had a procedure on my bile duct a year ago, but I don't know about other surgeries.",
+  "final": "My belly pain has been getting worse and worse, and it's all over, not in one spot. My belly is swollen and I feel sick to my stomach. I don't remember exactly when it started. I don't know about stool, gas, vomiting, fever or weight loss, nothing was mentioned. About a year ago I had a procedure for a gallbladder-area stone, and a stent was left in.",
+  "retried": true,
+  "p_first": 0.32,
+  "d_first": 0.04,
+  "p_final": 0.38
+ },
+ {
+  "arm": "B",
+  "case": "case_009",
+  "q": "Understood — I need a bit more history before I can order tests. Let me be quick and focused, because your examination is concerning.\n\n**Please answer these as best you can:**\n\n1. **About the stent/procedure a year ago:** Was it an **ERCP** (a scope passed down the throat to the bile duct) for a **common bile duct stone**? Were you told the stent was temporary and given a date for removal — and did you miss that follow-up appointment?\n\n2. **Associated symptoms:** Any **fever or shaking chills**, **yellowing of the eyes/skin**, **dark urine**, **pale stools**, or **itching**? Any **vomiting**, and if so, when did you last vomit and what did it look like?\n\n3. **Bowel function:** When was your **last bowel movement** and your **last passage of wind**?",
+  "first": "Yes, I had a procedure about a year ago for a stone, and they left a plastic stent in the bile duct. I think it was the scope kind, but I don't remember the details. I don't remember being told about a removal date or missing a follow-up. I don't know about fever, yellow skin, dark urine, pale stools, itching, vomiting, or my last bowel movement or gas. Nothing was mentioned.",
+  "final": "Yes, I had a procedure about a year ago for a stone, and they left a plastic stent in the bile duct. I think it was the scope kind, but I don't remember the details. I don't remember being told about a removal date or missing a follow-up. I don't know about fever, yellow skin, dark urine, pale stools, itching, vomiting, or my last bowel movement or gas. Nothing was mentioned.",
+  "p_first": 0.18,
+  "d_first": 0.06,
+  "p_final": 0.18
+ },
+ {
+  "arm": "B",
+  "case": "case_009",
+  "q": "One more exchange and I can order the tests. Let me fill in the remaining gaps:\n\n1. **Medical background:** Do you have any other conditions — diabetes, liver disease, heart or kidney problems? Any **medicines** you take regularly, especially **blood thinners** (warfarin, apixaban, clopidogrel) or **steroids**? Any **drug or contrast allergies**?\n\n2. **The pain itself:** Is it **constant and severe**, or does it come in waves? Is it worse in the **upper right abdomen** or truly all over? Does it radiate to your **back or right shoulder**? Does **moving or coughing** make it sharply worse?\n\n3. **Recent course:** Over how many **days** has this worsened — and are you still able to eat and drink, or does everything come back up? Any **alcohol use**, recent **travel**, or anyone around you recently ill?",
+  "first": "I have type 2 diabetes, high blood pressure, an irregular heartbeat that's long-standing, and COPD. I don't know about liver or kidney problems, my medicines, blood thinners, steroids or allergies. Nothing was mentioned. My pain keeps getting worse and it's all over, with swelling and feeling sick. I don't know about waves, back or shoulder pain, how many days, eating, alcohol, travel or sick contacts.",
+  "final": "I have type 2 diabetes, high blood pressure, an irregular heartbeat that's long-standing, and COPD. I don't know about liver or kidney problems, my medicines, blood thinners, steroids or allergies. Nothing was mentioned. My pain keeps getting worse and it's all over, with swelling and feeling sick. I don't know about waves, back or shoulder pain, how many days, eating, alcohol, travel or sick contacts.",
+  "p_first": 0.26,
+  "d_first": 0.08,
+  "p_final": 0.26
+ },
+ {
+  "arm": "B",
+  "case": "case_009",
+  "q": "All the tests are ordered — you'll have bloods drawn, an ECG at the bedside, an X-ray, and then the CT scan. Meanwhile, please keep still and **don't eat or drink anything** for now, in case you need an urgent procedure.\n\nA few things the scans and bloods can't tell me:\n\n1. **Documents and follow-up:** Do you have any **discharge paperwork, an operative/ERCP report, or a stent card** from that procedure a year ago? Were you ever **called back** for a repeat scope, or given an appointment you didn't attend?\n\n2. **Medicines:** Even if you're unsure, can you name **any** tablets you take — for the diabetes (metformin, insulin?), blood pressure, the irregular heartbeat (a blood thinner like warfarin or apixaban?), or **inhalers/nebulizers** for the COPD?\n\n3. **Social and surgical history:** Have you ever had **abdominal surgery** other than the stent procedure? Do you **smoke**, and have you had any **recent antibiotics, hospital stays, or weight loss**?\n\n4. **Timeline:** Thinking back — was this pain **sudden and severe within minutes to hours**, or did it build up **gradually over days to weeks**?",
+  "first": "I don't have any paperwork or a stent card that I know of, and I don't remember being called back or missing an appointment. I can't name my tablets. I don't know about other surgeries, smoking, recent antibiotics, hospital stays or weight loss. The pain has been getting worse and worse, but I don't know how fast it came on.",
+  "final": "I don't have any paperwork or stent card that I know of, and I don't remember being called back for another procedure. I can't name any of my tablets. I don't know about other surgeries, smoking, antibiotics, hospital stays or weight loss. I only know my belly pain has been getting worse, with swelling and feeling sick. I don't know if it came on suddenly or slowly.",
+  "retried": true,
+  "p_first": 0.43,
+  "d_first": 0.04,
+  "p_final": 0.26
+ },
+ {
+  "arm": "B",
+  "case": "case_010",
+  "q": "I'm sorry you're dealing with this — left upper abdominal pain with vomiting can come from several organs in that area (stomach, pancreas, spleen, left kidney, or even the lower left lung), so let me narrow it down with a few questions before I examine you.\n\n**First two questions:**\n\n1. **How did it start and how has it changed?** — When did the pain begin, was it sudden or gradual, is it constant or coming in waves, and how severe is it (0–10)? Does it travel anywhere, such as straight through to your back or up to your left shoulder?\n\n2. **What makes it better or worse?** — Is it related to eating (especially fatty or large meals) or drinking alcohol? Does leaning forward help? Any fever, chills, or recent illness?",
+  "first": "The pain in my left upper belly started mild about eight days ago. I was treated for a stomach bug, but it didn't get better, and now it's worse with nausea and vomiting. I don't remember how bad it is on a number scale, and I don't know about it spreading to my back or shoulder. I wasn't asked about fever, so I can't say. I don't drink alcohol.",
+  "final": "The pain in my left upper belly started mild about eight days ago. I was treated for a stomach bug, but it didn't get better, and now it's worse with nausea and vomiting. I don't remember how bad it is on a number scale, and I don't know about it spreading to my back or shoulder. I wasn't asked about fever, so I can't say. I don't drink alcohol.",
+  "p_first": 0.11,
+  "d_first": 0.05,
+  "p_final": 0.11
+ },
+ {
+  "arm": "B",
+  "case": "case_010",
+  "q": "Understood — I'll complete the history first before ordering anything. Let me continue with a few more questions.\n\n**Please tell me about:**\n\n1. **Medications and past history** — Are you taking any regular medicines (including the contraceptive pill or hormones), or have you taken any recently? Have you ever been told you have a clotting disorder, sickle cell trait or disease, anaemia, a heart murmur or valve problem, gallstones, or a stomach ulcer?\n\n2. **Recent events** — In the weeks before this pain started, did you have any injury to your left side or abdomen (even minor, like a seatbelt, a fall, or sport), any long-haul travel, surgery, or a period of being immobile? Did you have a sore throat, fever, or glandular-fever-type illness before the pain began?",
+  "first": "I don't have any long-term medical conditions or past surgeries that I know of, and I've never had pelvic infection. I don't smoke or drink. I'm about five weeks pregnant, based on my dates, and this is my first pregnancy. I don't know about my medicines, allergies, injuries, travel, or recent sore throat or fever. That wasn't mentioned.",
+  "final": "I don't have any long-term medical conditions or past surgeries that I know of, and I've never had pelvic infection. I don't smoke or drink. I'm about five weeks pregnant, based on my dates, and this is my first pregnancy. I don't know about my medicines, allergies, injuries, travel, or recent sore throat or fever. That wasn't mentioned.",
+  "p_first": 0.12,
+  "d_first": 0.11,
+  "p_final": 0.12
+ },
+ {
+  "arm": "B",
+  "case": "case_010",
+  "q": "Almost there — one more round of history and then I'll order the tests.\n\n**Please tell me:**\n\n1. **Family history** — Does anyone in your family have a history of blood clots (DVT, pulmonary embolism, stroke at a young age), recurrent miscarriages, sickle cell disease, gallstones, or an aneurysm?\n\n2. **The character of the pain and your general state** — Is the pain a constant deep ache, a sharp stabbing pain, or cramping? Does it feel like it goes through to your back? Have you noticed feeling unusually breathless, light-headed, sweaty, or generally unwell? And have you had any loss of appetite or weight loss over these 8 days?",
+  "first": "I don't know about my family history, that wasn't mentioned. I can't say if the pain is a dull ache, sharp, or cramping, or whether it goes to my back. I don't remember being short of breath, light-headed, or sweaty, and I don't know about appetite or weight loss. What I can say is the pain started mild eight days ago and is now worse, with nausea and vomiting.",
+  "final": "I don't know about my family history, that wasn't mentioned. I can't say if the pain is a dull ache, sharp, or cramping, or whether it goes to my back. I don't remember being short of breath, light-headed, or sweaty, and I don't know about appetite or weight loss. What I can say is the pain started mild eight days ago and is now worse, with nausea and vomiting.",
+  "p_first": 0.11,
+  "d_first": 0.06,
+  "p_final": 0.11
+ },
+ {
+  "arm": "B",
+  "case": "case_010",
+  "q": "Good — the tests are ordered. While we wait for the results, let me ask about a few things the tests can't tell me.\n\n1. **What treatment did you get for the \"stomach bug\"?** — Was it an antibiotic, an anti-sickness injection, or just advice? And since the pain started, have you taken any painkillers (paracetamol, ibuprofen, codeine) or any other medicines or supplements — including anything for nausea in this pregnancy?\n\n2. **Any clues about clots or infection?** — Have you noticed any calf pain, swelling or redness in a leg, any chest pain, or any breathlessness? And in the month before the pain began, did you have a sore throat, swollen glands, fever, or a confirmed infection of any kind (throat, urine, chest, or gut)?",
+  "first": "I only know I was treated as if it was a stomach bug, and it didn't help. I don't remember what treatment I was given, or any painkillers, medicines or supplements I've taken. I don't know about calf pain, leg swelling, chest pain or breathlessness, and I don't know about any sore throat, fever or infection before this started. That wasn't mentioned.",
+  "final": "I only know I was treated as if it was a stomach bug, and it didn't help. I don't remember what treatment I was given, or any painkillers, medicines or supplements I've taken. I don't know about calf pain, leg swelling, chest pain or breathlessness, and I don't know about any sore throat, fever or infection before this started. That wasn't mentioned.",
+  "p_first": 0.09,
+  "d_first": 0.06,
+  "p_final": 0.09
+ },
+ {
+  "arm": "B",
+  "case": "case_010",
+  "q": "Those are on their way. While we wait, a few details will help me interpret them:\n\n1. **Your dates** — When was the first day of your last normal period, and are your cycles usually regular (roughly every 28 days)? Have you done a home pregnancy test, and was it positive?\n\n2. **Warning symptoms right now** — Have you had **any** vaginal bleeding or spotting at all, even a small amount? Do you feel dizzy or light-headed when you stand up, and is there any pain at the tip of your left shoulder, especially when you lie flat or take a deep breath?",
+  "first": "I did a home pregnancy test and it was positive. I haven't had a period, and I'm about five weeks along by my dates. I don't remember the exact date of my last period, and I don't know about my cycle length. I don't know about any bleeding, dizziness, or shoulder tip pain. That wasn't mentioned.",
+  "final": "I did a home pregnancy test and it was positive. I haven't had a period, and I'm about five weeks along by my dates. I don't remember the exact date of my last period, and I don't know about my cycle length. I don't know about any bleeding, dizziness, or shoulder tip pain. That wasn't mentioned.",
+  "p_first": 0.1,
+  "d_first": 0.07,
+  "p_final": 0.1
+ },
+ {
+  "arm": "B",
+  "case": "case_010",
+  "q": "I've ordered an **MRI of your abdomen and pelvis** (without contrast dye, which is safe in pregnancy) to confirm precisely where this pregnancy has implanted and which blood vessels are feeding it. That information guides the surgeon.\n\n**While we wait, this is important:**\n\nBecause a splenic pregnancy can bleed suddenly and heavily, you need to be **monitored continuously** from now on — blood pressure, pulse, and repeated blood counts — with **two large IV lines in place, blood crossmatched and ready**, and the surgical and anaesthesia teams alerted. You should **not eat or drink anything** from this point, in case you need an operation urgently.\n\n**Please tell me immediately if you notice any of the following right now:**\n- A sudden severe worsening of the left upper abdominal pain\n- Pain at the tip of your **left shoulder** (a sign of blood irritating the diaphragm)\n- Feeling **dizzy, faint, cold, clammy or confused**, or a racing heartbeat\n- Any new vaginal bleeding\n\nGiven how you've described the last eight days — steadily worsening pain, vomiting, and a mass that has more than doubled in size — my working diagnosis is a **splenic ectopic pregnancy**, and the likely definitive treatment is **urgent surgery to remove the pregnancy and, in most cases, the spleen (splenectomy)**, with vaccination against certain infections afterwards to protect you long-term.",
+  "first": "That sounds scary. I'll tell you if anything changes, but right now I can't say about shoulder pain, dizziness, or bleeding, because that wasn't mentioned to me. I know my belly pain started mild eight days ago and has gotten worse, with nausea and vomiting. I don't know anything about a mass or its size. I understand I shouldn't eat or drink.",
+  "final": "That sounds scary. I'll tell you if anything changes, but right now I can't say about shoulder pain, dizziness, or bleeding, because that wasn't mentioned to me. I know my belly pain started mild eight days ago and has gotten worse, with nausea and vomiting. I don't know anything about a mass or its size. I understand I shouldn't eat or drink.",
+  "p_first": 0.09,
+  "d_first": 0.1,
+  "p_final": 0.09
+ }
+]

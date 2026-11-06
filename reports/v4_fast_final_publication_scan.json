@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "staged_files_scanned": 77,
+  "prior_branch_files_scanned": 191,
+  "credential_patterns_found": 0,
+  "closed_data_or_identifier_findings": 0,
+  "private_raw_traces_staged": false,
+  "per_generation_billing_metadata_staged": false,
+  "full_manifests_preserved_locally_not_staged": true,
+  "staged_tree_sha256": "525624e37a91d3653c78b8a696526816c53116bdc9f83196585f186b41a03aea",
+  "note": "Scanned staged content and all previous branch additions for credential patterns. Privacy restrictions additionally applied to newly published data and artifact."
+}

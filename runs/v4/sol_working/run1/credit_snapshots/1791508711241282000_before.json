@@ -1,0 +1,14 @@
+{
+  "account": {
+    "total_credits": "25",
+    "total_usage": "19.158473283"
+  },
+  "ledger_total_usd": "0.21121725",
+  "validation": {
+    "account_delta_usd": "0.193063250",
+    "ledger_total_usd": "0.21121725",
+    "ledger_above_account_usd": "0.018154000",
+    "conservative_consumed_usd": "0.21121725",
+    "policy": "Preserve all recorded costs; account lag is not zero-cost evidence"
+  }
+}

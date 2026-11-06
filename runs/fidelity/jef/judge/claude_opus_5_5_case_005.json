@@ -1,0 +1,1 @@
+{"id": "claude_opus_5_5_case_005", "request_sha256": "36b6c252603c7072cc2c9fb576928908c06704877631fd4533098fcab0a4f9fe", "model": "jev-1.13.0", "usage": {"input_tokens": 951, "output_tokens": 36}, "answers": {"match": {"type": "noul", "noul": 0.95}, "generic": {"type": "noul", "noul": 0.07}}, "timestamp": 1791209881.837557}

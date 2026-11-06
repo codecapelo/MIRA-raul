@@ -1,0 +1,1 @@
+{"id": "case_004_q2__flash-lite_rules", "request_sha256": "7ee21aa353959f9442563ac7d052b8cd7bf71990c67160102f2cf89466f0c7f7", "model": "jev-1.13.0", "usage": {"input_tokens": 1046, "output_tokens": 38}, "answers": {"invents": {"type": "noul", "noul": 0.11}, "drift": {"type": "noul", "noul": 0.03}}, "timestamp": 1791209892.791893}

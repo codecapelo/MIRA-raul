@@ -1,0 +1,6 @@
+{
+ "text": "I'm a 25-year-old woman. I've had pain in the upper left side of my belly that started mild about eight days ago and keeps getting worse. Now I'm feeling nauseous and throwing up too.",
+ "statement": "I've had pain in the upper left side of my belly that started mild about eight days ago and keeps getting worse. Now I'm feeling nauseous and throwing up too.",
+ "method": "one Sonnet call from the recorded complaint and history; reviewed by a person",
+ "model": "claude-sonnet-5-5"
+}

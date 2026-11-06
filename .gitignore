@@ -7,3 +7,39 @@ __pycache__/
 .DS_Store
 .venv/
 upstream/
+
+runs/**/cases
+runs/**/config
+runs/**/upstream
+runs/**/budget.sqlite
+case_locks/
+*.lock
+
+# Private (non-open-access) NEJM case: facts, traces and results must never be published
+cases/case_01[1-9]/
+cases/case_0[2-9][0-9]/
+runs/v3/*api*/
+results/v3_*api*
+runs/v3/*prv*/
+results/v3_*prv*
+results/matcher_eval_private*
+runs/matcher_eval/*private*
+results/*private*
+results/exam_eval_*
+runs/opening_study*/
+runs/note_study*/
+results/note_study*
+
+# Closed v4 study: never publish source facts, raw traces or detailed outputs
+runs/v4/fast_private/
+reports/v4_fast_private_details*
+
+# Full operational manifests and per-generation billing metadata stay local.
+# Public exports contain only opaque digests and cohort aggregates.
+runs/v4/fast/*/public/run1/manifest.json
+reports/v4_fast_generation_costs.json
+runs/v5/
+
+# Material derivado de casos fechados (NEJM) e rascunhos locais
+tmp/
+output/pdf/*Caso_11*.pdf

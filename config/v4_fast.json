@@ -1,0 +1,80 @@
+{
+  "budget_usd": "5.00",
+  "models": {
+    "google/gemini-3.1-flash-lite-preview": {
+      "provider": "google-ai-studio",
+      "provider_name": "Google AI Studio",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1048576,
+      "max_tokens": 8192,
+      "usd_per_million": {
+        "input": 0.25,
+        "output": 1.5
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "seed",
+        "response_format",
+        "structured_outputs",
+        "tool_choice",
+        "tools",
+        "reasoning_effort",
+        "stream"
+      ]
+    },
+    "google/gemini-3.1-pro-preview": {
+      "provider": "google-ai-studio",
+      "provider_name": "Google AI Studio",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1048576,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 2.0,
+        "output": 12.0
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "note": "Frozen final/proposal benchmark judge after the encounter; never medical interaction."
+    },
+    "gpt-6.1-sol": {
+      "provider": "codex-chatgpt-subscription",
+      "provider_name": "Codex ChatGPT subscription",
+      "supports_logprobs": false,
+      "pricing_verified": false,
+      "max_tokens": 24576,
+      "transport": "codex_subscription_cli_json_action",
+      "effort": "medium",
+      "note": "No OpenRouter billing; subscription monetary cost unknown; served model identity may not be exposed by CLI"
+    },
+    "gpt-6-astra": {
+      "provider": "codex-chatgpt-subscription",
+      "provider_name": "Codex ChatGPT subscription",
+      "supports_logprobs": false,
+      "pricing_verified": false,
+      "max_tokens": 24576,
+      "transport": "codex_subscription_cli_json_action",
+      "effort": "medium",
+      "note": "No OpenRouter billing; subscription monetary cost unknown; served model identity may not be exposed by CLI"
+    }
+  },
+  "streaming_note": "OpenRouter standard SSE for conversation roles only; wait usage and DONE, interrupted streams remain uncertain."
+}

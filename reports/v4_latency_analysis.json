@@ -1,0 +1,1548 @@
+{
+  "method": "Only ten public cases per condition. CLI start estimated from persisted latency; API request/response matched by request_id. Active time is union of completed call intervals, not elapsed wall time. Interrupted CLI attempts without durable usage are excluded, making totals lower bounds. No TTFT measurement; no new inference.",
+  "conditions": {
+    "v36": {
+      "cases": [
+        {
+          "case_id": "case_001",
+          "source_sha256": "2e9f3aafaf19d8baae3efc98e6137a756ae387aa28e1c0b2559972a53b43bd13",
+          "wall_seconds": 200.24067091941833,
+          "terminal_reported_seconds": 191.16313675,
+          "active_call_seconds": 197.42037916183472,
+          "first_doctor_completed_content_seconds": 18.306961059570312,
+          "phase_seconds": {
+            "benchmark_judges": 11.057201147079468,
+            "cascade_and_other": 29.55139895900001,
+            "doctor": 91.83481359481812,
+            "exam_matcher": 52.22485065460205,
+            "initial_map": 9.065585333,
+            "patient": 3.686529374999999
+          },
+          "subscription_input": 33777,
+          "subscription_cache": 33763,
+          "doctor_calls": 9,
+          "patient_calls": 1,
+          "cascade_calls": 3,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_002",
+          "source_sha256": "0219c8fcf1c1ef051cd91ecd9c035838daa69caeab13a36c59705c88d6bc521f",
+          "wall_seconds": 239.6001353263855,
+          "terminal_reported_seconds": 231.39215437500002,
+          "active_call_seconds": 237.89257860183716,
+          "first_doctor_completed_content_seconds": 17.82533621788025,
+          "phase_seconds": {
+            "benchmark_judges": 12.22619915008545,
+            "cascade_and_other": 109.01429770800003,
+            "doctor": 66.26360511779785,
+            "exam_matcher": 38.967918157577515,
+            "initial_map": 8.196357709,
+            "patient": 3.224200792000005
+          },
+          "subscription_input": 68643,
+          "subscription_cache": 68619,
+          "doctor_calls": 5,
+          "patient_calls": 1,
+          "cascade_calls": 6,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_003",
+          "source_sha256": "80e9c31101152d0f0ca7b5834b23c9bf37208225a2a2566d8cb48b9f3c0e0526",
+          "wall_seconds": 135.9316189289093,
+          "terminal_reported_seconds": 118.211293542,
+          "active_call_seconds": 134.49862384796143,
+          "first_doctor_completed_content_seconds": 28.885435819625854,
+          "phase_seconds": {
+            "benchmark_judges": 8.891721725463867,
+            "cascade_and_other": 27.613461375000014,
+            "doctor": 61.99340534210205,
+            "exam_matcher": 11.237050533294678,
+            "initial_map": 17.708397917000003,
+            "patient": 7.054587292000001
+          },
+          "subscription_input": 35268,
+          "subscription_cache": 35248,
+          "doctor_calls": 5,
+          "patient_calls": 2,
+          "cascade_calls": 3,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_004",
+          "source_sha256": "d7cc8b202489ff7d6c8b66a77476b5937de12f0ff26e6a7c3bcd3f459e1fb4a4",
+          "wall_seconds": 283.8398289680481,
+          "terminal_reported_seconds": 276.4770045,
+          "active_call_seconds": 274.9239947795868,
+          "first_doctor_completed_content_seconds": 17.886430978775024,
+          "phase_seconds": {
+            "benchmark_judges": 8.02565312385559,
+            "cascade_and_other": 21.675149875000045,
+            "doctor": 191.43496108055115,
+            "exam_matcher": 36.0790901184082,
+            "initial_map": 7.355600166999977,
+            "patient": 10.353540332999955
+          },
+          "subscription_input": 38040,
+          "subscription_cache": 38026,
+          "doctor_calls": 32,
+          "patient_calls": 3,
+          "cascade_calls": 3,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_005",
+          "source_sha256": "ec614b4a40a713a33c08adbe24bde9eab377510b13c836a4c0213636acb56f97",
+          "wall_seconds": 153.898193359375,
+          "terminal_reported_seconds": 144.26049454199998,
+          "active_call_seconds": 151.4934597015381,
+          "first_doctor_completed_content_seconds": 21.885154247283936,
+          "phase_seconds": {
+            "benchmark_judges": 10.8119375705719,
+            "cascade_and_other": 29.88895425000004,
+            "doctor": 74.5658061504364,
+            "exam_matcher": 19.269990921020508,
+            "initial_map": 9.632355042,
+            "patient": 7.32441587400001
+          },
+          "subscription_input": 31574,
+          "subscription_cache": 31558,
+          "doctor_calls": 7,
+          "patient_calls": 2,
+          "cascade_calls": 3,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_006",
+          "source_sha256": "d5e936387b590c04f56bef617f77ee05c3ee58a305ea43dc9cd9cfb9cef7483c",
+          "wall_seconds": 176.24234294891357,
+          "terminal_reported_seconds": 165.471427,
+          "active_call_seconds": 171.22370791435242,
+          "first_doctor_completed_content_seconds": 18.818830013275146,
+          "phase_seconds": {
+            "benchmark_judges": 7.463990926742554,
+            "cascade_and_other": 29.329275499999937,
+            "doctor": 88.11338591575623,
+            "exam_matcher": 23.301908254623413,
+            "initial_map": 10.765189082999996,
+            "patient": 12.249958207999953
+          },
+          "subscription_input": 40877,
+          "subscription_cache": 40859,
+          "doctor_calls": 6,
+          "patient_calls": 3,
+          "cascade_calls": 3,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_007",
+          "source_sha256": "3746a65cf790076b97f81911079c8e253e37f24cc4cc240b1b9c9677181a6db5",
+          "wall_seconds": 131.56227707862854,
+          "terminal_reported_seconds": 122.654883375,
+          "active_call_seconds": 130.8131980895996,
+          "first_doctor_completed_content_seconds": 17.653784036636353,
+          "phase_seconds": {
+            "benchmark_judges": 4.713176012039185,
+            "doctor": 101.33673548698425,
+            "exam_matcher": 4.720750093460083,
+            "initial_map": 8.902724374999991,
+            "patient": 11.139812376000009
+          },
+          "subscription_input": 11267,
+          "subscription_cache": 11259,
+          "doctor_calls": 8,
+          "patient_calls": 3,
+          "cascade_calls": 0,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_008",
+          "source_sha256": "7714c9467c19b83601f4542caafb3d0326bde6d53150f281bff6d3a5cecfe5b0",
+          "wall_seconds": 3254.8446822166443,
+          "terminal_reported_seconds": 44.226344209000004,
+          "active_call_seconds": 143.30440616607666,
+          "first_doctor_completed_content_seconds": 20.658581256866455,
+          "phase_seconds": {
+            "benchmark_judges": 9.2485511302948,
+            "cascade_and_other": 38.54907245700002,
+            "doctor": 51.59985589981079,
+            "exam_matcher": 31.29207181930542,
+            "initial_map": 9.265667791999988,
+            "patient": 3.349187208000046
+          },
+          "subscription_input": 37110,
+          "subscription_cache": 37092,
+          "doctor_calls": 5,
+          "patient_calls": 1,
+          "cascade_calls": 3,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_009",
+          "source_sha256": "388995d493f155c30830310a095897f031e77411b4bc35e5bd1e73a69357db73",
+          "wall_seconds": 3228.069744825363,
+          "terminal_reported_seconds": 21.372468542,
+          "active_call_seconds": 113.19172501564026,
+          "first_doctor_completed_content_seconds": 18.81489086151123,
+          "phase_seconds": {
+            "benchmark_judges": 13.821486234664917,
+            "cascade_and_other": 24.473450581999984,
+            "doctor": 38.70181488990784,
+            "exam_matcher": 22.853397607803345,
+            "initial_map": 8.57199508299999,
+            "patient": 4.769580540999982
+          },
+          "subscription_input": 25561,
+          "subscription_cache": 25547,
+          "doctor_calls": 4,
+          "patient_calls": 1,
+          "cascade_calls": 3,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_010",
+          "source_sha256": "ee117a0b7a0684d44d3463031aec7c8a5e3d6149548b428f01fd711eff1bd818",
+          "wall_seconds": 3270.799304008484,
+          "terminal_reported_seconds": 130.06956008400002,
+          "active_call_seconds": 165.43095993995667,
+          "first_doctor_completed_content_seconds": 17.252734899520874,
+          "phase_seconds": {
+            "benchmark_judges": 11.107848882675171,
+            "cascade_and_other": 22.524785040999987,
+            "doctor": 96.61948752403259,
+            "exam_matcher": 14.216274499893188,
+            "initial_map": 9.728816291999976,
+            "patient": 11.233747416000025
+          },
+          "subscription_input": 29072,
+          "subscription_cache": 29058,
+          "doctor_calls": 9,
+          "patient_calls": 3,
+          "cascade_calls": 3,
+          "final_astra_calls": 0
+        }
+      ],
+      "active_call_seconds_per_case": {
+        "n": 10,
+        "median": 158.46220982074738,
+        "p90": 241.5957202196121,
+        "min": 113.19172501564026,
+        "max": 274.9239947795868,
+        "sum": 1720.1930332183838
+      },
+      "wall_seconds_per_case": {
+        "n": 10,
+        "median": 219.92040312290192,
+        "p90": 3256.440144395828,
+        "min": 131.56227707862854,
+        "max": 3270.799304008484,
+        "sum": 11075.02879858017
+      },
+      "first_doctor_completed_content_seconds": {
+        "n": 10,
+        "median": 18.56092596054077,
+        "p90": 22.585182404518125,
+        "min": 17.252734899520874,
+        "max": 28.885435819625854,
+        "sum": 197.98813939094543
+      },
+      "subscription_input_tokens_per_case": {
+        "n": 10,
+        "median": 34522.5,
+        "p90": 43653.59999999999,
+        "min": 11267,
+        "max": 68643,
+        "sum": 351189
+      },
+      "roles": {
+        "consult_map": {
+          "models": [
+            "claude-sonnet-5-5"
+          ],
+          "latency_seconds": {
+            "n": 10,
+            "median": 9.165626562499995,
+            "p90": 11.459509966399994,
+            "min": 7.355600166999977,
+            "max": 17.708397917000003,
+            "sum": 99.19268879299992
+          },
+          "input_tokens": {
+            "n": 10,
+            "median": 1874.0,
+            "p90": 2263.699999999999,
+            "min": 1847,
+            "max": 5159,
+            "sum": 22120
+          },
+          "input_sum": 22120,
+          "output_sum": 12037,
+          "cached_input_sum": 22096
+        },
+        "doctor": {
+          "models": [
+            "z-ai/glm-5"
+          ],
+          "latency_seconds": {
+            "n": 90,
+            "median": 9.263349533081055,
+            "p90": 15.7123004436493,
+            "min": 2.57718825340271,
+            "max": 21.758144855499268,
+            "sum": 862.4638710021973
+          },
+          "input_tokens": {
+            "n": 90,
+            "median": 4632.0,
+            "p90": 7834.800000000001,
+            "min": 2358,
+            "max": 9620,
+            "sum": 442653
+          },
+          "input_sum": 442653,
+          "output_sum": 43981,
+          "cached_input_sum": 376256
+        },
+        "judge": {
+          "models": [
+            "google/gemini-3.1-pro-preview"
+          ],
+          "latency_seconds": {
+            "n": 10,
+            "median": 4.690542936325073,
+            "p90": 5.761730289459228,
+            "min": 3.6342010498046875,
+            "max": 5.897938013076782,
+            "sum": 46.28248691558838
+          },
+          "input_tokens": {
+            "n": 10,
+            "median": 660.0,
+            "p90": 680.8,
+            "min": 610,
+            "max": 697,
+            "sum": 6522
+          },
+          "input_sum": 6522,
+          "output_sum": 2576,
+          "cached_input_sum": 0
+        },
+        "judge_proposal": {
+          "models": [
+            "google/gemini-3.1-pro-preview"
+          ],
+          "latency_seconds": {
+            "n": 9,
+            "median": 5.7405171394348145,
+            "p90": 7.563627910614014,
+            "min": 3.796341896057129,
+            "max": 7.923548221588135,
+            "sum": 51.08527898788452
+          },
+          "input_tokens": {
+            "n": 9,
+            "median": 623,
+            "p90": 655.0,
+            "min": 599,
+            "max": 671,
+            "sum": 5614
+          },
+          "input_sum": 5614,
+          "output_sum": 2276,
+          "cached_input_sum": 0
+        },
+        "matcher": {
+          "models": [
+            "google/gemini-3.1-flash-lite-preview"
+          ],
+          "latency_seconds": {
+            "n": 190,
+            "median": 1.2195305824279785,
+            "p90": 1.5753425121307372,
+            "min": 0.9923300743103027,
+            "max": 3.7364931106567383,
+            "sum": 254.1633026599884
+          },
+          "input_tokens": {
+            "n": 190,
+            "median": 1485.0,
+            "p90": 1643.8,
+            "min": 1381,
+            "max": 1918,
+            "sum": 287033
+          },
+          "input_sum": 287033,
+          "output_sum": 17702,
+          "cached_input_sum": 0
+        },
+        "patient": {
+          "models": [
+            "claude-sonnet-5-5"
+          ],
+          "latency_seconds": {
+            "n": 20,
+            "median": 3.6781461040000067,
+            "p90": 4.201447716699971,
+            "min": 3.224200792000005,
+            "max": 4.769580540999982,
+            "sum": 74.38555941499999
+          },
+          "input_tokens": {
+            "n": 20,
+            "median": 2779.0,
+            "p90": 3502.4,
+            "min": 2344,
+            "max": 3695,
+            "sum": 57878
+          },
+          "input_sum": 57878,
+          "output_sum": 2992,
+          "cached_input_sum": 57838
+        },
+        "patient_review": {
+          "models": [
+            "claude-sonnet-5-5"
+          ],
+          "latency_seconds": {
+            "n": 10,
+            "median": 3.5861471249999965,
+            "p90": 4.0703783871999635,
+            "min": 3.266577041000005,
+            "max": 4.255916124999999,
+            "sum": 36.54254812500002
+          },
+          "input_tokens": {
+            "n": 10,
+            "median": 3243.5,
+            "p90": 3938.2,
+            "min": 3020,
+            "max": 4120,
+            "sum": 34081
+          },
+          "input_sum": 34081,
+          "output_sum": 1526,
+          "cached_input_sum": 34061
+        },
+        "review_claude": {
+          "models": [
+            "claude-opus-5-5",
+            "claude-sonnet-5-5"
+          ],
+          "latency_seconds": {
+            "n": 20,
+            "median": 15.341036625000001,
+            "p90": 26.243392850000006,
+            "min": 5.4757900000000035,
+            "max": 30.045106333000007,
+            "sum": 296.07729762200006
+          },
+          "input_tokens": {
+            "n": 20,
+            "median": 11559.0,
+            "p90": 18623.9,
+            "min": 6234,
+            "max": 20101,
+            "sum": 237110
+          },
+          "input_sum": 237110,
+          "output_sum": 33381,
+          "cached_input_sum": 237034
+        }
+      },
+      "phase_seconds_per_case": {
+        "benchmark_judges": {
+          "n": 10,
+          "median": 10.03024435043335,
+          "p90": 12.385727858543396,
+          "min": 4.713176012039185,
+          "max": 13.821486234664917,
+          "sum": 97.3677659034729
+        },
+        "cascade_and_other": {
+          "n": 10,
+          "median": 28.471368437499976,
+          "p90": 45.595594982099996,
+          "min": 0,
+          "max": 109.01429770800003,
+          "sum": 332.61984574700006
+        },
+        "doctor": {
+          "n": 10,
+          "median": 81.33959603309631,
+          "p90": 110.3465580463409,
+          "min": 38.70181488990784,
+          "max": 191.43496108055115,
+          "sum": 862.4638710021973
+        },
+        "exam_matcher": {
+          "n": 10,
+          "median": 23.07765293121338,
+          "p90": 40.29361140727996,
+          "min": 4.720750093460083,
+          "max": 52.22485065460205,
+          "sum": 254.1633026599884
+        },
+        "initial_map": {
+          "n": 10,
+          "median": 9.165626562499995,
+          "p90": 11.459509966399994,
+          "min": 7.355600166999977,
+          "max": 17.708397917000003,
+          "sum": 99.19268879299992
+        },
+        "patient": {
+          "n": 10,
+          "median": 7.1895015830000055,
+          "p90": 11.335368495200017,
+          "min": 3.224200792000005,
+          "max": 12.249958207999953,
+          "sum": 74.38555941499999
+        }
+      },
+      "call_count": 359
+    },
+    "v4_original": {
+      "cases": [
+        {
+          "case_id": "case_001",
+          "source_sha256": "bc791bbc2ca83e75547fe53322ea07dd849d13d4b5e17d4a4debeddb76c48c12",
+          "wall_seconds": 238.09184789657593,
+          "terminal_reported_seconds": 201.24937725,
+          "active_call_seconds": 236.84404587745667,
+          "first_doctor_completed_content_seconds": 47.25861191749573,
+          "phase_seconds": {
+            "benchmark_judges": 10.479398727416992,
+            "cascade_and_other": 65.33942983299997,
+            "doctor": 98.623073917,
+            "exam_matcher": 19.16140842437744,
+            "initial_map": 36.738644542,
+            "patient": 6.5020902079999985
+          },
+          "subscription_input": 157148,
+          "subscription_cache": 0,
+          "doctor_calls": 7,
+          "patient_calls": 1,
+          "cascade_calls": 4,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_002",
+          "source_sha256": "fc5de670687b9c934912e46995e988967911fbd6a5bfcede9dc575b800b33aae",
+          "wall_seconds": 202.20843720436096,
+          "terminal_reported_seconds": 175.71190745799998,
+          "active_call_seconds": 201.1626386642456,
+          "first_doctor_completed_content_seconds": 34.08085823059082,
+          "phase_seconds": {
+            "benchmark_judges": 10.86244010925293,
+            "cascade_and_other": 69.890159833,
+            "doctor": 71.88835946,
+            "exam_matcher": 6.367136716842651,
+            "initial_map": 26.396666875,
+            "patient": 15.757875915999996
+          },
+          "subscription_input": 149826,
+          "subscription_cache": 0,
+          "doctor_calls": 6,
+          "patient_calls": 2,
+          "cascade_calls": 4,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_003",
+          "source_sha256": "16e52d7f487869b72921b6f91125564bd540b9326330db12b8860650e20c6dc1",
+          "wall_seconds": 28779.165571928024,
+          "terminal_reported_seconds": 89.722669042,
+          "active_call_seconds": 210.98019528388977,
+          "first_doctor_completed_content_seconds": 48.81372809410095,
+          "phase_seconds": {
+            "benchmark_judges": 11.222227573394775,
+            "cascade_and_other": 54.63302275099999,
+            "doctor": 83.17794271,
+            "exam_matcher": 11.318732261657715,
+            "initial_map": 39.8917075,
+            "patient": 10.736562541
+          },
+          "subscription_input": 154410,
+          "subscription_cache": 15360,
+          "doctor_calls": 7,
+          "patient_calls": 1,
+          "cascade_calls": 4,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_004",
+          "source_sha256": "8bee3731e3c7babf25a71d5ac8903e48b7b7dc1c5e45e0da3dc8b66805bf5378",
+          "wall_seconds": 249.30133199691772,
+          "terminal_reported_seconds": 223.61328600000002,
+          "active_call_seconds": 247.76559448242188,
+          "first_doctor_completed_content_seconds": 33.46849083900452,
+          "phase_seconds": {
+            "benchmark_judges": 12.021551132202148,
+            "cascade_and_other": 51.838981625,
+            "doctor": 121.76666687499997,
+            "exam_matcher": 9.54383134841919,
+            "initial_map": 25.595497290999997,
+            "patient": 26.999065917000003
+          },
+          "subscription_input": 241848,
+          "subscription_cache": 38144,
+          "doctor_calls": 11,
+          "patient_calls": 4,
+          "cascade_calls": 4,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_005",
+          "source_sha256": "ce6a7ebac6685251f3a0ce9639273354d06939d33b2477c8dbe9685993103411",
+          "wall_seconds": 28544.774353027344,
+          "terminal_reported_seconds": 104.64510787500001,
+          "active_call_seconds": 556.8506879806519,
+          "first_doctor_completed_content_seconds": 65.90135097503662,
+          "phase_seconds": {
+            "benchmark_judges": 8.05458116531372,
+            "cascade_and_other": 52.07112470800001,
+            "doctor": 94.54442058500007,
+            "exam_matcher": 15.136818885803223,
+            "initial_map": 56.22803562499999,
+            "patient": 330.81570729099997
+          },
+          "subscription_input": 196712,
+          "subscription_cache": 33408,
+          "doctor_calls": 8,
+          "patient_calls": 4,
+          "cascade_calls": 4,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_006",
+          "source_sha256": "1e6bddab8190bc63d3385a032cff7325a1d5e0943ca695b0c7c3a591ad15f01d",
+          "wall_seconds": 512.1982362270355,
+          "terminal_reported_seconds": 479.61883387499995,
+          "active_call_seconds": 510.95798563957214,
+          "first_doctor_completed_content_seconds": 39.87542915344238,
+          "phase_seconds": {
+            "benchmark_judges": 8.044167041778564,
+            "cascade_and_other": 35.999074622999956,
+            "doctor": 402.29211687400004,
+            "exam_matcher": 11.107495784759521,
+            "initial_map": 32.51134674999999,
+            "patient": 21.003784749999994
+          },
+          "subscription_input": 187467,
+          "subscription_cache": 7552,
+          "doctor_calls": 8,
+          "patient_calls": 3,
+          "cascade_calls": 4,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_007",
+          "source_sha256": "ceaee3584c2edc51c308c771e0e38ed0deee3666897fc9986f7846d59ee5705f",
+          "wall_seconds": 579.6898400783539,
+          "terminal_reported_seconds": 549.70052525,
+          "active_call_seconds": 578.5356450080872,
+          "first_doctor_completed_content_seconds": 36.590067863464355,
+          "phase_seconds": {
+            "benchmark_judges": 8.532262802124023,
+            "cascade_and_other": 397.432902707,
+            "doctor": 94.796118874,
+            "exam_matcher": 2.8542158603668213,
+            "initial_map": 29.920437584000013,
+            "patient": 44.99970724899998
+          },
+          "subscription_input": 197407,
+          "subscription_cache": 34688,
+          "doctor_calls": 8,
+          "patient_calls": 4,
+          "cascade_calls": 4,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_008",
+          "source_sha256": "0aacaceb2906ec0daa23dec479e338b22ef4097c5b2f2a0b6ace279cfb83fa72",
+          "wall_seconds": 165.3186480998993,
+          "terminal_reported_seconds": 139.01091016600003,
+          "active_call_seconds": 164.4768590927124,
+          "first_doctor_completed_content_seconds": 39.73793601989746,
+          "phase_seconds": {
+            "benchmark_judges": 8.747780084609985,
+            "cascade_and_other": 48.78741008299994,
+            "doctor": 73.50689716700003,
+            "initial_map": 26.246507874999907,
+            "patient": 7.1882638330000646
+          },
+          "subscription_input": 140183,
+          "subscription_cache": 38144,
+          "doctor_calls": 6,
+          "patient_calls": 1,
+          "cascade_calls": 4,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_009",
+          "source_sha256": "170dffd56eb3db98636e88953f5dbc0030fe31303792c8c66b72f0803a5a0d7b",
+          "wall_seconds": 133.88954329490662,
+          "terminal_reported_seconds": 108.520335166,
+          "active_call_seconds": 133.16869640350342,
+          "first_doctor_completed_content_seconds": 34.39050507545471,
+          "phase_seconds": {
+            "benchmark_judges": 8.637479066848755,
+            "cascade_and_other": 40.0599434180001,
+            "doctor": 49.74422654099999,
+            "exam_matcher": 3.088582992553711,
+            "initial_map": 25.303796458999955,
+            "patient": 6.334667624999952
+          },
+          "subscription_input": 111984,
+          "subscription_cache": 27776,
+          "doctor_calls": 4,
+          "patient_calls": 1,
+          "cascade_calls": 4,
+          "final_astra_calls": 0
+        },
+        {
+          "case_id": "case_010",
+          "source_sha256": "d2570037fc8c9cc1c161fdcfb68293f4e15bcd9a12ce8d9b8ffa6d28bd5e6803",
+          "wall_seconds": 257.2504029273987,
+          "terminal_reported_seconds": 228.6819028750001,
+          "active_call_seconds": 255.6223967075348,
+          "first_doctor_completed_content_seconds": 36.070399045944214,
+          "phase_seconds": {
+            "benchmark_judges": 9.135902881622314,
+            "cascade_and_other": 37.52169870899991,
+            "doctor": 152.39398291499992,
+            "exam_matcher": 10.978834629058838,
+            "initial_map": 28.499147041000015,
+            "patient": 17.09283033300005
+          },
+          "subscription_input": 264753,
+          "subscription_cache": 53632,
+          "doctor_calls": 14,
+          "patient_calls": 2,
+          "cascade_calls": 4,
+          "final_astra_calls": 0
+        }
+      ],
+      "active_call_seconds_per_case": {
+        "n": 10,
+        "median": 242.30482017993927,
+        "p90": 559.0191836833953,
+        "min": 133.16869640350342,
+        "max": 578.5356450080872,
+        "sum": 3096.3647451400757
+      },
+      "wall_seconds_per_case": {
+        "n": 10,
+        "median": 253.2758674621582,
+        "p90": 28568.21347491741,
+        "min": 133.88954329490662,
+        "max": 28779.165571928024,
+        "sum": 59661.88821268082
+      },
+      "first_doctor_completed_content_seconds": {
+        "n": 10,
+        "median": 38.16400194168091,
+        "p90": 50.52249038219451,
+        "min": 33.46849083900452,
+        "max": 65.90135097503662,
+        "sum": 416.18737721443176
+      },
+      "subscription_input_tokens_per_case": {
+        "n": 10,
+        "median": 172307.5,
+        "p90": 244138.5,
+        "min": 111984,
+        "max": 264753,
+        "sum": 1801738
+      },
+      "roles": {
+        "consult_map": {
+          "models": [
+            "gpt-6.1-sol"
+          ],
+          "latency_seconds": {
+            "n": 10,
+            "median": 29.209792312500014,
+            "p90": 41.52534031249999,
+            "min": 25.303796458999955,
+            "max": 56.22803562499999,
+            "sum": 327.33178754199986
+          },
+          "input_tokens": {
+            "n": 10,
+            "median": 9951.5,
+            "p90": 9989.2,
+            "min": 9933,
+            "max": 9991,
+            "sum": 99586
+          },
+          "input_sum": 99586,
+          "output_sum": 7632,
+          "cached_input_sum": 7552
+        },
+        "doctor": {
+          "models": [
+            "gpt-6.1-sol"
+          ],
+          "latency_seconds": {
+            "n": 79,
+            "median": 11.296074500000003,
+            "p90": 16.504047466200017,
+            "min": 6.5495098750000125,
+            "max": 316.19593058400005,
+            "sum": 1242.733805918
+          },
+          "input_tokens": {
+            "n": 79,
+            "median": 12825,
+            "p90": 14014.2,
+            "min": 11862,
+            "max": 15170,
+            "sum": 1018148
+          },
+          "input_sum": 1018148,
+          "output_sum": 15684,
+          "cached_input_sum": 158464
+        },
+        "judge": {
+          "models": [
+            "google/gemini-3.1-pro-preview"
+          ],
+          "latency_seconds": {
+            "n": 10,
+            "median": 4.3949174880981445,
+            "p90": 5.967083692550659,
+            "min": 4.125861883163452,
+            "max": 6.355780839920044,
+            "sum": 48.31199550628662
+          },
+          "input_tokens": {
+            "n": 10,
+            "median": 633.0,
+            "p90": 649.8,
+            "min": 605,
+            "max": 675,
+            "sum": 6314
+          },
+          "input_sum": 6314,
+          "output_sum": 2733,
+          "cached_input_sum": 0
+        },
+        "judge_proposal": {
+          "models": [
+            "google/gemini-3.1-pro-preview"
+          ],
+          "latency_seconds": {
+            "n": 10,
+            "median": 4.626063942909241,
+            "p90": 5.796643710136413,
+            "min": 3.8381330966949463,
+            "max": 6.097656011581421,
+            "sum": 47.42579507827759
+          },
+          "input_tokens": {
+            "n": 10,
+            "median": 615.5,
+            "p90": 651.4,
+            "min": 599,
+            "max": 682,
+            "sum": 6229
+          },
+          "input_sum": 6229,
+          "output_sum": 2711,
+          "cached_input_sum": 0
+        },
+        "matcher": {
+          "models": [
+            "google/gemini-3.1-flash-lite-preview"
+          ],
+          "latency_seconds": {
+            "n": 61,
+            "median": 1.4504399299621582,
+            "p90": 1.8692033290863037,
+            "min": 1.0825300216674805,
+            "max": 2.3580150604248047,
+            "sum": 89.55705690383911
+          },
+          "input_tokens": {
+            "n": 61,
+            "median": 1490,
+            "p90": 1647.0,
+            "min": 1381,
+            "max": 1835,
+            "sum": 92154
+          },
+          "input_sum": 92154,
+          "output_sum": 6392,
+          "cached_input_sum": 0
+        },
+        "patient": {
+          "models": [
+            "gpt-6.1-sol"
+          ],
+          "latency_seconds": {
+            "n": 23,
+            "median": 7.085098791,
+            "p90": 10.36228255780001,
+            "min": 5.983924417000004,
+            "max": 308.00159470899996,
+            "sum": 487.43055566300006
+          },
+          "input_tokens": {
+            "n": 23,
+            "median": 10341,
+            "p90": 10531.0,
+            "min": 10187,
+            "max": 10657,
+            "sum": 238279
+          },
+          "input_sum": 238279,
+          "output_sum": 1623,
+          "cached_input_sum": 17920
+        },
+        "patient_review": {
+          "models": [
+            "gpt-6.1-sol"
+          ],
+          "latency_seconds": {
+            "n": 10,
+            "median": 7.855209332999969,
+            "p90": 16.036285382999964,
+            "min": 6.660631375000094,
+            "max": 62.25100008300001,
+            "sum": 134.69263129000007
+          },
+          "input_tokens": {
+            "n": 10,
+            "median": 10535.5,
+            "p90": 10688.0,
+            "min": 10440,
+            "max": 10805,
+            "sum": 105713
+          },
+          "input_sum": 105713,
+          "output_sum": 959,
+          "cached_input_sum": 7552
+        },
+        "review_codex": {
+          "models": [
+            "gpt-6.1-sol"
+          ],
+          "latency_seconds": {
+            "n": 30,
+            "median": 12.9349576045,
+            "p90": 23.595836850300007,
+            "min": 6.039939500000003,
+            "max": 313.811341291,
+            "sum": 718.8811169999998
+          },
+          "input_tokens": {
+            "n": 30,
+            "median": 11932.0,
+            "p90": 12637.5,
+            "min": 9622,
+            "max": 12959,
+            "sum": 340012
+          },
+          "input_sum": 340012,
+          "output_sum": 8003,
+          "cached_input_sum": 57216
+        }
+      },
+      "phase_seconds_per_case": {
+        "benchmark_judges": {
+          "n": 10,
+          "median": 8.94184148311615,
+          "p90": 11.302159929275513,
+          "min": 8.044167041778564,
+          "max": 12.021551132202148,
+          "sum": 95.73779058456421
+        },
+        "cascade_and_other": {
+          "n": 10,
+          "median": 51.95505316650001,
+          "p90": 102.64443412039988,
+          "min": 35.999074622999956,
+          "max": 397.432902707,
+          "sum": 853.5737482899998
+        },
+        "doctor": {
+          "n": 10,
+          "median": 94.67026972950003,
+          "p90": 177.38379631089984,
+          "min": 49.74422654099999,
+          "max": 402.29211687400004,
+          "sum": 1242.7338059180001
+        },
+        "exam_matcher": {
+          "n": 10,
+          "median": 10.261332988739014,
+          "p90": 15.539277839660643,
+          "min": 0,
+          "max": 19.16140842437744,
+          "sum": 89.55705690383911
+        },
+        "initial_map": {
+          "n": 10,
+          "median": 29.209792312500014,
+          "p90": 41.52534031249999,
+          "min": 25.303796458999955,
+          "max": 56.22803562499999,
+          "sum": 327.33178754199986
+        },
+        "patient": {
+          "n": 10,
+          "median": 16.425353124500024,
+          "p90": 73.58130725319988,
+          "min": 6.334667624999952,
+          "max": 330.81570729099997,
+          "sum": 487.430555663
+        }
+      },
+      "call_count": 233
+    },
+    "v4_working": {
+      "cases": [
+        {
+          "case_id": "case_001",
+          "source_sha256": "526c0570983dd94216da538e49982ab28bc8d92c3d33a51ca66845f27ee595ba",
+          "wall_seconds": 538.0113000869751,
+          "terminal_reported_seconds": 515.448638084,
+          "active_call_seconds": 536.5087788105011,
+          "first_doctor_completed_content_seconds": 37.86688494682312,
+          "phase_seconds": {
+            "benchmark_judges": 9.765120029449463,
+            "cascade_and_other": 62.76298208399999,
+            "doctor": 391.44578387399997,
+            "exam_matcher": 23.303067684173584,
+            "final_astra": 18.60143962500007,
+            "initial_map": 22.463974917,
+            "patient": 8.166410374999998
+          },
+          "subscription_input": 182260,
+          "subscription_cache": 51456,
+          "doctor_calls": 8,
+          "patient_calls": 1,
+          "cascade_calls": 4,
+          "final_astra_calls": 1
+        },
+        {
+          "case_id": "case_002",
+          "source_sha256": "d75f6f7854516028387fc7943cc9641266c85c8adad783dab6a572c509e928c6",
+          "wall_seconds": 719.6729729175568,
+          "terminal_reported_seconds": 56.862907792,
+          "active_call_seconds": 505.6482377052307,
+          "first_doctor_completed_content_seconds": 31.349129915237427,
+          "phase_seconds": {
+            "benchmark_judges": 9.071548223495483,
+            "cascade_and_other": 54.55723612500002,
+            "doctor": 370.10201970700007,
+            "exam_matcher": 12.299287796020508,
+            "final_astra": 22.332346040999997,
+            "initial_map": 24.392388916,
+            "patient": 12.893411249999986
+          },
+          "subscription_input": 161855,
+          "subscription_cache": 34560,
+          "doctor_calls": 6,
+          "patient_calls": 2,
+          "cascade_calls": 4,
+          "final_astra_calls": 1
+        },
+        {
+          "case_id": "case_003",
+          "source_sha256": "9a169efa126130223c500321cd735d9cfbd3d3450d9ac7ad1c52afb9d873b70d",
+          "wall_seconds": 494.44186425209045,
+          "terminal_reported_seconds": 463.5756745,
+          "active_call_seconds": 493.36394715309143,
+          "first_doctor_completed_content_seconds": 39.636991024017334,
+          "phase_seconds": {
+            "benchmark_judges": 10.632081985473633,
+            "cascade_and_other": 53.36292574999999,
+            "doctor": 62.46438421000005,
+            "exam_matcher": 8.474647521972656,
+            "final_astra": 19.39450445800003,
+            "initial_map": 30.770864208000003,
+            "patient": 308.264538834
+          },
+          "subscription_input": 137232,
+          "subscription_cache": 55680,
+          "doctor_calls": 5,
+          "patient_calls": 1,
+          "cascade_calls": 4,
+          "final_astra_calls": 1
+        },
+        {
+          "case_id": "case_004",
+          "source_sha256": "ebf6ddc25815073c276654e9c772468a45237652edaacbcfca57f60e9e656631",
+          "wall_seconds": 550.1502966880798,
+          "terminal_reported_seconds": 525.409930917,
+          "active_call_seconds": 548.5724189281464,
+          "first_doctor_completed_content_seconds": 31.82940697669983,
+          "phase_seconds": {
+            "benchmark_judges": 11.771831274032593,
+            "cascade_and_other": 74.72382141699995,
+            "doctor": 387.898881874,
+            "exam_matcher": 16.764023065567017,
+            "final_astra": 14.604136917000005,
+            "initial_map": 24.543039042,
+            "patient": 18.26668491700001
+          },
+          "subscription_input": 228642,
+          "subscription_cache": 14080,
+          "doctor_calls": 9,
+          "patient_calls": 3,
+          "cascade_calls": 5,
+          "final_astra_calls": 1
+        },
+        {
+          "case_id": "case_005",
+          "source_sha256": "add63500af1074fd0d20a56b021ee9d542e1e6b078743f9284c8f170b6b0b967",
+          "wall_seconds": 513.463084936142,
+          "terminal_reported_seconds": 482.84232325,
+          "active_call_seconds": 512.1365849971771,
+          "first_doctor_completed_content_seconds": 38.15420198440552,
+          "phase_seconds": {
+            "benchmark_judges": 7.972695827484131,
+            "cascade_and_other": 347.158969292,
+            "doctor": 91.35152303999999,
+            "exam_matcher": 8.459640264511108,
+            "final_astra": 14.431209292000005,
+            "initial_map": 30.422611375,
+            "patient": 12.339935499000006
+          },
+          "subscription_input": 189858,
+          "subscription_cache": 18048,
+          "doctor_calls": 8,
+          "patient_calls": 2,
+          "cascade_calls": 4,
+          "final_astra_calls": 1
+        },
+        {
+          "case_id": "case_006",
+          "source_sha256": "abf89cc43374706ffabe39415216d1c22a973d7b78c84c274c7e4217d6ba4a4a",
+          "wall_seconds": 509.85265612602234,
+          "terminal_reported_seconds": 484.92149537500006,
+          "active_call_seconds": 508.4747486114502,
+          "first_doctor_completed_content_seconds": 32.925971031188965,
+          "phase_seconds": {
+            "benchmark_judges": 7.4760472774505615,
+            "cascade_and_other": 34.788594916999955,
+            "doctor": 389.155301418,
+            "exam_matcher": 9.207417011260986,
+            "final_astra": 15.86585095800001,
+            "initial_map": 24.86649429199997,
+            "patient": 27.115042625
+          },
+          "subscription_input": 209119,
+          "subscription_cache": 27520,
+          "doctor_calls": 8,
+          "patient_calls": 4,
+          "cascade_calls": 4,
+          "final_astra_calls": 1
+        },
+        {
+          "case_id": "case_007",
+          "source_sha256": "7c8ce427cd641d4064d26cb8b2d0ae7bc5f10aeab4c3775dfc6b0f02aa834b21",
+          "wall_seconds": 816.9308979511261,
+          "terminal_reported_seconds": 489.156801084,
+          "active_call_seconds": 815.8009448051453,
+          "first_doctor_completed_content_seconds": 334.5392699241638,
+          "phase_seconds": {
+            "benchmark_judges": 8.187603235244751,
+            "cascade_and_other": 50.311606083000015,
+            "doctor": 393.77161712399993,
+            "final_astra": 16.87991129199986,
+            "initial_map": 327.700894083,
+            "patient": 18.94931270899997
+          },
+          "subscription_input": 185153,
+          "subscription_cache": 68480,
+          "doctor_calls": 7,
+          "patient_calls": 3,
+          "cascade_calls": 4,
+          "final_astra_calls": 1
+        },
+        {
+          "case_id": "case_008",
+          "source_sha256": "e6f4e3382ba6e813057054a8cca1cf12db00b2f9b903aadeafaf62880319bdb4",
+          "wall_seconds": 176.76796507835388,
+          "terminal_reported_seconds": 154.35543874999985,
+          "active_call_seconds": 175.89977717399597,
+          "first_doctor_completed_content_seconds": 35.56680917739868,
+          "phase_seconds": {
+            "benchmark_judges": 8.242409229278564,
+            "cascade_and_other": 53.44263887500006,
+            "doctor": 69.12156383200022,
+            "final_astra": 14.891751916999965,
+            "initial_map": 22.35492116599994,
+            "patient": 7.8464917080000305
+          },
+          "subscription_input": 151568,
+          "subscription_cache": 22912,
+          "doctor_calls": 6,
+          "patient_calls": 1,
+          "cascade_calls": 4,
+          "final_astra_calls": 1
+        },
+        {
+          "case_id": "case_009",
+          "source_sha256": "ef4a1ccf958b3b3e6e0c449c4f04a96bb858ceadcd899f322f567ac9a1846d64",
+          "wall_seconds": 640.2450559139252,
+          "terminal_reported_seconds": 616.2135788329999,
+          "active_call_seconds": 639.3637156486511,
+          "first_doctor_completed_content_seconds": 37.21170473098755,
+          "phase_seconds": {
+            "benchmark_judges": 7.864798069000244,
+            "cascade_and_other": 336.44203783399985,
+            "doctor": 246.24767145799933,
+            "exam_matcher": 5.163856029510498,
+            "final_astra": 13.805159000000003,
+            "initial_map": 23.96384354199995,
+            "patient": 5.876349708000134
+          },
+          "subscription_input": 136328,
+          "subscription_cache": 29952,
+          "doctor_calls": 5,
+          "patient_calls": 1,
+          "cascade_calls": 4,
+          "final_astra_calls": 1
+        },
+        {
+          "case_id": "case_010",
+          "source_sha256": "1ff7f4dfdd93ea3756940155ea35f129dbfe04478f895df62d0f0803d030a012",
+          "wall_seconds": 521.1673939228058,
+          "terminal_reported_seconds": 495.64208033299997,
+          "active_call_seconds": 519.7171142101288,
+          "first_doctor_completed_content_seconds": 33.13345718383789,
+          "phase_seconds": {
+            "benchmark_judges": 10.54673981666565,
+            "cascade_and_other": 347.2600359989997,
+            "doctor": 100.95830791700018,
+            "exam_matcher": 11.189527988433838,
+            "final_astra": 12.62519558300005,
+            "initial_map": 25.4577012499999,
+            "patient": 11.679605584
+          },
+          "subscription_input": 232674,
+          "subscription_cache": 63744,
+          "doctor_calls": 11,
+          "patient_calls": 2,
+          "cascade_calls": 4,
+          "final_astra_calls": 1
+        }
+      ],
+      "active_call_seconds_per_case": {
+        "n": 10,
+        "median": 515.926849603653,
+        "p90": 657.0074385643005,
+        "min": 175.89977717399597,
+        "max": 815.8009448051453,
+        "sum": 5255.486268043518
+      },
+      "wall_seconds_per_case": {
+        "n": 10,
+        "median": 529.5893470048904,
+        "p90": 729.3987654209136,
+        "min": 176.76796507835388,
+        "max": 816.9308979511261,
+        "sum": 5480.703487873077
+      },
+      "first_doctor_completed_content_seconds": {
+        "n": 10,
+        "median": 36.389256954193115,
+        "p90": 69.12721891403189,
+        "min": 31.349129915237427,
+        "max": 334.5392699241638,
+        "sum": 652.2138268947601
+      },
+      "subscription_input_tokens_per_case": {
+        "n": 10,
+        "median": 183706.5,
+        "p90": 229045.2,
+        "min": 136328,
+        "max": 232674,
+        "sum": 1814689
+      },
+      "roles": {
+        "consult_map": {
+          "models": [
+            "gpt-6.1-sol"
+          ],
+          "latency_seconds": {
+            "n": 10,
+            "median": 24.704766666999987,
+            "p90": 60.4638671954999,
+            "min": 22.35492116599994,
+            "max": 327.700894083,
+            "sum": 556.9367327909997
+          },
+          "input_tokens": {
+            "n": 10,
+            "median": 9952.5,
+            "p90": 9987.5,
+            "min": 9933,
+            "max": 9992,
+            "sum": 99580
+          },
+          "input_sum": 99580,
+          "output_sum": 7107,
+          "cached_input_sum": 32384
+        },
+        "doctor": {
+          "models": [
+            "gpt-6.1-sol"
+          ],
+          "latency_seconds": {
+            "n": 73,
+            "median": 11.126372750000002,
+            "p90": 17.017445933400055,
+            "min": 6.333051665999847,
+            "max": 320.5191196249999,
+            "sum": 2502.5170544540006
+          },
+          "input_tokens": {
+            "n": 73,
+            "median": 12725,
+            "p90": 13756.6,
+            "min": 11889,
+            "max": 14652,
+            "sum": 933573
+          },
+          "input_sum": 933573,
+          "output_sum": 14882,
+          "cached_input_sum": 200448
+        },
+        "judge": {
+          "models": [
+            "google/gemini-3.1-pro-preview"
+          ],
+          "latency_seconds": {
+            "n": 10,
+            "median": 4.147568106651306,
+            "p90": 5.110285592079163,
+            "min": 3.710174083709717,
+            "max": 5.152572870254517,
+            "sum": 42.827672719955444
+          },
+          "input_tokens": {
+            "n": 10,
+            "median": 624.0,
+            "p90": 649.8,
+            "min": 595,
+            "max": 675,
+            "sum": 6248
+          },
+          "input_sum": 6248,
+          "output_sum": 2305,
+          "cached_input_sum": 0
+        },
+        "judge_proposal": {
+          "models": [
+            "google/gemini-3.1-pro-preview"
+          ],
+          "latency_seconds": {
+            "n": 10,
+            "median": 4.261294484138489,
+            "p90": 5.786958861351012,
+            "min": 3.7658731937408447,
+            "max": 7.53977108001709,
+            "sum": 48.70320224761963
+          },
+          "input_tokens": {
+            "n": 10,
+            "median": 617.5,
+            "p90": 641.6,
+            "min": 598,
+            "max": 683,
+            "sum": 6221
+          },
+          "input_sum": 6221,
+          "output_sum": 2607,
+          "cached_input_sum": 0
+        },
+        "matcher": {
+          "models": [
+            "google/gemini-3.1-flash-lite-preview"
+          ],
+          "latency_seconds": {
+            "n": 57,
+            "median": 1.623016119003296,
+            "p90": 1.9365712642669677,
+            "min": 1.3055460453033447,
+            "max": 2.661344051361084,
+            "sum": 94.8614673614502
+          },
+          "input_tokens": {
+            "n": 57,
+            "median": 1493,
+            "p90": 1674.0,
+            "min": 1381,
+            "max": 1835,
+            "sum": 86503
+          },
+          "input_sum": 86503,
+          "output_sum": 6431,
+          "cached_input_sum": 0
+        },
+        "patient": {
+          "models": [
+            "gpt-6.1-sol"
+          ],
+          "latency_seconds": {
+            "n": 20,
+            "median": 6.466311937499965,
+            "p90": 7.878483574700028,
+            "min": 5.470923916000004,
+            "max": 308.264538834,
+            "sum": 431.3977832090001
+          },
+          "input_tokens": {
+            "n": 20,
+            "median": 10329.0,
+            "p90": 10448.0,
+            "min": 10193,
+            "max": 10570,
+            "sum": 206793
+          },
+          "input_sum": 206793,
+          "output_sum": 1135,
+          "cached_input_sum": 32896
+        },
+        "patient_review": {
+          "models": [
+            "gpt-6.1-sol"
+          ],
+          "latency_seconds": {
+            "n": 10,
+            "median": 8.874415249999998,
+            "p90": 308.72768845390004,
+            "min": 6.595058666999876,
+            "max": 311.272528417,
+            "sum": 691.0268876689998
+          },
+          "input_tokens": {
+            "n": 10,
+            "median": 10516.0,
+            "p90": 10729.5,
+            "min": 10437,
+            "max": 10734,
+            "sum": 105496
+          },
+          "input_sum": 105496,
+          "output_sum": 1233,
+          "cached_input_sum": 43264
+        },
+        "review_codex": {
+          "models": [
+            "gpt-6-astra",
+            "gpt-6.1-sol"
+          ],
+          "latency_seconds": {
+            "n": 31,
+            "median": 13.817610666999997,
+            "p90": 21.001437834,
+            "min": 7.032391582999935,
+            "max": 307.8199117920001,
+            "sum": 723.7839607069997
+          },
+          "input_tokens": {
+            "n": 31,
+            "median": 11838,
+            "p90": 12636.0,
+            "min": 9621,
+            "max": 12882,
+            "sum": 351681
+          },
+          "input_sum": 351681,
+          "output_sum": 8097,
+          "cached_input_sum": 69888
+        },
+        "working_final_review": {
+          "models": [
+            "gpt-6-astra"
+          ],
+          "latency_seconds": {
+            "n": 10,
+            "median": 15.378801437499988,
+            "p90": 19.688288616300024,
+            "min": 12.62519558300005,
+            "max": 22.332346040999997,
+            "sum": 163.431505083
+          },
+          "input_tokens": {
+            "n": 10,
+            "median": 11893.5,
+            "p90": 12221.6,
+            "min": 11008,
+            "max": 12488,
+            "sum": 117566
+          },
+          "input_sum": 117566,
+          "output_sum": 4048,
+          "cached_input_sum": 7552
+        }
+      },
+      "phase_seconds_per_case": {
+        "benchmark_judges": {
+          "n": 10,
+          "median": 8.656978726387024,
+          "p90": 10.746056914329529,
+          "min": 7.4760472774505615,
+          "max": 11.771831274032593,
+          "sum": 91.53087496757507
+        },
+        "cascade_and_other": {
+          "n": 10,
+          "median": 58.6601091045,
+          "p90": 347.16907596269994,
+          "min": 34.788594916999955,
+          "max": 347.2600359989997,
+          "sum": 1414.8108483759995
+        },
+        "doctor": {
+          "n": 10,
+          "median": 308.1748455824997,
+          "p90": 391.678367199,
+          "min": 62.46438421000005,
+          "max": 393.77161712399993,
+          "sum": 2502.5170544539997
+        },
+        "exam_matcher": {
+          "n": 10,
+          "median": 8.841032266616821,
+          "p90": 17.417927527427672,
+          "min": 0,
+          "max": 23.303067684173584,
+          "sum": 94.8614673614502
+        },
+        "final_astra": {
+          "n": 10,
+          "median": 15.378801437499988,
+          "p90": 19.688288616300024,
+          "min": 12.62519558300005,
+          "max": 22.332346040999997,
+          "sum": 163.431505083
+        },
+        "initial_map": {
+          "n": 10,
+          "median": 24.704766666999987,
+          "p90": 60.4638671954999,
+          "min": 22.35492116599994,
+          "max": 327.700894083,
+          "sum": 556.9367327909997
+        },
+        "patient": {
+          "n": 10,
+          "median": 12.616673374499996,
+          "p90": 55.2299922458999,
+          "min": 5.876349708000134,
+          "max": 308.264538834,
+          "sum": 431.3977832090002
+        }
+      },
+      "call_count": 231
+    }
+  }
+}

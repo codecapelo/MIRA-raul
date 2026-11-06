@@ -1,0 +1,31 @@
+{
+  "status": "interim_8_of_10_only",
+  "complete_selected_cohort": false,
+  "audit": {
+    "audited_terminals": 8,
+    "target_terminals": 10,
+    "distinct_result_excerpts": 57,
+    "literal_source_review_candidates": 0,
+    "future_or_retrospective_excerpts_delivered": 0,
+    "prerequisite_result_excerpts_without_observed_prior_procedure": 0,
+    "patient_answers": 35,
+    "patient_numeric_review_candidates": 0,
+    "patient_negative_review_candidates": 25,
+    "unknown_as_negative_review_candidates": 0,
+    "inference_calls_sent": 0,
+    "experiment_changes": 0
+  },
+  "semantic_review": {
+    "semantically_reviewed_terminals": 8,
+    "candidate_answers_reviewed": 25,
+    "confirmed_answers_with_unreported_negative_assertions": 14,
+    "pending_ambiguous_answers": 2,
+    "source_supported_or_unknown_appropriately_preserved": 9
+  },
+  "literal_and_temporal_checks_are_limited_to_supplied_fixtures": true,
+  "no_independent_medical_adjudication": true,
+  "partial_and_not_started_encounters_excluded": true,
+  "closed_ids_facts_diagnoses_individual_hashes_exported": false,
+  "semantic_flags_are_source_omissions_not_clinical_falsity": true,
+  "inference_calls": 0
+}

@@ -1,0 +1,23 @@
+{
+  "variant": "fast4",
+  "cohort": "closed",
+  "cases_audited": 10,
+  "all_integrity_checks_passed": true,
+  "review_input_count": 29,
+  "third_review_cases": 9,
+  "fields_not_judged_by_diagnostic_score": [
+    "confidence",
+    "unconfirmed",
+    "next_steps"
+  ],
+  "patient_and_temporal_fidelity_not_established_by_this_hash_audit": true,
+  "closed_content_accessed": true,
+  "closed_content_exported": false,
+  "fields_present_all_cases": true,
+  "self_reported_confidence_range": [
+    0.64,
+    0.99
+  ],
+  "total_unconfirmed_items": 39,
+  "total_next_steps_items": 40
+}

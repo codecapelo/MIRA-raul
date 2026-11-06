@@ -1,0 +1,66 @@
+{
+  "trace_count": 10,
+  "traces": [
+    {
+      "path": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_001.jsonl",
+      "sha256": "bc791bbc2ca83e75547fe53322ea07dd849d13d4b5e17d4a4debeddb76c48c12",
+      "case_id": "case_001",
+      "events": 72
+    },
+    {
+      "path": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_002.jsonl",
+      "sha256": "fc5de670687b9c934912e46995e988967911fbd6a5bfcede9dc575b800b33aae",
+      "case_id": "case_002",
+      "events": 43
+    },
+    {
+      "path": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_003.jsonl",
+      "sha256": "16e52d7f487869b72921b6f91125564bd540b9326330db12b8860650e20c6dc1",
+      "case_id": "case_003",
+      "events": 63
+    },
+    {
+      "path": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_004.jsonl",
+      "sha256": "8bee3731e3c7babf25a71d5ac8903e48b7b7dc1c5e45e0da3dc8b66805bf5378",
+      "case_id": "case_004",
+      "events": 62
+    },
+    {
+      "path": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_005.jsonl",
+      "sha256": "ce6a7ebac6685251f3a0ce9639273354d06939d33b2477c8dbe9685993103411",
+      "case_id": "case_005",
+      "events": 68
+    },
+    {
+      "path": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_006.jsonl",
+      "sha256": "1e6bddab8190bc63d3385a032cff7325a1d5e0943ca695b0c7c3a591ad15f01d",
+      "case_id": "case_006",
+      "events": 50
+    },
+    {
+      "path": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_007.jsonl",
+      "sha256": "ceaee3584c2edc51c308c771e0e38ed0deee3666897fc9986f7846d59ee5705f",
+      "case_id": "case_007",
+      "events": 39
+    },
+    {
+      "path": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_008.jsonl",
+      "sha256": "0aacaceb2906ec0daa23dec479e338b22ef4097c5b2f2a0b6ace279cfb83fa72",
+      "case_id": "case_008",
+      "events": 28
+    },
+    {
+      "path": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_009.jsonl",
+      "sha256": "170dffd56eb3db98636e88953f5dbc0030fe31303792c8c66b72f0803a5a0d7b",
+      "case_id": "case_009",
+      "events": 30
+    },
+    {
+      "path": "runs/v4/sol/run1/logs/raw/gpt-6.1-sol/case_010.jsonl",
+      "sha256": "d2570037fc8c9cc1c161fdcfb68293f4e15bcd9a12ce8d9b8ffa6d28bd5e6803",
+      "case_id": "case_010",
+      "events": 64
+    }
+  ],
+  "unique_cases": 10
+}

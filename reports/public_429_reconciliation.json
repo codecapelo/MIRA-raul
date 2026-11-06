@@ -1,0 +1,35 @@
+{
+  "timestamp": 1791304842.250985,
+  "reconciled_requests": 2,
+  "unattributed_row": null,
+  "unattributed_usd": "0E-9",
+  "account_total_usage": "17.099503413",
+  "ledger_total_after": "17.099503413",
+  "states_after": {
+    "settled": 9136
+  },
+  "snapshots_sha256": {
+    "reports/credits_public_429_1.json": "e7b66c145effab9a4384420cb9a12f8b7e1d8300f6345e7d7c6b041b27d80d1f",
+    "reports/credits_public_429_2.json": "5fd68f19b4e117e6e672ef9dc2fd07d522b1502ad51504b6c906c2114f3e59ef",
+    "reports/credits_public_429_3.json": "f8b2bf32a7e8effd625b351947bb29e9c72b32c69d05010bc98057f1fedc2992"
+  },
+  "ledger_backup": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/reports/budget_before_public_429_reconciliation.sqlite",
+  "archive": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/incomplete/public_429_v1",
+  "provider_usage_cost_invented": false,
+  "archived": [
+    {
+      "request_id": "f37c5ed0-7fef-4c43-ae93-464a8c52aa07",
+      "role": "doctor",
+      "model": "z-ai/glm-5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/incomplete/public_429_v1/runs/v3/glm5_xf_imm_cas_v32sjeft86a20dsxotswaglc50op2f_n2/run1/logs/raw/z-ai__glm-5/case_010.jsonl",
+      "sha256": "258b27d16dc7703d2400c442cb69475b71b5390011fb6374f6f95073cfd167b7"
+    },
+    {
+      "request_id": "65e3d954-2627-437c-ab40-b6aab4ac1af5",
+      "role": "doctor",
+      "model": "z-ai/glm-5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/incomplete/public_429_v1/runs/v3/glm5_xf_imm_cas_v32sjeft86a20dsxotswaglc50op2f_n2/run1/logs/raw/z-ai__glm-5/case_009.jsonl",
+      "sha256": "f90bd4d3e27cd14770fc967842e883bcad0ca1a1e3c2fb1b2a9f19c08a956727"
+    }
+  ]
+}

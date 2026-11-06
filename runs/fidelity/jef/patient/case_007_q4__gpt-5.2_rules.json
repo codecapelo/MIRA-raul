@@ -1,0 +1,1 @@
+{"id": "case_007_q4__gpt-5.2_rules", "request_sha256": "ee2e4929067b4c188d290ca23bd3b94e7bbcd36388335d2c8f562c298f259f95", "model": "jev-1.13.0", "usage": {"input_tokens": 1259, "output_tokens": 38}, "answers": {"invents": {"type": "noul", "noul": 0.39}, "drift": {"type": "noul", "noul": 0.05}}, "timestamp": 1791209902.913707}

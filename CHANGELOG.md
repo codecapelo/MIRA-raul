@@ -1,5 +1,25 @@
 # Histórico de alterações
 
+<!-- V4_FAST4_FINAL_START -->
+## v4 fast4 — consolidação em09/10/2026 18:29:56
+
+Conversa/paciente foram transferidos para Gemini 3.1 Flash-Lite pela OpenRouter e Sol 6.1/Astra ficaram na revisão da assinatura. A primeira fala deixou de esperar um mapa CLI; streaming passou a medir conteúdo/ferramentas e conclusão com IDs e uso real.
+
+Corrigidos, em condição nova: whitelist dos revisores exclui `default_admission`, ferramentas desconhecidas e fala final; prefixo JSON de retorno permite cumprir pré-requisitos apesar de notas anexas; todos os resultados intermediários são registrados com texto/hash; pedidos e filas passam pela política externa compartilhada. Estudos comuns multi-região são normalizados sem ampliar cobertura da fonte. Uma única revisão Sol adicional limitada pode pedir alternativas após achados/indisponibilidade estruturados; pedidos iguais são adiados.
+
+Preservados fast1(9/10), fast2(1/2 piloto), fast3(1/2 piloto), todos os traces/custos e escores anteriores. Fast4 congelada em b3d7d00,321 testes antes da inferência: públicos10/10; fechados10/10 após o gate. Total adicional globalUS$1.061257675, tetoUS$ 5. Valores e limitações em reports/v4_fast4_summary.md; sem atribuir preço API à assinatura ou declarar superioridade clínica.
+<!-- V4_FAST4_FINAL_END -->
+
+
+## v4 — 08/09-10-2026, base Claude v3.7 preservada
+- Condição opt-in v4 com modelos OpenAI pela assinatura, matcher/juiz Gemini via OpenRouter, extração literal e contabilização relativa compartilhada por médico/revisores; transporte/replay/limites testados,229testes aprovados antes da última rodada.
+- Rodada original9/10, US$0.12304050; revisão offline pós-hoc10/10, US$0.045766; nova condição com parecer final Astra10/10, US$0.11515425. Nenhum resultado original substituído; dez casos conhecidos por condição, revisão médica pendente.
+- Custos globais adicionaisUS$0.28396075, cap5; ledgerUS$0.28396075/delta contaUS$0.265806750, diferençaUS$0.018154000 identificada em quatro chamadas de juiz sem metadados404. Não conciliado exatamente; custos preservados. Metadados originais com atraso ficaram disponíveis sem reclassificação ou alteração do ledger. Uso CLI de chamadas interrompidas pode estar ausente; dinheiro da assinatura desconhecido.
+- Reparo pós-avaliação opt-in do registro de resultados da fila, sem alterar os encontros avaliados ou o input dos revisores. Nove testes adicionais; suíte final238aprovados. Detalhes em reports/post_evaluation_release_logging.md.
+- Animação standalone mostra relógio, início/fim/duração, fases, custoAPI/unidades, pausa/velocidade/navegação; entradas e referências dos juízes omitidas. Corrigido arredondamento do slider para exibir exatamente o terminal.
+- Achados de auditoria mantidos: ensaios/protocolos não equivalentes, cronologia comprimida, fontes históricas e leniência de juiz. Protótipo temporal não integrou a condição; histórico canônico978hashes sem divergência.
+
+
 ## 2026-10-03 — protocolo MIRA-RAUL
 
 - Preservado o experimento anterior em `legacy/`, incluindo 290 percursos terminais; novo experimento possui denominador independente.
@@ -55,5 +75,54 @@ Uma rejeição HTTP429 da Parasail revelou que HTTPFailure não era serializáve
 ## Extensão autorizada —04-10-2026
 Usuário autorizou runs2e3:100encontros novos, total150 (5modelos×10casos×3). Preservar run1. Mesmo protocolo/params/provedores; orçamento globalUS$18 compartilhado incluindo primeira rodada e custos técnicos. Consulta posterior credits_before_repetitions.json confirma contaUS$1,502941443 igual ledger: diferença anterior era transitória na contabilização da conta. Não reclassificar custos antigos. Projeção100novos baseada run1:US$2,803773620, estimativa não garantia. Revisão médica pendente.
 
-## Consolidação das três repetições —04-10-2026
-150/150 terminais; custo globalUS$4.274237323 conciliado com conta. Nenhuma chamada pendente. Run1 e978 arquivos históricos verificados por hashes. Relatório: reports/repetitions_summary.md; manifesto: reports/all150_trace_manifest.json. Não executar novos encontros sem nova autorização. Revisão médica pendente.
+## Rodadas 2 e 3 concluídas — 04-10-2026
+150/150 encontros terminais (50 por rodada; 5 modelos × 10 casos × 3), sem pares duplicados ou ausentes. 144 julgados e 6 sem julgamento (falha operacional/sem diagnóstico: GPT-OSS 5, GLM-4.5-Air 1), mantidos como terminais e fora do denominador do juiz. **Julgamento por LLM; revisão médica cega pendente; sem afirmação de acurácia clínica ou superioridade.** Repetições do mesmo caso não são pacientes independentes: Wilson é descritivo.
+
+| Modelo | Run 1 | Run 2 | Run 3 | Agregado | Wilson 95% (descritivo) | Sem julgamento |
+|---|---:|---:|---:|---:|---|---:|
+| openai/gpt-oss-120b | 5/8 | 3/9 | 2/8 | 10/25 | 23.4%–59.3% | 5 |
+| z-ai/glm-4.5-air | 7/10 | 6/9 | 6/10 | 19/29 | 47.3%–80.1% | 1 |
+| z-ai/glm-5 | 7/10 | 8/10 | 5/10 | 20/30 | 48.8%–80.8% | 0 |
+| qwen/qwen3.5-397b-a17b | 6/10 | 6/10 | 7/10 | 19/30 | 45.5%–78.1% | 0 |
+| openai/gpt-5.2 | 7/10 | 7/10 | 9/10 | 23/30 | 59.1%–88.2% | 0 |
+
+Custo real total (ledger = conta, três snapshots sem cache): US$ 4.274237323. Terminais por rodada: US$ 1.401886810 / 1.313640775 / 1.427001795. Projeção para 5 rodadas ≈ US$ 6.90 em terminais (estimativa, não autorização).
+
+Intercorrências (ver [reports/runs23_incidents.md](reports/runs23_incidents.md)): timeout de rede com 13 chamadas perdidas (US$ 0,030653310 não atribuível a nenhuma individualmente, registrado em linha própria do ledger) e um HTTP 429 do Qwen/Parasail sem cobrança. Nenhum terminal foi repetido; cada chamada perdida foi refeita uma vez após reconciliação. Análise: [reports/all_runs_summary.md](reports/all_runs_summary.md), `results/all_runs.csv`, manifesto `reports/final_trace_manifest_runs123.json`. Legacy: 978 arquivos verificados, 0 divergências.
+
+## Extensão autorizada — qwen/qwen3.8-max-prime — 04-10-2026
+Usuário autorizou adicionar `qwen/qwen3.8-max-prime` aos modelos avaliados e rodar os 10 casos × 3 repetições (30 encontros novos). Rota fixada sem fallback: Alibaba (`alibaba`, única disponível no OpenRouter; quantização não informada), US$4,00/M entrada e US$12,00/M saída, contexto 1M, suporte a tools/tool_choice/logprobs verificados em `reports/endpoints/qwen__qwen3.8-max-prime.json`. Parâmetros de amostragem **assumidos iguais aos do Qwen3.5** (temperature 0,6, top_p 0,95, top_k 20; mesma família), paciente com temperature 0,01 como nos demais; prompts, ferramentas, limite de 10 turnos e juiz inalterados. Traces e CSVs isolados: `runs/qwen38_max_prime/run{1,2,3}/` e `results/qwen38_max_prime_run{1,2,3}.csv`; as 150 execuções anteriores e `MODELS` ficam congelados. Agendador `scripts/run_extension.py` (supervisor `scripts/background_extension.py`), máximo 3 encontros simultâneos, mesmo ledger, locks e teto global US$18 (gasto antes da extensão: US$4,274237323). Execução em etapas: run 1 primeiro, custo real medido antes de liberar as runs 2 e 3. Revisão médica pendente; este modelo não tem releitura manual.
+
+## Extensão Qwen3.8 concluída — 04-10-2026
+`qwen/qwen3.8-max-prime` (26/30 pelo juiz, US$ 2,7619) e `qwen/qwen3.8-max-0902` (24/30, US$ 1,3204): 10 casos × 3 repetições cada, rota Alibaba única, mesmo protocolo e juiz, sem falhas. Total agora 210 encontros terminais (204 julgados, 6 sem julgamento). Gasto real US$ 8.356544873 = ledger = conta (snapshots sem cache `reports/credits_qwen38_*final_*.json`); restam cerca de US$ 9,64 do teto de US$ 18, sem nova execução autorizada. Os dois modelos quase não conversaram com o paciente (23% e 7% dos encontros) e pediram achados cirúrgicos/histopatológicos finais em 60% e 53%: parte do resultado reflete a compressão temporal do protocolo. Parâmetros de amostragem assumidos iguais aos do Qwen3.5. Revisão médica pendente; sem afirmação de superioridade. Detalhes em [reports/extension_qwen38.md](reports/extension_qwen38.md); análise combinada em [reports/all_runs_summary.md](reports/all_runs_summary.md).
+
+## Braço de assinatura: Claude Sonnet 5.5 (high) — 04-10-2026
+Usuário autorizou rodar `claude-sonnet-5-5` em high, 10 casos × 1 execução, pela assinatura da conta (plano Pro) via CLI oficial `claude`, medir o uso e só então decidir sobre o Opus 5.5 (ainda não executado). Transporte: `src/mira_runner/cli_client.py` (`HybridClient`): médico e paciente pelo CLI com `--effort high`, `--tools ""`, `--safe-mode` e diretório vazio; ferramentas **emuladas em JSON** (não é tool use nativo da API), como no braço de assinatura da Fase 1, portanto rotulado à parte e não equivalente aos demais modelos; temperatura/seed/max_tokens não são aceitos pelo CLI. Associador (GLM-4.5-Air) e juiz (Gemini 3.1 Flash-Lite) seguem pelo OpenRouter. As chamadas do CLI não geram cobrança no OpenRouter e ficam fora do ledger; tokens e custo equivalente de API ficam nos eventos `cli_call` (`scripts/cli_usage.py`). Cada chamada do CLI reenvia o contexto inteiro (sistema, ferramentas e conversa) mais a sobrecarga do CLI; menor prompt observado cerca de 2–3 mil tokens, quase tudo em cache. Identidade do modelo verificada em cada resposta; sem retries automáticos; chamada falha não deixa evento e é refeita ao retomar. Traces e CSV isolados: `runs/claude_sonnet_5_5/run1/` e `results/claude_sonnet_5_5_run1.csv`. Revisão médica pendente.
+
+## Resultado do Sonnet 5.5 pela assinatura — 04-10-2026
+10/10 terminais, 9 corretos pelo juiz (8/10 sob leitura rigorosa do caso 009), 0 sem julgamento, conversa com o paciente em 6 de 10 encontros. Consumo: 62 chamadas ao CLI, 408 mil tokens de entrada (407,8 mil em cache), 41,3 mil de saída, cerca de 6 minutos, custo equivalente de API US$ 1,19; gasto no OpenRouter US$ 0,0063 (associador e juiz), conta = ledger = US$ 8,362879588. Percentual consumido do limite do plano Pro não é legível pelo CLI (conferir no medidor da conta). Braço não equivalente aos demais (ferramentas em JSON, sem controle de amostragem). Detalhes em [reports/claude_sonnet_5_5_subscription_run1.md](reports/claude_sonnet_5_5_subscription_run1.md). Opus 5.5 aguardando decisão do usuário.
+
+## Resultado do Opus 5.5 pela assinatura — 05-10-2026
+`claude-opus-5-5` em high, mesmo braço de assinatura do Sonnet (ferramentas emuladas em JSON, não equivalente aos demais): 10/10 terminais, **10 corretos pelo juiz** (7 a 8 de 10 sob leitura rigorosa: 007 sem o fármaco, 002 sem miocardite, 009 sem Meckel), 0 sem julgamento, conversa com o paciente em 6 de 10 encontros. Consumo: 49 chamadas ao CLI, 194 mil tokens de entrada (194,1 mil em cache), 38,5 mil de saída, cerca de 5 minutos, custo equivalente de API US$ 1,85; gasto no OpenRouter US$ 0,0078; conta = ledger = US$ 8,370711103. O percentual consumido do limite do plano Pro não é legível pelo CLI. Detalhes e comparação com o Sonnet em [reports/claude_opus_5_5_subscription_run1.md](reports/claude_opus_5_5_subscription_run1.md). Revisão médica pendente; uma execução por caso, sem afirmação de superioridade.
+
+## Avaliação offline de juiz e paciente simulado — 05-10-2026
+Sem rerodar encontros: `scripts/fidelity_eval.py` refez o juiz (Flash-Lite temp 0/1, Gemini 3.1 Pro, árbitro Opus 5.5 pela assinatura) sobre os 224 encontros julgados e 11 condições de paciente sobre 40 perguntas gravadas (avaliador cego Opus 5.5). Gasto OpenRouter cerca de US$ 1,60 (ledger US$ 9,968272828 = conta; chave com limite US$ 20). Quatro chamadas rejeitadas sem custo (503, 2×403, 429) reconciliadas por `reconcile_timeout_interruption.py` com autorização. Resultado exploratório: Gemini 3.1 Pro rebaixa 19 acertos do juiz original e concorda com o árbitro em 27/31 contestados; GPT-OSS como paciente inventa detalhes em 95% das respostas, e o prompt de regras estritas reduz a invenção em todos os modelos. Detalhes e vieses em [reports/fidelity_eval.md](reports/fidelity_eval.md). Revisão médica pendente; sem reescrever as 230 execuções.
+
+## Rodada-teste v3 (Qwen3.8 Max 0902, 10 casos × 1, sem e com JEF) — 05-10-2026
+Paciente fixo Sonnet 5.5 com regras estritas, exames bloqueados até 3 trocas, resultado atrasado, resposta por exame, juiz Gemini 3.1 Pro; braço B com guarda JEF (retentativa do paciente). Resultado: 8/10 nos dois braços (runs antigas rejulgadas com o mesmo juiz: 21/30), conversa com o paciente em 10/10 encontros (antes 2/30), custo cerca de 2× por encontro (US$ 0,09 a 0,10); a guarda reduziu em cerca de 6 pontos as respostas marcadas como invenção e não mudou diagnósticos. Gasto US$ 1,88 (ledger = conta US$ 11,846702103). Detalhes em [reports/v3_pilot_qwen38_0902.md](reports/v3_pilot_qwen38_0902.md). Sem revisão médica.
+
+## v3 com exame físico junto da queixa, N=1 e N=2, Qwen3.8 0902 e GLM-5 — 05-10-2026
+`--exam-first` (exame inicial na primeira mensagem) e `--min-exchanges` N=1/2; 4 variantes × 10 casos × 1. Qwen: N=1 8/10 (US$ 0,79), N=2 9/10 (US$ 0,82), contra N=3 8/10 (US$ 0,90); GLM-5: N=1 5/10 (US$ 0,16), N=2 7/10 (US$ 0,18). Verificação offline do JEF (AUC 0,85 para diagnósticos errados em 60 encontros). Gasto US$ 1,96 (ledger = conta US$ 13,916311638). Detalhes em [reports/v3_n_variants_glm5.md](reports/v3_n_variants_glm5.md). Sem revisão médica.
+
+## Escalonamento v2 — 05-10-2026
+Revisor às cegas, rodada de pedidos antes de aceitar, pergunta "mesmo diagnóstico" tolerante, Sonnet no nível 2 e Opus como árbitro (assinatura Pro), resultados de exame imediatos. 10 casos × 1: `cas` 8/10 (propostas do GLM-5: 5/10; corrigiu 001, 002 e 010), US$ 0,068 por encontro de implantação (OpenRouter US$ 0,009); `casq` (Qwen baixo no nível 2) 7/10, sem ganho. Gasto US$ 0,462 (ledger = conta US$ 14,815209133). Detalhes em [reports/v3_cascade_v2.md](reports/v3_cascade_v2.md). Sem revisão médica.
+
+## Escalonamento v2 em 3 execuções, falhas restantes e resoluções — 05-10-2026
+Variante `cas` (GLM-5 → triagem JEF → Sonnet às cegas → Opus, Claude pela assinatura Pro) × 10 casos × 3 execuções: final 27/30 contra 19/30 das propostas do GLM-5 (8 corrigidos, 0 estragados); os 17 encontros revisados acertaram; custo de implantação US$ 0,061 por encontro e US$ 0,068 por caso resolvido (só OpenRouter: US$ 0,0116). Erros restantes: caso 009 aceito pela triagem do JEF (2 execuções) e uma falha de ferramenta do GLM-5. Sem exame decisivo pedido, o médico errou em 18 de 18 encontros nos casos 001, 002 e 009. Lista de resoluções e estudo do escape do JEF em [reports/v3_cascade_3runs_resolutions.md](reports/v3_cascade_3runs_resolutions.md). Gasto US$ 0,366 (ledger = conta US$ 15,181298383). Sem revisão médica.
+
+## v3.2 com Sonnet no lugar do Opus e correções (execuções 1 e 2) — 05-10-2026
+Mapa da consulta, pré-requisitos de procedimento, emergência sem N mínimo, critério v3 do caso 009, triagem do JEF 0,86 com auditoria e gatilho, resgate de falhas, dica de ferramenta errada e revisor que resolve pré-requisitos sozinho. v3.2b 9/10 (US$ 0,089 por encontro); v3.2c (correções) **10/10, US$ 0,070 por encontro**, caso 001 resolvido já na primeira camada. Gasto da etapa US$ 0,375 (ledger = conta US$ 15,829536788). Detalhes em [reports/v3_cascade_v32.md](reports/v3_cascade_v32.md) e [reports/v3_flow.md](reports/v3_flow.md). Sem revisão médica; uma execução por caso.
+
+
+## v4 — 08-10-2026
+Nova condição da assinatura ChatGPT: transporte Codex fechado e replay por hash; unidades relativas de exames entregues para todos os atores; componentes literais; limites e prioridades corrigidos. Base v3.7 preservada. Protocolo e limitações em reports/v4_protocol.md.

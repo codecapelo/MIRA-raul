@@ -1,0 +1,278 @@
+{
+  "kind": "offline_posthoc_review_not_encounter",
+  "reviews": 10,
+  "judge_correct": 10,
+  "openrouter_usd": "0.045766",
+  "original_v4_judge_correct_unchanged": 9,
+  "cautions": [
+    "Prompt proposed after observing original result",
+    "All cases known from development; no holdout",
+    "Transcript includes clinician statements and original map",
+    "No reference or prior judgment delivered to reviewer",
+    "A hypothesized cause is not confirmed by a positive LLM judge",
+    "Pending blinded medical review"
+  ],
+  "cases": [
+    {
+      "case_id": "case_001",
+      "kind": "offline_posthoc_review_not_encounter",
+      "source_trace_sha256": "bc791bbc2ca83e75547fe53322ea07dd849d13d4b5e17d4a4debeddb76c48c12",
+      "review": {
+        "diagnosis": "Probable MRSA coronary stent infection causing an infected coronary pseudoaneurysm, with suspected associated purulent pericarditis and confirmed cardiac tamponade.",
+        "reasoning": "Documented MRSA bacteremia, angiographic disruption of a prior coronary stent with a rapidly enlarging pseudoaneurysm, and turbid yellow pericardial fluid together strongly favor infection involving the stented coronary segment. Confirmed findings include new left-ventricular wall-motion abnormalities, pericardial effusion progressing to tamponade, and rapidly deteriorating circulation. Tamponade explains a major component of shock; associated coronary compromise may explain ventricular dysfunction, but infarction is unconfirmed. Pericardial infection is strongly suspected, whereas pseudoaneurysm rupture or communication with the pericardium is not established. Unavailable pericardial cultures, operative findings, and tissue cultures neither confirm nor exclude infection. Endocarditis remains unevaluated because TEE was unavailable. Stent timing, antibiotic identity, and exposure history are unknown; no pertinent normal results were provided. Operative inspection and coronary/stent and pericardial microbiology would confirm or revise the proposed mechanism.",
+        "confidence": 0.94,
+        "unconfirmed": [
+          "MRSA infection of coronary stent or arterial tissue",
+          "Purulent pericarditis and its organism",
+          "Pseudoaneurysm rupture or pericardial communication",
+          "Concurrent endocarditis",
+          "Myocardial infarction; ECG and troponin unavailable",
+          "Bacteremia clearance and antimicrobial susceptibilities"
+        ],
+        "next_steps": [
+          "Emergency cardiac surgical assessment for pseudoaneurysm source control and management of tamponade, with ongoing shock support.",
+          "Verify current antibiotics and allergy records; ensure intravenous MRSA-active treatment guided by available susceptibilities.",
+          "Obtain operative findings and coronary tissue, stent material, and pericardial cultures when feasible without delaying treatment.",
+          "Repeat blood cultures to establish clearance and echocardiography to reassess effusion and ventricular function; obtain TEE when feasible to assess endocarditis."
+        ]
+      },
+      "judge_correct": true,
+      "judge_reasoning": "The assistant's diagnosis captures the core clinical elements of the ground truth and matching criterion: an MRSA-related coronary stent infection leading to an infected coronary pseudoaneurysm and resulting in cardiac tamponade. Although the assistant does not explicitly mention 'stent disruption' or 'infective endocarditis', the highly specific combination of MRSA stent infection, infected pseudoaneurysm, and cardiac tamponade aligns perfectly with the overall clinical picture described in the matching criterion.",
+      "openrouter_usd": "0.005044",
+      "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+    },
+    {
+      "case_id": "case_002",
+      "kind": "offline_posthoc_review_not_encounter",
+      "source_trace_sha256": "fc5de670687b9c934912e46995e988967911fbd6a5bfcede9dc575b800b33aae",
+      "review": {
+        "diagnosis": "Probable atrial-predominant inflammatory cardiomyopathy (atrial myocarditis), provisionally postinfectious, causing extensive atrial electrical failure and complete atrioventricular block.",
+        "reasoning": "Worsening dyspnea and edema approximately two weeks after a respiratory illness, modest troponin elevation, and left atrial enhancement with borderline edema favor an inflammatory atrial process. Preserved LV systolic function and absence of substantial ventricular scar support atrial-predominant involvement. Confirmed findings include absent surface P waves, a narrow-QRS escape rhythm at 42/min, electrically silent right atrium with limited septal capture, complete AV block, and absent response to coronary-sinus pacing. These establish extensive atrial electrical dysfunction, but not its histologic cause. RV dilation/dysfunction, severe tricuspid regurgitation, and elevated estimated pulmonary pressure accompany congestive symptoms; their full relationship to the atrial disease remains unexplained. Mesalazine-associated myocarditis and ulcerative-colitis-associated inflammation remain alternatives, but unavailable medication timing and uncertain current disease activity prevent prioritizing them. A preceding respiratory illness supports, but does not prove, a postinfectious cause. Atrial biopsy and histology were unavailable, so neither myocarditis nor a specific inflammatory subtype is confirmed.",
+        "confidence": 0.72,
+        "unconfirmed": [
+          "Postinfectious etiology and specific infectious agent",
+          "Histologic atrial myocarditis, including giant-cell or eosinophilic subtypes",
+          "Mesalazine causality and relationship to ulcerative colitis",
+          "Thyroid, electrolyte, and renal contributors",
+          "Cause and persistence of elevated pulmonary pressure and RV dysfunction"
+        ],
+        "next_steps": [
+          "Urgent monitored cardiology care and pacing assessment for complete AV block; assess hemodynamic stability and treat congestion.",
+          "Establish mesalazine initiation/dose chronology and colitis activity; coordinate medication review with cardiology and gastroenterology.",
+          "Obtain potassium, renal function, thyroid tests, and blood count; follow troponin and cardiac function.",
+          "Consider targeted atrial biopsy with histology if feasible and management-changing; repeat cardiac imaging to assess inflammatory evolution.",
+          "Reassess RV function, tricuspid regurgitation, and pulmonary pressure after stabilization; investigate persistent pulmonary hypertension."
+        ]
+      },
+      "judge_correct": true,
+      "judge_reasoning": "The assistant's diagnosis of 'atrial-predominant inflammatory cardiomyopathy (atrial myocarditis)' with 'extensive atrial electrical failure' and 'complete atrioventricular block' is clinically synonymous with the ground truth diagnosis of 'Isolated atrial myocarditis with atrial standstill and atrioventricular block'. Both describe the same specific inflammatory condition affecting the atria and resulting in the same electrical conduction abnormalities.",
+      "openrouter_usd": "0.004472",
+      "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+    },
+    {
+      "case_id": "case_003",
+      "kind": "offline_posthoc_review_not_encounter",
+      "source_trace_sha256": "16e52d7f487869b72921b6f91125564bd540b9326330db12b8860650e20c6dc1",
+      "review": {
+        "diagnosis": "Likely pressure-related rupture of a MAINZ urinary pouch following catheter drainage failure, with intraperitoneal urinary leakage.",
+        "reasoning": "CT with retrograde pouch contrast demonstrated a large left laterodorsal reservoir defect, intraperitoneal contrast leakage, and free fluid; laparotomy confirmed and repaired pouch rupture. The leading mechanism is impaired catheter drainage causing reservoir overdistension and rupture: scant drainage preceded severe lower abdominal pain and dyspnea in a patient dependent on an indwelling catheter because catheterization had become difficult. This mechanism remains inferred; obstruction and elevated pouch pressure were not documented. Leukocytosis supports inflammation but does not establish infection. Normal creatinine and sodium do not exclude acute urinary leakage; preserved hemoglobin provides no evidence of substantial established blood loss. Cardiopulmonary decompensation may reflect the abdominal complication, but its precise physiology is undocumented. Catheter trauma, tissue necrosis, or other structural pathology cannot be assessed from the limited operative report. Unavailable fluid testing supplies no result, and operative confirmation of rupture does not establish its cause.",
+        "confidence": 0.84,
+        "unconfirmed": [
+          "Catheter obstruction and consequent pouch overdistension as the rupture mechanism",
+          "Recent catheter manipulation or direct traumatic injury",
+          "Tissue ischemia, necrosis, recurrent malignancy, or infection contributing to rupture",
+          "Exact cause and severity of cardiopulmonary decompensation"
+        ],
+        "next_steps": [
+          "Review catheter patency, position, drainage records, and any preceding manipulation to assess the proposed obstructive mechanism.",
+          "Obtain detailed operative findings concerning rupture margins and evidence of trauma, necrosis, or structural disease; review histology if tissue was sampled.",
+          "Continue postoperative surgical and urological monitoring of pouch drainage, abdominal findings, respiratory and circulatory status, urine output, and renal function.",
+          "Arrange urological follow-up to establish reliable long-term pouch emptying and prevent recurrent retention."
+        ]
+      },
+      "judge_correct": true,
+      "judge_reasoning": "The assistant correctly identifies the primary pathology as a ruptured continent urinary diversion pouch (specifically a MAINZ pouch) with intraperitoneal urinary leakage. Although the assistant does not explicitly state 'secondary intra-abdominal sepsis', the intraperitoneal urinary leakage is the direct cause of the sepsis mentioned in the ground truth. The core diagnosis of the ruptured pouch matches the matching criterion.",
+      "openrouter_usd": "0.007214",
+      "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+    },
+    {
+      "case_id": "case_004",
+      "kind": "offline_posthoc_review_not_encounter",
+      "source_trace_sha256": "8bee3731e3c7babf25a71d5ac8903e48b7b7dc1c5e45e0da3dc8b66805bf5378",
+      "review": {
+        "diagnosis": "Small cell lung carcinoma–associated recurrent right pleural effusion, with suspected tumor-related impairment of pleural lymphatic drainage and contribution from bronchial obstruction.",
+        "reasoning": "Bronchoscopy with endobronchial ultrasound-guided biopsy established extensive-stage small cell lung carcinoma. Recurrent right pleural effusion is radiographically confirmed, and brief improvement after drainage supports its contribution to dyspnea. Mediastinal/hilar adenopathy, severe right-middle-lobe bronchial narrowing, and partial atelectasis support tumor-related lymphatic and airway obstruction as the leading mechanism. Direct malignant pleural involvement remains unconfirmed: negative pleural cytology does not exclude it. Pleural protein 2.4 g/dL and LDH 83 U/L cannot establish transudate versus exudate without serum comparisons. Pleural pH 7.48 and negative Gram stain/culture argue against complicated bacterial pleural infection. Infiltrates remain incompletely explained. The returned CT report does not establish an angiographic protocol or exclude embolism; unavailable echocardiography does not exclude cardiac contribution. Medication and exposure histories are unknown. Further pleural assessment could distinguish direct pleural malignancy from an indirect tumor-associated effusion.",
+        "confidence": 0.96,
+        "unconfirmed": [
+          "Direct malignant involvement of the pleura",
+          "Exact mechanism and biochemical classification of the effusion",
+          "Cause of pulmonary infiltrates",
+          "Pulmonary embolism and cardiac contribution have not been excluded"
+        ],
+        "next_steps": [
+          "Prompt oncology and pulmonary assessment for confirmed extensive-stage small cell lung carcinoma.",
+          "Reassess respiratory status and effusion size; arrange therapeutic drainage if clinically indicated.",
+          "If distinguishing pleural involvement would change management, obtain repeat cytology and consider pleural biopsy; obtain paired serum studies for effusion classification.",
+          "Assess persistent or disproportionate dyspnea for additional causes, including embolism or cardiac disease, as clinically indicated."
+        ]
+      },
+      "judge_correct": true,
+      "judge_reasoning": "The assistant's diagnosis of 'Small cell lung carcinoma-associated recurrent right pleural effusion, with suspected tumor-related impairment of pleural lymphatic drainage' describes the pathophysiological mechanism of a malignant chylothorax caused by small cell lung carcinoma. Although the assistant does not explicitly use the term 'chylothorax' or specify 'extensive-stage' and 'initial manifestation', the core clinical entity (pleural effusion due to lymphatic impairment secondary to small cell lung cancer) is accurately captured and aligns with the ground truth.",
+      "openrouter_usd": "0.006904",
+      "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+    },
+    {
+      "case_id": "case_005",
+      "kind": "offline_posthoc_review_not_encounter",
+      "source_trace_sha256": "ce6a7ebac6685251f3a0ce9639273354d06939d33b2477c8dbe9685993103411",
+      "review": {
+        "diagnosis": "Pleural involvement by melanoma with an unidentified primary site, causing a malignant left pleural effusion.",
+        "reasoning": "The strongest etiological evidence is pleural cytology showing atypical epithelioid and spindle cells positive for SOX10, Melan-A and S100, supporting melanoma. Negative calretinin and WT1 favor melanoma over mesothelioma despite asbestos exposure and circumferential nodular thickening involving mediastinal pleura. Verified findings include a moderate left effusion, pleural thickening and oxygen-dependent hypoxemia after one week of dyspnea and dry cough. Dermatologic and ocular examinations identified no primary lesion; this does not establish primary pleural melanoma. Stable rheumatoid lung disease for five years and unchanged methotrexate/baricitinib treatment are less compelling explanations for the pleural findings. The effusion and underlying lung disease may contribute to hypoxemia, but the full contribution of each and diffuse crackles remain unresolved. Tissue confirmation is unavailable, not negative. The returned CT report does not establish pulmonary embolism exclusion; unavailable culture and echocardiography do not exclude infection or cardiac disease.",
+        "confidence": 0.95,
+        "unconfirmed": [
+          "Pleural tissue histology confirming melanoma",
+          "Primary melanoma site and disease extent",
+          "Relative contributions to hypoxemia; concomitant embolism, infection or cardiac disease"
+        ],
+        "next_steps": [
+          "Continue hospital oxygen support and monitor respiratory status.",
+          "Obtain urgent oncology assessment and expert review of pleural cytology/immunohistochemistry; pursue targeted pleural biopsy when available.",
+          "Stage suspected melanoma and complete a directed search for an occult primary.",
+          "Assess residual or recurrent effusion for therapeutic drainage; investigate persistent disproportionate hypoxemia, including whether diagnostic pulmonary angiography is needed."
+        ]
+      },
+      "judge_correct": true,
+      "judge_reasoning": "The assistant's diagnosis of 'Pleural involvement by melanoma with an unidentified primary site, causing a malignant left pleural effusion' is clinically synonymous with the ground truth diagnosis of 'Pleural melanoma of unknown primary presenting with malignant pleural effusion'. Both describe the same pathology, primary site status, and resulting complication, fulfilling the matching criterion perfectly.",
+      "openrouter_usd": "0.003778",
+      "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+    },
+    {
+      "case_id": "case_006",
+      "kind": "offline_posthoc_review_not_encounter",
+      "source_trace_sha256": "1e6bddab8190bc63d3385a032cff7325a1d5e0943ca695b0c7c3a591ad15f01d",
+      "review": {
+        "diagnosis": "Bilateral tuberculous adrenalitis causing primary adrenal insufficiency, strongly supported by detection of Mycobacterium tuberculosis DNA in adrenal biopsy tissue.",
+        "reasoning": "The leading etiology is tuberculosis: bilateral calcified adrenal nodules, CT-described old pulmonary and pleural tuberculosis lesions, necrotizing adrenal granulomas, and positive adrenal tissue tuberculosis qPCR form a coherent pattern. Tissue PCR establishes tuberculosis DNA presence; viable organisms and drug susceptibility remain unconfirmed because mycobacterial culture is unavailable. Negative acid-fast and silver stains do not exclude infection. Repeated elevated ACTH with low cortisol, pigmentation, and reported hyponatremia and hypoglycemia strongly support primary adrenal insufficiency. Sampling times and cosyntropin responses were not returned, so a completed morning or stimulation protocol cannot be claimed. Calcification and old chest lesions suggest chronic disease, but onset and current systemic activity are uncertain. Absence of fever or night sweats does not outweigh tissue evidence. Histoplasmosis is less likely; antigen testing was unavailable and fungal culture was queued, not performed. Medication and exposure histories remain incomplete, although steroid use was denied.",
+        "confidence": 0.98,
+        "unconfirmed": [
+          "Mycobacterial viability and drug susceptibility",
+          "Duration and extent of active tuberculosis",
+          "Cosyntropin response and cortisol sampling times",
+          "Mineralocorticoid deficiency and current hemodynamic status",
+          "Fungal culture result; testing was queued, not performed"
+        ],
+        "next_steps": [
+          "Promptly assess blood pressure, orthostasis, hydration, glucose, electrolytes, and adrenal crisis symptoms; treat immediately if crisis is suspected.",
+          "Arrange endocrinology care for glucocorticoid replacement and assessment of mineralocorticoid replacement needs.",
+          "Arrange tuberculosis specialist care for treatment, evaluation of other involved sites, and resistance testing or culture if obtainable.",
+          "If clinically necessary and safe, clarify adrenal reserve with documented paired morning cortisol/ACTH or cosyntropin testing without delaying needed treatment."
+        ]
+      },
+      "judge_correct": true,
+      "judge_reasoning": "The assistant's diagnosis of 'Bilateral tuberculous adrenalitis causing primary adrenal insufficiency' is clinically synonymous with the ground truth diagnosis of 'Adrenal tuberculosis causing primary adrenal insufficiency'. The assistant simply provides additional specific details (bilateral involvement and diagnostic confirmation via DNA), but the core pathology and resulting condition perfectly align with the matching criterion.",
+      "openrouter_usd": "0.003556",
+      "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+    },
+    {
+      "case_id": "case_007",
+      "kind": "offline_posthoc_review_not_encounter",
+      "source_trace_sha256": "ceaee3584c2edc51c308c771e0e38ed0deee3666897fc9986f7846d59ee5705f",
+      "review": {
+        "diagnosis": "Pembrolizumab-associated autoimmune hemolytic anemia, with antibody thermal subtype unconfirmed.",
+        "reasoning": "Severe immune hemolysis is supported by hemoglobin falling from 123 to 45 g/L, reticulocytosis, elevated LDH, depleted haptoglobin, predominantly unconjugated hyperbilirubinemia, spherocytes, and a DAT positive for IgG and C3d. The first pembrolizumab infusion 14 days before assessment, followed by jaundice beginning four days ago, makes an immune treatment reaction the leading working cause, although causality is not proven. IgG positivity supports a warm component, but strong complement positivity does not establish cold or mixed disease; the cold agglutinin test was queued, not performed. Underlying malignancy and unreported medications remain alternative triggers. Dark stools are unexplained and concurrent gastrointestinal bleeding remains possible, but would not explain the hemolysis findings. Afebrile status and absent abdominal pain provide limited discrimination. Ultrasound was unavailable, and liver enzymes were not reported, so obstruction or concurrent hepatic injury cannot be excluded.",
+        "confidence": 0.93,
+        "unconfirmed": [
+          "Pembrolizumab causality versus malignancy-associated or another medication-associated immune hemolysis",
+          "Warm, cold, or mixed antibody subtype",
+          "Concurrent gastrointestinal bleeding",
+          "Concurrent hepatobiliary disease"
+        ],
+        "next_steps": [
+          "Immediate hospital admission, hematology consultation, and urgent transfusion assessment with blood bank coordination.",
+          "Withhold pembrolizumab and initiate specialist-directed corticosteroid treatment for suspected immune-mediated hemolysis.",
+          "Trend hemoglobin and hemolysis markers; obtain antibody characterization, including the queued cold agglutinin titer and thermal amplitude testing if indicated.",
+          "Review baseline laboratory results and complete medication history; improvement after withdrawal and treatment would support the working attribution.",
+          "Assess dark stools for bleeding and obtain missing liver enzymes, pursuing endoscopy or biliary imaging as clinically indicated."
+        ]
+      },
+      "judge_correct": true,
+      "judge_reasoning": "The assistant's diagnosis includes the exact ground truth diagnosis (Pembrolizumab-associated autoimmune hemolytic anemia) and merely adds additional, non-conflicting clinical detail regarding the unconfirmed antibody thermal subtype. Therefore, it satisfies the matching criterion.",
+      "openrouter_usd": "0.003102",
+      "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+    },
+    {
+      "case_id": "case_008",
+      "kind": "offline_posthoc_review_not_encounter",
+      "source_trace_sha256": "0aacaceb2906ec0daa23dec479e338b22ef4097c5b2f2a0b6ace279cfb83fa72",
+      "review": {
+        "diagnosis": "Spontaneous cervicothoracic spinal epidural hemorrhage causing acute compressive myelopathy; underlying bleeding source undetermined.",
+        "reasoning": "MRI confirms an epidural hematoma from C6 to T2 compressing the cord and posterior thecal sac. Acute interscapular pain followed by progressive paraplegia and sphincter dysfunction is consistent with this compressive mechanism. No reported injury, heavy lifting, or medication/anticoagulant use, together with normal platelets, PT/INR, and aPTT, favors a spontaneous hemorrhage. These findings do not establish an idiopathic cause or exclude an occult vascular lesion, platelet dysfunction, or unreported exposure. No structural lesion was described, but a vascular source has not been definitively excluded. Neutrophilic leukocytosis is nonspecific and remains unexplained; it alone does not establish infection. Although diffusion imaging was requested, no diffusion result was returned. Operative findings and subsequent targeted evaluation could establish or revise the underlying etiology.",
+        "confidence": 0.94,
+        "unconfirmed": [
+          "Specific bleeding vessel or underlying vascular malformation",
+          "Occult bleeding disorder despite normal routine coagulation studies",
+          "Complete medication, supplement, and substance exposure history"
+        ],
+        "next_steps": [
+          "Immediate spine/neurosurgical assessment for emergency decompression and hematoma evacuation.",
+          "Monitor neurological function and perfusion; provide bladder care.",
+          "Review operative findings for a bleeding source; pursue targeted vascular imaging if indicated without delaying decompression.",
+          "Clarify bleeding and exposure history and consider additional hematologic evaluation if the cause remains unexplained."
+        ]
+      },
+      "judge_correct": true,
+      "judge_reasoning": "The assistant's diagnosis of 'Spontaneous cervicothoracic spinal epidural hemorrhage causing acute compressive myelopathy' is clinically synonymous with the ground truth diagnosis of 'Spontaneous cervicothoracic spinal epidural hematoma with acute spinal cord compression'. Hemorrhage and hematoma in this context refer to the same pathology, and compressive myelopathy is the clinical manifestation of spinal cord compression. Therefore, they match the criterion perfectly.",
+      "openrouter_usd": "0.004152",
+      "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+    },
+    {
+      "case_id": "case_009",
+      "kind": "offline_posthoc_review_not_encounter",
+      "source_trace_sha256": "170dffd56eb3db98636e88953f5dbc0030fe31303792c8c66b72f0803a5a0d7b",
+      "review": {
+        "diagnosis": "Migrated biliary stent lodged in a Meckel diverticulum, causing adjacent ileal perforation and purulent peritonitis.",
+        "reasoning": "Operative exploration confirmed a biliary stent within a Meckel diverticulum approximately 40 cm proximal to the ileocecal valve, with its distal end perforating adjacent ileum. Purulent intraperitoneal fluid and adhesions were also documented. These findings explain the progressive abdominal pain, distension, nausea and peritoneal irritation. CT demonstrated small-bowel air–fluid levels and a linear intraluminal foreign body, supporting suspected mechanical obstruction, although its precise mechanism was not established. Migration from a prior biliary placement is the most likely etiological mechanism; the original placement, timing and migration route remain undocumented. The patient could not supply medication or exposure history. Blood tests were unavailable, and the returned CT report does not establish an angiographic assessment. Neither limitation weakens the directly observed perforation mechanism.",
+        "confidence": 0.99,
+        "unconfirmed": [
+          "Original biliary stent placement, indication and timing of migration",
+          "Definitive mechanical obstruction and its precise mechanism",
+          "Systemic sepsis or organ dysfunction"
+        ],
+        "next_steps": [
+          "Complete urgent operative source control, including stent removal and treatment of the perforated bowel and involved diverticulum as indicated.",
+          "Provide intravenous antibiotics, resuscitation and postoperative monitoring; obtain blood count, renal function, electrolytes and lactate when available.",
+          "Review prior biliary procedure records to establish stent origin and assess any ongoing biliary management needs."
+        ]
+      },
+      "judge_correct": true,
+      "judge_reasoning": "The assistant's diagnosis correctly identifies a migrated biliary stent causing an adjacent ileal perforation. This directly satisfies the matching criterion, which requires identifying a small bowel obstruction, perforation, or diverticulitis caused by a migrated biliary stent.",
+      "openrouter_usd": "0.003738",
+      "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+    },
+    {
+      "case_id": "case_010",
+      "kind": "offline_posthoc_review_not_encounter",
+      "source_trace_sha256": "d2570037fc8c9cc1c161fdcfb68293f4e15bcd9a12ce8d9b8ffa6d28bd5e6803",
+      "review": {
+        "diagnosis": "Bleeding abdominal ectopic pregnancy involving the omentum between the spleen and descending colon, confirmed by surgical pathology; primary omental implantation is the leading but unproven mechanism.",
+        "reasoning": "Eight days of worsening left upper abdominal pain with vomiting are explained by the actively bleeding omental-region pregnancy. Confirmed findings include hCG 10,130.28 IU/L, no intrauterine sac or adnexal abnormality on pelvic ultrasound, a vascular left upper abdominal mass on contrast CT, and approximately 300 mL hemoperitoneum with an actively bleeding lesion involving omentum at laparoscopy. Surgical pathology reported products of conception, confirming ectopic gestational tissue at this abdominal site. Normal-appearing uterus, tubes and ovaries favor primary abdominal implantation, but do not exclude secondary implantation following tubal expulsion. Splenic implantation is not established: the lesion was between the spleen and descending colon. Initial stable vital signs and absent peritonism did not exclude internal bleeding. No major presenting feature remains unexplained. Medication and exposure histories are unavailable; lipase and blood count were unavailable, not normal. Definitive hemostasis and complete removal are not documented.",
+        "confidence": 0.99,
+        "unconfirmed": [
+          "Primary versus secondary abdominal implantation",
+          "Exact implantation attachment and any splenic involvement",
+          "Completion of treatment and resolution of bleeding or residual trophoblastic tissue"
+        ],
+        "next_steps": [
+          "Urgent gynecologic and surgical management to establish hemostasis and definitive treatment if not already completed.",
+          "Monitor vital signs and obtain blood count, blood group/Rh status and crossmatch; provide resuscitation as indicated.",
+          "Review operative and pathology details to clarify implantation site and completeness of removal.",
+          "Follow quantitative hCG to resolution; persistent levels warrant assessment for residual gestational tissue."
+        ]
+      },
+      "judge_correct": true,
+      "judge_reasoning": "The assistant's diagnosis describes a bleeding abdominal ectopic pregnancy located in the omentum between the spleen and descending colon, which corresponds anatomically to the left upper abdomen. It also identifies primary omental implantation as the leading mechanism. This closely matches the ground truth and the matching criterion of a primary abdominal ectopic pregnancy with bleeding left upper abdominal implantation.",
+      "openrouter_usd": "0.003806",
+      "commit": "a2ac0abcb21d751e1e8c028b59f432b0634c0527"
+    }
+  ]
+}

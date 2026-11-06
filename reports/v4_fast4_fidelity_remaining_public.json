@@ -1,0 +1,2887 @@
+{
+  "scope": "fast4 public case003–010 only; case010 audited after unique terminal",
+  "mode": "read_only_no_inference",
+  "closed_data_read": false,
+  "reference_files_read": false,
+  "original_publication_reextraction": false,
+  "code_or_head_changed": false,
+  "prior_pilot_reference": {
+    "markdown": "/private/tmp/v4_fast4_fidelity_pilot.md",
+    "json": "/private/tmp/v4_fast4_fidelity_pilot.json",
+    "json_sha256": "46f6add61c395099e7ebe64e42ba47357cf357a5ac243cbfa24855923b6eb9ff",
+    "case_ids": [
+      "case_001",
+      "case_002"
+    ],
+    "included_in_current_denominator": false
+  },
+  "summary": {
+    "cases": 8,
+    "review_inputs": 24,
+    "review_raw_outputs": 30,
+    "returned_findings": 35,
+    "all_findings_supported": true,
+    "all_inputs_exact": true,
+    "all_raw_outputs_valid": true,
+    "all_cost_source_uniqueness_valid": true,
+    "exam_totals": {
+      "relative_units": 195,
+      "total_performed": 31,
+      "attempts": 89,
+      "unavailable": 46,
+      "duplicates": 9,
+      "gated": 3
+    },
+    "exam_actor_units": {
+      "doctor": 69,
+      "reviewer": 126
+    },
+    "unsupported_patient_groups": 20,
+    "unsupported_patient_response_count": 12,
+    "unsupported_patient_case_count": 7,
+    "nonempty_queue_releases": 1,
+    "judged_accepted": 8,
+    "highest_final_confidence": 0.99
+  },
+  "cases": [
+    {
+      "case_id": "case_003",
+      "trace": "runs/v4/fast/fast4/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_003.jsonl",
+      "trace_sha256": "0e13343ec838fee15e053c8bc89132c6417d27a089f6601be0fe0339e23df0ef",
+      "lines": 91,
+      "terminal_commit": "b3d7d005a324db538b98882f6599cc33f2692eb5",
+      "terminal_judge": true,
+      "proposal_judge": true,
+      "source_hashes": {
+        "patient.json": "54a0db6d7a1fd7b026f1eaf5ef9198c3498ee98a254ec920d7182e1ea912dc77",
+        "investigations.json": "79dc6874f7b16f422438c5c4537e6ce441659a08415bcd1ff657acb7d3051bab"
+      },
+      "review_inputs": [
+        {
+          "line": 62,
+          "stage": "sol",
+          "input_sha256": "7a5ad2ac3048acebaab04577f5ca964f93f572a3c11b28574c744120492f8336",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": null
+        },
+        {
+          "line": 72,
+          "stage": "sol_post_followup",
+          "input_sha256": "669c4595e3f8c0abe295b83028a5bb71281b7ccdcad6319a4a987febed34dcfa",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": null
+        },
+        {
+          "line": 83,
+          "stage": "astra",
+          "input_sha256": "0d56d201a6a6e5665fc41837a0cae1c6f26736b4b56c6d85c729eec8e61e69ee",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": true
+        }
+      ],
+      "tool_output_integrity": [
+        {
+          "line": 71,
+          "phase": "initial",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Exploratory laparotomy findings of the MAINZ urinary pouch"
+            ]
+          },
+          "output_sha256": "401ffa728c5530d4a6cd22b4c00891547874613ca8b7e6616cf6371f678cc565",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        }
+      ],
+      "literal_findings": [
+        {
+          "line": 29,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "complete blood count",
+          "name": "Complete blood count",
+          "value": "Before surgery: WBC 15.3×10^9/L, hemoglobin 143 g/L, platelets 513×10^9/L.",
+          "literal_supported": true,
+          "source_fact_id": "lab_007",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Before surgery: WBC 15.3×10^9/L, hemoglobin 143 g/L, platelets 513×10^9/L.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 29,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "comprehensive metabolic panel",
+          "name": "Blood chemistry",
+          "value": "Before surgery: sodium 138 mmol/L, creatinine 1.08 mg/dL, eGFR 68 mL/min/1.73 m².",
+          "literal_supported": true,
+          "source_fact_id": "lab_008",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Before surgery: sodium 138 mmol/L, creatinine 1.08 mg/dL, eGFR 68 mL/min/1.73 m².",
+          "whole_value_returned": true
+        },
+        {
+          "line": 43,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "abdominal CT scan with contrast",
+          "name": "Abdominal CT",
+          "value": "Urgent contrast CT with retrograde pouch contrast: large left laterodorsal reservoir defect, contrast leakage into peritoneum and free intraperitoneal fluid.",
+          "literal_supported": true,
+          "source_fact_id": "imaging_005",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Urgent contrast CT with retrograde pouch contrast: large left laterodorsal reservoir defect, contrast leakage into peritoneum and free intraperitoneal fluid.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 71,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "Exploratory laparotomy findings of the MAINZ urinary pouch",
+          "name": "Exploratory laparotomy",
+          "value": "Emergency laparotomy confirmed pouch rupture, which was repaired; pouch catheter fixed and nasogastric tube placed.",
+          "literal_supported": true,
+          "source_fact_id": "procedure_result_012",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Emergency laparotomy confirmed pouch rupture, which was repaired; pouch catheter fixed and nasogastric tube placed.",
+          "whole_value_returned": true
+        }
+      ],
+      "queue_releases": [
+        {
+          "line": 61,
+          "event": "fast_queue_release",
+          "phase": "before_sol",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        },
+        {
+          "line": 70,
+          "event": "fast_queue_release",
+          "phase": "after_followup",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        },
+        {
+          "line": 81,
+          "event": "fast_queue_release",
+          "phase": "after_second_followup",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        }
+      ],
+      "followup_integrity": [
+        {
+          "line": 71,
+          "phase": "initial",
+          "hash_valid": true,
+          "findings": 1
+        },
+        {
+          "line": 82,
+          "phase": "second",
+          "hash_valid": true,
+          "findings": 0
+        }
+      ],
+      "patient_outputs": [
+        {
+          "line": 9,
+          "role": "patient",
+          "text": "The catheter was placed for continuous drainage because I had increasing difficulty catheterizing on my own for weeks, but it failed last night and my urine output dropped. Soon after that, I developed this severe lower abdominal pain and worsening trouble breathing. I do not know if I have a fever, chills, or bleeding. My history includes a lumbosacral meningomyelocele, an augmented bladder with a stoma, and a radical cystectomy for bladder cancer with a MAINZ pouch."
+        },
+        {
+          "line": 17,
+          "role": "patient",
+          "text": "I don't really know if my abdomen is swollen or distended, and I don't know if I'm experiencing nausea or vomiting. I'm just in a lot of pain and having a hard time catching my breath."
+        },
+        {
+          "line": 37,
+          "role": "patient",
+          "text": "I do not remember if the urine was clear or cloudy when I last drained the pouch. I also do not know if I have any allergies to contrast dyes."
+        },
+        {
+          "line": 55,
+          "role": "patient",
+          "text": "I understand. Thank you for explaining what is happening. Please do whatever is necessary to help me and get me to the surgeon as soon as you can. I am ready to follow your instructions for the next steps."
+        },
+        {
+          "line": 79,
+          "role": "patient_review",
+          "text": "I do not know if there was forceful insertion or flushing right before the pain started. I only know that I had been having increasing difficulty with the catheter for weeks, which led to the indwelling catheter being placed, and then it failed last night."
+        }
+      ],
+      "exams": {
+        "accounting_version": "relative-exam-units-v4-2026-10-08",
+        "unit": "artificial_relative_simulation_unit",
+        "unit_definition": {
+          "1": 1,
+          "2": 5,
+          "3": 15
+        },
+        "relative_units": 22,
+        "total_performed": 4,
+        "tier_counts": {
+          "1": 2,
+          "2": 1,
+          "3": 1
+        },
+        "actor_units": {
+          "doctor": 7,
+          "reviewer": 15
+        },
+        "attempts": 7,
+        "unavailable": 3,
+        "duplicates": 0,
+        "ambiguous": 0,
+        "gated": 0,
+        "unresolved_findings": 0,
+        "malformed_outputs": 0,
+        "failed_calls": 0,
+        "charges": [
+          {
+            "source_fact_id": "lab_007",
+            "name": "Complete blood count",
+            "tier": 1,
+            "relative_units": 1,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "lab_008",
+            "name": "Blood chemistry",
+            "tier": 1,
+            "relative_units": 1,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "imaging_005",
+            "name": "Abdominal CT",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "procedure_result_012",
+            "name": "Exploratory laparotomy",
+            "tier": 3,
+            "relative_units": 15,
+            "actor": "reviewer"
+          }
+        ],
+        "charge_source_unique": true,
+        "units_sum_valid": true
+      },
+      "api_observed_cost_by_actor": {
+        "doctor": 0.00528125,
+        "patient": 0.0014867500000000002,
+        "matcher": 0.00159575,
+        "patient_review": 0.00044975,
+        "judge": 0.004564,
+        "judge_proposal": 0.005212
+      },
+      "subscription_usage_cost_fields_by_role": {
+        "fast_review_sol": 0,
+        "fast_review_sol_post_followup": 0,
+        "fast_review_astra": 0
+      },
+      "final_uncertainty": {
+        "diagnosis": "Likely pressure-related rupture of the MAINZ urinary pouch from impaired drainage and reservoir overdistension following catheter failure.",
+        "confidence": 0.86,
+        "unconfirmed": [
+          "Pressure-mediated overdistension as the cause of rupture",
+          "Exact cause of drainage failure or difficult catheterization",
+          "Direct catheter trauma",
+          "Infection or sepsis and the precise cause of cardiopulmonary decompensation"
+        ],
+        "next_steps": [
+          "Review operative findings and catheter events for obstruction, traumatic injury or abnormal pouch tissue that could change the causal attribution.",
+          "Following the documented repair, ensure reliable pouch drainage and monitor urine output, abdominal findings, hemodynamics, respiratory status and renal function.",
+          "Arrange urologic assessment of the catheterizable channel and drainage failure; assess repair integrity before catheter removal as directed by the treating surgeon."
+        ]
+      }
+    },
+    {
+      "case_id": "case_004",
+      "trace": "runs/v4/fast/fast4/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_004.jsonl",
+      "trace_sha256": "75a7fccbb11a4d86fdb344d1298de6b19f3551501fd0559939b47571f2dd6172",
+      "lines": 119,
+      "terminal_commit": "b3d7d005a324db538b98882f6599cc33f2692eb5",
+      "terminal_judge": true,
+      "proposal_judge": false,
+      "source_hashes": {
+        "patient.json": "eaf97d21072236f92a58e122f052f97cfc7fc11b6d627385e0cd7289736b16ff",
+        "investigations.json": "f41e84387d8c60ae6812a9c5a31a96764a3491749b785ab66049e5a65b77edc3"
+      },
+      "review_inputs": [
+        {
+          "line": 73,
+          "stage": "sol",
+          "input_sha256": "ab916c51db48af7ddd3925017bb62d4622ee14090df95050bbf6708c57d9c952",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": null
+        },
+        {
+          "line": 86,
+          "stage": "sol_post_followup",
+          "input_sha256": "0711e8bf157a6ee1c96109b8fe56fe29b4b6bc90c8ffe199deca8c600120b3fb",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": null
+        },
+        {
+          "line": 111,
+          "stage": "astra",
+          "input_sha256": "9bbd91a4c0ce7be44fda4f6d201ff0c4a51081c3ae75a194b850c4a218c79bf1",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": true
+        }
+      ],
+      "tool_output_integrity": [
+        {
+          "line": 85,
+          "phase": "initial",
+          "tool": "request_radiology",
+          "arguments": {
+            "study_name": "Contrast-enhanced CT of the chest"
+          },
+          "output_sha256": "70b9d0409b2b34585961b327a0048a5edf3eddda51beba3def63065379f3259e",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 85,
+          "phase": "initial",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Right pleural fluid cytology"
+            ]
+          },
+          "output_sha256": "8722ab4ff68c95c8bf47da3074134613f8b902033b9a1f83287156e25db05db4",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 110,
+          "phase": "second",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Endobronchial ultrasound-guided needle aspiration of a mediastinal lymph node"
+            ]
+          },
+          "output_sha256": "a86c926a6a226127f5a8810cf78bb7550f0baf00107cf573321da84fce85b04f",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 110,
+          "phase": "second",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Histopathology of the mediastinal lymph node aspirate"
+            ]
+          },
+          "output_sha256": "7b3f0591ddc8180d8ea71dc73265f256b5c83ffaa704515a1adf4fe22b8bf5f4",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 110,
+          "phase": "second",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Thoracentesis and fluid examination"
+            ]
+          },
+          "output_sha256": "6e771a24230114e2c1da2601a80abe5b93b898c1bae34d311a9fc9804b3e3bf0",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 110,
+          "phase": "second",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Histopathology of the mediastinal lymph node aspirate"
+            ]
+          },
+          "output_sha256": "ac49280a749ebf337772ac3381aba3ae70e836b4d016aa4d4a2936c030936498",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 110,
+          "phase": "second",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Thoracentesis and fluid examination"
+            ]
+          },
+          "output_sha256": "6d842276ca00f8eeff12b7140898f5bea0018dad4e0e4550d69d72527a8dbf58",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 110,
+          "phase": "second",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Histopathology of the mediastinal lymph node aspirate"
+            ]
+          },
+          "output_sha256": "ac49280a749ebf337772ac3381aba3ae70e836b4d016aa4d4a2936c030936498",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        }
+      ],
+      "literal_findings": [
+        {
+          "line": 32,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "chest X-ray",
+          "name": "Chest radiograph",
+          "value": "Imaging at ED return showed recurrent right pleural effusion.",
+          "literal_supported": true,
+          "source_fact_id": "imaging_004",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Imaging at ED return showed recurrent right pleural effusion.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 60,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "pleural fluid protein",
+          "name": "Pleural fluid studies",
+          "value": "protein 2.4 g/dL",
+          "literal_supported": true,
+          "source_fact_id": "lab_006",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Initial thoracentesis pleural fluid (available as prior record): triglycerides 434 mg/dL, cholesterol 154 mg/dL, 82% lymphocytes, pH 7.48, protein 2.4 g/dL, LDH 83 U/L; cytology without malignant cells.",
+          "whole_value_returned": false
+        },
+        {
+          "line": 60,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "pleural fluid LDH",
+          "name": "Pleural fluid studies",
+          "value": "LDH 83 U/L",
+          "literal_supported": true,
+          "source_fact_id": "lab_006",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Initial thoracentesis pleural fluid (available as prior record): triglycerides 434 mg/dL, cholesterol 154 mg/dL, 82% lymphocytes, pH 7.48, protein 2.4 g/dL, LDH 83 U/L; cytology without malignant cells.",
+          "whole_value_returned": false
+        },
+        {
+          "line": 60,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "pleural fluid triglyceride levels",
+          "name": "Pleural fluid studies",
+          "value": "triglycerides 434 mg/dL",
+          "literal_supported": true,
+          "source_fact_id": "lab_006",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Initial thoracentesis pleural fluid (available as prior record): triglycerides 434 mg/dL, cholesterol 154 mg/dL, 82% lymphocytes, pH 7.48, protein 2.4 g/dL, LDH 83 U/L; cytology without malignant cells.",
+          "whole_value_returned": false
+        },
+        {
+          "line": 85,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "Contrast-enhanced CT of the chest",
+          "name": "Chest CT",
+          "value": "CT: bilateral hilar and mediastinal adenopathy, severe right-middle-lobe bronchial narrowing, partial atelectasis and infiltrates.",
+          "literal_supported": true,
+          "source_fact_id": "imaging_008",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "CT: bilateral hilar and mediastinal adenopathy, severe right-middle-lobe bronchial narrowing, partial atelectasis and infiltrates.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 85,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "Right pleural fluid cytology",
+          "name": "Pleural fluid studies",
+          "value": "cytology without malignant cells",
+          "literal_supported": true,
+          "source_fact_id": "lab_006",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Initial thoracentesis pleural fluid (available as prior record): triglycerides 434 mg/dL, cholesterol 154 mg/dL, 82% lymphocytes, pH 7.48, protein 2.4 g/dL, LDH 83 U/L; cytology without malignant cells.",
+          "whole_value_returned": false
+        },
+        {
+          "line": 110,
+          "actor": "reviewer",
+          "phase": "second",
+          "requested": "Endobronchial ultrasound-guided needle aspiration of a mediastinal lymph node",
+          "name": "Endobronchial ultrasound guided biopsy",
+          "value": "Bronchoscopy with endobronchial ultrasound guided biopsy established extensive-stage small cell lung carcinoma.",
+          "literal_supported": true,
+          "source_fact_id": "procedure_result_009",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Bronchoscopy with endobronchial ultrasound guided biopsy established extensive-stage small cell lung carcinoma.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 110,
+          "actor": "reviewer",
+          "phase": "second",
+          "requested": "Thoracentesis and fluid examination",
+          "name": "Thoracentesis and fluid examination",
+          "value": "Repeat thoracentesis on ED return removed 1.2 L of fluid with characteristics similar to the initial milky effusion.",
+          "literal_supported": true,
+          "source_fact_id": "procedure_result_005",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Repeat thoracentesis on ED return removed 1.2 L of fluid with characteristics similar to the initial milky effusion.",
+          "whole_value_returned": true
+        }
+      ],
+      "queue_releases": [
+        {
+          "line": 72,
+          "event": "fast_queue_release",
+          "phase": "before_sol",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        },
+        {
+          "line": 84,
+          "event": "fast_queue_release",
+          "phase": "after_followup",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        },
+        {
+          "line": 109,
+          "event": "fast_queue_release",
+          "phase": "after_second_followup",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        }
+      ],
+      "followup_integrity": [
+        {
+          "line": 85,
+          "phase": "initial",
+          "hash_valid": true,
+          "findings": 2
+        },
+        {
+          "line": 110,
+          "phase": "second",
+          "hash_valid": true,
+          "findings": 2
+        }
+      ],
+      "patient_outputs": [
+        {
+          "line": 9,
+          "role": "patient",
+          "text": "I have been dealing with a cough for the past two weeks, but I don't know if I have a fever or chest pain. I don't know the cause of the fluid build-up, and I haven't had any other procedures besides that first drainage. I also don't know or don't remember the details of my medications, so I can't say what I’m taking or if anything was prescribed after the procedure."
+        },
+        {
+          "line": 22,
+          "role": "patient",
+          "text": "That sounds alright, thank you. I’ll wait for you to come back with those results so we can figure out what is going on. I just want to be able to breathe easier again."
+        },
+        {
+          "line": 42,
+          "role": "patient",
+          "text": "When they drained the fluid, they told me it was milky. As for your other questions, I honestly don't know or I don't remember if I have had any night sweats or lost any weight lately. I’m just ready to get this fluid taken care of again so I can get back to normal."
+        },
+        {
+          "line": 50,
+          "role": "patient",
+          "text": "I haven't had any recent injuries to my chest or back. As for chronic illnesses like cancer, heart disease, or liver problems, I do not know or do not have that information mentioned to me. I've just been dealing with this cough and shortness of breath for the last two weeks."
+        }
+      ],
+      "exams": {
+        "accounting_version": "relative-exam-units-v4-2026-10-08",
+        "unit": "artificial_relative_simulation_unit",
+        "unit_definition": {
+          "1": 1,
+          "2": 5,
+          "3": 15
+        },
+        "relative_units": 31,
+        "total_performed": 5,
+        "tier_counts": {
+          "1": 1,
+          "2": 3,
+          "3": 1
+        },
+        "actor_units": {
+          "doctor": 6,
+          "reviewer": 25
+        },
+        "attempts": 17,
+        "unavailable": 5,
+        "duplicates": 4,
+        "ambiguous": 0,
+        "gated": 3,
+        "unresolved_findings": 0,
+        "malformed_outputs": 0,
+        "failed_calls": 0,
+        "charges": [
+          {
+            "source_fact_id": "imaging_004",
+            "name": "Chest radiograph",
+            "tier": 1,
+            "relative_units": 1,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "lab_006",
+            "name": "Pleural fluid studies",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "imaging_008",
+            "name": "Chest CT",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "reviewer"
+          },
+          {
+            "source_fact_id": "procedure_result_009",
+            "name": "Endobronchial ultrasound guided biopsy",
+            "tier": 3,
+            "relative_units": 15,
+            "actor": "reviewer"
+          },
+          {
+            "source_fact_id": "procedure_result_005",
+            "name": "Thoracentesis and fluid examination",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "reviewer"
+          }
+        ],
+        "charge_source_unique": true,
+        "units_sum_valid": true
+      },
+      "api_observed_cost_by_actor": {
+        "doctor": 0.006687499999999999,
+        "patient": 0.001435,
+        "matcher": 0.0059352499999999996,
+        "judge": 0.004232,
+        "judge_proposal": 0.006426
+      },
+      "subscription_usage_cost_fields_by_role": {
+        "fast_review_sol": 0,
+        "fast_review_sol_post_followup": 0,
+        "fast_review_astra": 0
+      },
+      "final_uncertainty": {
+        "diagnosis": "Small cell lung carcinoma–associated right chylothorax, most likely caused by malignant obstruction of thoracic lymphatic drainage.",
+        "confidence": 0.96,
+        "unconfirmed": [
+          "Exact site of lymphatic obstruction or leakage and whether caused by compression or direct tumor invasion",
+          "Pleural tumor involvement",
+          "Cause of accompanying infiltrates"
+        ],
+        "next_steps": [
+          "Arrange prompt oncology and pulmonary management of the biopsy-established carcinoma and recurrent symptomatic chylothorax.",
+          "Review the original biopsy and staging documentation; monitor effusion response to cancer treatment.",
+          "Consider lymphatic imaging if the chylothorax persists or an intervention requires localization of obstruction or leakage.",
+          "Assess respiratory status, nutritional losses, and need for further therapeutic drainage."
+        ]
+      }
+    },
+    {
+      "case_id": "case_005",
+      "trace": "runs/v4/fast/fast4/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_005.jsonl",
+      "trace_sha256": "460c2b23e26030fe2b73e1c5d9fdbdd2a0268e9aff62a23b0ec77de6f7a9f816",
+      "lines": 158,
+      "terminal_commit": "b3d7d005a324db538b98882f6599cc33f2692eb5",
+      "terminal_judge": true,
+      "proposal_judge": true,
+      "source_hashes": {
+        "patient.json": "789e11ede473e0ac33e45092001ed876fde3977ae44f2e0775439d5a32f92f56",
+        "investigations.json": "0b464f22e25a75a2980b3ea6d28802f9d2f1aa4f1ec029e4b05b543bb728d86c"
+      },
+      "review_inputs": [
+        {
+          "line": 123,
+          "stage": "sol",
+          "input_sha256": "8c89f731acb2ad041fcd3094c72cd9abfb4d0c12d1f7363691c0a2cb13859a9f",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": null
+        },
+        {
+          "line": 138,
+          "stage": "sol_post_followup",
+          "input_sha256": "b756592f0c126a66c8a69a9046ad71111db4c69dbdcf4f89f68b741397c7ff39",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": null
+        },
+        {
+          "line": 150,
+          "stage": "astra",
+          "input_sha256": "05ce8b9bf9b065bd5032ed04538d935ce378f99bd26b2bbe0d3adac971c84475",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": true
+        }
+      ],
+      "tool_output_integrity": [
+        {
+          "line": 137,
+          "phase": "initial",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Left pleural thoracoscopy with biopsy"
+            ]
+          },
+          "output_sha256": "3a7d61c1f3ef941f0590a1fc5113439b944ba31c015e5dea27a0a1c2bced17e9",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 137,
+          "phase": "initial",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Histopathology of left pleural biopsy"
+            ]
+          },
+          "output_sha256": "1840c4034db33120bd80570978ac958bd68c52986afc8fc4c6bf34db932be0d8",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 149,
+          "phase": "second",
+          "tool": "request_radiology",
+          "arguments": {
+            "study_name": "Whole-body FDG PET/CT"
+          },
+          "output_sha256": "c0cecc294680d5e321b2359f7e958067474ce4e90b1d76325c47902f3c126b44",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        }
+      ],
+      "literal_findings": [
+        {
+          "line": 86,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "high-resolution chest CT scan",
+          "name": "Chest CT",
+          "value": "Postcontrast chest CT: moderate left effusion and nodular circumferential pleural thickening, including mediastinal pleura.",
+          "literal_supported": true,
+          "source_fact_id": "imaging_008",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Postcontrast chest CT: moderate left effusion and nodular circumferential pleural thickening, including mediastinal pleura.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 110,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "pleural fluid cytology",
+          "name": "Pleural fluid cytology and immunohistochemistry",
+          "value": "High-volume thoracentesis: atypical epithelioid and spindle cells; SOX10, Melan-A and S100 positive; calretinin, EMA, p40 and WT1 negative.",
+          "literal_supported": true,
+          "source_fact_id": "procedure_result_009",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "High-volume thoracentesis: atypical epithelioid and spindle cells; SOX10, Melan-A and S100 positive; calretinin, EMA, p40 and WT1 negative.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 137,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "Histopathology of left pleural biopsy",
+          "name": "Pleural biopsy",
+          "value": "CT-guided pleural biopsy confirmed cells positive for SOX10 and Melan-A.",
+          "literal_supported": true,
+          "source_fact_id": "procedure_result_010",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "CT-guided pleural biopsy confirmed cells positive for SOX10 and Melan-A.",
+          "whole_value_returned": true
+        }
+      ],
+      "queue_releases": [
+        {
+          "line": 72,
+          "event": "released_results",
+          "phase": null,
+          "empty": false,
+          "hash_valid": true,
+          "text": "[Results of the tests queued in the previous round, now available]\n- request_microbiology {\"test_names\": [\"respiratory viral panel PCR\"]}: {\"not_available_in_this_case\": [\"respiratory viral panel PCR\"]}\n- request_microbiology {\"test_names\": [\"Legionella urinary antigen\"]}: {\"not_available_in_this_case\": [\"Legionella urinary antigen\"]}\n- request_microbiology {\"test_names\": [\"Pneumocystis jirovecii PCR\"]}: {\"not_available_in_this_case\": [\"Pneumocystis jirovecii PCR\"]}"
+        },
+        {
+          "line": 122,
+          "event": "fast_queue_release",
+          "phase": "before_sol",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        },
+        {
+          "line": 136,
+          "event": "fast_queue_release",
+          "phase": "after_followup",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        },
+        {
+          "line": 148,
+          "event": "fast_queue_release",
+          "phase": "after_second_followup",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        }
+      ],
+      "followup_integrity": [
+        {
+          "line": 137,
+          "phase": "initial",
+          "hash_valid": true,
+          "findings": 1
+        },
+        {
+          "line": 149,
+          "phase": "second",
+          "hash_valid": true,
+          "findings": 0
+        }
+      ],
+      "patient_outputs": [
+        {
+          "line": 9,
+          "role": "patient",
+          "text": "I’ve been exposed to asbestos materials in the past. As for other symptoms like fever, chest pain, or weight loss, I don’t know. I have rheumatoid arthritis and interstitial lung disease that has been stable for five years. I’m currently taking baricitinib and methotrexate, and I've been on that regimen for a while. I don't know if I have any other medical conditions or if I’m taking anything else."
+        },
+        {
+          "line": 23,
+          "role": "patient",
+          "text": "I don’t know about any recent travel or contact with sick people. My shortness of breath and cough have been going on for one week, but I don’t know if it’s been getting steadily worse. I also don’t know if I’ve had any changes in my sputum, night sweats, or unusual fatigue. I’m just here because of the shortness of breath and the cough that started a week ago."
+        },
+        {
+          "line": 62,
+          "role": "patient",
+          "text": "I honestly do not know about any drug allergies. I am not sure if I can provide a sputum sample, but I can try if you need me to. As for difficulty swallowing or food getting stuck, I do not know. I am just focused on this cough and the trouble I have had breathing for the last week."
+        },
+        {
+          "line": 80,
+          "role": "patient",
+          "text": "I don't know if I've ever been tested for latent tuberculosis. I also don't know if I'm having any new or worsening skin rashes or joint pain, and I don't know if I've had any recent fevers or chills that I might have overlooked. I am just focusing on the shortness of breath and the new dry cough I've had for the last week."
+        },
+        {
+          "line": 94,
+          "role": "patient",
+          "text": "I haven't really noticed any specific pain in my chest or back, but I am just focused on the shortness of breath and the cough I have had this week. Regarding the procedure to sample the fluid, I don't know yet; I would need to hear more about what that involves before I can say if I am comfortable with it."
+        },
+        {
+          "line": 102,
+          "role": "patient",
+          "text": "I don't know if I have any specific questions about the procedure yet, as I am still just trying to process what you told me about my lungs. I also don't know if I have been feeling dizzy or lightheaded when I move around. I'm mainly just worried about the shortness of breath and the cough that started a week ago."
+        },
+        {
+          "line": 130,
+          "role": "patient_review",
+          "text": "I don't know if I have ever had a melanoma or any skin lesion removed, so I do not know if any pathology results would be available. I am just focusing on the shortness of breath and the cough that I have had for this past week."
+        }
+      ],
+      "exams": {
+        "accounting_version": "relative-exam-units-v4-2026-10-08",
+        "unit": "artificial_relative_simulation_unit",
+        "unit_definition": {
+          "1": 1,
+          "2": 5,
+          "3": 15
+        },
+        "relative_units": 21,
+        "total_performed": 3,
+        "tier_counts": {
+          "1": 1,
+          "2": 1,
+          "3": 1
+        },
+        "actor_units": {
+          "doctor": 6,
+          "reviewer": 15
+        },
+        "attempts": 17,
+        "unavailable": 14,
+        "duplicates": 0,
+        "ambiguous": 0,
+        "gated": 0,
+        "unresolved_findings": 0,
+        "malformed_outputs": 0,
+        "failed_calls": 0,
+        "charges": [
+          {
+            "source_fact_id": "imaging_008",
+            "name": "Chest CT",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "procedure_result_009",
+            "name": "Pleural fluid cytology and immunohistochemistry",
+            "tier": 1,
+            "relative_units": 1,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "procedure_result_010",
+            "name": "Pleural biopsy",
+            "tier": 3,
+            "relative_units": 15,
+            "actor": "reviewer"
+          }
+        ],
+        "charge_source_unique": true,
+        "units_sum_valid": true
+      },
+      "api_observed_cost_by_actor": {
+        "doctor": 0.0119287,
+        "patient": 0.0027282499999999998,
+        "matcher": 0.006216249999999999,
+        "patient_review": 0.00056175,
+        "judge": 0.003652,
+        "judge_proposal": 0.004118
+      },
+      "subscription_usage_cost_fields_by_role": {
+        "fast_review_sol": 0,
+        "fast_review_sol_post_followup": 0,
+        "fast_review_astra": 0
+      },
+      "final_uncertainty": {
+        "diagnosis": "Pleural involvement by melanoma, most likely metastatic from an unidentified primary, causing a malignant left pleural effusion.",
+        "confidence": 0.96,
+        "unconfirmed": [
+          "Primary melanoma site and any prior melanoma history",
+          "Metastatic distribution and stage",
+          "Occult or regressed primary versus rare primary pleural origin",
+          "Additional contributors to acute hypoxemia"
+        ],
+        "next_steps": [
+          "Obtain expert pathology review integrating pleural cytology, biopsy morphology and immunostains.",
+          "Retrieve prior skin-excision pathology and perform a complete melanoma primary-site assessment.",
+          "Arrange systemic staging and brain imaging; pursue molecular profiling for treatment selection.",
+          "Obtain oncology and pulmonary assessment, maintain oxygen support, and reassess hypoxemia and symptoms following effusion drainage."
+        ]
+      }
+    },
+    {
+      "case_id": "case_006",
+      "trace": "runs/v4/fast/fast4/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_006.jsonl",
+      "trace_sha256": "7e3e9b3ba0129911db89e47f1bc8a9553696bd24fe507fcc413d897ae680ccd0",
+      "lines": 103,
+      "terminal_commit": "b3d7d005a324db538b98882f6599cc33f2692eb5",
+      "terminal_judge": true,
+      "proposal_judge": false,
+      "source_hashes": {
+        "patient.json": "cd25327eea45b5dc6eb5c71e0edd59ccbd60b1c91648b5642d8dcae28f5b01cd",
+        "investigations.json": "8434c9db3998f99855fcfeefdb416a4dce4b4a3f735779fa6c0eb1a6092d8582"
+      },
+      "review_inputs": [
+        {
+          "line": 60,
+          "stage": "sol",
+          "input_sha256": "7bee392d78a32b2287c0b212e390745f4c1fb1c3f2ee902361002a0073c2834a",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": null
+        },
+        {
+          "line": 80,
+          "stage": "sol_post_followup",
+          "input_sha256": "5a2d81d428e75131c39692689262fb48e996eeafd48ac86c965e4708d5c30c64",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": null
+        },
+        {
+          "line": 95,
+          "stage": "astra",
+          "input_sha256": "7962a3c5e28781046ae07889c55aa0d7547d7a2d0eee2e2b4fa3e27a4a52b4c1",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": true
+        }
+      ],
+      "tool_output_integrity": [
+        {
+          "line": 79,
+          "phase": "initial",
+          "tool": "request_radiology",
+          "arguments": {
+            "study_name": "Contrast-enhanced CT of the adrenal glands"
+          },
+          "output_sha256": "38a1581745c365d5708ca26dfaa119dc3501d798aaa1f356760078878d358e4e",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 79,
+          "phase": "initial",
+          "tool": "request_blood_test",
+          "arguments": {
+            "test_names": [
+              "Cosyntropin stimulation test with serum cortisol"
+            ]
+          },
+          "output_sha256": "4316c53aafbe8203f88b01b27425770d2a03b0600e29d67b520c2facc4c0f499",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 79,
+          "phase": "initial",
+          "tool": "request_blood_test",
+          "arguments": {
+            "test_names": [
+              "Serum 21-hydroxylase antibodies"
+            ]
+          },
+          "output_sha256": "5bce618242d71f086e8c399e4441c132625eb67898ff03cc049b5792905c75f5",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 94,
+          "phase": "second",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "CT-guided core biopsy of an adrenal nodule"
+            ]
+          },
+          "output_sha256": "70ad98a5d21068fd711ca8bfd4f4c181ba702eceed45d5744f536059db7eed4b",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 94,
+          "phase": "second",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Histopathology of the adrenal core biopsy specimen"
+            ]
+          },
+          "output_sha256": "b161c7b213e0aa27f2fbeeab11f2fcce240a34928bde752c67c6f4d4ffe73e83",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        }
+      ],
+      "literal_findings": [
+        {
+          "line": 35,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "morning serum cortisol",
+          "name": "ACTH and cortisol",
+          "value": "Earlier ACTH 577.10 ng/L and cortisol 161.00 nmol/L; admission ACTH 365.80 ng/L and cortisol 139.00 nmol/L.",
+          "literal_supported": true,
+          "source_fact_id": "lab_004",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Earlier ACTH 577.10 ng/L and cortisol 161.00 nmol/L; admission ACTH 365.80 ng/L and cortisol 139.00 nmol/L.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 35,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "basic metabolic panel",
+          "name": "Metabolic blood testing",
+          "value": "Low fasting glucose and sodium were described, without numerical values.",
+          "literal_supported": true,
+          "source_fact_id": "lab_005",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Low fasting glucose and sodium were described, without numerical values.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 79,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "Contrast-enhanced CT of the adrenal glands",
+          "name": "Adrenal CT",
+          "value": "CT: bilateral adrenal nodules with calcification; old tuberculosis lesions in lungs and pleura.",
+          "literal_supported": true,
+          "source_fact_id": "imaging_007",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "CT: bilateral adrenal nodules with calcification; old tuberculosis lesions in lungs and pleura.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 94,
+          "actor": "reviewer",
+          "phase": "second",
+          "requested": "Histopathology of the adrenal core biopsy specimen",
+          "name": "Adrenal biopsy",
+          "value": "Ultrasound-guided left adrenal biopsy: necrotizing granulomatous inflammation. Acid-fast and silver stains negative.",
+          "literal_supported": true,
+          "source_fact_id": "procedure_result_009",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Ultrasound-guided left adrenal biopsy: necrotizing granulomatous inflammation. Acid-fast and silver stains negative.",
+          "whole_value_returned": true
+        }
+      ],
+      "queue_releases": [
+        {
+          "line": 59,
+          "event": "fast_queue_release",
+          "phase": "before_sol",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        },
+        {
+          "line": 78,
+          "event": "fast_queue_release",
+          "phase": "after_followup",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        },
+        {
+          "line": 93,
+          "event": "fast_queue_release",
+          "phase": "after_second_followup",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        }
+      ],
+      "followup_integrity": [
+        {
+          "line": 79,
+          "phase": "initial",
+          "hash_valid": true,
+          "findings": 1
+        },
+        {
+          "line": 94,
+          "phase": "second",
+          "hash_valid": true,
+          "findings": 1
+        }
+      ],
+      "patient_outputs": [
+        {
+          "line": 9,
+          "role": "patient",
+          "text": "I honestly don't know if I've been having those symptoms, as I haven't really tracked them. I'm not taking any medications, steroids, or supplements at this time. I haven't noticed any recent changes like salt cravings or new skin darkening beyond what's already on my finger joints and knees. I did have a hospital stay five years ago for a spot on my chest, but I was never told it was tuberculosis and didn't receive any treatment for it."
+        },
+        {
+          "line": 17,
+          "role": "patient",
+          "text": "I don't recall anyone ever using the word granuloma regarding that chest spot, and I don't know if I had any follow-up imaging for it after I left the hospital. As for weight loss or low blood pressure, I really don't know or don't remember experiencing anything like that. I haven't been tracking those things, so I'm not sure."
+        },
+        {
+          "line": 25,
+          "role": "patient",
+          "text": "I do not have any cough, fever, or night sweats. Regarding muscle weakness or nausea, I honestly do not know or do not remember experiencing those."
+        },
+        {
+          "line": 67,
+          "role": "patient_review",
+          "text": "I don't know if I have had any tuberculosis exposure, or if I have lived in regions where those infections are common. As for my past hospitalization records, I don't know if they could clarify the chest abnormality, as I haven't looked into them myself."
+        }
+      ],
+      "exams": {
+        "accounting_version": "relative-exam-units-v4-2026-10-08",
+        "unit": "artificial_relative_simulation_unit",
+        "unit_definition": {
+          "1": 1,
+          "2": 5,
+          "3": 15
+        },
+        "relative_units": 30,
+        "total_performed": 4,
+        "tier_counts": {
+          "1": 0,
+          "2": 3,
+          "3": 1
+        },
+        "actor_units": {
+          "doctor": 10,
+          "reviewer": 20
+        },
+        "attempts": 13,
+        "unavailable": 7,
+        "duplicates": 2,
+        "ambiguous": 0,
+        "gated": 0,
+        "unresolved_findings": 0,
+        "malformed_outputs": 0,
+        "failed_calls": 0,
+        "charges": [
+          {
+            "source_fact_id": "lab_004",
+            "name": "ACTH and cortisol",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "lab_005",
+            "name": "Metabolic blood testing",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "imaging_007",
+            "name": "Adrenal CT",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "reviewer"
+          },
+          {
+            "source_fact_id": "procedure_result_009",
+            "name": "Adrenal biopsy",
+            "tier": 3,
+            "relative_units": 15,
+            "actor": "reviewer"
+          }
+        ],
+        "charge_source_unique": true,
+        "units_sum_valid": true
+      },
+      "api_observed_cost_by_actor": {
+        "doctor": 0.0049805000000000006,
+        "patient": 0.00105775,
+        "matcher": 0.00577075,
+        "patient_review": 0.000396,
+        "judge": 0.003502,
+        "judge_proposal": 0.004232
+      },
+      "subscription_usage_cost_fields_by_role": {
+        "fast_review_sol": 0,
+        "fast_review_sol_post_followup": 0,
+        "fast_review_astra": 0
+      },
+      "final_uncertainty": {
+        "diagnosis": "Probable tuberculous adrenalitis causing primary adrenal insufficiency, without microbiological confirmation.",
+        "confidence": 0.88,
+        "unconfirmed": [
+          "Mycobacterium tuberculosis as the cause of adrenal granulomas",
+          "Current infection activity versus residual adrenal damage",
+          "Dynamic cortisol response and cortisol sampling time",
+          "Mineralocorticoid deficiency"
+        ],
+        "next_steps": [
+          "Obtain mycobacterial PCR and culture from available adrenal tissue; consider fungal testing according to exposure history.",
+          "Review prior chest records and assess for active tuberculosis with infectious-disease input.",
+          "Obtain documented morning cortisol and ACTH and an actual cosyntropin stimulation test if clinically appropriate, without delaying necessary treatment.",
+          "Assess blood pressure, electrolytes, glucose, renin, and aldosterone; arrange prompt endocrine management of adrenal insufficiency."
+        ]
+      }
+    },
+    {
+      "case_id": "case_007",
+      "trace": "runs/v4/fast/fast4/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_007.jsonl",
+      "trace_sha256": "ac9ce711d760af097ece12b85e1c4ec7b68c54d0fc2277d0188de7b6be9dc30c",
+      "lines": 122,
+      "terminal_commit": "b3d7d005a324db538b98882f6599cc33f2692eb5",
+      "terminal_judge": true,
+      "proposal_judge": true,
+      "source_hashes": {
+        "patient.json": "5de6e7fadd24516b0de74c4169a707ba47bc012ba981612bfc042ca7d3ece781",
+        "investigations.json": "21c6887296052271de020a892ddac92603ee371a4619b73f87d525631d79b11b"
+      },
+      "review_inputs": [
+        {
+          "line": 81,
+          "stage": "sol",
+          "input_sha256": "2be94685dad8da1532fb734ae5476098c6d98d6ab855e74bdd1dd6db6977e3e1",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": null
+        },
+        {
+          "line": 97,
+          "stage": "sol_post_followup",
+          "input_sha256": "13e197b8c24399983eb5523f1817ae69f3dd7d55a1ff8fe851b77c62dc978e36",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": null
+        },
+        {
+          "line": 114,
+          "stage": "astra",
+          "input_sha256": "3d207096f6e3f8062916a618ff59c772e76aed9ffefc0aa067f5bc9fb410ed17",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": true
+        }
+      ],
+      "tool_output_integrity": [
+        {
+          "line": 96,
+          "phase": "initial",
+          "tool": "request_blood_test",
+          "arguments": {
+            "test_names": [
+              "Serum cold agglutinin thermal amplitude study"
+            ]
+          },
+          "output_sha256": "4a27b98e1677754beaddd0fd3b1f0eea92f1b7e11d80a24f786c8c5a69539c8c",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 113,
+          "phase": "second",
+          "tool": "request_blood_test",
+          "arguments": {
+            "test_names": [
+              "Red-cell eluate antibody identification at 37°C"
+            ]
+          },
+          "output_sha256": "a9255b95e9c7d99418cdb6ee7d32571fe99f6ba9bb07608ab60649adb491e7e4",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 113,
+          "phase": "second",
+          "tool": "request_blood_test",
+          "arguments": {
+            "test_names": [
+              "Serum cold agglutinin titer"
+            ]
+          },
+          "output_sha256": "7b415ecad694ff52fa234d9bd71456e8e0126450dda5a625d2e18eecf9131d9a",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        }
+      ],
+      "literal_findings": [
+        {
+          "line": 29,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "complete blood count",
+          "name": "Hemoglobin",
+          "value": "Hemoglobin 45 g/L, down from 123 g/L baseline.",
+          "literal_supported": true,
+          "source_fact_id": "lab_006",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Hemoglobin 45 g/L, down from 123 g/L baseline.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 67,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "peripheral blood smear",
+          "name": "Peripheral blood film",
+          "value": "Peripheral blood film: reticulocytosis, spherocytes and reactive neutrophilia.",
+          "literal_supported": true,
+          "source_fact_id": "lab_009",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Peripheral blood film: reticulocytosis, spherocytes and reactive neutrophilia.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 71,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "direct antiglobulin test",
+          "name": "Direct antiglobulin test",
+          "value": "Direct antiglobulin test IgG 2+ and complement C3d 5+",
+          "literal_supported": true,
+          "source_fact_id": "lab_010",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Direct antiglobulin test IgG 2+ and complement C3d 5+; indirect antiglobulin test panreactive, no underlying alloantibodies detected.",
+          "whole_value_returned": false
+        },
+        {
+          "line": 73,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "haptoglobin",
+          "name": "Hemolysis studies",
+          "value": "haptoglobin <0.3 g/L",
+          "literal_supported": true,
+          "source_fact_id": "lab_007",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "LDH 1214 U/L, haptoglobin <0.3 g/L, total bilirubin 61 µmol/L with 72% unconjugated; reticulocytes 261.7×10^9/L (23.7%).",
+          "whole_value_returned": false
+        }
+      ],
+      "queue_releases": [
+        {
+          "line": 80,
+          "event": "fast_queue_release",
+          "phase": "before_sol",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        },
+        {
+          "line": 95,
+          "event": "fast_queue_release",
+          "phase": "after_followup",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        },
+        {
+          "line": 112,
+          "event": "fast_queue_release",
+          "phase": "after_second_followup",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        }
+      ],
+      "followup_integrity": [
+        {
+          "line": 96,
+          "phase": "initial",
+          "hash_valid": true,
+          "findings": 0
+        },
+        {
+          "line": 113,
+          "phase": "second",
+          "hash_valid": true,
+          "findings": 0
+        }
+      ],
+      "patient_outputs": [
+        {
+          "line": 10,
+          "role": "patient",
+          "text": "These symptoms have been going on for four days. I haven't had any abdominal pain, and I don't know about weight loss. I had my gallbladder removed in the past, but I don't know about other liver disease history. About two weeks ago, I received my first dose of pembrolizumab for my lung cancer. I don't know about alcohol consumption or other medications, as that wasn't mentioned."
+        },
+        {
+          "line": 19,
+          "role": "patient",
+          "text": "I haven't noticed any fever or itching, and I don't know about changes to my urine. I also haven't noticed any confusion or swelling in my legs or belly. I just feel very tired and lightheaded, and I've had these dark stools for the last four days along with the yellowing of my skin. I'm ready for those tests you mentioned if they help figure out what's going on."
+        },
+        {
+          "line": 38,
+          "role": "patient",
+          "text": "I have not noticed any bleeding, and I have not seen any blood in my stool or vomit. Regarding my gallbladder surgery, I do not know if I was ever told about any issues with my bile ducts. I am happy to have the ultrasound and the stool test done to see if we can get some answers about what is happening to me."
+        },
+        {
+          "line": 61,
+          "role": "patient",
+          "text": "I am not having any shortness of breath while I am resting. I have never been told about any issues with my red blood cells breaking down in the past, so I do not know anything about that. I am just focused on feeling so tired and lightheaded lately. I am ready to have those tests done if you think they will help explain why I am feeling this way."
+        },
+        {
+          "line": 88,
+          "role": "patient_review",
+          "text": "I do not know about other medications, supplements, or any recent transfusions. Regarding the stools, I am not sure if they are black, tarry, and sticky; I only know they are dark. I don't have information on those other details you asked about."
+        }
+      ],
+      "exams": {
+        "accounting_version": "relative-exam-units-v4-2026-10-08",
+        "unit": "artificial_relative_simulation_unit",
+        "unit_definition": {
+          "1": 1,
+          "2": 5,
+          "3": 15
+        },
+        "relative_units": 12,
+        "total_performed": 4,
+        "tier_counts": {
+          "1": 2,
+          "2": 2,
+          "3": 0
+        },
+        "actor_units": {
+          "doctor": 12
+        },
+        "attempts": 13,
+        "unavailable": 9,
+        "duplicates": 0,
+        "ambiguous": 0,
+        "gated": 0,
+        "unresolved_findings": 0,
+        "malformed_outputs": 0,
+        "failed_calls": 0,
+        "charges": [
+          {
+            "source_fact_id": "lab_006",
+            "name": "Hemoglobin",
+            "tier": 1,
+            "relative_units": 1,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "lab_009",
+            "name": "Peripheral blood film",
+            "tier": 1,
+            "relative_units": 1,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "lab_010",
+            "name": "Direct antiglobulin test",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "lab_007",
+            "name": "Hemolysis studies",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "doctor"
+          }
+        ],
+        "charge_source_unique": true,
+        "units_sum_valid": true
+      },
+      "api_observed_cost_by_actor": {
+        "doctor": 0.0061505,
+        "patient": 0.0016895,
+        "matcher": 0.00630475,
+        "patient_review": 0.00048025,
+        "judge": 0.003514,
+        "judge_proposal": 0.00299
+      },
+      "subscription_usage_cost_fields_by_role": {
+        "fast_review_sol": 0,
+        "fast_review_sol_post_followup": 0,
+        "fast_review_astra": 0
+      },
+      "final_uncertainty": {
+        "diagnosis": "Pembrolizumab-associated autoimmune hemolytic anemia, likely an immune-related adverse effect; antibody thermal subtype remains unconfirmed.",
+        "confidence": 0.9,
+        "unconfirmed": [
+          "Pembrolizumab causality",
+          "Warm, cold or mixed antibody subtype",
+          "Concurrent gastrointestinal bleeding or hepatobiliary disease",
+          "Other medication exposures and recent transfusion history"
+        ],
+        "next_steps": [
+          "Urgent hospital and hematology assessment, transfusion-service coordination and red-cell transfusion for profound symptomatic anemia.",
+          "Hold pembrolizumab pending urgent oncology/hematology review; initiate treatment for severe suspected immune-mediated hemolysis under specialist guidance.",
+          "Obtain serial hemoglobin, reticulocyte count, LDH, fractionated bilirubin, renal function and liver tests.",
+          "Obtain eluate antibody identification at 37°C, cold agglutinin titer and thermal amplitude testing when accessible to classify the mechanism.",
+          "Clarify medication/transfusion history and evaluate dark stools for gastrointestinal bleeding; monitor response after pembrolizumab withdrawal and hemolysis treatment."
+        ]
+      }
+    },
+    {
+      "case_id": "case_008",
+      "trace": "runs/v4/fast/fast4/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_008.jsonl",
+      "trace_sha256": "86eb7621936b51e715d53205a6358aec2aa70e0ebd50e1a1c4e5e4ce1602623a",
+      "lines": 101,
+      "terminal_commit": "b3d7d005a324db538b98882f6599cc33f2692eb5",
+      "terminal_judge": true,
+      "proposal_judge": true,
+      "source_hashes": {
+        "patient.json": "ae420e415f8db814fd6e499ce26a4c875fcbc3e6269887dbe3b468ceabc237db",
+        "investigations.json": "057dad91d4b3b6b44287a5967b9c3365e3348a677dca0b1abdb5ab05743c9953"
+      },
+      "review_inputs": [
+        {
+          "line": 62,
+          "stage": "sol",
+          "input_sha256": "1f82e307b9511950928714e80f988c316034b6c3d93a16b1044846c0429b0b1b",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": null
+        },
+        {
+          "line": 81,
+          "stage": "sol_post_followup",
+          "input_sha256": "7504e86a48c858714ff29f084f932a00b1b6d27114798858a5815b2be26dee04",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": null
+        },
+        {
+          "line": 93,
+          "stage": "astra",
+          "input_sha256": "b54a238db8855b8e60cc84080a149cb268eb404ed6b008aa13939e35b9d37665",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": true
+        }
+      ],
+      "tool_output_integrity": [
+        {
+          "line": 80,
+          "phase": "initial",
+          "tool": "request_blood_test",
+          "arguments": {
+            "test_names": [
+              "Prothrombin time with INR in plasma"
+            ]
+          },
+          "output_sha256": "3141cf3ae1dcee735810550651d2c7f4aef9bc851f0312ffb42906458cc705c9",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 80,
+          "phase": "initial",
+          "tool": "request_blood_test",
+          "arguments": {
+            "test_names": [
+              "Activated partial thromboplastin time in plasma"
+            ]
+          },
+          "output_sha256": "09bd35686129cbe3ac307a06025db2b60e52e55c921afcad65ebb564a84e0a18",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 80,
+          "phase": "initial",
+          "tool": "request_radiology",
+          "arguments": {
+            "study_name": "Contrast-enhanced MRI of the cervicothoracic spine"
+          },
+          "output_sha256": "f4590900568e42ccc563eea16793691b6099736d8fe2b8171eee0b31a4d5d2d0",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 80,
+          "phase": "initial",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Operative findings from emergency cervicothoracic epidural hematoma evacuation"
+            ]
+          },
+          "output_sha256": "d5d2eaa6fbba39a05e70e55151e5e1a6720f4a8aa402229c8587603f8f0ad340",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 92,
+          "phase": "second",
+          "tool": "request_radiology",
+          "arguments": {
+            "study_name": "Catheter spinal angiography of the cervicothoracic region"
+          },
+          "output_sha256": "f800b6a6bca4f1b4e7f0be537742577d77400b6415224baad7b94667020097fb",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        }
+      ],
+      "literal_findings": [
+        {
+          "line": 33,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "CBC",
+          "name": "Complete blood count",
+          "value": "WBC 13,000/µL with 85% neutrophils; platelets 250,000/µL.",
+          "literal_supported": true,
+          "source_fact_id": "lab_005",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "WBC 13,000/µL with 85% neutrophils; platelets 250,000/µL.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 47,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "MRI spine whole spine",
+          "name": "Spinal MRI",
+          "value": "Cervicothoracic spine MRI: epidural hematoma compressing the cord and posterior thecal sac from C6 to T2; no traumatic or structural lesion described.",
+          "literal_supported": true,
+          "source_fact_id": "imaging_008",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Cervicothoracic spine MRI: epidural hematoma compressing the cord and posterior thecal sac from C6 to T2; no traumatic or structural lesion described.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 80,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "Prothrombin time with INR in plasma",
+          "name": "Coagulation studies",
+          "value": "PT 12 s; INR 1.0",
+          "literal_supported": true,
+          "source_fact_id": "lab_006",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "PT 12 s, INR 1.0, aPTT 30 s, fibrinogen 300 mg/dL.",
+          "whole_value_returned": false
+        },
+        {
+          "line": 80,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "Activated partial thromboplastin time in plasma",
+          "name": "Coagulation studies",
+          "value": "aPTT 30 s",
+          "literal_supported": true,
+          "source_fact_id": "lab_006",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "PT 12 s, INR 1.0, aPTT 30 s, fibrinogen 300 mg/dL.",
+          "whole_value_returned": false
+        },
+        {
+          "line": 80,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "Operative findings from emergency cervicothoracic epidural hematoma evacuation",
+          "name": "Spinal surgery",
+          "value": "Emergency hemilaminotomy/laminotomy with epidural hematoma evacuation.",
+          "literal_supported": true,
+          "source_fact_id": "procedure_result_009",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Emergency hemilaminotomy/laminotomy with epidural hematoma evacuation.",
+          "whole_value_returned": true
+        }
+      ],
+      "queue_releases": [
+        {
+          "line": 61,
+          "event": "fast_queue_release",
+          "phase": "before_sol",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        },
+        {
+          "line": 79,
+          "event": "fast_queue_release",
+          "phase": "after_followup",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        },
+        {
+          "line": 91,
+          "event": "fast_queue_release",
+          "phase": "after_second_followup",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        }
+      ],
+      "followup_integrity": [
+        {
+          "line": 80,
+          "phase": "initial",
+          "hash_valid": true,
+          "findings": 3
+        },
+        {
+          "line": 92,
+          "phase": "second",
+          "hash_valid": true,
+          "findings": 0
+        }
+      ],
+      "patient_outputs": [
+        {
+          "line": 9,
+          "role": "patient",
+          "text": "I haven't had any fevers, chills, or skin infections that I'm aware of. I haven't experienced any trauma or done any heavy lifting recently. I also don't have any known medical conditions, and I'm not taking any medications. I just want to know what is going on because my legs are so weak and I've lost control of my bladder and bowels."
+        },
+        {
+          "line": 22,
+          "role": "patient",
+          "text": "I have not noticed any numbness or tingling in my arms or hands. The pain between my shoulder blades did not move or spread anywhere else. I haven't had any recent vaccinations, and I don't recall having any illnesses recently that involved a rash or a cough. I honestly do not know why this is happening to me."
+        },
+        {
+          "line": 41,
+          "role": "patient",
+          "text": "I haven't traveled outside the country lately. Regarding night sweats or unexplained weight loss, I really do not know; those were not mentioned in my history and I do not have any information about those symptoms. I'm just very worried about not being able to stand or control my bladder and bowels. I'm ready for the MRI whenever you are."
+        },
+        {
+          "line": 55,
+          "role": "patient",
+          "text": "Thank you for explaining what is happening. I understand that my spinal cord is being compressed and that I need emergency surgery to try to fix this. I'm very frightened, but I'm ready for the neurosurgery team to see me. Please do whatever you need to do to help me regain control of my legs and my bladder. I am ready for the next steps."
+        },
+        {
+          "line": 69,
+          "role": "patient_review",
+          "text": "I do not know if I have any history of bleeding disorders, and I do not have information regarding my relatives' medical history. That was not mentioned."
+        }
+      ],
+      "exams": {
+        "accounting_version": "relative-exam-units-v4-2026-10-08",
+        "unit": "artificial_relative_simulation_unit",
+        "unit_definition": {
+          "1": 1,
+          "2": 5,
+          "3": 15
+        },
+        "relative_units": 22,
+        "total_performed": 4,
+        "tier_counts": {
+          "1": 2,
+          "2": 1,
+          "3": 1
+        },
+        "actor_units": {
+          "doctor": 16,
+          "reviewer": 6
+        },
+        "attempts": 9,
+        "unavailable": 3,
+        "duplicates": 2,
+        "ambiguous": 0,
+        "gated": 0,
+        "unresolved_findings": 0,
+        "malformed_outputs": 0,
+        "failed_calls": 0,
+        "charges": [
+          {
+            "source_fact_id": "lab_005",
+            "name": "Complete blood count",
+            "tier": 1,
+            "relative_units": 1,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "imaging_008",
+            "name": "Spinal MRI",
+            "tier": 3,
+            "relative_units": 15,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "lab_006",
+            "name": "Coagulation studies",
+            "tier": 1,
+            "relative_units": 1,
+            "actor": "reviewer"
+          },
+          {
+            "source_fact_id": "procedure_result_009",
+            "name": "Spinal surgery",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "reviewer"
+          }
+        ],
+        "charge_source_unique": true,
+        "units_sum_valid": true
+      },
+      "api_observed_cost_by_actor": {
+        "doctor": 0.006621750000000001,
+        "patient": 0.00155625,
+        "patient_review": 0.000418,
+        "matcher": 0.001987,
+        "judge": 0.004318,
+        "judge_proposal": 0.004784
+      },
+      "subscription_usage_cost_fields_by_role": {
+        "fast_review_sol": 0,
+        "fast_review_sol_post_followup": 0,
+        "fast_review_astra": 0
+      },
+      "final_uncertainty": {
+        "diagnosis": "Spontaneous nontraumatic cervicothoracic spinal epidural hemorrhage causing acute compressive myelopathy, with the underlying bleeding source undetermined.",
+        "confidence": 0.96,
+        "unconfirmed": [
+          "Underlying vascular malformation or other focal bleeding source",
+          "Occult bleeding disorder despite normal screening coagulation results",
+          "Personal and family bleeding history",
+          "Contrast-enhanced imaging findings and postoperative neurological recovery"
+        ],
+        "next_steps": [
+          "Continue urgent postoperative neurosurgical monitoring and serial neurological examinations following the documented evacuation.",
+          "Review detailed operative findings and obtain follow-up imaging to assess decompression and any underlying lesion; consider spinal angiography when available if a vascular source remains suspected.",
+          "Clarify bleeding and family history; pursue targeted hematology evaluation if bleeding remains unexplained.",
+          "Provide bladder/bowel management and rehabilitation guided by neurological recovery."
+        ]
+      }
+    },
+    {
+      "case_id": "case_009",
+      "trace": "runs/v4/fast/fast4/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_009.jsonl",
+      "trace_sha256": "68f5d9fd1702d27f7e646c0c3d58ed8010ed259e0e2741b2343fc923600d2a4a",
+      "lines": 81,
+      "terminal_commit": "b3d7d005a324db538b98882f6599cc33f2692eb5",
+      "terminal_judge": true,
+      "proposal_judge": false,
+      "source_hashes": {
+        "patient.json": "771a3e921ce4c9176d6261fc071fd429effb90cf5a8cad4b609e4871291902ef",
+        "investigations.json": "ee444cba1db87277a832ac518eb8346b2165735e32286297f48d136df06d4fc9"
+      },
+      "review_inputs": [
+        {
+          "line": 53,
+          "stage": "sol",
+          "input_sha256": "4d70ebbecd2253f9cccc4c50ba43f66eeb4a3a800970ac2dc034abf64b0a6f81",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": null
+        },
+        {
+          "line": 70,
+          "stage": "sol_post_followup",
+          "input_sha256": "8fd97b673fbb11fd51414e2de31a4d236464a77b220a4863865ddba819ae3814",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": null
+        },
+        {
+          "line": 73,
+          "stage": "astra",
+          "input_sha256": "8fd97b673fbb11fd51414e2de31a4d236464a77b220a4863865ddba819ae3814",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": true
+        }
+      ],
+      "tool_output_integrity": [
+        {
+          "line": 69,
+          "phase": "initial",
+          "tool": "request_radiology",
+          "arguments": {
+            "study_name": "Contrast-enhanced CT of the abdomen to localize the foreign body and obstruction transition point"
+          },
+          "output_sha256": "ef7ad3e0cab4d6f618fe724df900dfea9264916c5d6a776fa60613ea849ab460",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 69,
+          "phase": "initial",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Exploratory laparotomy with operative findings of the obstructed bowel"
+            ]
+          },
+          "output_sha256": "47ecd003ab3609c222bb6c9719be038d6874c09a77a0533f534b072dc46695c7",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        }
+      ],
+      "literal_findings": [
+        {
+          "line": 29,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "upright abdominal x-ray",
+          "name": "Abdominal radiograph",
+          "value": "Upright abdominal radiograph: multiple small-bowel air–fluid levels.",
+          "literal_supported": true,
+          "source_fact_id": "imaging_005",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Upright abdominal radiograph: multiple small-bowel air–fluid levels.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 45,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "abdominal and pelvic CT scan with contrast",
+          "name": "Abdominal CT",
+          "value": "CT: multiple small-bowel air–fluid levels and a linear hyperdense intraluminal structure consistent with a foreign body; mechanical obstruction suspected.",
+          "literal_supported": true,
+          "source_fact_id": "imaging_006",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "CT: multiple small-bowel air–fluid levels and a linear hyperdense intraluminal structure consistent with a foreign body; mechanical obstruction suspected.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 69,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "Exploratory laparotomy with operative findings of the obstructed bowel",
+          "name": "Diagnostic laparoscopy / Exploratory laparotomy",
+          "value": "Emergency laparoscopy converted to open operation because of purulent fluid and adhesions. A Meckel diverticulum ~40 cm proximal to ileocecal valve contained a biliary stent; its distal end perforated adjacent ileum.",
+          "literal_supported": true,
+          "source_fact_id": "procedure_result_007",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Emergency laparoscopy converted to open operation because of purulent fluid and adhesions. A Meckel diverticulum ~40 cm proximal to ileocecal valve contained a biliary stent; its distal end perforated adjacent ileum.",
+          "whole_value_returned": true
+        }
+      ],
+      "queue_releases": [
+        {
+          "line": 52,
+          "event": "fast_queue_release",
+          "phase": "before_sol",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        },
+        {
+          "line": 68,
+          "event": "fast_queue_release",
+          "phase": "after_followup",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        }
+      ],
+      "followup_integrity": [
+        {
+          "line": 69,
+          "phase": "initial",
+          "hash_valid": true,
+          "findings": 1
+        }
+      ],
+      "patient_outputs": [
+        {
+          "line": 9,
+          "role": "patient",
+          "text": "The pain has been getting worse over time, but I don't remember exactly when it started or if it came on suddenly. I really don't know about changes in my bowel movements or if I've been passing gas. As for my health, I have type 2 diabetes, high blood pressure, atrial fibrillation, and COPD. I also had a procedure called an ERCP about a year ago for gallstones, where they left a plastic stent in my bile duct."
+        },
+        {
+          "line": 17,
+          "role": "patient",
+          "text": "I haven't noticed any fever, chills, or yellowing of my skin or eyes. Regarding the nausea, I haven't actually vomited, so I can't say what that would look like. I'm just feeling quite sick to my stomach. I don't know anything about the tests you're ordering, but I'm ready for whatever you think is necessary to help me feel better."
+        },
+        {
+          "line": 37,
+          "role": "patient",
+          "text": "I’m sorry, but I don't know the names of all the medicines I take at home, and I don't remember if I'm on blood thinners. As for how I'm feeling, I haven't noticed any dizziness or lightheadedness when I move. I'll be sure to let you know once you get the results from the scan."
+        },
+        {
+          "line": 60,
+          "role": "patient_review",
+          "text": "No, it was not removed or exchanged after that procedure a year ago. I don't know anything else about it."
+        }
+      ],
+      "exams": {
+        "accounting_version": "relative-exam-units-v4-2026-10-08",
+        "unit": "artificial_relative_simulation_unit",
+        "unit_definition": {
+          "1": 1,
+          "2": 5,
+          "3": 15
+        },
+        "relative_units": 21,
+        "total_performed": 3,
+        "tier_counts": {
+          "1": 1,
+          "2": 1,
+          "3": 1
+        },
+        "actor_units": {
+          "doctor": 6,
+          "reviewer": 15
+        },
+        "attempts": 8,
+        "unavailable": 4,
+        "duplicates": 1,
+        "ambiguous": 0,
+        "gated": 0,
+        "unresolved_findings": 0,
+        "malformed_outputs": 0,
+        "failed_calls": 0,
+        "charges": [
+          {
+            "source_fact_id": "imaging_005",
+            "name": "Abdominal radiograph",
+            "tier": 1,
+            "relative_units": 1,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "imaging_006",
+            "name": "Abdominal CT",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "procedure_result_007",
+            "name": "Diagnostic laparoscopy / Exploratory laparotomy",
+            "tier": 3,
+            "relative_units": 15,
+            "actor": "reviewer"
+          }
+        ],
+        "charge_source_unique": true,
+        "units_sum_valid": true
+      },
+      "api_observed_cost_by_actor": {
+        "doctor": 0.0043705,
+        "patient": 0.0011610000000000001,
+        "matcher": 0.00275075,
+        "patient_review": 0.0003695,
+        "judge": 0.004098,
+        "judge_proposal": 0.005412
+      },
+      "subscription_usage_cost_fields_by_role": {
+        "fast_review_sol": 0,
+        "fast_review_sol_post_followup": 0,
+        "fast_review_astra": 0
+      },
+      "final_uncertainty": {
+        "diagnosis": "Migrated biliary plastic stent lodged in a Meckel diverticulum, causing adjacent ileal perforation with purulent peritonitis and likely secondary bowel obstruction.",
+        "confidence": 0.99,
+        "unconfirmed": [
+          "Exact mechanism and transition point of suspected mechanical obstruction versus associated inflammatory ileus.",
+          "Extent of bowel injury and viability beyond the documented perforation."
+        ],
+        "next_steps": [
+          "Urgent operative source control with stent retrieval and treatment of the perforated ileum and involved diverticulum; verify completion in the operative record.",
+          "Assess bowel viability and any persistent obstructing lesion during surgery.",
+          "Provide intravenous antibiotics and resuscitation, with postoperative monitoring for sepsis and ongoing obstruction."
+        ]
+      },
+      "unsupported_stent_followup_evidence": {
+        "patient_trace_line": 60,
+        "patient_quote": "No, it was not removed or exchanged after that procedure a year ago. I don't know anything else about it.",
+        "source_history_fact_id": "pmh_003",
+        "source_quote": "ERCP for choledocholithiasis one year earlier, with 10F × 10 cm plastic biliary stent left after stone extraction.",
+        "reviewer_trace_line": 76,
+        "reviewer_quote": "The plastic biliary stent placed one year earlier was never removed or exchanged, strongly supporting delayed distal migration as the causal mechanism.",
+        "independent_supported_operative_finding_trace_line": 69,
+        "independent_supported_operative_fact": "procedure_result_007",
+        "independent_supported_operative_quote": "Emergency laparoscopy converted to open operation because of purulent fluid and adhesions. A Meckel diverticulum ~40 cm proximal to ileocecal valve contained a biliary stent; its distal end perforated adjacent ileum."
+      }
+    },
+    {
+      "case_id": "case_010",
+      "trace": "runs/v4/fast/fast4/public/run1/logs/raw/google__gemini-3.1-flash-lite-preview/case_010.jsonl",
+      "trace_sha256": "be0084869ee328434a7ccf1af8a5df5b6ef8bb6894f8761acffc1c31679c159d",
+      "lines": 67,
+      "terminal_commit": "b3d7d005a324db538b98882f6599cc33f2692eb5",
+      "terminal_judge": true,
+      "proposal_judge": true,
+      "source_hashes": {
+        "patient.json": "0b8e23941fcbbc95919e5bd8e8de01780aa33fd292c57b272a3666170a2305b8",
+        "investigations.json": "51a3841147bbf3116bd6b86857f887e9993abcad2207bdde0b4e6191aef0c9f2"
+      },
+      "review_inputs": [
+        {
+          "line": 38,
+          "stage": "sol",
+          "input_sha256": "1ea5b235e915c9d59a4bcb8a4324f2a317def5b6fd1f638676876520a2fc6332",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": null
+        },
+        {
+          "line": 56,
+          "stage": "sol_post_followup",
+          "input_sha256": "4ad7366a5b5e5a3f8a81a951f5a53c9797468a2aabe29e3b93cb7e9067decccd",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": null
+        },
+        {
+          "line": 59,
+          "stage": "astra",
+          "input_sha256": "4ad7366a5b5e5a3f8a81a951f5a53c9797468a2aabe29e3b93cb7e9067decccd",
+          "input_hash_valid": true,
+          "system_hash_valid": true,
+          "exact_evidence_reconstruction": true,
+          "proposal_tool_absent": true,
+          "reference_judge_frames_absent": true,
+          "astra_generic_system": true
+        }
+      ],
+      "tool_output_integrity": [
+        {
+          "line": 55,
+          "phase": "initial",
+          "tool": "request_radiology",
+          "arguments": {
+            "study_name": "Abdominal ultrasound for ectopic pregnancy localization"
+          },
+          "output_sha256": "ce68273b1ce1dc59201b1f5dfa84b5010d04769b3ef9c2c66e298e48cb1cde8e",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 55,
+          "phase": "initial",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Diagnostic laparoscopy of the abdomen if imaging does not establish localization"
+            ]
+          },
+          "output_sha256": "60d35b1a71993c9ca8485df7523d987d7980afab4768ea1314dcdbea0a67eb74",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        },
+        {
+          "line": 55,
+          "phase": "initial",
+          "tool": "request_other_investigation",
+          "arguments": {
+            "test_names": [
+              "Histopathology of excised suspected ectopic gestational tissue if obtained at surgery"
+            ]
+          },
+          "output_sha256": "d7349e2ca6f8b18cadfdd2289316dc97a453b15e91a66d358ffc131e4529560b",
+          "raw_hash_valid": true,
+          "findings_exact_parsed": true,
+          "raw_output_present_final_review": true
+        }
+      ],
+      "literal_findings": [
+        {
+          "line": 23,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "beta-hCG",
+          "name": "Serum hCG",
+          "value": "Serum hCG 10,130.28 IU/L.",
+          "literal_supported": true,
+          "source_fact_id": "lab_006",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Serum hCG 10,130.28 IU/L.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 25,
+          "actor": "doctor",
+          "phase": null,
+          "requested": "transvaginal ultrasound",
+          "name": "Pelvic ultrasound",
+          "value": "No intrauterine gestational sac; endometrium 8 mm; no adnexal abnormality.",
+          "literal_supported": true,
+          "source_fact_id": "imaging_007",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "No intrauterine gestational sac; endometrium 8 mm; no adnexal abnormality.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 55,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "Diagnostic laparoscopy of the abdomen if imaging does not establish localization",
+          "name": "Diagnostic laparoscopy",
+          "value": "Diagnostic laparoscopy: ~300 mL hemoperitoneum and actively bleeding 6 × 4 × 5 cm lesion between spleen and descending colon, involving omentum; uterus, ovaries and tubes appeared normal.",
+          "literal_supported": true,
+          "source_fact_id": "procedure_result_009",
+          "source_available_at": "time_zero",
+          "source_prerequisites": [],
+          "full_source_value": "Diagnostic laparoscopy: ~300 mL hemoperitoneum and actively bleeding 6 × 4 × 5 cm lesion between spleen and descending colon, involving omentum; uterus, ovaries and tubes appeared normal.",
+          "whole_value_returned": true
+        },
+        {
+          "line": 55,
+          "actor": "reviewer",
+          "phase": "initial",
+          "requested": "Histopathology of excised suspected ectopic gestational tissue if obtained at surgery",
+          "name": "Surgical pathology",
+          "value": "Resected lesion and partial omentum contained products of conception on pathology.",
+          "literal_supported": true,
+          "source_fact_id": "procedure_result_010",
+          "source_available_at": "after_procedure:laparoscopy",
+          "source_prerequisites": [
+            "after_procedure:laparoscopy"
+          ],
+          "full_source_value": "Resected lesion and partial omentum contained products of conception on pathology.",
+          "whole_value_returned": true
+        }
+      ],
+      "queue_releases": [
+        {
+          "line": 37,
+          "event": "fast_queue_release",
+          "phase": "before_sol",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        },
+        {
+          "line": 54,
+          "event": "fast_queue_release",
+          "phase": "after_followup",
+          "empty": true,
+          "hash_valid": true,
+          "text": ""
+        }
+      ],
+      "followup_integrity": [
+        {
+          "line": 55,
+          "phase": "initial",
+          "hash_valid": true,
+          "findings": 2
+        }
+      ],
+      "patient_outputs": [
+        {
+          "line": 9,
+          "role": "patient",
+          "text": "The pain in my upper left side started about eight days ago, and it began mildly before getting worse. I haven't had this kind of pain before, and I don't have any chronic medical or surgical conditions. I did a home pregnancy test that was positive, and I am about five weeks along by my dates. This is my first pregnancy. I am not taking any regular medications, and I don't have any other known health issues."
+        },
+        {
+          "line": 17,
+          "role": "patient",
+          "text": "I am not sure about the vaginal bleeding or spotting. I also do not know about shoulder pain or feeling dizzy. I am happy to have those tests done so we can figure out what is going on."
+        }
+      ],
+      "exams": {
+        "accounting_version": "relative-exam-units-v4-2026-10-08",
+        "unit": "artificial_relative_simulation_unit",
+        "unit_definition": {
+          "1": 1,
+          "2": 5,
+          "3": 15
+        },
+        "relative_units": 36,
+        "total_performed": 4,
+        "tier_counts": {
+          "1": 1,
+          "2": 1,
+          "3": 2
+        },
+        "actor_units": {
+          "doctor": 6,
+          "reviewer": 30
+        },
+        "attempts": 5,
+        "unavailable": 1,
+        "duplicates": 0,
+        "ambiguous": 0,
+        "gated": 0,
+        "unresolved_findings": 0,
+        "malformed_outputs": 0,
+        "failed_calls": 0,
+        "charges": [
+          {
+            "source_fact_id": "lab_006",
+            "name": "Serum hCG",
+            "tier": 1,
+            "relative_units": 1,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "imaging_007",
+            "name": "Pelvic ultrasound",
+            "tier": 2,
+            "relative_units": 5,
+            "actor": "doctor"
+          },
+          {
+            "source_fact_id": "procedure_result_009",
+            "name": "Diagnostic laparoscopy",
+            "tier": 3,
+            "relative_units": 15,
+            "actor": "reviewer"
+          },
+          {
+            "source_fact_id": "procedure_result_010",
+            "name": "Surgical pathology",
+            "tier": 3,
+            "relative_units": 15,
+            "actor": "reviewer"
+          }
+        ],
+        "charge_source_unique": true,
+        "units_sum_valid": true
+      },
+      "api_observed_cost_by_actor": {
+        "doctor": 0.00357825,
+        "patient": 0.0006715,
+        "matcher": 0.001987,
+        "judge": 0.00414,
+        "judge_proposal": 0.006638
+      },
+      "subscription_usage_cost_fields_by_role": {
+        "fast_review_sol": 0,
+        "fast_review_sol_post_followup": 0,
+        "fast_review_astra": 0
+      },
+      "final_uncertainty": {
+        "diagnosis": "Most likely primary omental abdominal ectopic pregnancy with active intra-abdominal bleeding.",
+        "confidence": 0.9,
+        "unconfirmed": [
+          "Primary omental implantation rather than secondary implantation following tubal abortion.",
+          "Complete removal of all gestational tissue and sustained hemostasis."
+        ],
+        "next_steps": [
+          "Review operative and pathology details for the precise implantation site and evidence supporting primary versus secondary abdominal implantation.",
+          "Confirm postoperative hemostasis and monitor clinical status and hemoglobin following documented intra-abdominal bleeding.",
+          "Follow quantitative hCG to resolution; persistent or rising levels require evaluation for residual gestational tissue."
+        ]
+      }
+    }
+  ],
+  "issues": [
+    {
+      "case_id": "case_004",
+      "trace_lines": [
+        9
+      ],
+      "status": "confirmed_against_public_fact_files",
+      "kind": "unsupported_patient_claims",
+      "grouped_claims": [
+        "No other medical procedures besides first drainage"
+      ],
+      "groups": 1,
+      "evidence": "No complete prior procedure history is supplied."
+    },
+    {
+      "case_id": "case_005",
+      "trace_lines": [
+        94
+      ],
+      "status": "confirmed_against_public_fact_files",
+      "kind": "unsupported_patient_claims",
+      "grouped_claims": [
+        "No specific chest/back pain noticed"
+      ],
+      "groups": 1,
+      "evidence": "Chest/back pain absent from source, previously answered unknown."
+    },
+    {
+      "case_id": "case_006",
+      "trace_lines": [
+        9
+      ],
+      "status": "confirmed_against_public_fact_files",
+      "kind": "unsupported_patient_claims",
+      "grouped_claims": [
+        "No current medications or supplements",
+        "No new salt cravings or skin darkening elsewhere"
+      ],
+      "groups": 2,
+      "evidence": "Only absence of glucocorticoids and the described pigmentation are supplied."
+    },
+    {
+      "case_id": "case_007",
+      "trace_lines": [
+        19
+      ],
+      "status": "confirmed_against_public_fact_files",
+      "kind": "unsupported_patient_claims",
+      "grouped_claims": [
+        "No itching",
+        "No confusion",
+        "No leg or abdominal swelling"
+      ],
+      "groups": 3,
+      "evidence": "Source documents no fever/cough/abdominal pain/bleeding, not these extra negatives."
+    },
+    {
+      "case_id": "case_007",
+      "trace_lines": [
+        61
+      ],
+      "status": "confirmed_against_public_fact_files",
+      "kind": "unsupported_patient_claims",
+      "grouped_claims": [
+        "No dyspnea at rest",
+        "Never informed of prior hemolysis"
+      ],
+      "groups": 2,
+      "evidence": "Past hemolysis and resting dyspnea are unknown."
+    },
+    {
+      "case_id": "case_008",
+      "trace_lines": [
+        9
+      ],
+      "status": "confirmed_against_public_fact_files",
+      "kind": "unsupported_patient_claims",
+      "grouped_claims": [
+        "No chills or skin infection"
+      ],
+      "groups": 1,
+      "evidence": "Source excludes fever, not chills or skin infection."
+    },
+    {
+      "case_id": "case_008",
+      "trace_lines": [
+        22
+      ],
+      "status": "confirmed_against_public_fact_files",
+      "kind": "unsupported_patient_claims",
+      "grouped_claims": [
+        "No arm/hand numbness or tingling",
+        "No recent illness with rash or cough"
+      ],
+      "groups": 2,
+      "evidence": "Normal arm strength does not establish sensory absence. Recent vaccinations excluded, recent infection unknown."
+    },
+    {
+      "case_id": "case_008",
+      "trace_lines": [
+        41
+      ],
+      "status": "confirmed_against_public_fact_files",
+      "kind": "unsupported_patient_claims",
+      "grouped_claims": [
+        "No recent international travel"
+      ],
+      "groups": 1,
+      "evidence": "Travel is not in the source."
+    },
+    {
+      "case_id": "case_009",
+      "trace_lines": [
+        17
+      ],
+      "status": "confirmed_against_public_fact_files",
+      "kind": "unsupported_patient_claims",
+      "grouped_claims": [
+        "No fever or chills",
+        "No jaundice noticed",
+        "No vomiting"
+      ],
+      "groups": 3,
+      "evidence": "Only abdominal pain/distension/nausea and comorbidities supplied."
+    },
+    {
+      "case_id": "case_009",
+      "trace_lines": [
+        37
+      ],
+      "status": "confirmed_against_public_fact_files",
+      "kind": "unsupported_patient_claims",
+      "grouped_claims": [
+        "No dizziness or lightheadedness on movement"
+      ],
+      "groups": 1,
+      "evidence": "Orthostatic symptoms not documented."
+    },
+    {
+      "case_id": "case_009",
+      "trace_lines": [
+        60
+      ],
+      "status": "confirmed_against_public_fact_files",
+      "kind": "unsupported_patient_claims",
+      "grouped_claims": [
+        "Stent was never removed or exchanged"
+      ],
+      "groups": 1,
+      "evidence": "Source reports initial placement one year prior, without subsequent removal/exchange history."
+    },
+    {
+      "case_id": "case_010",
+      "trace_lines": [
+        9
+      ],
+      "status": "confirmed_against_public_fact_files",
+      "kind": "unsupported_patient_claims",
+      "grouped_claims": [
+        "No similar prior pain",
+        "No regular medications"
+      ],
+      "groups": 2,
+      "evidence": "Complete home medicines explicitly unknown; no chronic disease does not establish zero medications or zero similar pain episodes."
+    },
+    {
+      "case_id": "case_004",
+      "trace_lines": [
+        60,
+        85
+      ],
+      "status": "confirmed",
+      "kind": "sample_provenance_loss",
+      "evidence": "Protein/LDH/triglyceride and cytology fragments are literal, but omit the source label INITIAL thoracentesis/prior record. These are not new repeat-sample results. Final reader can attribute them to current effusion."
+    },
+    {
+      "case_id": "case_004",
+      "trace_lines": [
+        88,
+        110
+      ],
+      "status": "confirmed",
+      "kind": "wrong_prerequisite_and_repeat",
+      "evidence": "Mediastinal lymph-node histopathology repeatedly demands Thoracentesis and fluid examination despite EBUS biopsy already returned. Three identical gates, actual thoracentesis once and duplicate once; no second charge. This is an anatomic prerequisite mismatch, not missing cancer proof."
+    },
+    {
+      "case_id": "case_005",
+      "trace_lines": [
+        14,
+        15
+      ],
+      "status": "confirmed",
+      "kind": "history_gate_in_urgent_presentation",
+      "evidence": "Known oxygen requirement/hypoxemia did not waive two-exchange lock for CBC/chest imaging."
+    },
+    {
+      "case_id": "case_005",
+      "trace_lines": [
+        54,
+        72
+      ],
+      "status": "confirmed",
+      "kind": "queue_exercised_without_findings",
+      "evidence": "Three PCR/antigen tests queued by 8-test cap later released together; all unavailable and zero charge. Exact nonempty release reached reviewer; supports queue path, not improved diagnostic yield."
+    },
+    {
+      "case_id": "case_005",
+      "trace_lines": [
+        86
+      ],
+      "status": "confirmed",
+      "kind": "imaging_protocol_mismatch",
+      "evidence": "Requested high-resolution chest CT returns a documented postcontrast CT; correct literal anatomy does not establish requested HRCT acquisition."
+    },
+    {
+      "case_id": "case_005",
+      "trace_lines": [
+        137,
+        149
+      ],
+      "status": "confirmed",
+      "kind": "procedure_and_scope_uncertainty",
+      "evidence": "Unavailable thoracoscopy followed by histopathology returns explicitly CT-guided biopsy. Whole-body PET/CT unavailable although source has a PET observation; protocol/coverage cannot be inferred. Final reviewer correctly treats staging unconfirmed."
+    },
+    {
+      "case_id": "case_006",
+      "trace_lines": [
+        79
+      ],
+      "status": "confirmed",
+      "kind": "dynamic_vs_basal_alias",
+      "evidence": "Cosyntropin stimulation study marked already_ordered_earlier against ACTH and basal cortisol. No stimulated value exists; final explicitly notes no dynamic result. No repeat charge."
+    },
+    {
+      "case_id": "case_006",
+      "trace_lines": [
+        94
+      ],
+      "status": "confirmed",
+      "kind": "biopsy_modality_and_procedure_scope",
+      "evidence": "CT-guided core biopsy unavailable; histopathology returns documented ultrasound-guided left adrenal biopsy. No separately performed matched ultrasound biopsy appears. Mechanism allows retrieval of existing source biopsy fact; this does not validate execution prerequisites."
+    },
+    {
+      "case_id": "case_007",
+      "trace_lines": [
+        71
+      ],
+      "status": "confirmed",
+      "kind": "reroute_without_content_change",
+      "evidence": "DAT requested under microbiology reroutes to blood. IgG/C3d fragment literal; no thermal subtype returned. Final leaves warm/cold/mixed unconfirmed."
+    },
+    {
+      "case_id": "case_008",
+      "trace_lines": [
+        14,
+        27,
+        33,
+        47
+      ],
+      "status": "confirmed",
+      "kind": "urgent_mri_held_by_history_and_cost",
+      "evidence": "Paraplegia and sphincter deficits in initial examination; MRI blocked at one exchange, then held as tier3 until initial CBC read. Later delivered. Operational order delay is established; clinical harm is not measured."
+    },
+    {
+      "case_id": "case_008",
+      "trace_lines": [
+        47,
+        80
+      ],
+      "status": "confirmed",
+      "kind": "imaging_scope_and_alias",
+      "evidence": "Whole-spine request returns only cervicothoracic MRI source; contrast-enhanced repeat marked already done without contrast proof. Final explicitly recognizes missing contrast evidence."
+    },
+    {
+      "case_id": "case_009",
+      "trace_lines": [
+        45,
+        69
+      ],
+      "status": "confirmed",
+      "kind": "imaging_scope_and_repeat",
+      "evidence": "Abdomen/pelvis contrast order maps to generic abdominal CT; localization-specific repeat gives already_ordered. Source does not supply a transition point or attest pelvis/contrast acquisition. Meckel and perforation become directly available only after reviewer laparotomy."
+    },
+    {
+      "case_id": "case_010",
+      "trace_lines": [
+        55,
+        62
+      ],
+      "status": "confirmed",
+      "kind": "prerequisite_order_respected_compressed_time",
+      "evidence": "Laparoscopy returned before surgical pathology with after_procedure:laparoscopy prerequisite. Source order is respected; elapsed surgery/pathology time is compressed and unmeasured."
+    },
+    {
+      "case_id": "case_003",
+      "trace_lines": [
+        71,
+        86
+      ],
+      "status": "confirmed",
+      "kind": "mechanism_uncertainty_preserved",
+      "evidence": "Reviewer acquired actual laparotomy confirmation, after CT and labs. Final explicitly separates confirmed rupture from inferred drainage-pressure mechanism, trauma, infection and cardiopulmonary cause."
+    },
+    {
+      "case_id": "all_eight",
+      "status": "confirmed",
+      "kind": "no_observed_reference_or_proposal_input",
+      "evidence": "All 24 review inputs reconstructed exactly from whitelisted questions/patient replies/tool findings/queue and followup bytes; no explicit doctor admission, default_admission, prior Sol diagnosis/reasoning, reference or judge frame enters this builder. Doctor questions can suggest hypotheses; patient narrative can include unsupported facts."
+    },
+    {
+      "case_id": "all_eight",
+      "status": "indeterminate",
+      "kind": "clinical_safety_and_calibration",
+      "evidence": "LLM acceptance and self-reported confidence do not establish safety, clinically justified exam ordering, calibration, causal truth, or generalization. No independent medical adjudication supplied."
+    },
+    {
+      "case_id": "all_eight",
+      "status": "indeterminate",
+      "kind": "original_publication_fidelity",
+      "evidence": "Comparison is against authorized public-case patient/investigations files, not a fresh independent re-extraction of every original article. No reference.json/closed-case contents read."
+    }
+  ],
+  "counting_rule": "Current20 counts conservatively grouped unsupported claims, not atomic statements. Pilot001–002 reported5 individual statements. Keep denominators/units separate; do not total them as25 equivalent hallucinations."
+}

@@ -5,6 +5,9 @@ from .budget import Ledger
 from .client import AuditLog,Client
 from .tools import CaseTools,schemas,ToolArgumentsError
 MODELS={'openai/gpt-oss-120b':{'temperature':1,'top_p':1},'z-ai/glm-4.5-air':{'temperature':.01,'top_p':1},'z-ai/glm-5':{'temperature':1,'top_p':.95},'qwen/qwen3.5-397b-a17b':{'temperature':.6,'top_p':.95,'top_k':20},'openai/gpt-5.2':{}}
+# Extension models are scheduled only by scripts/run_extension.py; MODELS stays frozen for runs 1-3.
+EXTENSION_MODELS={'qwen/qwen3.8-max-prime':{'temperature':.6,'top_p':.95,'top_k':20},'qwen/qwen3.8-max-0902':{'temperature':.6,'top_p':.95,'top_k':20},'claude-sonnet-5-5':{},'claude-opus-5-5':{},'claude-haiku-5-5':{}}
+SAMPLING={**MODELS,**EXTENSION_MODELS}
 JUDGE='google/gemini-3.1-flash-lite-preview'
 FIELDS='case_id model provider dx_agent reasoning dx_reference judge_correct judge_rationale n_turns n_tool_calls tool_errors prompt_tokens completion_tokens reasoning_tokens cost_usd latency_s commit timestamp physician_review'.split()
 def load_module(path):
@@ -12,7 +15,7 @@ def load_module(path):
 
 def terminal_failure(root,case_dir,model,log,commit,reason,turn,ntools,errors,latency=0):
     reference=json.loads((case_dir/'reference.json').read_text())
-    responses=[e['response'] for e in log.events() if e['event']=='response'];usage=[r['usage'] for r in responses]
+    responses=[e['response'] for e in log.events() if e['event'] in ('response','cli_call')];usage=[r['usage'] for r in responses]
     config=json.loads((root/'config/run1.json').read_text())
     requests=[e for e in log.events() if e['event']=='request']
     provider=next((e['payload']['provider']['order'][0] for e in requests if e['role']=='doctor'),config['models'][model]['provider'])
@@ -60,7 +63,7 @@ def _run_case(root,case_dir,model,client,commit,allow_commit_transition=False):
     for turn in range(1,11):
         if turn==10:doctor.append({'role':'system','content':prompts.COMPLETION_PROMPT+' Call admission now.'})
         for subturn in range(40):
-            m=client.call(model,doctor,log,'doctor',MODELS[model],tools=schemas() if turn<10 else [schemas()[-1]],tool_choice='auto')
+            m=client.call(model,doctor,log,'doctor',SAMPLING[model],tools=schemas() if turn<10 else [schemas()[-1]],tool_choice='auto')
             doctor.append(m)
             calls=m.get('tool_calls',[])
             if not calls:break
@@ -91,7 +94,7 @@ def _run_case(root,case_dir,model,client,commit,allow_commit_transition=False):
     gold=reference.get('ground_truth'); gold=gold if isinstance(gold,dict) and 'gold_diagnoses' in gold else reference['correct_diagnosis']
     judge=client.call(JUDGE,[{'role':'user','content':builder.build(gold,final['diagnosis'],final['reasoning'])}],log,'judge',{'temperature':1,'top_p':.95},max_tokens=8192,response_format={'type':'json_object'})
     judgment=json.loads(judge['content']); assert isinstance(judgment['decision'],bool)
-    responses=[e['response'] for e in log.events() if e['event']=='response']; usage=[r['usage'] for r in responses]
+    responses=[e['response'] for e in log.events() if e['event'] in ('response','cli_call')]; usage=[r['usage'] for r in responses]
     result={'case_id':case_dir.name,'model':model,'provider':client.config['models'][model]['provider'],'dx_agent':final['diagnosis'],'reasoning':final['reasoning'],'dx_reference':reference['correct_diagnosis'],'judge_correct':judgment['decision'],'judge_rationale':judgment['reasoning'],'n_turns':turn,'n_tool_calls':ntools,'tool_errors':tools.errors,'prompt_tokens':sum(u.get('prompt_tokens',0) for u in usage),'completion_tokens':sum(u.get('completion_tokens',0) for u in usage),'reasoning_tokens':sum(u.get('completion_tokens_details',{}).get('reasoning_tokens',0) for u in usage),'cost_usd':str(sum(__import__('decimal').Decimal(str(u['cost'])) for u in usage)),'latency_s':time.monotonic()-start,'commit':commit,'timestamp':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'physician_review':''}
     log.append({'event':'case_complete','result':result}); return result
 
@@ -109,7 +112,7 @@ def all_terminal_results(root):
         for line in lines:
             event=json.loads(line)
             if event['event']=='case_complete':rows.append(event['result']);break
-    return sorted(rows,key=lambda r:(list(MODELS).index(r['model']),r['case_id']))
+    return sorted(rows,key=lambda r:(list(SAMPLING).index(r['model']),r['case_id']))
 
 def worker(root,case_dir,model,config,key,commit,transition):
     root=Path(root);ledger=Ledger(root/'logs/budget.sqlite',config['budget_usd'])
@@ -137,7 +140,7 @@ def parallel_cases(jobs,max_workers,submit,terminal):
 def parallel_models(jobs,per_model,max_workers,submit,terminal):
     """Round-robin dispatch with a bounded global and per-model active set."""
     from collections import deque
-    groups={model:deque(job for job in jobs if job[1]==model) for model in MODELS}
+    groups={model:deque(job for job in jobs if job[1]==model) for model in SAMPLING}
     order=list(groups);cursor=0;counts={m:0 for m in groups};active={};failure=None
     def fill():
         nonlocal cursor

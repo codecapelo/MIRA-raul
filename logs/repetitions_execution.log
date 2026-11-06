@@ -1,0 +1,192 @@
+{"run": 2, "case_id": "case_001", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 1, "target": 100, "case_cost_usd": "0.000797190", "global_cost_usd": "1.552772803", "timestamp": "2026-10-04T16:20:30Z"}
+{"run": 2, "case_id": "case_001", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 2, "target": 100, "case_cost_usd": "0.00701133", "global_cost_usd": "1.565800738", "timestamp": "2026-10-04T16:20:33Z"}
+{"run": 2, "case_id": "case_003", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 3, "target": 100, "case_cost_usd": "0.008082425", "global_cost_usd": "1.572168588", "timestamp": "2026-10-04T16:20:35Z"}
+{"run": 2, "case_id": "case_003", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 4, "target": 100, "case_cost_usd": "0.0009050", "global_cost_usd": "1.594460728", "timestamp": "2026-10-04T16:20:38Z"}
+{"run": 2, "case_id": "case_001", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 5, "target": 100, "case_cost_usd": "0.0140982", "global_cost_usd": "1.612174848", "timestamp": "2026-10-04T16:20:44Z"}
+{"run": 2, "case_id": "case_003", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 6, "target": 100, "case_cost_usd": "0.063616845", "global_cost_usd": "1.671620133", "timestamp": "2026-10-04T16:21:43Z"}
+{"run": 2, "case_id": "case_004", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 7, "target": 100, "case_cost_usd": "0.06759874", "global_cost_usd": "1.751250478", "timestamp": "2026-10-04T16:23:13Z"}
+{"run": 2, "case_id": "case_005", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 8, "target": 100, "case_cost_usd": "0.017681175", "global_cost_usd": "1.807212978", "timestamp": "2026-10-04T16:24:05Z"}
+{"run": 2, "case_id": "case_005", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 9, "target": 100, "case_cost_usd": "0.072382970", "global_cost_usd": "1.831990578", "timestamp": "2026-10-04T16:24:32Z"}
+{"run": 2, "case_id": "case_006", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 10, "target": 100, "case_cost_usd": "0.014400105", "global_cost_usd": "1.880675893", "timestamp": "2026-10-04T16:25:26Z"}
+{"run": 2, "case_id": "case_006", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 11, "target": 100, "case_cost_usd": "0.068320550", "global_cost_usd": "1.916774513", "timestamp": "2026-10-04T16:26:03Z"}
+{"run": 2, "case_id": "case_007", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 12, "target": 100, "case_cost_usd": "0.021613010", "global_cost_usd": "1.997360823", "timestamp": "2026-10-04T16:27:23Z"}
+{"run": 2, "case_id": "case_007", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 13, "target": 100, "case_cost_usd": "0.086741350", "global_cost_usd": "2.023199903", "timestamp": "2026-10-04T16:27:53Z"}
+{"run": 2, "case_id": "case_008", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 14, "target": 100, "case_cost_usd": "0.009751135", "global_cost_usd": "2.039464188", "timestamp": "2026-10-04T16:28:11Z"}
+{"run": 2, "case_id": "case_008", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 15, "target": 100, "case_cost_usd": "0.052089535", "global_cost_usd": "2.088109423", "timestamp": "2026-10-04T16:28:51Z"}
+{"run": 2, "case_id": "case_009", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 16, "target": 100, "case_cost_usd": "0.01076023", "global_cost_usd": "2.097797203", "timestamp": "2026-10-04T16:29:02Z"}
+{"run": 2, "case_id": "case_009", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 17, "target": 100, "case_cost_usd": "0.086822435", "global_cost_usd": "2.193603198", "timestamp": "2026-10-04T16:30:26Z"}
+{"run": 2, "case_id": "case_010", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 18, "target": 100, "case_cost_usd": "0.019714795", "global_cost_usd": "2.208159933", "timestamp": "2026-10-04T16:30:44Z"}
+{"run": 3, "case_id": "case_001", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 19, "target": 100, "case_cost_usd": "0.00787865", "global_cost_usd": "2.264127133", "timestamp": "2026-10-04T16:31:30Z"}
+{"run": 2, "case_id": "case_010", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 20, "target": 100, "case_cost_usd": "0.079461260", "global_cost_usd": "2.287941753", "timestamp": "2026-10-04T16:31:56Z"}
+{"run": 3, "case_id": "case_001", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 21, "target": 100, "case_cost_usd": "0.050148300", "global_cost_usd": "2.349045483", "timestamp": "2026-10-04T16:32:52Z"}
+{"run": 3, "case_id": "case_002", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 22, "target": 100, "case_cost_usd": "0.01712587", "global_cost_usd": "2.354818513", "timestamp": "2026-10-04T16:32:58Z"}
+{"run": 3, "case_id": "case_003", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 23, "target": 100, "case_cost_usd": "0.007049675", "global_cost_usd": "2.398880688", "timestamp": "2026-10-04T16:33:35Z"}
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/process.py", line 243, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/Users/test/MIRA-RAUL/scripts/run_repetitions.py", line 49, in worker
+    try:return run_case(target,Path(case),model,Client(ledger,config,key),commit,transition)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 29, in run_case
+    return _run_case(root,case_dir,model,client,commit,allow_commit_transition)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 63, in _run_case
+    m=client.call(model,doctor,log,'doctor',MODELS[model],tools=schemas() if turn<10 else [schemas()[-1]],tool_choice='auto')
+  File "/Users/test/MIRA-RAUL/src/mira_runner/client.py", line 83, in call
+    response=self.transport(payload)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/client.py", line 27, in http
+    with urllib.request.urlopen(req,timeout=800) as r:return json.load(r)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 214, in urlopen
+    return opener.open(url, data, timeout)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 517, in open
+    response = self._open(req, data)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 534, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 494, in _call_chain
+    result = func(*args)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 1389, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 1350, in do_open
+    r = h.getresponse()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1349, in getresponse
+    response.begin()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 316, in begin
+    version, status, reason = self._read_status()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 277, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 704, in readinto
+    return self._sock.recv_into(b)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/ssl.py", line 1270, in recv_into
+    return self.read(nbytes, buffer)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/ssl.py", line 1128, in read
+    return self._sslobj.read(len, buffer)
+socket.timeout: The read operation timed out
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/test/MIRA-RAUL/scripts/run_repetitions.py", line 107, in <module>
+    if __name__=='__main__':main()
+  File "/Users/test/MIRA-RAUL/scripts/run_repetitions.py", line 100, in main
+    parallel_models(jobs,args.parallel_cases,args.max_workers,submit,terminal)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 160, in parallel_models
+    if failure:raise failure
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+socket.timeout: The read operation timed out
+{"run": 2, "case_id": "case_002", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 24, "target": 100, "case_cost_usd": "0.003852745", "global_cost_usd": "2.496192498", "timestamp": "2026-10-04T16:42:53Z"}
+{"run": 2, "case_id": "case_003", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 25, "target": 100, "case_cost_usd": "0.003640600", "global_cost_usd": "2.536200768", "timestamp": "2026-10-04T16:43:14Z"}
+{"run": 2, "case_id": "case_004", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 26, "target": 100, "case_cost_usd": "0.003028470", "global_cost_usd": "2.577025838", "timestamp": "2026-10-04T16:43:19Z"}
+{"run": 2, "case_id": "case_003", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 27, "target": 100, "case_cost_usd": "0.023148345", "global_cost_usd": "2.593775943", "timestamp": "2026-10-04T16:43:24Z"}
+{"run": 2, "case_id": "case_001", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 28, "target": 100, "case_cost_usd": "0.042069335", "global_cost_usd": "2.611493678", "timestamp": "2026-10-04T16:43:32Z"}
+{"run": 3, "case_id": "case_004", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 29, "target": 100, "case_cost_usd": "0.012583525", "global_cost_usd": "2.619003253", "timestamp": "2026-10-04T16:43:35Z"}
+{"run": 2, "case_id": "case_005", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 30, "target": 100, "case_cost_usd": "0.003239940", "global_cost_usd": "2.683104373", "timestamp": "2026-10-04T16:43:52Z"}
+{"run": 2, "case_id": "case_002", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 31, "target": 100, "case_cost_usd": "0.031635255", "global_cost_usd": "2.683452123", "timestamp": "2026-10-04T16:43:52Z"}
+{"run": 2, "case_id": "case_004", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 32, "target": 100, "case_cost_usd": "0.01379092", "global_cost_usd": "2.686299213", "timestamp": "2026-10-04T16:43:55Z"}
+{"run": 2, "case_id": "case_002", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 33, "target": 100, "case_cost_usd": "0.022696025", "global_cost_usd": "2.721932638", "timestamp": "2026-10-04T16:44:03Z"}
+{"run": 2, "case_id": "case_002", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 34, "target": 100, "case_cost_usd": "0.003710555", "global_cost_usd": "2.758060763", "timestamp": "2026-10-04T16:44:09Z"}
+{"run": 2, "case_id": "case_006", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 35, "target": 100, "case_cost_usd": "0.003037420", "global_cost_usd": "2.780689198", "timestamp": "2026-10-04T16:44:14Z"}
+{"run": 3, "case_id": "case_002", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 36, "target": 100, "case_cost_usd": "0.149676145", "global_cost_usd": "2.809593638", "timestamp": "2026-10-04T16:44:24Z"}
+{"run": 2, "case_id": "case_009", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 37, "target": 100, "case_cost_usd": "0.002475730", "global_cost_usd": "2.876155058", "timestamp": "2026-10-04T16:44:52Z"}
+{"run": 2, "case_id": "case_007", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 38, "target": 100, "case_cost_usd": "0.004781350", "global_cost_usd": "2.915251543", "timestamp": "2026-10-04T16:44:58Z"}
+{"run": 2, "case_id": "case_004", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 39, "target": 100, "case_cost_usd": "0.004511165", "global_cost_usd": "2.919906678", "timestamp": "2026-10-04T16:45:01Z"}
+{"run": 2, "case_id": "case_002", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 40, "target": 100, "case_cost_usd": "0.102206240", "global_cost_usd": "2.955279343", "timestamp": "2026-10-04T16:45:03Z"}
+{"run": 2, "case_id": "case_004", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 41, "target": 100, "case_cost_usd": "0.045217115", "global_cost_usd": "2.992022818", "timestamp": "2026-10-04T16:45:14Z"}
+{"run": 2, "case_id": "case_006", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 42, "target": 100, "case_cost_usd": "0.022923500", "global_cost_usd": "3.010291678", "timestamp": "2026-10-04T16:45:20Z"}
+{"run": 3, "case_id": "case_001", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 43, "target": 100, "case_cost_usd": "0.001503750", "global_cost_usd": "3.010704458", "timestamp": "2026-10-04T16:45:20Z"}
+{"run": 3, "case_id": "case_006", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 44, "target": 100, "case_cost_usd": "0.014397290", "global_cost_usd": "3.030454488", "timestamp": "2026-10-04T16:45:29Z"}
+{"run": 3, "case_id": "case_003", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 45, "target": 100, "case_cost_usd": "0.069772305", "global_cost_usd": "3.036146908", "timestamp": "2026-10-04T16:45:30Z"}
+{"run": 3, "case_id": "case_005", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 46, "target": 100, "case_cost_usd": "0.017703335", "global_cost_usd": "3.036462568", "timestamp": "2026-10-04T16:45:31Z"}
+{"run": 2, "case_id": "case_001", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 47, "target": 100, "case_cost_usd": "0.00766381", "global_cost_usd": "3.067745503", "timestamp": "2026-10-04T16:45:38Z"}
+{"run": 2, "case_id": "case_005", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 48, "target": 100, "case_cost_usd": "0.042402480", "global_cost_usd": "3.087622488", "timestamp": "2026-10-04T16:45:46Z"}
+{"run": 2, "case_id": "case_008", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 49, "target": 100, "case_cost_usd": "0.007557015", "global_cost_usd": "3.140897873", "timestamp": "2026-10-04T16:46:04Z"}
+{"run": 2, "case_id": "case_008", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 50, "target": 100, "case_cost_usd": "0.0193341", "global_cost_usd": "3.237585228", "timestamp": "2026-10-04T16:46:30Z"}
+{"run": 3, "case_id": "case_009", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 51, "target": 100, "case_cost_usd": "0.01131973", "global_cost_usd": "3.249758123", "timestamp": "2026-10-04T16:46:34Z"}
+{"run": 3, "case_id": "case_008", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 52, "target": 100, "case_cost_usd": "0.010905410", "global_cost_usd": "3.255390553", "timestamp": "2026-10-04T16:46:39Z"}
+{"run": 3, "case_id": "case_002", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 53, "target": 100, "case_cost_usd": "0.004850830", "global_cost_usd": "3.278023553", "timestamp": "2026-10-04T16:46:47Z"}
+{"run": 3, "case_id": "case_003", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 54, "target": 100, "case_cost_usd": "0.003197350", "global_cost_usd": "3.324110233", "timestamp": "2026-10-04T16:46:59Z"}
+{"run": 2, "case_id": "case_007", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 55, "target": 100, "case_cost_usd": "0.002954255", "global_cost_usd": "3.358322298", "timestamp": "2026-10-04T16:47:14Z"}
+{"run": 2, "case_id": "case_010", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 56, "target": 100, "case_cost_usd": "0.009769780", "global_cost_usd": "3.374731758", "timestamp": "2026-10-04T16:47:19Z"}
+{"run": 3, "case_id": "case_004", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 58, "target": 100, "case_cost_usd": "0.102851660", "global_cost_usd": "3.390543298", "timestamp": "2026-10-04T16:47:21Z"}
+{"run": 3, "case_id": "case_005", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 58, "target": 100, "case_cost_usd": "0.087252305", "global_cost_usd": "3.390543298", "timestamp": "2026-10-04T16:47:21Z"}
+{"run": 2, "case_id": "case_007", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 59, "target": 100, "case_cost_usd": "0.033434145", "global_cost_usd": "3.406156243", "timestamp": "2026-10-04T16:47:30Z"}
+{"run": 3, "case_id": "case_006", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 60, "target": 100, "case_cost_usd": "0.074359300", "global_cost_usd": "3.412831063", "timestamp": "2026-10-04T16:47:33Z"}
+{"run": 3, "case_id": "case_005", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 61, "target": 100, "case_cost_usd": "0.003283020", "global_cost_usd": "3.472590608", "timestamp": "2026-10-04T16:47:57Z"}
+{"run": 3, "case_id": "case_004", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 62, "target": 100, "case_cost_usd": "0.004247540", "global_cost_usd": "3.495043613", "timestamp": "2026-10-04T16:48:06Z"}
+{"run": 2, "case_id": "case_009", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 63, "target": 100, "case_cost_usd": "0.0392057", "global_cost_usd": "3.545328063", "timestamp": "2026-10-04T16:48:25Z"}
+{"run": 3, "case_id": "case_006", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 64, "target": 100, "case_cost_usd": "0.004017790", "global_cost_usd": "3.566078303", "timestamp": "2026-10-04T16:48:37Z"}
+{"run": 3, "case_id": "case_010", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 65, "target": 100, "case_cost_usd": "0.021643605", "global_cost_usd": "3.599722453", "timestamp": "2026-10-04T16:48:46Z"}
+{"run": 3, "case_id": "case_008", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 66, "target": 100, "case_cost_usd": "0.002513280", "global_cost_usd": "3.602452828", "timestamp": "2026-10-04T16:48:50Z"}
+{"run": 2, "case_id": "case_008", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 67, "target": 100, "case_cost_usd": "0.0042165", "global_cost_usd": "3.631317233", "timestamp": "2026-10-04T16:48:53Z"}
+{"run": 3, "case_id": "case_008", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 68, "target": 100, "case_cost_usd": "0.05356548", "global_cost_usd": "3.639449108", "timestamp": "2026-10-04T16:48:55Z"}
+{"run": 3, "case_id": "case_009", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 69, "target": 100, "case_cost_usd": "0.002377885", "global_cost_usd": "3.697311793", "timestamp": "2026-10-04T16:49:13Z"}
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/process.py", line 243, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/Users/test/MIRA-RAUL/scripts/run_repetitions.py", line 49, in worker
+    try:return run_case(target,Path(case),model,Client(ledger,config,key),commit,transition)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 29, in run_case
+    return _run_case(root,case_dir,model,client,commit,allow_commit_transition)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 86, in _run_case
+    p=client.call(model,patient_messages,log,'patient',{} if model=='openai/gpt-5.2' else {'temperature':.01},max_tokens=8192)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/client.py", line 83, in call
+    response=self.transport(payload)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/client.py", line 34, in http
+    raise HTTPFailure(e.code,body) from None
+mira_runner.client.HTTPFailure: OpenRouter HTTP 429
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/test/MIRA-RAUL/scripts/run_repetitions.py", line 107, in <module>
+    if __name__=='__main__':main()
+  File "/Users/test/MIRA-RAUL/scripts/run_repetitions.py", line 100, in main
+    parallel_models(jobs,args.parallel_cases,args.max_workers,submit,terminal)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 160, in parallel_models
+    if failure:raise failure
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+mira_runner.client.HTTPFailure: OpenRouter HTTP 429
+{"run": 3, "case_id": "case_007", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 70, "target": 100, "case_cost_usd": "0.004069805", "global_cost_usd": "3.736474428", "timestamp": "2026-10-04T17:01:28Z"}
+{"run": 3, "case_id": "case_001", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 71, "target": 100, "case_cost_usd": "0.02715735", "global_cost_usd": "3.736855178", "timestamp": "2026-10-04T17:01:28Z"}
+{"run": 3, "case_id": "case_009", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 72, "target": 100, "case_cost_usd": "0.060724285", "global_cost_usd": "3.755562013", "timestamp": "2026-10-04T17:01:37Z"}
+{"run": 2, "case_id": "case_006", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 73, "target": 100, "case_cost_usd": "0.010453185", "global_cost_usd": "3.806217413", "timestamp": "2026-10-04T17:01:54Z"}
+{"run": 2, "case_id": "case_005", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 74, "target": 100, "case_cost_usd": "0.015015760", "global_cost_usd": "3.883883803", "timestamp": "2026-10-04T17:02:22Z"}
+{"run": 3, "case_id": "case_010", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 75, "target": 100, "case_cost_usd": "0.058206280", "global_cost_usd": "3.903279063", "timestamp": "2026-10-04T17:02:27Z"}
+{"run": 2, "case_id": "case_010", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 76, "target": 100, "case_cost_usd": "0.061329595", "global_cost_usd": "3.903902893", "timestamp": "2026-10-04T17:02:27Z"}
+{"run": 3, "case_id": "case_003", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 77, "target": 100, "case_cost_usd": "0.020602025", "global_cost_usd": "3.909900198", "timestamp": "2026-10-04T17:02:32Z"}
+{"run": 3, "case_id": "case_007", "model": "openai/gpt-5.2", "status": "complete", "new_terminals": 78, "target": 100, "case_cost_usd": "0.097778245", "global_cost_usd": "3.922690583", "timestamp": "2026-10-04T17:02:35Z"}
+{"run": 3, "case_id": "case_002", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 79, "target": 100, "case_cost_usd": "0.034556325", "global_cost_usd": "3.929121868", "timestamp": "2026-10-04T17:02:37Z"}
+{"run": 3, "case_id": "case_007", "model": "z-ai/glm-5", "status": "complete", "new_terminals": 80, "target": 100, "case_cost_usd": "0.061172605", "global_cost_usd": "3.965771333", "timestamp": "2026-10-04T17:03:13Z"}
+{"run": 3, "case_id": "case_010", "model": "z-ai/glm-4.5-air", "status": "complete", "new_terminals": 81, "target": 100, "case_cost_usd": "0.012372435", "global_cost_usd": "4.001654848", "timestamp": "2026-10-04T17:03:35Z"}
+{"run": 3, "case_id": "case_005", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 82, "target": 100, "case_cost_usd": "0.026634160", "global_cost_usd": "4.024732078", "timestamp": "2026-10-04T17:03:53Z"}
+{"run": 3, "case_id": "case_001", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 83, "target": 100, "case_cost_usd": "0.00365875", "global_cost_usd": "4.038749233", "timestamp": "2026-10-04T17:04:09Z"}
+{"run": 3, "case_id": "case_004", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 84, "target": 100, "case_cost_usd": "0.035706935", "global_cost_usd": "4.042981113", "timestamp": "2026-10-04T17:04:12Z"}
+{"run": 3, "case_id": "case_006", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 85, "target": 100, "case_cost_usd": "0.036430665", "global_cost_usd": "4.059806073", "timestamp": "2026-10-04T17:04:24Z"}
+{"run": 3, "case_id": "case_008", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 86, "target": 100, "case_cost_usd": "0.02044260", "global_cost_usd": "4.111265573", "timestamp": "2026-10-04T17:05:08Z"}
+{"run": 2, "case_id": "case_009", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 87, "target": 100, "case_cost_usd": "0.01007175", "global_cost_usd": "4.170382863", "timestamp": "2026-10-04T17:06:07Z"}
+{"run": 3, "case_id": "case_007", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 88, "target": 100, "case_cost_usd": "0.047891380", "global_cost_usd": "4.178929563", "timestamp": "2026-10-04T17:06:13Z"}
+{"run": 3, "case_id": "case_009", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 89, "target": 100, "case_cost_usd": "0.0396910", "global_cost_usd": "4.182684363", "timestamp": "2026-10-04T17:06:18Z"}
+{"run": 3, "case_id": "case_003", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 90, "target": 100, "case_cost_usd": "0.000490", "global_cost_usd": "4.184451863", "timestamp": "2026-10-04T17:06:22Z"}
+{"run": 3, "case_id": "case_002", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 91, "target": 100, "case_cost_usd": "0.006064910", "global_cost_usd": "4.212795913", "timestamp": "2026-10-04T17:07:02Z"}
+{"run": 3, "case_id": "case_004", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 93, "target": 100, "case_cost_usd": "0.003326075", "global_cost_usd": "4.238017553", "timestamp": "2026-10-04T17:07:34Z"}
+{"run": 3, "case_id": "case_010", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "new_terminals": 93, "target": 100, "case_cost_usd": "0.060028665", "global_cost_usd": "4.238017553", "timestamp": "2026-10-04T17:07:35Z"}
+{"run": 2, "case_id": "case_010", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 94, "target": 100, "case_cost_usd": "0.012419710", "global_cost_usd": "4.239199053", "timestamp": "2026-10-04T17:07:36Z"}
+{"run": 3, "case_id": "case_006", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 95, "target": 100, "case_cost_usd": "0.0001375", "global_cost_usd": "4.239810343", "timestamp": "2026-10-04T17:07:40Z"}
+{"run": 3, "case_id": "case_008", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 96, "target": 100, "case_cost_usd": "0.002066720", "global_cost_usd": "4.245813698", "timestamp": "2026-10-04T17:08:38Z"}
+{"run": 3, "case_id": "case_009", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 97, "target": 100, "case_cost_usd": "0.00262325", "global_cost_usd": "4.253587723", "timestamp": "2026-10-04T17:09:38Z"}
+{"run": 3, "case_id": "case_007", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 98, "target": 100, "case_cost_usd": "0.005399360", "global_cost_usd": "4.255608473", "timestamp": "2026-10-04T17:10:00Z"}
+{"run": 3, "case_id": "case_005", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 99, "target": 100, "case_cost_usd": "0.012199340", "global_cost_usd": "4.264578823", "timestamp": "2026-10-04T17:11:33Z"}
+{"run": 3, "case_id": "case_010", "model": "openai/gpt-oss-120b", "status": "complete", "new_terminals": 100, "target": 100, "case_cost_usd": "0.013347100", "global_cost_usd": "4.274237323", "timestamp": "2026-10-04T17:13:57Z"}

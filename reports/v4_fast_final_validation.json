@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "clinical_pre_inference_tests": 321,
+  "release_python_tests": 345,
+  "offline_consolidation_artifact_tests": 24,
+  "javascript_scope_and_replay_checks": "passed",
+  "test_log_sha256": "5d5624f16a5218941488c85408daf408f69d72cfb5997e44364af117d63c8e54",
+  "frozen_clinical_commit": "b3d7d005a324db538b98882f6599cc33f2692eb5",
+  "clinical_code_changed_after_inference": false,
+  "public_integrity_audit": "v4_fast4_integrity_audit_final.json",
+  "closed_integrity_aggregate": "v4_fast4_closed_integrity_aggregate.json",
+  "software_validation_is_not_clinical_validation": true,
+  "artifact_sha256": "4f7bcfa750acb5960b4368b0235986c3cc067d311640e2e978d2a0e3a7a71eca",
+  "artifact_ui": {
+    "selected_variant": "fast4",
+    "public_replay_cases": 10,
+    "public_and_closed_headline": "10/10 \u00b7 10/10",
+    "clock_advanced": true,
+    "full_response_hidden_before_observed_end": true,
+    "variant_labels_distinct": true,
+    "closed_aggregates_only": true
+  },
+  "screenshot_sha256": "db0bdd70761d171ced2f575db68e0acdc8f367bacbf5e11093b891edf5a51bfc"
+}

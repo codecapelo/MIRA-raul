@@ -1,0 +1,389 @@
+{
+  "budget_usd": "5.00",
+  "models": {
+    "openai/gpt-oss-120b": {
+      "provider": "mancer/fp8",
+      "provider_name": "Mancer 2",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 131072,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 0.045,
+        "output": 0.275
+      },
+      "supports_logprobs": true,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "stop",
+        "frequency_penalty",
+        "presence_penalty",
+        "repetition_penalty",
+        "logit_bias",
+        "top_k",
+        "min_p",
+        "seed",
+        "top_a",
+        "response_format",
+        "logprobs",
+        "top_logprobs",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "reasoning_effort"
+      ]
+    },
+    "z-ai/glm-4.5-air": {
+      "provider": "novita/bf16",
+      "provider_name": "Novita",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 131072,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 0.13,
+        "output": 0.85
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "stop",
+        "frequency_penalty",
+        "presence_penalty",
+        "seed",
+        "top_k",
+        "repetition_penalty",
+        "tools",
+        "tool_choice"
+      ]
+    },
+    "z-ai/glm-5": {
+      "provider": "streamlake/fp8",
+      "provider_name": "StreamLake",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 198000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 0.6,
+        "output": 1.92
+      },
+      "supports_logprobs": true,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "tool_choice",
+        "tools",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "stop",
+        "response_format",
+        "structured_outputs",
+        "logprobs",
+        "top_logprobs"
+      ]
+    },
+    "qwen/qwen3.5-397b-a17b": {
+      "provider": "parasail/fp8",
+      "provider_name": "Parasail",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 262144,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 0.5,
+        "output": 3.5999999999999996
+      },
+      "supports_logprobs": true,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "frequency_penalty",
+        "presence_penalty",
+        "repetition_penalty",
+        "seed",
+        "stop",
+        "top_k",
+        "logit_bias",
+        "tools",
+        "tool_choice",
+        "response_format",
+        "structured_outputs",
+        "logprobs",
+        "top_logprobs"
+      ]
+    },
+    "openai/gpt-5.2": {
+      "provider": "openai",
+      "provider_name": "OpenAI",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 400000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 1.75,
+        "output": 14.0
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "seed",
+        "max_tokens",
+        "response_format",
+        "structured_outputs",
+        "tools",
+        "tool_choice",
+        "verbosity",
+        "reasoning_effort"
+      ]
+    },
+    "google/gemini-3.1-flash-lite-preview": {
+      "provider": "google-ai-studio",
+      "provider_name": "Google AI Studio",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1048576,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 0.25,
+        "output": 1.5
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "seed",
+        "response_format",
+        "structured_outputs",
+        "tool_choice",
+        "tools",
+        "reasoning_effort"
+      ]
+    },
+    "qwen/qwen3.8-max-prime": {
+      "provider": "alibaba",
+      "provider_name": "Alibaba",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 4.0,
+        "output": 12.0
+      },
+      "supports_logprobs": true,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "seed",
+        "presence_penalty",
+        "response_format",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "logprobs",
+        "top_logprobs",
+        "top_k",
+        "frequency_penalty",
+        "stop",
+        "reasoning_effort"
+      ]
+    },
+    "qwen/qwen3.8-max-0902": {
+      "provider": "alibaba",
+      "provider_name": "Alibaba",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 2.0,
+        "output": 6.0
+      },
+      "supports_logprobs": true,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "temperature",
+        "top_p",
+        "seed",
+        "presence_penalty",
+        "response_format",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "logprobs",
+        "top_logprobs",
+        "top_k",
+        "frequency_penalty",
+        "stop",
+        "reasoning_effort"
+      ]
+    },
+    "claude-sonnet-5-5": {
+      "provider": "claude-code-cli",
+      "provider_name": "Claude Code subscription",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 2.0,
+        "output": 10.0
+      },
+      "supports_logprobs": false,
+      "transport": "claude_code_subscription_cli_json_action",
+      "effort": "high",
+      "note": "doctor/patient via subscription CLI (no OpenRouter charge); prices are API-equivalent for reference only"
+    },
+    "claude-opus-5-5": {
+      "provider": "claude-code-cli",
+      "provider_name": "Claude Code subscription",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 4.0,
+        "output": 20.0
+      },
+      "supports_logprobs": false,
+      "transport": "claude_code_subscription_cli_json_action",
+      "effort": "high",
+      "note": "doctor/patient via subscription CLI (no OpenRouter charge); prices are API-equivalent for reference only"
+    },
+    "google/gemini-3.1-pro-preview": {
+      "provider": "google-ai-studio",
+      "provider_name": "Google AI Studio",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1048576,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 2.0,
+        "output": 12.0
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "reasoning_effort",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "note": "fidelity/judge offline evaluation only; never a doctor or run judge"
+    },
+    "anthropic/claude-sonnet-5.5": {
+      "provider": "anthropic",
+      "provider_name": "Anthropic",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 2.0,
+        "output": 10.0
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "stop",
+        "tools",
+        "tool_choice",
+        "structured_outputs",
+        "response_format",
+        "verbosity",
+        "reasoning_effort"
+      ]
+    },
+    "anthropic/claude-opus-5.5": {
+      "provider": "anthropic",
+      "provider_name": "Anthropic",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 4.0,
+        "output": 20.0
+      },
+      "supports_logprobs": false,
+      "supported_parameters": [
+        "reasoning",
+        "include_reasoning",
+        "max_tokens",
+        "stop",
+        "tool_choice",
+        "tools",
+        "structured_outputs",
+        "response_format",
+        "verbosity",
+        "reasoning_effort"
+      ]
+    },
+    "claude-haiku-5-5": {
+      "provider": "claude-code-cli",
+      "provider_name": "Claude Code subscription",
+      "pricing_verified": true,
+      "context_tokens": 0,
+      "context_limit": 1000000,
+      "max_tokens": 24576,
+      "usd_per_million": {
+        "input": 1.0,
+        "output": 5.0
+      },
+      "supports_logprobs": false,
+      "transport": "claude_code_subscription_cli_json_action",
+      "effort": "high",
+      "note": "doctor via subscription CLI alias 'haiku' (newest Haiku served by the CLI; version recorded per call); no OpenRouter charge; prices are API-equivalent (Haiku 4.5) for reference only"
+    },
+    "gpt-6.1-sol": {
+      "provider": "codex-chatgpt-subscription",
+      "provider_name": "Codex ChatGPT subscription",
+      "supports_logprobs": false,
+      "pricing_verified": false,
+      "max_tokens": 24576,
+      "transport": "codex_subscription_cli_json_action",
+      "effort": "medium",
+      "note": "No OpenRouter billing; subscription monetary cost unknown; served model identity may not be exposed by CLI"
+    },
+    "gpt-6-astra": {
+      "provider": "codex-chatgpt-subscription",
+      "provider_name": "Codex ChatGPT subscription",
+      "supports_logprobs": false,
+      "pricing_verified": false,
+      "max_tokens": 24576,
+      "transport": "codex_subscription_cli_json_action",
+      "effort": "medium",
+      "note": "No OpenRouter billing; subscription monetary cost unknown; served model identity may not be exposed by CLI"
+    }
+  }
+}

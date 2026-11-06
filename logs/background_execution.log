@@ -1,0 +1,354 @@
+concurrent.futures.process._RemoteTraceback: 
+'''
+Traceback (most recent call last):
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/process.py", line 384, in wait_result_broken_or_wakeup
+    result_item = result_reader.recv()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/multiprocessing/connection.py", line 256, in recv
+    return _ForkingPickler.loads(buf.getbuffer())
+TypeError: __init__() missing 1 required positional argument: 'body'
+'''
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 199, in <module>
+    if __name__=='__main__':main()
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 193, in main
+    if args.parallel_models:parallel_models(schedule,args.parallel_cases,slots,submit,terminal)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 160, in parallel_models
+    if failure:raise failure
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+concurrent.futures.process.BrokenProcessPool: A process in the process pool was terminated abruptly while the future was running or pending.
+{"completed": 14, "expected": 50, "reports": "/Users/test/MIRA-RAUL/reports"}
+
+--- Reconciled restart 12 workers ---
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/process.py", line 243, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 116, in worker
+    try:return run_case(root,Path(case_dir),model,Client(ledger,config,key),commit,transition)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 29, in run_case
+    return _run_case(root,case_dir,model,client,commit,allow_commit_transition)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 86, in _run_case
+    p=client.call(model,patient_messages,log,'patient',{} if model=='openai/gpt-5.2' else {'temperature':.01},max_tokens=8192)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/client.py", line 69, in call
+    response=self.transport(payload)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/client.py", line 34, in http
+    raise HTTPFailure(e.code,body) from None
+mira_runner.client.HTTPFailure: OpenRouter HTTP 429
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 199, in <module>
+    if __name__=='__main__':main()
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 193, in main
+    if args.parallel_models:parallel_models(schedule,args.parallel_cases,slots,submit,terminal)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 160, in parallel_models
+    if failure:raise failure
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+mira_runner.client.HTTPFailure: OpenRouter HTTP 429
+{"completed": 14, "expected": 50, "reports": "/Users/test/MIRA-RAUL/reports"}
+{"case_id": "case_003", "model": "z-ai/glm-5", "status": "complete", "case_cost_usd": "0.00688633", "global_cost_usd": "0.465671753"}
+{"case_id": "case_002", "model": "z-ai/glm-4.5-air", "status": "complete", "case_cost_usd": "0.003923845", "global_cost_usd": "0.482629443"}
+{"case_id": "case_003", "model": "z-ai/glm-4.5-air", "status": "complete", "case_cost_usd": "0.00324608", "global_cost_usd": "0.482997068"}
+{"case_id": "case_003", "model": "openai/gpt-5.2", "status": "complete", "case_cost_usd": "0.054499530", "global_cost_usd": "0.527555518"}
+{"case_id": "case_004", "model": "z-ai/glm-4.5-air", "status": "complete", "case_cost_usd": "0.004721120", "global_cost_usd": "0.538692848"}
+{"case_id": "case_003", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "case_cost_usd": "0.028201360", "global_cost_usd": "0.565017528"}
+{"case_id": "case_002", "model": "z-ai/glm-5", "status": "complete", "case_cost_usd": "0.020083625", "global_cost_usd": "0.602083318"}
+{"case_id": "case_004", "model": "z-ai/glm-5", "status": "complete", "case_cost_usd": "0.018569190", "global_cost_usd": "0.605270758"}
+{"case_id": "case_004", "model": "openai/gpt-5.2", "status": "complete", "case_cost_usd": "0.086460115", "global_cost_usd": "0.617132958"}
+{"case_id": "case_004", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "case_cost_usd": "0.041068110", "global_cost_usd": "0.626936073"}
+{"case_id": "case_002", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "case_cost_usd": "0.062966395", "global_cost_usd": "0.658732568"}
+concurrent.futures.process._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/process.py", line 243, in _process_worker
+    r = call_item.fn(*call_item.args, **call_item.kwargs)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 116, in worker
+    try:return run_case(root,Path(case_dir),model,Client(ledger,config,key),commit,transition)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 29, in run_case
+    return _run_case(root,case_dir,model,client,commit,allow_commit_transition)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 36, in _run_case
+    old_commits=sorted({e.get('commit') for e in previous if e.get('commit')!=commit})
+TypeError: '<' not supported between instances of 'NoneType' and 'str'
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 197, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 199, in <module>
+    if __name__=='__main__':main()
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 193, in main
+    if args.parallel_models:parallel_models(schedule,args.parallel_cases,slots,submit,terminal)
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 160, in parallel_models
+    if failure:raise failure
+  File "/Users/test/MIRA-RAUL/src/mira_runner/runner.py", line 157, in parallel_models
+    try:terminal(future.result(),job)
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 438, in result
+    return self.__get_result()
+  File "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/concurrent/futures/_base.py", line 390, in __get_result
+    raise self._exception
+TypeError: '<' not supported between instances of 'NoneType' and 'str'
+{"completed": 25, "expected": 50, "reports": "/Users/test/MIRA-RAUL/reports"}
+{"case_id": "case_005", "model": "z-ai/glm-4.5-air", "status": "complete", "case_cost_usd": "0.002922350", "global_cost_usd": "0.740909238"}
+{"case_id": "case_006", "model": "z-ai/glm-4.5-air", "status": "complete", "case_cost_usd": "0.002907345", "global_cost_usd": "0.753428188"}
+{"case_id": "case_007", "model": "z-ai/glm-4.5-air", "status": "complete", "case_cost_usd": "0.004068010", "global_cost_usd": "0.831662113"}
+{"case_id": "case_008", "model": "z-ai/glm-4.5-air", "status": "complete", "case_cost_usd": "0.002800985", "global_cost_usd": "0.871698343"}
+{"case_id": "case_005", "model": "z-ai/glm-5", "status": "complete", "case_cost_usd": "0.015567390", "global_cost_usd": "0.923717133"}
+{"case_id": "case_006", "model": "z-ai/glm-5", "status": "complete", "case_cost_usd": "0.013238810", "global_cost_usd": "0.945319078"}
+{"case_id": "case_009", "model": "z-ai/glm-4.5-air", "status": "complete", "case_cost_usd": "0.003678280", "global_cost_usd": "0.954313083"}
+{"case_id": "case_010", "model": "z-ai/glm-4.5-air", "status": "complete", "case_cost_usd": "0.003177425", "global_cost_usd": "0.986890263"}
+{"case_id": "case_007", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "case_cost_usd": "0.035376680", "global_cost_usd": "1.027912568"}
+{"case_id": "case_006", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "case_cost_usd": "0.037756100", "global_cost_usd": "1.035614628"}
+{"case_id": "case_002", "model": "openai/gpt-5.2", "status": "complete", "case_cost_usd": "0.099069890", "global_cost_usd": "1.046776393"}
+{"case_id": "case_005", "model": "openai/gpt-5.2", "status": "complete", "case_cost_usd": "0.084271485", "global_cost_usd": "1.081429918"}
+{"case_id": "case_005", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "case_cost_usd": "0.048015465", "global_cost_usd": "1.096996553"}
+{"case_id": "case_007", "model": "z-ai/glm-5", "status": "complete", "case_cost_usd": "0.021461105", "global_cost_usd": "1.100659263"}
+{"case_id": "case_008", "model": "z-ai/glm-5", "status": "complete", "case_cost_usd": "0.008853775", "global_cost_usd": "1.110042868"}
+{"case_id": "case_006", "model": "openai/gpt-5.2", "status": "complete", "case_cost_usd": "0.074164615", "global_cost_usd": "1.145333518"}
+{"case_id": "case_009", "model": "z-ai/glm-5", "status": "complete", "case_cost_usd": "0.01056979", "global_cost_usd": "1.154764798"}
+{"case_id": "case_008", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "case_cost_usd": "0.02076375", "global_cost_usd": "1.176890538"}
+{"case_id": "case_009", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "case_cost_usd": "0.041767215", "global_cost_usd": "1.318877003"}
+{"case_id": "case_007", "model": "openai/gpt-5.2", "status": "complete", "case_cost_usd": "0.059247160", "global_cost_usd": "1.348314173"}
+{"case_id": "case_008", "model": "openai/gpt-5.2", "status": "complete", "case_cost_usd": "0.058479865", "global_cost_usd": "1.361306868"}
+{"case_id": "case_010", "model": "z-ai/glm-5", "status": "complete", "case_cost_usd": "0.014976310", "global_cost_usd": "1.366873518"}
+{"case_id": "case_009", "model": "openai/gpt-5.2", "status": "complete", "case_cost_usd": "0.087474715", "global_cost_usd": "1.484415848"}
+{"case_id": "case_010", "model": "openai/gpt-5.2", "status": "complete", "case_cost_usd": "0.051632665", "global_cost_usd": "1.494278918"}
+{"case_id": "case_010", "model": "qwen/qwen3.5-397b-a17b", "status": "complete", "case_cost_usd": "0.069321945", "global_cost_usd": "1.502941443"}
+{"completed": 50, "expected": 50, "reports": "/Users/test/MIRA-RAUL/reports"}

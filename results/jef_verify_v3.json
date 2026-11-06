@@ -1,0 +1,362 @@
+{
+ "Q3_case_001": {
+  "supported": 0.75,
+  "specific_cause": 0.98,
+  "alternatives": 0.38,
+  "judge": false
+ },
+ "Q3_case_002": {
+  "supported": 0.77,
+  "specific_cause": 0.95,
+  "alternatives": 0.48,
+  "judge": true
+ },
+ "Q3_case_003": {
+  "supported": 0.91,
+  "specific_cause": 0.98,
+  "alternatives": 0.11,
+  "judge": true
+ },
+ "Q3_case_004": {
+  "supported": 0.94,
+  "specific_cause": 0.99,
+  "alternatives": 0.08,
+  "judge": true
+ },
+ "Q3_case_005": {
+  "supported": 0.91,
+  "specific_cause": 0.95,
+  "alternatives": 0.14,
+  "judge": true
+ },
+ "Q3_case_006": {
+  "supported": 0.89,
+  "specific_cause": 0.99,
+  "alternatives": 0.21,
+  "judge": true
+ },
+ "Q3_case_007": {
+  "supported": 0.92,
+  "specific_cause": 0.99,
+  "alternatives": 0.12,
+  "judge": true
+ },
+ "Q3_case_008": {
+  "supported": 0.91,
+  "specific_cause": 0.94,
+  "alternatives": 0.13,
+  "judge": true
+ },
+ "Q3_case_009": {
+  "supported": 0.85,
+  "specific_cause": 0.98,
+  "alternatives": 0.17,
+  "judge": false
+ },
+ "Q3_case_010": {
+  "supported": 0.82,
+  "specific_cause": 0.94,
+  "alternatives": 0.16,
+  "judge": true
+ },
+ "Q3J_case_001": {
+  "supported": 0.8,
+  "specific_cause": 0.98,
+  "alternatives": 0.21,
+  "judge": false
+ },
+ "Q3J_case_002": {
+  "supported": 0.85,
+  "specific_cause": 0.88,
+  "alternatives": 0.35,
+  "judge": true
+ },
+ "Q3J_case_003": {
+  "supported": 0.89,
+  "specific_cause": 0.98,
+  "alternatives": 0.11,
+  "judge": true
+ },
+ "Q3J_case_004": {
+  "supported": 0.94,
+  "specific_cause": 0.98,
+  "alternatives": 0.14,
+  "judge": true
+ },
+ "Q3J_case_005": {
+  "supported": 0.94,
+  "specific_cause": 0.96,
+  "alternatives": 0.17,
+  "judge": true
+ },
+ "Q3J_case_006": {
+  "supported": 0.85,
+  "specific_cause": 0.99,
+  "alternatives": 0.21,
+  "judge": true
+ },
+ "Q3J_case_007": {
+  "supported": 0.9,
+  "specific_cause": 0.99,
+  "alternatives": 0.16,
+  "judge": true
+ },
+ "Q3J_case_008": {
+  "supported": 0.91,
+  "specific_cause": 0.94,
+  "alternatives": 0.1,
+  "judge": true
+ },
+ "Q3J_case_009": {
+  "supported": 0.87,
+  "specific_cause": 0.98,
+  "alternatives": 0.19,
+  "judge": false
+ },
+ "Q3J_case_010": {
+  "supported": 0.68,
+  "specific_cause": 0.91,
+  "alternatives": 0.48,
+  "judge": true
+ },
+ "Q1_case_001": {
+  "supported": 0.87,
+  "specific_cause": 0.98,
+  "alternatives": 0.21,
+  "judge": true
+ },
+ "Q1_case_002": {
+  "supported": 0.92,
+  "specific_cause": 0.3,
+  "alternatives": 0.29,
+  "judge": false
+ },
+ "Q1_case_003": {
+  "supported": 0.88,
+  "specific_cause": 0.98,
+  "alternatives": 0.12,
+  "judge": true
+ },
+ "Q1_case_004": {
+  "supported": 0.93,
+  "specific_cause": 0.98,
+  "alternatives": 0.09,
+  "judge": true
+ },
+ "Q1_case_005": {
+  "supported": 0.93,
+  "specific_cause": 0.96,
+  "alternatives": 0.12,
+  "judge": true
+ },
+ "Q1_case_006": {
+  "supported": 0.95,
+  "specific_cause": 0.99,
+  "alternatives": 0.09,
+  "judge": true
+ },
+ "Q1_case_007": {
+  "supported": 0.89,
+  "specific_cause": 0.99,
+  "alternatives": 0.16,
+  "judge": true
+ },
+ "Q1_case_008": {
+  "supported": 0.93,
+  "specific_cause": 0.89,
+  "alternatives": 0.14,
+  "judge": true
+ },
+ "Q1_case_009": {
+  "supported": 0.79,
+  "specific_cause": 0.98,
+  "alternatives": 0.23,
+  "judge": false
+ },
+ "Q1_case_010": {
+  "supported": 0.9,
+  "specific_cause": 0.96,
+  "alternatives": 0.14,
+  "judge": true
+ },
+ "Q2_case_001": {
+  "supported": 0.55,
+  "specific_cause": 0.98,
+  "alternatives": 0.41,
+  "judge": false
+ },
+ "Q2_case_002": {
+  "supported": 0.74,
+  "specific_cause": 0.96,
+  "alternatives": 0.54,
+  "judge": true
+ },
+ "Q2_case_003": {
+  "supported": 0.92,
+  "specific_cause": 0.98,
+  "alternatives": 0.11,
+  "judge": true
+ },
+ "Q2_case_004": {
+  "supported": 0.94,
+  "specific_cause": 0.98,
+  "alternatives": 0.07,
+  "judge": true
+ },
+ "Q2_case_005": {
+  "supported": 0.89,
+  "specific_cause": 0.93,
+  "alternatives": 0.16,
+  "judge": true
+ },
+ "Q2_case_006": {
+  "supported": 0.9,
+  "specific_cause": 0.99,
+  "alternatives": 0.23,
+  "judge": true
+ },
+ "Q2_case_007": {
+  "supported": 0.91,
+  "specific_cause": 0.99,
+  "alternatives": 0.16,
+  "judge": true
+ },
+ "Q2_case_008": {
+  "supported": 0.92,
+  "specific_cause": 0.85,
+  "alternatives": 0.13,
+  "judge": true
+ },
+ "Q2_case_009": {
+  "supported": 0.92,
+  "specific_cause": 0.98,
+  "alternatives": 0.2,
+  "judge": true
+ },
+ "Q2_case_010": {
+  "supported": 0.95,
+  "specific_cause": 0.94,
+  "alternatives": 0.08,
+  "judge": true
+ },
+ "G1_case_001": {
+  "supported": 0.35,
+  "specific_cause": 0.98,
+  "alternatives": 0.63,
+  "judge": false
+ },
+ "G1_case_002": {
+  "supported": 0.8,
+  "specific_cause": 0.94,
+  "alternatives": 0.57,
+  "judge": false
+ },
+ "G1_case_003": {
+  "supported": 0.81,
+  "specific_cause": 0.97,
+  "alternatives": 0.14,
+  "judge": true
+ },
+ "G1_case_004": {
+  "supported": 0.96,
+  "specific_cause": 0.95,
+  "alternatives": 0.15,
+  "judge": false
+ },
+ "G1_case_005": {
+  "supported": 0.92,
+  "specific_cause": 0.96,
+  "alternatives": 0.13,
+  "judge": true
+ },
+ "G1_case_006": {
+  "supported": 0.95,
+  "specific_cause": 0.98,
+  "alternatives": 0.14,
+  "judge": true
+ },
+ "G1_case_007": {
+  "supported": 0.89,
+  "specific_cause": 0.98,
+  "alternatives": 0.21,
+  "judge": true
+ },
+ "G1_case_008": {
+  "supported": 0.95,
+  "specific_cause": 0.92,
+  "alternatives": 0.16,
+  "judge": true
+ },
+ "G1_case_009": {
+  "supported": 0.88,
+  "specific_cause": 0.98,
+  "alternatives": 0.26,
+  "judge": false
+ },
+ "G1_case_010": {
+  "supported": 0.82,
+  "specific_cause": 0.84,
+  "alternatives": 0.31,
+  "judge": false
+ },
+ "G2_case_001": {
+  "supported": 0.36,
+  "specific_cause": 0.96,
+  "alternatives": 0.59,
+  "judge": false
+ },
+ "G2_case_002": {
+  "supported": 0.84,
+  "specific_cause": 0.94,
+  "alternatives": 0.47,
+  "judge": false
+ },
+ "G2_case_003": {
+  "supported": 0.9,
+  "specific_cause": 0.97,
+  "alternatives": 0.13,
+  "judge": true
+ },
+ "G2_case_004": {
+  "supported": 0.96,
+  "specific_cause": 0.95,
+  "alternatives": 0.18,
+  "judge": true
+ },
+ "G2_case_005": {
+  "supported": 0.92,
+  "specific_cause": 0.96,
+  "alternatives": 0.15,
+  "judge": true
+ },
+ "G2_case_006": {
+  "supported": 0.78,
+  "specific_cause": 0.98,
+  "alternatives": 0.31,
+  "judge": true
+ },
+ "G2_case_007": {
+  "supported": 0.91,
+  "specific_cause": 0.98,
+  "alternatives": 0.19,
+  "judge": true
+ },
+ "G2_case_008": {
+  "supported": 0.95,
+  "specific_cause": 0.91,
+  "alternatives": 0.17,
+  "judge": true
+ },
+ "G2_case_009": {
+  "supported": 0.78,
+  "specific_cause": 0.98,
+  "alternatives": 0.28,
+  "judge": false
+ },
+ "G2_case_010": {
+  "supported": 0.4,
+  "specific_cause": 0.93,
+  "alternatives": 0.56,
+  "judge": true
+ }
+}

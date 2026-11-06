@@ -1,0 +1,42 @@
+{
+  "timestamp": 1791225999.097874,
+  "reconciled_requests": 3,
+  "unattributed_row": "d1a12aa1-ddf7-4e04-83f0-aefa2300e23b",
+  "unattributed_usd": "0.002242080",
+  "account_total_usage": "15.453931888",
+  "ledger_total_after": "15.453931888",
+  "states_after": {
+    "settled": 7781
+  },
+  "snapshots_sha256": {
+    "reports/credits_v32_killed_1.json": "0b65275b473432a3c6d146d34c4f63909985c68f6d6350f7efac0e6269b02e3b",
+    "reports/credits_v32_killed_2.json": "c42ca1fb8f451aae8b03f4a84f008df103e6f1347bf824ceb8b3d0b45fa0e5f8",
+    "reports/credits_v32_killed_3.json": "085113dc2e1aa06e11f964d46f1a2c1f826bdd69ede596fd949bbf77a1a0dcf5"
+  },
+  "ledger_backup": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/reports/budget_before_v32_killed_reconciliation.sqlite",
+  "archive": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/incomplete/v32_killed_run2_v1",
+  "provider_usage_cost_invented": false,
+  "archived": [
+    {
+      "request_id": "3b3d3cf9-263e-478e-9388-aa8d2389e0b3",
+      "role": "doctor",
+      "model": "z-ai/glm-5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/incomplete/v32_killed_run2_v1/runs/v3/glm5_xf_imm_cas_v32none_n2/run2/logs/raw/z-ai__glm-5/case_003.jsonl",
+      "sha256": "00232f26ee1d5fe937330404d96988269f38cb53b9eefae3df82e8fcc8d94951"
+    },
+    {
+      "request_id": "759f5613-aad6-4d47-912a-b9777be320e7",
+      "role": "doctor",
+      "model": "z-ai/glm-5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/incomplete/v32_killed_run2_v1/runs/v3/glm5_xf_imm_cas_v32none_n2/run2/logs/raw/z-ai__glm-5/case_002.jsonl",
+      "sha256": "e9a02b62e47d60f04e27ba4aa9e2fd8df30b0b174592f0114a25891a2ac23e7e"
+    },
+    {
+      "request_id": "6d9c64b5-2fe3-4677-abc1-96b32f539fb0",
+      "role": "doctor",
+      "model": "z-ai/glm-5",
+      "path": "/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/logs/incomplete/v32_killed_run2_v1/runs/v3/glm5_xf_imm_cas_v32none_n2/run2/logs/raw/z-ai__glm-5/case_001.jsonl",
+      "sha256": "7992a39555ce91ee334b619d6024e3cd6812a60be513ede822a0aa64f467cb51"
+    }
+  ]
+}

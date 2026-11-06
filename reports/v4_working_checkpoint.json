@@ -1,0 +1,21 @@
+{
+  "kind": "prospective_new_encounters",
+  "snapshot": "completed",
+  "snapshot_unix": 1791510929.735389,
+  "completed": 10,
+  "planned": 10,
+  "judge_correct": 10,
+  "openrouter_completed_usd": "0.11515425",
+  "global_v4_usd": "0.28396075",
+  "ledger_states": {
+    "settled": 143
+  },
+  "shared_cap_usd": "5.00",
+  "completed_exam_units": 257,
+  "original_score_preserved": "9/10",
+  "offline_posthoc_score_separate": "10/10",
+  "clinical_review": "pending",
+  "resume_script": "scripts/run_v4_working_encounters.py",
+  "frozen_commit": "2fac24e75d9ab01c2e52ab0a3409ff1434b3ee6c",
+  "financial_reconciled": false
+}

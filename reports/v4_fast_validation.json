@@ -1,0 +1,12 @@
+{
+  "software_tests_passed": 299,
+  "software_tests_failed": 0,
+  "paid_inference_before_freeze": 0,
+  "secret_scan_files": 23,
+  "secret_scan_findings": 0,
+  "private_trace_ignore_confirmed": true,
+  "previous_v4_costs_reconciled": true,
+  "previous_v4_settled_calls": 168,
+  "previous_v4_usage_cost_usd": "0.28396075",
+  "note": "Streaming timing and queue policy tested with mocks/real wrappers; does not establish clinical quality or server latency. Pre-existing replay_events ResourceWarning unchanged."
+}
