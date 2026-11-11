@@ -1,0 +1,90 @@
+{
+ "frozen_on": "2026-11-11",
+ "note": "v5 development condition as merged in PR #8 (code unchanged since 9ccc23e). Results on the 12 development cases are not independent evidence; this manifest fixes the condition for validation on reserved new cases.",
+ "last_code_commit": "9ccc23eb88774e9277caa1752cfb7bb6e28222ae",
+ "condition": "v5",
+ "runner": "scripts/run_v5.py",
+ "settings": {
+  "DOCTOR": "google/gemini-3.1-flash-lite-preview",
+  "PATIENT": "claude-sonnet-5-5",
+  "ALLOWED": [
+   "claude-sonnet-5-5",
+   "google/gemini-3.1-flash-lite-preview",
+   "google/gemini-3.1-pro-preview",
+   "gpt-6-astra",
+   "gpt-6.1-sol"
+  ],
+  "CLINICAL": {
+   "consult": null,
+   "delay_results": false,
+   "exam_first": true,
+   "judge_override": true,
+   "min_exchanges": 1,
+   "opening": 5,
+   "patient_model": "claude-sonnet-5-5",
+   "prereqs": true,
+   "strict_exams": true
+  },
+  "EXTRAS": {
+   "admit_min": 1,
+   "emergency_voice": true,
+   "fast_atomic_imaging": true,
+   "fast_missing_alternative_review": true,
+   "fast_second_review": true,
+   "literal_components": true,
+   "order_policy": true,
+   "protocol": "v5",
+   "record_released_results": true,
+   "speech_format": false,
+   "v5_desk": true
+  },
+  "ROLE_POLICY": {
+   "doctor": {
+    "max_tokens": 4096,
+    "reasoning": {
+     "effort": "minimal"
+    }
+   },
+   "patient_review": {
+    "max_tokens": 1024,
+    "reasoning": {
+     "effort": "minimal"
+    }
+   }
+  },
+  "CAP": "4.80"
+ },
+ "upstream_commit": "eea2386c665c9caaa7ee093c8cb092d1c337de88",
+ "files": {
+  "config/judge_overrides_v3.json": "fdee85321dabb531465d842e37243de55f1f8b8ace2b1cc3771eff5a6cd8428f",
+  "config/v5.json": "688766ff336a417320483e371f8b0493e04e383732e5989909d99a8e0a9f7cbf",
+  "scripts/run_v5.py": "dbceef5243a573a29bfa1f4b8be7d05efbc4a724a7503cd5261981cdf8888a51",
+  "src/mira_runner/__init__.py": "0855df61fa3b4983a487672f600076e7f00a62c00e43d698b50e78f2f524e958",
+  "src/mira_runner/atomic_imaging.py": "c1a3e9a166cabaeb80e73b25108a26aa17c4e8f4ae35552ce69a44c02646df8b",
+  "src/mira_runner/budget.py": "00756b70f29d957e6d6c8b295125882b5f2e5d5fd5fa481b54396bca4addb1e0",
+  "src/mira_runner/cascade.py": "6022ec5c752ff698045d35e42a5b144c6a2b165a32b7291c07e1409b7be638bc",
+  "src/mira_runner/chart_note.py": "8bdd2e8006e2e3e5ce75762972f805bf55dac04c2d55d56d7824f31ef6d44fbc",
+  "src/mira_runner/cli_client.py": "e1e153c4ede2d7b39d43a60e3acbfa1da34481839ebb9833b2ea938ea9fada86",
+  "src/mira_runner/client.py": "a118eb6cf0a7a672b68a04970684d94d703a62753f2ebc09b55dee34c737e8ab",
+  "src/mira_runner/consult.py": "a947018286dbb5694b4ce23c506b4f449935c16b152e0c4377a3241a771ab27d",
+  "src/mira_runner/exam_costs.py": "d83485a643e8005b1dc325af0e4fd0924aac10010dfd87c9bb611fa77ee56c70",
+  "src/mira_runner/exam_notes.py": "39ff210e623092a7b85a9fe6f0c2c210abd0e4829c75c11354a2f75ae2236541",
+  "src/mira_runner/exam_policy.py": "9f7126eb12d587485e1414ff00ebb52ff5c4ce0474b9d3bc5f05a43b986b926c",
+  "src/mira_runner/fast_client.py": "9ee25a470fb80c0155ad0be8ea50d9831e0725bfcdfab78aa789727a0b34fed3",
+  "src/mira_runner/fast_v4.py": "8040808b03b9c686214875522705b596ff04b7f3009a786d6a81f62d8e418ed9",
+  "src/mira_runner/jef.py": "c7fc82fcf542765e1da832b6ce2679e14aa5d7b91160ab57e8788b60933dfe70",
+  "src/mira_runner/matcher_v3.py": "d9a5b1d90d8a98b7a4462acca3a0787646491dfbe1ce300fdda0ed91d96fbb1f",
+  "src/mira_runner/patient_v5.py": "835b268eb293ca1fad1b9bdf7a3aefc95d368db1a410e5b10c96be272a9c5cea",
+  "src/mira_runner/policy_v4.py": "0d37d7b3e4dc60a10e5d41362f21cc7ea08bff4935319f9e7fac6c8a90a77d9a",
+  "src/mira_runner/runner.py": "9b7a66c1ba520a020c2295c5ca5ef1ca99094da9f22879c40955b915c2fb4a00",
+  "src/mira_runner/runner_v3.py": "18b6f2f06e3ce7cfb021911142bbe39a39001a69fbdff1af33517fa8bde7bb7b",
+  "src/mira_runner/semantics.py": "3bcf2b62496b805d86e940d061af82a42f63fe155f1cebb1da1dc5010b1051f0",
+  "src/mira_runner/tools.py": "77ad84af532af19ac4a678fb61f123fbd1766b1b0a542fa2151c15c555af1e34",
+  "src/mira_runner/tools_v3.py": "86f7b0ba30ab57c30e16e4ebe52b19fc5b1dc6adf6da095dee3642bb7f33403a",
+  "src/mira_runner/tools_v4.py": "a77dd926edf4460ec4f3c9c06d001e7307c70211179dd1651ddb039aab388e8f",
+  "src/mira_runner/urgency.py": "f6494aafa58776b968df3135e32ee289cb45c2aa44c72fbda0b1cf5272aba507",
+  "src/mira_runner/v4.py": "58dbd8d2e2fedf576081ba468f623c171e93b962e33e7dfc73691358fa42a628",
+  "src/mira_runner/v5.py": "bf730b62620d29141b9ac758ce7c1684ad6e926ebc8ed69f08b7c582f7c414bf",
+  "src/mira_runner/working_v4.py": "ab0686372c0507ff9567f071520cb78a860b4d2a385996e09f6e76a1ffda3f8d"
+ }
+}
