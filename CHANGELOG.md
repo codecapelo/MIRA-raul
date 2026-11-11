@@ -126,3 +126,6 @@ Mapa da consulta, pré-requisitos de procedimento, emergência sem N mínimo, cr
 
 ## v4 — 08-10-2026
 Nova condição da assinatura ChatGPT: transporte Codex fechado e replay por hash; unidades relativas de exames entregues para todos os atores; componentes literais; limites e prioridades corrigidos. Base v3.7 preservada. Protocolo e limitações em reports/v4_protocol.md.
+
+## Métricas por regra e congelamento da v5 — 11-11-2026
+Sem chamadas de modelo. `scripts/rule_metrics.py` calcula, por regras de texto, cobertura de observações (médico e revisores), entrega de fase posterior, itens que não constam no caso, repetições e uso de fatos de história (v5) sobre 442 traces; casos fechados só em agregado. `scripts/freeze_condition.py` e `config/frozen/v5.json` fixam a condição v5 por hash (30 arquivos, opções do runner, commit do upstream); mudança de código exige novo nome de condição. Achados e limites em reports/rule_metrics.md. A v5z foi gerada em c8cd6be, 14 linhas antes do código final 9ccc23e: a condição congelada ainda não rodou um conjunto completo.
