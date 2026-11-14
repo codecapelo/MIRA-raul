@@ -1,0 +1,17 @@
+{
+ "request_id": "fd503d9f-206c-4a13-9b79-8c04f4434230",
+ "http_status": 503,
+ "account_delta_usd": "0.882870525",
+ "ledger_actual_costs_usd": "0.882870525",
+ "snapshots_used": 5,
+ "last_three_total_usage": "21.040463633",
+ "snapshot_times": [
+  "2026-11-14T13:38:29-0300",
+  "2026-11-14T13:39:44-0300",
+  "2026-11-14T13:40:59-0300",
+  "2026-11-14T13:42:15-0300",
+  "2026-11-14T13:43:30-0300"
+ ],
+ "trace_sha256": "2a6fa2db9f3ef89d9166cc3b457cce397c1e018f7439eee998863b441444f613",
+ "snapshots_sha256": "1e91f44b179298a65595cb10e6c01fb4034f494aa0e1ff68107d28a3223c63c3"
+}
