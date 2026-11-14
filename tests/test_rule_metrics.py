@@ -55,6 +55,15 @@ class EncounterTests(unittest.TestCase):
     def test_delayed_result_delivered_inside_a_later_message(self):
         rows=[doctor('Complaint.'),tool('request_radiology',{},'Order placed. Results will be reported after your next exchange.'),doctor('Complaint.','Results: Spinal MRI: Epidural hematoma from C6 to T2.'),DONE]
         m=rm.encounter(rows,PATIENT,OBS);self.assertEqual((m['obs_physician'],m['calls_pending_result']),(1,1))
+    def test_calls_replayed_by_a_resumed_run_are_not_new_orders(self):
+        def t(time,turn='1'):return {**tool('request_radiology',{'study_name':'MRI spine'},'{"findings": [{"requested": "MRI spine", "name": "Spinal MRI", "value": "Epidural hematoma from C6 to T2."}]}'),'time':time,'turn':turn,'exchanges':'0'}
+        desk={'event':'exam_justification','tool':'request_radiology'}  # marks the v5 trace format
+        resumed=rm.encounter([doctor('Complaint.'),desk,t('100.0'),t('185.0'),DONE],PATIENT,OBS)
+        self.assertEqual((resumed['order_calls'],resumed['items_requested'],resumed['duplicate_calls']),(1,1,0))
+        quick=rm.encounter([doctor('Complaint.'),desk,t('100.0'),t('100.2'),DONE],PATIENT,OBS)  # same call twice in the same turn is a real duplicate
+        self.assertEqual((quick['order_calls'],quick['duplicate_calls']),(2,1))
+        older=rm.encounter([doctor('Complaint.'),t('100.0'),t('185.0'),DONE],PATIENT,OBS)  # other trace formats are not touched
+        self.assertEqual(older['order_calls'],2)
     def test_matcher_and_judge_requests_do_not_count_as_seen(self):
         rows=[doctor('Complaint.'),{'event':'request','role':'matcher','payload':{'messages':[{'role':'user','content':'Catalog: Epidural hematoma from C6 to T2. No growth.'}]}},DONE]
         self.assertEqual(rm.encounter(rows,PATIENT,OBS)['obs_physician'],0)
