@@ -1,8 +1,8 @@
 {
  "method": "deterministic string rules over traces and case files; no model call; see scripts/rule_metrics.py",
- "encounters": 442,
- "public_encounters": 437,
- "closed_encounters_aggregate_only": 5,
+ "encounters": 462,
+ "public_encounters": 447,
+ "closed_encounters_aggregate_only": 15,
  "skipped_without_case_files": 0,
  "by_condition": [
   {
@@ -972,6 +972,48 @@
    "history_encounters": 0
   },
   {
+   "condition": "v5/v5full1",
+   "model": "google/gemini-3.1-flash-lite-preview",
+   "cohort": "closed",
+   "encounters": 10,
+   "cases": 10,
+   "judged": 10,
+   "judge_positive": 8,
+   "obs_coverage_physician": 0.2995,
+   "obs_coverage_with_reviewers": 0.3529,
+   "obs_partial_share": 0.2143,
+   "late_stage_delivered": null,
+   "not_on_record_rate": 0.3684,
+   "repeat_rate": 0.0263,
+   "blocked_call_rate": 0.0896,
+   "pending_call_rate": 0.0,
+   "orders_per_encounter": 6.7,
+   "items_per_encounter": 11.4,
+   "history_coverage": 0.8529,
+   "history_encounters": 10
+  },
+  {
+   "condition": "v5/v5full1",
+   "model": "google/gemini-3.1-flash-lite-preview",
+   "cohort": "public",
+   "encounters": 10,
+   "cases": 10,
+   "judged": 10,
+   "judge_positive": 9,
+   "obs_coverage_physician": 0.4,
+   "obs_coverage_with_reviewers": 0.5733,
+   "obs_partial_share": 0.1667,
+   "late_stage_delivered": 0.1765,
+   "not_on_record_rate": 0.5904,
+   "repeat_rate": 0.0723,
+   "blocked_call_rate": 0.1538,
+   "pending_call_rate": 0.0,
+   "orders_per_encounter": 5.2,
+   "items_per_encounter": 8.3,
+   "history_coverage": 0.9655,
+   "history_encounters": 10
+  },
+  {
    "condition": "v5/v5z",
    "model": "google/gemini-3.1-flash-lite-preview",
    "cohort": "closed",
@@ -1015,7 +1057,7 @@
   }
  ],
  "judge_instability_public": {
-  "identical_diagnosis_groups": 16,
+  "identical_diagnosis_groups": 17,
   "groups_with_conflicting_verdicts": 1,
   "conflicts": [
    {

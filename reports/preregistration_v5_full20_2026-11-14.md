@@ -37,6 +37,12 @@ Casos fechados: só agregados. Nenhum diagnóstico, valor ou trecho de caso fech
 - Estimativa de custo: a v5z custou em média US$ 0,0242 por encontro (máximo US$ 0,0461). Para 20 encontros, cerca de US$ 0,48 e no máximo cerca de US$ 0,92 no OpenRouter. Estimativa, não garantia.
 - Ledger com 642 chamadas, todas `settled`, nenhuma reserva pendente. Nenhum processo de runner vivo.
 
+## Adendo operacional — 14-11-2026
+
+A primeira tentativa de lançamento parou no `case_001`: a sessão OAuth do CLI do Claude (paciente Sonnet 5.5) tinha expirado ("OAuth session expired and could not be refreshed"). Nenhum encontro terminou (sem `case_complete`) e o custo foi US$ 0,0028 no OpenRouter, todo `settled`. O usuário refez o login e a mesma variante `v5full1` foi relançada com o mesmo comando, o mesmo HEAD `9ccc23e` e o check de congelamento sem diferenças. Falha de autenticação do transporte não é decisão clínica do modelo e não foi tratada como terminal. O trace parcial do `case_001` permanece em disco; a saída da primeira tentativa está em `runs/v5/v5full1_stdout_attempt1_auth_failure.log`. Nenhum parâmetro, código ou caso mudou.
+
+Segunda intercorrência: HTTP 503 do OpenRouter durante streaming no `case_010` (83 eventos, sem resposta, reserva incerta de US$ 0,0123). O runner parou conforme o plano. Depois de quatro snapshots iguais da conta (uso = soma dos custos reais do ledger), a chamada foi registrada como custo zero (`reports/v5full1_case010_http503_reconciliation.json`, `scripts/reconcile_http503_zero_cost.py`). Como o cliente congelado só retoma um pedido sem resposta após erro 4xx, o trace parcial foi arquivado em `runs/v5/v5full1/incomplete/` e o `case_010` foi refeito do início com a mesma variante, o mesmo HEAD e o check sem diferenças. O parcial não era terminal. O custo dele permanece no total. Resultado em `reports/v5full1_results_2026-11-14.md`.
+
 ## Depois da rodada
 
 1. `scripts/rule_metrics.py` com a nova raiz; resultado em relatório próprio.
