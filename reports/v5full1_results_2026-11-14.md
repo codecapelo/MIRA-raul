@@ -18,10 +18,10 @@ Nenhuma falha terminal por modelo. A diferença entre propostas (13/20) e juiz f
 |---|---:|---:|
 | Cobertura de observações pelo médico | 40% | 30% |
 | Com revisores | 57% | 35% |
-| Itens "não consta" | 59% | 37% |
-| Itens repetidos | 7% | 3% |
-| Chamadas bloqueadas (história antes de exame) | 15% | 9% |
-| Itens pedidos por encontro | 8,3 | 11,4 |
+| Itens "não consta" | 58% | 37% |
+| Itens repetidos | 3% | 3% |
+| Chamadas bloqueadas (história antes de exame) | 17% | 9% |
+| Itens pedidos por encontro | 7,8 | 11,4 |
 | História revelada pelo paciente | 97% | 85% |
 | Fase posterior entregue | 18% | – |
 
@@ -40,8 +40,8 @@ Ledger v5 após a rodada: US$ 1,164776375 (1063 chamadas, todas `settled`), isto
 
 1. **Resultado e reprodutibilidade.** O `case_004`, aceito pelo juiz na v5z, foi rejeitado agora: o texto trocou "quilotórax" por "derrame pleural" e dizia que o envolvimento maligno não estava confirmado. Com uma execução por caso, uma diferença de um caso é ruído. Nenhuma comparação entre condições é possível sem repetições.
 2. **O desfecho depende dos revisores.** O médico (Gemini 3.1 Flash-Lite) cobre 30–40% das observações; os revisores levam o conjunto público a 57%. Em quatro dos vinte casos a cascata corrigiu a proposta.
-3. **Mais da metade do que o médico pede não existe no caso público (59%).** É limite do protocolo de casos publicados, não necessariamente erro do médico, e é a principal diferença para benchmarks como o SDBench, que devolve resultado sintético.
-4. **15% das chamadas públicas foram bloqueadas** pela regra de história mínima antes de exame; vale medir se isso atrasa casos urgentes.
+3. **Mais da metade do que o médico pede não existe no caso público (58%).** É limite do protocolo de casos publicados, não necessariamente erro do médico, e é a principal diferença para benchmarks como o SDBench, que devolve resultado sintético.
+4. **17% das chamadas públicas foram bloqueadas** pela regra de história mínima antes de exame; vale medir se isso atrasa casos urgentes.
 5. **O validador do paciente rejeitou pelo menos uma resposta em 14 de 20 encontros.** A resposta final passa na checagem de fatos (história revelada 97% / 85%), mas o primeiro texto do Sonnet viola as regras em boa parte das vezes.
 
 ## Hipóteses de melhoria (nada aplicado; exigem uma v6 com nome novo)
@@ -58,3 +58,7 @@ Ledger v5 após a rodada: US$ 1,164776375 (1063 chamadas, todas `settled`), isto
 
 - Casos conhecidos, uma execução por caso, juiz LLM sem códigos ICD-10, sem revisão médica cega.
 - A v5z e a v5full1 diferem em 3 arquivos (14 linhas); não somar as duas.
+
+## Correção de 14-11-2026 (posterior à primeira versão deste relatório)
+
+A primeira versão contou como pedidos novos as chamadas que o runner reexibiu no registro ao retomar o `case_001` depois do login expirado (mesmo turno, mesma saída, 85 s depois). Isso inflou o `case_001` em 5 itens pedidos e 4 chamadas "repetidas". `scripts/rule_metrics.py` agora ignora essas reexibições nos traces da v5 (teste novo em `tests/test_rule_metrics.py`). Efeito nos públicos da v5full1: "não consta" 59% → 58%, repetidos 7% → 3%, bloqueadas 15% → 17%, itens por encontro 8,3 → 7,8. Fechados e v5z não mudam. Resultado do juiz, propostas, cobertura e história não mudam. Os traces das outras condições não foram corrigidos: podem conter reexibições de retomadas anteriores e os números de repetição delas devem ser lidos com essa reserva.

@@ -90,7 +90,14 @@ def encounter(rows,patient,observations):
     doctor=[r for r in rows if r.get('event')=='request' and r.get('role')=='doctor']
     first=norm(message_text(doctor[0]['payload'].get('messages'))) if doctor else ''
     seen=norm('\n'.join(message_text(r['payload'].get('messages')) for r in doctor))
-    tools=[r for r in rows if r.get('event')=='tool']
+    tools=[];logged_at={}
+    v5_format=any(r.get('event')=='exam_justification' for r in rows)  # only the v5 trace carries turn/exchange counters on every call, so only it is checked for resume replays
+    for r in rows:
+        if r.get('event')!='tool':continue
+        sig=(r.get('name'),json.dumps(r.get('arguments'),sort_keys=True,ensure_ascii=False),str(r.get('output')),r.get('turn'),r.get('exchanges'))
+        when=float(r.get('time') or 0)
+        if v5_format and sig in logged_at and when-logged_at[sig]>5:continue  # a resumed run re-logs the replayed calls (same turn, same output, much later): not a new order
+        logged_at.setdefault(sig,when);tools.append(r)
     seen=norm(seen+'\n'+'\n'.join(str(t.get('output') or '') for t in tools)+'\n'+'\n'.join(json.dumps(r.get('results',r.get('text','')),ensure_ascii=False) for r in rows if r.get('event')=='released_results'))
     review=[]
     for r in rows:
