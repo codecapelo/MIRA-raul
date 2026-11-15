@@ -1,0 +1,67 @@
+{
+ "case_id": "case_006",
+ "pdf": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_006/source.pdf",
+ "model_observed": [
+  "claude-sonnet-5-5"
+ ],
+ "article_words": 2934,
+ "extracted_observations": 8,
+ "missing": [
+  {
+   "category": "laboratory",
+   "what": "Renin-angiotensin-aldosterone ratio (ARR)",
+   "reported": "ARR 0.09, consistent with adrenal insufficiency",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "ARR 0.09) was consistent with adrenal insufficiency",
+   "quote_verified": true
+  },
+  {
+   "category": "laboratory",
+   "what": "25-hydroxyvitamin D",
+   "reported": "Low, 20.6 nmol/L (reference 47.7-144 nmol/L)",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "25-hydroxyvitamin D was low (20.6 nmol/L; reference range,",
+   "quote_verified": true
+  },
+  {
+   "category": "pathology",
+   "what": "Immunohistochemistry of adrenal biopsy (CD68PG-M1, SMA, S100)",
+   "reported": "CD68PG-M1 positive; SMA and S100 negative",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "immunohistochemical staining demonstrated positive CD68PG-M1",
+   "quote_verified": true
+  },
+  {
+   "category": "imaging",
+   "what": "Right adrenal gland morphology on imaging",
+   "reported": "Right adrenal mass was thin and strip-shaped, unsuitable for biopsy",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "strip shape, the right adrenal mass was unsuitable for biopsy.",
+   "quote_verified": true
+  },
+  {
+   "category": "imaging",
+   "what": "Follow-up abdominal ultrasound and chest CT",
+   "reported": "Regular abdominal ultrasound and chest CT were done during follow-up, no specific results given",
+   "kind": "mention_only",
+   "phase": "later",
+   "quote": "The follow-up included regular abdominal ultrasound and chest CT",
+   "quote_verified": false
+  },
+  {
+   "category": "laboratory",
+   "what": "Follow-up hormone levels",
+   "reported": "Hormone levels gradually stabilizing, no values given",
+   "kind": "qualitative_only",
+   "phase": "later",
+   "quote": "levels were gradually stabilizing",
+   "quote_verified": true
+  }
+ ],
+ "contradictions": [],
+ "coverage_note": "The extracted list covers the main presentation tests but omits ARR, vitamin D, immunohistochemistry, the right adrenal appearance, and the follow-up monitoring; I found no contradictions."
+}

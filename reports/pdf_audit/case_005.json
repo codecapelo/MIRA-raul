@@ -1,0 +1,31 @@
+{
+ "case_id": "case_005",
+ "pdf": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_005/source.pdf",
+ "model_observed": [
+  "claude-sonnet-5-5"
+ ],
+ "article_words": 2246,
+ "extracted_observations": 10,
+ "missing": [
+  {
+   "category": "physical_exam",
+   "what": "Cardiovascular examination",
+   "reported": "Normal",
+   "kind": "qualitative_only",
+   "phase": "presentation",
+   "quote": "Cardiovascular examination was normal",
+   "quote_verified": true
+  },
+  {
+   "category": "physical_exam",
+   "what": "Calf examination / peripheral oedema",
+   "reported": "Calves soft and non-tender, no subcutaneous oedema",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "calves were soft",
+   "quote_verified": true
+  }
+ ],
+ "contradictions": [],
+ "coverage_note": "The list covers nearly all reported tests and findings, but it omits the normal cardiovascular examination and the calf/peripheral oedema examination, and I found no contradictions."
+}

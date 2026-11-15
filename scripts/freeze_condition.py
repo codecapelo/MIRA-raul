@@ -12,7 +12,9 @@ from pathlib import Path
 
 BASE=Path(__file__).resolve().parents[1]
 CONDITIONS={'v5':{'runner':'scripts/run_v5.py','files':['scripts/run_v5.py','config/v5.json','config/judge_overrides_v3.json'],'globs':['src/mira_runner/*.py'],
-                  'settings':['DOCTOR','PATIENT','ALLOWED','CLINICAL','EXTRAS','ROLE_POLICY','CAP']}}
+                  'settings':['DOCTOR','PATIENT','ALLOWED','CLINICAL','EXTRAS','ROLE_POLICY','CAP']},
+            'v6':{'runner':'scripts/run_v6.py','files':['scripts/run_v6.py','scripts/run_v6_doctor.py','scripts/build_v6_cases.py','scripts/pdf_audit.py','scripts/pdf_licenses.py','config/v5.json','config/judge_overrides_v3.json'],
+                  'globs':['src/mira_runner/*.py','src/mira_v6/*.py'],'settings':['DOCTORS','REVIEWERS','ARM','CAP']}}
 
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 

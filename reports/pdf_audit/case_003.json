@@ -1,0 +1,229 @@
+{
+ "case_id": "case_003",
+ "pdf": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_003/source.pdf",
+ "model_observed": [
+  "claude-sonnet-5-5"
+ ],
+ "article_words": 5864,
+ "extracted_observations": 15,
+ "missing": [
+  {
+   "category": "imaging",
+   "what": "Abdominal ultrasound",
+   "reported": "Small volume of free fluid in the pelvic cavity (Koller pouch), no further abnormalities",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "Abdominal ultrasound confirmed a small volume of free fluid",
+   "quote_verified": true
+  },
+  {
+   "category": "imaging",
+   "what": "Supine chest radiograph",
+   "reported": "Enlarged cardiac silhouette, left lower lobe consolidation with positive bronchopneumogram consistent with pneumonia, right-sided pleural effusion",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "Supine chest radiography demonstrated an enlarged cardiac",
+   "quote_verified": true
+  },
+  {
+   "category": "echocardiography",
+   "what": "Transthoracic echocardiography",
+   "reported": "Volume-depleted state with kissing ventricles and a collapsible inferior vena cava",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "state with kissing ventricles and a collapsible inferior vena cava,",
+   "quote_verified": true
+  },
+  {
+   "category": "monitoring",
+   "what": "Continuous ICU physiological monitoring (5-lead ECG, invasive/non-invasive BP, respiratory rate, temperature)",
+   "reported": "Done throughout ICU stay; summarised in figures 2 and 3",
+   "kind": "mention_only",
+   "phase": "later",
+   "quote": "Continuous physiological monitoring was maintained",
+   "quote_verified": true
+  },
+  {
+   "category": "endoscopy",
+   "what": "Pouchoscopy",
+   "reported": "Mucosal swelling at the stoma site (weeks before admission)",
+   "kind": "result",
+   "phase": "unclear",
+   "quote": "A pouchoscopy revealed mucosal swelling at the",
+   "quote_verified": true
+  },
+  {
+   "category": "laboratory",
+   "what": "Blood gas analysis (pH, pCO2, pO2, HCO3, BE, sO2)",
+   "reported": "Serial values Day 1 post-op to Day 6, e.g. post-op pH 7.42 (art), pCO2 30, pO2 100, HCO3 21.1, BE -4.0, sO2 98.5%",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "Blood gas analysis",
+   "quote_verified": true
+  },
+  {
+   "category": "laboratory",
+   "what": "Interleukin-6",
+   "reported": "117 pg/mL on Day 3 (normal <7)",
+   "kind": "result",
+   "phase": "later",
+   "quote": "117",
+   "quote_verified": false
+  },
+  {
+   "category": "laboratory",
+   "what": "D-dimer",
+   "reported": "Normal",
+   "kind": "qualitative_only",
+   "phase": "presentation",
+   "quote": "chest CT and normal D",
+   "quote_verified": true
+  },
+  {
+   "category": "laboratory",
+   "what": "Serum beta-D-glucan",
+   "reported": "Measured on Days 2 and 6; borderline or non-diagnostic ranges (Table 3 lists positive on Day 3)",
+   "kind": "qualitative_only",
+   "phase": "later",
+   "quote": "levels measured on Days 2 and 6 were within",
+   "quote_verified": true
+  },
+  {
+   "category": "laboratory",
+   "what": "Prothrombin time",
+   "reported": "PT decreased to 30% on Day 3",
+   "kind": "result",
+   "phase": "later",
+   "quote": "Inflammatory markers ↑, PT ↓ to",
+   "quote_verified": true
+  },
+  {
+   "category": "imaging",
+   "what": "Lung ultrasound (Day 3)",
+   "reported": "Bilateral diaphragmatic elevation, basal atelectasis, small pleural effusion",
+   "kind": "result",
+   "phase": "later",
+   "quote": "Lung US: bilateral diaphragmatic",
+   "quote_verified": true
+  },
+  {
+   "category": "imaging",
+   "what": "Chest radiograph (Day 4)",
+   "reported": "Bilateral diaphragmatic elevation, pleural effusions",
+   "kind": "result",
+   "phase": "later",
+   "quote": "CXR: bilateral diaphragmatic",
+   "quote_verified": true
+  },
+  {
+   "category": "microbiology",
+   "what": "Conduit urine culture (Day 2)",
+   "reported": "Negative for bacterial growth",
+   "kind": "result",
+   "phase": "later",
+   "quote": "Cultures were negative for bacterial growth.",
+   "quote_verified": true
+  },
+  {
+   "category": "microbiology",
+   "what": "Catheterised urine culture (Day 7)",
+   "reported": "No microbial growth",
+   "kind": "result",
+   "phase": "later",
+   "quote": "No microbial growth was observed.",
+   "quote_verified": true
+  },
+  {
+   "category": "microbiology",
+   "what": "Drain fluid culture, Day 5 sample",
+   "reported": "No microbial growth",
+   "kind": "result",
+   "phase": "later",
+   "quote": "Drain cultures remained",
+   "quote_verified": true
+  },
+  {
+   "category": "microbiology",
+   "what": "Antimicrobial susceptibility testing of Klebsiella oxytoca and Pseudomonas aeruginosa",
+   "reported": "Klebsiella susceptible to most antibiotics except ampicillin; Pseudomonas susceptible to meropenem, tobramycin, amikacin, resistant to piperacillin/tazobactam, ceftazidime, cefepime",
+   "kind": "result",
+   "phase": "later",
+   "quote": "showing susceptibility to most antibiotics except",
+   "quote_verified": true
+  },
+  {
+   "category": "microbiology",
+   "what": "Antimicrobial susceptibility of vancomycin-resistant Enterococcus faecium",
+   "reported": "Resistant to ampicillin, ampicillin/sulbactam, imipenem, vancomycin, levofloxacin; susceptible to teicoplanin, linezolid, tigecycline",
+   "kind": "result",
+   "phase": "later",
+   "quote": "and levofloxacin, but susceptible to teicoplanin, linezolid",
+   "quote_verified": true
+  },
+  {
+   "category": "physical_exam",
+   "what": "Vital signs Day 1 ICU",
+   "reported": "HR up to 150 bpm, hypotension",
+   "kind": "result",
+   "phase": "later",
+   "quote": "HR ↑150 bpm, hypotension.",
+   "quote_verified": true
+  },
+  {
+   "category": "physical_exam",
+   "what": "Abdominal exam Day 2",
+   "reported": "Soft, tender, no peritonitis",
+   "kind": "result",
+   "phase": "later",
+   "quote": "Abdominal exam soft, tender, no",
+   "quote_verified": true
+  },
+  {
+   "category": "laboratory",
+   "what": "Lactate Day 2",
+   "reported": "3.2 mmol/L",
+   "kind": "result",
+   "phase": "later",
+   "quote": "lactate 3.2 mmol/L.",
+   "quote_verified": true
+  },
+  {
+   "category": "physical_exam",
+   "what": "Wound drainage Day 5",
+   "reported": "Purulent wound drainage collected",
+   "kind": "result",
+   "phase": "later",
+   "quote": "Purulent wound drainage collected.",
+   "quote_verified": true
+  },
+  {
+   "category": "physical_exam",
+   "what": "Vital signs Day 6",
+   "reported": "BP 110/70 mm Hg, HR 100 bpm",
+   "kind": "result",
+   "phase": "later",
+   "quote": "110/70 mm Hg, HR 100 bpm.",
+   "quote_verified": true
+  },
+  {
+   "category": "laboratory",
+   "what": "Follow-up laboratory parameters at 4 weeks (white cell count, CRP)",
+   "reported": "Normalised",
+   "kind": "qualitative_only",
+   "phase": "later",
+   "quote": "Laboratory parameters, including",
+   "quote_verified": true
+  },
+  {
+   "category": "physical_exam",
+   "what": "Surgical wound inspection",
+   "reported": "Wound healed per primam intentionem",
+   "kind": "qualitative_only",
+   "phase": "later",
+   "quote": "The surgical wound healed per",
+   "quote_verified": true
+  }
+ ],
+ "contradictions": [],
+ "coverage_note": "The extracted list covers the main CT, cultures, cfDNA and admission labs but omits ultrasound, chest radiograph, echocardiography, blood gas, IL-6, D-dimer, beta-D-glucan, negative urine/drain cultures, susceptibility testing and several follow-up findings, with no clear contradictions found."
+}

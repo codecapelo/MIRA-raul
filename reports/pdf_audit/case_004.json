@@ -1,0 +1,67 @@
+{
+ "case_id": "case_004",
+ "pdf": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_004/source.pdf",
+ "model_observed": [
+  "claude-sonnet-5-5"
+ ],
+ "article_words": 2172,
+ "extracted_observations": 8,
+ "missing": [
+  {
+   "category": "imaging",
+   "what": "Initial chest X-ray",
+   "reported": "Large right pleural effusion with meniscus sign at first presentation (the extracted chest radiograph entry covers only the ED return).",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "large right pleural effusion with meniscus sign (yellow arrow)",
+   "quote_verified": true
+  },
+  {
+   "category": "procedure",
+   "what": "Initial diagnostic thoracentesis",
+   "reported": "Yielded 1.5 L of milky fluid. The extracted entry covers only the repeat thoracentesis.",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "which yielded 1.5 L of milky fluid (Figure 1)",
+   "quote_verified": true
+  },
+  {
+   "category": "lab",
+   "what": "Pleural fluid total white cell count",
+   "reported": "1068/μL (reference <1000/μL)",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "1068/μL",
+   "quote_verified": false
+  },
+  {
+   "category": "imaging",
+   "what": "Follow-up PET scan",
+   "reported": "Decreased size of subcarinal and right hilar nodes, improved right middle lobe collapse and bronchial narrowing, consistent with partial response to therapy.",
+   "kind": "result",
+   "phase": "later",
+   "quote": "Positron Emission Tomography images showing a decrease in size of subcarinal (yellow arrows) and right hilar (blue arrow) nodes",
+   "quote_verified": true
+  },
+  {
+   "category": "lab",
+   "what": "Peripheral blood count at terminal febrile illness",
+   "reported": "White cell count 28.8 K/cumm with 87% neutrophils (neutrophilic leukocytosis); platelets 1020 K/cumm (thrombocytosis).",
+   "kind": "result",
+   "phase": "later",
+   "quote": "neutrophilic leukocytosis (white cell count: 28.8 K/cumm with 87% neutrophils) and thrombocytosis (1020 K/cumm)",
+   "quote_verified": false
+  },
+  {
+   "category": "imaging",
+   "what": "Imaging during final febrile illness",
+   "reported": "Bilateral lower lobe infiltrates suggestive of pneumonia.",
+   "kind": "result",
+   "phase": "later",
+   "quote": "bilateral lower lobe infiltrates suggestive of pneumo",
+   "quote_verified": true
+  }
+ ],
+ "contradictions": [],
+ "coverage_note": "The extracted list covers the initial pleural fluid panel, CT, EBUS biopsy, repeat thoracentesis and blood cultures, but it omits the initial chest X-ray and thoracentesis, the pleural fluid white cell count, and the follow-up PET, blood count and pneumonia imaging; I found no contradictions."
+}
