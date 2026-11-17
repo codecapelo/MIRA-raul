@@ -1,0 +1,28 @@
+{
+ "baseline": {
+  "total_credits": "25",
+  "total_usage": "22.326466809"
+ },
+ "ledger_usd": "0.582124575",
+ "snapshots": [
+  {
+   "usage": "22.943905384",
+   "credits": "25",
+   "delta": "0.617438575",
+   "minus_ledger": "0.035314000"
+  },
+  {
+   "usage": "22.962247384",
+   "credits": "25",
+   "delta": "0.635780575",
+   "minus_ledger": "0.053656000"
+  },
+  {
+   "usage": "22.962247384",
+   "credits": "25",
+   "delta": "0.635780575",
+   "minus_ledger": "0.053656000"
+  }
+ ],
+ "note": "delta minus ledger = Likert judge (Gemini 3.1 Pro via OpenRouter, outside the ledger), by difference"
+}
