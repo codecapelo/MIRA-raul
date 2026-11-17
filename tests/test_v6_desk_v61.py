@@ -65,3 +65,20 @@ class FinalRuleTests(unittest.TestCase):
         finally:working_v4.load_offline_review=orig
 
 if __name__=='__main__':unittest.main()
+
+class V62Tests(unittest.TestCase):
+    def mk(self):
+        from mira_v6 import desk_v62
+        inner=RecordedExamTools(TemporalCaseTools(OBS,lambda q,e:[],strict=None))
+        ev=[];t=desk_v62.V62Tools(inner,min_exchanges=1,delay=False,emit=ev.append);t.exchanges=1;t.exam_done=True;t.require_justification=False;t.ev=ev;return t
+    def test_more_specific_request_gets_the_released_record_once_with_a_note(self):
+        t=self.mk();t.execute('admission',{'diagnosis':'x','reasoning':'y'})
+        out=t.execute('request_other_investigation',{'test_names':['Left atrial electrophysiologic study with stimulation and voltage mapping']})
+        r=json.loads(out.split('\n')[0]);self.assertEqual(r['findings'][0]['name'],'Electrophysiology study');self.assertIn('delivery_note',r['findings'][0]);self.assertNotIn('not_available_in_this_case',r)
+        self.assertTrue([e for e in t.ev if e['event']=='v62_specific_request_delivered'])
+        again=t.execute('request_other_investigation',{'test_names':['Electrophysiology study with pacing']});self.assertNotIn('"findings"',again.split('\n')[0])
+    def test_not_before_admission_and_not_for_vaguer_requests_or_other_tools(self):
+        t=self.mk();self.assertNotIn('His level',t.execute('request_other_investigation',{'test_names':['electrophysiologic study with mapping']}))
+        t.execute('admission',{'diagnosis':'x','reasoning':'y'})
+        self.assertNotIn('His level',t.execute('request_blood_test',{'test_names':['electrophysiologic study with mapping']}))
+        self.assertNotIn('"findings"',t.execute('request_other_investigation',{'test_names':['cardiac study']}).split('\n')[0])
