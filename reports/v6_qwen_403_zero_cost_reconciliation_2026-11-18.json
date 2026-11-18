@@ -1,0 +1,29 @@
+{
+ "request_id": "24f892b3-bc77-4c0c-8024-6052fb69c5b5",
+ "role": "doctor",
+ "model": "z-ai/glm-5.3-flash",
+ "http_status": 403,
+ "error": "Key limit exceeded (total limit), 25.00 of 25.00 used",
+ "key_limit_raised_to_usd": 30,
+ "snapshots": [
+  {
+   "total_credits": 30,
+   "total_usage": 25.001052559,
+   "at": "2026-11-18T13:27:45"
+  },
+  {
+   "total_credits": 30,
+   "total_usage": 25.001052559,
+   "at": "2026-11-18T13:28:05"
+  },
+  {
+   "total_credits": 30,
+   "total_usage": 25.001052559,
+   "at": "2026-11-18T13:28:25"
+  }
+ ],
+ "ledger_settled_sum_usd": "2.674585750",
+ "attributed_cost_usd": "0",
+ "basis": "account delta equals ledger actual costs; no usage.cost received",
+ "backup": "budget_before_403_reconciliation.sqlite"
+}
