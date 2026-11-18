@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-18",
+  "request_id": "7bfd5409-61d4-454f-a513-58b527cad268",
+  "http_status": 429,
+  "role": "judge (case_005, variant glm_sol62_v62fix3iso)",
+  "snapshots": [
+    {
+      "timestamp": 1795022896.280569,
+      "total_credits": "30",
+      "total_usage": "25.195972649"
+    },
+    {
+      "timestamp": 1795022906.471283,
+      "total_credits": "30",
+      "total_usage": "25.195972649"
+    },
+    {
+      "timestamp": 1795022916.660022,
+      "total_credits": "30",
+      "total_usage": "25.195972649"
+    }
+  ],
+  "baseline_usage_usd": "22.31393231",
+  "ledger_known_before_usd": "2.869505840",
+  "difference_usd": "0.012534499",
+  "ledger_total_after_usd": "2.882040339",
+  "call_cost_recorded": "0 (settled, not claimed as confirmed zero cost)",
+  "unattributed_row": "5b8fd9f8-34eb-4e8c-8b32-9e04f98220e8",
+  "log_archive_sha256": "2a5027736f5137c1f17a33882e70b2372774ea50369207453198ee1358025a6b",
+  "backup": "budget_before_429_reconciliation_v63.sqlite",
+  "note": "the trailing request+halt of the case log were removed after archiving the original; the judge call is re-issued once on resume. The attributed difference includes an unexplained 0.002-0.008 gap seen before the pilot."
+}
