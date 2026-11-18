@@ -109,6 +109,10 @@ def main():
             print(json.dumps({'slot':a.slot,'case_id':r['case_id'],'judge_correct':r['judge_correct'],'proposal_correct':r.get('proposal_correct'),'openrouter_usd':r.get('cost_usd'),'patient_api_equiv_usd':v.get('patient_api_equiv_usd'),
                               'turns':r.get('n_turns'),'exchanges':r.get('patient_exchanges'),'remaining_cap_usd':after['remaining_cap_usd']}),flush=True)
 
+def main_with(argv):
+    """Run main() with an explicit argument list (used by scripts/run_v63_reviewers.py)."""
+    sys.argv=[sys.argv[0],*argv];main()
+
 def smoke(v5,Ledger,shared,root,config,key,cap,baseline,model=QWEN):
     """One tiny non-clinical call through the same client, route and parameters: checks the provider, that the thinking text comes back, and the real cost."""
     from mira_runner.client import AuditLog
