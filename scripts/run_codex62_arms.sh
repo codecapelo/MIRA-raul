@@ -3,6 +3,8 @@
 # Usage: scripts/run_codex62_arms.sh            (waits for the Opus arm to finish, runs the preflight, then both arms)
 # Needs OPENROUTER_KEY_FILE (default <repo>/.secrets/openrouter.key of the data worktree) for the doctor, matcher, associador and judge; the reviewers use the ChatGPT subscription.
 set -u
+# Codex CLI 0.170.0 installed in an isolated folder (the global 0.159.1 refuses the 6.2 models); override with CODEX_BIN_DIR.
+export PATH=${CODEX_BIN_DIR:-$HOME/.local/share/codex-0.170.0/node_modules/.bin}:$PATH
 REPO=/Users/test/MIRA-RAUL/.claude/worktrees/project-analysis-progress-7ab6ed
 BASE=/Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596
 CAP=${CAP:-2.50}

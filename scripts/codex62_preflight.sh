@@ -1,12 +1,19 @@
 #!/bin/zsh
-# Checks that the Codex CLI on PATH accepts gpt-6.2-sol and gpt-6.2-astra with the logged-in ChatGPT account (one tiny non-clinical call each, subscription, no OpenRouter cost).
+# Checks that the Codex CLI used by the pipeline accepts gpt-6.2-sol and gpt-6.2-astra with the logged-in ChatGPT account: one tiny non-clinical call each through the pipeline's own transport (subscription, no OpenRouter cost).
 set -u
-echo "codex: $(command -v codex) / $(codex --version)"; codex login status 2>&1 | head -1
-ok=1
-for m in gpt-6.2-sol gpt-6.2-astra; do
-  out=$(cd /tmp && codex exec -m $m --skip-git-repo-check -c model_reasoning_effort=high "Say only: 391" 2>&1)
-  if echo "$out" | grep -q "model_not_found\|not supported"; then echo "FAIL $m: not accepted by this Codex CLI/account"; ok=0
-  elif echo "$out" | grep -q "391"; then echo "OK   $m"
-  else echo "UNKNOWN $m: $(echo "$out" | tail -2 | tr '\n' ' ')"; ok=0; fi
-done
-[ $ok = 1 ] && echo PREFLIGHT_OK || { echo PREFLIGHT_FAILED; exit 1; }
+# Codex CLI 0.170.0 installed in an isolated folder (the global 0.159.1 refuses the 6.2 models); override with CODEX_BIN_DIR.
+export PATH=${CODEX_BIN_DIR:-$HOME/.local/share/codex-0.170.0/node_modules/.bin}:$PATH
+cd "$(dirname "$0")/.."
+echo "codex: $(command -v codex) / $(codex --version)"
+PYTHONPATH=src python3 - <<'PY'
+import sys
+from mira_runner import cli_client as c
+c.CODEX_MODELS.update({'gpt-6.2-sol','gpt-6.2-astra'});ok=True
+for m in ('gpt-6.2-sol','gpt-6.2-astra'):
+    try:
+        r,lat=c.run_codex(m,'Answer briefly.','Which is larger, 17*23 or 400? Give the product.',False,'high',transport_options={'diagnostics':True})
+        print('OK  ',m,r['cli_version'],f'{lat:.1f}s')
+    except Exception as e:
+        ok=False;print('FAIL',m,type(e).__name__,str(e)[:160])
+print('PREFLIGHT_OK' if ok else 'PREFLIGHT_FAILED');sys.exit(0 if ok else 1)
+PY

@@ -2,19 +2,17 @@
 
 Estado: o braço do Opus 5.5 (variante `glm_opus_v62`) roda nos 8 casos com o balcão v6.2; os dois braços abaixo estão prontos e só falta o Codex CLI aceitar os modelos 6.2.
 
-## Por que ainda não rodaram
-O Codex CLI 0.159.1 (npm global) recebe `model_not_found` / "not supported when using Codex with a ChatGPT account" para `gpt-6.2-sol` e `gpt-6.2-astra`. O catálogo do app Codex (cliente 0.169) já lista os dois, e há `@openai/codex@0.170.0` no npm. Hipótese não testada: o cliente antigo é que não é aceito. Nada foi baixado ou atualizado por mim.
+## O que mudou
+O Codex CLI global 0.159.1 recebia `model_not_found` para `gpt-6.2-sol` e `gpt-6.2-astra`. Com autorização do usuário, instalei `@openai/codex@0.170.0` (pacote oficial do npm, cerca de 370 MB com o binário nativo) numa pasta isolada, `~/.local/share/codex-0.170.0`, sem tocar no Codex global. Com ele, as duas chamadas mínimas passam pelo transporte da pipeline (`scripts/codex62_preflight.sh` → `PREFLIGHT_OK`). Os scripts põem essa pasta na frente do `PATH` (`CODEX_BIN_DIR` troca). Cada `cli_call` registra `cli_version`, que passa a ser `codex-cli 0.170.0` nesses braços; o Codex dos braços antigos não roda mais nada aqui.
 
-## O que fazer (você)
-1. Atualize o Codex que está no `PATH` (por exemplo `npm i -g @openai/codex@latest`, ou o instalador do app) e confira com `codex --version`.
-2. Teste os dois modelos:
+## Como rodar
 ```bash
 scripts/codex62_preflight.sh
 ```
-3. Rode os dois braços em sequência (espera o Opus terminar, roda o teste de novo e depois `sol62` e `astra62`):
 ```bash
 nohup scripts/run_codex62_arms.sh > /Users/test/MIRA-RAUL/.claude/worktrees/complete-remaining-100-cases-356596/runs/v5/v6_qwen/v62_codex62.log 2>&1 &
 ```
+O segundo espera o Opus terminar, repete o teste e roda `sol62` e depois `astra62`.
 
 ## Condição dos braços
 - Médico GLM 5.3 Flash; balcão v6.2 (`--desk v62`); paciente Sonnet 5.5 pela assinatura; associador e juiz pelo OpenRouter, como nos outros braços.
