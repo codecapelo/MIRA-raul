@@ -48,9 +48,18 @@ def patch_client(v5):
         return {**msg,'content':unwrap_content(msg.get('content'))} if model in REVIEW_MODELS and role.startswith('fast_review') else msg
     v5.V5Client.call=call
 
+def allow_codex_effort(effort):
+    """fast_v4 refuses any Codex effort except 'medium' (guard written for the frozen v4/v5 condition). For an arm that must run Codex reviewers at another effort, re-compile that one method with the guard literal changed (runtime override; the module file stays untouched).
+    The `reasoning_effort` label inside the fast_review_input event stays 'medium' (static audit text); the effort actually sent is in each cli_call event (`effort`)."""
+    import inspect,textwrap
+    from mira_runner import cli_client,fast_v4
+    src=textwrap.dedent(inspect.getsource(fast_v4.FastReviewCascade.__call__));assert "!= 'medium'" in src
+    ns={};exec(compile(src.replace("!= 'medium'","!= "+repr(effort)),'fast_v4_call_effort','exec'),fast_v4.__dict__,ns)
+    fast_v4.FastReviewCascade.__call__=ns['__call__'];cli_client.CODEX_EFFORT=effort
+
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--base',type=Path,required=True);ap.add_argument('--slot',required=True,choices=sorted(SLOTS));ap.add_argument('--doctor',default='glm',choices=sorted(r6.DOCTORS));ap.add_argument('--cases',nargs='*',default=[]);ap.add_argument('--smoke',action='store_true');ap.add_argument('--desk',choices=['v6','v61','v62'],default='v6',help='v62 = v61 + a reviewer request that only adds detail to a released followup record gets that record (src/mira_v6/desk_v62.py); v61 = truthful later-stage notice + followup results released to reviewers after admission + final-stage rule (src/mira_v6/desk_v61.py)')
-    ap.add_argument('--suffix',default='q1');ap.add_argument('--cap',type=Decimal,default=DEFAULT_CAP);ap.add_argument('--cpt-dir',type=Path,default=HERE.parent/'data/cpt');ap.add_argument('--execute',action='store_true');ap.add_argument('--allow-commit-transition',action='store_true');a=ap.parse_args()
+    ap.add_argument('--suffix',default='q1');ap.add_argument('--cap',type=Decimal,default=DEFAULT_CAP);ap.add_argument('--cpt-dir',type=Path,default=HERE.parent/'data/cpt');ap.add_argument('--codex-effort',choices=['medium','high'],default='medium',help='reasoning effort of the Codex reviewers (Sol/Astra); default medium as in the frozen v5');ap.add_argument('--execute',action='store_true');ap.add_argument('--allow-commit-transition',action='store_true');a=ap.parse_args()
     if not a.smoke and not a.cases:raise SystemExit('--cases or --smoke required')
     variant=f'{a.doctor}_{a.slot}_{a.suffix}'
     if a.desk!='v6' and a.desk not in a.suffix:raise SystemExit(f'--desk {a.desk} needs a suffix containing {a.desk} (own variant name, own traces)')
@@ -72,6 +81,7 @@ def main():
         from mira_v6 import desk_v61;desk_v61.install();desk_v61.install_final_rule()
     if a.desk=='v62':
         from mira_v6 import desk_v62;desk_v62.install()
+    if a.codex_effort!='medium':allow_codex_effort(a.codex_effort)
     install_reviewers(rev['first'],rev['final']);patch_client(v5);desk.CONTEXT['price_table']=PriceTable.from_dir(a.cpt_dir)
     config=json.loads((base/'config/v5.json').read_text());config['budget_usd']=str(a.cap);config['models'][QWEN]=dict(ROUTE);config['models'][KIMI]=dict(ROUTE_KIMI)
     if doctor in d6.ROUTES:config['models'][doctor]=d6.route_config(doctor)
