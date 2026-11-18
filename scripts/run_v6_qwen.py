@@ -4,7 +4,7 @@
   python3 scripts/run_v6_qwen.py --base <...> --slot first --cases case_011 --execute
 
 Slots: `first` = Qwen4 Max (OpenRouter, Alibaba, reasoning effort high, thinking kept in the response event) in the place of Sonnet 5.5, Opus 5.5 high by subscription as the final reviewer;
-`final` = Sonnet 5.5 first, Qwen4 Max last; `both` = Qwen4 Max in both slots (the only reviewer, no Claude reviewer); `opus` = Opus 5.5 high (subscription) in both slots (the only reviewer); `kimi` = Kimi K3.1 Pro (OpenRouter, Moonshot AI first-party mxfp4, reasoning high) in both slots. Everything else is v6 unchanged (patient Sonnet 5.5, associador, strict matcher, judge, prompts, protocol, desk). The Fable 5.2 slot of v6 is Opus 5.5 here (user decision), so this arm differs from v6 in the reviewer models only.
+`final` = Sonnet 5.5 first, Qwen4 Max last; `both` = Qwen4 Max in both slots (the only reviewer, no Claude reviewer); `opus` = Opus 5.5 high (subscription) in both slots (the only reviewer); `kimi` = Kimi K3.1 Pro (OpenRouter, Moonshot AI first-party mxfp4, reasoning high) in both slots; `solastra` = Sol 6.1 first and Astra last through the Codex subscription (gpt-6.2-astra is not accepted with a ChatGPT account, so gpt-6-astra is used). Everything else is v6 unchanged (patient Sonnet 5.5, associador, strict matcher, judge, prompts, protocol, desk). The Fable 5.2 slot of v6 is Opus 5.5 here (user decision), so this arm differs from v6 in the reviewer models only.
 Own ledger and cap (<base>/runs/v5/v6_qwen/budget.sqlite, default cap USD 0.60, raised only by the user). One execution per case; terminal encounters are skipped; no automatic retries. Traces under runs/v5 (Git-ignored); closed-case content never reaches the terminal.
 Sampling for Qwen4 Max is the provider default.
 """
@@ -24,13 +24,14 @@ ROUTE_KIMI={'provider':'moonshotai/mxfp4','provider_name':'Moonshot AI','pricing
             'supported_parameters':['reasoning','include_reasoning','temperature','seed','tools','tool_choice','max_tokens','top_p','response_format','stream'],
             'note':'Moonshot AI first-party endpoint (tag moonshotai/mxfp4, mxfp4), price checked on the OpenRouter endpoint listing 17-11-2026; no fallback'}
 REVIEW_MODELS={QWEN,KIMI}
-SLOTS={'first':{'first':QWEN,'final':'claude-opus-5-5'},'final':{'first':'claude-sonnet-5-5','final':QWEN},'both':{'first':QWEN,'final':QWEN},'opus':{'first':'claude-opus-5-5','final':'claude-opus-5-5'},'kimi':{'first':KIMI,'final':KIMI}}
+SLOTS={'first':{'first':QWEN,'final':'claude-opus-5-5'},'final':{'first':'claude-sonnet-5-5','final':QWEN},'both':{'first':QWEN,'final':QWEN},'opus':{'first':'claude-opus-5-5','final':'claude-opus-5-5'},'kimi':{'first':KIMI,'final':KIMI},'solastra':{'first':'gpt-6.1-sol','final':'gpt-6-astra'}}
 REASONING={'effort':'high'};MAX_TOKENS=16000;DEFAULT_CAP=Decimal('0.60')
 
 def install_reviewers(first,final):
     from mira_runner import cli_client,fast_v4
     for m in (first,final):
         if m.startswith('claude-'):cli_client.CLI_MODELS.setdefault(m,m.removeprefix('claude-').replace('.','-'));cli_client.SUBSCRIPTION_MODELS.add(m)
+        if m in cli_client.CODEX_MODELS:cli_client.SUBSCRIPTION_MODELS.add(m)
     fast_v4.SOL=first;fast_v4.ASTRA=final
 
 def unwrap_content(content):
