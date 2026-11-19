@@ -69,7 +69,7 @@ def arm_paths(base,arm,reps):
     return [(c,r,parent/variant_name(arm,r)/'run1/logs/raw'/DOCTOR_DIR/f'{c}.jsonl') for r in reps for c in CASES]
 
 def main(argv=None):
-    ap=argparse.ArgumentParser(description=__doc__.split('\n')[0]);ap.add_argument('--base',type=Path,required=True);ap.add_argument('--reps',type=int,nargs='*',default=[1]);ap.add_argument('--arms',nargs='*',default=['opus','sol62','astra62','kimi'])
+    ap=argparse.ArgumentParser(description=__doc__.split('\n')[0]);ap.add_argument('--base',type=Path,required=True);ap.add_argument('--reps',type=int,nargs='*',default=[1]);ap.add_argument('--arms',nargs='*',default=['opus','sonnet','sol62','astra62','kimi'])
     ap.add_argument('--likert',type=Path);ap.add_argument('--cases',nargs='*');ap.add_argument('--json',type=Path);a=ap.parse_args(argv)
     likert=json.loads(a.likert.read_text()) if a.likert and a.likert.exists() else {}
     out={};rows_by_arm={}
