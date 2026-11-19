@@ -6,7 +6,7 @@ Everything is measured from the first `fast_review_input` of each encounter onwa
 Arms: opus = the source encounters of the frozen doctor phases (the fix3 runs themselves, scripts/run_v63_reviewers.py SOURCES); sol62, astra62, kimi = variants glm_<arm>_v62fix3iso[rep].
 Cost columns:
 - new OpenRouter spend = `usage.cost` of the `response` events after the cut (associator, judge and, for Kimi, the reviewer), the real billed amount;
-- reviewer API-equivalent = what the reviewer calls would have cost at list price: Claude = value reported by the CLI; Codex (gpt-6.2) = tokens of the `cli_call` x the OpenRouter list price of 18-11-2026 (an ESTIMATE: the Codex CLI reports no cache split, so every input token is priced uncached, an upper bound);
+- reviewer API-equivalent = what the reviewer calls would have cost at list price: Claude = value reported by the CLI; Codex (gpt-6.2) = tokens of the `cli_call` x the OpenRouter list price of 18-11-2026, with the cached input tokens the CLI reports (21% of Sol's and 30% of Astra's input) at the cache-read price (an ESTIMATE: the CLI reports the cache only in part, so a real API call could cache more and cost less);
   Kimi = billed `usage.cost`;
 - patient API-equivalent = Claude CLI value of the patient calls after the cut (same patient model in all arms; differs only through how much the reviewer asks).
 Closed cases (011, 017, 018) enter as numbers only: no diagnosis or case text is printed or written.
@@ -18,7 +18,7 @@ from run_v63_reviewers import SOURCES,variant_name
 from mira_v6.frozen_doctor import DOCTOR_DIR
 
 # OpenRouter list prices per token (input, output), 18-11-2026; used only for the Codex API-equivalent estimate.
-CODEX_PRICE={'gpt-6.2-sol':(2e-6,10e-6),'gpt-6.2-astra':(8e-6,40e-6),'gpt-6.1-sol':(2e-6,10e-6),'gpt-6-astra':(10e-6,50e-6)}
+CODEX_PRICE={'gpt-6.2-sol':(2e-6,10e-6,0.1e-6),'gpt-6.2-astra':(8e-6,40e-6,0.4e-6),'gpt-6.1-sol':(2e-6,10e-6,0.1e-6),'gpt-6-astra':(10e-6,50e-6,1e-6)}  # (input, output, cache read) per token
 CASES=['case_001','case_002','case_003','case_004','case_005','case_011','case_017','case_018']
 
 def wilson(k,n,z=1.96):
@@ -54,7 +54,7 @@ def encounter(path):
                 model=e.get('model') or '';row['rev_n']+=1;row['rev_in']+=u.get('prompt_tokens') or 0;row['rev_cached']+=u.get('cache_input_tokens') or 0;row['rev_out']+=u.get('completion_tokens') or 0
                 if u.get('api_equivalent_cost_usd') is not None:row['rev_api_eq']+=float(u['api_equivalent_cost_usd'])
                 elif model in CODEX_PRICE:
-                    pin,pout=CODEX_PRICE[model];row['rev_api_eq']+=(u.get('prompt_tokens') or 0)*pin+(u.get('completion_tokens') or 0)*pout;row['codex_estimated']=True
+                    pin,pout,pcache=CODEX_PRICE[model];ch=u.get('cache_input_tokens') or 0;row['rev_api_eq']+=((u.get('prompt_tokens') or 0)-ch)*pin+ch*pcache+(u.get('completion_tokens') or 0)*pout;row['codex_estimated']=True
             elif rl.startswith('patient'):
                 row['patient_calls']+=1;row['patient_api_eq']+=float(u.get('api_equivalent_cost_usd') or 0)
         elif k=='response':
