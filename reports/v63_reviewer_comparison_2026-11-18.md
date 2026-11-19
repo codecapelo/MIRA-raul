@@ -27,3 +27,13 @@ Gasto adicional desta fase no ledger próprio US$ 2,276 (de 2,823 para 5,099; te
 
 ## Limites
 Casos conhecidos, uma execução, sem testes de significância; a fase do médico é congelada mas o seguimento (pedidos ao paciente) depende do revisor; juiz LLM mede o texto diagnóstico; rubrica em rascunho; revisão médica pendente; contaminação do Qwen e de outros nos casos fechados não foi testada.
+
+## Repetição do Sonnet 5.5 nos casos 003 e 018 (19-11-2026)
+A pedido, o Sonnet foi repetido do zero nos dois casos em que a primeira execução não foi aceita (003 rejeitado; 018 falha de validação), com a mesma fase do médico congelada e a mesma condição (`scripts/run_v63_sonnet.py --rep 2`, variante `glm_sonnet_v62fix3iso2`; a primeira execução continua registrada e é a que entra na tabela acima).
+
+| Caso | Execução 1 | Execução 2 |
+|---|---|---|
+| 003 (público) | juiz rejeitou; notas 4 / 4; texto final sem a sepse intra-abdominal secundária; fase 99 s | **juiz aceitou**; notas 5 / 4; texto final cita "peritonite urinária"; fase 80 s |
+| 018 (fechado, só números) | falha de validação do estágio final (item vazio em `next_steps`); fase 104 s sem desfecho | **terminal e aceito**; notas 5 / 5; fase 104 s |
+
+Os dois resultados **não se mantiveram**: com a mesma conversa do médico, uma segunda execução do mesmo revisor deu o desfecho oposto nos dois casos. Isso mostra a variação do próprio revisor (o texto final do 003 depende de uma frase) e de formato (a falha do 018 foi pontual). Com as duas execuções, o Sonnet teria 8 de 8 aceitos na melhor combinação e 6 de 8 na primeira; como a regra declarada conta uma execução por caso, a tabela principal não muda. Equivalente em API por encontro: 003 US$ 0,16 e 0,10; 018 US$ 0,23 (falhou) e 0,18. Gasto novo no OpenRouter das duas execuções US$ 0,030 mais US$ 0,016 de juiz das notas por diferença estável da conta (cerca de US$ 0,005 sem origem conhecida); ledger = conta US$ 5,143, teto 5,50 (`reports/v6_qwen_cap_raise_550usd.json`). Vale repetir os outros revisores com a mesma regra antes de concluir qualquer ordem entre os que empatam em 8/8.
