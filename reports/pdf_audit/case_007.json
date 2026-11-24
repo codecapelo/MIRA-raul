@@ -1,0 +1,85 @@
+{
+ "case_id": "case_007",
+ "pdf": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_007/source.pdf",
+ "model_observed": [
+  "claude-sonnet-5-5"
+ ],
+ "article_words": 3626,
+ "extracted_observations": 7,
+ "missing": [
+  {
+   "category": "lab",
+   "what": "Serum ferritin",
+   "reported": "2441 ng/ml (markedly elevated; normal 15-300)",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "markedly elevated ferritin (2441 ng/ml)",
+   "quote_verified": true
+  },
+  {
+   "category": "lab",
+   "what": "INR (coagulation)",
+   "reported": "INR 1.4 on day 1 (normal 0.8-1.2), 1.3 day 2, 1.1 day 4 and at 2 weeks",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "INR – international normalized ratio",
+   "quote_verified": true
+  },
+  {
+   "category": "lab",
+   "what": "Serum immunoglobulins (IgA, IgG, IgM)",
+   "reported": "Day 1: IgA 6.5 (high), IgG 17.8 g/l (high), IgM 0.6; day 4: IgA 6.3, IgG 18.4, IgM 0.6",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "Ig – immunoglobulin",
+   "quote_verified": true
+  },
+  {
+   "category": "lab",
+   "what": "Complement levels C3 and C4",
+   "reported": "C3 1.0 g/l (normal 0.9-1.80); C4 0.12 g/l (low; normal 0.14-0.54)",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "C3 1.0",
+   "quote_verified": false
+  },
+  {
+   "category": "lab",
+   "what": "Direct agglutination at 30°C (cold agglutinin screen)",
+   "reported": "Reactions of no specificity detected",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "of no specificity were detected by direct agglutination at 30°C",
+   "quote_verified": true
+  },
+  {
+   "category": "pathology",
+   "what": "PD-L1 tumor proportion score by immunohistochemistry (tumor molecular analysis)",
+   "reported": "High PD-L1 TPS of 70%",
+   "kind": "result",
+   "phase": "unclear",
+   "quote": "high PD-L1 TPS of 70%",
+   "quote_verified": true
+  },
+  {
+   "category": "lab",
+   "what": "Hemoglobin follow-up trend",
+   "reported": "67 g/l day 2, 86 g/l day 4, 93 g/l day 5, 114 g/l 2 weeks after discharge",
+   "kind": "result",
+   "phase": "later",
+   "quote": "hemoglobin was stable at 86 g/l",
+   "quote_verified": true
+  },
+  {
+   "category": "lab",
+   "what": "Follow-up bilirubin and LDH",
+   "reported": "Bilirubin 54 (day 2), 26 (day 4), 16 (day 5), 9 umol/l at 2 weeks; LDH 1128 (day 5), 860 u/l at 2 weeks",
+   "kind": "result",
+   "phase": "later",
+   "quote": "114 g/l, 9 umol/l, and 860 u/l",
+   "quote_verified": true
+  }
+ ],
+ "contradictions": [],
+ "coverage_note": "The list covers the presentation exam, hemoglobin, hemolysis markers, lactate, blood film, antiglobulin tests and CT, but omits ferritin, INR, immunoglobulins, complements, the 30°C agglutination test, PD-L1 TPS and the follow-up laboratory trends; no contradictions were found."
+}

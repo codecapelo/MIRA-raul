@@ -1,0 +1,40 @@
+{
+ "case_id": "case_010",
+ "pdf": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_010/source.pdf",
+ "model_observed": [
+  "claude-sonnet-5-5"
+ ],
+ "article_words": 2934,
+ "extracted_observations": 8,
+ "missing": [
+  {
+   "category": "laboratory",
+   "what": "Home urine pregnancy test (self-test)",
+   "reported": "Patient self-tested positive for urinary pregnancy on April 6",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "On April 6th, the patient self-tested positive for urinary preg-",
+   "quote_verified": true
+  },
+  {
+   "category": "laboratory",
+   "what": "Follow-up serum HCG",
+   "reported": "Declined to normal range (<5 IU/L) within 1 month of follow-up",
+   "kind": "result",
+   "phase": "later",
+   "quote": "Her serum HCG level declined to normal rang (<5 IU/L)",
+   "quote_verified": true
+  },
+  {
+   "category": "physical examination",
+   "what": "External genitalia examination",
+   "reported": "Normal external female genitalia",
+   "kind": "qualitative_only",
+   "phase": "presentation",
+   "quote": "she had normal external female genitalia and no active vaginal",
+   "quote_verified": true
+  }
+ ],
+ "contradictions": [],
+ "coverage_note": "The extracted list covers the main imaging, admission labs, exam, laparoscopy and pathology, but omits the home urine pregnancy test, the follow-up HCG normalisation and the normal external genitalia finding."
+}

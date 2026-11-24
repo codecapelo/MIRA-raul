@@ -1,0 +1,34 @@
+{
+ "baseline": {
+  "total_credits": "25",
+  "total_usage": "21.322369483"
+ },
+ "snapshots": [
+  {
+   "total_credits": "25",
+   "total_usage": "22.326466809",
+   "delta": "1.004097326"
+  },
+  {
+   "total_credits": "25",
+   "total_usage": "22.326466809",
+   "delta": "1.004097326"
+  },
+  {
+   "total_credits": "25",
+   "total_usage": "22.326466809",
+   "delta": "1.004097326"
+  },
+  {
+   "total_credits": "25",
+   "total_usage": "22.326466809",
+   "delta": "1.004097326"
+  },
+  {
+   "ledger_usd": "0.66947937072",
+   "ledger_calls": 783,
+   "likert_openrouter_usd_by_difference": "0.33461795528"
+  }
+ ],
+ "note": "ledger covers the encounters (doctor, matcher, strict matcher, judge) of the doctor-model smoke test, the plumbing run and the 21-encounter v6 study; the difference is the 1-to-5 judge (Gemini 3.1 Pro through OpenRouter, outside the ledger)"
+}

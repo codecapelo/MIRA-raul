@@ -43,3 +43,6 @@ runs/v5/
 # Material derivado de casos fechados (NEJM) e rascunhos locais
 tmp/
 output/pdf/*Caso_11*.pdf
+
+# Tabelas de preços de procedimentos (CPT, licença AMA): só locais
+data/cpt/

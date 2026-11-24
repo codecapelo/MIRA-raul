@@ -1,0 +1,31 @@
+{
+ "case_id": "case_001",
+ "pdf": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_001/source.pdf",
+ "model_observed": [
+  "claude-sonnet-5-5"
+ ],
+ "article_words": 963,
+ "extracted_observations": 9,
+ "missing": [
+  {
+   "category": "imaging",
+   "what": "Final coronary angiography after covered stent deployment",
+   "reported": "Confirmed complete exclusion of the pseudoaneurysm",
+   "kind": "result",
+   "phase": "later",
+   "quote": "Final angiography (Figure 1L) confirmed complete exclusion",
+   "quote_verified": true
+  },
+  {
+   "category": "laboratory",
+   "what": "Laboratory markers and vital signs after drainage and covered stent implantation",
+   "reported": "Laboratory marker levels and vital signs improved; no values given",
+   "kind": "qualitative_only",
+   "phase": "later",
+   "quote": "his vital signs and laboratory marker levels improved",
+   "quote_verified": true
+  }
+ ],
+ "contradictions": [],
+ "coverage_note": "The extracted list covers the presentation findings well, but it omits the final post-stent angiography result and the post-treatment improvement in laboratory markers, and I found no contradictions."
+}

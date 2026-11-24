@@ -1,0 +1,31 @@
+{
+ "case_id": "case_009",
+ "pdf": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_009/source.pdf",
+ "model_observed": [
+  "claude-sonnet-5-5"
+ ],
+ "article_words": 1811,
+ "extracted_observations": 5,
+ "missing": [
+  {
+   "category": "laboratory",
+   "what": "Serum sodium (hypernatremia episodes)",
+   "reported": "Episodes of hypernatremia occurred postoperatively and were treated medically; no values given",
+   "kind": "qualitative_only",
+   "phase": "later",
+   "quote": "Episodes of hypernatremia, hypercalcemia, and",
+   "quote_verified": true
+  },
+  {
+   "category": "laboratory",
+   "what": "Serum calcium (hypercalcemia episodes)",
+   "reported": "Episodes of hypercalcemia occurred postoperatively and were treated medically; no values given",
+   "kind": "qualitative_only",
+   "phase": "later",
+   "quote": "Episodes of hypernatremia, hypercalcemia, and",
+   "quote_verified": true
+  }
+ ],
+ "contradictions": [],
+ "coverage_note": "The extracted list covers all presentation-phase exam, imaging and operative findings; only the non-quantified postoperative hypernatremia and hypercalcemia lab findings are missing."
+}

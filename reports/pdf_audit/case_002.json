@@ -1,0 +1,92 @@
+{
+ "case_id": "case_002",
+ "pdf": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_002/source.pdf",
+ "model_observed": [
+  "claude-sonnet-5-5"
+ ],
+ "article_words": 2538,
+ "extracted_observations": 12,
+ "missing": [
+  {
+   "category": "lab",
+   "what": "Liver enzymes",
+   "reported": "Mild elevations noted at presentation (no values)",
+   "kind": "qualitative_only",
+   "phase": "presentation",
+   "quote": "Mild elevations in liver enzymes",
+   "quote_verified": true
+  },
+  {
+   "category": "lab",
+   "what": "Inflammatory markers",
+   "reported": "Mildly elevated at presentation (no values or specific markers)",
+   "kind": "qualitative_only",
+   "phase": "presentation",
+   "quote": "markers were also noted",
+   "quote_verified": true
+  },
+  {
+   "category": "echo",
+   "what": "Post-pacemaker-implantation transthoracic echocardiography",
+   "reported": "Absence of A-wave in mitral inflow, mildly reduced RV systolic function, massive tricuspid regurgitation",
+   "kind": "result",
+   "phase": "later",
+   "quote": "right ventricular systolic function, and massive",
+   "quote_verified": true
+  },
+  {
+   "category": "procedure",
+   "what": "Atrial pacing attempts during CRT pacemaker implantation",
+   "reported": "Atrial pacing attempted at multiple sites; all unsuccessful",
+   "kind": "result",
+   "phase": "later",
+   "quote": "attempted atrial pacing at multiple sites; however, all",
+   "quote_verified": true
+  },
+  {
+   "category": "lab",
+   "what": "High-sensitivity troponin T at readmission",
+   "reported": "11 ng/L",
+   "kind": "result",
+   "phase": "later",
+   "quote": "an hs-TnT level of 11 ng/L and",
+   "quote_verified": true
+  },
+  {
+   "category": "lab",
+   "what": "NT-proBNP at readmission",
+   "reported": "95 pg/mL",
+   "kind": "result",
+   "phase": "later",
+   "quote": "95 pg/mL.",
+   "quote_verified": false
+  },
+  {
+   "category": "echo",
+   "what": "Follow-up transthoracic echocardiography 6 weeks postdischarge",
+   "reported": "No left atrial activity; RV mildly dilated with normal systolic function; mild TR; normal systolic PA pressure (29 mm Hg)",
+   "kind": "result",
+   "phase": "later",
+   "quote": "improved to 29 mm Hg.",
+   "quote_verified": true
+  },
+  {
+   "category": "device",
+   "what": "Pacemaker device interrogation",
+   "reported": "100% biventricular pacing",
+   "kind": "result",
+   "phase": "later",
+   "quote": "100% biventricular pacing",
+   "quote_verified": true
+  }
+ ],
+ "contradictions": [
+  {
+   "fact_id": "lab_008",
+   "issue": "Article reports D-dimer unit as mg/mL, extracted list says µg/mL (likely a typo in the article, but it differs as written).",
+   "quote": "2.94   mg/mL",
+   "quote_verified": false
+  }
+ ],
+ "coverage_note": "The extracted list covers all presentation-phase tests except the qualitative liver enzyme and inflammatory marker elevations, and it omits most follow-up findings (post-implant and 6-week echocardiograms, repeat labs, atrial pacing attempts, device interrogation)."
+}

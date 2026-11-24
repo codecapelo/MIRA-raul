@@ -1,0 +1,58 @@
+{
+ "case_id": "case_008",
+ "pdf": "/Users/test/MIRA-RAUL/legacy/outputs/benchmark/cases/case_008/source.pdf",
+ "model_observed": [
+  "claude-sonnet-5-5"
+ ],
+ "article_words": 3083,
+ "extracted_observations": 7,
+ "missing": [
+  {
+   "category": "imaging",
+   "what": "Chest X-ray",
+   "reported": "Performed and normal",
+   "kind": "qualitative_only",
+   "phase": "presentation",
+   "quote": "Chest X ray was performed and was normal.",
+   "quote_verified": true
+  },
+  {
+   "category": "lab",
+   "what": "Lymphocyte count (differential)",
+   "reported": "Slightly decreased, 10 % (normal 24–45 %)",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "slightly decreased lymphocyte count (10 %; normal:",
+   "quote_verified": true
+  },
+  {
+   "category": "lab",
+   "what": "Hemoglobin, renal function and other hematological/biochemical parameters",
+   "reported": "Within normal limits",
+   "kind": "qualitative_only",
+   "phase": "presentation",
+   "quote": "hemoglobin, renal function, and differential leukocyte count, were",
+   "quote_verified": true
+  },
+  {
+   "category": "physical_exam",
+   "what": "General examination (pallor, icterus, cyanosis, lymphadenopathy, dehydration)",
+   "reported": "No signs of pallor, icterus, cyanosis, lymphadenopathy, or dehydration",
+   "kind": "result",
+   "phase": "presentation",
+   "quote": "of pallor, icterus, cyanosis, lymphadenopathy, or dehydration.",
+   "quote_verified": true
+  },
+  {
+   "category": "physical_exam",
+   "what": "Follow-up neurological assessment at 4 and 8 weeks",
+   "reported": "Fully recovered without any neurological deficit",
+   "kind": "qualitative_only",
+   "phase": "later",
+   "quote": "weeks and the patient were fully recovered without any neurological",
+   "quote_verified": true
+  }
+ ],
+ "contradictions": [],
+ "coverage_note": "The extracted list covers the main neurological exam, CBC, coagulation, MRI and surgery, but omits the chest X-ray, lymphocyte count, other normal labs, general exam findings and follow-up neurological outcome, with no contradictions found."
+}
