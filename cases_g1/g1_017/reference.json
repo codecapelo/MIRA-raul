@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_017",
+  "correct_diagnosis": "Knee osteoarthritis, bilateral",
+  "matching_criterion": "Osteoarthritis of the knees (bilateral). Any wording that names knee osteoarthritis / degenerative knee disease counts as correct; rheumatoid arthritis, gout or meniscal tear as the final diagnosis does not.",
+  "condition": "knee osteoarthritis",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Oral NSAIDs are first-line short-term therapy for persistent pain in knee OA patients who are not at high risk for a cardiovascular event.",
+      "source_quote": "agree on the recommendation of oral NSAIDs as first-line short-term therapy for persistent pain in OA patients who are not at high risk for a cardiovascular event",
+      "source_section": "Pharmacological treatment, NSAIDs"
+    },
+    {
+      "item_id": "m2",
+      "management": "Do not use oral or transdermal opioids for OA (strong recommendation against, because of addiction potential and limited efficacy).",
+      "source_quote": "A strong recommendation against the use of oral or transdermal opioids for OA treatment was given due to their high addiction potential and limited efficacy",
+      "source_section": "Pharmacological treatment, opioids"
+    },
+    {
+      "item_id": "m3",
+      "management": "Acetaminophen only as short-term rescue analgesia.",
+      "source_quote": "conditional recommendation for acetaminophen use only for short-term rescue analgesia",
+      "source_section": "Pharmacological treatment, acetaminophen"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

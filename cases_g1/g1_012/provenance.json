@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_012",
+  "case_type": "derived_vignette_from_open_access_guideline_or_review",
+  "authored_by": "claude-sonnet-5-5 (patient story, history facts and results); not from the article and not from a real patient",
+  "source": {
+    "pmcid": "PMC7228535",
+    "title": "Clinical practice guidelines for acute otitis media in children: a systematic review and appraisal of European national guidelines",
+    "citation": "BMJ Open, 2020",
+    "license": "CC BY 4.0 (Europe PMC license field \"cc by\")",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7228535/",
+    "xml_sha256": "5d17693440b8b0cf4000a1f6514e42de410ba43219a44d6ace987ec2c2b8d4d2"
+  },
+  "review_status": "pending_clinician_review",
+  "quotes_verified_in_source_text": true,
+  "batch": "B",
+  "specialty": "pediatrics"
+}

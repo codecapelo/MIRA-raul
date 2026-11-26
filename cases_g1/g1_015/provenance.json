@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_015",
+  "case_type": "derived_vignette_from_open_access_guideline_or_review",
+  "authored_by": "claude-sonnet-5-5 (patient story, history facts and results); not from the article and not from a real patient",
+  "source": {
+    "pmcid": "PMC8341192",
+    "title": "Consensus statements and recommendations on the management of mild-to-moderate gastroesophageal reflux disease in Southeast Asia",
+    "citation": "JGH Open, 2021",
+    "license": "CC BY 4.0 (Europe PMC license field \"cc by\")",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8341192/",
+    "xml_sha256": "cd1e0c0df19bc4bbbfe29d2a410077a7fd8de198e3e2d5a47441a4af4685116d"
+  },
+  "review_status": "pending_clinician_review",
+  "quotes_verified_in_source_text": true,
+  "batch": "B",
+  "specialty": "gastroenterology"
+}

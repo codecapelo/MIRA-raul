@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_004",
+  "initial": {
+    "age_years": 61,
+    "sex_recorded": "male",
+    "chief_complaint": "Diabetes check-up; sugar has been running high."
+  },
+  "presenting_complaint": "Diabetes check-up; sugar has been running high.",
+  "history_freetext": "Type 2 diabetes for eight years. Heart attack five years ago treated with a coronary stent. High cholesterol.\nTakes metformin 1000 mg twice a day, aspirin, atorvastatin 40 mg and a beta-blocker, regularly. No sulfonylurea, no insulin, no SGLT2 inhibitor or GLP-1 injection so far. No drug allergy.\nFeels well, no chest pain, no shortness of breath, no foot ulcers, no frequent urination or thirst. Home fasting glucose is usually 150 to 180 mg/dL. No episodes of low sugar.\nWeight has increased by 4 kg in the last year, sits most of the day, does not smoke now, no alcohol excess.",
+  "history_facts": [
+    {
+      "fact_id": "pmh_001",
+      "domain": "pmh",
+      "value": "Type 2 diabetes for eight years. Heart attack five years ago treated with a coronary stent. High cholesterol.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "meds_002",
+      "domain": "meds",
+      "value": "Takes metformin 1000 mg twice a day, aspirin, atorvastatin 40 mg and a beta-blocker, regularly. No sulfonylurea, no insulin, no SGLT2 inhibitor or GLP-1 injection so far. No drug allergy.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_003",
+      "domain": "hpi",
+      "value": "Feels well, no chest pain, no shortness of breath, no foot ulcers, no frequent urination or thirst. Home fasting glucose is usually 150 to 180 mg/dL. No episodes of low sugar.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "social_004",
+      "domain": "social",
+      "value": "Weight has increased by 4 kg in the last year, sits most of the day, does not smoke now, no alcohol excess.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

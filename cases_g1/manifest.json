@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "arm": "G1",
+  "cases": [
+    {
+      "case_id": "g1_001",
+      "topic": "influenza",
+      "history_fact_count": 4,
+      "observation_count": 5,
+      "management_items": 2,
+      "source": "PMC12036931"
+    },
+    {
+      "case_id": "g1_002",
+      "topic": "low back pain",
+      "history_fact_count": 4,
+      "observation_count": 5,
+      "management_items": 3,
+      "source": "PMC7839780"
+    },
+    {
+      "case_id": "g1_003",
+      "topic": "hypertension follow-up",
+      "history_fact_count": 4,
+      "observation_count": 6,
+      "management_items": 3,
+      "source": "PMC8678709"
+    },
+    {
+      "case_id": "g1_004",
+      "topic": "type 2 diabetes medication control",
+      "history_fact_count": 4,
+      "observation_count": 6,
+      "management_items": 2,
+      "source": "PMC6761728"
+    },
+    {
+      "case_id": "g1_005",
+      "topic": "uncomplicated cystitis",
+      "history_fact_count": 4,
+      "observation_count": 5,
+      "management_items": 3,
+      "source": "PMC11099625"
+    },
+    {
+      "case_id": "g1_006",
+      "topic": "sore throat",
+      "history_fact_count": 4,
+      "observation_count": 5,
+      "management_items": 3,
+      "source": "PMC10746578"
+    },
+    {
+      "case_id": "g1_007",
+      "topic": "depression",
+      "history_fact_count": 4,
+      "observation_count": 5,
+      "management_items": 4,
+      "source": "PMC11351064"
+    },
+    {
+      "case_id": "g1_008",
+      "topic": "asthma",
+      "history_fact_count": 4,
+      "observation_count": 5,
+      "management_items": 3,
+      "source": "PMC9907191"
+    },
+    {
+      "case_id": "g1_009",
+      "topic": "COPD",
+      "history_fact_count": 4,
+      "observation_count": 5,
+      "management_items": 2,
+      "source": "PMC9692772"
+    },
+    {
+      "case_id": "g1_010",
+      "topic": "acute gout",
+      "history_fact_count": 4,
+      "observation_count": 6,
+      "management_items": 3,
+      "source": "PMC10268528"
+    }
+  ]
+}

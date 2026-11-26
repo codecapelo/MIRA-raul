@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_013",
+  "initial": {
+    "age_years": 27,
+    "sex_recorded": "female",
+    "chief_complaint": "Vaginal itching and a thick white discharge for four days."
+  },
+  "presenting_complaint": "Vaginal itching and a thick white discharge for four days.",
+  "history_freetext": "Four days of vulvar itching and burning, and a thick white odourless discharge that looks like cottage cheese. Discomfort during intercourse. No fever, no pelvic or lower abdominal pain, no abnormal bleeding.\nMild burning at the end of urination only when urine touches the irritated skin; no urgency or frequency. Finished a course of amoxicillin for a sinus infection eight days ago.\nHealthy; no diabetes, no immunosuppression; one similar episode two years ago that cleared with an over-the-counter cream. Not on hormonal treatment other than condoms for contraception; last period ended 10 days ago. No allergies.\nOne regular male partner for two years, no new partners; no symptoms in the partner. Does not douche.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Four days of vulvar itching and burning, and a thick white odourless discharge that looks like cottage cheese. Discomfort during intercourse. No fever, no pelvic or lower abdominal pain, no abnormal bleeding.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "value": "Mild burning at the end of urination only when urine touches the irritated skin; no urgency or frequency. Finished a course of amoxicillin for a sinus infection eight days ago.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_003",
+      "domain": "pmh",
+      "value": "Healthy; no diabetes, no immunosuppression; one similar episode two years ago that cleared with an over-the-counter cream. Not on hormonal treatment other than condoms for contraception; last period ended 10 days ago. No allergies.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "social_004",
+      "domain": "social",
+      "value": "One regular male partner for two years, no new partners; no symptoms in the partner. Does not douche.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

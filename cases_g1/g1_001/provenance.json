@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_001",
+  "case_type": "derived_vignette_from_open_access_guideline_or_review",
+  "authored_by": "claude-sonnet-5-5 (patient story, history facts and results); not from the article and not from a real patient",
+  "source": {
+    "pmcid": "PMC12036931",
+    "title": "A comparison of national seasonal influenza treatment guidelines across the Asia Pacific region",
+    "citation": "Beer et al., 2025",
+    "license": "CC BY 4.0 (Europe PMC license field \"cc by\")",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12036931/",
+    "xml_sha256": "a84b1166d5c8c439adc921558f2a7a41f7f64a56b15dc0457e37c826dfd08d74"
+  },
+  "review_status": "pending_clinician_review",
+  "quotes_verified_in_source_text": true
+}

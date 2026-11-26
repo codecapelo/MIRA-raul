@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_019",
+  "correct_diagnosis": "Primary hypothyroidism due to autoimmune (Hashimoto) thyroiditis",
+  "matching_criterion": "Primary hypothyroidism, autoimmune (Hashimoto) thyroiditis. Any wording that names hypothyroidism / Hashimoto thyroiditis counts as correct; depression, anaemia or subclinical hypothyroidism alone without naming overt hypothyroidism does not.",
+  "condition": "primary hypothyroidism",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Start levothyroxine replacement; the usual full dose is 1.5 to 1.9 micrograms per kg of body weight per day (adjusted to age, sex and conditions).",
+      "source_quote": "This generally ranges between 1.5 and 1.9",
+      "source_section": "Treatment, levothyroxine"
+    },
+    {
+      "item_id": "m2",
+      "management": "Measure serum TSH 4 to 6 weeks after starting replacement therapy to assess adequacy.",
+      "source_quote": "The panel suggests the measurement of serum TSH 4–6 weeks after the start of replacement therapy, to assess its adequacy",
+      "source_section": "Treatment, monitoring"
+    },
+    {
+      "item_id": "m3",
+      "management": "Take levothyroxine preferably in the morning, at least 30 minutes (ideally 60) before food or drink.",
+      "source_quote": "LT4 therapy should be preferably taken in the morning, at least 30 min",
+      "source_section": "Treatment, administration"
+    },
+    {
+      "item_id": "m4",
+      "management": "Tell pre-menopausal women on replacement therapy to seek medical consultation when pregnancy is diagnosed or planned, for early dose adjustment.",
+      "source_quote": "Pre-menopausal women on replacement therapy for hypothyroidism should be informed about the need for medical consultation in case of diagnosis or planning of pregnancy",
+      "source_section": "Special situations"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

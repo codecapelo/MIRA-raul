@@ -1,0 +1,97 @@
+{
+  "schema_version": "1.0.0",
+  "arm": "G1",
+  "batch": "B",
+  "cases": [
+    {
+      "case_id": "g1_011",
+      "topic": "acute urticaria",
+      "history_fact_count": 4,
+      "observation_count": 6,
+      "management_items": 4,
+      "source": "PMC13466004",
+      "specialty": "dermatology"
+    },
+    {
+      "case_id": "g1_012",
+      "topic": "acute otitis media",
+      "history_fact_count": 4,
+      "observation_count": 5,
+      "management_items": 4,
+      "source": "PMC7228535",
+      "specialty": "pediatrics"
+    },
+    {
+      "case_id": "g1_013",
+      "topic": "vulvovaginal candidiasis",
+      "history_fact_count": 4,
+      "observation_count": 7,
+      "management_items": 4,
+      "source": "PMC10455317",
+      "specialty": "gynecology"
+    },
+    {
+      "case_id": "g1_014",
+      "topic": "atrial fibrillation",
+      "history_fact_count": 4,
+      "observation_count": 7,
+      "management_items": 4,
+      "source": "PMC11666470",
+      "specialty": "cardiology"
+    },
+    {
+      "case_id": "g1_015",
+      "topic": "gastroesophageal reflux disease",
+      "history_fact_count": 5,
+      "observation_count": 6,
+      "management_items": 4,
+      "source": "PMC8341192",
+      "specialty": "gastroenterology"
+    },
+    {
+      "case_id": "g1_016",
+      "topic": "migraine",
+      "history_fact_count": 4,
+      "observation_count": 4,
+      "management_items": 3,
+      "source": "PMC11409395",
+      "specialty": "neurology"
+    },
+    {
+      "case_id": "g1_017",
+      "topic": "knee osteoarthritis",
+      "history_fact_count": 4,
+      "observation_count": 5,
+      "management_items": 3,
+      "source": "PMC8001498",
+      "specialty": "orthopedics/rheumatology"
+    },
+    {
+      "case_id": "g1_018",
+      "topic": "allergic rhinitis",
+      "history_fact_count": 4,
+      "observation_count": 6,
+      "management_items": 4,
+      "source": "PMC10623625",
+      "specialty": "otolaryngology/allergy"
+    },
+    {
+      "case_id": "g1_019",
+      "topic": "primary hypothyroidism",
+      "history_fact_count": 4,
+      "observation_count": 7,
+      "management_items": 4,
+      "source": "PMC12518491",
+      "specialty": "endocrinology"
+    },
+    {
+      "case_id": "g1_020",
+      "topic": "benign prostatic hyperplasia",
+      "history_fact_count": 4,
+      "observation_count": 7,
+      "management_items": 2,
+      "source": "PMC7109311",
+      "specialty": "urology"
+    }
+  ]
+}

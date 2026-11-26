@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_003",
+  "initial": {
+    "age_years": 58,
+    "sex_recorded": "male",
+    "chief_complaint": "Follow-up for high blood pressure; readings at home are still high."
+  },
+  "presenting_complaint": "Follow-up for high blood pressure; readings at home are still high.",
+  "history_freetext": "Diagnosed with high blood pressure two years ago. For the last four months his home blood pressure readings are around 150 over 92 to 156 over 96, taken seated in the morning with a validated arm cuff.\nTakes amlodipine 5 mg once a day, every day; he says he has not missed doses. No other regular medicine; no anti-inflammatory use, no decongestants, no herbal products.\nNo diabetes, no kidney disease, no stroke, no heart attack, no heart failure. No headaches, chest pain, palpitations or swelling in the legs apart from mild ankle swelling in the evening.\nEats a lot of processed and salty food, drinks about three beers a week, ex-smoker, little exercise, sits most of the day. Mother had high blood pressure.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Diagnosed with high blood pressure two years ago. For the last four months his home blood pressure readings are around 150 over 92 to 156 over 96, taken seated in the morning with a validated arm cuff.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "meds_002",
+      "domain": "meds",
+      "value": "Takes amlodipine 5 mg once a day, every day; he says he has not missed doses. No other regular medicine; no anti-inflammatory use, no decongestants, no herbal products.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_003",
+      "domain": "pmh",
+      "value": "No diabetes, no kidney disease, no stroke, no heart attack, no heart failure. No headaches, chest pain, palpitations or swelling in the legs apart from mild ankle swelling in the evening.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "social_004",
+      "domain": "social",
+      "value": "Eats a lot of processed and salty food, drinks about three beers a week, ex-smoker, little exercise, sits most of the day. Mother had high blood pressure.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

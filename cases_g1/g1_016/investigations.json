@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_016",
+  "observations": [
+    {
+      "fact_id": "physical_exam_001",
+      "domain": "physical_exam",
+      "value": "Afebrile, blood pressure 112/68 mm Hg, heart rate 80/min. Lying in a dim room, mildly nauseated.",
+      "available_at": "time_zero",
+      "name": "General and vital signs",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_002",
+      "domain": "physical_exam",
+      "value": "Alert and oriented; cranial nerves intact; normal fundi without papilloedema; no neck stiffness; normal strength, sensation, reflexes, coordination and gait.",
+      "available_at": "time_zero",
+      "name": "Neurological examination",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "xray_003",
+      "domain": "radiology",
+      "value": "Normal.",
+      "available_at": "time_zero",
+      "name": "CT of the head without contrast",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "radiology",
+      "clinical_test": "ct_of_the_head_without_contrast",
+      "modality": "radiograph",
+      "routing_tool": "request_radiology",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_004",
+      "domain": "blood",
+      "value": "Normal.",
+      "available_at": "time_zero",
+      "name": "Complete blood count, ESR and thyroid-stimulating hormone",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "complete_blood_count_esr_and_thyroid_stimulating_hormone",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "All results are available at the first consultation (primary-care outpatient visit)."
+}

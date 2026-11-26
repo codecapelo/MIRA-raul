@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_015",
+  "initial": {
+    "age_years": 45,
+    "sex_recorded": "male",
+    "chief_complaint": "Burning in my chest after meals for several months."
+  },
+  "presenting_complaint": "Burning in my chest after meals for several months.",
+  "history_freetext": "For about six months he has had burning behind the breastbone and a sour taste coming up into the mouth, three to four times a week, worse after large or late meals and when lying down, relieved a little by antacids.\nNo difficulty or pain when swallowing, no vomiting, no black stools, no weight loss, no loss of appetite, no persistent hoarseness. Occasional dry cough at night. No chest pain with exertion.\nOverweight (BMI 31), gained about 8 kg over three years. No known heart disease, no ulcer history. Father had high blood pressure; no family history of stomach or oesophageal cancer. No anaemia.\nNo regular medication; no aspirin or anti-inflammatory use; antacid tablets a few times a week. No drug allergies.\nDrinks three coffees a day, eats dinner late and large, smokes none, drinks beer on weekends.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "For about six months he has had burning behind the breastbone and a sour taste coming up into the mouth, three to four times a week, worse after large or late meals and when lying down, relieved a little by antacids.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "value": "No difficulty or pain when swallowing, no vomiting, no black stools, no weight loss, no loss of appetite, no persistent hoarseness. Occasional dry cough at night. No chest pain with exertion.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_003",
+      "domain": "pmh",
+      "value": "Overweight (BMI 31), gained about 8 kg over three years. No known heart disease, no ulcer history. Father had high blood pressure; no family history of stomach or oesophageal cancer. No anaemia.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "meds_004",
+      "domain": "meds",
+      "value": "No regular medication; no aspirin or anti-inflammatory use; antacid tablets a few times a week. No drug allergies.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "social_005",
+      "domain": "social",
+      "value": "Drinks three coffees a day, eats dinner late and large, smokes none, drinks beer on weekends.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

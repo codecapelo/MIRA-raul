@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_001",
+  "correct_diagnosis": "Uncomplicated seasonal influenza (influenza A)",
+  "matching_criterion": "Influenza (seasonal, influenza A), uncomplicated, in a healthy adult. Any wording that names influenza / influenza-like illness due to influenza A counts as correct; viral upper respiratory infection without naming influenza does not.",
+  "condition": "influenza",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Antiviral treatment with oseltamivir may be considered for uncomplicated influenza when the patient presents within 48 hours of symptom onset; it is optional, not mandatory, in a healthy adult.",
+      "source_quote": "uncomplicated suspected or confirmed flu presenting within 48 hours of symptom onset",
+      "source_section": "Results, comparison of national recommendations"
+    },
+    {
+      "item_id": "m2",
+      "management": "Expected benefit of oseltamivir in a healthy adult is modest (about one day shorter and milder illness), so supportive care is an acceptable alternative.",
+      "source_quote": "treatment of adult influenza with oseltamivir reduces symptom severity and duration by approximately 24 hours in healthy individuals",
+      "source_section": "Introduction"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

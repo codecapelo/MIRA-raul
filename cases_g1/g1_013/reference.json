@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_013",
+  "correct_diagnosis": "Uncomplicated vulvovaginal candidiasis",
+  "matching_criterion": "Vulvovaginal candidiasis (vaginal yeast infection), uncomplicated. Any wording that names vulvovaginal candidiasis / vaginal yeast infection counts as correct; bacterial vaginosis, trichomoniasis or pelvic inflammatory disease as the final diagnosis does not.",
+  "condition": "vulvovaginal candidiasis",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Treat with an azole antifungal (oral or vaginal).",
+      "source_quote": "The mainstay of treatment for most cases of uncomplicated VVC is azole antifungals",
+      "source_section": "Conventional treatment of uncomplicated VVC"
+    },
+    {
+      "item_id": "m2",
+      "management": "Oral and vaginal azoles are equally effective in clinical treatment of VVC.",
+      "source_quote": "does not indicate a difference in the effectiveness of clinical treatment of VVC between oral and vaginal azole drugs",
+      "source_section": "Conventional treatment of uncomplicated VVC"
+    },
+    {
+      "item_id": "m3",
+      "management": "With topical azoles the course is about 3 days and symptoms should resolve within 2 to 3 days after.",
+      "source_quote": "Treatment with topical azoles usually lasts 3 days, and symptoms should resolve within 2–3 days after",
+      "source_section": "Conventional treatment of uncomplicated VVC"
+    },
+    {
+      "item_id": "m4",
+      "management": "Confirm the diagnosis with vaginal pH and wet-mount microscopy.",
+      "source_quote": "Recommendations and guidelines require the collection of a vaginal swab for testing, pH assessment, odor test, and wet-mount microscopy",
+      "source_section": "Diagnosis"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

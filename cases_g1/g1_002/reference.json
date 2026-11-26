@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_002",
+  "correct_diagnosis": "Acute non-specific low back pain (mechanical lumbar strain) without red flags",
+  "matching_criterion": "Acute non-specific / mechanical low back pain (lumbar strain) without red flags or radiculopathy. Any wording that names acute mechanical or non-specific low back pain counts as correct; a specific structural diagnosis (disc herniation, fracture, infection, malignancy) does not.",
+  "condition": "low back pain",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Reassure and give advice and education about the favourable course of non-specific low back pain.",
+      "source_quote": "reassurance; advice and education with the specific mention of physical activity and exercise",
+      "source_section": "Results, summary of recommendations"
+    },
+    {
+      "item_id": "m2",
+      "management": "Advise to remain active and to resume normal activity; do not prescribe bed rest.",
+      "source_quote": "AGAINST Bed rest",
+      "source_section": "Results, Table of recommendations"
+    },
+    {
+      "item_id": "m3",
+      "management": "Short-term use of NSAIDs (or paracetamol) is an option for pain relief.",
+      "source_quote": "NSAIDs4(3)2x O+ 1x /; 1x /* Weak FORShort-term use",
+      "source_section": "Results, Table of recommendations"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_010",
+  "observations": [
+    {
+      "fact_id": "physical_exam_001",
+      "domain": "physical_exam",
+      "value": "Temperature 37.8 C, heart rate 88/min, blood pressure 142/88 mm Hg, BMI 31.",
+      "available_at": "time_zero",
+      "name": "General and vital signs",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_002",
+      "domain": "physical_exam",
+      "value": "Right first metatarsophalangeal joint is red, warm, swollen and exquisitely tender; limited motion; no other joints involved; no tophi; no skin break.",
+      "available_at": "time_zero",
+      "name": "Joint examination",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_003",
+      "domain": "blood",
+      "value": "Uric acid 9.1 mg/dL.",
+      "available_at": "time_zero",
+      "name": "Serum uric acid",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "serum_uric_acid",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_004",
+      "domain": "blood",
+      "value": "Creatinine 1.0 mg/dL, eGFR 85 mL/min/1.73 m2.",
+      "available_at": "time_zero",
+      "name": "Basic metabolic panel (creatinine, eGFR, electrolytes)",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "basic_metabolic_panel_creatinine_egfr_electrolytes",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_005",
+      "domain": "blood",
+      "value": "White cell count 11.2 x10^9/L, CRP 38 mg/L.",
+      "available_at": "time_zero",
+      "name": "Complete blood count and C-reactive protein",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "complete_blood_count_and_c_reactive_protein",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "xray_006",
+      "domain": "radiology",
+      "value": "Soft tissue swelling around the first metatarsophalangeal joint; no erosions, no fracture.",
+      "available_at": "time_zero",
+      "name": "Foot radiograph",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "radiology",
+      "clinical_test": "foot_radiograph",
+      "modality": "radiograph",
+      "routing_tool": "request_radiology",
+      "provenance": "authored_vignette_unreviewed"
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "All results are available at the first consultation (primary-care outpatient visit)."
+}

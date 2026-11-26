@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_020",
+  "initial": {
+    "age_years": 67,
+    "sex_recorded": "male",
+    "chief_complaint": "Getting up three times a night to urinate, and a weak stream."
+  },
+  "presenting_complaint": "Getting up three times a night to urinate, and a weak stream.",
+  "history_freetext": "For a year he has had a weak, slow urinary stream, hesitancy before it starts, a feeling that the bladder does not empty completely, and nocturia three times a night. Daytime frequency every two hours. No burning, no blood in the urine, no urgency incontinence.\nNo fever, no back or flank pain, no weight loss, no bone pain, no leg weakness, no constipation, no episode of being unable to urinate. Drinks tea and a glass of water in the evening.\nHypertension treated with ramipril. No diabetes, no neurological disease, no previous urinary infection, no stones, no pelvic surgery. Father had an enlarged prostate. No family history of prostate cancer.\nRamipril 5 mg. No decongestants, no antihistamines, no anticholinergic drugs, no diuretics. No drug allergies; no history of fainting on standing.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "For a year he has had a weak, slow urinary stream, hesitancy before it starts, a feeling that the bladder does not empty completely, and nocturia three times a night. Daytime frequency every two hours. No burning, no blood in the urine, no urgency incontinence.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "value": "No fever, no back or flank pain, no weight loss, no bone pain, no leg weakness, no constipation, no episode of being unable to urinate. Drinks tea and a glass of water in the evening.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_003",
+      "domain": "pmh",
+      "value": "Hypertension treated with ramipril. No diabetes, no neurological disease, no previous urinary infection, no stones, no pelvic surgery. Father had an enlarged prostate. No family history of prostate cancer.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "meds_004",
+      "domain": "meds",
+      "value": "Ramipril 5 mg. No decongestants, no antihistamines, no anticholinergic drugs, no diuretics. No drug allergies; no history of fainting on standing.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

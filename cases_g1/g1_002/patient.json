@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_002",
+  "initial": {
+    "age_years": 41,
+    "sex_recorded": "male",
+    "chief_complaint": "Low back pain for three days after moving boxes."
+  },
+  "presenting_complaint": "Low back pain for three days after moving boxes.",
+  "history_freetext": "Three days ago he felt a sudden pull in the lower back while lifting boxes. Dull, aching pain in the low back, worse when bending forward and getting out of a chair, better when walking slowly. Rated 6/10.\nThe pain does not go down the legs; no numbness, tingling or leg weakness. No fever, no weight loss, no night pain, no injury or fall, no problem passing urine, no loss of bowel control, no numbness in the groin area.\nNo cancer, no osteoporosis, no steroid use, no intravenous drug use, no previous back surgery. Previous back pain episode two years ago that resolved by itself.\nNo regular medication. Took nothing for the pain so far. No allergies. Has been resting in bed most of the last two days.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Three days ago he felt a sudden pull in the lower back while lifting boxes. Dull, aching pain in the low back, worse when bending forward and getting out of a chair, better when walking slowly. Rated 6/10.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "value": "The pain does not go down the legs; no numbness, tingling or leg weakness. No fever, no weight loss, no night pain, no injury or fall, no problem passing urine, no loss of bowel control, no numbness in the groin area.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_003",
+      "domain": "pmh",
+      "value": "No cancer, no osteoporosis, no steroid use, no intravenous drug use, no previous back surgery. Previous back pain episode two years ago that resolved by itself.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "meds_004",
+      "domain": "meds",
+      "value": "No regular medication. Took nothing for the pain so far. No allergies. Has been resting in bed most of the last two days.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_009",
+  "initial": {
+    "age_years": 67,
+    "sex_recorded": "male",
+    "chief_complaint": "Cough and breathlessness climbing stairs, getting worse over the last years."
+  },
+  "presenting_complaint": "Cough and breathlessness climbing stairs, getting worse over the last years.",
+  "history_freetext": "Chronic cough with white sputum most mornings for years; breathless walking uphill or climbing one flight of stairs, has to stop on level ground when walking fast with people his age. No chest pain, no leg swelling, no fever.\nSmoked 40 pack-years, quit three years ago. No known heart disease. No hospital admissions for breathing. No courses of antibiotics or oral steroids for chest problems in the last year.\nUses salbutamol inhaler occasionally, about three times a week. No other regular inhalers. No drug allergies.\nRetired construction worker. Last influenza and pneumococcal vaccines: none in recent years.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Chronic cough with white sputum most mornings for years; breathless walking uphill or climbing one flight of stairs, has to stop on level ground when walking fast with people his age. No chest pain, no leg swelling, no fever.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_002",
+      "domain": "pmh",
+      "value": "Smoked 40 pack-years, quit three years ago. No known heart disease. No hospital admissions for breathing. No courses of antibiotics or oral steroids for chest problems in the last year.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "meds_003",
+      "domain": "meds",
+      "value": "Uses salbutamol inhaler occasionally, about three times a week. No other regular inhalers. No drug allergies.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "social_004",
+      "domain": "social",
+      "value": "Retired construction worker. Last influenza and pneumococcal vaccines: none in recent years.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

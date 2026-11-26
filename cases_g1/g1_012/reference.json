@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_012",
+  "correct_diagnosis": "Acute otitis media, right ear",
+  "matching_criterion": "Acute otitis media of the right ear in a child. Any wording that names acute otitis media / middle-ear infection counts as correct; otitis externa, viral upper respiratory infection alone or mastoiditis as the final diagnosis does not.",
+  "condition": "acute otitis media",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "In a child without perforation or severe symptoms, watchful waiting is the usual approach, with antibiotics prescribed if symptoms persist for 1 to 3 days or the child deteriorates.",
+      "source_quote": "recommended a watchful waiting approach where clinicians were encouraged to prescribe antibiotics if symptoms persisted for 1–3 days or in case of any clinical deterioration",
+      "source_section": "Results, approach to antibiotic administration"
+    },
+    {
+      "item_id": "m2",
+      "management": "If an antibiotic is used, oral amoxicillin is the usual first-line choice.",
+      "source_quote": "recommended oral amoxicillin as an option for first-line treatment",
+      "source_section": "Results, first-line antibiotic therapy"
+    },
+    {
+      "item_id": "m3",
+      "management": "No routine laboratory or radiographic investigations.",
+      "source_quote": "No guidelines advised routine laboratory or radiographic investigations",
+      "source_section": "Results, additional investigations"
+    },
+    {
+      "item_id": "m4",
+      "management": "The diagnosis rests on acute onset of symptoms, middle-ear effusion (bulging tympanic membrane or otorrhoea) and tympanic membrane inflammation on examination.",
+      "source_quote": "acute onset of symptoms (ie, otalgia, fever), (2) evidence of middle ear (ME) effusion",
+      "source_section": "Results, diagnostic criteria"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

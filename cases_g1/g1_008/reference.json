@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_008",
+  "correct_diagnosis": "Asthma, not well controlled, treated with as-needed salbutamol alone",
+  "matching_criterion": "Asthma (bronchial asthma) that is not well controlled on as-needed short-acting beta-agonist only. Any wording that names asthma counts as correct; COPD, vocal cord dysfunction or allergic rhinitis alone does not.",
+  "condition": "asthma",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Do not continue treatment with a short-acting beta-agonist alone; the patient needs a reliever/controller containing an inhaled corticosteroid (low-dose ICS-formoterol as needed, or a daily ICS).",
+      "source_quote": "GINA no longer recommends treatment of asthma with SABA alone (without ICS) in adults, adolescents and children >5 years",
+      "source_section": "Key recommendations"
+    },
+    {
+      "item_id": "m2",
+      "management": "Check inhaler technique and adherence, and review the patient's use of the reliever.",
+      "source_quote": "use of SABA more than two days a week should prompt review of their adherence and inhaler technique",
+      "source_section": "Assessment of symptom control"
+    },
+    {
+      "item_id": "m3",
+      "management": "Record how often the reliever inhaler is used when assessing symptom control.",
+      "source_quote": "record how often the patient is using their reliever inhaler",
+      "source_section": "Assessment of symptom control"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

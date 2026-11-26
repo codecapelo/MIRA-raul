@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_011",
+  "observations": [
+    {
+      "fact_id": "physical_exam_001",
+      "domain": "physical_exam",
+      "value": "Afebrile, heart rate 78/min, blood pressure 118/74 mm Hg, respiratory rate 14/min, oxygen saturation 99% on room air. Comfortable, scratching.",
+      "available_at": "time_zero",
+      "name": "General and vital signs",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_002",
+      "domain": "physical_exam",
+      "value": "Scattered pink to red raised wheals of 1 to 4 cm on trunk, arms and thighs, blanching, with surrounding erythema; no angioedema, no purpura, no blisters, no scaling; skin writing (dermographism) test negative.",
+      "available_at": "time_zero",
+      "name": "Skin",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_003",
+      "domain": "physical_exam",
+      "value": "Lips, tongue and uvula not swollen; mild pharyngeal erythema; clear lungs without wheeze.",
+      "available_at": "time_zero",
+      "name": "Mouth, throat and lungs",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_004",
+      "domain": "blood",
+      "value": "Hemoglobin 13.4 g/dL, white cell count 7.1 x10^9/L with normal differential, platelets 260 x10^9/L; CRP 3 mg/L.",
+      "available_at": "time_zero",
+      "name": "Complete blood count and C-reactive protein",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "complete_blood_count_and_c_reactive_protein",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_005",
+      "domain": "blood",
+      "value": "Total IgE 60 kU/L; anti-TPO negative.",
+      "available_at": "time_zero",
+      "name": "Total IgE and anti-thyroid peroxidase antibodies",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "total_ige_and_anti_thyroid_peroxidase_antibodies",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_006",
+      "domain": "blood",
+      "value": "Normal.",
+      "available_at": "time_zero",
+      "name": "Liver enzymes and creatinine",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "liver_enzymes_and_creatinine",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "All results are available at the first consultation (primary-care outpatient visit)."
+}

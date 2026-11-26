@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_017",
+  "observations": [
+    {
+      "fact_id": "physical_exam_001",
+      "domain": "physical_exam",
+      "value": "Blood pressure 130/80 mm Hg, heart rate 72/min, BMI 32.",
+      "available_at": "time_zero",
+      "name": "General and vital signs",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_002",
+      "domain": "physical_exam",
+      "value": "Bilateral bony enlargement and crepitus with movement, medial joint-line tenderness, no effusion, no warmth, full extension, flexion to 120 degrees, stable ligaments, mild varus alignment; hips and spine normal.",
+      "available_at": "time_zero",
+      "name": "Knee examination",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "xray_003",
+      "domain": "radiology",
+      "value": "Medial joint-space narrowing, marginal osteophytes and subchondral sclerosis (Kellgren-Lawrence grade 2 to 3); no chondrocalcinosis, no erosions.",
+      "available_at": "time_zero",
+      "name": "Weight-bearing radiograph of both knees",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "radiology",
+      "clinical_test": "weight_bearing_radiograph_of_both_knees",
+      "modality": "radiograph",
+      "routing_tool": "request_radiology",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_004",
+      "domain": "blood",
+      "value": "ESR 14 mm/h, CRP 2 mg/L, rheumatoid factor negative.",
+      "available_at": "time_zero",
+      "name": "ESR, CRP and rheumatoid factor",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "esr_crp_and_rheumatoid_factor",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_005",
+      "domain": "blood",
+      "value": "Creatinine 0.8 mg/dL, eGFR 88 mL/min/1.73 m2.",
+      "available_at": "time_zero",
+      "name": "Creatinine and eGFR",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "creatinine_and_egfr",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "All results are available at the first consultation (primary-care outpatient visit)."
+}

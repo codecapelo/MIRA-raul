@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_012",
+  "initial": {
+    "age_years": 3,
+    "sex_recorded": "male",
+    "chief_complaint": "My 3-year-old son has had ear pain and a fever since last night."
+  },
+  "presenting_complaint": "My 3-year-old son has had ear pain and a fever since last night.",
+  "history_freetext": "The mother reports that since last night the boy pulls at his right ear and cries; temperature was 38.5 C at home. He had a runny nose and a cough for four days. He slept badly but drank fluids this morning.\nNo discharge from the ear, no vomiting, no rash, no stiff neck, no swelling behind the ear, no breathing difficulty. He is playful between crying spells and still eating a little.\nPreviously healthy; one earlier ear infection at age two that settled. Vaccinations up to date. Attends day care. No allergies. Takes no medication; the mother gave paracetamol once last night.\nLives with parents and a baby sister. No smokers at home.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "The mother reports that since last night the boy pulls at his right ear and cries; temperature was 38.5 C at home. He had a runny nose and a cough for four days. He slept badly but drank fluids this morning.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "value": "No discharge from the ear, no vomiting, no rash, no stiff neck, no swelling behind the ear, no breathing difficulty. He is playful between crying spells and still eating a little.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_003",
+      "domain": "pmh",
+      "value": "Previously healthy; one earlier ear infection at age two that settled. Vaccinations up to date. Attends day care. No allergies. Takes no medication; the mother gave paracetamol once last night.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "social_004",
+      "domain": "social",
+      "value": "Lives with parents and a baby sister. No smokers at home.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

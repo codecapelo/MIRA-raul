@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_011",
+  "correct_diagnosis": "Acute spontaneous urticaria",
+  "matching_criterion": "Acute urticaria (acute spontaneous urticaria, wheals for less than 6 weeks). Any wording that names acute urticaria / hives counts as correct; allergic drug reaction, anaphylaxis or urticarial vasculitis as the final diagnosis does not, unless urticaria is also named.",
+  "condition": "acute urticaria",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "First-line treatment is a standard-dose second-generation H1 antihistamine.",
+      "source_quote": "We recommend a 2nd generation H1-antihistamine as first-line treatment for all types of urticaria",
+      "source_section": "Treatment recommendations"
+    },
+    {
+      "item_id": "m2",
+      "management": "No routine diagnostic tests in acute spontaneous urticaria.",
+      "source_quote": "We recommend against routine diagnostic measures in acute spontaneous urticaria",
+      "source_section": "Diagnostic workup in acute urticaria"
+    },
+    {
+      "item_id": "m3",
+      "management": "Do not use first-generation (sedating) H1 antihistamines.",
+      "source_quote": "it is strongly recommended not to use 1st generation H1-antihistamines any longer in allergy for adults and especially not for children",
+      "source_section": "Treatment, antihistamines"
+    },
+    {
+      "item_id": "m4",
+      "management": "Ask about NSAID intake, including on-demand use, and advise avoiding NSAIDs in patients whose urticaria they trigger.",
+      "source_quote": "Physicians should therefore ask patients about the intake of NSAIDs, including on-demand use, and advise patients with a history to NSAID-induced urticaria to avoid these drugs",
+      "source_section": "Diagnostic workup, drug hypersensitivity"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

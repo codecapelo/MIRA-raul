@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_016",
+  "case_type": "derived_vignette_from_open_access_guideline_or_review",
+  "authored_by": "claude-sonnet-5-5 (patient story, history facts and results); not from the article and not from a real patient",
+  "source": {
+    "pmcid": "PMC11409395",
+    "title": "Comparative effects of drug interventions for the acute management of migraine episodes in adults: systematic review and network meta-analysis",
+    "citation": "BMJ, 2024",
+    "license": "CC BY 4.0 (Europe PMC license field \"cc by\")",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11409395/",
+    "xml_sha256": "30dd35f4d76c0f87dca5ea6a155de08021e6babfd2176260ae70580c4a15c767"
+  },
+  "review_status": "pending_clinician_review",
+  "quotes_verified_in_source_text": true,
+  "batch": "B",
+  "specialty": "neurology"
+}

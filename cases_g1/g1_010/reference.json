@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_010",
+  "correct_diagnosis": "Acute gout flare (podagra), first episode",
+  "matching_criterion": "Acute gout (gouty arthritis) of the first metatarsophalangeal joint, first episode. Any wording that names acute gout / gouty arthritis / podagra counts as correct; septic arthritis or cellulitis as the final diagnosis does not.",
+  "condition": "acute gout",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Treat the flare with first-line anti-inflammatory medicines: NSAIDs, colchicine and/or corticosteroids.",
+      "source_quote": "non-steroidal anti-inflammatories (NSAIDs), colchicine and/or corticosteroids should be commenced as first-line medications",
+      "source_section": "Recommendations for flares"
+    },
+    {
+      "item_id": "m2",
+      "management": "Provide education and advice on elevating and resting the affected joint.",
+      "source_quote": "advice on elevating and resting the affected joint",
+      "source_section": "Recommendations for flares"
+    },
+    {
+      "item_id": "m3",
+      "management": "Provide education on non-pharmacological and pharmacological management options, including diet.",
+      "source_quote": "Patients should be provided with education on non-pharmacological and pharmacological management options",
+      "source_section": "Recommendations for flares"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

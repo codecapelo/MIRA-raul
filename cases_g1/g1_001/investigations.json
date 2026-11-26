@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_001",
+  "observations": [
+    {
+      "fact_id": "physical_exam_001",
+      "domain": "physical_exam",
+      "value": "Temperature 38.7 C, heart rate 98/min, respiratory rate 16/min, blood pressure 118/72 mm Hg, oxygen saturation 98% on room air. Looks tired but alert, hydrated.",
+      "available_at": "time_zero",
+      "name": "General and vital signs",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_002",
+      "domain": "physical_exam",
+      "value": "Mild pharyngeal erythema without exudate; no tonsillar enlargement; no tender cervical nodes.",
+      "available_at": "time_zero",
+      "name": "Head and neck",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_003",
+      "domain": "physical_exam",
+      "value": "Clear lungs bilaterally; no wheeze or crackles; no increased work of breathing.",
+      "available_at": "time_zero",
+      "name": "Respiratory",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "micro_004",
+      "domain": "microbiology",
+      "value": "Positive for influenza A.",
+      "available_at": "time_zero",
+      "name": "Rapid influenza test (nasopharyngeal swab)",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "microbiology",
+      "clinical_test": "rapid_influenza_test_nasopharyngeal_swab",
+      "modality": "microbiology",
+      "routing_tool": "request_microbiology",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "xray_005",
+      "domain": "radiology",
+      "value": "Normal chest radiograph, no infiltrate.",
+      "available_at": "time_zero",
+      "name": "Chest radiograph",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "radiology",
+      "clinical_test": "chest_radiograph",
+      "modality": "radiograph",
+      "routing_tool": "request_radiology",
+      "provenance": "authored_vignette_unreviewed"
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "All results are available at the first consultation (primary-care outpatient visit)."
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_018",
+  "case_type": "derived_vignette_from_open_access_guideline_or_review",
+  "authored_by": "claude-sonnet-5-5 (patient story, history facts and results); not from the article and not from a real patient",
+  "source": {
+    "pmcid": "PMC10623625",
+    "title": "Allergic rhinitis: Review of the diagnosis and management: South African Allergic Rhinitis Working Group",
+    "citation": "S Afr Fam Pract, 2023",
+    "license": "CC BY 4.0 (Europe PMC license field \"cc by\")",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10623625/",
+    "xml_sha256": "979fd19cd023421e2e430624775c076aa5d1a5a3e24024313ebd611245aa51e0"
+  },
+  "review_status": "pending_clinician_review",
+  "quotes_verified_in_source_text": true,
+  "batch": "B",
+  "specialty": "otolaryngology/allergy"
+}

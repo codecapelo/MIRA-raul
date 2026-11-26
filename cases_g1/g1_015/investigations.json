@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_015",
+  "observations": [
+    {
+      "fact_id": "physical_exam_001",
+      "domain": "physical_exam",
+      "value": "Blood pressure 134/84 mm Hg, heart rate 76/min, BMI 31, waist circumference 104 cm. Afebrile.",
+      "available_at": "time_zero",
+      "name": "General and vital signs",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_002",
+      "domain": "physical_exam",
+      "value": "Mild epigastric tenderness to deep palpation, no mass, no organomegaly; normal heart and lung examination.",
+      "available_at": "time_zero",
+      "name": "Abdomen and chest",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "ecg_003",
+      "domain": "bedside",
+      "value": "Normal sinus rhythm, no ischaemic changes.",
+      "available_at": "time_zero",
+      "name": "12-lead electrocardiogram",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "bedside",
+      "clinical_test": "12_lead_electrocardiogram",
+      "modality": "electrocardiography",
+      "routing_tool": "request_bedside_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_004",
+      "domain": "blood",
+      "value": "Hemoglobin 14.8 g/dL (normal), normal indices.",
+      "available_at": "time_zero",
+      "name": "Complete blood count",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "complete_blood_count",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "other_005",
+      "domain": "other",
+      "value": "Mild linear erosions at the lower oesophagus (LA grade A), small hiatal hernia, normal stomach and duodenum; no Barrett mucosa.",
+      "available_at": "time_zero",
+      "name": "Upper gastrointestinal endoscopy",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "other",
+      "clinical_test": "upper_gastrointestinal_endoscopy",
+      "modality": "other",
+      "routing_tool": "request_other_investigation",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "micro_006",
+      "domain": "microbiology",
+      "value": "Negative.",
+      "available_at": "time_zero",
+      "name": "Helicobacter pylori stool antigen",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "microbiology",
+      "clinical_test": "helicobacter_pylori_stool_antigen",
+      "modality": "microbiology",
+      "routing_tool": "request_microbiology",
+      "provenance": "authored_vignette_unreviewed"
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "All results are available at the first consultation (primary-care outpatient visit)."
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_006",
+  "observations": [
+    {
+      "fact_id": "physical_exam_001",
+      "domain": "physical_exam",
+      "value": "Temperature 38.5 C, heart rate 96/min, blood pressure 110/68 mm Hg, oxygen saturation 99%.",
+      "available_at": "time_zero",
+      "name": "General and vital signs",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_002",
+      "domain": "physical_exam",
+      "value": "Enlarged erythematous tonsils with white exudate bilaterally; uvula midline, no peritonsillar bulge; tender enlarged anterior cervical lymph nodes. No cough heard, no rash.",
+      "available_at": "time_zero",
+      "name": "Throat and neck examination",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_003",
+      "domain": "physical_exam",
+      "value": "Clear lungs.",
+      "available_at": "time_zero",
+      "name": "Respiratory",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "micro_004",
+      "domain": "microbiology",
+      "value": "Positive for group A streptococcus.",
+      "available_at": "time_zero",
+      "name": "Rapid antigen detection test for group A streptococcus (throat swab)",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "microbiology",
+      "clinical_test": "rapid_antigen_detection_test_for_group_a_streptococcus_throa",
+      "modality": "microbiology",
+      "routing_tool": "request_microbiology",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "micro_005",
+      "domain": "microbiology",
+      "value": "Pending (not available at the consultation).",
+      "available_at": "time_zero",
+      "name": "Throat culture",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "microbiology",
+      "clinical_test": "throat_culture",
+      "modality": "microbiology",
+      "routing_tool": "request_microbiology",
+      "provenance": "authored_vignette_unreviewed"
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "All results are available at the first consultation (primary-care outpatient visit)."
+}

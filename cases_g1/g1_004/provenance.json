@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_004",
+  "case_type": "derived_vignette_from_open_access_guideline_or_review",
+  "authored_by": "claude-sonnet-5-5 (patient story, history facts and results); not from the article and not from a real patient",
+  "source": {
+    "pmcid": "PMC6761728",
+    "title": "Consensus recommendations for management of patients with type 2 diabetes mellitus and cardiovascular diseases",
+    "citation": "Diabetol Metab Syndr, 2019",
+    "license": "CC BY 4.0 (Europe PMC license field \"cc by\")",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6761728/",
+    "xml_sha256": "8085b9d17b99f1fb44a92eefd632aca40e30db54c8f404e17a7e9960b216d751"
+  },
+  "review_status": "pending_clinician_review",
+  "quotes_verified_in_source_text": true
+}

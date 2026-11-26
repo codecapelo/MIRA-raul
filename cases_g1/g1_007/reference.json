@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_007",
+  "correct_diagnosis": "Major depressive disorder, first episode, moderate severity",
+  "matching_criterion": "Major depressive disorder (major depressive episode), first episode, of moderate severity. Any wording that names a major depressive episode/depressive disorder of moderate severity counts as correct; adjustment disorder, bipolar depression or hypothyroidism as the final diagnosis does not.",
+  "condition": "depression",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Offer a first-line treatment: either structured psychotherapy (CBT, interpersonal therapy or behavioural activation) or a first-line antidepressant, according to preference and availability.",
+      "source_quote": "CBT, interpersonal therapy (IPT), and BA as first-line recommended psychological treatments for the acute treatment of MDD",
+      "source_section": "Psychological treatments"
+    },
+    {
+      "item_id": "m2",
+      "management": "Structured psychotherapies and first-line antidepressants are equally effective in the short term; choose according to patient preference.",
+      "source_quote": "Structured psychotherapies and first-line antidepressant medications are equally effective in treating MDD in the short term",
+      "source_section": "Treatment selection"
+    },
+    {
+      "item_id": "m3",
+      "management": "Use psychoeducation when prescribing: risks and benefits, time course of effect, and dispelling myths about medication.",
+      "source_quote": "Clinicians should use psychoeducation when prescribing medications, including discussing risks and benefits, the time course of effect, and dispelling myths and misbeliefs about medication use",
+      "source_section": "Antidepressants"
+    },
+    {
+      "item_id": "m4",
+      "management": "Use measurement-based care (PHQ-9) to monitor response.",
+      "source_quote": "can be used for subsequent monitoring during measurement-based care",
+      "source_section": "Assessment"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

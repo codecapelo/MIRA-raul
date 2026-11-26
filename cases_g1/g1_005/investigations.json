@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_005",
+  "observations": [
+    {
+      "fact_id": "physical_exam_001",
+      "domain": "physical_exam",
+      "value": "Temperature 36.8 C, heart rate 80/min, blood pressure 112/70 mm Hg.",
+      "available_at": "time_zero",
+      "name": "General and vital signs",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_002",
+      "domain": "physical_exam",
+      "value": "Mild suprapubic tenderness; no costovertebral angle tenderness; abdomen otherwise soft.",
+      "available_at": "time_zero",
+      "name": "Abdominal and flank examination",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "urine_003",
+      "domain": "urine",
+      "value": "Leukocyte esterase 2+, nitrite positive, blood trace, protein trace.",
+      "available_at": "time_zero",
+      "name": "Urine dipstick",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "urine",
+      "clinical_test": "urine_dipstick",
+      "modality": "laboratory_urine",
+      "routing_tool": "request_urine_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "urine_004",
+      "domain": "urine",
+      "value": "Negative.",
+      "available_at": "time_zero",
+      "name": "Urine pregnancy test",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "urine",
+      "clinical_test": "urine_pregnancy_test",
+      "modality": "laboratory_urine",
+      "routing_tool": "request_urine_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "urine_005",
+      "domain": "urine",
+      "value": "Not yet resulted at the time of the consultation.",
+      "available_at": "time_zero",
+      "name": "Urine culture",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "urine",
+      "clinical_test": "urine_culture",
+      "modality": "laboratory_urine",
+      "routing_tool": "request_urine_test",
+      "provenance": "authored_vignette_unreviewed"
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "All results are available at the first consultation (primary-care outpatient visit)."
+}

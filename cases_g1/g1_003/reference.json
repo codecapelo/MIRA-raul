@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_003",
+  "correct_diagnosis": "Essential hypertension, not controlled on amlodipine monotherapy",
+  "matching_criterion": "Essential (primary) hypertension that is not controlled on calcium-channel-blocker monotherapy. Any wording that names uncontrolled/inadequately controlled hypertension counts as correct; a secondary cause named as the diagnosis does not.",
+  "condition": "hypertension follow-up",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Intensify drug therapy with a combination: a renin-angiotensin-system blocker (ACE inhibitor or ARB) added to the calcium-channel blocker.",
+      "source_quote": "Ideal combination therapy includes renin-angiotensin-system (RAS) blocker with calcium channel-blocker (CCB) or thiazide/thiazide-like diuretics",
+      "source_section": "Statements 4.2.2"
+    },
+    {
+      "item_id": "m2",
+      "management": "Reinforce lifestyle changes (sodium restriction, weight and exercise) as the first line of antihypertensive treatment, together with drugs.",
+      "source_quote": "Healthy lifestyle choices are the first line of antihypertensive treatment",
+      "source_section": "Lifestyle modification"
+    },
+    {
+      "item_id": "m3",
+      "management": "Advise sodium restriction (as low as 1500 mg/day).",
+      "source_quote": "Sodium restriction to as low as 1500 mg/day",
+      "source_section": "Lifestyle modification"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

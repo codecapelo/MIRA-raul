@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_006",
+  "initial": {
+    "age_years": 20,
+    "sex_recorded": "female",
+    "chief_complaint": "Sore throat and fever for two days."
+  },
+  "presenting_complaint": "Sore throat and fever for two days.",
+  "history_freetext": "Two days of severe sore throat, pain on swallowing and fever up to 38.6 C. No cough, no runny nose, no hoarseness.\nNo difficulty breathing, no drooling, can open her mouth fully, no rash, no ear pain. Roommate had a similar sore throat last week.\nHealthy, no previous rheumatic fever, no immunosuppression. No regular medication.\nAllergies: none known. Has taken one dose of paracetamol.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Two days of severe sore throat, pain on swallowing and fever up to 38.6 C. No cough, no runny nose, no hoarseness.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "value": "No difficulty breathing, no drooling, can open her mouth fully, no rash, no ear pain. Roommate had a similar sore throat last week.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_003",
+      "domain": "pmh",
+      "value": "Healthy, no previous rheumatic fever, no immunosuppression. No regular medication.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "meds_004",
+      "domain": "meds",
+      "value": "Allergies: none known. Has taken one dose of paracetamol.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

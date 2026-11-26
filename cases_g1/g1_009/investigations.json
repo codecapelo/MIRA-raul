@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_009",
+  "observations": [
+    {
+      "fact_id": "physical_exam_001",
+      "domain": "physical_exam",
+      "value": "Respiratory rate 18/min, oxygen saturation 94% on room air, BMI 25. No cyanosis.",
+      "available_at": "time_zero",
+      "name": "General and vital signs",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_002",
+      "domain": "physical_exam",
+      "value": "Prolonged expiration with scattered end-expiratory wheeze; no crackles; no leg oedema.",
+      "available_at": "time_zero",
+      "name": "Respiratory",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "spiro_003",
+      "domain": "other",
+      "value": "Post-bronchodilator FEV1/FVC 0.58; FEV1 62% of predicted; little reversibility.",
+      "available_at": "time_zero",
+      "name": "Spirometry (post-bronchodilator)",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "other",
+      "clinical_test": "spirometry_post_bronchodilator",
+      "modality": "pulmonary_function",
+      "routing_tool": "request_other_investigation",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "quest_004",
+      "domain": "other",
+      "value": "mMRC grade 2; CAT score 17.",
+      "available_at": "time_zero",
+      "name": "COPD Assessment Test (CAT) and mMRC dyspnoea scale",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "other",
+      "clinical_test": "copd_assessment_test_cat_and_mmrc_dyspnoea_scale",
+      "modality": "questionnaire",
+      "routing_tool": "request_other_investigation",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "xray_005",
+      "domain": "radiology",
+      "value": "Hyperinflation, flattened diaphragms; no mass or consolidation.",
+      "available_at": "time_zero",
+      "name": "Chest radiograph",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "radiology",
+      "clinical_test": "chest_radiograph",
+      "modality": "radiograph",
+      "routing_tool": "request_radiology",
+      "provenance": "authored_vignette_unreviewed"
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "All results are available at the first consultation (primary-care outpatient visit)."
+}

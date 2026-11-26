@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_020",
+  "case_type": "derived_vignette_from_open_access_guideline_or_review",
+  "authored_by": "claude-sonnet-5-5 (patient story, history facts and results); not from the article and not from a real patient",
+  "source": {
+    "pmcid": "PMC7109311",
+    "title": "alpha1-Blockers and 5alpha-Reductase Inhibitors Are the Most Recommended Drugs in Treating Benign Prostatic Hyperplasia: A Systematic Review of Guidelines",
+    "citation": "Front Pharmacol, 2020",
+    "license": "CC BY 4.0 (Europe PMC license field \"cc by\")",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7109311/",
+    "xml_sha256": "770f00453e2436c670ea98352969dbad2d2074ceb4965b9756a263459531f730"
+  },
+  "review_status": "pending_clinician_review",
+  "quotes_verified_in_source_text": true,
+  "batch": "B",
+  "specialty": "urology"
+}

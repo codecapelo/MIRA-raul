@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_005",
+  "correct_diagnosis": "Acute uncomplicated cystitis (lower urinary tract infection) in a young woman",
+  "matching_criterion": "Acute uncomplicated cystitis / uncomplicated lower urinary tract infection in a non-pregnant woman. Any wording that names uncomplicated cystitis or lower UTI counts as correct; pyelonephritis or complicated UTI does not.",
+  "condition": "uncomplicated cystitis",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Treat with a first-line oral antibiotic for uncomplicated cystitis: fosfomycin trometamol, nitrofurantoin or pivmecillinam (local resistance permitting).",
+      "source_quote": "fosfomycin trometamol, nitrofurantoin, pivmecillinam, alternatively oral cephalosporins",
+      "source_section": "Therapeutic strategies, antibiotic recommendation"
+    },
+    {
+      "item_id": "m2",
+      "management": "A urine culture is not required in a young woman with a first uncomplicated episode when the diagnosis is clear from history.",
+      "source_quote": "urine culture is not recommended when a robust diagnosis can be reached by patient history-taking and other potential causes of symptoms can be excluded",
+      "source_section": "Diagnosis"
+    },
+    {
+      "item_id": "m3",
+      "management": "Trimethoprim or co-trimoxazole only if the local E. coli resistance is below 20%.",
+      "source_quote": "Trimethoprim or cotrimoxazole are only recommended if the local resistance pattern for E. coli is <20%",
+      "source_section": "Therapeutic strategies, antibiotic recommendation"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

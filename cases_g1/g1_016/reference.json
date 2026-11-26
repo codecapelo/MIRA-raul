@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_016",
+  "correct_diagnosis": "Migraine without aura",
+  "matching_criterion": "Migraine without aura (episodic). Any wording that names migraine counts as correct; tension-type headache, cluster headache or secondary headache as the final diagnosis does not.",
+  "condition": "migraine",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Triptans are among the most efficacious drugs for pain freedom at two hours (eletriptan, rizatriptan, sumatriptan, zolmitriptan).",
+      "source_quote": "eletriptan was superior to almost all the other drugs for achieving pain freedom at two hours, followed by rizatriptan, sumatriptan, and zolmitriptan",
+      "source_section": "Results, network meta-analysis"
+    },
+    {
+      "item_id": "m2",
+      "management": "For sustained pain freedom up to 24 hours the most efficacious interventions were eletriptan and ibuprofen.",
+      "source_quote": "For sustained pain freedom up to 24 hours, the most efficacious interventions were eletriptan (odds ratios from 1.41 to 2.73) and ibuprofen",
+      "source_section": "Results, network meta-analysis"
+    },
+    {
+      "item_id": "m3",
+      "management": "Paracetamol was not efficacious for sustained pain freedom from two to 24 hours.",
+      "source_quote": "most were also efficacious for sustained pain freedom from two to 24 hours post-dose, except paracetamol and naratriptan",
+      "source_section": "Results, network meta-analysis"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

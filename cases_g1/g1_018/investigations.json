@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_018",
+  "observations": [
+    {
+      "fact_id": "physical_exam_001",
+      "domain": "physical_exam",
+      "value": "Afebrile, heart rate 70/min, blood pressure 116/72 mm Hg, oxygen saturation 99%.",
+      "available_at": "time_zero",
+      "name": "General and vital signs",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_002",
+      "domain": "physical_exam",
+      "value": "Pale, swollen nasal turbinates with clear watery secretion; no polyps or deviated septum seen; bilateral conjunctival injection with watery discharge; dark circles under the eyes; cobblestone pharynx, no tonsillar exudate.",
+      "available_at": "time_zero",
+      "name": "Nose, eyes and throat",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_003",
+      "domain": "physical_exam",
+      "value": "Clear lungs, no wheeze.",
+      "available_at": "time_zero",
+      "name": "Chest",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "other_004",
+      "domain": "other",
+      "value": "Positive for grass pollen and birch pollen (wheal 6 and 5 mm); negative for house dust mite, cat and mould.",
+      "available_at": "time_zero",
+      "name": "Skin prick tests for aeroallergens",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "other",
+      "clinical_test": "skin_prick_tests_for_aeroallergens",
+      "modality": "other",
+      "routing_tool": "request_other_investigation",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_005",
+      "domain": "blood",
+      "value": "Total IgE 210 kU/L; eosinophils 0.6 x10^9/L.",
+      "available_at": "time_zero",
+      "name": "Total IgE and blood eosinophils",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "total_ige_and_blood_eosinophils",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "xray_006",
+      "domain": "radiology",
+      "value": "Mild mucosal thickening of the maxillary sinuses without air-fluid levels.",
+      "available_at": "time_zero",
+      "name": "Sinus radiograph",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "radiology",
+      "clinical_test": "sinus_radiograph",
+      "modality": "radiograph",
+      "routing_tool": "request_radiology",
+      "provenance": "authored_vignette_unreviewed"
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "All results are available at the first consultation (primary-care outpatient visit)."
+}

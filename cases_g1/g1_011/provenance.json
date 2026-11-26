@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_011",
+  "case_type": "derived_vignette_from_open_access_guideline_or_review",
+  "authored_by": "claude-sonnet-5-5 (patient story, history facts and results); not from the article and not from a real patient",
+  "source": {
+    "pmcid": "PMC13466004",
+    "title": "The International Guideline for the Definition, Classification, Diagnosis and Management of Urticaria",
+    "citation": "Allergy, 2026",
+    "license": "CC BY 4.0 (Europe PMC license field \"cc by\")",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13466004/",
+    "xml_sha256": "e39c307eaa76a39513087becebcc2689d67a94521fe9e85769b4ef463a416b3d"
+  },
+  "review_status": "pending_clinician_review",
+  "quotes_verified_in_source_text": true,
+  "batch": "B",
+  "specialty": "dermatology"
+}

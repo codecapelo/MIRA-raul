@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_006",
+  "case_type": "derived_vignette_from_open_access_guideline_or_review",
+  "authored_by": "claude-sonnet-5-5 (patient story, history facts and results); not from the article and not from a real patient",
+  "source": {
+    "pmcid": "PMC10746578",
+    "title": "Acute pharyngitis in children and adults: descriptive comparison of current recommendations from national and international guidelines",
+    "citation": "Eur J Pediatr, 2023",
+    "license": "CC BY 4.0 (Europe PMC license field \"cc by\")",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10746578/",
+    "xml_sha256": "9f24b090550b32f7e2ff6f8722ce8ea5127e8ba9694aef1945dab78b91591df4"
+  },
+  "review_status": "pending_clinician_review",
+  "quotes_verified_in_source_text": true
+}

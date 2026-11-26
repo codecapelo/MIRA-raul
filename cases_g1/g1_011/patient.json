@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_011",
+  "initial": {
+    "age_years": 34,
+    "sex_recorded": "female",
+    "chief_complaint": "Itchy red welts all over my body since the day before yesterday."
+  },
+  "presenting_complaint": "Itchy red welts all over my body since the day before yesterday.",
+  "history_freetext": "Two days ago itchy raised red welts appeared on the trunk and arms, then the legs. Each welt lasts a few hours and then disappears while new ones appear in other places. Very itchy, worse in the evening.\nNo swelling of the lips, tongue, eyelids or throat; no difficulty breathing, no wheeze, no dizziness, no vomiting or diarrhoea, no fever, no joint pain. Never had hives before.\nHad a cold with sore throat and runny nose that began five days ago and is almost over. Took ibuprofen 400 mg twice yesterday for a headache. No new foods, no new medicines other than ibuprofen, no new soap, cosmetics or detergent, no insect bites, no new pets.\nHealthy; no asthma, no thyroid disease, no known allergies, no autoimmune disease. Takes only an oral contraceptive pill for years. Not planning pregnancy.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Two days ago itchy raised red welts appeared on the trunk and arms, then the legs. Each welt lasts a few hours and then disappears while new ones appear in other places. Very itchy, worse in the evening.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "value": "No swelling of the lips, tongue, eyelids or throat; no difficulty breathing, no wheeze, no dizziness, no vomiting or diarrhoea, no fever, no joint pain. Never had hives before.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_003",
+      "domain": "hpi",
+      "value": "Had a cold with sore throat and runny nose that began five days ago and is almost over. Took ibuprofen 400 mg twice yesterday for a headache. No new foods, no new medicines other than ibuprofen, no new soap, cosmetics or detergent, no insect bites, no new pets.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_004",
+      "domain": "pmh",
+      "value": "Healthy; no asthma, no thyroid disease, no known allergies, no autoimmune disease. Takes only an oral contraceptive pill for years. Not planning pregnancy.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

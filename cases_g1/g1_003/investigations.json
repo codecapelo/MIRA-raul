@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_003",
+  "observations": [
+    {
+      "fact_id": "physical_exam_001",
+      "domain": "physical_exam",
+      "value": "Blood pressure 154/96 mm Hg in the right arm and 152/94 on repeat after five minutes; heart rate 72/min regular; BMI 29.",
+      "available_at": "time_zero",
+      "name": "General and vital signs",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_002",
+      "domain": "physical_exam",
+      "value": "Normal heart sounds, no murmur; no carotid bruit; mild bilateral ankle oedema; peripheral pulses present.",
+      "available_at": "time_zero",
+      "name": "Cardiovascular examination",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_003",
+      "domain": "blood",
+      "value": "Creatinine 0.9 mg/dL, eGFR 88 mL/min/1.73 m2, potassium 4.2 mmol/L, sodium 139 mmol/L, fasting glucose 96 mg/dL.",
+      "available_at": "time_zero",
+      "name": "Basic metabolic panel (creatinine, eGFR, electrolytes)",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "basic_metabolic_panel_creatinine_egfr_electrolytes",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_004",
+      "domain": "blood",
+      "value": "Total cholesterol 214 mg/dL, LDL 132 mg/dL, HDL 44 mg/dL, triglycerides 150 mg/dL.",
+      "available_at": "time_zero",
+      "name": "Lipid profile",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "lipid_profile",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "urine_005",
+      "domain": "urine",
+      "value": "No protein, no blood, no glucose.",
+      "available_at": "time_zero",
+      "name": "Urinalysis with protein",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "urine",
+      "clinical_test": "urinalysis_with_protein",
+      "modality": "laboratory_urine",
+      "routing_tool": "request_urine_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "ecg_006",
+      "domain": "bedside",
+      "value": "Sinus rhythm 70/min; no left ventricular hypertrophy by voltage criteria; no ischaemic changes.",
+      "available_at": "time_zero",
+      "name": "Electrocardiogram",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "bedside",
+      "clinical_test": "electrocardiogram",
+      "modality": "electrocardiography",
+      "routing_tool": "request_bedside_test",
+      "provenance": "authored_vignette_unreviewed"
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "All results are available at the first consultation (primary-care outpatient visit)."
+}

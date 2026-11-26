@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_014",
+  "correct_diagnosis": "New-onset atrial fibrillation",
+  "matching_criterion": "Atrial fibrillation (new onset, with rapid ventricular rate). Any wording that names atrial fibrillation counts as correct; sinus tachycardia, atrial flutter or supraventricular tachycardia without naming atrial fibrillation does not.",
+  "condition": "atrial fibrillation",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Oral anticoagulation prevents ischaemic stroke in AF; stroke risk is assessed with the CHA2DS2-VA score.",
+      "source_quote": "The effectiveness of oral anticoagulation in preventing ischaemic stroke in patients with AF is well-documented",
+      "source_section": "Avoid stroke and thromboembolism"
+    },
+    {
+      "item_id": "m2",
+      "management": "Antiplatelet therapy alone is not indicated for stroke prevention in AF.",
+      "source_quote": "Antiplatelet therapies alone are not indicated for stroke prevention in AF",
+      "source_section": "Avoid stroke and thromboembolism"
+    },
+    {
+      "item_id": "m3",
+      "management": "Manage comorbidities and risk factors (hypertension, diabetes, obesity, alcohol, physical activity) with set targets.",
+      "source_quote": "The guidelines set precise targets for managing AF-associated conditions and risk factors for all those comorbidities with a sufficient evidence base",
+      "source_section": "Comorbidity and risk factor management"
+    },
+    {
+      "item_id": "m4",
+      "management": "Use the structured AF-CARE approach: comorbidity and risk factors, avoid stroke, reduce symptoms by rate and rhythm control, evaluation and dynamic reassessment.",
+      "source_quote": "Comorbidity and risk factor management, [A] Avoid stroke and thromboembolism, [R] Reduce symptoms by rate and rhythm control, [E] Evaluation and dynamic reassessment",
+      "source_section": "AF-CARE"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

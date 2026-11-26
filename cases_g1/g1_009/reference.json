@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_009",
+  "correct_diagnosis": "COPD, symptomatic (GOLD group B), spirometry-confirmed",
+  "matching_criterion": "Chronic obstructive pulmonary disease confirmed by post-bronchodilator spirometry, symptomatic, with low exacerbation risk (GOLD group B). Any wording that names COPD counts as correct; asthma or chronic bronchitis without airflow obstruction does not.",
+  "condition": "COPD",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Start dual long-acting bronchodilator therapy (LABA/LAMA) as initial treatment for a symptomatic patient.",
+      "source_quote": "recommends initial pharmacological treatment with a long-acting muscarinic antagonist (LAMA) or a long-acting β2-agonist (LABA) for the majority of patients, and dual bronchodilator therapy (LABA/LAMA) in patients with more severe symptoms, regardless of exacerbation history",
+      "source_section": "Introduction (GOLD 2022)"
+    },
+    {
+      "item_id": "m2",
+      "management": "Ensure non-pharmacologic management and relevant vaccinations, and a short-acting bronchodilator for rescue.",
+      "source_quote": "optimizing non-pharmacologic management and relevant vaccinations and using a short-acting bronchodilator",
+      "source_section": "Table footnote"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

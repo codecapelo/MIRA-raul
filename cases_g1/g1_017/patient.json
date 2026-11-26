@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_017",
+  "initial": {
+    "age_years": 63,
+    "sex_recorded": "female",
+    "chief_complaint": "Pain in both knees when climbing stairs, for about a year."
+  },
+  "presenting_complaint": "Pain in both knees when climbing stairs, for about a year.",
+  "history_freetext": "Gradual pain in both knees for a year, worse on the right, with climbing stairs, getting up from a chair and long walks; better with rest. Morning stiffness of about 15 minutes. Occasional creaking. No locking, no giving way, no swelling or warmth, no fever, no fall or injury.\nPain is 5 out of 10 on bad days and limits walking to about 20 minutes. Paracetamol 500 mg helps only a little. No pain at night when resting.\nHypertension controlled with ramipril; overweight (BMI 32). No heart disease, no stroke, no stomach ulcer or bleeding, no kidney disease, no asthma. No other joint disease; no psoriasis.\nRamipril 5 mg daily, paracetamol occasionally. No aspirin, no anticoagulant, no allergies to drugs.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Gradual pain in both knees for a year, worse on the right, with climbing stairs, getting up from a chair and long walks; better with rest. Morning stiffness of about 15 minutes. Occasional creaking. No locking, no giving way, no swelling or warmth, no fever, no fall or injury.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "value": "Pain is 5 out of 10 on bad days and limits walking to about 20 minutes. Paracetamol 500 mg helps only a little. No pain at night when resting.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_003",
+      "domain": "pmh",
+      "value": "Hypertension controlled with ramipril; overweight (BMI 32). No heart disease, no stroke, no stomach ulcer or bleeding, no kidney disease, no asthma. No other joint disease; no psoriasis.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "meds_004",
+      "domain": "meds",
+      "value": "Ramipril 5 mg daily, paracetamol occasionally. No aspirin, no anticoagulant, no allergies to drugs.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

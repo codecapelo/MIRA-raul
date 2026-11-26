@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_009",
+  "case_type": "derived_vignette_from_open_access_guideline_or_review",
+  "authored_by": "claude-sonnet-5-5 (patient story, history facts and results); not from the article and not from a real patient",
+  "source": {
+    "pmcid": "PMC9692772",
+    "title": "LABA/LAMA as First-Line Therapy for COPD: A Summary of the Evidence and Guideline Recommendations",
+    "citation": "J Clin Med, 2022",
+    "license": "CC BY 4.0 (Europe PMC license field \"cc by\")",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9692772/",
+    "xml_sha256": "0ae849709005c3d6732267b2fac7db54c3a1ebb5d2611f5a1d61835c45249feb"
+  },
+  "review_status": "pending_clinician_review",
+  "quotes_verified_in_source_text": true
+}

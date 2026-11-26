@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_020",
+  "correct_diagnosis": "Benign prostatic hyperplasia with moderate lower urinary tract symptoms",
+  "matching_criterion": "Benign prostatic hyperplasia causing lower urinary tract symptoms. Any wording that names BPH / benign prostatic obstruction counts as correct; prostate cancer, prostatitis or urinary tract infection as the final diagnosis does not.",
+  "condition": "benign prostatic hyperplasia",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Almost all guidelines recommend alpha-1 blockers (and 5-alpha reductase inhibitors) as drug treatment.",
+      "source_quote": "Almost all of the guidelines recommended α1-blockers and 5α-reductase inhibitors",
+      "source_section": "Medication recommendations"
+    },
+    {
+      "item_id": "m2",
+      "management": "Combination therapy with an alpha-1 blocker and a 5-alpha reductase inhibitor is the most uniformly recommended combination.",
+      "source_quote": "Guidelines for combined medication had a high degree of uniformity in recommending α1-blockers and 5α-reductase inhibitors",
+      "source_section": "Medication recommendations"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_018",
+  "correct_diagnosis": "Seasonal allergic rhinitis (pollen)",
+  "matching_criterion": "Seasonal allergic rhinitis (hay fever) due to pollen. Any wording that names allergic rhinitis / hay fever counts as correct; viral rhinitis, bacterial sinusitis or non-allergic rhinitis as the final diagnosis does not.",
+  "condition": "allergic rhinitis",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Intranasal corticosteroids are the pharmacological treatment of choice for allergic rhinitis.",
+      "source_quote": "Intranasal corticosteroids are the pharmacological treatment of choice for all forms of AR",
+      "source_section": "Intranasal corticosteroids"
+    },
+    {
+      "item_id": "m2",
+      "management": "Do not use first-generation (sedating) antihistamines for routine management.",
+      "source_quote": "strongly discourages the use of first-generation AH in the routine management of AR",
+      "source_section": "Oral antihistamines"
+    },
+    {
+      "item_id": "m3",
+      "management": "Encourage saline sprays or rinses, regularly and before the intranasal steroid.",
+      "source_quote": "The use of saline sprays or rinses is effective to remove mucus, allergens and inflammatory cells, and regular use, preceding the use of INCS, should be encouraged",
+      "source_section": "Treatment summary"
+    },
+    {
+      "item_id": "m4",
+      "management": "Allergen avoidance: avoid outdoor activities and wear masks during peak pollen periods, keep doors and windows closed, change clothing when returning home.",
+      "source_quote": "Keep doors and windows closed.Change clothing when returning home",
+      "source_section": "Allergen avoidance"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

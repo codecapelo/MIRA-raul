@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_006",
+  "correct_diagnosis": "Acute group A streptococcal pharyngitis (tonsillopharyngitis)",
+  "matching_criterion": "Acute group A beta-haemolytic streptococcal pharyngitis / tonsillitis (strep throat). Any wording that names streptococcal pharyngitis or tonsillitis counts as correct; viral pharyngitis or infectious mononucleosis as the final diagnosis does not.",
+  "condition": "sore throat",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "With a high clinical score (Centor 3-4) use a microbiological test (rapid antigen test or culture) and treat with antibiotics only when it is positive.",
+      "source_quote": "Positive microbiological test (RADT or culture)Penicillin V or amoxicillin10 days",
+      "source_section": "Table of national and international guidelines (US ACP/CDC 2016)"
+    },
+    {
+      "item_id": "m2",
+      "management": "First-line antibiotic is penicillin V or amoxicillin for 10 days.",
+      "source_quote": "Penicillin V q 6-12 hAmoxicillin q 12-24 hPenicillin G single dose10 days",
+      "source_section": "Table of national and international guidelines (US ACP/CDC 2016)"
+    },
+    {
+      "item_id": "m3",
+      "management": "Culture is the gold standard for diagnosis, but rapid antigen testing is the practical tool in the consultation.",
+      "source_quote": "The culture test is the gold standard for the diagnosis of GABHS pharyngitis, but it has long turn-around times and considerable costs",
+      "source_section": "Diagnosis"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

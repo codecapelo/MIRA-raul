@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_004",
+  "correct_diagnosis": "Type 2 diabetes mellitus inadequately controlled on metformin, with established atherosclerotic cardiovascular disease",
+  "matching_criterion": "Type 2 diabetes mellitus not at glycaemic target on metformin, with established atherosclerotic cardiovascular disease (prior myocardial infarction). Any wording that names inadequately controlled type 2 diabetes with cardiovascular disease counts as correct.",
+  "condition": "type 2 diabetes medication control",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Add a second agent with proven cardiovascular benefit: an SGLT2 inhibitor or a GLP-1 receptor agonist, because of established cardiovascular disease.",
+      "source_quote": "in case of high risk for CVD, or renal issues, one can choose the best out of the SGLT2i and GLP1-RA",
+      "source_section": "Recommendations, second-line therapy"
+    },
+    {
+      "item_id": "m2",
+      "management": "Continue metformin as first-line background therapy.",
+      "source_quote": "Reduction in MI, all-cause mortality Extensive experience, no hypoglycaemia",
+      "source_section": "Table of antihyperglycaemic agents"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

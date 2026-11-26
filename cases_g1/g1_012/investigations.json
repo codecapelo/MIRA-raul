@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_012",
+  "observations": [
+    {
+      "fact_id": "physical_exam_001",
+      "domain": "physical_exam",
+      "value": "Temperature 38.3 C, heart rate 122/min, respiratory rate 24/min, weight 14 kg. Alert, interactive, moderately irritable when the ear is touched, hydrated.",
+      "available_at": "time_zero",
+      "name": "General and vital signs",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_002",
+      "domain": "physical_exam",
+      "value": "Right tympanic membrane red and bulging with loss of landmarks and a middle-ear effusion, immobile on pneumatic otoscopy; no perforation, no discharge. Left tympanic membrane normal. No tenderness or swelling over the right mastoid.",
+      "available_at": "time_zero",
+      "name": "Ear examination",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_003",
+      "domain": "physical_exam",
+      "value": "Clear nasal discharge; mild pharyngeal erythema; no stiff neck; small mobile cervical nodes.",
+      "available_at": "time_zero",
+      "name": "Nose, throat and neck",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_004",
+      "domain": "blood",
+      "value": "White cell count 14.2 x10^9/L, CRP 28 mg/L.",
+      "available_at": "time_zero",
+      "name": "Complete blood count and C-reactive protein",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "complete_blood_count_and_c_reactive_protein",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "xray_005",
+      "domain": "radiology",
+      "value": "No abnormality.",
+      "available_at": "time_zero",
+      "name": "Mastoid or skull radiograph",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "radiology",
+      "clinical_test": "mastoid_or_skull_radiograph",
+      "modality": "radiograph",
+      "routing_tool": "request_radiology",
+      "provenance": "authored_vignette_unreviewed"
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "All results are available at the first consultation (primary-care outpatient visit)."
+}

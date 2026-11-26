@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_001",
+  "initial": {
+    "age_years": 29,
+    "sex_recorded": "male",
+    "chief_complaint": "Fever, body aches and cough since yesterday."
+  },
+  "presenting_complaint": "Fever, body aches and cough since yesterday.",
+  "history_freetext": "Since yesterday evening: sudden fever up to 38.9 C, shivering, severe muscle aches, headache, dry cough and sore throat. A co-worker was diagnosed with influenza last week.\nHealthy; no chronic disease, no asthma, no immunosuppression; not pregnant-related (male). No regular medication.\nNo shortness of breath, no chest pain, no confusion, able to drink fluids; has not taken any medication yet.\nDid not receive this season's influenza vaccine. Non-smoker. Works in an office.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Since yesterday evening: sudden fever up to 38.9 C, shivering, severe muscle aches, headache, dry cough and sore throat. A co-worker was diagnosed with influenza last week.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_002",
+      "domain": "pmh",
+      "value": "Healthy; no chronic disease, no asthma, no immunosuppression; not pregnant-related (male). No regular medication.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_003",
+      "domain": "hpi",
+      "value": "No shortness of breath, no chest pain, no confusion, able to drink fluids; has not taken any medication yet.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "social_004",
+      "domain": "social",
+      "value": "Did not receive this season's influenza vaccine. Non-smoker. Works in an office.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

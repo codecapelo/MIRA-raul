@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_008",
+  "observations": [
+    {
+      "fact_id": "physical_exam_001",
+      "domain": "physical_exam",
+      "value": "Respiratory rate 16/min, oxygen saturation 98%, speaks full sentences.",
+      "available_at": "time_zero",
+      "name": "General and vital signs",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_002",
+      "domain": "physical_exam",
+      "value": "Scattered expiratory wheeze on forced expiration; no crackles; no use of accessory muscles.",
+      "available_at": "time_zero",
+      "name": "Respiratory",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "spiro_003",
+      "domain": "other",
+      "value": "FEV1 78% of predicted, FEV1/FVC 0.68; FEV1 increases by 15% (360 mL) after salbutamol.",
+      "available_at": "time_zero",
+      "name": "Spirometry with bronchodilator test",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "other",
+      "clinical_test": "spirometry_with_bronchodilator_test",
+      "modality": "pulmonary_function",
+      "routing_tool": "request_other_investigation",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "quest_004",
+      "domain": "other",
+      "value": "ACT score 14 (not well controlled).",
+      "available_at": "time_zero",
+      "name": "Asthma Control Test",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "other",
+      "clinical_test": "asthma_control_test",
+      "modality": "questionnaire",
+      "routing_tool": "request_other_investigation",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "other_005",
+      "domain": "other",
+      "value": "Uses the metered-dose inhaler without spacer; coordination is imperfect.",
+      "available_at": "time_zero",
+      "name": "Inhaler technique check",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "other",
+      "clinical_test": "inhaler_technique_check",
+      "modality": "other",
+      "routing_tool": "request_other_investigation",
+      "provenance": "authored_vignette_unreviewed"
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "All results are available at the first consultation (primary-care outpatient visit)."
+}

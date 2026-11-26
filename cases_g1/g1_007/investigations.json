@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_007",
+  "observations": [
+    {
+      "fact_id": "physical_exam_001",
+      "domain": "physical_exam",
+      "value": "Blood pressure 112/70 mm Hg, heart rate 72/min, weight 58 kg (was 61 kg). Subdued affect, normal speech, cooperative, no psychotic features.",
+      "available_at": "time_zero",
+      "name": "General and vital signs",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "quest_002",
+      "domain": "other",
+      "value": "PHQ-9 total score 16 (moderately severe symptoms); item 9 (thoughts of death or self-harm) scored 0.",
+      "available_at": "time_zero",
+      "name": "PHQ-9 questionnaire",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "other",
+      "clinical_test": "phq_9_questionnaire",
+      "modality": "questionnaire",
+      "routing_tool": "request_other_investigation",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_003",
+      "domain": "blood",
+      "value": "Normal.",
+      "available_at": "time_zero",
+      "name": "Thyroid-stimulating hormone (TSH)",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "thyroid_stimulating_hormone_tsh",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_004",
+      "domain": "blood",
+      "value": "Normal; haemoglobin 13.4 g/dL.",
+      "available_at": "time_zero",
+      "name": "Complete blood count",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "complete_blood_count",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_005",
+      "domain": "blood",
+      "value": "Normal.",
+      "available_at": "time_zero",
+      "name": "Basic metabolic panel (creatinine, eGFR, electrolytes)",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "basic_metabolic_panel_creatinine_egfr_electrolytes",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "All results are available at the first consultation (primary-care outpatient visit)."
+}

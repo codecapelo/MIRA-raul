@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_010",
+  "case_type": "derived_vignette_from_open_access_guideline_or_review",
+  "authored_by": "claude-sonnet-5-5 (patient story, history facts and results); not from the article and not from a real patient",
+  "source": {
+    "pmcid": "PMC10268528",
+    "title": "What are the core recommendations for gout management in first line and specialist care? Systematic review of clinical practice guidelines",
+    "citation": "BMC Rheumatol, 2023",
+    "license": "CC BY 4.0 (Europe PMC license field \"cc by\")",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10268528/",
+    "xml_sha256": "13afbdb162c00a5e5563369631b16f9519384beb5a8d0905b2af17b1b140d5de"
+  },
+  "review_status": "pending_clinician_review",
+  "quotes_verified_in_source_text": true
+}

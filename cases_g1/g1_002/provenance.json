@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_002",
+  "case_type": "derived_vignette_from_open_access_guideline_or_review",
+  "authored_by": "claude-sonnet-5-5 (patient story, history facts and results); not from the article and not from a real patient",
+  "source": {
+    "pmcid": "PMC7839780",
+    "title": "Evidence-based treatment recommendations for neck and low back pain across Europe: A systematic review of guidelines",
+    "citation": "Eur J Pain, 2021",
+    "license": "CC BY 4.0 (Europe PMC license field \"cc by\")",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7839780/",
+    "xml_sha256": "54c39d7d346f244b03523e2a908fb8c6c0de87adc56fa1eb16fa12d563517497"
+  },
+  "review_status": "pending_clinician_review",
+  "quotes_verified_in_source_text": true
+}

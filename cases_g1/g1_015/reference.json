@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_015",
+  "correct_diagnosis": "Gastroesophageal reflux disease, mild to moderate, without alarm features",
+  "matching_criterion": "Gastroesophageal reflux disease (reflux with typical heartburn and regurgitation, no alarm features). Any wording that names GERD / reflux disease counts as correct; peptic ulcer, functional dyspepsia or angina as the final diagnosis does not.",
+  "condition": "gastroesophageal reflux disease",
+  "management_reference": [
+    {
+      "item_id": "m1",
+      "management": "Diagnostic testing is usually not necessary when typical symptoms (heartburn, acid regurgitation) and mild to moderate GERD are present.",
+      "source_quote": "Diagnostic testing is usually not necessary in patients who present with typical symptoms, such as heartburn or acid regurgitation, or with mild–moderate GERD",
+      "source_section": "Diagnosis"
+    },
+    {
+      "item_id": "m2",
+      "management": "Lifestyle measures are the first step in management.",
+      "source_quote": "In the management of patients with GERD, it is important to recommend lifestyle measures as the first step",
+      "source_section": "Discussion, treatment"
+    },
+    {
+      "item_id": "m3",
+      "management": "In obese individuals, weight loss is recommended to improve control of GERD symptoms.",
+      "source_quote": "In obese individuals, weight loss is recommended to improve control of GERD symptoms",
+      "source_section": "Statement 11"
+    },
+    {
+      "item_id": "m4",
+      "management": "When the indication is clear, use a proton pump inhibitor.",
+      "source_quote": "When indications for prescription are clear, PPIs should be used",
+      "source_section": "Discussion, proton pump inhibitors"
+    }
+  ],
+  "management_scoring_note": "Only items with a verified source quote are scored; general good practice that the article does not state is not scored."
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_010",
+  "initial": {
+    "age_years": 52,
+    "sex_recorded": "male",
+    "chief_complaint": "Very painful, swollen big toe since last night."
+  },
+  "presenting_complaint": "Very painful, swollen big toe since last night.",
+  "history_freetext": "Woke up at 3 am with severe pain, redness and swelling of the right big toe; even the bedsheet touching it hurts. Started yesterday evening, no injury. Slight fever. First time this has happened.\nHigh blood pressure treated with hydrochlorothiazide. No kidney disease, no kidney stones, no stomach ulcer, no heart failure, no diabetes. No previous joint swelling.\nHydrochlorothiazide 25 mg a day. No aspirin. No allergies. Has taken nothing for the pain yet.\nDrinks beer on weekends and a lot more last weekend at a party; eats red meat often; overweight.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Woke up at 3 am with severe pain, redness and swelling of the right big toe; even the bedsheet touching it hurts. Started yesterday evening, no injury. Slight fever. First time this has happened.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_002",
+      "domain": "pmh",
+      "value": "High blood pressure treated with hydrochlorothiazide. No kidney disease, no kidney stones, no stomach ulcer, no heart failure, no diabetes. No previous joint swelling.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "meds_003",
+      "domain": "meds",
+      "value": "Hydrochlorothiazide 25 mg a day. No aspirin. No allergies. Has taken nothing for the pain yet.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "social_004",
+      "domain": "social",
+      "value": "Drinks beer on weekends and a lot more last weekend at a party; eats red meat often; overweight.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

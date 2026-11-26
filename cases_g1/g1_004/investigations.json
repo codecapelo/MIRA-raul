@@ -1,0 +1,92 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_004",
+  "observations": [
+    {
+      "fact_id": "physical_exam_001",
+      "domain": "physical_exam",
+      "value": "Blood pressure 132/78 mm Hg, heart rate 68/min, weight 94 kg, BMI 31.",
+      "available_at": "time_zero",
+      "name": "General and vital signs",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "physical_exam_002",
+      "domain": "physical_exam",
+      "value": "Intact skin, normal pulses and normal monofilament sensation on both feet.",
+      "available_at": "time_zero",
+      "name": "Foot examination",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "physical_exam",
+      "clinical_test": "physical_examination",
+      "modality": "clinical_examination",
+      "routing_tool": "request_physical_exam",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_003",
+      "domain": "blood",
+      "value": "HbA1c 8.3% (stable over the last two measurements).",
+      "available_at": "time_zero",
+      "name": "Glycated haemoglobin (HbA1c)",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "glycated_haemoglobin_hba1c",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_004",
+      "domain": "blood",
+      "value": "Creatinine 1.0 mg/dL, eGFR 78 mL/min/1.73 m2, potassium 4.5 mmol/L.",
+      "available_at": "time_zero",
+      "name": "Basic metabolic panel (creatinine, eGFR, electrolytes)",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "basic_metabolic_panel_creatinine_egfr_electrolytes",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "blood_005",
+      "domain": "blood",
+      "value": "LDL 68 mg/dL, HDL 41 mg/dL, triglycerides 160 mg/dL.",
+      "available_at": "time_zero",
+      "name": "Lipid profile",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "blood",
+      "clinical_test": "lipid_profile",
+      "modality": "laboratory_blood",
+      "routing_tool": "request_blood_test",
+      "provenance": "authored_vignette_unreviewed"
+    },
+    {
+      "fact_id": "urine_006",
+      "domain": "urine",
+      "value": "Albumin/creatinine 18 mg/g (normal).",
+      "available_at": "time_zero",
+      "name": "Urine albumin-to-creatinine ratio",
+      "prerequisites": [],
+      "unavailable_for_immediate_care": false,
+      "original_domain": "urine",
+      "clinical_test": "urine_albumin_to_creatinine_ratio",
+      "modality": "laboratory_urine",
+      "routing_tool": "request_urine_test",
+      "provenance": "authored_vignette_unreviewed"
+    }
+  ],
+  "temporal_events": [],
+  "availability_policy": "All results are available at the first consultation (primary-care outpatient visit)."
+}

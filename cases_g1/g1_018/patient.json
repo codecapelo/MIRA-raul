@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_018",
+  "initial": {
+    "age_years": 22,
+    "sex_recorded": "male",
+    "chief_complaint": "Sneezing, runny nose and itchy eyes every spring."
+  },
+  "presenting_complaint": "Sneezing, runny nose and itchy eyes every spring.",
+  "history_freetext": "For three springs now, from March to May, he has sneezing fits, a clear watery runny nose, a blocked nose, itching of the nose, palate and eyes, and watery red eyes. Worse outdoors on windy days and when he mows the lawn; better indoors with windows closed.\nNo fever, no facial pain, no thick yellow discharge, no loss of smell, no wheeze or chest tightness, no cough. Sleep is disturbed by the blocked nose.\nChildhood eczema; no asthma diagnosed. Father has hay fever. No nasal surgery or injury. No drug allergies.\nTakes chlorphenamine tablets bought at the pharmacy when symptoms are bad: they help a little but make him drowsy in the lecture hall. No nasal sprays so far. Occasionally uses a decongestant spray for two or three days.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "For three springs now, from March to May, he has sneezing fits, a clear watery runny nose, a blocked nose, itching of the nose, palate and eyes, and watery red eyes. Worse outdoors on windy days and when he mows the lawn; better indoors with windows closed.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "value": "No fever, no facial pain, no thick yellow discharge, no loss of smell, no wheeze or chest tightness, no cough. Sleep is disturbed by the blocked nose.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_003",
+      "domain": "pmh",
+      "value": "Childhood eczema; no asthma diagnosed. Father has hay fever. No nasal surgery or injury. No drug allergies.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "meds_004",
+      "domain": "meds",
+      "value": "Takes chlorphenamine tablets bought at the pharmacy when symptoms are bad: they help a little but make him drowsy in the lecture hall. No nasal sprays so far. Occasionally uses a decongestant spray for two or three days.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

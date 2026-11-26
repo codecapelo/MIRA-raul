@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_019",
+  "case_type": "derived_vignette_from_open_access_guideline_or_review",
+  "authored_by": "claude-sonnet-5-5 (patient story, history facts and results); not from the article and not from a real patient",
+  "source": {
+    "pmcid": "PMC12518491",
+    "title": "Italian guidelines for the management of adult individuals with primary hypothyroidism outside pregnancy",
+    "citation": "J Endocrinol Invest, 2025",
+    "license": "CC BY 4.0 (Europe PMC license field \"cc by\")",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12518491/",
+    "xml_sha256": "cb811afa9bc10acc8095a355a2d053975a467631b201fd279ddf783d0f938215"
+  },
+  "review_status": "pending_clinician_review",
+  "quotes_verified_in_source_text": true,
+  "batch": "B",
+  "specialty": "endocrinology"
+}

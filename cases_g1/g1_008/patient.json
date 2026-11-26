@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_008",
+  "initial": {
+    "age_years": 24,
+    "sex_recorded": "female",
+    "chief_complaint": "Wheezing and chest tightness; I use my blue inhaler a lot."
+  },
+  "presenting_complaint": "Wheezing and chest tightness; I use my blue inhaler a lot.",
+  "history_freetext": "Cough, wheeze and chest tightness for about a year, worse with exercise, cold air and cats. Uses her salbutamol (blue reliever) inhaler about 4 to 5 days a week.\nWakes at night with cough or wheeze about twice a week. Has had no emergency visits, no oral steroids and no hospital stays in the last year.\nChildhood eczema and hay fever. No other illness. Does not smoke; no one smokes at home. Has a cat.\nTakes only salbutamol as needed; does not take any daily controller medicine. No allergies to drugs.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Cough, wheeze and chest tightness for about a year, worse with exercise, cold air and cats. Uses her salbutamol (blue reliever) inhaler about 4 to 5 days a week.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "value": "Wakes at night with cough or wheeze about twice a week. Has had no emergency visits, no oral steroids and no hospital stays in the last year.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_003",
+      "domain": "pmh",
+      "value": "Childhood eczema and hay fever. No other illness. Does not smoke; no one smokes at home. Has a cat.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "meds_004",
+      "domain": "meds",
+      "value": "Takes only salbutamol as needed; does not take any daily controller medicine. No allergies to drugs.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

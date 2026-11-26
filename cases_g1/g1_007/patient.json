@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_007",
+  "initial": {
+    "age_years": 34,
+    "sex_recorded": "female",
+    "chief_complaint": "Feeling very low and tired for the last six weeks."
+  },
+  "presenting_complaint": "Feeling very low and tired for the last six weeks.",
+  "history_freetext": "For about six weeks: low mood most of the day, loss of interest in things she enjoyed, tiredness, trouble falling asleep and waking at 4 am, difficulty concentrating at work, and feeling guilty. Lost about 3 kg without trying.\nShe says she has no thoughts of harming herself or of ending her life, and no plan. No episodes of unusually high energy or little need for sleep. No hallucinations. Heavy workload and a recent break-up.\nNo previous episodes of depression or treatment. No thyroid disease, no chronic illness. Mother had depression. Not pregnant, no breastfeeding.\nDrinks about two glasses of wine per week, does not smoke, no recreational drugs. No regular medication, no allergies.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "For about six weeks: low mood most of the day, loss of interest in things she enjoyed, tiredness, trouble falling asleep and waking at 4 am, difficulty concentrating at work, and feeling guilty. Lost about 3 kg without trying.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "value": "She says she has no thoughts of harming herself or of ending her life, and no plan. No episodes of unusually high energy or little need for sleep. No hallucinations. Heavy workload and a recent break-up.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_003",
+      "domain": "pmh",
+      "value": "No previous episodes of depression or treatment. No thyroid disease, no chronic illness. Mother had depression. Not pregnant, no breastfeeding.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "social_004",
+      "domain": "social",
+      "value": "Drinks about two glasses of wine per week, does not smoke, no recreational drugs. No regular medication, no allergies.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}

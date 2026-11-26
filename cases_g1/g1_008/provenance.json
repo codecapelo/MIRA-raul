@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_008",
+  "case_type": "derived_vignette_from_open_access_guideline_or_review",
+  "authored_by": "claude-sonnet-5-5 (patient story, history facts and results); not from the article and not from a real patient",
+  "source": {
+    "pmcid": "PMC9907191",
+    "title": "Key recommendations for primary care from the 2022 Global Initiative for Asthma (GINA) update",
+    "citation": "NPJ Prim Care Respir Med, 2023",
+    "license": "CC BY 4.0 (Europe PMC license field \"cc by\")",
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9907191/",
+    "xml_sha256": "b296d95a97c90517047f5c48651292a7a4d394558ffc754f98ea1362511b44be"
+  },
+  "review_status": "pending_clinician_review",
+  "quotes_verified_in_source_text": true
+}

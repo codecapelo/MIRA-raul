@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "g1_016",
+  "initial": {
+    "age_years": 29,
+    "sex_recorded": "female",
+    "chief_complaint": "Throbbing headache on one side with nausea, the third one this month."
+  },
+  "presenting_complaint": "Throbbing headache on one side with nausea, the third one this month.",
+  "history_freetext": "Since her teens she has had episodes of throbbing pain on one side of the head, with nausea, sensitivity to light and noise, lasting 6 to 10 hours, worse with walking or climbing stairs. She has to lie down in a dark room. Three episodes this month; today the pain is on the left side and started two hours ago.\nNo visual or other neurological symptoms before the headache. No fever, no neck stiffness, no sudden thunderclap onset, no head injury, no weakness or numbness, no confusion. Headache-free between episodes.\nMother has similar headaches. No other illness. Not pregnant (copper intrauterine device). Previous attacks started around her period or after poor sleep.\nTakes paracetamol 1 g at the onset of the pain, which helps very little. No other medications. No allergies, no stomach ulcer, no kidney disease.",
+  "history_facts": [
+    {
+      "fact_id": "hpi_001",
+      "domain": "hpi",
+      "value": "Since her teens she has had episodes of throbbing pain on one side of the head, with nausea, sensitivity to light and noise, lasting 6 to 10 hours, worse with walking or climbing stairs. She has to lie down in a dark room. Three episodes this month; today the pain is on the left side and started two hours ago.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "hpi_002",
+      "domain": "hpi",
+      "value": "No visual or other neurological symptoms before the headache. No fever, no neck stiffness, no sudden thunderclap onset, no head injury, no weakness or numbness, no confusion. Headache-free between episodes.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "pmh_003",
+      "domain": "pmh",
+      "value": "Mother has similar headaches. No other illness. Not pregnant (copper intrauterine device). Previous attacks started around her period or after poor sleep.",
+      "available_at": "time_zero"
+    },
+    {
+      "fact_id": "meds_004",
+      "domain": "meds",
+      "value": "Takes paracetamol 1 g at the onset of the pain, which helps very little. No other medications. No allergies, no stomach ulcer, no kidney disease.",
+      "available_at": "time_zero"
+    }
+  ],
+  "unknown_fields": [
+    "allergies",
+    "complete_home_medication_list",
+    "unreported_vital_signs",
+    "unreported_numeric_test_values"
+  ]
+}
